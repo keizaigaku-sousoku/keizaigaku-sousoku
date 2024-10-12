@@ -15,9 +15,20 @@
             		bottom: 10px;
             		color: white;
             		padding: 5px;
+			font-family: serif; /* フォントをserifに変更 */
             		text-align: right;
             		width: auto;
 	                }
+		        h1::after {
+		        content: ""; /* 擬似要素にコンテンツを設定 */
+		        position: absolute; /* 絶対位置を指定 */
+		        left: 0; /* 左端に合わせる */
+			right: 0; /* 右端に合わせる */
+			bottom: 0; /* 下端に合わせる */
+		        height: 2px; /* アンダーラインの高さ */
+		        background-color: white; /* アンダーラインの色を白に指定 */
+		        z-index: -1; /* 背景に配置 */
+		        }
                         
 			a{
                         text-decoration: underline;
