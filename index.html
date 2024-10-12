@@ -15,20 +15,21 @@
             		bottom: 10px;
             		color: white;
             		padding: 5px;
-			font-family: serif; /* フォントをserifに変更 */
+			font-family: serif;
             		text-align: right;
             		width: auto;
-            z-index: 1; /* h1を前面に表示 */
+	                z-index: 1;
 	                }
+			
 		        h1::after {
-		        content: ""; /* 擬似要素にコンテンツを設定 */
-		        position: absolute; /* 絶対位置を指定 */
-            left: 0; /* 左端に合わせる */
-            right: 0; /* 右端に合わせる */
-            bottom: -2px; /* h1の下にアンダーラインを引く */
-            height: 2px; /* アンダーラインの高さ */
-            background-color: white; /* アンダーラインの色を白に指定 */
-            z-index: -1; /* h1の後ろに配置 */
+		        content: "";
+		        position: absolute;
+            		left: 0;
+            		right: 0;
+            		bottom: -2px;
+            		height: 2px;
+            		background-color: white;
+            		z-index: -1;
 		        }
                         
 			a{
