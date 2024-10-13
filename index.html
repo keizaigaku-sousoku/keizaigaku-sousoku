@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>経済学総則</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Meiryo UI', sans-serif;
@@ -48,11 +50,14 @@
         }
 
         .search-button {
-            padding: 5px 10px;
+            padding: 5px;
             background-color: rgb(0, 91, 148); /* 背景色を設定 */
             color: white; /* テキストを白字に設定 */
             border: none;
             cursor: pointer;
+            display: flex; /* アイコンを中央に配置 */
+            align-items: center;
+            justify-content: center;
         }
 
         /* 検索ボタンと入力欄の間にアンダーラインを引く */
@@ -91,7 +96,9 @@
             <!-- サイト内検索フォームを追加 -->
             <form action="/search" method="GET" class="search-form">
                 <input type="text" name="q" placeholder="Search" class="search-input">
-                <button type="submit" class="search-button"> > </button>
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i> <!-- 虫眼鏡アイコン -->
+                </button>
             </form>
         </nav>
     </header>
