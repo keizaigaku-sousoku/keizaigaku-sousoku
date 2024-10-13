@@ -31,39 +31,60 @@
 				font-family: sans-serif;
 		        }
 		
-		        .menu-group {
-		        	display: flex;
-		        	margin: 0;
-		        	padding: 0;
-		        }
-		
-		        .menu-item {
-		        	list-style: none;
-		        	padding: 10px;
-		        }
-		
-		        .menu-item a {
-		        	color: white; /* メニュー項目を白字に設定 */
-		        	text-decoration: none; /* アンダーラインをなくす */
-		        	font-weight: bold;
-		        }
-                </style>
+        /* 検索フォームのスタイル */
+        .search-form {
+            display: flex;
+            align-items: center;
+            margin-right: 20px; /* ヘッダー内での右端の余白 */
+        }
+
+        .search-input {
+            padding: 5px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            padding: 5px 10px;
+            margin-left: 10px;
+            background-color: white;
+            color: rgb(0, 91, 148);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu-group {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0,91,148);
+            font-weight: bold;
+        }
+
+        p {
+            margin-left: 50px;
+        }
+		</style>
         </head>
         <body>
-		<header>
-			<h1 class="title">
-                                経済学総則
-                        </h1>
-			<nav class="nav">
-				<ul class="menu-group">
-				        <li class="menu-item"><a href="#">項目1</a></li>
-				        <li class="menu-item"><a href="#">項目2</a></li>
-				        <li class="menu-item"><a href="#">項目3</a></li>
-				        <li class="menu-item"><a href="#">項目4</a></li>
-				        <li class="menu-item"><a href="#">項目5</a></li>
-				</ul>
-			</nav>
-		</header>
+    <header>
+        <h1 class="title">
+            経済学総則
+        </h1>
+        <nav class="nav">
+            <!-- サイト内検索フォームを追加 -->
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="検索..." class="search-input">
+                <button type="submit" class="search-button">検索</button>
+            </form>
+        </nav>
+    </header>
 		<!--
 		<div class="image-container">
 			<h1>
