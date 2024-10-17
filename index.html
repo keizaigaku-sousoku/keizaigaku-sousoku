@@ -34,98 +34,115 @@
             font-size: 20pt;
         }
 
-        /* 検索フォームのスタイル */
         .search-form {
             display: flex;
             align-items: center;
-            margin-right: 20px; /* ヘッダー内での右端の余白 */
-            position: relative; /* アンダーラインの位置を調整するため */
+            margin-right: 20px;
+            position: relative;
         }
 
-        .search-input {
-            padding: 5px;
-            font-size: 14px;
+        .search-input, .search-button {
+            background-color: rgb(0, 91, 148); 
+            color: white;
             border: none;
-            background-color: rgb(0, 91, 148); /* 背景色を設定 */
-            color: white; /* テキストを白字に設定 */
         }
 
-        .search-button {
-            padding: 5px;
-            background-color: rgb(0, 91, 148); /* 背景色を設定 */
-            color: white; /* テキストを白字に設定 */
-            border: none;
-            cursor: pointer;
-            display: flex; /* アイコンを中央に配置 */
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 検索ボタンと入力欄の間にアンダーラインを引く */
         .search-form::after {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -2px; /* アンダーラインの位置調整 */
+            bottom: -2px; 
             width: 100%;
-            height: 1px; /* アンダーラインの太さを1pxに変更 */
-            background-color: white; /* アンダーラインの色 */
-            z-index: -1; /* アンダーラインを後ろに配置 */
+            height: 1px; 
+            background-color: white;
+            z-index: -1;
         }
 
-        .menu-group {
+        .tile-container {
             display: flex;
-            margin: 0;
-            padding: 0;
+            flex-wrap: wrap;
+            justify-content: space-around; /* タイルを中央に揃える */
+            margin-top: 20px;
         }
 
-        a {
-            text-decoration: none;
-            color: rgb(0, 91, 148);
+        .tile {
+            background-color: #f0f0f0;
+            width: 30%; /* 各タイルの幅を30%に設定 */
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden; /* 画像がはみ出さないように設定 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* タイルに影をつける */
+            text-align: center; /* テキストを中央揃え */
+            transition: transform 0.2s; /* ホバー時の拡大アニメーション */
+        }
+
+        .tile:hover {
+            transform: scale(1.05); /* ホバー時にタイルを拡大 */
+        }
+
+        .tile img {
+            width: 100%; /* タイル内の画像の幅を100%に設定 */
+            height: auto;
+        }
+
+        .tile a {
+            display: block;
+            padding: 10px;
+            background-color: rgb(0, 91, 148);
+            color: white;
             font-family: '游明朝';
             font-size: 13pt;
             font-weight: bold;
+            text-decoration: none;
+        }
+
+        .tile a:hover {
+            background-color: rgb(0, 120, 180); /* ホバー時のリンク色 */
         }
 
         p {
-            margin-left: 50px;
+            font-family: '游明朝';
+            font-size: 12pt;
+            margin: 10px;
         }
+
     </style>
 </head>
 <body>
     <header>
         <h1 class="title">経済学総則</h1>
         <nav class="nav">
-            <!-- サイト内検索フォームを追加 -->
             <form action="/search" method="GET" class="search-form">
                 <input type="text" name="q" placeholder="" class="search-input">
                 <button type="submit" class="search-button">
-                    <i class="fas fa-search"></i> <!-- 虫眼鏡アイコンのみ表示 -->
+                    <i class="fas fa-search"></i>
                 </button>
             </form>
         </nav>
     </header>
-        
-    <p>
-        <img src='index_blue.jpg' alt='no image' width='100%'/>
-        <a href="第1部.html">第1部</a><br>
-        <a href='第1部.html'>市場・金融商品・ポートフォリオ理論</a><br>
-        経済学という大きな理論を展開するための舞台（数学でいうところの空間）を明示的に定義することは、経済学をよく理解する上で大きな手助けとなります。
-        またそこで取引される基本的で伝統的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で重要です。
-        そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために必要不可欠です。
-    </p>
 
-    <p>
-        <img src='index_green.jpg' alt='no image' width='100%'/>
-        <a href="第2部.html">第2部　ミクロ経済学・マクロ経済学</a><br>
+    <!-- タイルコンテナ -->
+    <div class="tile-container">
+        <!-- 第1部のタイル -->
+        <div class="tile">
+            <img src='index_blue.jpg' alt='no image'/>
+            <a href="第1部.html">第1部</a>
+            <p>市場・金融商品・ポートフォリオ理論<br>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなります。</p>
+        </div>
 
-        ******
-    </p>
-    <p>
-        <img src='index_red.jpg' alt='no image' width='100%'/>
-        <a href="第3部.html">第3部　財務・ファイナンス理論</a><br>
+        <!-- 第2部のタイル -->
+        <div class="tile">
+            <img src='index_green.jpg' alt='no image'/>
+            <a href="第2部.html">第2部</a>
+            <p>ミクロ経済学・マクロ経済学</p>
+        </div>
 
-        ******
-    </p>
+        <!-- 第3部のタイル -->
+        <div class="tile">
+            <img src='index_red.jpg' alt='no image'/>
+            <a href="第3部.html">第3部</a>
+            <p>財務・ファイナンス理論</p>
+        </div>
+    </div>
 </body>
 </html>
