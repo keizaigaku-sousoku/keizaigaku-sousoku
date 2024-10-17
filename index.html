@@ -6,108 +6,123 @@
     <title>経済学総則</title>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Meiryo UI', sans-serif;
-            padding-top: 50px;
-        }
-
-        header {
-            display: flex;
-            width: 100%;
-            height: 50px;
-            background-color: rgb(0, 91, 148);
-            align-items: center;
-            position: fixed; /* 画面上部に固定 */
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000; /* ヘッダーを他の要素の上に表示 */
-            color: white; /* ヘッダー内のテキストを白字に設定 */
-        }
-
-        .title {
-            margin-right: auto;
-            margin-left: 5px;
-            color: white; /* タイトルを白字に設定 */
-            font-family: '游明朝';
-            font-size: 20pt;
-        }
-
-        .search-form {
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-            position: relative;
-        }
-
-        .search-input, .search-button {
-            background-color: rgb(0, 91, 148); 
-            color: white;
-            border: none;
-        }
-
-        .search-form::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -2px; 
-            width: 100%;
-            height: 1px; 
-            background-color: white;
-            z-index: -1;
-        }
-
-        .tile-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around; /* タイルを中央に揃える */
-            margin-top: 20px;
-        }
-
-        .tile {
-            background-color: #f0f0f0;
-            width: 30%; /* 各タイルの幅を30%に設定 */
-            margin: 10px;
-            overflow: hidden; /* 画像がはみ出さないように設定 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* タイルに影をつける */
-            text-align: center; /* テキストを中央揃え */
-            transition: transform 0.2s; /* ホバー時の拡大アニメーション */
-        }
-
-        .tile:hover {
-            transform: scale(1.05); /* ホバー時にタイルを拡大 */
-        }
-
-        .tile img {
-            width: 100%; /* タイル内の画像の幅を100%に設定 */
-            height: auto;
-        }
-
-        .tile a {
-            display: block;
-            padding: 10px;
-            background-color: rgb(0, 91, 148);
-            color: white;
-            font-family: '游明朝';
-            font-size: 13pt;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .tile a:hover {
-            background-color: rgb(0, 120, 180); /* ホバー時のリンク色 */
-        }
-
-        p {
-            font-family: '游明朝';
-            font-size: 12pt;
-            margin: 10px;
-        }
-
-    </style>
 </head>
-<body>
+
+    <style>
+    body {
+        font-family: 'Meiryo UI', sans-serif;
+        padding-top: 50px;
+    }
+
+    header {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(0, 91, 148);
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        color: white;
+    }
+
+    .title {
+        margin-right: auto;
+        margin-left: 5px;
+        color: white;
+        font-family: '游明朝';
+        font-size: 20pt;
+    }
+
+    .search-form {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        position: relative;
+    }
+
+    .search-input, .search-button {
+        background-color: rgb(0, 91, 148); 
+        color: white;
+        border: none;
+    }
+
+    .search-form::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        z-index: -1;
+    }
+
+    .tile-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .tile {
+        background-color: #f0f0f0;
+        width: 30%; /* Default width for larger screens */
+        margin: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: transform 0.2s;
+    }
+
+    .tile:hover {
+        transform: scale(1.05);
+    }
+
+    .tile img {
+        width: 100%;
+        height: auto;
+    }
+
+    .tile a {
+        display: block;
+        padding: 10px;
+        background-color: rgb(0, 91, 148);
+        color: white;
+        font-family: '游明朝';
+        font-size: 13pt;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .tile a:hover {
+        background-color: rgb(0, 120, 180);
+    }
+
+    p {
+        font-family: '游明朝';
+        font-size: 12pt;
+        margin: 10px;
+    }
+
+    /* Media query for smaller screens (smartphones) */
+    @media (max-width: 768px) {
+        .tile {
+            width: 45%; /* Increase tile width on smaller screens */
+        }
+    }
+
+    /* Media query for extra small screens (very small smartphones) */
+    @media (max-width: 480px) {
+        .tile {
+            width: 100%; /* Make tiles full width on very small screens */
+        }
+    }
+</style>
+    
+    <body>
     <header>
         <h1 class="title">経済学総則</h1>
         <nav class="nav">
