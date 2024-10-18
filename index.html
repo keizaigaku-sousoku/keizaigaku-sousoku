@@ -114,6 +114,28 @@
         text-decoration: none;
     }
 
+            .image-container {
+            position: relative;
+            width: fit-content;
+            display: inline-block;
+        }
+
+        .image-container img {
+            display: block;
+        }
+
+        .centered-text {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            font-family: "Yu Mincho", serif;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: To make the text more visible */
+            padding: 5px;
+        }
+
     a {
         text-decoration: none;
         color: rgb(0,91,148);
@@ -156,7 +178,10 @@
         </nav>
     </header>
 
-    <img src='index_black.jpeg' alt='no image'/>
+    <div class="image-container">
+        <img src="index_black.jpeg" alt="no image" />
+        <div class="centered-text">No Fair Value, Just Bid and Ask</div>
+    </div>
     
     <!-- タイルコンテナ -->
     <div class="tile-container">
