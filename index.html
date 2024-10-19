@@ -123,10 +123,10 @@
         color: white;
         font-size: 30px;
         font-weight: bold;
-        font-family: 'Meiriyo UI';
+        font-family: 'Meiryo UI';
         padding: 10px;
     }
-
+        
     a {
         text-decoration: none;
         color: rgb(0,91,148);
@@ -153,6 +153,20 @@
             width: 100%; /* Make tiles full width on very small screens */
         }
     }
+
+    @media (max-width: 768px) {
+        .centered-text {
+            font-size: 20px; /* Smaller font size for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .centered-text {
+            font-size: 15px; /* Even smaller font size for very small screens */
+        }
+    }
+
+    
 </style>
     
 <body>
