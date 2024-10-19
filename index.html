@@ -9,6 +9,13 @@
 </head>
 
 <style>
+    /* 余白を完全にリセットするために追加 */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
         font-family: 'Meiryo UI', sans-serif;
         padding-top: 50px;
@@ -105,15 +112,13 @@
 
     .image-container {
         position: relative;
-        width: 100%; /* 横の余白をなくす */
+        width: 100%; /* 横の余白を完全に削除 */
     }
 
     .image-container img {
         width: 100%;
         height: auto;
         display: block;
-        margin: 0;
-        padding: 0;
     }
 
     .centered-text {
@@ -146,7 +151,7 @@
             width: 45%;
         }
         .centered-text {
-            font-size: 20px; /* Smaller font size for smaller screens */
+            font-size: 20px;
         }
     }
 
@@ -156,7 +161,7 @@
             width: 100%;
         }
         .centered-text {
-            font-size: 15px; /* Even smaller font size for very small screens */
+            font-size: 15px;
         }
     }
 
