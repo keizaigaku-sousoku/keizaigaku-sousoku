@@ -94,6 +94,7 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         text-align: left;
+        position: relative;
     }
 
     .tile img {
@@ -138,7 +139,7 @@
         text-decoration: none;
         color: rgb(0,91,148);
         font-weight: bold;
-        font-family: 'メイリオ';
+        font-family: 'Meiryo UI', 'メイリオ', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
     }
 
     /*本文の左右の余白をtileと同じように調整*/
@@ -149,15 +150,26 @@
         margin-right: 10px; /* tileの左右余白と一致 */
         margin-top: 10px;
         text-align: justify;
-        font-weight: 300;
     }
 
     h2 {
-        /*padding: 1rem 2rem;*/
         padding:5px;
         border-left: 6px solid rgb(0,91,148);
         margin-left: 10px;
         margin-top: 10px;
+    }
+
+    /* タイルのボトムボックス */
+    .tile-footer {
+        background-color: rgb(0,91,148);
+        color: white;
+        padding: 10px;
+        text-align: right;
+        font-size: 12pt;
+        font-family: 'Meiryo UI', 'メイリオ', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 
     /* Media query for smaller screens (smartphones) */
@@ -201,14 +213,6 @@
         <div class="centered-text">No Fair Value, Just Bid and Ask</div>
     </div>
 
-    <!--
-    <p style='font-size:20px;font-weight:bold;'>
-        <br>
-            経済学の基礎
-        <br>
-    </p>
-    -->
-
     <br>
     <h2>
         経済学の基礎
@@ -232,6 +236,7 @@
                 <br>
                 <br>
             </p>
+            <div class="tile-footer">Read More</div>
         </div>
 
         <!-- 第2部のタイル -->
@@ -250,6 +255,7 @@
                 <br>
                 <br>
             </p>
+            <div class="tile-footer">Read More</div>
         </div>
 
         <!-- 第3部のタイル -->
@@ -266,6 +272,7 @@
                 <br>
                 <br>
             </p>
+            <div class="tile-footer">Read More</div>
         </div>
     </div>
 
