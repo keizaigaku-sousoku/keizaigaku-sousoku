@@ -1,67 +1,73 @@
+/* ヘッダー部分のスタイル */
+header {
+    background-color: rgb(0, 91, 148);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ボディ部分のスタイル */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
-.toc {
+/* 目次タイルを囲むコンテナ */
+.toc-container {
+    display: block;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* 各パート（タイル）のスタイル */
+.part {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* パートタイトルのスタイル */
+.part-title {
+    font-size: 1.5rem;
+    color: rgb(0, 91, 148);
+    border-bottom: 2px solid rgb(0, 91, 148);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* リンクのスタイル */
+.toc-container a {
+    color: rgb(0, 91, 148);
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.toc-container a:hover {
     background-color: rgb(0, 91, 148);
     color: white;
+    transform: translateX(10px);
+    transition: 0.3s;
+}
+
+main {
     padding: 20px;
-    width: 250px;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    border-radius: 8px;
 }
 
-.toc h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.toc ul {
-    list-style: none;
-    padding: 0;
-}
-
-.toc li {
-    margin: 10px 0;
-}
-
-.toc a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.toc a:hover {
-    color: #ffcc00;
-}
-
-.content {
-    margin-left: 300px; /* 目次が固定されているので、コンテンツの左マージンを調整 */
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.content h3 {
-    color: rgb(0, 91, 148);
-}
-
-.tile {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-}
-
-.tile h3 {
-    color: rgb(0, 91, 148);
-    background-color: white;
-    margin: 0;
-    padding: 10px;
-    border-radius: 4px;
+/* PCサイズ以上で左右に余白を作る */
+@media (min-width: 1024px) {
+    .toc-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
