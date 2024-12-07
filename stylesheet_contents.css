@@ -1,55 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: "Yu Mincho", serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
-.toc {
-    background-color: rgb(0, 91, 148); /* 基調色 */
-    color: white;
+header {
+    background-color: rgb(0, 91, 148);
+    color: #fff;
     padding: 20px;
-    width: 250px;
-    position: fixed;
-    top: 50px;
-    left: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav {
+    margin-top: 20px;
+    background: #fff;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.toc h2 {
-    margin-top: 0;
-    font-size: 1.5em;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.toc ul {
-    list-style-type: none;
-    padding-left: 0;
+nav ul li {
+    border-bottom: 1px solid #ddd;
 }
 
-.toc ul li {
-    margin: 10px 0;
+nav ul li:last-child {
+    border-bottom: none;
 }
 
-.toc a {
-    color: white;
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(0, 91, 148);
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.toc a:hover {
-    color: #ffdd57; /* ホバー時に色が変わる */
-    text-decoration: underline;
+nav ul li a:hover {
+    background-color: rgb(0, 91, 148);
+    color: #fff;
 }
 
-section {
-    margin-left: 300px; /* 目次の横にコンテンツを配置 */
-    padding: 20px;
-    background-color: white;
-    margin-top: 50px;
-    border-radius: 8px;
-}
-
-h3 {
-    color: rgb(0, 91, 148); /* 見出しの色 */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #555;
 }
