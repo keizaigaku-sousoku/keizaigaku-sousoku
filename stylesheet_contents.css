@@ -14,6 +14,7 @@ body {
     top: 20px;
     left: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 影をつける */
 }
 
 .toc h2 {
@@ -39,4 +40,30 @@ body {
 
 .toc a:hover {
     color: #ffcc00;
+}
+
+.content {
+    margin-left: 300px; /* 目次が固定されているので、コンテンツの左マージンを調整 */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.content h3 {
+    color: rgb(0, 91, 148);
+}
+
+.tile {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* タイルに影をつける */
+}
+
+.tile h3 {
+    color: rgb(0, 91, 148);
+    background-color: white;
+    margin: 0;
+    padding: 10px;
+    border-radius: 4px;
 }
