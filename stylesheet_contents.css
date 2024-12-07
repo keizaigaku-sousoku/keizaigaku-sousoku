@@ -9,7 +9,7 @@ header {
 /* ボディ部分のスタイル */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: white;
     margin: 0;
     padding: 0;
     color: #333;
@@ -25,11 +25,11 @@ body {
 
 /* 各パート（タイル）のスタイル */
 .part {
-    background-color: #ffffff;
+    background-color: white;
     color: #333;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
 }
 
