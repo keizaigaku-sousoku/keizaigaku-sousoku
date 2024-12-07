@@ -11,6 +11,7 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
         header {
@@ -21,37 +22,51 @@
         }
 
         .toc-container {
-            background-color: rgb(0, 91, 148);
-            color: white;
-            padding: 1rem;
+            background-color: #ffffff;
+            color: #333;
             margin: 20px;
-        }
-
-        .toc-container a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .toc-container a:hover {
-            text-decoration: underline;
-        }
-
-        main {
             padding: 20px;
-        }
-
-        h2, h3 {
-            color: rgb(0, 91, 148);
-            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .toc-title {
             font-size: 2rem;
-            text-align: center;
             margin-bottom: 20px;
+            color: rgb(0, 91, 148);
+        }
+
+        .part {
+            margin-bottom: 30px;
+        }
+
+        .part-title {
+            font-size: 1.5rem;
+            color: rgb(0, 91, 148);
+            border-bottom: 2px solid rgb(0, 91, 148);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .toc-container a {
+            color: rgb(0, 91, 148);
+            text-decoration: none;
+            display: block;
+            font-size: 1.1rem;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .toc-container a:hover {
+            background-color: rgb(0, 91, 148);
+            color: white;
+            transform: translateX(10px);
+            transition: 0.3s;
+        }
+
+        main {
+            padding: 20px;
         }
     </style>
 </head>
@@ -63,20 +78,25 @@
 
     <div class="toc-container">
         <h2 class="toc-title">目次</h2>
-        <a href="page1.html">セクション 1</a>
-        <a href="page2.html">セクション 2</a>
-        <a href="page3.html">セクション 3</a>
-        <a href="page4.html">セクション 4</a>
-        <a href="page5.html">セクション 5</a>
-        <a href="page6.html">セクション 6</a>
-        <a href="page7.html">セクション 7</a>
-        <a href="page8.html">セクション 8</a>
-        <a href="page9.html">セクション 9</a>
-        <a href="page10.html">セクション 10</a>
+
+        <!-- パートA -->
+        <div class="part">
+            <h3 class="part-title">パートA</h3>
+            <a href="page1.html">セクション 1</a>
+            <a href="page2.html">セクション 2</a>
+            <a href="page3.html">セクション 3</a>
+        </div>
+
+        <!-- パートB -->
+        <div class="part">
+            <h3 class="part-title">パートB</h3>
+            <a href="page4.html">セクション 4</a>
+            <a href="page5.html">セクション 5</a>
+        </div>
     </div>
 
     <main>
-        <!-- ここには目次の内容は含まれません -->
+        <!-- 各パートの内容は別ページに含まれる -->
     </main>
 
 </body>
