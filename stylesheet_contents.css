@@ -13,10 +13,6 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    max-width: 500px; /* 最大幅を設定 */
-    margin-left: auto; /* 左右のマージンを自動で設定 */
-    margin-right: auto; /* 中央揃え */
-    text-align: center; /* 中央揃え */
 }
 
 /* 目次タイルを囲むコンテナ */
