@@ -216,6 +216,14 @@
     }
 
 </style>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const imageContainer = document.querySelector('.image-container');
+        imageContainer.style.backgroundPositionY = `${scrollPosition * 0.5}px`; // スクロールに応じて背景画像の位置を調整
+    });
+</script>
     
 <body>
     <header>
