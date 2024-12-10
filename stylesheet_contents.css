@@ -12,8 +12,10 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: white;
     max-width: 800px;
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto; /* 左右中央揃え */
 }
 
 /* 目次タイルを囲むコンテナ */
