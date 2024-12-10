@@ -4,6 +4,11 @@ header {
     color: white;
     text-align: center;
     padding: 1rem;
+    width: 100%; /* 幅を画面全体に */
+    position: fixed; /* ヘッダーを固定 */
+    top: 0; /* 画面の最上部に固定 */
+    z-index: 1000; /* 他の要素よりも前面に表示 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 視覚的に分かりやすい影 */
 }
 
 /* ボディ部分のスタイル */
@@ -16,6 +21,7 @@ body {
     max-width: 800px; /* 最大幅を設定 */
     margin-left: auto; /* 左右中央揃え */
     margin-right: auto; /* 左右中央揃え */
+    padding-top: 4rem; /* ヘッダーの高さ分の余白を追加 */
 }
 
 /* 目次タイルを囲むコンテナ */
