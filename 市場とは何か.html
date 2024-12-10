@@ -10,6 +10,9 @@
         // 定理タイルをクリックしたときに証明を表示/非表示にする
         function toggleProof(element) {
             const proofTile = element.nextElementSibling; // 証明タイルを取得
+            const theoremTile = element.previousElementSibling; // 定理タイルを取得
+            
+            // クリックした定理タイルと証明を表示/非表示
             if (proofTile.style.display === "none" || proofTile.style.display === "") {
                 proofTile.style.display = "block"; // 証明を表示
             } else {
@@ -63,9 +66,11 @@
         <div class="title" onclick="toggleProof(this)">Theorem 1.1 (Pythagorean Theorem)</div>
         <p>For a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides:</p>
         <p>\[ a^2 + b^2 = c^2 \]</p>
-        <div class="proof" style="display: none;">
-            <p>This is a standard result in Euclidean geometry...</p>
-        </div>
+    </div>
+    
+    <!-- 証明タイル (初期状態で隠す) -->
+    <div class="proof" style="display: none;">
+        <p>This is a standard result in Euclidean geometry...</p>
     </div>
         
     </main>
