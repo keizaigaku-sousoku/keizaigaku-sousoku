@@ -68,6 +68,12 @@ body {
     transition: 0.3s;
 }
 
+h2 {
+  padding: 1rem 2rem;
+  border-left: 5px solid rgb(0,91,148);
+  background: rgba(0,91,148,0.1;
+}
+
 main {
     padding: 20px;
 }
