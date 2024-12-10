@@ -75,7 +75,7 @@ body {
     font-weight: bold;
     color: rgb(0, 91, 148);
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left; /* 左寄せに変更 */
 }
 
 .theorem-tile p {
