@@ -119,12 +119,12 @@
         height: 400px; /* 背景画像部分の高さを調整 */
         background-image: url('header2.png');
         background-size: cover;
-        background-position: center;
-        background-attachment: scroll; /* 変更: 固定を解除 */
+        background-position: center top; /* 画像の位置を上部に設定 */
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
+        overflow: hidden; /* 背景がはみ出さないようにする */
     }
     
     .image-container img {
