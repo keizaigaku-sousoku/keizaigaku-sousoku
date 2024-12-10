@@ -52,6 +52,32 @@ body {
     text-align: center; /* 中央揃え */
 }
 
+/* 定理のタイルスタイル */
+.theorem-tile {
+    background-color: white;
+    border-left: 5px solid rgb(0, 91, 148);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    max-width: 500px; /* タイルの最大幅 */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
+}
+
+.theorem-tile .title {
+    font-weight: bold;
+    color: rgb(0, 91, 148);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.theorem-tile p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 /* リンクのスタイル */
 .toc-container a {
     color: rgb(0, 91, 148);
