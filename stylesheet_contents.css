@@ -5,7 +5,10 @@ header {
     text-align: center;
     padding: 1rem;
     width: 100%; /* 幅を画面全体に */
+    max-width: 750px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央揃え */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 視覚的に分かりやすい影 */
+    box-sizing: border-box; /* パディングを含めたサイズ計算 */
 }
 
 /* ボディ部分のスタイル */
