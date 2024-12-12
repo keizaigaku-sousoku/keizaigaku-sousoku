@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     color: black;
-    max-width: 800px; /* 最大幅を設定 */
+    /*max-width: 800px;*/ /* 最大幅を設定 */
     margin-left: auto; /* 左右中央揃え */
     margin-right: auto; /* 左右中央揃え */
 }
