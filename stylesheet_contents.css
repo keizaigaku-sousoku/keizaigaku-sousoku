@@ -18,6 +18,7 @@ body {
     /*max-width: 800px;*/ /* 最大幅を設定 */
     margin-left: auto; /* 左右中央揃え */
     margin-right: auto; /* 左右中央揃え */
+    overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
 /* 目次タイルを囲むコンテナ */
@@ -81,7 +82,7 @@ body {
     line-height: 1.6;
 }
 
-/* 証明タイルは初期状態では隠す */
+/* 証明タイルのスタイル */
 .proof-tile {
     background-color: white;
     border-left: 5px solid rgb(0, 91, 148);
@@ -92,7 +93,6 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    display: none; /* デフォルトで非表示 */
 }
 
 .proof-tile .title {
@@ -128,9 +128,9 @@ body {
 }
 
 h2 {
-  padding: 1rem 2rem;
-  border-left: 5px solid rgb(0,91,148);
-  background: rgba(0,91,148,0.1);
+    padding: 1rem 2rem;
+    border-left: 5px solid rgb(0, 91, 148);
+    background: rgba(0, 91, 148, 0.1);
 }
 
 main {
@@ -142,5 +142,14 @@ main {
     .toc-container {
         padding-left: 50px;
         padding-right: 50px;
+    }
+}
+
+/* スマホサイズ向けのスタイル */
+@media (max-width: 600px) {
+    .toc-container, .part, .theorem-tile, .proof-tile {
+        padding: 10px; /* スマホ向けにパディングを減らす */
+        width: 100%; /* 幅を100%に設定 */
+        max-width: none; /* 最大幅を解除 */
     }
 }
