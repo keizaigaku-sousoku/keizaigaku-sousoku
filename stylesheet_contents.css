@@ -3,9 +3,9 @@ header {
     color: white;
     text-align: center;
     padding: 1rem;
-    width: 100%; /* 幅を画面全体に */
-    /* max-width: 750px; */ /* 最大幅を削除 */
-    margin: 0 auto; /* 中央揃え */
+    width: 100vw; /* ビューポートの幅を100%に */
+    max-width: none; /* 最大幅を削除 */
+    margin: 0; /* マージンをゼロにする */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 視覚的に分かりやすい影 */
     box-sizing: border-box; /* パディングを含めたサイズ計算 */
 }
