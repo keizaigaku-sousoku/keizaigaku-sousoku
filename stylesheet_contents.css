@@ -1,6 +1,11 @@
-/* 全ての要素に box-sizing を適用 */
-*, *::before, *::after {
-    box-sizing: border-box;
+/* ヘッダー部分のスタイル */
+header {
+    background-color: rgb(0, 91, 148);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%; /* 幅を画面全体に */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 視覚的に分かりやすい影 */
 }
 
 /* ボディ部分のスタイル */
@@ -10,35 +15,130 @@ body {
     margin: 0;
     padding: 0;
     color: black;
-    overflow-x: hidden; /* 横スクロールを防ぐ */
+    max-width: 800px; /* 最大幅を設定 */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto; /* 左右中央揃え */
 }
 
 /* 目次タイルを囲むコンテナ */
 .toc-container {
     display: block;
-    max-width: 100%; /* 幅を100%に設定 */
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
 }
 
 /* 各パート（タイル）のスタイル */
-.part, .theorem-tile, .proof-tile {
+.part {
     background-color: white;
     color: #333;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
-    max-width: 100%; /* 幅を100%に設定 */
+    max-width: 500px; /* タイルの最大幅 */
     margin-left: auto; /* 左右中央揃え */
     margin-right: auto; /* 左右中央揃え */
 }
 
-/* スマホサイズ向けのスタイル */
-@media (max-width: 600px) {
-    .toc-container, .part, .theorem-tile, .proof-tile {
-        padding: 10px; /* スマホ向けにパディングを減らす */
-        width: 100%; /* 幅を100%に設定 */
-        max-width: 100%; /* 最大幅を100%に設定 */
+/* パートタイトルのスタイル */
+.part-title {
+    font-size: 1.5rem;
+    color: rgb(0, 91, 148);
+    border-bottom: 2px solid rgb(0, 91, 148);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    max-width: 500px; /* 最大幅を設定 */
+    margin-left: auto; /* 左右のマージンを自動で設定 */
+    margin-right: auto; /* 中央揃え */
+    text-align: center; /* 中央揃え */
+}
+
+/* 定理のタイルスタイル */
+.theorem-tile {
+    background-color: white;
+    border-left: 5px solid rgb(0, 91, 148);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    max-width: 800px; /* タイルの最大幅 */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
+}
+
+.theorem-tile .title {
+    font-weight: bold;
+    color: rgb(0, 91, 148);
+    margin-bottom: 10px;
+    text-align: left; /* 左寄せに変更 */
+}
+
+.theorem-tile p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 証明のタイルスタイル */
+.proof-tile {
+    background-color: white;
+    border-left: 5px solid rgb(0, 91, 148);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    max-width: 800px; /* タイルの最大幅 */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
+}
+
+.proof-tile .title {
+    font-weight: bold;
+    color: rgb(0, 91, 148);
+    margin-bottom: 10px;
+    text-align: left; /* 左寄せに変更 */
+}
+
+.proof-tile p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 1rem; /* 証明部分にインデントを追加 */
+}
+
+/* リンクのスタイル */
+.toc-container a {
+    color: rgb(0, 91, 148);
+    text-decoration: none;
+    display: block;
+    font-size: 1.1rem;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.toc-container a:hover {
+    background-color: rgb(0, 91, 148);
+    color: white;
+    transform: translateX(10px);
+    transition: 0.3s;
+}
+
+h2 {
+  padding: 1rem 2rem;
+  border-left: 5px solid rgb(0,91,148);
+  background: rgba(0,91,148,0.1);
+}
+
+main {
+    padding: 20px;
+}
+
+/* PCサイズ以上で左右に余白を作る */
+@media (min-width: 1024px) {
+    .toc-container {
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
