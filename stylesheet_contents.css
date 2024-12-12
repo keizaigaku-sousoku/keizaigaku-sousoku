@@ -142,3 +142,14 @@ main {
         padding-right: 50px;
     }
 }
+
+@media (max-width: 768px) {
+    .toc-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .part {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
