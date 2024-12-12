@@ -1,10 +1,15 @@
 header {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  background-color: darkgrey;
-  align-items: center;
-  position: fixed;
+    width: 100%; /* ビューポート全体ではなく親要素に基づく幅 */
+    max-width: none; /* 最大幅制限を解除 */
+    position: relative; /* 標準のレイアウトで */
+    left: 0; /* 左端に固定 */
+    margin: 0; /* マージンの影響を排除 */
+    padding: 1rem;
+    background-color: rgb(0, 91, 148);
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* パディングを含めた幅計算 */
 }
 
 /* ボディ部分のスタイル */
