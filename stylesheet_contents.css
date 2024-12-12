@@ -1,14 +1,13 @@
 header {
-    position: relative; /* 標準のレイアウトで */
-    width: 100%; /* 画面幅に合わせて広げる */
-    left: 0; /* 左端に固定 */
-    margin: 0; /* マージンの影響を排除 */
+    position: relative; /* レイアウトの基準を変更 */
+    width: 100vw; /* ビューポートの幅全体を使用 */
+    margin: 0; /* マージンをゼロに */
     padding: 1rem;
     background-color: rgb(0, 91, 148);
     color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box; /* パディングを含めた幅計算 */
+    box-sizing: border-box; /* パディングを含めたサイズ計算 */
 }
 
 /* ボディ部分のスタイル */
