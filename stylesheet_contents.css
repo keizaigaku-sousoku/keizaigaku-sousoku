@@ -136,7 +136,6 @@ h2 {
     border-top-radius: 10px; /* 左上の丸み */
     border-bottom-radius: 10px; /* 左下の丸み */
     font-size: 1.5rem; /* フォントサイズ */
-    color: rgb(0, 91, 148); /* テキスト色 */
     line-height: 1.6; /* 行間 */
 }
 
