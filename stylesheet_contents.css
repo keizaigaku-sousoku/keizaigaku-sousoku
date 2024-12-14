@@ -132,11 +132,14 @@ h2 {
     position: relative;
     padding: 1rem 2rem 1rem 1.5rem; /* 左のバーとテキストの間の余白 */
     margin: 20px 0; /* 上下の余白 */
+    background: rgba(0, 91, 148, 0.1); /* 背景色 */
     border-left: 10px solid rgb(0, 91, 148); /* 左のバー */
-    border-top-radius: 10px; /* 左上の丸み */
-    border-bottom-radius: 10px; /* 左下の丸み */
+    border-top-left-radius: 10px; /* 左上の丸み */
+    border-bottom-left-radius: 10px; /* 左下の丸み */
     font-size: 1.5rem; /* フォントサイズ */
+    color: rgb(0, 91, 148); /* テキスト色 */
     line-height: 1.6; /* 行間 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影 */
 }
 
 main {
