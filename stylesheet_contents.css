@@ -129,6 +129,10 @@ body {
 }
 
 h2 {
+    color: white;
+}
+
+h3 {
     position: relative;
     padding: 1rem 2rem 1rem 1.5rem; /* 左のバーとテキストの間の余白 */
     margin: 20px 0; /* 上下の余白 */
