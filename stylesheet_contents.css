@@ -143,14 +143,14 @@ h3 {
 
 h4 {
     position: relative;
-    padding: 1rem 2rem 1rem 1.5rem; /* 左のバーとテキストの間の余白 */
-    margin: 20px 0; /* 上下の余白 */
+    padding: 1rem 2rem 1rem 1rem; /* 左のバーとテキストの間の余白 */
+    margin: 10px 0; /* 上下の余白 */
     border-left: 10px solid rgb(0, 91, 148); /* 左のバー */
     border-top-radius: 10px; /* 左上の丸み */
     border-bottom-radius: 10px; /* 左下の丸み */
-    font-size: 1.5rem; /* フォントサイズ */
+    font-size: 1rem; /* フォントサイズ */
     color: rgb(0, 91, 148); /* テキスト色 */
-    line-height: 1.6; /* 行間 */
+    line-height: 1.2; /* 行間 */
 }
 
 main {
