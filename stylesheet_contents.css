@@ -145,7 +145,7 @@ h4 {
     position: relative;
     padding: 1rem 2rem 1rem 1rem; /* 左のバーとテキストの間の余白 */
     margin: 10px 0; /* 上下の余白 */
-    border-left: 10px solid rgb(0, 91, 148); /* 左のバー */
+    border-left: 7px solid rgb(0, 91, 148); /* 左のバー */
     border-top-radius: 10px; /* 左上の丸み */
     border-bottom-radius: 10px; /* 左下の丸み */
     font-size: 1rem; /* フォントサイズ */
