@@ -24,6 +24,10 @@ body {
     margin-right: auto; /* 左右中央揃え */
 }
 
+p {
+   text-align: justify;
+}
+
 /* 目次タイルを囲むコンテナ */
 .toc-container {
     display: block;
