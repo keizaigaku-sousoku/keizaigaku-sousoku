@@ -28,6 +28,11 @@ p {
    text-align: justify;
 }
 
+.new-word {
+    color: rgb(0, 91, 148);
+    font-weight: bold;
+}
+
 /* 目次タイルを囲むコンテナ */
 .toc-container {
     display: block;
