@@ -137,33 +137,32 @@ p {
     transition: 0.3s;
 }
 
-.comment-box {
-    background-color: rgb(0, 91, 148);
-    color: white;
-    border-radius: 8px;
-    padding: 20px;
-    position: relative;
-    max-width: 400px;
-    margin: auto;
-}
-
-.comment-box::before {
-    content: '"';
-    font-size: 50px;
-    position: absolute;
-    top: -20px;
-    left: 10px;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.comment-box::after {
-    content: '"';
-    font-size: 50px;
-    position: absolute;
-    bottom: -20px;
-    right: 10px;
-    color: rgba(255, 255, 255, 0.5);
-}
+        .comment-box {
+            background-color: rgb(0, 91, 148);
+            color: white;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            max-width: 400px;
+            margin: auto;
+            overflow: hidden; /* 追加 */
+        }
+        .comment-box::before {
+            content: '"';
+            font-size: 50px;
+            position: absolute;
+            top: -30px; /* 調整 */
+            left: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .comment-box::after {
+            content: '"';
+            font-size: 50px;
+            position: absolute;
+            bottom: -30px; /* 調整 */
+            right: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
 
 h2 {
     color: white;
