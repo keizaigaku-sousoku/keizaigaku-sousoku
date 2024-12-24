@@ -45,7 +45,7 @@
     <section id="section2">
         <h4>市場参加者</h4>
         <p>
-            　大雑把に言えば、"市場"とは"多くのプレイヤーがモノを交換してポイントを稼ぐゲームの舞台"である。
+            　大雑把に言えば、"市場"とは"多くのプレイヤーがモノを交換するための舞台"である。
             そこでまず"プレイヤー"の全体を表すため、任意の高々加算無限の集合 \( \mathcal{P} \subset \textbf{Z} \)をとり、この元を<span class="new-word">市場参加者（market participant）</span>と呼ぶ。
             次に"モノ"を表すため、添字集合として任意の高々加算無限の集合 \( \mathcal{G} \subset \textbf{Z} \) をとり、この元を差し当たり<span class="new-word">モノ（thing）</span>と呼ぶ。
             任意の市場参加者 \( p \in \mathcal{P} \) に対して、 写像\( Q^p:\mathcal{G} \ni g \mapsto Q_g^p \in \textbf{R} \) を定め、これを \( p \) の<span class="new-word">状態（state）</span>と呼ぶ。
@@ -53,8 +53,15 @@
             また \( Q_g:= \sum_{p \in \mathcal{P}} Q_g^p \) はモノ \( g \) が市場参加者たちの保有によってどれだけ存在しているかを表す。
             さらに \( Q:=(Q^p)_{p \in \mathcal{P}} \) は市場参加者たちがどの状態であるかを表す。
             この全体の集合 \( \mathcal{Q}:= \{ Q \} \) への作用素 \( \mathcal{Q} \rightarrow \mathcal{Q} \) は市場参加者たちの状態がどう変化をするかを表すので、これを<span class="new-word">発展作用素（development operator）</span>と呼ぶ。
-            <!--以下作用素は \( (Q_g)_{g \in \mathcal{G}} \) を変えないと仮定する。-->
+            もっとも素朴に言えば、"市場"とは \( (\mathcal{P}, \mathcal{G}, \mathcal{Q} \rightarrow \mathcal{Q}) \) のことである。
         </p>
+
+        <p>
+            　少し精度を高めて言えば、"市場"とは"多くのプレイヤーがモノを交換して各々がポイントを稼ぐゲームの舞台"である。
+            この"ポイント"を明確にするために、まず任意の市場参加者 \( p \in \mathcal{P} \) 、モノ \( g \in \mathcal{G} \) の保有量 \( Q_g^p \) に対して、 変化  \( \Delta Q_g^p \in \textbf{R} \) を考える。
+        </p>
+
+    
     </section>
     <section id="section3">
         <h4>パートC</h4>
