@@ -20,7 +20,7 @@
         <div class="part">
             <h3 class="part-title">目次</h3>
             <a href="#section1">市場の3種類の定義</a>
-            <a href="#section2">市場参加者</a>
+            <a href="#section2">市場参加者・時刻</a>
             <a href="#section3">あ</a>
         </div>
     </div>
@@ -43,7 +43,7 @@
         </p>
     </section>
     <section id="section2">
-        <h4>市場参加者</h4>
+        <h4>市場参加者・時刻</h4>
         <p>
             　大雑把に言えば、"市場"とは"多くのプレイヤーがモノを交換するための舞台"である。
             そこでまず"プレイヤー"の全体を表すため、任意の高々可算無限の集合 \( \mathcal{P} \subset \textbf{Z} \)をとり、この元を<span class="new-word">市場参加者（market participant）</span>と呼ぶ。
@@ -70,11 +70,22 @@
             \[
                 ^\forall t \in \textbf{Z}_{\geq 1};\ \ \ Q(t)=\phi(Q(t-1))
             \]
-            によって帰納的に \( \mathcal{Q} \) 上の点列 \( ( Q(t) )_{t=0}^\infty \) を得る。
-            明らかに \( \mathcal{Q} \) に距離関数 \( \mathcal{Q} \otimes \mathcal{Q} \rightarrow \textbf{R}_{\geq 0} \) を定義できる。
-            そこでそれで測って点と点の距離を十分小さくするよう \( \phi \) をとりなおし、点と点の間を適当に補完することで \( \mathcal{Q} \) の上に経路を誘導できる。
+            によって帰納的に \( \mathcal{Q} \) 上の点列 \( ( Q(t) )_{t=0}^\infty \) を誘導できる。
+            明らかに \( \mathcal{Q} \) の上に距離関数 \( \mathcal{Q} \otimes \mathcal{Q} \rightarrow \textbf{R}_{\geq 0} \) を定義できる。
+            そこで \( \phi \) をとりなおして距離関数で測った点と点の間の距離を十分小さくなるようにし、点と点の間を適当に補完すれば、 \( \mathcal{Q} \) の上に経路を誘導できる。
             点列あるいは経路の高々不可算無限のパラメータを<span class="new-word">時刻（time）</span>、あるいは素朴に<span class="new-word">時間（time）</span>と呼ぶ。
         </p>
+
+        <div class="theorem-tile">
+            <div class="title">コラム：時間の定義</div>
+            <p>
+                　時間とは何か、という問いは実に哲学的で魅力的あり、長年多くの人々の興味を惹いてきた。
+                ところが現代においては、時間とはその単位が極めてドライに定義されている。
+                すなわち、"秒（記号は \( \mathrm{s} \) ）は、セシウム133原子の摂動を受けない基底状態の超微細構造遷移周波数を単位 \( \mathrm{s}^{-1} \) で表したときに、その数値を9,192,631,770と定める"ことによって定義される。
+                簡単に言えば、宇宙のどこでも不変である原子の状態の変化によって時間を定義している。
+            </p>
+        </div>
+
 
 
         <p>
