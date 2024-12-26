@@ -144,7 +144,7 @@ p {
 .comment-box:before,.comment-box:after{ 
     content:'';
     width: 20px;
-    height: 30px;
+    height: 50px;
     position: absolute;
     display: inline-block;
 }
