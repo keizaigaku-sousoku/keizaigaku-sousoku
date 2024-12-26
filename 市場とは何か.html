@@ -21,7 +21,8 @@
             <h3 class="part-title">目次</h3>
             <a href="#section1">市場の3種類の定義</a>
             <a href="#section2">市場参加者・時刻</a>
-            <a href="#section3">目的関数</a>
+            <a href="#section3">貨幣</a>
+            <a href="#section4">目的関数</a>
         </div>
     </div>
 
@@ -47,14 +48,14 @@
         <p>
             　大雑把に言えば、"市場"とは"多くのプレイヤーがモノを交換するための舞台"である。
             そこでまず"プレイヤー"の全体を表すため、任意の高々可算無限の集合 \( \mathcal{P} \subset \textbf{Z} \)をとり、この元を<span class="new-word">市場参加者（market participant）</span>と呼ぶ。
-            次に"モノ"を表すため、添字集合として任意の高々可算無限の集合 \( \mathcal{G} \subset \textbf{Z} \) をとり、この元を差し当たり<span class="new-word">モノ（thing）</span>と呼ぶ。
+            次に"モノ"を表すため、添字集合として任意の高々可算無限の集合 \( \mathcal{G} \subset \textbf{Z} \) をとり、この元を<span class="new-word">モノ（thing）</span>と呼ぶ。
             任意の市場参加者 \( p \in \mathcal{P} \) に対して、 写像
             \[
                 Q^p : \mathcal{G} \ni g \mapsto Q_g^p \in \textbf{R}
             \]
-            を定め、これを \( p \) の<span class="new-word">状態（state）</span>と呼ぶ。
-            ここで \( Q_g^p \) を"市場参加者 \( p \) がモノ \( g \) を保有する量"と解釈すれば、状態は彼が何をどれくらい保有するかを表す。
-            また
+            を定め、これを \( p \) の<span class="new-word">状態（state）</span>、像 \( Q_g^p \) を \( p \) による \( g \) の<span class="new-word">保有量（holding）</span>と呼ぶ。
+            またこのとき \( p \) は \( g \) を \( Q_g^p \) だけ<span class="new-word">保有する（holds）</span>と表現する。
+            明らかに
             \[
                 Q_g := \sum_{p \in \mathcal{P}} Q_g^p
             \]
@@ -94,9 +95,15 @@
 
     </section>
     <section id="section3">
+        <h4>貨幣</h4>
+        <p>
+            プレイヤーがモノを
+        </p>
+    </section>
+    <section id="section4">
         <h4>目的関数</h4>
         <p>
-            あ
+            上述に比べて少し精度を上げて言えば、"市場"とは"多くのプレイヤーがモノを"
         </p>
     </section>
 
