@@ -137,6 +137,34 @@ p {
     transition: 0.3s;
 }
 
+.comment-box {
+    position: relative;
+    padding:0.25em 1em;
+}
+.comment-box:before,.comment-box:after{ 
+    content:'';
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    display: inline-block;
+}
+.comment-box:before{
+    border-left: solid 1px rgb(0,91,148);
+    border-top: solid 1px rgb(0,91,148);
+    top:0;
+    left: 0;
+}
+.comment-box:after{
+    border-right: solid 1px rgb(0,91,148);
+    border-bottom: solid 1px rbg(0,91,148);
+    bottom:0;
+    right: 0;
+}
+.comment-box p {
+    margin: 0; 
+    padding: 0;
+}
+
 h2 {
     color: white;
 }
