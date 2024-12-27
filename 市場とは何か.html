@@ -78,6 +78,7 @@
             そこで \( \phi \) をとりなおして距離関数で測った点と点の間の距離を十分小さくなるようにし、さらに点と点の間を適当に補完すれば、 \( \mathcal{Q} \) 上に経路が定まる。
             点列あるいは経路の高々非可算無限のパラメータを<span class="new-word">時刻（time）</span>、あるいは素朴に<span class="new-word">時間（time）</span>と呼ぶ。
             また時刻を引数とする任意の関数を<span class="new-word">時系列（time series）</span>と呼ぶ。
+            なお先の \( ( \mathcal{P}, \mathcal{G}, \mathcal{Q} \rightarrow \mathcal{Q} ) \) を \( ( \mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi ) \) と表すと便利である。
         </p>
 
         <div class="comment-box">
@@ -130,11 +131,11 @@
             任意に \( \mathcal{Q} \) 上の点列あるいは経路 \( \gamma := ( Q(t) )_t \) をとって固定する。
             もし任意の市場参加者 \( p \in \mathcal{P} \) と \( \gamma \) の対 \( ( p, \gamma ) \) を" \( p \) が \( \gamma \) を知っている"と解釈すれば、彼は状態の変化をすべて知っていることになる。
             しかしこれは"市場"というものを構成する上で非現実的である。
-            そこで任意の時刻 \( \tau \) において \( \gamma \) をその部分（点列であれば部分列、経路であれば部分集合）にうつす写像 \( \pi_{\tau}^p \) を定め、これを \( p \) の \( \tau \) における<span class="new-word">情報収集（information gathering）</span>あるいは<span class="new-word">調査（research）</span>と呼ぶ。
-            また像 \( \pi_\tau^p( \gamma ) \) を \( p \) が \( \tau \) において \( \gamma \) から得る<span class="new-word">情報（information）</span>と呼ぶ。
-            さらに対 \( (p, \pi_\tau^p( \gamma ) ) \) を" \( p \) が \( \tau \) において \( \pi_\tau^p( \gamma ) \) を知っている"と解釈する。
-            市場参加者たちの \( \tau \) における情報収集を \( \pi_\tau := ( \pi_\tau^p )_{p \in \mathcal{P}} \) とおき、その時系列を \( \pi := ( \pi_\tau )_\tau \) とおく。
-            市場参加者たちにすべての情報を知ることはできず、また知ることのできる情報は時刻によって変化することを課すならば、"市場"とは \( ( \mathcal{P}, \mathcal{G}, \phi, \pi ) \) のことである。
+            そこで任意の時刻 \( u \) において \( \gamma \) をその部分（点列であれば部分列、経路であれば部分集合）にうつす写像 \( \pi_u^p \) を定め、これを \( p \) の \( u \) における<span class="new-word">情報収集（information gathering）</span>あるいは<span class="new-word">調査（research）</span>と呼ぶ。
+            また像 \( \pi_u^p( \gamma ) \) を \( p \) が \( u \) において \( \gamma \) から得る<span class="new-word">情報（information）</span>と呼ぶ。
+            さらに対 \( (p, \pi_u^p( \gamma ) ) \) を" \( p \) が \( u \) において \( \pi_u^p( \gamma ) \) を知っている"と解釈する。
+            市場参加者たちの \( u \) における情報収集を \( \pi_u := ( \pi_u^p )_{p \in \mathcal{P}} \) とおき、その時系列を \( \pi := ( \pi_u )_u \) とおく。
+            市場参加者たちにすべての情報を知ることはできず、また知ることのできる情報は時刻によって変化することを課すならば、"市場"とは \( ( \mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi, \pi ) \) のことである。
         </p>
     </section>
     <section id="section5">
@@ -166,10 +167,10 @@
         <h4>市場の条件</h4>
         <p>
             　以上で"市場"を定義する準備が整った。
-            記号はすでに定義したものをそのまま使うとし、数学的対象の列 \( (\mathcal{P}, \mathcal{G}, \phi, \pi, f ) \) が<span class="new-word">市場（market）</span>であるとは、以下の条件を満たすことをいう。
+            記号はすでに定義したものをそのまま使うとし、数学的対象の列 \( (\mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi, \pi, f ) \) が<span class="new-word">市場（market）</span>であるとは、以下の条件を満たすことをいう。
         </p>
         <p>
-            (M1) \( \forall g \in \mathcal{G} \backslash \mathcal{M};\ \ \ a
+            (M1) \( \forall g \in \mathcal{G} \backslash \mathcal{M};\ \ \ a \)
         </p>
     </section>
 
