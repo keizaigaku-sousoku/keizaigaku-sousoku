@@ -170,7 +170,9 @@
             記号はすでに定義したものをそのまま使うとし、数学的対象の列 \( (\mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi, \pi, f ) \) が<span class="new-word">市場（market）</span>であるとは、以下の条件を満たすことをいう。
         </p>
         <p>
-            (M1) \( \forall g \in \mathcal{G} \backslash \mathcal{M};\ \ \ a \)
+            (M1) \( \forall g \in \mathcal{G} \backslash \mathcal{M};\ \ \ \phi(Q)_g=Q_g \)
+            (M2) \( \forall p \in \mathcal{P}, t, u;\ \ \ t<u \Longrightarrow (Q(\tau))_{\tau\leq t}=\pi_t^p((Q(\tau))_{\tau\leq u}) \)
+            (M3) \( t<u \land \phi(Q(t))=Q(u) \Longrightarrow f_t^p(Q^p(t)|\pi_t^p(\gamma)) < f_t^p(Q^p(u)|\pi_u^p(\gamma)) \)
         </p>
     </section>
 
