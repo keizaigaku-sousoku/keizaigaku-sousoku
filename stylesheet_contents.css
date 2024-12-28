@@ -165,6 +165,11 @@ p {
     padding: 10px;
 }
 
+.math-container {
+    overflow-x: auto; /* 横スクロールを許可 */
+    white-space: nowrap; /* 数式が折り返されないようにする */
+}
+
 h2 {
     color: white;
 }
