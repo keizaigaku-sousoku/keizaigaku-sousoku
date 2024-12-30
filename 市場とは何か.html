@@ -219,7 +219,7 @@
         <div class="theorem-tile">
             <div class="title">命題：市場の指数関数的な発展</div>
             <p>
-                もし公的機関がつねに目的を達成すれば、彼の調査して得るモノの総量は幾何級数的（あるいは指数関数的）に変化する。
+                もし公的機関がつねに目的を達成すれば、彼の調査して得るモノの総量は幾何級数的あるいは指数関数的に変化する。
             </p>
         </div>
             
@@ -228,26 +228,26 @@
             <p>
                 まず \( ( Q_g(t) )_t \) が点列のとき、平均変化率は
                 \[
-                    \tilde{Q}(t)=\frac{Q(t+1)-Q(t)}{1}=Q(t+1)-Q(t)
+                    \tilde{Q}_g(t)=\frac{Q_g(t+1)-Q_g(t)}{1}=Q_g(t+1)-Q_g(t)
                 \]
                 のように点列の差に他ならない。
                 よって公的機関がみる比率は
                 \[
-                    \frac{Q(t+1)-Q(t)}{Q(t)}=\frac{Q(t+1)}{Q(t)}+1
+                    \frac{Q_g(t+1)-Q_g(t)}{Q_g(t)}=\frac{Q_g(t+1)}{Q_g(t)}-1
                 \]
                 であり、これがもし一定値 \( k \in \textbf{R} \) をとるならば
                 \[
-                    \frac{Q(t+1)}{Q(t)}+1=k \Longleftrightarrow Q(t+1)=(k-1)Q(t)
+                    \frac{Q_g(t+1)}{Q_g(t)}-1=k \Longleftrightarrow Q_g(t+1)=(1+k)Q_g(t)
                 \]
-                のように公比 \( k-1 \) の等比数列の漸化式を得る。
-                次に \( ( Q_g(t) )_t \) が経路のとき、平均変化率は
+                のように公比 \( 1+k \) の等比数列の漸化式を得る。
+                次に \( ( Q_g(t) )_t \) が経路のとき、平均変化率は任意の \( h \in \textbf{R} \) を用いて
                 \[
-                    \tilde{Q}(t)=\frac{Q(t+h)-Q(t)}{h} \rightarrow \frac{\mathrm{d}Q}{\mathrm{d}t}
+                    \tilde{Q}_g(t)=\frac{Q_g(t+h)-Q_g(t)}{h} \rightarrow \frac{\mathrm{d}Q_g}{\mathrm{d}t}
                 \]
                 のように導関数の極限をもつ。
                 よってもし公的機関がみる比率が一定値 \( k \in \textbf{R} \) をとるならば
                 \[
-                        \cdot\frac{\mathrm{d}Q}{\mathrm{d}t} = k Q(t)
+                        \cdot\frac{\mathrm{d}Q_g}{\mathrm{d}t} = k Q_g(t)
                 のような一般解が指数関数の微分方程式を得る。
             </p>
             <div class="end-symbol">■</div>
