@@ -79,7 +79,7 @@
             明らかに \( \mathcal{Q} \) 上に距離関数 \( \mathcal{Q} \otimes \mathcal{Q} \rightarrow \textbf{R}_{\geq 0} \) を定義できる。
             そこで \( \phi \) をとりなおして距離関数で測った点と点の間の距離を十分小さくなるようにし、さらに点と点の間を適当に補完すれば、 \( \mathcal{Q} \) 上に経路が定まる。
             発展作用素 \( \phi \) によって生成される点列あるいは経路全体の集合を \( \Gamma_\phi \subset \mathcal{Q} \) とおく。
-            また点列あるいは経路の高々非可算無限のパラメータを<span class="new-word">時刻（time）</span>、あるいは素朴に<span class="new-word">時間（time）</span>と呼ぶ。
+            また点列あるいは経路の高々非可算無限のパラメータを<span class="new-word">時刻（time）</span>と呼び、時刻と時刻の差あるいは時刻そのものを素朴に<span class="new-word">時間（time）</span>と呼ぶ。
             さらに時刻を引数とする任意の関数を<span class="new-word">時系列（time series）</span>と呼ぶ。
         </p>
 
@@ -200,9 +200,19 @@
         <h4>投資家・企業・公的機関</h4>
         <p>
             　目的関数はかなりの任意性があり、適当に条件を付けることで市場参加者を分類できる。
-            ある市場参加者が得る情報 \( \pi_t^p(\gamma) \in \pi_t^p(\Gamma_\phi) \) が複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
-            すなわち、そのモノたちの集合を \( \mathcal{G}^\prime \subset \mathcal{G} \) とおいたとき \( \pi_t^p(\gamma) = ( Q_g (\tau) )_{g\in\mathcal{G}^\prime,\tau\leq t} \) 。
-            
+            ある市場参加者が得る情報 \( \pi_t^p(\gamma^\mathrm{G}) \in \pi_t^p(\Gamma_\phi) \) が複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
+            すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{G} \subset \mathcal{G} \) とおいたとき \( \pi_t^p(\gamma^\mathrm{G}) = ( Q_g (\tau) )_{g\in\mathcal{G}^\mathrm{G},\tau\leq t} \) である。
+            （これは時系列 \( (Q_g (\tau) )_{\tau &gt; t} \) を含まないので(M2)を満たす。）
+            ここで \( Q_g(\tau) \) は時刻の関数であり、任意に固定した時間での平均変化率 \( \tilde{Q}_g(\tau) \) の時系列を生成できる。
+            市場参加者の中で、比率 \( \tilde{Q}_g(\tau) / Q_g(\tau) \) の時系列の分散（あるいは標準偏差）を最小化することで目的関数の値が増加する者を<span class="new-word">公的機関（public institution）</span>と呼ぶ。
+            言い換えれば、公的機関の目的は "いくつかのモノの総量を持続的かつ安定的に変化させること" である。
+            またある市場参加者が得る情報 \( \pi_t^p(\gamma^\mathrm{C}) \in \pi_t^p(\Gamma_\phi) \) が複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
+            すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{C} \subset \mathcal{G} \) とおいたとき \( \pi_t^p(\gamma^\mathrm{C}) = ( Q_g (\tau) )_{g\in\mathcal{G}^\mathrm{C},\tau\leq t} \) である。
+            市場参加者の中で、この情報に基づいた貨幣の保有量の変化を最大化することで目的関数の値が増加する者を<span class="new-word">企業（corporation, company）</span>と呼ぶ。
+            言い換えれば、企業の目的は "モノの売り買いを通じて得た貨幣と失った貨幣の差を最大化すること" である。
+            さらに市場参加者であって公的機関でも企業でもない者を<span class="new-word">投資家（investor）</span>と呼ぶ。
+            投資家にとっての目的関数をとくに<span class="new-word">効用関数（utility function）</span>、それがとる値を<span class="new-word">効用（utility）</span>と呼ぶ。
+            言い換えれば、投資家の目的は "効用を最大化すること" である。
         </p>
     </section>
 
