@@ -167,6 +167,7 @@ p {
 
 .math-container {
     overflow-x: scroll; /* 横スクロールを許可 */
+    overflow-y: hidden;
     white-space: nowrap; /* 数式が折り返されないようにする */
 }
 
