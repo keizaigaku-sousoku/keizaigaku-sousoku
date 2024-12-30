@@ -216,6 +216,43 @@
             投資家にとっての目的関数をとくに<span class="new-word">効用関数（utility function）</span>、それがとる値を<span class="new-word">効用（utility）</span>と呼ぶ。
             言い換えれば、投資家の目的は "効用の最大化" である。
         </p>
+        <div class="theorem-tile">
+            <div class="title">命題：市場の指数関数的な発展</div>
+            <p>
+                もし公的機関がつねに目的を達成すれば、彼の調査して得るモノの総量は幾何級数的（あるいは指数関数的）に変化する。
+            </p>
+        </div>
+            
+        <div class="proof">
+            <div class="title">証明</div>
+            <p>
+                まず \( ( Q_g(t) )_t \) が点列のとき、平均変化率は
+                \[
+                    \tilde{Q}(t)=\frac{Q(t+1)-Q(t)}{1}=Q(t+1)-Q(t)
+                \]
+                のように点列の差に他ならない。
+                よって公的機関がみる比率は
+                \[
+                    \frac{Q(t+1)-Q(t)}{Q(t)}=\frac{Q(t+1)}{Q(t)}+1
+                \]
+                であり、これがもし一定値 \( k \in \textbf{R} \) をとるならば
+                \[
+                    \frac{Q(t+1)}{Q(t)}+1=k \Longleftrightarrow Q(t+1)=(k-1)Q(t)
+                \]
+                のように公比 \( k-1 \) の等比数列の漸化式を得る。
+                次に \( ( Q_g(t) )_t \) が経路のとき、平均変化率は
+                \[
+                    \tilde{Q}(t)=\frac{Q(t+h)-Q(t)}{h} \rightarrow \frac{\mathrm{d}Q}{\mathrm{d}t}
+                \]
+                のように導関数の極限をもつ。
+                よってもし公的機関がみる比率が一定値 \( k \in \textbf{R} \) をとるならば
+                \[
+                        \cdot\frac{\mathrm{d}Q}{\mathrm{d}t} = k Q(t)
+                のような一般解が指数関数の微分方程式を得る。
+            </p>
+            <div class="end-symbol">■</div>
+        </div>
+
         <p>
             　定義から明らかなように、公的機関、企業、投資家によって市場参加者は分類される。
             すなわち、公的機関たちを \( G \)、企業たちを \( C \)、投資家たちを \( I \) とおくと、市場参加者たち \( \mathcal{P} \) は
@@ -227,22 +264,6 @@
             公的機関の目的と企業の目的は必ずしも矛盾しない。
         </p>
     </section>
-
-    <!-- 数式の表示 -->
-    <p>数式の例: <span id="formula"></span></p>
-
-    <!-- 定理タイル -->
-    <div class="theorem-tile">
-        <div class="title">Theorem 1.1 (Pythagorean Theorem)</div>
-        <p>For a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides:</p>
-        <p>\[ a^2 + b^2 = c^2 \]</p>
-    </div>
-        
-    <div class="proof">
-        <div class="title">証明</div>
-        <p>ここに証明内容を記述します。証明内容が複数行になる場合でも問題ありません。</p>
-        <div class="end-symbol">■</div>
-    </div>
         
     </main>
 
