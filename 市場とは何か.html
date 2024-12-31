@@ -160,7 +160,7 @@
         </p>
         <p>
             　必要な定義は済ませているので、定式化は直線的である。
-            まず任意の市場参加者 \( p \in \mathcal{P} \) 、時刻 \( t \) 、状態 \( Q^p \) 、情報 \( \pi_t^p( \gamma ) \in \pi_t^p(\Gamma_\phi) \) に対して、写像
+            まず任意の市場参加者 \( p \in \mathcal{P} \) 、時刻 \( t \) 、状態 \( Q^p \) 、点列あるいは経路 \( \gamma \in \Gamma_\phi \) 、情報 \( \pi_t^p( \gamma ) \) に対して、写像
             \[
                 f_t^p : ( Q^p, \pi_t^p( \gamma ) ) \mapsto f_t^p ( Q^p | \pi_t^p( \gamma ) ) \in \textbf{R}
             \] 
@@ -204,7 +204,7 @@
         <h4>公的機関・企業・投資家</h4>
         <p>
             　目的関数にはかなりの任意性があり、適当に条件を付けることで市場参加者を分類できる。
-            ある市場参加者が得る情報 \( \pi_t^p(\gamma^\mathrm{G}) \in \pi_t^p(\Gamma_\phi) \) を複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
+            ある市場参加者が得る情報 \( \pi_t^p(\gamma^\mathrm{G}) \) 、\(\gamma^\mathrm{G} \in \Gamma_\phi \) を複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
             すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{G} \subset \mathcal{G} \) とおいたとき
             \[
                 \pi_t^p(\gamma^\mathrm{G}) = ( Q_g (s) )_{g\in\mathcal{G}^\mathrm{G},s\leq t}
@@ -213,7 +213,7 @@
             ここで \( Q_g(s) \) は時刻の関数であり、任意に固定した時間での平均変化率 \( \tilde{Q}_g(s) \) の時系列を生成する。
             市場参加者の中で、比率 \( \tilde{Q}_g(s) / Q_g(s) \) の時系列の分散（あるいは標準偏差）を最小化することで目的関数の値が増加する者を<span class="new-word">公的機関（public institution）</span>と呼ぶ。
             言い換えれば、公的機関の目的は "いくつかのモノの総量を持続的かつ安定的に変化させること" である。
-            またある市場参加者が得る情報 \( \pi_t^{p^\prime}(\gamma^\mathrm{C}) \in \pi_t^{p^\prime}(\Gamma_\phi) \) を複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
+            またある市場参加者が得る情報 \( \pi_t^{p^\prime}(\gamma^\mathrm{C}) \) 、\( \gamma^\mathrm{C} \in \Gamma_\phi \) を複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
             すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{C} \subset \mathcal{G} \) とおいたとき
             \[
                 \pi_t^{p^\prime}(\gamma^\mathrm{C}) = ( Q_g (s) )_{g\in\mathcal{G}^\mathrm{C},s\leq t}
