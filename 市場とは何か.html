@@ -80,10 +80,10 @@
             \[
                 ^\forall t \in \textbf{Z}_{\geq 1};\ \ \ Q(t)=\phi(Q(t-1))
             \]
-            によって帰納的に \( \mathcal{Q} \) 上の点列 \( ( Q(t) )_{t=0}^\infty \) が定まる。
+            によって帰納的に点列 \( ( Q(t) )_{t=0}^\infty \in 2^\mathcal{Q} \) が定まる。
             明らかに \( \mathcal{Q} \) 上に距離関数 \( \mathcal{Q} \otimes \mathcal{Q} \rightarrow \textbf{R}_{\geq 0} \) を定義できる。
             そこで \( \phi \) をとりなおして距離関数で測った点と点の間の距離を十分小さくなるようにし、さらに点と点の間を適当に補完すれば、 \( \mathcal{Q} \) 上に経路が定まる。
-            発展作用素 \( \phi \) によって生成される点列あるいは経路全体の集合を \( \Gamma_\phi \) とおく。
+            発展作用素 \( \phi \) によって生成される点列あるいは経路全体の集合を \( \Gamma_\phi \subset 2^\mathcal{Q} \) とおく。
             また点列あるいは経路の高々非可算無限のパラメータを<span class="new-word">時刻（time）</span>と呼び、時刻と時刻の差あるいは時刻そのものを素朴に<span class="new-word">時間（time）</span>と呼ぶ。
             さらに時刻を引数とする任意の関数を<span class="new-word">時系列（time series）</span>と呼ぶ。
         </p>
@@ -110,7 +110,6 @@
         <p>
             　市場参加者がモノを交換するという設定を考えるにあたり、いわゆる "お金" があると便利である。
             そこでまずモノの中のいくつかに対して特別に<span class="new-word">貨幣（money）</span>という名前をつける。
-            <!--また貨幣の集合を \( \mathcal{M} \subset \mathcal{G} \) とおく。-->
             すると例えばある市場参加者がモノ1を減らしてモノ2を増やすという状態の変化があったとき、モノ1が貨幣であれば、変化を "彼は貨幣の対価としてモノ2を得た" と解釈できる。
             市場参加者が任意の1つの貨幣を減らして任意の別のモノを増やすことを、彼の<span class="new-word">買い（buy）</span>と呼ぶ。
             逆に彼が任意の1つの貨幣を増やして任意の別のモノを減らすことを、彼の<span class="new-word">売り（sell）</span>と呼ぶ。
@@ -138,7 +137,11 @@
             任意に点列あるいは経路 \( \gamma = ( Q(t) )_t \in \Gamma_\phi \) をとって固定する。
             もし任意の市場参加者 \( p \in \mathcal{P} \) と \( \gamma \) の対 \( ( p, \gamma ) \) を " \( p \) が \( \gamma \) を知っている" と解釈すれば、彼は状態の変化をすべて知っていることになる。
             しかしこれは "市場" というものを構成する上で非現実的である。
-            そこで任意の時刻 \( s \) において \( \gamma \) をその部分（点列であれば部分列、経路であれば部分集合）にうつす写像 \( \pi_s^p \) を定め、これを \( p \) の \( s \) における<span class="new-word">情報収集（information gathering）</span>あるいは<span class="new-word">調査（research）</span>と呼ぶ。
+            そこで任意の時刻 \( s \) において \( \gamma \) をその部分（点列であれば部分列、経路であれば部分集合）にうつす写像
+            \[
+                \pi_s^p : \Gamma_\phi \ni \gamma \mapsto \pi_s^p(\gamma) \in 2^\gamma \subset 2^\mathcal{Q}
+            \]
+            を定め、これを \( p \) の \( s \) における<span class="new-word">情報収集（information gathering）</span>あるいは<span class="new-word">調査（research）</span>と呼ぶ。
             また像 \( \pi_s^p( \gamma ) \) を \( p \) が \( s \) において \( \gamma \) から得る<span class="new-word">情報（information）</span>と呼ぶ。
             さらに対 \( (p, \pi_s^p( \gamma ) ) \) を " \( p \) が \( s \) において \( \pi_s^p( \gamma ) \) を知っている" と解釈する。
             市場参加者たちの \( s \) における情報収集を \( \pi_s := ( \pi_s^p )_{p \in \mathcal{P}} \) とおき、その時系列を \( \pi := ( \pi_s )_s \) とおく。
