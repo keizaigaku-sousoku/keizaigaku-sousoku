@@ -205,13 +205,22 @@
         <p>
             　目的関数にはかなりの任意性があり、適当に条件を付けることで市場参加者を分類できる。
             ある市場参加者が得る情報 \( \pi_t^p(\gamma^\mathrm{G}) \in \pi_t^p(\Gamma_\phi) \) が複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
-            すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{G} \subset \mathcal{G} \) とおいたとき \( \pi_t^p(\gamma^\mathrm{G}) = ( Q_g (\tau) )_{g\in\mathcal{G}^\mathrm{G},\tau\leq t} \) である。
+            すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{G} \subset \mathcal{G} \) とおいたとき
+            \[
+                \pi_t^p(\gamma^\mathrm{G}) = ( Q_g (\tau) )_{g\in\mathcal{G}^\mathrm{G},\tau\leq t}
+            \]
+            である。
             （これは時系列 \( (Q_g (\tau) )_{\tau &gt; t} \) を含まないので(M2)を満たす。）
             ここで \( Q_g(\tau) \) は時刻の関数であり、任意に固定した時間での平均変化率 \( \tilde{Q}_g(\tau) \) の時系列を生成する。
             市場参加者の中で、比率 \( \tilde{Q}_g(\tau) / Q_g(\tau) \) の時系列の分散（あるいは標準偏差）を最小化することで目的関数の値が増加する者を<span class="new-word">公的機関（public institution）</span>と呼ぶ。
             言い換えれば、公的機関の目的は "いくつかのモノの総量を持続的かつ安定的に変化させること" である。
             またある市場参加者が得る情報 \( \pi_t^{p^\prime}(\gamma^\mathrm{C}) \in \pi_t^{p^\prime}(\Gamma_\phi) \) が複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
-            すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{C} \subset \mathcal{G} \) とおいたとき \( \pi_t^{p^\prime}(\gamma^\mathrm{C}) = ( Q_g (\tau) )_{g\in\mathcal{G}^\mathrm{C},\tau\leq t} \) である。
+            すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{C} \subset \mathcal{G} \) とおいたとき
+            \[
+                \pi_t^{p^\prime}(\gamma^\mathrm{C}) = ( Q_g (\tau) )_{g\in\mathcal{G}^\mathrm{C},\tau\leq t}
+            \]
+            である。
+            （これは時系列 \( (Q_g (\tau) )_{\tau &gt; t} \) を含まないので(M2)を満たす。）
             市場参加者の中で、この情報に基づいた貨幣の保有量の変化を最大化することで目的関数の値が増加する者を<span class="new-word">企業（corporation, company）</span>と呼ぶ。
             企業がモノの売り買いを通じて得た貨幣と失った貨幣の差額を<span class="new-word">利潤（profit）</span>と呼ぶことにすれば、企業の目的は "利潤の最大化" である。
             さらに市場参加者であって公的機関でも企業でもない者を<span class="new-word">投資家（investor）</span>と呼ぶ。
