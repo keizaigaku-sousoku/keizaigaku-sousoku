@@ -139,9 +139,15 @@
             しかしこれは "市場" というものを構成する上で非現実的である。
             そこで任意の時刻 \( s \) において \( \gamma \) をその部分（点列であれば部分列、経路であれば部分集合）にうつす写像
             \[
-                \pi_s^p : \Gamma_\phi \ni \gamma \mapsto \pi_s^p(\gamma) \in 2^\gamma \subset 2^\mathcal{Q}
+                \rho_s^p : \Gamma_\phi \ni \gamma \mapsto \rho_s^p(\gamma) \in 2^\gamma \subset 2^\mathcal{Q}
             \]
-            を定め、これを \( p \) の \( s \) における<span class="new-word">情報収集（information gathering）</span>あるいは<span class="new-word">調査（research）</span>と呼ぶ。
+            を定め、これを \( p \) の \( s \) における<span class="new-word">調査（research）</span>と呼ぶ。
+            調査で得た結果に対する任意の数学的操作を \( o_s^p \) とおき、これを \( p \) の \( s \) における<span class="new-word">操作（operation）</span>と呼ぶ。
+            これら写像を合成した
+            \[
+                \pi_s^p := o_s^p \circ \rho_s^p
+            \]
+            を \( p \) の \( s \) における<span class="new-word">情報収集（information gathering）</span>と呼ぶ。
             また像 \( \pi_s^p( \gamma ) \) を \( p \) が \( s \) において \( \gamma \) から得る<span class="new-word">情報（information）</span>と呼ぶ。
             さらに対 \( (p, \pi_s^p( \gamma ) ) \) を " \( p \) が \( s \) において \( \pi_s^p( \gamma ) \) を知っている" と解釈する。
             市場参加者たちの \( s \) における情報収集を \( \pi_s := ( \pi_s^p )_{p \in \mathcal{P}} \) とおき、その時系列を \( \pi := ( \pi_s )_s \) とおく。
