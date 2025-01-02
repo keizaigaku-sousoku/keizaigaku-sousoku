@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>裁定の基礎</title>
+    <link rel="stylesheet" href="../stylesheet_contents.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
+    <!-- ヘッダー部分 -->
+    <header>
+        <h2>裁定の基礎</h2>
+    </header>
+
+    <br>
+    <br>
+    <div style="text-align: center">
+        楽して儲けられる上手い話は実在するのだろうか
+    </div>
+
+    <!-- ボディ部分 -->
+    <div class="toc-container">
+        <!-- パートA -->
+        <div class="part">
+            <h3 class="part-title">目次</h3>
+            <a href="#section1">裁定の定義</a>
+            <a href="#section2">諸命題の紹介</a>
+            <a href="#section3">裁定の役割</a>
+        </div>
+    </div>
+
+    <main>
+    <section id="section1">
+        <h4>裁定の定義</h4>
+        <p>
+            　世の中で "市場" （念のため、読みは "いちば" でなく "しじょう" ）と言ったとき、その言葉はおよそ３種類の方法によって定義されている。
+            1種類目は最も実践的な定義であり、"ほら、東京証券取引所やニューヨーク証券取引所が実際に存在しているじゃないか" というものである。
+            実務上はこれで事足りることがほとんどであり、またこの定義がいい加減だとか間違っているとかいうことはない。
+            しかし少し真面目に議論をしようとなると、この定義はいささか心許ない。
+            2種類目は上記の厳密な定式化を試みる定義であり、金融工学という学問を基礎付けるものである。
+            興味本位でその様子を覗いてみたいならば、例えば有名な "B. Øksendal, 確率微分方程式, 丸善出版" の最後のあたりの章がコンパクトにまとまっているので参照するとよい。
+            （個人的には分かりやすい本であると思わないが、金融工学を専攻するならば何とか読みこなすべき1冊であろう。）
+            ただこの定義は厳密さを重視しすぎていて現実をそれほどよく反映しておらず、一部のマニアが数式をこねくり回して議論するためのお膳立てという感じは否めない。
+            3種類目は上記以外の雑多なその他である。
+            分かりやすさや厳密さは様々であり、言い換えれば多様な流儀が存在する。
+            以下ではその中に1つの新たな流儀を加えることを試みる。
+        </p>
+    </section>
+
+        <div class="theorem-tile">
+            <div class="title">命題：市場の指数関数的な発展</div>
+            <p>
+                もし公的機関がつねに目的を達成すれば、彼の調査して得るモノの総量は幾何級数的あるいは指数関数的に変化する。
+            </p>
+        </div>            
+        <div class="proof">
+            <div class="title">証明</div>
+            <p>
+                まず \( ( Q_g(t) )_t \) が点列のとき、平均変化率は
+                <div class="math-container">
+                    \[
+                        \tilde{Q}_g(t)=\frac{Q_g(t+1)-Q_g(t)}{1}=Q_g(t+1)-Q_g(t)
+                    \]
+                </div>
+                のように点列の差に他ならない。
+                （時刻を \( t \) と \( t+1 \) のように間隔を1としなくても議論は同様である。）
+                よって公的機関がみる比率は
+                \[
+                    \frac{Q_g(t+1)-Q_g(t)}{Q_g(t)}=\frac{Q_g(t+1)}{Q_g(t)}-1
+                \]
+                であり、これがもし一定値 \( k \in \textbf{R} \) をとるならば
+                <div class="math-container">
+                    \[
+                        \frac{Q_g(t+1)}{Q_g(t)}-1=k \Longleftrightarrow Q_g(t+1)=(1+k)Q_g(t)
+                    \]
+                </div>
+                のように公比 \( 1+k \) の等比数列の漸化式を得る。
+                したがって \( ( Q_g(t) )_t \) は幾何級数的に変化する。
+                次に \( ( Q_g(t) )_t \) が経路のとき、平均変化率は任意の \( h \in \textbf{R} \) を用いて
+                \[
+                    \tilde{Q}_g(t)=\frac{Q_g(t+h)-Q_g(t)}{h} \rightarrow \frac{\mathrm{d}Q_g}{\mathrm{d}t}
+                \]
+                のように導関数の極限をもつ。
+                （極限をとらなくても振る舞いは極限をとった場合と同様である。）
+                よってもし公的機関がみる比率が一定値 \( k \in \textbf{R} \) をとるならば
+                \[
+                        \frac{\mathrm{d}Q_g}{\mathrm{d}t} = k Q_g(t)
+                \]
+                のような一般解が指数関数の微分方程式を得る。
+                したがって \( ( Q_g(t) )_t \) は指数関数的に変化する。
+            </p>
+            <div class="end-symbol">■</div>
+        </div>
+        
+    </main>
+
+</body>
+</html>
