@@ -30,8 +30,8 @@
             <a href="#section3">貨幣・売り買い・価格</a>
             <a href="#section4">情報・目的関数</a>
             <a href="#section5">市場の条件</a>
-            <a href="#section6">売値・買値</a>
-            <a href="#section7">公的機関・企業・投資家</a>
+            <a href="#section6">公的機関・企業・投資家</a>
+            <a href="#section7">売値・買値</a>
         </div>
     </div>
 
@@ -185,16 +185,17 @@
         </p>
         <p>
             <div class="math-container">
+                <!--
                 (M1) \( ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G};\ \ \ \phi(Q)_g=Q_g \) <br>
                 (M2) \( ^\forall p \in \mathcal{P}, ^\forall (Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow \pi_s^p((Q(t))_{t\leq s})=\pi_s^p((Q(t))_{t\leq u}) \) <br>
                 (M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow f_s^p(Q^p(s)|\pi_s^p(\gamma)) &lt; f_s^p(Q^p(u)|\pi_s^p(\gamma)) \) <br>
-                <!--
-                (M1) \( ^\forall p \in \mathcal{P}, ^\forall (Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow \pi_s^p((Q(t))_{t\leq s})=\pi_s^p((Q(t))_{t\leq u}) \) <br>
-                (M2) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow f_s^p(Q^p(s)|\pi_s^p(\gamma)) &lt; f_s^p(Q^p(u)|\pi_s^p(\gamma)) \) <br>
                 -->
+                (M1) \( ^\forall p \in \mathcal{P}, ^\forall (Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow \pi_s^p((Q(t))_{t\leq s})=\pi_s^p((Q(t))_{t\leq u}) \) <br>
+                (M2) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow f_s^p(Q^p(s)|\pi_s^p(\gamma)) &lt; f_s^p(Q^p(u)|\pi_s^p(\gamma)) \)
             </div>
         </p>
         <p>
+            <!--
             3つの条件にはそれぞれ明確な意味がある。
             まず (M1) は発展作用素によってモノの総量が市場において不変であること、またそれが有限であることを表し、\( \phi \) の条件である。
             市場は "多くのプレイヤーがモノを交換するための舞台" であるから、時刻の変化においてモノそれぞれの総量が不変であることは自然である。
@@ -208,7 +209,7 @@
             （そう見えるように発展作用素が定義される。）
             もし未来で目的関数の形が大きく変われば、現在決めた状態が未来において目的関数のとる値を小さくしてしまうこともある。
             例えば、現在はモノ1が大好きでそれをたくさん買ってみても、未来にモノ1をそれほど好きでなくなって損をした気分になることは、目的関数の関数形が変わったものとして表現される。
-            <!--
+            -->
             2つの条件にはそれぞれ明確な意味がある。
             まず (M1) は市場参加者が過去および現在の情報を得ることはあっても、未来の情報は得られないことを表し、\( \phi \) と \( \pi \) の条件である。
             この条件は発展作用素のパラメータとしてドライに定義されていた時刻に対して、不可逆性（あるいは時間の矢）を付与するものである。
@@ -219,18 +220,9 @@
             （そう見えるように発展作用素が定義される。）
             もし未来で目的関数の形が大きく変われば、現在決めた状態が未来において目的関数のとる値を小さくしてしまうこともある。
             例えば、現在はモノ1が大好きでそれをたくさん買ってみても、未来にモノ1をそれほど好きでなくなって損をした気分になることは、目的関数の関数形が変わったものとして表現される。
-            -->
         </p>
     </section>
     <section id="section6">
-        <h4>売値・買値</h4>
-        <p>
-            　市場参加者が売り買いをするにあたり、価格は交渉によって決まる。
-            (M3) から、例えば市場参加者がモノを売ろうとするとき、その時刻でそのモノが減って一定の貨幣が増えるならば目的関数は大きくなる。
-            
-        </p>
-    </section>
-    <section id="section7">
         <h4>公的機関・企業・投資家</h4>
         <p>
             　目的関数にはかなりの任意性があり、適当に条件を付けることで市場参加者を分類できる。
@@ -314,6 +306,15 @@
             公的機関の目的と企業の目的は必ずしも矛盾しない。
         </p>
     </section>
+    <section id="section7">
+        <h4>売値・買値</h4>
+        <p>
+            　市場参加者が売り買いをするにあたり、価格は交渉によって決まる。
+            (M3) から、例えば市場参加者がモノを売ろうとするとき、その時刻でそのモノが減って一定の貨幣が増えるならば目的関数は大きくなる。
+            
+        </p>
+    </section>
+
         
     </main>
 
