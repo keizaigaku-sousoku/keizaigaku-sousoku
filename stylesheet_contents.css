@@ -14,7 +14,7 @@ header {
 
 /* ボディ部分のスタイル */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'BizUDPGothic', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
     background-color: white;
     margin: 0;
     padding: 0;
