@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全資産</title>
+    <link rel="stylesheet" href="../stylesheet_contents.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
+    <!-- ヘッダー部分 -->
+    <header>
+        <h2>安全資産</h2>
+    </header>
+
+    <br>
+    <br>
+    <div style="text-align: center">
+        貨幣を課すという行為に対する絶対的な価値
+    </div>
+
+    <!-- ボディ部分 -->
+    <div class="toc-container">
+        <!-- パートA -->
+        <div class="part">
+            <h3 class="part-title">目次</h3>
+            <a href="#section1">政府への貸付</a>
+            <a href="#section2">リスク・フリー・レート</a>
+            <a href="#section3">裁定の応用</a>
+        </div>
+    </div>
+
+    <main>
+    <section id="section1">
+        <h4>政府への貸付</h4>
+        <p>
+        </p>
+    </section>
+    <section id="section2">
+        <h4>リスク・フリー・レート</h4>
+        <p>
+        </p>
+    </div>
+    <section id="section3">
+        <h4>裁定の応用</h4>
+        <p>
+            　市場が無裁定であるとき様々な命題が導かれるが、その中で最も重要なものの1つは、同様のモノは同じ価格で取引されるという主張である。
+            これは様々な議論において飛び道具のように用いられることが多く、また現実世界において人々が無意識のうちに思考に組み込んでいる経験的事実である。
+        </p>
+        <div class="theorem-tile">
+            <div class="title">命題：一物一価の法則</div>
+            <p>
+                市場が無裁定であるとして、任意の2つのモノあるいはモノのまとまりを取引できるとする。
+                また任意の市場参加者にとって、それぞれのモノの取引で目的関数の変化は等しいと仮定する。
+                このとき、それぞれのモノは同じ価格で取引される。
+            </p>
+        </div>            
+        <div class="proof">
+            <div class="title">証明</div>
+            <p>
+                任意のモノあるいはモノのまとまり \( g \) 、 \( g^\prime \in \mathcal{G} \) をとり、それぞれを価格 \( P \) 、 \( P^\prime \) で取引できるとする。
+                まず \( P > P^\prime \) であると仮定する。
+                このとき、ある市場参加者1が存在して \( g^\prime \) を価格 \( P^\prime \) で買い同時刻にそれを \( g \) として価格 \( P \) で売れる。
+                市場参加者たちは目的関数の変化が同じモノを区別しないので、元々 \( g \) を買おうとしていた市場参加者2は1から \( g^\prime \) を \( g \) として買える。
+                （元々 \( g \) を買おうとしていた2は元々彼に \( g \) を売ろうとしていた市場参加者3から素直に \( g \) を価格 \( P \) で買えるが、少なくとも2から \( g^\prime \) を買うという選択肢は否定されない。）
+                すると1は貨幣 \( P - P^\prime > 0 \) を獲得して裁定を行ったことになるが、これは無裁定に矛盾する。
+                また \( P < P^\prime \) であると仮定しても議論は同様である。
+            </p>
+            <div class="end-symbol">■</div>
+        </div>
+    </section>        
+
+    
+    </main>
+
+</body>
+</html>
