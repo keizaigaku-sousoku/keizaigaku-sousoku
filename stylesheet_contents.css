@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'BizUDPGothic';
+    src: url('path/to/BizUDPGothic.ttf') format('truetype'); /* フォントファイルのパスを指定 */
+}
+
 header {
     width: 100%; /* ビューポート全体ではなく親要素に基づく幅 */
     max-width: none; /* 最大幅制限を解除 */
