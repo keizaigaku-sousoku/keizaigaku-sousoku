@@ -80,9 +80,10 @@
         line-height: 2;
         text-decoration: none;
         position: relative;
+        overflow: hidden;
     }
     
-    .tile a::after {
+     .tile a::after {
         content: '';
         position: absolute;
         left: 0;
@@ -90,12 +91,12 @@
         width: 100%; /* マーカーの幅をテキストに合わせる */
         height: 4px; /* マーカーの高さ */
         background-color: rgb(0, 148, 148); /* マーカーの色 */
-        transform: scaleX(0); /* 初期状態では非表示 */
-        transition: transform 0.3s ease; /* アニメーションの設定 */
+        transform: translateX(-100%); /* 初期状態では左に隠す */
+        transition: transform 0.5s ease; /* アニメーションの設定 */
     }
-    
-    .tile a:hover::after {
-        transform: scaleX(1); /* ホバー時にマーカーを表示 */
+
+    .tile.visible a::after {
+        transform: translateX(0); /* 見えるときにマーカーを表示 */
     }
     
     .image-container {
@@ -220,6 +221,20 @@
         const scrollPosition = window.scrollY;
         const imageContainer = document.querySelector('.image-container');
         imageContainer.style.backgroundPositionY = `${scrollPosition * 0.5}px`; // スクロールに応じて背景画像の位置を調整
+    });
+    
+    window.addEventListener('scroll', function() {
+        const tiles = document.querySelectorAll('.tile');
+        const windowHeight = window.innerHeight;
+
+        tiles.forEach(tile => {
+            const rect = tile.getBoundingClientRect();
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                tile.classList.add('visible'); // タイルが見えたらクラスを追加
+            } else {
+                tile.classList.remove('visible'); // タイルが見えなくなったらクラスを削除
+            }
+        });
     });
 </script>
     
