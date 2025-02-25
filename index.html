@@ -81,6 +81,7 @@
         text-decoration: none;
         position: relative;
     }
+    
     .tile a::after {
         content: '';
         position: absolute;
@@ -91,7 +92,8 @@
         background-color: rgb(0, 148, 148); /* マーカーの色 */
         transform: scaleX(0); /* 初期状態では非表示 */
         transition: transform 0.3s ease; /* アニメーションの設定 */
-    }    
+    }
+    
     .tile a:hover::after {
         transform: scaleX(1); /* ホバー時にマーカーを表示 */
     }
