@@ -83,22 +83,20 @@
         overflow: hidden;
     }
     
-     .tile a::after {
+    .tile a::after {
         content: '';
         position: absolute;
         left: 0;
         bottom: 0; /* テキストの下に配置 */
-        width: 100%; /* マーカーの幅をテキストに合わせる */
+        width: 0; /* 初期状態では幅を0に */
         height: 8px; /* マーカーの高さ */
         background-color: rgb(0, 148, 148); /* マーカーの色 */
-        transform: translateX(-100%); /* 初期状態では左に隠す */
-        transition: transform 1s ease; /* アニメーションの設定 */
-    }
-
-    .tile.visible a::after {
-        transform: translateX(0); /* 見えるときにマーカーを表示 */
+        transition: width 1s ease; /* 幅のアニメーション */
     }
     
+    .tile.visible a::after {
+        width: 100%; /* 見えるときに幅を100%に */
+    }
     .image-container {
         position: relative;
         width: 100%;
