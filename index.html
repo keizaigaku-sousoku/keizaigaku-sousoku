@@ -105,9 +105,9 @@
     .tile.visible a::after {
         width: 100%; /* 見えるときに幅を100%に */
     }
-    
+        
     .tile-footer {
-        color: rgb(0, 91, 148);
+        color: rgb(0, 148, 148);
         padding: 7px;
         text-align: right;
         font-size: 12pt;
@@ -126,7 +126,7 @@
     }
     
     .tile-footer a {
-        color: rgb(0, 148, 148); /* リンクの色 */
+        color: rgb(0, 91, 148); /* リンクの色を変更 */
         text-decoration: none; /* 下線を引かない */
         display: inline-block; /* テキストが確実に表示されるようにする */
     }
@@ -134,6 +134,15 @@
     /* Read Moreリンクのマーカーを非表示にする */
     .tile-footer a::after {
         content: none; /* マーカーを非表示にする */
+    }
+    
+    .read-more {
+        color: rgb(0, 91, 148); /* リンクの色を変更 */
+        text-decoration: none; /* 下線を引かない */
+        font-weight: 300; /* フォントの太さ */
+        display: block; /* ブロック要素にすることでフッター全体をクリック可能にする */
+        margin-right: 10px; /* 右側に余白を追加 */
+        font-size: 12pt; /* タイル内の文章と同じフォントサイズ */
     }
     
     .image-container {
