@@ -200,51 +200,6 @@
         transform: scale(1,1.5);
     }
     
-    /*h2 {
-        /*padding: 0.5rem 0.5rem;*/
-        /*margin: 10px;*/
-        /*border-left: 4px solid rgb(0,91,148);*/
-        /*border-left-width: thick;*/
-        /*text-align: center;*/
-        /*font-weight: normal;*/
-    /*}*/
-    
-    
-    
-    .tile-footer {
-        color: rgb(0, 148, 148);
-        padding: 7px;
-        text-align: right;
-        font-size: 12pt;
-        font-family: 'BizUDPGothic', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        opacity: 0; /* 初期状態で透明 */
-        transform: translateY(10px); /* 少し下に移動 */
-        transition: opacity 0.5s ease, transform 0.5s ease; /* アニメーションの設定 */
-    }
-    
-    .tile.visible .tile-footer {
-        opacity: 1; /* 表示されたときは不透明 */
-        transform: translateY(0); /* 元の位置に戻す */
-    }
-        
-    .read-more {
-        color: rgb(0, 91, 148); /* リンクの色を変更 */
-        text-decoration: none; /* 下線を引かない */
-        font-weight: 300; /* フォントの太さ */
-        display: block; /* ブロック要素にすることでフッター全体をクリック可能にする */
-        margin-right: 10px; /* 右側に余白を追加 */
-        font-size: 12pt; /* タイル内の文章と同じフォントサイズ */
-    }
-    
-    .tile-footer a {
-        color: rgb(0, 148, 148); /* リンクの色 */
-        text-decoration: none; /* 下線を引かない */
-        display: inline-block; /* テキストが確実に表示されるようにする */
-    }
-
     /* Media query for smaller screens (smartphones) */
     @media (max-width: 768px) {
         .tile {
