@@ -163,10 +163,8 @@
     
     
     
-    /* タイルのボトムボックス */
     .tile-footer {
-        /*background-color: rgb(0, 91, 148);*/
-        color: rgb(0,91,148);
+        color: rgb(0, 148, 148);
         padding: 7px;
         text-align: right;
         font-size: 12pt;
@@ -174,8 +172,16 @@
         position: absolute;
         bottom: 0;
         width: 100%;
+        opacity: 0; /* 初期状態で透明 */
+        transform: translateY(10px); /* 少し下に移動 */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* アニメーションの設定 */
     }
-
+    
+    .tile.visible .tile-footer {
+        opacity: 1; /* 表示されたときは不透明 */
+        transform: translateY(0); /* 元の位置に戻す */
+    }
+    
     .tile-footer a {
         /*color: white;*/
         color: rgb(0,91,148);
@@ -234,6 +240,20 @@
             }
         });
     });
+
+    window.addEventListener('scroll', function() {
+        const tiles = document.querySelectorAll('.tile');
+        const windowHeight = window.innerHeight;
+    
+        tiles.forEach(tile => {
+            const rect = tile.getBoundingClientRect();
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                tile.classList.add('visible'); // タイルが見えたらクラスを追加
+            } else {
+                tile.classList.remove('visible'); // タイルが見えなくなったらクラスを削除
+            }
+        });
+    });
 </script>
     
 <body>
@@ -275,13 +295,11 @@
                 <br>
                 <br>
             </p>
-            <!--
             <div class="tile-footer">
-                <a href='市場・投資.html' style="display: block; color: white; text-decoration: none; height: 100%; width: 100%; font-weight: 300;">
+                <a href='市場・投資.html' style="display: block; color: rgb(0,148,148); text-decoration: none; height: 100%; width: 100%; font-weight: 300;">
                     Read More   
                 </a>
             </div>
-            -->
         </div>
 
         <!-- 第2部のタイル -->
@@ -302,13 +320,11 @@
                 <br>
                 <br>
             </p>
-            <!--
             <div class="tile-footer">
-                <a href='ミクロ経済学・マクロ経済学.html' style="display: block; color: white; text-decoration: none; height: 100%; width: 100%; font-weight: 300;">
+                <a href='ミクロ経済学・マクロ経済学.html' style="display: block; color: rgb(0,148,148); text-decoration: none; height: 100%; width: 100%; font-weight: 300;">
                     Read More   
                 </a>
             </div>
-            -->
         </div>
 
         <!-- 第3部のタイル -->
@@ -327,13 +343,11 @@
                 <br>
                 <br>
             </p>
-            <!--
             <div class="tile-footer">
-                <a href='財務・ファイナンス理論.html' style="display: block; color: white; text-decoration: none; height: 100%; width: 100%; font-weight: 300;">
+                <a href='財務・ファイナンス理論.html' style="display: block; color: rgb(0,148,148); text-decoration: none; height: 100%; width: 100%; font-weight: 300;">
                     Read More   
                 </a>
             </div>
-            -->
         </div>
     </div>
 
