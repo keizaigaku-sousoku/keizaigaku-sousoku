@@ -73,7 +73,7 @@
 
     .tile a {
         display: block;
-        color: rgb(0,91,148);
+        color: rgb(0, 91, 148);
         font-family: 'BizUDPGothic', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
         font-size: 20pt;
         font-weight: bold;
@@ -97,6 +97,37 @@
     .tile.visible a::after {
         width: 100%; /* 見えるときに幅を100%に */
     }
+    
+    .tile-footer {
+        color: rgb(0, 148, 148);
+        padding: 7px;
+        text-align: right;
+        font-size: 12pt;
+        font-family: 'BizUDPGothic', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        opacity: 0; /* 初期状態で透明 */
+        transform: translateY(10px); /* 少し下に移動 */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* アニメーションの設定 */
+    }
+    
+    .tile.visible .tile-footer {
+        opacity: 1; /* 表示されたときは不透明 */
+        transform: translateY(0); /* 元の位置に戻す */
+    }
+    
+    .tile-footer a {
+        color: rgb(0, 148, 148); /* リンクの色 */
+        text-decoration: none; /* 下線を引かない */
+        display: inline-block; /* テキストが確実に表示されるようにする */
+    }
+    
+    /* Read Moreリンクのマーカーを非表示にする */
+    .tile-footer a::after {
+        content: none; /* マーカーを非表示にする */
+    }
+    
     .image-container {
         position: relative;
         width: 100%;
