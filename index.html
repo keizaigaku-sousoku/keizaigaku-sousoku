@@ -12,7 +12,7 @@
             height: 100vh; /* 画面全体の高さ */
         }
         .container {
-            height: 100vh; /* 画面全体の高さ */
+            height: 300vh; /* 3つのセクション分の高さ */
             display: flex;
             flex-direction: column;
             transition: transform 0.5s ease; /* スムーズな切り替え */
@@ -67,9 +67,6 @@
                 }, 600); // アニメーションの時間に合わせて調整
             }
         });
-
-        // 初期表示で最初のセクションのみ表示
-        document.querySelector('.container').style.transform = `translateY(0vh)`;
     </script>
 </body>
 </html>
