@@ -81,7 +81,7 @@
     </div>
 
     <script>
-        let currentTile = 0;
+        let currentTile = 0; // 初期タイルを第1部に設定
         const tiles = document.querySelectorAll('.tile');
         const totalTiles = tiles.length;
 
@@ -100,6 +100,12 @@
             showTile(currentTile);
         });
 
+        // ページを更新したときに第1部を表示
+        window.onload = () => {
+            currentTile = 0; // 初期表示を第1部に設定
+            showTile(currentTile);
+        };
+        
         // 初期表示
         showTile(currentTile);
     </script>
