@@ -35,7 +35,7 @@ p {
     font-weight: 100;
     font-size: 18px;
     letter-spacing: .025em;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 .new-word {
@@ -102,7 +102,7 @@ p {
     font-weight: 100;
     font-size: 18px;
     letter-spacing: .025em;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 /* 証明環境のスタイル */
@@ -112,7 +112,7 @@ p {
     font-weight: 100;
     font-size: 18px;
     letter-spacing: .025em;
-    line-height: 1.6;
+    line-height: 2;
     background-color: white;
     color: #333;
     box-sizing: border-box; /* パディングを含めた幅計算 */
