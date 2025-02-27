@@ -99,16 +99,20 @@ p {
 
 .theorem-tile p {
     margin: 0;
-    font-size: 1rem;
-    line-height: 2;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .025em;
+    line-height: 1.6;
 }
 
 /* 証明環境のスタイル */
 .proof {
     padding: 10px 15px; /* 内側の余白 */
     margin-bottom: 20px; /* 下に余白 */
-    font-size: 1rem;
-    line-height: 2;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .025em;
+    line-height: 1.6;
     background-color: white;
     color: #333;
     box-sizing: border-box; /* パディングを含めた幅計算 */
