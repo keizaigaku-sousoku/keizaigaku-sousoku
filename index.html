@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>経済学総則</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'BizUDPGothic', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
+            overflow: hidden; /* スクロールを隠す */
+        }
+
+        .tile {
+            width: 100vw; /* 幅を画面全体に */
+            height: 100vh; /* 高さを画面全体に */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            position: relative;
+            transition: transform 0.5s ease; /* スクロール時の移動を滑らかに */
+        }
+
+        .tile h2 {
+            color: rgb(0, 91, 148);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .tile p {
+            font-size: 1.5em;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .tile-footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+        }
+
+        .tile-footer a {
+            color: rgb(0, 91, 148);
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tile" id="tile1">
+        <h2>第1部<br>市場・投資</h2>
+        <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
+        <div class="tile-footer">
+            <a href='市場・投資.html'>Read More</a>
+        </div>
+    </div>
+
+    <div class="tile" id="tile2">
+        <h2>第2部<br>ミクロ・マクロ経済学</h2>
+        <p>経済学は世の中の現象を説明しようとする無数の仮説の1つである。ミクロとマクロという伝統的な2面から学ぶことは、様々なスケールでの思考を可能にする。</p>
+        <div class="tile-footer">
+            <a href='ミクロ経済学・マクロ経済学.html'>Read More</a>
+        </div>
+    </div>
+
+    <div class="tile" id="tile3">
+        <h2>第3部<br>財務・ファイナンス理論</h2>
+        <p>財務とファイナンスの理論は、経済学の中で重要な役割を果たす。</p>
+        <div class="tile-footer">
+            <a href='財務・ファイナンス理論.html'>Read More</a>
+        </div>
+    </div>
+
+    <script>
+        let currentTile = 0;
+        const tiles = document.querySelectorAll('.tile');
+
+        function showTile(index) {
+            tiles.forEach((tile, i) => {
+                tile.style.transform = `translateY(${(i - index) * 100}vh)`; // スクロールに応じてタイルを移動
+            });
+        }
+
+        window.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0 && currentTile < tiles.length - 1) {
+                currentTile++;
+            } else if (event.deltaY < 0 && currentTile > 0) {
+                currentTile--;
+            }
+            showTile(currentTile);
+        });
+
+        showTile(currentTile); // 初期表示
+    </script>
+</body>
+</html>
