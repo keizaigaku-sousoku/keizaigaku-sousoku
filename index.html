@@ -83,6 +83,8 @@
     <script>
         let currentTile = 0;
         const tiles = document.querySelectorAll('.tile');
+        const totalTiles = tiles.length;
+        let isScrolling = false; // スクロール中かどうかのフラグ
 
         function showTile(index) {
             tiles.forEach((tile, i) => {
@@ -91,12 +93,20 @@
         }
 
         window.addEventListener('wheel', (event) => {
-            if (event.deltaY > 0 && currentTile < tiles.length - 1) {
+            if (isScrolling) return; // スクロール中は無視
+
+            isScrolling = true; // スクロール開始
+            if (event.deltaY > 0 && currentTile < totalTiles - 1) {
                 currentTile++;
             } else if (event.deltaY < 0 && currentTile > 0) {
                 currentTile--;
             }
             showTile(currentTile);
+
+            // スクロールが完了するまで待つ
+            setTimeout(() => {
+                isScrolling = false; // スクロール終了
+            }, 500); // 500msの遅延を設定
         });
 
         showTile(currentTile); // 初期表示
