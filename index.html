@@ -17,7 +17,7 @@
             overflow: hidden; /* スクロールを隠す */
         }
 
-        .tile {
+        section {
             width: 100vw; /* 幅を画面全体に */
             height: 100vh; /* 高さを画面全体に */
             display: flex;
@@ -29,25 +29,25 @@
             transition: transform 0.5s ease; /* スクロール時の移動を滑らかに */
         }
 
-        .tile h2 {
+        h2 {
             color: rgb(0, 91, 148);
             font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        .tile p {
+        p {
             font-size: 1.5em;
             text-align: center;
             padding: 0 20px;
         }
 
-        .tile-footer {
+        .footer {
             position: absolute;
             bottom: 20px;
             text-align: center;
         }
 
-        .tile-footer a {
+        .footer a {
             color: rgb(0, 91, 148);
             text-decoration: none;
             font-size: 1.2em;
@@ -56,58 +56,58 @@
 </head>
 
 <body>
-    <div class="tile" id="tile1">
+    <section id="section1">
         <h2>第1部<br>市場・投資</h2>
         <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
-        <div class="tile-footer">
+        <div class="footer">
             <a href='市場・投資.html'>Read More</a>
         </div>
-    </div>
+    </section>
 
-    <div class="tile" id="tile2">
+    <section id="section2">
         <h2>第2部<br>ミクロ・マクロ経済学</h2>
         <p>経済学は世の中の現象を説明しようとする無数の仮説の1つである。ミクロとマクロという伝統的な2面から学ぶことは、様々なスケールでの思考を可能にする。</p>
-        <div class="tile-footer">
+        <div class="footer">
             <a href='ミクロ経済学・マクロ経済学.html'>Read More</a>
         </div>
-    </div>
+    </section>
 
-    <div class="tile" id="tile3">
+    <section id="section3">
         <h2>第3部<br>財務・ファイナンス理論</h2>
         <p>財務とファイナンスの理論は、経済学の中で重要な役割を果たす。</p>
-        <div class="tile-footer">
+        <div class="footer">
             <a href='財務・ファイナンス理論.html'>Read More</a>
         </div>
-    </div>
+    </section>
 
     <script>
-        let currentTile = 0; // 初期タイルを第1部に設定
-        const tiles = document.querySelectorAll('.tile');
-        const totalTiles = tiles.length;
+        let currentSection = 0; // 初期セクションを第1部に設定
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
 
-        function showTile(index) {
-            tiles.forEach((tile, i) => {
-                tile.style.transform = `translateY(${(i - index) * 100}vh)`; // スクロールに応じてタイルを移動
+        function showSection(index) {
+            sections.forEach((section, i) => {
+                section.style.transform = `translateY(${(i - index) * 100}vh)`; // スクロールに応じてセクションを移動
             });
         }
 
         window.addEventListener('wheel', (event) => {
-            if (event.deltaY > 0 && currentTile < totalTiles - 1) {
-                currentTile++;
-            } else if (event.deltaY < 0 && currentTile > 0) {
-                currentTile--;
+            if (event.deltaY > 0 && currentSection < totalSections - 1) {
+                currentSection++;
+            } else if (event.deltaY < 0 && currentSection > 0) {
+                currentSection--;
             }
-            showTile(currentTile);
+            showSection(currentSection);
         });
 
         // ページを更新したときに第1部を表示
         window.onload = () => {
-            currentTile = 0; // 初期表示を第1部に設定
-            showTile(currentTile);
+            currentSection = 0; // 初期表示を第1部に設定
+            showSection(currentSection);
         };
-        
+
         // 初期表示
-        showTile(currentTile);
+        showSection(currentSection);
     </script>
 </body>
 </html>
