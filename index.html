@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スライド切り替えデモ</title>
+    <title>スクロール切り替えデモ</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
             font-family: Arial, sans-serif;
-            height: 100vh; /* 画面全体の高さ */
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.5s ease; /* スムーズな切り替え */
         }
         .section {
             height: 100vh; /* 画面全体の高さ */
@@ -22,53 +16,21 @@
             justify-content: center;
             align-items: center;
             font-size: 2rem;
-            color: white; /* テキストカラーを白に設定 */
+            transition: transform 0.5s ease; /* スムーズな切り替え */
         }
         .section1 { background-color: #ff6666; }
         .section2 { background-color: #66ff66; }
         .section3 { background-color: #6666ff; }
-        /* 必要に応じて追加のセクションのスタイルをここに */
-
-        h2 {
-            color: rgb(0, 91, 148);
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.5em;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            text-align: center;
-        }
-        .footer a {
-            color: rgb(0, 91, 148);
-            text-decoration: none;
-            font-size: 1.2em;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="section section1">
-            <h2>第1部<br>市場・投資</h2>
-            <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
-            <div class="footer">
-                <a href='市場・投資.html'>Read More</a>
-            </div>
-        </div>
-        <div class="section section2">セクション 2</div>
-        <div class="section section3">セクション 3</div>
-        <!-- 必要に応じてセクションを追加 -->
-    </div>
+    <div class="section section1">セクション 1</div>
+    <div class="section section2">セクション 2</div>
+    <div class="section section3">セクション 3</div>
 
     <script>
         let currentSection = 0;
         const sections = document.querySelectorAll('.section');
-        const totalSections = sections.length; // セクションの総数を取得
         let scrollThreshold = 500; // スクロールしなければならないピクセル数
         let scrollY = 0; // 現在のスクロール量
         let isScrolling = false; // スクロール中かどうか
@@ -82,12 +44,12 @@
             if (Math.abs(scrollY) >= scrollThreshold) {
                 isScrolling = true; // スクロール中に設定
                 if (scrollY > 0) {
-                    currentSection = Math.min(currentSection + 1, totalSections - 1);
+                    currentSection = Math.min(currentSection + 1, sections.length - 1);
                 } else {
                     currentSection = Math.max(currentSection - 1, 0);
                 }
                 const offset = -currentSection * 100; // セクションの高さに基づくオフセット
-                document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
+                document.body.style.transform = `translateY(${offset}vh)`;
                 scrollY = 0; // スクロール量をリセット
 
                 // スクロール完了後に再度スクロールを有効にする
