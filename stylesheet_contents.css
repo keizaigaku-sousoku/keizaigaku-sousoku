@@ -31,7 +31,10 @@ body {
 
 p {
     text-align: justify;
-    line-height: 2;
+    /*line-height: 2;*/
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .025em;
 }
 
 .new-word {
