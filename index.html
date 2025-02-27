@@ -31,14 +31,18 @@
     <script>
         let currentSection = 0;
         const sections = document.querySelectorAll('.section');
-        let scrollThreshold = 5000; // スクロールしなければならないピクセル数
+        let scrollThreshold = 500; // スクロールしなければならないピクセル数
         let scrollY = 0; // 現在のスクロール量
+        let isScrolling = false; // スクロール中かどうか
 
         window.addEventListener('wheel', (event) => {
+            if (isScrolling) return; // スクロール中は何もしない
+
             scrollY += event.deltaY;
 
             // 一定のスクロール量を超えた場合にセクションを切り替え
             if (Math.abs(scrollY) >= scrollThreshold) {
+                isScrolling = true; // スクロール中に設定
                 if (scrollY > 0) {
                     currentSection = Math.min(currentSection + 1, sections.length - 1);
                 } else {
@@ -47,6 +51,11 @@
                 const offset = -currentSection * 100; // セクションの高さに基づくオフセット
                 document.body.style.transform = `translateY(${offset}vh)`;
                 scrollY = 0; // スクロール量をリセット
+
+                // スクロール完了後に再度スクロールを有効にする
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 600); // アニメーションの時間に合わせて調整
             }
         });
     </script>
