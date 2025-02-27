@@ -12,7 +12,6 @@
             height: 100vh; /* 画面全体の高さ */
         }
         .container {
-            height: 300vh; /* 3つのセクション分の高さ */
             display: flex;
             flex-direction: column;
             transition: transform 0.5s ease; /* スムーズな切り替え */
@@ -28,6 +27,7 @@
         .section1 { background-color: #ff6666; }
         .section2 { background-color: #66ff66; }
         .section3 { background-color: #6666ff; }
+        /* 必要に応じて追加のセクションのスタイルをここに */
     </style>
 </head>
 <body>
@@ -35,11 +35,13 @@
         <div class="section section1">セクション 1</div>
         <div class="section section2">セクション 2</div>
         <div class="section section3">セクション 3</div>
+        <!-- 必要に応じてセクションを追加 -->
     </div>
 
     <script>
         let currentSection = 0;
         const sections = document.querySelectorAll('.section');
+        const totalSections = sections.length; // セクションの総数を取得
         let scrollThreshold = 500; // スクロールしなければならないピクセル数
         let scrollY = 0; // 現在のスクロール量
         let isScrolling = false; // スクロール中かどうか
@@ -53,7 +55,7 @@
             if (Math.abs(scrollY) >= scrollThreshold) {
                 isScrolling = true; // スクロール中に設定
                 if (scrollY > 0) {
-                    currentSection = Math.min(currentSection + 1, sections.length - 1);
+                    currentSection = Math.min(currentSection + 1, totalSections - 1);
                 } else {
                     currentSection = Math.max(currentSection - 1, 0);
                 }
