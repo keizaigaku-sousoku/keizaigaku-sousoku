@@ -27,6 +27,10 @@ body {
     max-width: 750px; /* 最大幅を設定 */
     margin-left: auto; /* 左右中央揃え */
     margin-right: auto; /* 左右中央揃え */
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: .025em;
+    line-height: 2;
 }
 
 p {
