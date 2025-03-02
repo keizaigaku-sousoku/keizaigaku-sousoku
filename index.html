@@ -25,6 +25,26 @@
             padding: 40px;
             box-sizing: border-box;
         }
+        /* 経済学総則のスタイル */
+        .header-title {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            font-size: 1.2rem;
+            color: white;
+            z-index: 10;
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+        /* 2セクション目以降で左上に移動 */
+        .header-title.active {
+            top: 20px;
+            left: 20px;
+            right: auto;
+            bottom: auto;
+            font-size: 1.5rem;
+            color: black;
+        }
         .section1 {
             background-color: black;
         }
@@ -77,6 +97,9 @@
     </style>
 </head>
 <body>
+    <!-- 経済学総則 -->
+    <div class="header-title">経済学総則</div>
+
     <div class="container">
         <div class="section section1">
             <div class="text-overlay">
@@ -103,9 +126,10 @@
         let currentSection = 0;
         const sections = document.querySelectorAll('.section');
         const totalSections = sections.length;
-        let scrollThreshold = 500;
+        let scrollThreshold = 300;
         let scrollY = 0;
         let isScrolling = false;
+        const headerTitle = document.querySelector('.header-title');
 
         window.addEventListener('wheel', (event) => {
             if (isScrolling) return;
@@ -122,6 +146,13 @@
                 const offset = -currentSection * 100;
                 document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
                 scrollY = 0;
+
+                // 2セクション目以降で移動
+                if (currentSection >= 1) {
+                    headerTitle.classList.add('active');
+                } else {
+                    headerTitle.classList.remove('active');
+                }
 
                 setTimeout(() => {
                     isScrolling = false;
