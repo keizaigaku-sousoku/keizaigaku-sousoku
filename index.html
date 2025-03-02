@@ -45,6 +45,33 @@
             font-size: 1.5rem;
             color: black;
         }
+        .link-button {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            z-index: 20;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .link-button.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .link-button:hover {
+            background-color: #6666ff;
+            transform: scale(1.1);
+        }
         .section1 {
             background-color: black;
         }
@@ -77,6 +104,7 @@
 </head>
 <body>
     <div class="header-title">経済学総則</div>
+    <a href="https://example.com" class="link-button" target="_blank">↗</a>
 
     <div class="container">
         <div class="section section1">
@@ -122,6 +150,7 @@
         let isScrolling = false;
         const scrollThreshold = 300;
         const headerTitle = document.querySelector('.header-title');
+        const linkButton = document.querySelector('.link-button');
 
         window.addEventListener('wheel', (event) => {
             if (isScrolling) return;
@@ -139,8 +168,10 @@
 
                 if (currentSection > 0) {
                     headerTitle.classList.add('active');
+                    linkButton.classList.add('active');
                 } else {
                     headerTitle.classList.remove('active');
+                    linkButton.classList.remove('active');
                 }
 
                 setTimeout(() => {
