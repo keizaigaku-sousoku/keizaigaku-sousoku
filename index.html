@@ -32,8 +32,8 @@
             font-size: 1.2rem;
             color: white;
             z-index: 10;
-            transition: all 0.6s ease;
             pointer-events: none;
+            transition: all 0.5s ease;
         }
         .header-title.active {
             top: 20px;
@@ -162,8 +162,13 @@
                 document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
                 scrollY = 0;
 
-                if (currentSection >= 1) {
+                // 1ページ目では経済学総則を非表示
+                if (currentSection > 0) {
                     headerTitle.classList.add('active');
+                    headerTitle.style.left = '20px';
+                    headerTitle.style.top = '20px';
+                    headerTitle.style.right = 'auto';
+                    headerTitle.style.bottom = 'auto';
                 } else {
                     headerTitle.classList.remove('active');
                 }
