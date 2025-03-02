@@ -28,27 +28,17 @@
         /* 経済学総則のスタイル */
         .header-title {
             position: fixed;
-            right: 20px;
-            bottom: 20px;
-            font-size: 1.2rem;
-            color: white;
-            z-index: 10;
-            transition: all 0.6s ease;
-            pointer-events: none;
-            opacity: 1;
-        }
-        /* 非表示用 */
-        .header-title.hidden {
-            opacity: 0;
-        }
-        /* 2セクション目以降で左上に移動 */
-        .header-title.active {
             top: 20px;
             left: 20px;
-            right: auto;
-            bottom: auto;
             font-size: 1.5rem;
             color: black;
+            z-index: 10;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            opacity: 0; /* 最初は非表示 */
+        }
+        .header-title.active {
+            opacity: 1; /* 2ページ目以降で表示 */
         }
         .section1 {
             background-color: black;
@@ -103,7 +93,7 @@
 </head>
 <body>
     <!-- 経済学総則 -->
-    <div class="header-title hidden">経済学総則</div>
+    <div class="header-title">経済学総則</div>
 
     <div class="container">
         <div class="section section1">
@@ -152,13 +142,11 @@
                 document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
                 scrollY = 0;
 
-                // 2セクション目以降で表示＆移動
+                // 2セクション目以降で表示
                 if (currentSection >= 1) {
                     headerTitle.classList.add('active');
-                    headerTitle.classList.remove('hidden');
                 } else {
                     headerTitle.classList.remove('active');
-                    headerTitle.classList.add('hidden');
                 }
 
                 setTimeout(() => {
