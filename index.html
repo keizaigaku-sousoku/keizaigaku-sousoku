@@ -62,6 +62,26 @@
             max-width: 800px;
             text-align: left;
         }
+        .section2 .content > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section2.active .content h2 {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        .section2.active .content p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.6s;
+        }
+        .section2.active .content .read-more {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 1s;
+        }
         .section2 h2 {
             font-size: 2.2rem;
             margin-bottom: 1rem;
@@ -125,6 +145,7 @@
         let scrollY = 0;
         let isScrolling = false;
         const headerTitle = document.querySelector('.header-title');
+        const section2 = document.querySelector('.section2');
 
         window.addEventListener('wheel', (event) => {
             if (isScrolling) return;
@@ -142,11 +163,16 @@
                 document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
                 scrollY = 0;
 
-                // 2セクション目以降で表示
                 if (currentSection >= 1) {
                     headerTitle.classList.add('active');
                 } else {
                     headerTitle.classList.remove('active');
+                }
+
+                if (currentSection === 1) {
+                    section2.classList.add('active');
+                } else {
+                    section2.classList.remove('active');
                 }
 
                 setTimeout(() => {
