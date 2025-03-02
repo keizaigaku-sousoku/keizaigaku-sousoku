@@ -22,8 +22,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2rem;
-            color: white;
+            padding: 40px;
+            box-sizing: border-box;
         }
         .section1 {
             background-color: black;
@@ -39,8 +39,41 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .section2 { background-color: #66ff66; }
-        .section3 { background-color: #6666ff; }
+        .section2 {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .section2 .content {
+            max-width: 800px;
+            text-align: left;
+        }
+        .section2 h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+        .section2 p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .section2 .read-more {
+            display: inline-block;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #333;
+            font-size: 1rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .section2 .read-more:hover {
+            color: #666;
+            border-color: #666;
+        }
+        .section3 {
+            background-color: #6666ff;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -50,8 +83,20 @@
                 No Fair Value, Just Bid and Ask
             </div>
         </div>
-        <div class="section section2">セクション 2</div>
-        <div class="section section3">セクション 3</div>
+        <div class="section section2">
+            <div class="content">
+                <h2>第1部<br>市場・投資</h2>
+                <p>
+                    経済学という大きな理論を展開するための舞台（数学でいうところの空間）を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。<br><br>
+                    またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。<br><br>
+                    そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="section section3">
+            セクション 3
+        </div>
     </div>
 
     <script>
