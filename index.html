@@ -1,206 +1,154 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スライド切り替えデモ</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-    }
-    .container {
-      transition: transform 0.8s ease;
-    }
-    .section {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-      box-sizing: border-box;
-      flex-direction: column;
-    }
-    .header-title {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 1.5rem;
-      color: black;
-      z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s ease;
-    }
-    .header-title.active {
-      opacity: 1;
-    }
-    .section1 {
-      background-color: black;
-    }
-    .section1 .text-overlay {
-      color: white;
-      font-size: 2.5rem;
-      opacity: 0;
-      animation: fadeIn 4s forwards;
-    }
-    .section-title {
-      font-size: 4rem;
-      opacity: 0;
-      animation: fadeIn 4s forwards;
-      color: #333;
-    }
-    .content-section {
-      background-color: #fff;
-      color: #333;
-    }
-    .content {
-      max-width: 800px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.5s ease, transform 1.5s ease;
-    }
-    .section.active .content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .read-more {
-      display: inline-block;
-      margin-top: 20px;
-      color: #333;
-      text-decoration: none;
-    }
-    .link-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background-color: #333;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      text-decoration: none;
-      z-index: 20;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.5s ease;
-      border: 2px solid #333;
-    }
-    .link-button.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .link-button:hover {
-      background-color: white;
-      color: #333;
-      transform: scale(1.1);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スライドデモ</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            transition: transform 0.8s ease;
+        }
+        .section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .section-basic-title, .section-advanced-title {
+            background-color: #111;
+            color: white;
+        }
+        .title-wrapper {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+        }
+        .title-wrapper h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: 0.1em;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .header-title {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            color: black;
+            display: none;
+        }
+        .next-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .next-button:hover {
+            background-color: white;
+            color: black;
+        }
+        .content {
+            max-width: 800px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="header-title">経済学総則</div>
-
-  <div class="container">
-    <div class="section section1">
-      <div class="text-overlay">No Fair Value, Just Bid and Ask</div>
+    <div class="header-title">経済学総則</div>
+    <div class="container">
+        <div class="section section-basic-title">
+            <div class="title-wrapper">
+                <span class="subtitle">BASIC</span>
+                <h1>基礎編</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>第1部 - 市場・投資</h2>
+                <p>経済学という大きな理論を展開するための舞台（数学でいうところの空間）を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>第2部 - 経済の仕組み</h2>
+                <p>私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。経済の仕組みを理解することは、より良い意思決定を行うための基盤となる。</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>第3部 - 価値と価格</h2>
+                <p>価値と価格の違いを理解することは、取引における合理的な判断を支える。市場で形成される価格の背景には、様々な要因が影響している。</p>
+            </div>
+        </div>
+        <div class="section section-advanced-title">
+            <div class="title-wrapper">
+                <span class="subtitle">ADVANCED</span>
+                <h1>応用編</h1>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>第1部 - 応用市場理論</h2>
+                <p>市場理論の応用として、実際の経済現象を分析し、より実践的な知見を得ることを目指す。</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>第2部 - 応用経済分析</h2>
+                <p>統計やデータを用いた経済分析を行い、政策立案や市場予測に活用する手法を学ぶ。</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content">
+                <h2>第3部 - 応用価格理論</h2>
+                <p>価格形成のメカニズムをより高度に理解し、特定の市場や状況に応じた戦略を探る。</p>
+            </div>
+        </div>
     </div>
+    <button class="next-button">→</button>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const container = document.querySelector('.container');
+        const headerTitle = document.querySelector('.header-title');
+        const nextButton = document.querySelector('.next-button');
+        let currentIndex = 0;
 
-    <div class="section">
-      <div class="section-title">基礎編</div>
-    </div>
+        function updateView() {
+            container.style.transform = `translateY(-${currentIndex * 100}vh)`;
+            headerTitle.style.display = currentIndex > 0 ? 'block' : 'none';
+        }
 
-    <div class="section content-section">
-      <div class="content">
-        <h2>第1部<br>市場・投資</h2>
-        <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
-      </div>
-    </div>
-
-    <div class="section content-section">
-      <div class="content">
-        <h2>第2部<br>経済の仕組み</h2>
-        <p>私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。</p>
-      </div>
-    </div>
-
-    <div class="section content-section">
-      <div class="content">
-        <h2>第3部<br>価値と価格</h2>
-        <p>価値と価格の違いを理解することは、取引における合理的な判断を支える。</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">応用編</div>
-    </div>
-
-    <div class="section content-section">
-      <div class="content">
-        <h2>応用第1部<br>ポートフォリオ理論</h2>
-        <p>リスクとリターンのバランスを考慮した投資戦略を構築する。</p>
-      </div>
-    </div>
-
-    <div class="section content-section">
-      <div class="content">
-        <h2>応用第2部<br>ゲーム理論</h2>
-        <p>他者の行動を考慮した合理的な意思決定を探求する。</p>
-      </div>
-    </div>
-
-    <div class="section content-section">
-      <div class="content">
-        <h2>応用第3部<br>行動経済学</h2>
-        <p>人間の心理的バイアスが経済行動に与える影響を理解する。</p>
-      </div>
-    </div>
-  </div>
-
-  <a href="#" class="link-button" id="linkButton">→</a>
-
-  <script>
-    let currentSection = 0;
-    const sections = document.querySelectorAll('.section');
-    const totalSections = sections.length;
-    let scrollThreshold = 300;
-    let scrollY = 0;
-    let isScrolling = false;
-    const headerTitle = document.querySelector('.header-title');
-    const linkButton = document.getElementById('linkButton');
-
-    window.addEventListener('wheel', (event) => {
-      if (isScrolling) return;
-
-      scrollY += event.deltaY;
-
-      if (Math.abs(scrollY) >= scrollThreshold) {
-        isScrolling = true;
-        currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
-        document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
-        scrollY = 0;
-
-        headerTitle.classList.toggle('active', currentSection > 0);
-        linkButton.classList.toggle('active', currentSection > 0);
-
-        sections.forEach((section, index) => {
-          section.classList.toggle('active', index === currentSection);
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < sections.length - 1) {
+                currentIndex++;
+                updateView();
+            }
         });
-
-        setTimeout(() => isScrolling = false, 800);
-      }
-    });
-  </script>
-
+    </script>
 </body>
 </html>
