@@ -25,20 +25,23 @@
             padding: 40px;
             box-sizing: border-box;
         }
-        /* 経済学総則のスタイル */
         .header-title {
             position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 1.5rem;
-            color: black;
+            right: 20px;
+            bottom: 20px;
+            font-size: 1.2rem;
+            color: white;
             z-index: 10;
-            transition: opacity 0.6s ease;
+            transition: all 0.6s ease;
             pointer-events: none;
-            opacity: 0; /* 最初は非表示 */
         }
         .header-title.active {
-            opacity: 1; /* 2ページ目以降で表示 */
+            top: 20px;
+            left: 20px;
+            right: auto;
+            bottom: auto;
+            font-size: 1.5rem;
+            color: black;
         }
         .section1 {
             background-color: black;
@@ -54,65 +57,45 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .section2 {
+        .section2, .section3, .section4 {
             background-color: #f5f5f5;
             color: #333;
-        }
-        .section2 .content {
-            max-width: 800px;
-            text-align: left;
-        }
-        .section2 .content > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .section2.active .content h2 {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.2s;
-        }
-        .section2.active .content p {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.6s;
-        }
-        .section2.active .content .read-more {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 1s;
-        }
-        .section2 h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: #222;
-        }
-        .section2 p {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        .section2 .read-more {
-            display: inline-block;
-            padding-bottom: 4px;
-            border-bottom: 1px solid #333;
-            font-size: 1rem;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-        .section2 .read-more:hover {
-            color: #666;
-            border-color: #666;
         }
         .section3 {
             background-color: #6666ff;
             color: white;
         }
+        .section4 {
+            background-color: #ffcc66;
+            color: #333;
+        }
+        .content {
+            max-width: 800px;
+            text-align: left;
+        }
+        .content > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .active .content h2 {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        .active .content p {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.6s;
+        }
+        .active .content .read-more {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 1s;
+        }
     </style>
 </head>
 <body>
-    <!-- 経済学総則 -->
     <div class="header-title">経済学総則</div>
 
     <div class="container">
@@ -133,7 +116,24 @@
             </div>
         </div>
         <div class="section section3">
-            セクション 3
+            <div class="content">
+                <h2>第2部<br>経済の仕組み</h2>
+                <p>
+                    私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。<br><br>
+                    経済の仕組みを理解することは、より良い意思決定を行うための基盤となる。
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="section section4">
+            <div class="content">
+                <h2>第3部<br>価値と価格</h2>
+                <p>
+                    価値と価格の違いを理解することは、取引における合理的な判断を支える。<br><br>
+                    市場で形成される価格の背景には、様々な要因が影響している。
+                </p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
         </div>
     </div>
 
@@ -145,7 +145,6 @@
         let scrollY = 0;
         let isScrolling = false;
         const headerTitle = document.querySelector('.header-title');
-        const section2 = document.querySelector('.section2');
 
         window.addEventListener('wheel', (event) => {
             if (isScrolling) return;
@@ -169,11 +168,13 @@
                     headerTitle.classList.remove('active');
                 }
 
-                if (currentSection === 1) {
-                    section2.classList.add('active');
-                } else {
-                    section2.classList.remove('active');
-                }
+                sections.forEach((section, index) => {
+                    if (index === currentSection) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
 
                 setTimeout(() => {
                     isScrolling = false;
