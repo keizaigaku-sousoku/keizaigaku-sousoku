@@ -34,9 +34,9 @@
             color: white;
             z-index: 10;
             transition: all 0.6s ease;
+            opacity: 0;
             pointer-events: none;
         }
-        /* 2セクション目以降で左上に移動 */
         .header-title.active {
             top: 20px;
             left: 20px;
@@ -44,6 +44,7 @@
             bottom: auto;
             font-size: 1.5rem;
             color: black;
+            opacity: 1;
         }
         .section1 {
             background-color: black;
@@ -53,9 +54,19 @@
             font-size: 2.5rem;
             text-align: center;
             opacity: 0;
-            animation: fadeIn 3s forwards;
+            animation: fadeInFirst 3s forwards;
         }
-        @keyframes fadeIn {
+        /* No Fair Value, Just Bid and Ask のアニメーション */
+        @keyframes fadeInFirst {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section1 .header-title {
+            opacity: 0;
+            animation: fadeInSecond 2s 3s forwards; /* 3秒後にフェードイン */
+        }
+        /* 経済学総則のフェードイン */
+        @keyframes fadeInSecond {
             from { opacity: 0; }
             to { opacity: 1; }
         }
@@ -130,12 +141,15 @@
         let scrollY = 0;
         let isScrolling = false;
         const headerTitle = document.querySelector('.header-title');
+        const textOverlay = document.querySelector('.section1 .text-overlay');
 
         window.addEventListener('wheel', (event) => {
             if (isScrolling) return;
 
+            // スクロールが発生した場合、ページ切り替えの処理を開始
             scrollY += event.deltaY;
 
+            // スクロール閾値を越えた場合
             if (Math.abs(scrollY) >= scrollThreshold) {
                 isScrolling = true;
                 if (scrollY > 0) {
@@ -147,16 +161,24 @@
                 document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
                 scrollY = 0;
 
-                // 2セクション目以降で移動
+                // 2セクション目以降で経済学総則の位置を更新
                 if (currentSection >= 1) {
                     headerTitle.classList.add('active');
                 } else {
                     headerTitle.classList.remove('active');
                 }
 
-                setTimeout(() => {
-                    isScrolling = false;
-                }, 600);
+                // ページ移動を無効化（視覚的な移動が完了するまで）
+                if (currentSection === 1) {
+                    // 経済学総則の位置が左上に固定されるまでスクロールを一時停止
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 1000); // 経済学総則が移動する時間（1000ms）
+                } else {
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 600); // 通常のスクロール時間
+                }
             }
         });
     </script>
