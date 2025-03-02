@@ -33,10 +33,9 @@
             font-size: 2.5rem;
             text-align: center;
             opacity: 0;
-            animation: fadeInFirst 3s forwards;
+            animation: fadeIn 3s forwards;
         }
-        /* No Fair Value, Just Bid and Ask のアニメーション */
-        @keyframes fadeInFirst {
+        @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
@@ -75,21 +74,9 @@
             background-color: #6666ff;
             color: white;
         }
-        /* ヘッダー部分 */
-        .header {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 2rem;
-            color: white;
-            z-index: 10;
-        }
     </style>
 </head>
 <body>
-    <!-- 左上のヘッダー -->
-    <div class="header">経済学総則</div>
-
     <div class="container">
         <div class="section section1">
             <div class="text-overlay">
@@ -116,17 +103,15 @@
         let currentSection = 0;
         const sections = document.querySelectorAll('.section');
         const totalSections = sections.length;
-        let scrollThreshold = 300;
+        let scrollThreshold = 500;
         let scrollY = 0;
         let isScrolling = false;
 
         window.addEventListener('wheel', (event) => {
             if (isScrolling) return;
 
-            // スクロールが発生した場合、ページ切り替えの処理を開始
             scrollY += event.deltaY;
 
-            // スクロール閾値を越えた場合
             if (Math.abs(scrollY) >= scrollThreshold) {
                 isScrolling = true;
                 if (scrollY > 0) {
@@ -135,12 +120,12 @@
                     currentSection = Math.max(currentSection - 1, 0);
                 }
                 const offset = -currentSection * 100;
-                document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
+                document.querySelector('.container').style.transform = translateY(${offset}vh);
                 scrollY = 0;
 
                 setTimeout(() => {
                     isScrolling = false;
-                }, 600); // 通常のスクロール時間
+                }, 600);
             }
         });
     </script>
