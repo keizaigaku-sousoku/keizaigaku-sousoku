@@ -1,200 +1,206 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>スライド切り替えデモ</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.8s ease;
-        }
-        .section {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            box-sizing: border-box;
-        }
-        .header-title {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            font-size: 1.2rem;
-            color: white;
-            z-index: 10;
-            pointer-events: none;
-            transition: all 0.5s ease;
-            display: none;
-        }
-        .header-title.active {
-            display: block;
-            top: 20px;
-            left: 20px;
-            right: auto;
-            bottom: auto;
-            font-size: 1.5rem;
-            color: black;
-        }
-        .link-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #333;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            z-index: 20;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.5s ease;
-            border: 2px solid #333;
-        }
-        .link-button.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .link-button:hover {
-            background-color: white;
-            color: #333;
-            transform: scale(1.1);
-        }
-        .section1 {
-            background-color: black;
-        }
-        .section1 .text-overlay {
-            color: white;
-            font-size: 2.5rem;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        /* 白黒統一 */
-        .section2, .section3, .section4 {
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        .content {
-            max-width: 800px;
-            text-align: left;
-        }
-        .content > * {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
-        }
-        .section.active .content h2 {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.5s;
-        }
-        .section.active .content p {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 1s;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スライド切り替えデモ</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+    }
+    .container {
+      transition: transform 0.8s ease;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+    .header-title {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: black;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease;
+    }
+    .header-title.active {
+      opacity: 1;
+    }
+    .section1 {
+      background-color: black;
+    }
+    .section1 .text-overlay {
+      color: white;
+      font-size: 2.5rem;
+      opacity: 0;
+      animation: fadeIn 4s forwards;
+    }
+    .section-title {
+      font-size: 4rem;
+      opacity: 0;
+      animation: fadeIn 4s forwards;
+      color: #333;
+    }
+    .content-section {
+      background-color: #fff;
+      color: #333;
+    }
+    .content {
+      max-width: 800px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .section.active .content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 20px;
+      color: #333;
+      text-decoration: none;
+    }
+    .link-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      text-decoration: none;
+      z-index: 20;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease;
+      border: 2px solid #333;
+    }
+    .link-button.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .link-button:hover {
+      background-color: white;
+      color: #333;
+      transform: scale(1.1);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <div class="header-title">経済学総則</div>
-    <a href="https://example.com" class="link-button" target="_blank">→</a>
 
-    <div class="container">
-        <div class="section section1">
-            <div class="text-overlay">
-                No Fair Value, Just Bid and Ask
-            </div>
-        </div>
-        <div class="section section2">
-            <div class="content">
-                <h2>第1部<br>市場・投資</h2>
-                <p>
-                    経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。<br><br>
-                    またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。<br><br>
-                    そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
-                </p>
-            </div>
-        </div>
-        <div class="section section3">
-            <div class="content">
-                <h2>第2部<br>経済の仕組み</h2>
-                <p>
-                    私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。<br><br>
-                    経済の仕組みを理解することは、より良い意思決定を行うための基盤となる。
-                </p>
-            </div>
-        </div>
-        <div class="section section4">
-            <div class="content">
-                <h2>第3部<br>価値と価格</h2>
-                <p>
-                    価値と価格の違いを理解することは、取引における合理的な判断を支える。<br><br>
-                    市場で形成される価格の背景には、様々な要因が影響している。
-                </p>
-            </div>
-        </div>
+  <div class="header-title">経済学総則</div>
+
+  <div class="container">
+    <div class="section section1">
+      <div class="text-overlay">No Fair Value, Just Bid and Ask</div>
     </div>
 
-    <script>
-        let currentSection = 0;
-        const sections = document.querySelectorAll('.section');
-        const totalSections = sections.length;
-        let scrollY = 0;
-        let isScrolling = false;
-        const scrollThreshold = 300;
-        const headerTitle = document.querySelector('.header-title');
-        const linkButton = document.querySelector('.link-button');
+    <div class="section">
+      <div class="section-title">基礎編</div>
+    </div>
 
-        function updateSections() {
-            sections.forEach((section, index) => {
-                section.classList.toggle('active', index === currentSection);
-            });
-        }
+    <div class="section content-section">
+      <div class="content">
+        <h2>第1部<br>市場・投資</h2>
+        <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
+      </div>
+    </div>
 
-        window.addEventListener('wheel', (event) => {
-            if (isScrolling) return;
+    <div class="section content-section">
+      <div class="content">
+        <h2>第2部<br>経済の仕組み</h2>
+        <p>私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。</p>
+      </div>
+    </div>
 
-            scrollY += event.deltaY;
+    <div class="section content-section">
+      <div class="content">
+        <h2>第3部<br>価値と価格</h2>
+        <p>価値と価格の違いを理解することは、取引における合理的な判断を支える。</p>
+      </div>
+    </div>
 
-            if (Math.abs(scrollY) >= scrollThreshold) {
-                isScrolling = true;
-                currentSection = scrollY > 0
-                    ? Math.min(currentSection + 1, totalSections - 1)
-                    : Math.max(currentSection - 1, 0);
+    <div class="section">
+      <div class="section-title">応用編</div>
+    </div>
 
-                document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
-                scrollY = 0;
+    <div class="section content-section">
+      <div class="content">
+        <h2>応用第1部<br>ポートフォリオ理論</h2>
+        <p>リスクとリターンのバランスを考慮した投資戦略を構築する。</p>
+      </div>
+    </div>
 
-                headerTitle.classList.toggle('active', currentSection > 0);
-                linkButton.classList.toggle('active', currentSection > 0);
+    <div class="section content-section">
+      <div class="content">
+        <h2>応用第2部<br>ゲーム理論</h2>
+        <p>他者の行動を考慮した合理的な意思決定を探求する。</p>
+      </div>
+    </div>
 
-                updateSections();
+    <div class="section content-section">
+      <div class="content">
+        <h2>応用第3部<br>行動経済学</h2>
+        <p>人間の心理的バイアスが経済行動に与える影響を理解する。</p>
+      </div>
+    </div>
+  </div>
 
-                setTimeout(() => {
-                    isScrolling = false;
-                }, 800);
-            }
+  <a href="#" class="link-button" id="linkButton">→</a>
+
+  <script>
+    let currentSection = 0;
+    const sections = document.querySelectorAll('.section');
+    const totalSections = sections.length;
+    let scrollThreshold = 300;
+    let scrollY = 0;
+    let isScrolling = false;
+    const headerTitle = document.querySelector('.header-title');
+    const linkButton = document.getElementById('linkButton');
+
+    window.addEventListener('wheel', (event) => {
+      if (isScrolling) return;
+
+      scrollY += event.deltaY;
+
+      if (Math.abs(scrollY) >= scrollThreshold) {
+        isScrolling = true;
+        currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
+        document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
+        scrollY = 0;
+
+        headerTitle.classList.toggle('active', currentSection > 0);
+        linkButton.classList.toggle('active', currentSection > 0);
+
+        sections.forEach((section, index) => {
+          section.classList.toggle('active', index === currentSection);
         });
 
-        updateSections();
-    </script>
+        setTimeout(() => isScrolling = false, 800);
+      }
+    });
+  </script>
+
 </body>
 </html>
