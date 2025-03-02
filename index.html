@@ -34,8 +34,10 @@
             z-index: 10;
             pointer-events: none;
             transition: all 0.5s ease;
+            display: none;
         }
         .header-title.active {
+            display: block;
             top: 20px;
             left: 20px;
             right: auto;
@@ -49,7 +51,6 @@
         .section1 .text-overlay {
             color: white;
             font-size: 2.5rem;
-            text-align: center;
             opacity: 0;
             animation: fadeIn 3s forwards;
         }
@@ -67,31 +68,10 @@
         }
         .section4 {
             background-color: #ffcc66;
-            color: #333;
         }
         .content {
             max-width: 800px;
             text-align: left;
-        }
-        .content > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .active .content h2 {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.2s;
-        }
-        .active .content p {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.6s;
-        }
-        .active .content .read-more {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 1s;
         }
     </style>
 </head>
@@ -108,11 +88,10 @@
             <div class="content">
                 <h2>第1部<br>市場・投資</h2>
                 <p>
-                    経済学という大きな理論を展開するための舞台（数学でいうところの空間）を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。<br><br>
+                    経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。<br><br>
                     またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。<br><br>
                     そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
                 </p>
-                <a href="#" class="read-more">Read More</a>
             </div>
         </div>
         <div class="section section3">
@@ -122,7 +101,6 @@
                     私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。<br><br>
                     経済の仕組みを理解することは、より良い意思決定を行うための基盤となる。
                 </p>
-                <a href="#" class="read-more">Read More</a>
             </div>
         </div>
         <div class="section section4">
@@ -132,7 +110,6 @@
                     価値と価格の違いを理解することは、取引における合理的な判断を支える。<br><br>
                     市場で形成される価格の背景には、様々な要因が影響している。
                 </p>
-                <a href="#" class="read-more">Read More</a>
             </div>
         </div>
     </div>
@@ -141,9 +118,9 @@
         let currentSection = 0;
         const sections = document.querySelectorAll('.section');
         const totalSections = sections.length;
-        let scrollThreshold = 300;
         let scrollY = 0;
         let isScrolling = false;
+        const scrollThreshold = 300;
         const headerTitle = document.querySelector('.header-title');
 
         window.addEventListener('wheel', (event) => {
@@ -153,33 +130,18 @@
 
             if (Math.abs(scrollY) >= scrollThreshold) {
                 isScrolling = true;
-                if (scrollY > 0) {
-                    currentSection = Math.min(currentSection + 1, totalSections - 1);
-                } else {
-                    currentSection = Math.max(currentSection - 1, 0);
-                }
-                const offset = -currentSection * 100;
-                document.querySelector('.container').style.transform = `translateY(${offset}vh)`;
+                currentSection = scrollY > 0
+                    ? Math.min(currentSection + 1, totalSections - 1)
+                    : Math.max(currentSection - 1, 0);
+
+                document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
                 scrollY = 0;
 
-                // 1ページ目では経済学総則を非表示
                 if (currentSection > 0) {
                     headerTitle.classList.add('active');
-                    headerTitle.style.left = '20px';
-                    headerTitle.style.top = '20px';
-                    headerTitle.style.right = 'auto';
-                    headerTitle.style.bottom = 'auto';
                 } else {
                     headerTitle.classList.remove('active');
                 }
-
-                sections.forEach((section, index) => {
-                    if (index === currentSection) {
-                        section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
-                    }
-                });
 
                 setTimeout(() => {
                     isScrolling = false;
