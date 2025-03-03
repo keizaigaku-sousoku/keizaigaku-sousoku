@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スライド切り替えデモ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet"> <!-- RobotoとNoto Sans JPをインポート -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       overflow: hidden;
-      font-family: 'Roboto', 'Noto Sans JP', sans-serif; /* フォントをRobotoとNoto Sans JPに変更 */
-      font-weight: 300; /* 文字を細くする */
+      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+      font-weight: 300;
       height: 100vh;
     }
     .container {
@@ -35,7 +35,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.8s ease;
-      font-weight: 400; /* ヘッダータイトルの太さを調整 */
+      font-weight: 400;
     }
     .header-title.active {
       opacity: 1;
@@ -56,7 +56,7 @@
     .dropdown-item {
       padding: 10px 20px;
       cursor: pointer;
-      font-weight: 300; /* ドロップダウンアイテムの太さを調整 */
+      font-weight: 300;
     }
     .dropdown-item:hover {
       background-color: #f0f0f0;
@@ -75,7 +75,7 @@
       opacity: 0;
       animation: fadeIn 4s forwards;
       color: #333;
-      font-weight: 300; /* セクションタイトルも細くする */
+      font-weight: 300;
     }
     .content-section {
       background-color: #fff;
@@ -86,7 +86,7 @@
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 1.5s ease, transform 1.5s ease;
-      font-weight: 300; /* コンテンツも細くする */
+      font-weight: 300;
     }
     .section.active .content {
       opacity: 1;
@@ -213,11 +213,13 @@
     // ヘッダーにマウスオーバーしたときの処理
     headerTitle.addEventListener('mouseenter', () => {
       dropdownMenu.classList.add('active');
+      headerTitle.classList.add('active'); // ヘッダーもアクティブにする
     });
 
     // ヘッダーからマウスが離れたときの処理
     headerTitle.addEventListener('mouseleave', () => {
       dropdownMenu.classList.remove('active');
+      headerTitle.classList.remove('active'); // ヘッダーも非アクティブにする
     });
 
     window.addEventListener('wheel', (event) => {
@@ -230,6 +232,15 @@
         currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
         document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
         scrollY = 0;
+
+        // ヘッダーのタイトルを更新
+        if (currentSection === 1) {
+          headerTitle.textContent = '基礎編';
+        } else if (currentSection === 5) {
+          headerTitle.textContent = '応用編';
+        } else {
+          headerTitle.textContent = '経済学総則';
+        }
 
         headerTitle.classList.toggle('active', currentSection > 0);
         linkButton.classList.toggle('active', currentSection > 0);
