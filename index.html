@@ -195,6 +195,10 @@
 
         sections.forEach((section, index) => {
           section.classList.toggle('active', index === currentSection);
+          const content = section.querySelector('.content');
+          if (content) {
+            content.classList.toggle('active', index === currentSection); // フェードインを適用
+          }
         });
 
         setTimeout(() => isScrolling = false, 800);
