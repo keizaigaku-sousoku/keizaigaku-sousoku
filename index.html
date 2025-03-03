@@ -25,20 +25,18 @@
       box-sizing: border-box;
       flex-direction: column;
     }
-    .header-title {
+    .header {
       position: fixed;
       top: 20px;
       left: 20px;
       font-size: 1.5rem;
       color: black;
       z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s ease;
-      font-weight: 400;
+      display: flex;
+      align-items: center;
     }
-    .header-title.active {
-      opacity: 1;
+    .header-title {
+      margin-right: 10px;
     }
     .dropdown {
       position: fixed;
@@ -92,12 +90,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .read-more {
-      display: inline-block;
-      margin-top: 20px;
-      color: #333;
-      text-decoration: none;
-    }
     .link-button {
       position: fixed;
       bottom: 30px;
@@ -135,10 +127,20 @@
 </head>
 <body>
 
-  <div class="header-title">経済学総則</div>
+  <div class="header">
+    <div class="header-title">経済学総則</div>
+    <div>|</div>
+    <div class="header-item" id="basic">基礎編</div>
+    <div class="header-item" id="applied">応用編</div>
+  </div>
+  
   <div class="dropdown" id="dropdownMenu">
-    <div class="dropdown-item">基礎編</div>
-    <div class="dropdown-item">応用編</div>
+    <div class="dropdown-item">基礎第1部</div>
+    <div class="dropdown-item">基礎第2部</div>
+    <div class="dropdown-item">基礎第3部</div>
+    <div class="dropdown-item">応用第1部</div>
+    <div class="dropdown-item">応用第2部</div>
+    <div class="dropdown-item">応用第3部</div>
   </div>
 
   <div class="container">
@@ -206,20 +208,38 @@
     let scrollThreshold = 300;
     let scrollY = 0;
     let isScrolling = false;
-    const headerTitle = document.querySelector('.header-title');
     const linkButton = document.getElementById('linkButton');
     const dropdownMenu = document.getElementById('dropdownMenu');
+    const basicItem = document.getElementById('basic');
+    const appliedItem = document.getElementById('applied');
 
-    // ヘッダーにマウスオーバーしたときの処理
-    headerTitle.addEventListener('mouseenter', () => {
+    // 基礎編のヘッダーアイテムにカーソルを合わせたときの処理
+    basicItem.addEventListener('mouseenter', () => {
       dropdownMenu.classList.add('active');
-      headerTitle.classList.add('active'); // ヘッダーもアクティブにする
+      dropdownMenu.innerHTML = `
+        <div class="dropdown-item">基礎第1部</div>
+        <div class="dropdown-item">基礎第2部</div>
+        <div class="dropdown-item">基礎第3部</div>
+      `;
     });
 
-    // ヘッダーからマウスが離れたときの処理
-    headerTitle.addEventListener('mouseleave', () => {
+    // 応用編のヘッダーアイテムにカーソルを合わせたときの処理
+    appliedItem.addEventListener('mouseenter', () => {
+      dropdownMenu.classList.add('active');
+      dropdownMenu.innerHTML = `
+        <div class="dropdown-item">応用第1部</div>
+        <div class="dropdown-item">応用第2部</div>
+        <div class="dropdown-item">応用第3部</div>
+      `;
+    });
+
+    // マウスが離れたときの処理
+    basicItem.addEventListener('mouseleave', () => {
       dropdownMenu.classList.remove('active');
-      headerTitle.classList.remove('active'); // ヘッダーも非アクティブにする
+    });
+
+    appliedItem.addEventListener('mouseleave', () => {
+      dropdownMenu.classList.remove('active');
     });
 
     window.addEventListener('wheel', (event) => {
@@ -233,16 +253,6 @@
         document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
         scrollY = 0;
 
-        // ヘッダーのタイトルを更新
-        if (currentSection === 1) {
-          headerTitle.textContent = '基礎編';
-        } else if (currentSection === 5) {
-          headerTitle.textContent = '応用編';
-        } else {
-          headerTitle.textContent = '経済学総則';
-        }
-
-        headerTitle.classList.toggle('active', currentSection > 0);
         linkButton.classList.toggle('active', currentSection > 0);
 
         sections.forEach((section, index) => {
