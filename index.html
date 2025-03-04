@@ -13,6 +13,14 @@
       font-weight: 300;
       height: 100vh;
     }
+    h2 {
+      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      font-size: 28px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
     .container {
       transition: transform 0.8s ease;
     }
@@ -24,63 +32,6 @@
       padding: 40px;
       box-sizing: border-box;
       flex-direction: column;
-    }
-    .header {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-size: 1.5rem;
-      color: black;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-    }
-    .header-title {
-      margin-right: 20px;
-    }
-    .header-item {
-      margin-right: 20px;
-      position: relative;
-      cursor: pointer;
-      font-size: 1.2rem;
-    }
-    .dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      display: none;
-      background-color: rgba(0, 0, 0, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 10;
-      width: 180px;
-      padding: 8px 0;
-      border-radius: 10px;
-      backdrop-filter: blur(6px);
-    }
-    .header-item:hover .dropdown {
-      display: block;
-    }
-    .dropdown-item {
-      padding: 8px 15px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 300;
-      color: #fff;
-      white-space: nowrap;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .dropdown-item:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-    .section1 {
-      background-color: black;
-    }
-    .section1 .text-overlay {
-      color: white;
-      font-size: 2.5rem;
-      opacity: 0;
-      animation: fadeIn 4s forwards;
     }
     .section-title {
       font-size: 40px;
@@ -104,35 +55,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .link-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background-color: #333;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      text-decoration: none;
-      z-index: 20;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.5s ease;
-      border: 2px solid #333;
-    }
-    .link-button.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .link-button:hover {
-      background-color: white;
-      color: #333;
-      transform: scale(1.1);
-    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -140,67 +62,22 @@
   </style>
 </head>
 <body>
-
-  <div class="header">
-    <div class="header-title">経済学総則</div>
-    <div class="header-title">｜</div>
-    <div class="header-item">
-      基礎編
-      <div class="dropdown">
-        <div class="dropdown-item" data-target="2">基礎第1部</div>
-        <div class="dropdown-item" data-target="3">基礎第2部</div>
-        <div class="dropdown-item" data-target="4">基礎第3部</div>
-      </div>
-    </div>
-    <div class="header-item">
-      応用編
-      <div class="dropdown">
-        <div class="dropdown-item" data-target="6">応用第1部</div>
-        <div class="dropdown-item" data-target="7">応用第2部</div>
-        <div class="dropdown-item" data-target="8">応用第3部</div>
-      </div>
-    </div>
-  </div>
-
   <div class="container">
-    <div class="section section1"><div class="text-overlay">No Fair Value, Just Bid and Ask</div></div>
-    <div class="section"><div class="section-title">基礎編</div></div>
-    <div class="section content-section"><div class="content"><h2>基礎第1部</h2></div></div>
-    <div class="section content-section"><div class="content"><h2>基礎第2部</h2></div></div>
-    <div class="section content-section"><div class="content"><h2>基礎第3部</h2></div></div>
-    <div class="section"><div class="section-title">応用編</div></div>
-    <div class="section content-section"><div class="content"><h2>応用第1部</h2></div></div>
-    <div class="section content-section"><div class="content"><h2>応用第2部</h2></div></div>
-    <div class="section content-section"><div class="content"><h2>応用第3部</h2></div></div>
+    <div class="section">
+      <div class="section-title">基礎編</div>
+    </div>
+    <div class="section content-section">
+      <div class="content">
+        <h2>第1部<br>市場・投資</h2>
+        <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
+      </div>
+    </div>
+    <div class="section content-section">
+      <div class="content">
+        <h2>第2部<br>経済の仕組み</h2>
+        <p>私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。</p>
+      </div>
+    </div>
   </div>
-
-  <a href="#" class="link-button" id="linkButton">&gt;&gt;</a>
-
-  <script>
-    const container = document.querySelector('.container');
-    const sections = document.querySelectorAll('.section');
-    const linkButton = document.getElementById('linkButton');
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
-    let currentIndex = 0;
-
-    function goToSection(index) {
-      container.style.transform = `translateY(${-index * 100}vh)`;
-      currentIndex = index;
-    }
-
-    dropdownItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const targetIndex = Number(item.getAttribute('data-target'));
-        goToSection(targetIndex);
-      });
-    });
-
-    window.addEventListener('wheel', (e) => {
-      if (e.deltaY > 0 && currentIndex < sections.length - 1) currentIndex++;
-      else if (e.deltaY < 0 && currentIndex > 0) currentIndex--;
-      goToSection(currentIndex);
-    });
-  </script>
-
 </body>
 </html>
