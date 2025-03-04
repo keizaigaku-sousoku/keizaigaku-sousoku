@@ -42,7 +42,7 @@
       margin-right: 20px;
       position: relative;
       cursor: pointer;
-      font-size:1.2rem;
+      font-size: 1.2rem;
     }
     .dropdown {
       position: absolute;
@@ -72,7 +72,6 @@
     }
     .dropdown-item:hover {
       background-color: rgba(255, 255, 255, 0.1);
-      color: #fff;
     }
     .section1 {
       background-color: black;
@@ -148,81 +147,59 @@
     <div class="header-item">
       基礎編
       <div class="dropdown">
-        <div class="dropdown-item">基礎第1部</div>
-        <div class="dropdown-item">基礎第2部</div>
-        <div class="dropdown-item">基礎第3部</div>
+        <div class="dropdown-item" data-target="2">基礎第1部</div>
+        <div class="dropdown-item" data-target="3">基礎第2部</div>
+        <div class="dropdown-item" data-target="4">基礎第3部</div>
       </div>
     </div>
     <div class="header-item">
       応用編
       <div class="dropdown">
-        <div class="dropdown-item">応用第1部</div>
-        <div class="dropdown-item">応用第2部</div>
-        <div class="dropdown-item">応用第3部</div>
+        <div class="dropdown-item" data-target="6">応用第1部</div>
+        <div class="dropdown-item" data-target="7">応用第2部</div>
+        <div class="dropdown-item" data-target="8">応用第3部</div>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="section section1">
-      <div class="text-overlay">No Fair Value, Just Bid and Ask</div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">基礎編</div>
-    </div>
-
-    <div class="section content-section" data-link="#part1">
-      <div class="content">
-        <h2>第1部<br>市場・投資</h2>
-        <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
-      </div>
-    </div>
-
-    <div class="section content-section" data-link="#part2">
-      <div class="content">
-        <h2>第2部<br>経済の仕組み</h2>
-        <p>私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。</p>
-      </div>
-    </div>
-
-    <div class="section content-section" data-link="#part3">
-      <div class="content">
-        <h2>第3部<br>価値と価格</h2>
-        <p>価値と価格の違いを理解することは、取引における合理的な判断を支える。</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">応用編</div>
-    </div>
-
-    <div class="section content-section" data-link="#applied1">
-      <div class="content">
-        <h2>応用第1部<br>ポートフォリオ理論</h2>
-        <p>リスクとリターンのバランスを考慮した投資戦略を構築する。</p>
-      </div>
-    </div>
-
-    <div class="section content-section" data-link="#applied2">
-      <div class="content">
-        <h2>応用第2部<br>ゲーム理論</h2>
-        <p>他者の行動を考慮した合理的な意思決定を探求する。</p>
-      </div>
-    </div>
-
-    <div class="section content-section" data-link="#applied3">
-      <div class="content">
-        <h2>応用第3部<br>行動経済学</h2>
-        <p>人間の心理的バイアスが経済行動に与える影響を理解する。</p>
-      </div>
-    </div>
+    <div class="section section1"><div class="text-overlay">No Fair Value, Just Bid and Ask</div></div>
+    <div class="section"><div class="section-title">基礎編</div></div>
+    <div class="section content-section"><div class="content"><h2>基礎第1部</h2></div></div>
+    <div class="section content-section"><div class="content"><h2>基礎第2部</h2></div></div>
+    <div class="section content-section"><div class="content"><h2>基礎第3部</h2></div></div>
+    <div class="section"><div class="section-title">応用編</div></div>
+    <div class="section content-section"><div class="content"><h2>応用第1部</h2></div></div>
+    <div class="section content-section"><div class="content"><h2>応用第2部</h2></div></div>
+    <div class="section content-section"><div class="content"><h2>応用第3部</h2></div></div>
   </div>
 
   <a href="#" class="link-button" id="linkButton">&gt;&gt;</a>
 
   <script>
-    // 次の返信でJS含めて続きます！
+    const container = document.querySelector('.container');
+    const sections = document.querySelectorAll('.section');
+    const linkButton = document.getElementById('linkButton');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+    let currentIndex = 0;
+
+    function goToSection(index) {
+      container.style.transform = `translateY(${-index * 100}vh)`;
+      currentIndex = index;
+    }
+
+    dropdownItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const targetIndex = Number(item.getAttribute('data-target'));
+        goToSection(targetIndex);
+      });
+    });
+
+    window.addEventListener('wheel', (e) => {
+      if (e.deltaY > 0 && currentIndex < sections.length - 1) currentIndex++;
+      else if (e.deltaY < 0 && currentIndex > 0) currentIndex--;
+      goToSection(currentIndex);
+    });
   </script>
 
 </body>
