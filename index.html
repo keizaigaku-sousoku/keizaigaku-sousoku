@@ -246,7 +246,7 @@
       if (Math.abs(scrollY) >= scrollThreshold) {
         isScrolling = true;
         currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
-        document.querySelector('.container').style.transform = translateY(${-currentSection * 100}vh);
+        document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
         scrollY = 0;
 
         linkButton.classList.toggle('active', currentSection > 0);
