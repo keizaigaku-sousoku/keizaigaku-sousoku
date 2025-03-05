@@ -250,7 +250,7 @@
     function fadeInElements(section) {
       const fadeInElements = section.querySelectorAll('.fade-in');
       fadeInElements.forEach((element, index) => {
-        element.style.transitionDelay = `${index * 0.2}s`;
+        element.style.transitionDelay = `${index * 1.0}s`;
         element.classList.add('active');
       });
     }
