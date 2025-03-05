@@ -132,7 +132,7 @@
       background-color: #333;
       color: white;
       border-radius: 50%;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
       font-size: 1.5rem;
@@ -146,6 +146,7 @@
     .link-button.active {
       opacity: 1;
       pointer-events: auto;
+      display: flex;
     }
     .link-button:hover {
       background-color: white;
@@ -237,7 +238,7 @@
     </div>
   </div>
 
-  <a href="#" class="link-button" id="linkButton">&gt;&gt;</a>
+<a href="#" class="link-button" id="linkButton">&gt;&gt;</a>
 
   <script>
     let currentSection = 0;
@@ -247,6 +248,18 @@
     let scrollY = 0;
     let isScrolling = false;
     const linkButton = document.getElementById('linkButton');
+
+    const sectionLinks = [
+      "", // section1
+      "", // 基礎編タイトル
+      "https://example.com/market", // 第1部 市場・投資
+      "https://example.com/micro_macro", // 第2部 ミクロ・マクロ
+      "https://example.com/finance", // 第3部 財務・ファイナンス
+      "", // 応用編タイトル
+      "https://example.com/portfolio", // 応用第1部 ポートフォリオ
+      "https://example.com/game_theory", // 応用第2部 ゲーム理論
+      "https://example.com/behavioral", // 応用第3部 行動経済学
+    ];
 
     function fadeInElements(section) {
       const fadeInElements = section.querySelectorAll('.fade-in');
@@ -267,18 +280,24 @@
         document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
         scrollY = 0;
 
-        linkButton.classList.toggle('active', currentSection > 0);
+        const link = sectionLinks[currentSection];
+        if (link) {
+          linkButton.href = link;
+          linkButton.classList.add('active');
+        } else {
+          linkButton.href = "#";
+          linkButton.classList.remove('active');
+        }
 
         sections.forEach((section, index) => {
           section.classList.toggle('active', index === currentSection);
           if (index === currentSection) {
             fadeInElements(section);
           } else {
-            // 前のセクションの要素をリセット
             const fadeInElements = section.querySelectorAll('.fade-in');
             fadeInElements.forEach(element => {
               element.classList.remove('active');
-              element.style.transitionDelay = '0s'; // リセット
+              element.style.transitionDelay = '0s';
             });
           }
         });
