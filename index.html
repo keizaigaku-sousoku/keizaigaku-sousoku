@@ -57,14 +57,14 @@
       top: 100%;
       left: 0;
       display: none;
-      background-color: rgba(0, 0, 0, 0.9); /* 半透明の黒 */
-      border: 1px solid rgba(255, 255, 255, 0.1); /* ほのかな白線 */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 柔らかめ影 */
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       z-index: 10;
-      width: 180px; /* 少しワイドに */
+      width: 180px;
       padding: 8px 0;
-      border-radius: 10px; /* 角を丸く */
-      backdrop-filter: blur(6px); /* 背景ぼかし効果（対応ブラウザで） */
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
     }
     .header-item:hover .dropdown {
       display: block;
@@ -79,8 +79,8 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
     .dropdown-item:hover {
-      background-color: rgba(255, 255, 255, 0.1); /* 薄グレー系で反応 */
-      color: #fff; /* 色は白キープ */
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
     .section1 {
       background-color: black;
@@ -110,6 +110,15 @@
       font-weight: 300;
     }
     .section.active .content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.active {
       opacity: 1;
       transform: translateY(0);
     }
@@ -182,22 +191,22 @@
 
     <div class="section content-section">
       <div class="content">
-        <h2>第1部<br>市場・投資</h2>
-        <p>経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
+        <h2 class="fade-in">第1部<br>市場・投資</h2>
+        <p class="fade-in">経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。</p>
       </div>
     </div>
 
     <div class="section content-section">
       <div class="content">
-        <h2>第2部<br>経済の仕組み</h2>
-        <p>私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。</p>
+        <h2 class="fade-in">第2部<br>経済の仕組み</h2>
+        <p class="fade-in">私たちが生活する社会には、無数の市場が存在し、それらが複雑に絡み合いながら動いている。</p>
       </div>
     </div>
 
     <div class="section content-section">
       <div class="content">
-        <h2>第3部<br>価値と価格</h2>
-        <p>価値と価格の違いを理解することは、取引における合理的な判断を支える。</p>
+        <h2 class="fade-in">第3部<br>価値と価格</h2>
+        <p class="fade-in">価値と価格の違いを理解することは、取引における合理的な判断を支える。</p>
       </div>
     </div>
 
@@ -207,22 +216,22 @@
 
     <div class="section content-section">
       <div class="content">
-        <h2>応用第1部<br>ポートフォリオ理論</h2>
-        <p>リスクとリターンのバランスを考慮した投資戦略を構築する。</p>
+        <h2 class="fade-in">応用第1部<br>ポートフォリオ理論</h2>
+        <p class="fade-in">リスクとリターンのバランスを考慮した投資戦略を構築する。</p>
       </div>
     </div>
 
     <div class="section content-section">
       <div class="content">
-        <h2>応用第2部<br>ゲーム理論</h2>
-        <p>他者の行動を考慮した合理的な意思決定を探求する。</p>
+        <h2 class="fade-in">応用第2部<br>ゲーム理論</h2>
+        <p class="fade-in">他者の行動を考慮した合理的な意思決定を探求する。</p>
       </div>
     </div>
 
     <div class="section content-section">
       <div class="content">
-        <h2>応用第3部<br>行動経済学</h2>
-        <p>人間の心理的バイアスが経済行動に与える影響を理解する。</p>
+        <h2 class="fade-in">応用第3部<br>行動経済学</h2>
+        <p class="fade-in">人間の心理的バイアスが経済行動に与える影響を理解する。</p>
       </div>
     </div>
   </div>
@@ -237,6 +246,14 @@
     let scrollY = 0;
     let isScrolling = false;
     const linkButton = document.getElementById('linkButton');
+
+    function fadeInElements(section) {
+      const fadeInElements = section.querySelectorAll('.fade-in');
+      fadeInElements.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.2}s`;
+        element.classList.add('active');
+      });
+    }
 
     window.addEventListener('wheel', (event) => {
       if (isScrolling) return;
@@ -253,6 +270,16 @@
 
         sections.forEach((section, index) => {
           section.classList.toggle('active', index === currentSection);
+          if (index === currentSection) {
+            fadeInElements(section);
+          } else {
+            // 前のセクションの要素をリセット
+            const fadeInElements = section.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+              element.classList.remove('active');
+              element.style.transitionDelay = '0s'; // リセット
+            });
+          }
         });
 
         setTimeout(() => isScrolling = false, 800);
