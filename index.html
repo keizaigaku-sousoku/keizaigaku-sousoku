@@ -157,22 +157,31 @@
        from { opacity: 0; }
        to { opacity: 1; }
      }
-     @media (max-width: 768px) {
-      .header {
-        font-size: 1rem;
-      }
-      /*.section1 .text-overlay {*/
-      /*  font-size: 1.8rem;*/
-      /*}*/
-      .section-title {
-        font-size: 24px;
-      }
-      .link-button {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
-      }
-    }
+   @media (max-width: 768px) {
+     .header {
+       font-size: 1rem;
+       flex-direction: column; /* ヘッダー内の要素を縦に並べる */
+       align-items: center; /* ヘッダーのアイテムを中央に配置 */
+       padding: 10px; /* 少し余白を調整 */
+     }
+     .header-item {
+       margin: 10px 0; /* アイテム間のスペースを調整 */
+     }
+     .header-item .dropdown {
+       width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
+     }
+     .section-title {
+       font-size: 24px; /* スマホ向けにタイトルのフォントサイズを調整 */
+     }
+     .link-button {
+       width: 45px;
+       height: 45px;
+       font-size: 1rem;
+     }
+     .section1 .text-overlay {
+       font-size: 1.8rem; /* スマホ用にフォントサイズを調整 */
+     }
+   }
    </style>
  </head>
  <body>
@@ -298,10 +307,12 @@
      let currentSection = 0;
      const sections = document.querySelectorAll('.section');
      const totalSections = sections.length;
-     let scrollThreshold = 300;
-     let scrollY = 0;
-     let isScrolling = false;
+     const container = document.querySelector('.container');
      const linkButton = document.getElementById('linkButton');
+     let isScrolling = false;
+     const scrollThreshold = 300;
+     let scrollY = 0;
+     let touchStartY = 0;
  
      const sectionLinks = [
        "", // section1
@@ -327,43 +338,75 @@
        });
      }
  
-     window.addEventListener('wheel', (event) => {
-       if (isScrolling) return;
- 
-       scrollY += event.deltaY;
- 
-       if (Math.abs(scrollY) >= scrollThreshold) {
-         isScrolling = true;
-         currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
-         document.querySelector('.container').style.transform = `translateY(${-currentSection * 100}vh)`;
-         scrollY = 0;
- 
-         const link = sectionLinks[currentSection];
-         if (link) {
-           linkButton.href = link;
-           linkButton.classList.add('active');
-         } else {
-           linkButton.href = "#";
-           linkButton.classList.remove('active');
-         }
- 
-         sections.forEach((section, index) => {
-           section.classList.toggle('active', index === currentSection);
-           if (index === currentSection) {
-             fadeInElements(section);
-           } else {
-             const fadeInElements = section.querySelectorAll('.fade-in');
-             fadeInElements.forEach(element => {
-               element.classList.remove('active');
-               element.style.transitionDelay = '0s';
-             });
-           }
-         });
- 
-         setTimeout(() => isScrolling = false, 800);
-       }
-     });
-   </script>
+     function updateSection() {
+      container.style.transform = `translateY(${-currentSection * 100}vh)`;
+  
+      sections.forEach((section, index) => {
+        section.classList.toggle('active', index === currentSection);
+        if (index === currentSection) {
+          fadeInElements(section);
+        } else {
+          resetFadeElements(section);
+        }
+      });
+  
+      const link = sectionLinks[currentSection];
+      if (link) {
+        linkButton.href = link;
+        linkButton.classList.add('active');
+      } else {
+        linkButton.href = "#";
+        linkButton.classList.remove('active');
+      }
+  
+      setTimeout(() => isScrolling = false, 800);
+    }
+  
+    function fadeInElements(section) {
+      const fadeInElements = section.querySelectorAll('.fade-in');
+      fadeInElements.forEach((element, index) => {
+        element.style.transitionDelay = `${index * 0.8}s`;
+        element.classList.add('active');
+      });
+    }
+  
+    function resetFadeElements(section) {
+      const fadeInElements = section.querySelectorAll('.fade-in');
+      fadeInElements.forEach(element => {
+        element.classList.remove('active');
+        element.style.transitionDelay = '0s';
+      });
+    }
+  
+    // **PC: マウスホイールでスクロール**
+    window.addEventListener('wheel', (event) => {
+      if (isScrolling) return;
+  
+      scrollY += event.deltaY;
+      if (Math.abs(scrollY) >= scrollThreshold) {
+        isScrolling = true;
+        currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
+        scrollY = 0;
+        updateSection();
+      }
+    });
+  
+    // **スマホ: スワイプでスクロール**
+    window.addEventListener("touchstart", (event) => {
+      touchStartY = event.touches[0].clientY;
+    });
+  
+    window.addEventListener("touchend", (event) => {
+      let touchEndY = event.changedTouches[0].clientY;
+      let touchDiff = touchStartY - touchEndY;
+  
+      if (Math.abs(touchDiff) > 50) { // スワイプ判定
+        isScrolling = true;
+        currentSection = Math.max(0, Math.min(currentSection + (touchDiff > 0 ? 1 : -1), totalSections - 1));
+        updateSection();
+      }
+    });
+  </script>
  
  </body>
  </html>
