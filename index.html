@@ -159,38 +159,40 @@
        color: white;
        transform: scale(1.1);
      }
+    
      @keyframes fadeIn {
        from { opacity: 0; }
        to { opacity: 1; }
      }
-   @media (max-width: 768px) {
-    .header {
-      height: 45px;
-      padding: 0 10px;
-      justify-content: space-around;
-    }
-    .header-title {
-      font-size: 1rem; /* スマホではタイトルを少し小さく */
-    }
-    .header-item {
-      font-size: 0.9rem;
-      margin: 0 5px;
-    }
-    .header-item .dropdown {
-       width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
+    
+     @media (max-width: 768px) {
+      .header {
+        height: 45px;
+        padding: 0 10px;
+        justify-content: space-around;
+      }
+      .header-title {
+        font-size: 1rem; /* スマホではタイトルを少し小さく */
+      }
+      .header-item {
+        font-size: 0.9rem;
+        margin: 0 5px;
+      }
+      .header-item .dropdown {
+         width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
+       }
+       .section-title {
+         font-size: 24px; /* スマホ向けにタイトルのフォントサイズを調整 */
+       }
+       .link-button {
+         width: 45px;
+         height: 45px;
+         font-size: 1rem;
+       }
+       .section1 .text-overlay {
+         font-size: 1.8rem; /* スマホ用にフォントサイズを調整 */
+       }
      }
-     .section-title {
-       font-size: 24px; /* スマホ向けにタイトルのフォントサイズを調整 */
-     }
-     .link-button {
-       width: 45px;
-       height: 45px;
-       font-size: 1rem;
-     }
-     .section1 .text-overlay {
-       font-size: 1.8rem; /* スマホ用にフォントサイズを調整 */
-     }
-   }
    </style>
  </head>
  <body>
