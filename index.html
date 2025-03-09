@@ -36,33 +36,38 @@
      }
      .header {
        position: fixed;
-       top: 20px;
-       left: 20px;
-       font-size: 1.5rem;
-       color: black;
-       z-index: 10;
+       top: 0;
+       left: 0;
+       width: 100%; /* スマホでも全幅 */
+       height: 50px; /* ヘッダーの高さを固定 */
+       background: rgba(255, 255, 255, 0.9); /* 半透明にして背景色を明示 */
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ヘッダーに影をつける */
        display: flex;
        align-items: center;
+       justify-content: space-between;
+       padding: 0 16px;
+       z-index: 1000; /* 他の要素より前面に出す */
      }
      .header-title {
-       margin-right: 20px;
+       font-size: 1.3rem;
+       font-weight: bold;
      }
      .header-item {
-       margin-right: 20px;
+       margin: 0 10px;
        position: relative;
        cursor: pointer;
-       font-size:1.2rem;
+       font-size: 1rem;
      }
      .dropdown {
        position: absolute;
        top: 100%;
        left: 0;
        display: none;
-       background-color: #333;/*rgba(0, 0, 0, 0.9);*/
-       border: 1px solid #333;/*rgba(255, 255, 255, 0.1);*/
+       background-color: #333;
+       border: 1px solid #333;
        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-       z-index: 10;
-       width: 180px;
+       z-index: 100;
+       min-width: 150px; /* スマホで幅が広がりすぎないように調整 */
        padding: 8px 0;
        border-radius: 10px;
        backdrop-filter: blur(6px);
@@ -158,16 +163,19 @@
        to { opacity: 1; }
      }
    @media (max-width: 768px) {
-     .header {
-       font-size: 1rem;
-       flex-direction: column; /* ヘッダー内の要素を縦に並べる */
-       align-items: center; /* ヘッダーのアイテムを中央に配置 */
-       padding: 10px; /* 少し余白を調整 */
-     }
-     .header-item {
-       margin: 10px 0; /* アイテム間のスペースを調整 */
-     }
-     .header-item .dropdown {
+    .header {
+      height: 45px;
+      padding: 0 10px;
+      justify-content: space-around;
+    }
+    .header-title {
+      font-size: 1rem; /* スマホではタイトルを少し小さく */
+    }
+    .header-item {
+      font-size: 0.9rem;
+      margin: 0 5px;
+    }
+    .header-item .dropdown {
        width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
      }
      .section-title {
