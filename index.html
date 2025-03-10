@@ -35,6 +35,7 @@
        flex-direction: column;
      }
      .header {
+      display: none;
        position: fixed;
        top: 0;
        left: 0;
@@ -46,7 +47,7 @@
        align-items: center;
        /*justify-content: space-between;*/
        /*padding: 0 16px;*/
-       /*z-index: 1000;*/ /* 他の要素より前面に出す */
+       z-index: 1000; /* 他の要素より前面に出す */
      }
      .header-title {
        /*font-size: 1.3rem;*/
@@ -351,7 +352,7 @@
  
      function updateSection() {
       container.style.transform = `translateY(${-currentSection * 100}vh)`;
-  
+    
       sections.forEach((section, index) => {
         section.classList.toggle('active', index === currentSection);
         if (index === currentSection) {
@@ -360,7 +361,15 @@
           resetFadeElements(section);
         }
       });
-  
+    
+      // 一枚目 (section1) のときはヘッダーを非表示、それ以外は表示
+      const header = document.querySelector('.header');
+      if (currentSection === 0) {
+        header.style.display = 'none';
+      } else {
+        header.style.display = 'flex';
+      }
+    
       const link = sectionLinks[currentSection];
       if (link) {
         linkButton.href = link;
@@ -369,7 +378,7 @@
         linkButton.href = "#";
         linkButton.classList.remove('active');
       }
-  
+    
       setTimeout(() => isScrolling = false, 800);
     }
   
