@@ -174,17 +174,17 @@
       }
       .header-nav {
         display: flex;
-        flex: 1;
+        width: 100%;
         justify-content: space-evenly;
+       gap: 0;
       }
       .header-title {
         font-size: 1rem; /* スマホではタイトルを少し小さく */
       }
       .header-item {
-        flex: 1;
         text-align: center;
         font-size: 0.9rem;
-        margin: 0; /* 左右の余白をなくす */
+       min-width: 50px;
       }
       .header-item .dropdown {
          width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
