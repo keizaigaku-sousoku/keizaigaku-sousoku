@@ -173,15 +173,16 @@
       }
       .header-nav {
         display: flex;
-        width: 90%;
+        width: 100%;
         justify-content: space-evenly;
       }
       .header-title,
       .header-item {
-        flex: 1; /* 各要素の幅を均等に */
+        flex-grow: 1; /* 各要素の幅を均等に */
         text-align: center;
         font-size: 0.9rem;
-       white-space: nowrap;
+        white-space: nowrap;
+        max-width: 70px;
       }
       .header-item .dropdown {
          width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
