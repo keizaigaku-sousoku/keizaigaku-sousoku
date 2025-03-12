@@ -54,7 +54,17 @@
        /*font-weight: bold;*/
        margin-right: 20px;
      }
-     .header-item {
+       .header-separator {
+         flex: 0; /* 区切り線が適切な幅を取る */
+         padding: 0 5px;
+         font-size: 0.9rem;
+       }
+       .header-nav {
+         display: flex;
+         flex: 2; /* タイトルより少し広めにする */
+         justify-content: space-evenly;
+       }
+    .header-item {
        margin-right: 20px;
        position: relative;
        cursor: pointer;
@@ -171,34 +181,29 @@
          display: flex;
          width: 100%;
          align-items: center;
-       }
-     
+       }     
        .header-title {
          flex: 1; /* 左側に余白を含めて均等配置 */
          text-align: center;
          font-size: 0.9rem;
          white-space: nowrap;
        }
-     
        .header-separator {
          flex: 0; /* 区切り線が適切な幅を取る */
          padding: 0 5px;
          font-size: 0.9rem;
        }
-     
        .header-nav {
          display: flex;
          flex: 2; /* タイトルより少し広めにする */
          justify-content: space-evenly;
        }
-     
        .header-item {
          position: relative;
          text-align: center;
          font-size: 0.9rem;
          white-space: nowrap;
        }
-     
        .dropdown {
          display: none;
          position: absolute;
@@ -209,11 +214,9 @@
          border: 1px solid #ddd;
          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
        }
-     
        .header-item:hover .dropdown {
          display: block;
        }
-     
        .dropdown-item {
          padding: 8px 12px;
          text-align: left;
