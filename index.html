@@ -170,19 +170,28 @@
       .header {
         display: flex;
         width: 100%;
+        align-items: center;
+      }
+      .header-title {
+       flex: 1;
+       text-align: center;
+       font-size: 0.9rem;
+       white-space: nowrap;
+      }
+      .header-separator {
+        flex: 0; /* 区切り線が適切な幅を取る */
+        padding: 0 5px;
+        font-size: 0.9rem;
       }
       .header-nav {
-        display: flex;
-        width: 100%;
-        justify-content: space-evenly;
+       display: flex;
+       flex: 2;
+       justify-content: space-evenly;
       }
-      .header-title,
       .header-item {
-        flex-grow: 1; /* 各要素の幅を均等に */
         text-align: center;
         font-size: 0.9rem;
         white-space: nowrap;
-        max-width: 70px;
       }
       .header-item .dropdown {
          width: 100%; /* ドロップダウンメニューが画面幅いっぱいに広がる */
@@ -205,7 +214,7 @@
  
    <div class="header">
      <div class="header-title">経済学総則</div>
-     <div class="header-title">｜</div>
+     <div class="header-separator">｜</div>
      <div class="header-item">
        基礎
        <div class="dropdown">
