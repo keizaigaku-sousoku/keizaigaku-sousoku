@@ -34,43 +34,42 @@
        box-sizing: border-box;
        flex-direction: column;
      }
+    
      .header {
-      display: none;
-       position: fixed;
-       top: 0;
-       left: 20px;;
-       width: 100%; /* スマホでも全幅 */
-       height: 50px; /* ヘッダーの高さを固定 */
-       /*background: rgba(255, 255, 255, 0.9);*/ /* 半透明にして背景色を明示 */
-       /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/ /* ヘッダーに影をつける */
        display: flex;
        align-items: center;
-       /*justify-content: space-between;*/
-       /*padding: 0 16px;*/
-       z-index: 1000; /* 他の要素より前面に出す */
-     }
+       justify-content: center; /* 要素を中央寄せ */
+       width: 100%;
+       height: 50px;
+       position: fixed;
+       top: 0;
+       left: 0;
+       z-index: 1000;
+     } 
      .header-title {
-       /*font-size: 1.3rem;*/
-       /*font-weight: bold;*/
-       margin-right: 20px;
+       flex: 1; /* 均等配置のため */
+       text-align: center;
+       font-size: 1.1rem;
+       white-space: nowrap;
      }
-       .header-separator {
-         flex: 0; /* 区切り線が適切な幅を取る */
-         padding: 0 5px;
-         font-size: 0.9rem;
-       }
-       .header-nav {
-         display: flex;
-         flex: 2; /* タイトルより少し広めにする */
-         /*justify-content: space-evenly;*/
-       }
-    .header-item {
-       margin-right: 20px;
-       position: relative;
-       cursor: pointer;
-       font-size: 1.2rem;
+     .header-separator {
+       flex: 0; 
+       margin: 0 10px; /* 適切な余白 */
+       font-size: 1rem;
      }
-     .dropdown {
+     .header-nav {
+       flex: 2; /* タイトルよりやや広め */
+       display: flex;
+       justify-content: space-evenly;
+     }
+     .header-item {
+       text-align: center;
+       font-size: 1rem;
+       white-space: nowrap;
+       margin: 0 10px; /* 各項目間の余白 */
+     }
+    
+    .dropdown {
        position: absolute;
        top: 100%;
        left: 0;
