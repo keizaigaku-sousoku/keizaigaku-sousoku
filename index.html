@@ -181,81 +181,92 @@
  
  /* スマホ版 */
       @media (max-width: 768px) {
-      .header {
-        display: flex;
-        align-items: center;
-        justify-content: center; /* 中央寄せ */
-        width: 100%;
+        .header {
+          display: flex;
+          align-items: center;
+          justify-content: center; /* 中央寄せ */
+          width: 100%;
+        }
+      
+        .header-title {
+          flex: 1; /* 均等配置 */
+          text-align: center;
+          font-size: 1rem;
+          white-space: nowrap;
+        }
+      
+        .header-separator {
+          flex: 0;
+          margin: 0 10px; /* 適切な余白 */
+          font-size: 0.9rem;
+        }
+      
+        .header-nav {
+          flex: 2; /* タイトルよりやや広め */
+          display: flex;
+          justify-content: space-evenly;
+        }
+      
+        .header-item {
+          position: relative; /* 親要素として基準を作る */
+          text-align: center;
+          font-size: 0.9rem;
+          white-space: nowrap;
+          margin: 0 10px; /* 各項目間の余白 */
+        }
+      
+        .dropdown {
+          position: absolute;
+          top: 100%; /* ヘッダーのすぐ下 */
+          left: 0; /* デフォルトでは左揃え */
+          min-width: 120px; /* 最低限の横幅 */
+          max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
+          width: max-content; /* テキストの長さに応じて広がる */
+          height: auto; /* 必要に応じた高さ */
+          display: none;
+          background-color: #333;
+          border: 1px solid #333;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          z-index: 100;
+          padding: 10px 0;
+          backdrop-filter: blur(6px);
+          overflow-y: auto; /* 長いリストでもスクロール可能 */
+        }
+      
+        /* 右端ではみ出す場合は位置を調整 */
+        .dropdown.right-edge {
+          right: 0;
+          left: auto;
+        }
+      
+        /* 画面端にはみ出るのを防ぐ */
+        .dropdown:before {
+          content: "";
+          position: absolute;
+          top: -8px; /* ドロップダウンとの間隔 */
+          left: 10px; /* 矢印の位置 */
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid #333; /* 三角形の矢印 */
+        }
+      
+        .header-item:hover .dropdown {
+          display: block;
+        }
+      
+        .dropdown-item {
+          padding: 12px;
+          text-align: left;
+          font-size: 1rem;
+          color: #fff;
+          white-space: nowrap; /* 改行を防ぐ */
+        }
+      
+        .dropdown-item:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          color: #fff;
+        }
       }
-    
-      .header-title {
-        flex: 1; /* 均等配置 */
-        text-align: center;
-        font-size: 1rem;
-        white-space: nowrap;
-      }
-    
-      .header-separator {
-        flex: 0;
-        margin: 0 10px; /* 適切な余白 */
-        font-size: 0.9rem;
-      }
-    
-      .header-nav {
-        flex: 2; /* タイトルよりやや広め */
-        display: flex;
-        justify-content: space-evenly;
-      }
-    
-      .header-item {
-        position: relative; /* 親要素として基準を作る */
-        text-align: center;
-        font-size: 0.9rem;
-        white-space: nowrap;
-        margin: 0 10px; /* 各項目間の余白 */
-      }
-    
-      .dropdown {
-        position: absolute;
-        top: 100%; /* ヘッダーのすぐ下 */
-        left: 0; /* デフォルトは左端揃え */
-        min-width: 120px; /* 最低限の横幅 */
-        max-width: calc(100vw - 20px); /* 画面端からはみ出ない */
-        width: max-content; /* テキストの長さに応じて広げる */
-        height: auto; /* 必要に応じた高さ */
-        display: none;
-        background-color: #333;
-        border: 1px solid #333;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        z-index: 100;
-        padding: 10px 0;
-        backdrop-filter: blur(6px);
-        overflow-y: auto; /* 長いリストでもスクロール可能 */
-      }
-    
-      /* 右端にはみ出す場合は位置を調整 */
-      .dropdown.right-edge {
-        right: 0;
-        left: auto;
-      }
-    
-      .header-item:hover .dropdown {
-        display: block;
-      }
-    
-      .dropdown-item {
-        padding: 12px;
-        text-align: left;
-        font-size: 1rem;
-        color: #fff;
-        white-space: nowrap; /* 改行を防ぐ */
-      }
-    
-      .dropdown-item:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #fff;
-      }
-    }
 
  
     </style>
