@@ -216,39 +216,46 @@
   }
 
   .dropdown {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: max-content; /* コンテンツの幅に応じる */
-    max-width: 80vw; /* 必要に応じて制限 */
-    height: auto; /* 高さは自動調整 */
-    display: none;
-    background-color: #333;
-    border: 1px solid #333;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 100;
-    padding: 10px 0;
+    position: fixed; /* 画面全体に表示 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* 半透明の黒背景 */
+    z-index: 1000;
+    display: none; /* 初期状態では非表示 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     backdrop-filter: blur(6px);
-    overflow-y: auto;
   }
  
-  .header-item:hover .dropdown {
-    display: block; /* ホバー時に表示 */
+  .header-item:focus-within .dropdown {
+    display: flex; /* フルスクリーンメニュー表示 */
   }
 
   .dropdown-item {
-    padding: 15px;
-    text-align: left;
-    font-size: 1rem;
+    padding: 20px;
+    font-size: 1.2rem;
     color: #fff;
-    white-space: nowrap;
+    text-align: center;
+    width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-
   .dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* 閉じるボタン */
+  .dropdown-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
     color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 }
     
@@ -263,6 +270,7 @@
        <div class="header-item">
          基礎
          <div class="dropdown">
+           <button class="dropdown-close" onclick="closeDropdown()">✖</button>
            <div class="dropdown-item">市場・投資</div>
            <div class="dropdown-item">ミクロ・マクロ経済学</div>
            <div class="dropdown-item">財務・ファイナンス理論</div>
@@ -401,7 +409,11 @@
        "https://example.com/game_theory", // 応用第2部 ゲーム理論
        "https://example.com/behavioral", // 応用第3部 行動経済学
      ];
- 
+
+     function closeDropdown() {
+       document.querySelector(".dropdown").style.display = "none";
+     }
+    
      function fadeInElements(section) {
        const fadeInElements = section.querySelectorAll('.fade-in');
        fadeInElements.forEach((element, index) => {
