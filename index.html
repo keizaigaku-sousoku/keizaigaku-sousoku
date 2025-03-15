@@ -183,49 +183,55 @@
       @media (max-width: 768px) {
         body {
           margin: 0;
-          overflow: hidden;
           font-family: 'Roboto', 'Noto Sans JP', sans-serif;
           font-weight: 300;
           font-size: 18px;
           height: 100vh;
+          overflow-y: auto; /* 縦スクロールは許可 */
         }
+      
         .header {
           display: flex;
           align-items: center;
           justify-content: center; /* 中央寄せ */
           width: 100%;
         }
+      
         .header-title {
-          flex: 1; /* 均等配置 */
+          flex: 1;
           text-align: center;
           font-size: 1rem;
           white-space: nowrap;
         }
+      
         .header-separator {
           flex: 0;
-          margin: 0 10px; /* 適切な余白 */
+          margin: 0 10px;
           font-size: 0.9rem;
         }
+      
         .header-nav {
-          flex: 2; /* タイトルよりやや広め */
+          flex: 2;
           display: flex;
           justify-content: space-evenly;
         }
+      
         .header-item {
-          position: relative; /* 親要素として基準を作る */
+          position: relative;
           text-align: center;
           font-size: 0.9rem;
           white-space: nowrap;
-          margin: 0 10px; /* 各項目間の余白 */
+          margin: 0 10px;
         }
+      
         .dropdown {
           position: absolute;
-          top: 100%; /* ヘッダーのすぐ下 */
-          left: 0; /* デフォルトでは左揃え */
-          min-width: 120px; /* 最低限の横幅 */
-          max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
-          width: max-content; /* テキストの長さに応じて広がる */
-          height: auto; /* 必要に応じた高さ */
+          top: 100%;
+          left: 0;
+          min-width: 120px;
+          max-width: calc(100vw - 20px);
+          width: max-content;
+          height: auto;
           display: none;
           background-color: #333;
           border: 1px solid #333;
@@ -233,32 +239,38 @@
           z-index: 100;
           padding: 10px 0;
           backdrop-filter: blur(6px);
-          overflow-y: auto; /* 長いリストでもスクロール可能 */
+          overflow-y: auto;
+          border-radius: 8px; /* 角を丸くする */
         }
+      
         /* 右端ではみ出す場合は位置を調整 */
-        .dropdown.right-edge {
+        .header-item:last-child .dropdown {
           right: 0;
           left: auto;
+          margin-right: 10px; /* 画面端にぴったりつかないように調整 */
         }
-        /* 画面端にはみ出るのを防ぐ */
+      
+        /* ドロップダウンの矢印 */
         .dropdown:before {
           content: "";
           position: absolute;
-          top: -8px; /* ドロップダウンとの間隔 */
-          left: 10px; /* 矢印の位置 */
+          top: -8px;
+          left: 10px;
           border-left: 8px solid transparent;
           border-right: 8px solid transparent;
-          border-bottom: 8px solid #333; /* 三角形の矢印 */
+          border-bottom: 8px solid #333;
         }
+      
         .header-item:hover .dropdown {
           display: block;
         }
+      
         .dropdown-item {
           padding: 12px;
           text-align: left;
           font-size: 1rem;
           color: #fff;
-          white-space: nowrap; /* 改行を防ぐ */
+          white-space: nowrap;
         }
       
         .dropdown-item:hover {
