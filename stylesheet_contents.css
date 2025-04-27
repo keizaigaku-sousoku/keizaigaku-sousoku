@@ -30,7 +30,7 @@ main {
 
 p {
     text-align: justify;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 18px;
     letter-spacing: 0.025em;
     line-height: 2;
@@ -92,7 +92,7 @@ p {
 
 .theorem-tile p {
     margin: 0;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 18px;
     letter-spacing: 0.025em;
     line-height: 2;
@@ -101,7 +101,7 @@ p {
 .proof {
     padding: 10px 15px;
     margin-bottom: 20px;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 18px;
     letter-spacing: 0.025em;
     line-height: 2;
