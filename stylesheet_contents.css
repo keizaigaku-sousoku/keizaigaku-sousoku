@@ -7,7 +7,7 @@ header {
     left: 0; /* 左端に固定 */
     margin: 0; /* マージンの影響を排除 */
     padding: 1rem;
-    background-color: rgb(0, 91, 148);
+    background-color: #333;
     color: white;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -33,7 +33,7 @@ p {
 }
 
 .new-word {
-    color: rgb(0, 91, 148);
+    color: #333;
     font-weight: bold;
 }
 
@@ -61,8 +61,8 @@ p {
 /* パートタイトルのスタイル */
 .part-title {
     font-size: 1.5rem;
-    color: rgb(0, 91, 148);
-    border-bottom: 2px solid rgb(0, 91, 148);
+    color: #333;
+    border-bottom: 2px solid #333;
     padding-bottom: 5px;
     margin-bottom: 15px;
     max-width: 500px; /* 最大幅を設定 */
@@ -74,7 +74,7 @@ p {
 /* 定理のタイルスタイル */
 .theorem-tile {
     background-color: white;
-    /*border-left: 5px solid rgb(0, 91, 148);*/
+    /*border-left: 5px solid #333;*/
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -86,7 +86,7 @@ p {
 
 .theorem-tile .title {
     font-weight: bold;
-    color: rgb(0, 91, 148);
+    color: #333;
     margin-bottom: 10px;
     text-align: left; /* 左寄せに変更 */
 }
@@ -114,7 +114,7 @@ p {
 
 .proof .title {
     font-weight: bold;
-    color: rgb(0, 91, 148); /* タイトルの色 */
+    color: #333; /* タイトルの色 */
     margin-bottom: 10px;
     text-align: left; /* 左寄せ */
 }
@@ -123,13 +123,13 @@ p {
     display: block;
     text-align: right; /* 右寄せ */
     font-size: 1.5rem;
-    color: rgb(0, 91, 148); /* 証明環境に合わせた色 */
+    color: #333; /* 証明環境に合わせた色 */
     margin-top: 10px; /* 上に少し余白 */
 }
 
 /* リンクのスタイル */
 .toc-container a {
-    color: rgb(0, 91, 148);
+    color: #333;
     text-decoration: none;
     display: block;
     font-size: 1.1rem;
@@ -139,7 +139,7 @@ p {
 }
 
 .toc-container a:hover {
-    background-color: rgb(0, 91, 148);
+    background-color: #333;
     color: white;
     transform: translateX(10px);
     transition: 0.3s;
@@ -193,7 +193,7 @@ h3 {
     padding: 1rem 2rem 1rem 1.5rem; /* 左のバーとテキストの間の余白 */
     margin: 20px 0; /* 上下の余白 */
     font-size: 1.5rem; /* フォントサイズ */
-    color: rgb(0, 91, 148); /* テキスト色 */
+    color: #333; /* テキスト色 */
     line-height: 1.6; /* 行間 */
 }    
 
@@ -201,11 +201,11 @@ h4 {
     position: relative;
     padding: 1rem 2rem 1rem 1rem; /* 左のバーとテキストの間の余白 */
     margin: 10px 0; /* 上下の余白 */
-    border-left: 7px solid rgb(0, 91, 148); /* 左のバー */
+    border-left: 7px solid #333; /* 左のバー */
     border-top-radius: 10px; /* 左上の丸み */
     border-bottom-radius: 10px; /* 左下の丸み */
     font-size: 1rem; /* フォントサイズ */
-    color: rgb(0, 91, 148); /* テキスト色 */
+    color: #333; /* テキスト色 */
     line-height: 1.2; /* 行間 */
 }
 
