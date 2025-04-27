@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'BizUDPGothic';
-    src: url('path/to/BizUDPGothic.ttf') format('truetype'); /* フォントファイルのパスを指定 */
-}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 
 header {
     width: 100%; /* ビューポート全体ではなく親要素に基づく幅 */
@@ -17,20 +14,13 @@ header {
     box-sizing: border-box; /* パディングを含めた幅計算 */
 }
 
-/* ボディ部分のスタイル */
 body {
-    font-family: 'BizUDPGothic', 'Hiragino Sans', 'ヒラギノ角ゴ ProN', sans-serif;
-    background-color: white;
     margin: 0;
-    padding: 0;
-    color: black;
-    max-width: 750px; /* 最大幅を設定 */
-    margin-left: auto; /* 左右中央揃え */
-    margin-right: auto; /* 左右中央揃え */
-    font-weight: 100;
-    font-size: 18px;
-    letter-spacing: .025em;
-    line-height: 2;
+    overflow: hidden;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    height: 100vh;
 }
 
 p {
@@ -190,7 +180,12 @@ p {
 }
 
 h2 {
-    color: white;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
 }
 
 h3 {
