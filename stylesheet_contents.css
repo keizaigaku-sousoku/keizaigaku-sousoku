@@ -157,14 +157,14 @@ p {
     display: inline-block;
 }
 .comment-box:before{
-    border-left: solid 1px rgb(0,91,148);
-    border-top: solid 1px rgb(0,91,148);
+    border-left: solid 1px #333;
+    border-top: solid 1px #333;
     top:0;
     left: 0;
 }
 .comment-box:after{
-    border-right: solid 1px rgb(0,91,148);
-    border-bottom: solid 1px rgb(0,91,148);
+    border-right: solid 1px #333;
+    border-bottom: solid 1px #333;
     bottom:0;
     right: 0;
 }
