@@ -1,34 +1,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 
-header {
-    width: 100%; /* ビューポート全体ではなく親要素に基づく幅 */
-    max-width: none; /* 最大幅制限を解除 */
-    position: relative; /* 標準のレイアウトで */
-    left: 0; /* 左端に固定 */
-    margin: 0; /* マージンの影響を排除 */
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box; /* パディングを含めた幅計算 */
-}
-
 body {
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: 'Roboto', 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 20px;
     height: 100vh;
 }
 
+header {
+    width: 100%;
+    max-width: none;
+    position: relative;
+    left: 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+main {
+    padding: 20px;
+}
+
 p {
     text-align: justify;
-    /*line-height: 2;*/
     font-weight: 100;
     font-size: 18px;
-    letter-spacing: .025em;
+    letter-spacing: 0.025em;
     line-height: 2;
 }
 
@@ -37,7 +41,6 @@ p {
     font-weight: bold;
 }
 
-/* 目次タイルを囲むコンテナ */
 .toc-container {
     display: block;
     max-width: 1200px;
@@ -45,7 +48,6 @@ p {
     padding: 20px;
 }
 
-/* 各パート（タイル）のスタイル */
 .part {
     background-color: white;
     color: #333;
@@ -53,34 +55,31 @@ p {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
-    max-width: 500px; /* タイルの最大幅 */
-    margin-left: auto; /* 左右中央揃え */
-    margin-right: auto; /* 左右中央揃え */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* パートタイトルのスタイル */
 .part-title {
     font-size: 1.5rem;
     color: #333;
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
     margin-bottom: 15px;
-    max-width: 500px; /* 最大幅を設定 */
-    margin-left: auto; /* 左右のマージンを自動で設定 */
-    margin-right: auto; /* 中央揃え */
-    text-align: center; /* 中央揃え */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-/* 定理のタイルスタイル */
 .theorem-tile {
     background-color: white;
-    /*border-left: 5px solid #333;*/
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
-    max-width: 800px; /* タイルの最大幅 */
-    margin-left: auto; /* 左右中央揃え */
+    max-width: 800px;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -88,46 +87,44 @@ p {
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
-    text-align: left; /* 左寄せに変更 */
+    text-align: left;
 }
 
 .theorem-tile p {
     margin: 0;
     font-weight: 100;
     font-size: 18px;
-    letter-spacing: .025em;
+    letter-spacing: 0.025em;
     line-height: 2;
 }
 
-/* 証明環境のスタイル */
 .proof {
-    padding: 10px 15px; /* 内側の余白 */
-    margin-bottom: 20px; /* 下に余白 */
+    padding: 10px 15px;
+    margin-bottom: 20px;
     font-weight: 100;
     font-size: 18px;
-    letter-spacing: .025em;
+    letter-spacing: 0.025em;
     line-height: 2;
     background-color: white;
     color: #333;
-    box-sizing: border-box; /* パディングを含めた幅計算 */
+    box-sizing: border-box;
 }
 
 .proof .title {
     font-weight: bold;
-    color: #333; /* タイトルの色 */
+    color: #333;
     margin-bottom: 10px;
-    text-align: left; /* 左寄せ */
+    text-align: left;
 }
 
 .proof .end-symbol {
     display: block;
-    text-align: right; /* 右寄せ */
+    text-align: right;
     font-size: 1.5rem;
-    color: #333; /* 証明環境に合わせた色 */
-    margin-top: 10px; /* 上に少し余白 */
+    color: #333;
+    margin-top: 10px;
 }
 
-/* リンクのスタイル */
 .toc-container a {
     color: #333;
     text-decoration: none;
@@ -136,47 +133,52 @@ p {
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .toc-container a:hover {
     background-color: #333;
     color: white;
     transform: translateX(10px);
-    transition: 0.3s;
 }
 
 .comment-box {
     position: relative;
-    padding:0.25em 1em;
+    padding: 0.25em 1em;
 }
-.comment-box:before,.comment-box:after{ 
-    content:'';
+
+.comment-box:before,
+.comment-box:after {
+    content: '';
     width: 20px;
     height: 50px;
     position: absolute;
     display: inline-block;
 }
-.comment-box:before{
+
+.comment-box:before {
     border-left: solid 1px #333;
     border-top: solid 1px #333;
-    top:0;
+    top: 0;
     left: 0;
 }
-.comment-box:after{
+
+.comment-box:after {
     border-right: solid 1px #333;
     border-bottom: solid 1px #333;
-    bottom:0;
+    bottom: 0;
     right: 0;
 }
+
 .comment-box p {
-    margin: 0; 
+    margin: 0;
     padding: 10px;
 }
 
 .math-container {
-    overflow-x: scroll; /* 横スクロールを許可 */
+    overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap; /* 数式が折り返されないようにする */
+    white-space: nowrap;
 }
 
 h2 {
@@ -190,27 +192,23 @@ h2 {
 
 h3 {
     position: relative;
-    padding: 1rem 2rem 1rem 1.5rem; /* 左のバーとテキストの間の余白 */
-    margin: 20px 0; /* 上下の余白 */
-    font-size: 1.5rem; /* フォントサイズ */
-    color: #333; /* テキスト色 */
-    line-height: 1.6; /* 行間 */
-}    
+    padding: 1rem 2rem 1rem 1.5rem;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.6;
+}
 
 h4 {
     position: relative;
-    padding: 1rem 2rem 1rem 1rem; /* 左のバーとテキストの間の余白 */
-    margin: 10px 0; /* 上下の余白 */
-    border-left: 7px solid #333; /* 左のバー */
-    border-top-radius: 10px; /* 左上の丸み */
-    border-bottom-radius: 10px; /* 左下の丸み */
-    font-size: 1rem; /* フォントサイズ */
-    color: #333; /* テキスト色 */
-    line-height: 1.2; /* 行間 */
-}
-
-main {
-    padding: 20px;
+    padding: 1rem 2rem 1rem 1rem;
+    margin: 10px 0;
+    border-left: 7px solid #333;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.2;
 }
 
 /* PCサイズ以上で左右に余白を作る */
