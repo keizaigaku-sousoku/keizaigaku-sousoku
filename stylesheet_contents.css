@@ -1,18 +1,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 
-/* 全要素に基本フォントとbox-sizingを適用 */
-* {
-    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
     font-size: 20px;
     height: 100vh;
+    box-sizing: border-box;
+}
+
+header, main, p, h2, h3, h4, .part, .part-title, .theorem-tile, .theorem-tile .title, .proof, .proof .title, .comment-box, .toc-container a {
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -32,6 +32,7 @@ main {
 
 p {
     text-align: justify;
+    font-weight: 300;
     font-size: 18px;
     letter-spacing: 0.025em;
     line-height: 2;
@@ -107,6 +108,7 @@ p {
 
 .theorem-tile p {
     margin: 0;
+    font-weight: 300;
     font-size: 18px;
     letter-spacing: 0.025em;
     line-height: 2;
@@ -115,6 +117,7 @@ p {
 .proof {
     padding: 10px 15px;
     margin-bottom: 20px;
+    font-weight: 300;
     font-size: 18px;
     letter-spacing: 0.025em;
     line-height: 2;
