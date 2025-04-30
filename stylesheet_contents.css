@@ -44,7 +44,7 @@ main {
 p {
     text-align: justify;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.025em;
     line-height: 2;
 }
@@ -65,7 +65,7 @@ p {
     color: #333;
     text-decoration: none;
     display: block;
-    font-size: 1.1rem;
+    font-size: 20px;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
@@ -91,7 +91,7 @@ p {
 }
 
 .part-title {
-    font-size: 1.5rem;
+    font-size: 20px;
     color: #333;
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
@@ -120,7 +120,7 @@ p {
 .theorem-tile p {
     margin: 0;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.025em;
     line-height: 2;
 }
@@ -129,7 +129,7 @@ p {
     /*padding: 10px 15px;*/
     margin-bottom: 20px;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.025em;
     line-height: 2;
     background-color: white;
@@ -146,7 +146,7 @@ p {
 .proof .end-symbol {
     display: block;
     text-align: right;
-    font-size: 1.5rem;
+    font-size: 20px;
     color: #333;
     margin-top: 10px;
 }
@@ -192,7 +192,7 @@ p {
 
 h2 {
     font-weight: 400;
-    font-size: 28px;
+    font-size: 20px;
     margin-bottom: 20px;
     line-height: 1.6;
     color: #333;
@@ -202,7 +202,7 @@ h3 {
     position: relative;
     padding: 1rem 2rem 1rem 1.5rem;
     margin: 20px 0;
-    font-size: 1.5rem;
+    font-size: 20px;
     color: #333;
     line-height: 1.6;
 }
@@ -214,7 +214,7 @@ h4 {
     border-left: 7px solid #333;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    font-size: 1rem;
+    font-size: 20px;
     color: #333;
     line-height: 1.2;
 }
