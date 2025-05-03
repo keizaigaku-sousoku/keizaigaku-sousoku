@@ -336,11 +336,18 @@
         </p>
         <p>
             <div class="math-container">
-                (LZS) \( ^\forall Q \in \mathcal{Q}, ^\exists \mathcal{P}_{\mathrm{local}} \subset \mathcal{P}, ^\exists g \in \mathcal{G};\ \ \ \sum_{p\in\mathcal{P}_{\mathrm{local}}}\phi(Q)_g^p=\sum_{p\in\mathcal{P}_{\mathrm{local}}}Q_g^p \)
+                (LZS) \( ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G}, ^\exists \mathcal{P}_{\mathrm{local}} \subset \mathcal{P};\ \ \ \sum_{p\in\mathcal{P}_{\mathrm{local}}}\phi(Q)_g^p=\sum_{p\in\mathcal{P}_{\mathrm{local}}}Q_g^p \)
             </div>
         </p>
         <p>
             を考えてみる。
+            つまり市場参加者たちの状態がどのようであっても、任意の \( g \) に対してある市場参加者たち \( \mathcal{P}_{\mathrm{local}} \) が存在して、彼らによる \( g \) の保有量が \( \phi \) によって不変であることを課す。
+            公的機関は \( \mathcal{P}_{\mathrm{local}} \) に必ずしも属さなくてよいので、市場全体では非定常状態すなわちダイナミクスが起こり得る。
+            また \( \mathcal{P}_{\mathrm{local}} \) は \( Q \) によって変化させられる。
+            したがって \( (Q(t))_t \in \Gamma_\phi \) をとって \( t \) が変わると \( Q(t) \) と \( \mathcal{P}_{\mathrm{local}} \) がともに変わる状況を考えてもよい。
+            さらに \( \mathcal{P}_{\mathrm{local}} \) は \( g \) によって変化させられる。
+            以上より、条件 (LZS) によって存在が保証される \( \mathcal{P}_{\mathrm{local}} \) は \( g \) ごとに定まりかつ時々刻々と属する市場参加者が入れ替わり得るものである。
+            便宜的にこれを<span class="new-word">取引所（exchange）</span>と呼ぶ。
             <!--
             　モノを取引するにあたり、売る市場参加者と買う市場参加者の貨幣の変化はモノとその量によって一意には定まらない。
             言うまでもなく、発展作用素は貨幣含むモノの変化を記述するので、発展作用素を決めれば取引における貨幣の変化は一意である。
