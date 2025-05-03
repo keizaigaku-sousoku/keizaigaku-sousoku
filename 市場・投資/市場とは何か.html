@@ -320,7 +320,7 @@
             例えば
         </p>
         <p>
-            (ZS) \( ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G};\ \ \ \phi(Q)_g=Q_g \) <br>
+            (ZS) \( ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G};\ \ \ \phi(Q)_g=Q_g \)
         </p>
         <p>
             なる条件を追加できる。
@@ -330,21 +330,21 @@
             この市場では現実世界における資源の採掘や加工、紙幣の印刷といった、モノを増やしたり複数のモノを減らして1つのモノを増やしたりする過程が禁止されており、市場参加者はただモノを交換して目的関数を大きくする。
         </p>
         <p>
-            　市場の条件だけでは一般性が高すぎ、ゼロサム・ゲームであると条件が強すぎるので、部分的にゼロサム・ゲームを課すと便利である。
-            例えば \( \mathcal{Q}_{\mathrm{local}} \subset \mathcal{Q} \) をとったとき、\( \phi:\mathcal{Q} \rightarrow \mathcal{Q} \) の制限として
+            　ゼロサム・ゲームは条件が強すぎるので、局所的にゼロサム・ゲームを課すと便利である。
+            定義から (ZS) は
             \[
-                \phi|_{\mathcal{Q}_{\mathrm{local}}}:\mathcal{Q}_{\mathrm{local}}\ni Q \mapsto \phi(Q) \in \mathcal{Q}
+                ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G};\ \ \ \sum_{p\in\mathcal{P}}\phi(Q)_g^p=\sum_{p\in\mathcal{P}}Q_g^p
             \]
-            が存在する。
-            これを用いて
+            であり、これは数学的にかなり条件が強い。
+            そこで代わりに
         </p>
         <p>
             <div class="math-container">
-                (LZS) \( ^\exists\mathcal{Q}_{\mathrm{local}} \subset \mathcal{Q}, ^\exists\mathcal{G}_{\mathrm{local}} \subset \mathcal{G}, ^\forall Q \in \mathcal{Q}_{\mathrm{local}}, ^\forall g \in \mathcal{G}_{\mathrm{local}};\ \ \ \phi|_{\mathcal{Q}_{\mathrm{local}}}(Q)_g=Q_g\)
+                (LZS) \( ^\forall Q \in \mathcal{Q}, ^\exists \mathcal{P}_{\mathcal{local}} \subset \mathcal{P}, ^\exists g \in \mathcal{G};\ \ \ \sum_{p\in\mathcal{P}_{\mathcal{local}}}\phi(Q)_g^p=\sum_{p\in\mathcal{P}_{\mathcal{local}}}Q_g^p \)
             </div>
         </p>
         <p>
-            なる条件を考えられる。
+            を考えてみる。
             <!--
             　モノを取引するにあたり、売る市場参加者と買う市場参加者の貨幣の変化はモノとその量によって一意には定まらない。
             言うまでもなく、発展作用素は貨幣含むモノの変化を記述するので、発展作用素を決めれば取引における貨幣の変化は一意である。
