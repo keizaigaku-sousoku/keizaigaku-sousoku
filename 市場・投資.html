@@ -43,18 +43,9 @@
                 const menu = document.getElementById("nav-menu");
                 toggle.addEventListener("click", function () {
                     menu.classList.toggle("hidden");
+                    toggle.textContent = menu.classList.contains("hidden") ? "≡" : "×";
                 });
             });
         </script>
-        <!--
-        <script>
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');        
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('hidden');
-                navToggle.textContent = navMenu.classList.contains('hidden') ? '≡' : '×';
-            });
-        </script>
-        -->
     </body>
 </html>
