@@ -90,14 +90,31 @@
         <h4>具体例</h4>
         <p>
             　価格を確率過程として扱うときの具体例を２つだけ、数学的な計算を省き結果だけを紹介する。
-            まず一般的な伊藤拡散過程
+            まず一般的な確率微分方程式
         </p>
         \[
-            \mathrm{d}X_t = b(X_t,t)\mathrm{d}t+\sigma(X_t,t)\mathrm{d}W_t
+        \begin{cases}
+            \mathrm{d}X_t = \mu(X_t,t)\mathrm{d}t+\sigma(X_t,t)\mathrm{d}W_t \\
+            X_0 \in \textbf{R}_{&gt;0}
+        \end{cases}
         \]
         <p>
             を考える。
+            ここで \( X_t = B_t \) 、\( \mu(X_t,t) = rX_t \) 、\( r \in \textbf{R} \)、\( \sigma(X_t,t)=0 \) とおくと
         </p>
+        \[
+        \begin{cases}
+            \mathrm{d}B_t = rB_t\mathrm{d}t \\
+            B_0 \in \textbf{R}_{&gt;0}
+        \end{cases}
+        \]
+        <p>
+            であり、これは単なる微分方程式に過ぎないので解
+        </p>
+        \[
+            B_t=B_0 e^{rt}
+        \]
+        は決定論的である。
     </div>
     </main>
 
