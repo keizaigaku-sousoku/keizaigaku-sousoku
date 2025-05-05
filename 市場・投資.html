@@ -38,5 +38,15 @@
             <!-- 必要に応じて追加 -->
         </div>
     </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
 </body>
 </html>
