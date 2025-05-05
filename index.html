@@ -140,158 +140,152 @@
             transform: translateY(0);
         }
         /*
-      .link-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 56px;
-        height: 56px;
-        background-color: white;
-        color: #333;
-        border-radius: 50%;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        text-decoration: none;
-        z-index: 1000;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.5s ease;
-        border: 2px solid #333;
-      }
+        .link-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background-color: white;
+            color: #333;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            text-decoration: none;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s ease;
+            border: 2px solid #333;
+        }
         */
-            .link-button {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          background-color: white;
-          color: #333;
-          border-radius: 50%;
-          display: none;
-          justify-content: center;
-          align-items: center;
-          font-size: 20px;
-          text-decoration: none;
-          z-index: 1000;
-          opacity: 0;
-          pointer-events: none;
-          transition: all 0.5s ease;
-          border: 2px solid #333;
-        
-          /* nav-toggleと揃えるために以下を変更 */
-          padding: 12px 16px;
-          width: auto;     /* 明示的な固定幅を解除 */
-          height: auto;    /* 明示的な固定高さを解除 */
+        .link-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: #333;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            text-decoration: none;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s ease;
+            border: 2px solid #333;
+            padding: 12px 16px;
+            width: auto;     /* 明示的な固定幅を解除 */
+            height: auto;    /* 明示的な固定高さを解除 */
         }
-      .link-button.active {
-        opacity: 1;
-        pointer-events: auto;
-        display: flex;
-      }
-      .link-button:hover {
-        background-color: #333;
-        color: white;
-        transform: scale(1.1);
-      }
+        .link-button.active {
+            opacity: 1;
+            pointer-events: auto;
+            display: flex;
+        }
+        .link-button:hover {
+            background-color: #333;
+            color: white;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
  
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        /* スマホ版 */
+        @media (max-width: 768px) {
+            body {
+                margin: 0;
+                overflow: hidden;
+                font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+                font-weight: 300;
+                font-size: 18px;
+                height: 100vh;
+            }
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: center; /* 中央寄せ */
+                width: 100%;
+            }
+            .header-title {
+                flex: 1; /* 均等配置 */
+                text-align: center;
+                font-size: 1rem;
+                white-space: nowrap;
+            }
+            .header-separator {
+                flex: 0;
+                margin: 0 10px; /* 適切な余白 */
+                font-size: 0.9rem;
+            }
+            .header-nav {
+                flex: 2; /* タイトルよりやや広め */
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .header-item {
+                position: relative; /* 親要素として基準を作る */
+                text-align: center;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                margin: 0 10px; /* 各項目間の余白 */
+            }
+            .dropdown {
+                position: absolute;
+                top: 100%; /* ヘッダーのすぐ下 */
+                left: 0; /* デフォルトでは左揃え */
+                min-width: 120px; /* 最低限の横幅 */
+                max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
+                width: max-content; /* テキストの長さに応じて広がる */
+                height: auto; /* 必要に応じた高さ */
+                display: none;
+                background-color: #333;
+                border: 1px solid #333;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                z-index: 100;
+                padding: 10px 0;
+                backdrop-filter: blur(6px);
+                overflow-y: auto; /* 長いリストでもスクロール可能 */
+            }
+            /* 右端ではみ出す場合は位置を調整 */
+            .dropdown.right-edge {
+                right: 0;
+                left: auto;
+            }
+            /* 画面端にはみ出るのを防ぐ */
+            .dropdown:before {
+                content: "";
+                position: absolute;
+                top: -8px; /* ドロップダウンとの間隔 */
+                left: 10px; /* 矢印の位置 */
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-bottom: 8px solid #333; /* 三角形の矢印 */
+            }
+            .header-item:hover .dropdown {
+                display: block;
+            }
+            .dropdown-item {
+                padding: 12px;
+                text-align: left;
+                font-size: 1rem;
+                color: #fff;
+                white-space: nowrap; /* 改行を防ぐ */
+            }
+            .dropdown-item:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #fff;
+            }
       }
- 
- /* スマホ版 */
-      @media (max-width: 768px) {
-        body {
-          margin: 0;
-          overflow: hidden;
-          font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-          font-weight: 300;
-          font-size: 18px;
-          height: 100vh;
-        }
-        .header {
-          display: flex;
-          align-items: center;
-          justify-content: center; /* 中央寄せ */
-          width: 100%;
-        }
-        .header-title {
-          flex: 1; /* 均等配置 */
-          text-align: center;
-          font-size: 1rem;
-          white-space: nowrap;
-        }
-        .header-separator {
-          flex: 0;
-          margin: 0 10px; /* 適切な余白 */
-          font-size: 0.9rem;
-        }
-        .header-nav {
-          flex: 2; /* タイトルよりやや広め */
-          display: flex;
-          justify-content: space-evenly;
-        }
-        .header-item {
-          position: relative; /* 親要素として基準を作る */
-          text-align: center;
-          font-size: 0.9rem;
-          white-space: nowrap;
-          margin: 0 10px; /* 各項目間の余白 */
-        }
-        .dropdown {
-          position: absolute;
-          top: 100%; /* ヘッダーのすぐ下 */
-          left: 0; /* デフォルトでは左揃え */
-          min-width: 120px; /* 最低限の横幅 */
-          max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
-          width: max-content; /* テキストの長さに応じて広がる */
-          height: auto; /* 必要に応じた高さ */
-          display: none;
-          background-color: #333;
-          border: 1px solid #333;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-          z-index: 100;
-          padding: 10px 0;
-          backdrop-filter: blur(6px);
-          overflow-y: auto; /* 長いリストでもスクロール可能 */
-        }
-        /* 右端ではみ出す場合は位置を調整 */
-        .dropdown.right-edge {
-          right: 0;
-          left: auto;
-        }
-        /* 画面端にはみ出るのを防ぐ */
-        .dropdown:before {
-          content: "";
-          position: absolute;
-          top: -8px; /* ドロップダウンとの間隔 */
-          left: 10px; /* 矢印の位置 */
-          border-left: 8px solid transparent;
-          border-right: 8px solid transparent;
-          border-bottom: 8px solid #333; /* 三角形の矢印 */
-        }
-        .header-item:hover .dropdown {
-          display: block;
-        }
-        .dropdown-item {
-          padding: 12px;
-          text-align: left;
-          font-size: 1rem;
-          color: #fff;
-          white-space: nowrap; /* 改行を防ぐ */
-        }
-      
-        .dropdown-item:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-          color: #fff;
-        }
-      }
- 
-    </style>
+      </style>
   </head>
   <body>
- 
     <div class="header">
       <div class="header-title">経済学総則</div>
       <div class="header-separator">｜</div>
