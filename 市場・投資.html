@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>市場・投資</title>
-    <link rel="stylesheet" href="stylesheet_contents.css">
-</head>
-<body>
-    <header>
-        <h2>市場・投資</h2>
-    </header>
-    <div class="toc-container">
-        <div class="part">
-            <h3 class="part-title">市場</h3>
-            <a href="市場・投資/市場とは何か.html">市場とは何か</a>
-            <a href="市場・投資/フェア・バリューという幻想.html">フェア・バリューという幻想</a>
-            <a href="市場・投資/裁定の基礎.html">裁定の基礎</a>
-            <a href="市場・投資/安全資産.html">安全資産</a>
-            <a href="市場・投資/価格は確率過程か.html">価格は確率過程か</a>
-            <a href="市場・投資/投資家の特徴付け.html">投資家の特徴付け</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>市場・投資</title>
+        <link rel="stylesheet" href="stylesheet_contents.css">
+    </head>
+    <body>
+        <header>
+            <h2>市場・投資</h2>
+        </header>
+        <div class="toc-container">
+            <div class="part">
+                <h3 class="part-title">市場</h3>
+                <a href="市場・投資/市場とは何か.html">市場とは何か</a>
+                <a href="市場・投資/フェア・バリューという幻想.html">フェア・バリューという幻想</a>
+                <a href="市場・投資/裁定の基礎.html">裁定の基礎</a>
+                <a href="市場・投資/安全資産.html">安全資産</a>
+                <a href="市場・投資/価格は確率過程か.html">価格は確率過程か</a>
+                <a href="市場・投資/投資家の特徴付け.html">投資家の特徴付け</a>
+            </div>
+            <div class="part">
+                <h3 class="part-title">金融商品</h3>
+                <a href="/市場・投資/page4.html">セクション 4</a>
+                <a href="/市場・投資/page5.html">セクション 5</a>
+            </div>
         </div>
-        <div class="part">
-            <h3 class="part-title">金融商品</h3>
-            <a href="/市場・投資/page4.html">セクション 4</a>
-            <a href="/市場・投資/page5.html">セクション 5</a>
+        <main>
+            <!-- 各パートの内容は別ページに含まれる -->
+        </main>
+        <div class="nav-toggle-container">
+            <button id="nav-toggle">≡</button>
+            <div id="nav-menu" class="nav-menu hidden">
+                <a href="/index.html">トップページ</a>
+                <a href="/市場・投資/市場とは何か.html">市場とは何か</a>
+                <a href="/市場・投資/裁定の基礎.html">裁定の基礎</a>
+            </div>
         </div>
-    </div>
-    <main>
-        <!-- 各パートの内容は別ページに含まれる -->
-    </main>
-    <div class="nav-toggle-container">
-        <button id="nav-toggle">≡</button>
-        <div id="nav-menu" class="nav-menu hidden">
-            <a href="/index.html">トップページ</a>
-            <a href="/市場・投資/市場とは何か.html">市場とは何か</a>
-            <a href="/市場・投資/裁定の基礎.html">裁定の基礎</a>
-            <!-- 必要に応じて追加 -->
-        </div>
-    </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("nav-toggle");
-    const menu = document.getElementById("nav-menu");
-
-    toggle.addEventListener("click", function () {
-      menu.classList.toggle("hidden");
-    });
-  });
-</script>
-</body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const toggle = document.getElementById("nav-toggle");
+                const menu = document.getElementById("nav-menu");
+                toggle.addEventListener("click", function () {
+                    menu.classList.toggle("hidden");
+                });
+            });
+        </script>
+    </body>
 </html>
