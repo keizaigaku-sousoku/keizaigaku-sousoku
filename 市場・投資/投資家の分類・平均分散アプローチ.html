@@ -30,11 +30,15 @@
                 <p>
                     　投資家の目的は効用関数の最大化であるが、そのままではやや抽象的すぎるので、議論のために様々な方法で具体化することが多い。
                     例えば、任意に固定したある貨幣の変化量を<span class="new-word">収益（return）</span>と呼び、効用関数の引数をこれのみに制限する極めて単純な具体化を考える。
-                    形式的には、ある貨幣の保有量を\( m_t \in \textbf{R} \) とおき、時刻が離散的であると仮定して
+                    形式的には、時刻を離散的であるとして、ある貨幣の保有量を\( m_t \in \textbf{R} \) とおいたとき収益を
                     \[
-                        f_t^p(Q^p|\pi_t^p(\gamma))=U(m_t-m_{t-1})
+                        r_t := m_t - m_{t-1}
                     \]
-                    である [<a href="市場とは何か.html#section4" style="text-decoration: none"><span class="new-word">市場とは何か/情報・目的関数</span></a>] 。
+                    で定義し、効用関数の形を
+                    \[
+                        f_t^p(Q^p|\pi_t^p(\gamma))=U(r_t)
+                    \]
+                    とする [<a href="市場とは何か.html#section4" style="text-decoration: none"><span class="new-word">市場とは何か/情報・目的関数</span></a>] 。
                 </p>
             </section>
         </main>
