@@ -76,8 +76,15 @@
                     <div class="title">証明</div>
                     <p>
                         (i) 十分性はJensen不等式から明らか。
-                        必要性について、\( E[U(W)] &gt; U(EW) \) を仮定する。
-                        
+                        必要性について、\( W \) を収益として \( E[U(W)] &lt; U(EW) \) を仮定する。
+                        収益をどのようにとっても効用関数の形を変えないので、\( W : \textbf{R} \rightarrow \{ x,y \} \) 、\( x,y \in \textbf{R} \) とする。
+                        また \( P[W=x] = \lambda \) 、\( P[W=y] = 1 - \lambda \) 、\( \lambda \in (0,1) \) とする。
+                        すると
+                        \[
+                            E[U(W)] &lt; U(EW) \Longleftrightarrow \lambda U(x) + (1-\lambda) U(y) &lt; U(\lambda x + (1-\lambda) y)
+                        \]
+                        であり、\( U \) は上に凸である。<br>
+                        (ii)、(iii) についても同様。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
