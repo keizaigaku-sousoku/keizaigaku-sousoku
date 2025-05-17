@@ -230,6 +230,17 @@
                     toggle.textContent = menu.classList.contains("hidden") ? "≡" : "×";
                 });
             });
+            document.addEventListener("click", function (event) {
+                const toggle = document.getElementById("nav-toggle");
+                const menu = document.getElementById("nav-menu");
+                const container = document.querySelector(".nav-toggle-container");
+                if (!container.contains(event.target)) {
+                    if (!menu.classList.contains("hidden")) {
+                        menu.classList.add("hidden");
+                        toggle.textContent = "≡";
+                    }
+                }
+            });
         </script>
     </body>
 </html>
