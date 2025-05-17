@@ -5,6 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>投資家の分析</title>
         <link rel="stylesheet" href="../stylesheet_contents.css">
+        <script>
+          window.MathJax = {
+            tex: {
+              tags: 'ams',
+            }
+          };
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
@@ -49,7 +56,7 @@
                     このとき、効用のとる値は例えば \( E[U(W)] \) という測り方と \( U(EW) \) という測り方があり、これらは一般に一致しない。
                     効用関数 \( U \) が
                     \[
-                        E[U(W)] &lt; U(EW) \label{risk-averse}
+                        E[U(W)] &lt; U(EW)
                     \]
                     を満たすとき投資家を<span class="new-word">リスク回避型（risk-averse）</span>と呼び、
                     \[
