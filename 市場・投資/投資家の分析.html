@@ -248,12 +248,15 @@
                     またそれぞれを \( n=0,1,...,T/\Delta t-1 \) と添字づけ、各 \( n \) においてそれまでに得た収益を再投資することにする。
                     簡単のため市場が無裁定であることを課せば、\( n \) における収益率は \( \Delta t \rightarrow 0 \) の極限で限りなく小さくなり、\( R_t \Delta t + o(\Delta t^0) \) とおける。
                     したがって収益率の累積は
-                    \align{begin}
-                            \prod_{n=0}^{T/\Delta t-1}[1+R_{n\Delta t}\Delta t+o(\Delta t^0)]=&\prod_{n=0}^{T/\Delta t-1}(1+R_{n\Delta t}\Delta t)+o(\Delta t^0)\\
-                            =& \prod_{n=0}^{T/\Delta t-1}e^{R_{n\Delta t}\Delta t}+o(\Delta t^0)\\
-                            =& e^{\sum_{n=0}^{T/\Delta t-1}R_{n\Delta t}\Delta t}+o(\Delta t^0)\\
-                            \rightarrow & e^{\int_0^T R_t \mathrm{d}t}\ \ \ (\Delta t\rightarrow 0)
-                    \align{end}
+                    \[
+                        \begin{align}
+                                \prod_{n=0}^{T/\Delta t-1}[1+R_{n\Delta t}\Delta t+o(\Delta t^0)]=&\prod_{n=0}^{T/\Delta t-1}(1+R_{n\Delta t}\Delta t)+o(\Delta t^0)\\
+                                =& \prod_{n=0}^{T/\Delta t-1}e^{R_{n\Delta t}\Delta t}+o(\Delta t^0)\\
+                                =& e^{\sum_{n=0}^{T/\Delta t-1}R_{n\Delta t}\Delta t}+o(\Delta t^0)\\
+                                \rightarrow & e^{\int_0^T R_t \mathrm{d}t}\ \ \ (\Delta t\rightarrow 0)
+                        \end{align}
+                    \]
+                    と積分の指数で表示できる。
                 </p>
             </section>
         </main>
