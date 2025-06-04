@@ -393,117 +393,92 @@
         </div>
         <a href="#" class="link-button" id="linkButton">→</a>
         <script>
-          let currentSection = 0;
-          const sections = document.querySelectorAll('.section');
-          const totalSections = sections.length;
-          const container = document.querySelector('.container');
-          const linkButton = document.getElementById('linkButton');
-          let isScrolling = false;
-          const scrollThreshold = 300;
-          let scrollY = 0;
-          let touchStartY = 0;
-     
-          const sectionLinks = [
-            "", // section1
-            "", // 基礎編タイトル
-            "市場・投資.html", // 第1部 市場・投資
-            "https://example.com/micro_macro", // 第2部 ミクロ・マクロ
-            "https://example.com/finance", // 第3部 財務・ファイナンス
-            "", // 応用編タイトル
-            "https://example.com/portfolio", // 応用第1部 ポートフォリオ
-            "https://example.com/game_theory", // 応用第2部 ゲーム理論
-            "https://example.com/behavioral", // 応用第3部 行動経済学
-            "", // 数学タイトル
-            "https://example.com/portfolio", // 応用第1部 ポートフォリオ
-            "https://example.com/game_theory", // 応用第2部 ゲーム理論
-            "https://example.com/behavioral", // 応用第3部 行動経済学
-          ];
-     
-          function fadeInElements(section) {
-            const fadeInElements = section.querySelectorAll('.fade-in');
-            fadeInElements.forEach((element, index) => {
-              element.style.transitionDelay = `${index * 0.8}s`;
-              element.classList.add('active');
+            let currentSection = 0;
+            const sections = document.querySelectorAll('.section');
+            const totalSections = sections.length;
+            const container = document.querySelector('.container');
+            const linkButton = document.getElementById('linkButton');
+            let isScrolling = false;
+            const scrollThreshold = 300;
+            let scrollY = 0;
+            let touchStartY = 0;
+            const sectionLinks = [
+                "", // section1
+                "", // 基礎編タイトル
+                "市場・投資.html", // 第1部 市場・投資
+                "https://example.com/micro_macro", // 第2部 ミクロ・マクロ
+                "https://example.com/finance", // 第3部 財務・ファイナンス
+                "", // 応用編タイトル
+                "https://example.com/portfolio", // 応用第1部 ポートフォリオ
+                "https://example.com/game_theory", // 応用第2部 ゲーム理論
+                "https://example.com/behavioral", // 応用第3部 行動経済学
+                "", // 数学タイトル
+                "https://example.com/portfolio", // 応用第1部 ポートフォリオ
+                "https://example.com/game_theory", // 応用第2部 ゲーム理論
+                "https://example.com/behavioral", // 応用第3部 行動経済学
+            ];
+            function updateSection() {
+                container.style.transform = `translateY(${-currentSection * 100}vh)`;
+                sections.forEach((section, index) => {
+                    section.classList.toggle('active', index === currentSection);
+                    if (index === currentSection) {
+                        fadeInElements(section);
+                    } else {
+                        resetFadeElements(section);
+                    }
+                });
+                const header = document.querySelector('.header');
+                if (currentSection === 0) {
+                    header.style.display = 'none';
+                } else {
+                    header.style.display = 'flex';
+                }
+                const link = sectionLinks[currentSection];
+                if (link) {
+                    linkButton.href = link;
+                    linkButton.classList.add('active');
+                } else {
+                    linkButton.href = "#";
+                    linkButton.classList.remove('active');
+                }
+                setTimeout(() => isScrolling = false, 800);
+            }
+            function fadeInElements(section) {
+                const fadeInElements = section.querySelectorAll('.fade-in');
+                fadeInElements.forEach((element, index) => {
+                    element.style.transitionDelay = `${index * 0.8}s`;
+                    element.classList.add('active');
+                });
+            }
+            function resetFadeElements(section) {
+                const fadeInElements = section.querySelectorAll('.fade-in');
+                fadeInElements.forEach(element => {
+                    element.classList.remove('active');
+                    element.style.transitionDelay = '0s';
+                });
+            }
+            window.addEventListener('wheel', (event) => {
+                if (isScrolling) return;
+                scrollY += event.deltaY;
+                if (Math.abs(scrollY) >= scrollThreshold) {
+                    isScrolling = true;
+                    currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
+                    scrollY = 0;
+                    updateSection();
+                }
             });
-          }
-     
-          function updateSection() {
-           container.style.transform = `translateY(${-currentSection * 100}vh)`;
-     
-           sections.forEach((section, index) => {
-             section.classList.toggle('active', index === currentSection);
-             if (index === currentSection) {
-               fadeInElements(section);
-             } else {
-               resetFadeElements(section);
-             }
-           });
-     
-           // 一枚目 (section1) のときはヘッダーを非表示、それ以外は表示
-           const header = document.querySelector('.header');
-           if (currentSection === 0) {
-             header.style.display = 'none';
-           } else {
-             header.style.display = 'flex';
-           }
-     
-           const link = sectionLinks[currentSection];
-           if (link) {
-             linkButton.href = link;
-             linkButton.classList.add('active');
-           } else {
-             linkButton.href = "#";
-             linkButton.classList.remove('active');
-           }
-     
-           setTimeout(() => isScrolling = false, 800);
-         }
-     
-         function fadeInElements(section) {
-           const fadeInElements = section.querySelectorAll('.fade-in');
-           fadeInElements.forEach((element, index) => {
-             element.style.transitionDelay = `${index * 0.8}s`;
-             element.classList.add('active');
-           });
-         }
-     
-         function resetFadeElements(section) {
-           const fadeInElements = section.querySelectorAll('.fade-in');
-           fadeInElements.forEach(element => {
-             element.classList.remove('active');
-             element.style.transitionDelay = '0s';
-           });
-         }
-     
-         // **PC: マウスホイールでスクロール**
-         window.addEventListener('wheel', (event) => {
-           if (isScrolling) return;
-     
-           scrollY += event.deltaY;
-           if (Math.abs(scrollY) >= scrollThreshold) {
-             isScrolling = true;
-             currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
-             scrollY = 0;
-             updateSection();
-           }
-         });
-     
-         // **スマホ: スワイプでスクロール**
-         window.addEventListener("touchstart", (event) => {
-           touchStartY = event.touches[0].clientY;
-         });
-     
-         window.addEventListener("touchend", (event) => {
-           let touchEndY = event.changedTouches[0].clientY;
-           let touchDiff = touchStartY - touchEndY;
-     
-           if (Math.abs(touchDiff) > 50) { // スワイプ判定
-             isScrolling = true;
-             currentSection = Math.max(0, Math.min(currentSection + (touchDiff > 0 ? 1 : -1), totalSections - 1));
-             updateSection();
-           }
-         });
-       </script>
-     
+            window.addEventListener("touchstart", (event) => {
+                touchStartY = event.touches[0].clientY;
+            });
+            window.addEventListener("touchend", (event) => {
+                let touchEndY = event.changedTouches[0].clientY;
+                let touchDiff = touchStartY - touchEndY;
+                if (Math.abs(touchDiff) > 50) {
+                    isScrolling = true;
+                    currentSection = Math.max(0, Math.min(currentSection + (touchDiff > 0 ? 1 : -1), totalSections - 1));
+                    updateSection();
+                }
+            });
+        </script>
     </body>
 </html>
