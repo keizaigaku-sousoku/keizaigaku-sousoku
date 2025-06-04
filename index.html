@@ -1,228 +1,60 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>経済学総則</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-            font-weight: 300;
-            font-size: 20px;
-            height: 100vh;
-        }
-        h2 {
-            font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-            font-weight: 400;
-            font-size: 28px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .container {
-            transition: transform 0.8s ease;
-        }
-        .section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            box-sizing: border-box;
-            flex-direction: column;
-        }
-        .header {
-            display: none;
-            align-items: center;
-            justify-content: center; /* 要素を中央寄せ */
-            width: 100%;
-            height: 50px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        } 
-        .header-title {
-            flex: 1;
-            text-align: center;
-            font-size: 1.1rem;
-            white-space: nowrap;
-        }
-        .header-separator {
-            flex: 0; 
-            margin: 0 10px;
-            font-size: 1rem;
-        }
-        .header-nav {
-            flex: 2; /* タイトルよりやや広め */
-            display: flex;
-            justify-content: space-evenly;
-        }
-        .header-item {
-            position: relative;
-            text-align: center;
-            font-size: 1.2rem;
-            white-space: nowrap;
-            margin: 0 10px;
-        }
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            display: none;
-            background-color: #333;
-            border: 1px solid #333;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            z-index: 100;
-            min-width: 150px;
-            padding: 8px 0;
-            border-radius: 10px;
-            backdrop-filter: blur(6px);
-        }
-        .header-item:hover .dropdown {
-            display: block; /* ホバー時に表示 */
-        }
-        .dropdown-item {
-            padding: 8px 15px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 300;
-            color: #fff;
-            white-space: nowrap;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-        .section1 {
-            background-color: black;
-        }
-        .section1 .text-overlay {
-            color: white;
-            font-size: 2.5rem;
-            opacity: 0;
-            animation: fadeIn 4s forwards;
-        }
-        .section-title {
-            font-size: 40px;
-            opacity: 0;
-            animation: fadeIn 4s forwards;
-            color: #333;
-            font-weight: 200;
-        }
-        .content-section {
-            background-color: #fff;
-            color: #333;
-        }
-        .content {
-            max-width: 800px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
-            font-weight: 300;
-        }
-        .section.active .content {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /*
-        .link-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            background-color: white;
-            color: #333;
-            border-radius: 50%;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            text-decoration: none;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.5s ease;
-            border: 2px solid #333;
-        }
-        */
-        .link-button {
-            position: fixed;
-            bottom: 12px;
-            right: 16px;
-            background-color: white;
-            color: #333;
-            border-radius: 50%;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            text-decoration: none;
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.5s ease;
-            border: 1.5px solid #333;
-            padding: 12px 16px;
-            /*width: auto;*/     /* 明示的な固定幅を解除 */
-            /*height: auto;*/    /* 明示的な固定高さを解除 */
-        }
-        .link-button.active {
-            opacity: 1;
-            pointer-events: auto;
-            display: flex;
-        }
-        .link-button:hover {
-            background-color: #333;
-            color: white;
-            transform: scale(1.1);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
- 
-        /* スマホ版 */
-        @media (max-width: 768px) {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>経済学総則</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
             body {
                 margin: 0;
                 overflow: hidden;
                 font-family: 'Roboto', 'Noto Sans JP', sans-serif;
                 font-weight: 300;
-                font-size: 18px;
+                font-size: 20px;
                 height: 100vh;
             }
-            .header {
-                display: flex;
-                align-items: center;
-                justify-content: center; /* 中央寄せ */
-                width: 100%;
+            h2 {
+                font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+                font-weight: 400;
+                font-size: 28px;
+                margin-bottom: 20px;
+                line-height: 1.6;
+                color: #333;
             }
+            .container {
+                transition: transform 0.8s ease;
+            }
+            .section {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+                box-sizing: border-box;
+                flex-direction: column;
+            }
+            .header {
+                display: none;
+                align-items: center;
+                justify-content: center; /* 要素を中央寄せ */
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            } 
             .header-title {
-                flex: 1; /* 均等配置 */
+                flex: 1;
                 text-align: center;
-                font-size: 1rem;
+                font-size: 1.1rem;
                 white-space: nowrap;
             }
             .header-separator {
-                flex: 0;
-                margin: 0 10px; /* 適切な余白 */
-                font-size: 0.9rem;
+                flex: 0; 
+                margin: 0 10px;
+                font-size: 1rem;
             }
             .header-nav {
                 flex: 2; /* タイトルよりやや広め */
@@ -230,297 +62,465 @@
                 justify-content: space-evenly;
             }
             .header-item {
-                position: relative; /* 親要素として基準を作る */
+                position: relative;
                 text-align: center;
-                font-size: 0.9rem;
+                font-size: 1.2rem;
                 white-space: nowrap;
-                margin: 0 10px; /* 各項目間の余白 */
+                margin: 0 10px;
             }
             .dropdown {
                 position: absolute;
-                top: 100%; /* ヘッダーのすぐ下 */
-                left: 0; /* デフォルトでは左揃え */
-                min-width: 120px; /* 最低限の横幅 */
-                max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
-                width: max-content; /* テキストの長さに応じて広がる */
-                height: auto; /* 必要に応じた高さ */
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
                 display: none;
                 background-color: #333;
                 border: 1px solid #333;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
                 z-index: 100;
-                padding: 10px 0;
+                min-width: 150px;
+                padding: 8px 0;
+                border-radius: 10px;
                 backdrop-filter: blur(6px);
-                overflow-y: auto; /* 長いリストでもスクロール可能 */
-            }
-            /* 右端ではみ出す場合は位置を調整 */
-            .dropdown.right-edge {
-                right: 0;
-                left: auto;
-            }
-            /* 画面端にはみ出るのを防ぐ */
-            .dropdown:before {
-                content: "";
-                position: absolute;
-                top: -8px; /* ドロップダウンとの間隔 */
-                left: 10px; /* 矢印の位置 */
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-bottom: 8px solid #333; /* 三角形の矢印 */
             }
             .header-item:hover .dropdown {
-                display: block;
+                display: block; /* ホバー時に表示 */
             }
             .dropdown-item {
-                padding: 12px;
-                text-align: left;
-                font-size: 1rem;
+                padding: 8px 15px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 300;
                 color: #fff;
-                white-space: nowrap; /* 改行を防ぐ */
+                white-space: nowrap;
+                transition: background-color 0.3s ease, color 0.3s ease;
             }
             .dropdown-item:hover {
                 background-color: rgba(255, 255, 255, 0.1);
                 color: #fff;
             }
-      }
-      </style>
-  </head>
-  <body>
-    <div class="header">
-      <div class="header-title">経済学総則</div>
-      <div class="header-separator">｜</div>
-      <div class="header-nav">
-        <div class="header-item">
-          基礎
-          <div class="dropdown">
-            <div class="dropdown-item"><a href="市場・投資.html" style="text-decoration: none; color: white;">市場・投資</a></div>
-            <div class="dropdown-item">ミクロ・マクロ経済学</div>
-            <div class="dropdown-item">財務・ファイナンス理論</div>
+            .section1 {
+                background-color: black;
+            }
+            .section1 .text-overlay {
+                color: white;
+                font-size: 2.5rem;
+                opacity: 0;
+                animation: fadeIn 4s forwards;
+            }
+            .section-title {
+                font-size: 40px;
+                opacity: 0;
+                animation: fadeIn 4s forwards;
+                color: #333;
+                font-weight: 200;
+            }
+            .content-section {
+                background-color: #fff;
+                color: #333;
+            }
+            .content {
+                max-width: 800px;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 1.5s ease, transform 1.5s ease;
+                font-weight: 300;
+            }
+            .section.active .content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            .fade-in.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            /*
+            .link-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+                background-color: white;
+                color: #333;
+                border-radius: 50%;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                text-decoration: none;
+                z-index: 1000;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.5s ease;
+                border: 2px solid #333;
+            }
+            */
+            .link-button {
+                position: fixed;
+                bottom: 12px;
+                right: 16px;
+                background-color: white;
+                color: #333;
+                border-radius: 50%;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                text-decoration: none;
+                z-index: 1000;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.5s ease;
+                border: 1.5px solid #333;
+                padding: 12px 16px;
+                /*width: auto;*/     /* 明示的な固定幅を解除 */
+                /*height: auto;*/    /* 明示的な固定高さを解除 */
+            }
+            .link-button.active {
+                opacity: 1;
+                pointer-events: auto;
+                display: flex;
+            }
+            .link-button:hover {
+                background-color: #333;
+                color: white;
+                transform: scale(1.1);
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+     
+            /* スマホ版 */
+            @media (max-width: 768px) {
+                body {
+                    margin: 0;
+                    overflow: hidden;
+                    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+                    font-weight: 300;
+                    font-size: 18px;
+                    height: 100vh;
+                }
+                .header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; /* 中央寄せ */
+                    width: 100%;
+                }
+                .header-title {
+                    flex: 1; /* 均等配置 */
+                    text-align: center;
+                    font-size: 1rem;
+                    white-space: nowrap;
+                }
+                .header-separator {
+                    flex: 0;
+                    margin: 0 10px; /* 適切な余白 */
+                    font-size: 0.9rem;
+                }
+                .header-nav {
+                    flex: 2; /* タイトルよりやや広め */
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                .header-item {
+                    position: relative; /* 親要素として基準を作る */
+                    text-align: center;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    margin: 0 10px; /* 各項目間の余白 */
+                }
+                .dropdown {
+                    position: absolute;
+                    top: 100%; /* ヘッダーのすぐ下 */
+                    left: 0; /* デフォルトでは左揃え */
+                    min-width: 120px; /* 最低限の横幅 */
+                    max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
+                    width: max-content; /* テキストの長さに応じて広がる */
+                    height: auto; /* 必要に応じた高さ */
+                    display: none;
+                    background-color: #333;
+                    border: 1px solid #333;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                    z-index: 100;
+                    padding: 10px 0;
+                    backdrop-filter: blur(6px);
+                    overflow-y: auto; /* 長いリストでもスクロール可能 */
+                }
+                /* 右端ではみ出す場合は位置を調整 */
+                .dropdown.right-edge {
+                    right: 0;
+                    left: auto;
+                }
+                /* 画面端にはみ出るのを防ぐ */
+                .dropdown:before {
+                    content: "";
+                    position: absolute;
+                    top: -8px; /* ドロップダウンとの間隔 */
+                    left: 10px; /* 矢印の位置 */
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-bottom: 8px solid #333; /* 三角形の矢印 */
+                }
+                .header-item:hover .dropdown {
+                    display: block;
+                }
+                .dropdown-item {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 1rem;
+                    color: #fff;
+                    white-space: nowrap; /* 改行を防ぐ */
+                }
+                .dropdown-item:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: #fff;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-title">経済学総則</div>
+            <div class="header-separator">｜</div>
+            <div class="header-nav">
+                <div class="header-item">
+                    基礎
+                    <div class="dropdown">
+                        <div class="dropdown-item"><a href="市場・投資.html" style="text-decoration: none; color: white;">市場・投資</a></div>
+                        <div class="dropdown-item">ミクロ・マクロ経済学</div>
+                        <div class="dropdown-item">財務・ファイナンス理論</div>
+                    </div>
+                </div>
+                <div class="header-item">
+                    応用
+                    <div class="dropdown">
+                        <div class="dropdown-item">応用第1部</div>
+                        <div class="dropdown-item">応用第2部</div>
+                        <div class="dropdown-item">応用第3部</div>
+                    </div>
+                </div>
+                <div class="header-item">
+                    数学
+                    <div class="dropdown">
+                        <div class="dropdown-item">確率論</div>
+                        <div class="dropdown-item">確率微分方程式</div>
+                        <div class="dropdown-item">統計学</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        <div class="container">
+          <div class="section section1">
+            <div class="text-overlay">No Fair Value, Just Bid and Ask</div>
+          </div>
+     
+          <div class="section">
+            <div class="section-title">基礎</div>
+            <p class="fade-in">&mdash; FUNDAMENTALS &mdash;</p>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第1部<br>市場・投資</h2>
+              <p class="fade-in" style="text-align: justify;">
+                経済学という大きな理論を展開するための舞台を明示的に定義することは、これをよく理解する上で大きな手助けとなる。
+                またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
+                そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
+              </p>
+            </div>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第2部<br>ミクロ・マクロ経済学</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第3部<br>財務・ファイナンス理論</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section">
+            <div class="section-title">応用</div>
+            <p class="fade-in">&mdash; APPLICATIONS &mdash;</p>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第1部<br>******</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第2部<br>******</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第3部<br>******</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section">
+            <div class="section-title">数学</div>
+            <p class="fade-in">&mdash; MATHEMATICS &mdash;</p>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第1部<br>確率論</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第2部<br>確率微分方程式</h2>
+              <p class="fade-in">******</p>
+            </div>
+          </div>
+     
+          <div class="section content-section">
+            <div class="content">
+              <h2 class="fade-in">第3部<br>統計学</h2>
+              <p class="fade-in">******</p>
+            </div>
           </div>
         </div>
-        <div class="header-item">
-          応用
-          <div class="dropdown">
-            <div class="dropdown-item">応用第1部</div>
-            <div class="dropdown-item">応用第2部</div>
-            <div class="dropdown-item">応用第3部</div>
-          </div>
-        </div>
-        <div class="header-item">
-          数学
-          <div class="dropdown">
-            <div class="dropdown-item">確率論</div>
-            <div class="dropdown-item">確率微分方程式</div>
-            <div class="dropdown-item">統計学</div>
-          </div>
-        </div>
+     
       </div>
-    </div>
- 
-    <div class="container">
-      <div class="section section1">
-        <div class="text-overlay">No Fair Value, Just Bid and Ask</div>
-      </div>
- 
-      <div class="section">
-        <div class="section-title">基礎</div>
-        <p class="fade-in">&mdash; FUNDAMENTALS &mdash;</p>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第1部<br>市場・投資</h2>
-          <p class="fade-in" style="text-align: justify;">
-            経済学という大きな理論を展開するための舞台を明示的に定義することは、これをよく理解する上で大きな手助けとなる。
-            またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
-            そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
-          </p>
-        </div>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第2部<br>ミクロ・マクロ経済学</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第3部<br>財務・ファイナンス理論</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section">
-        <div class="section-title">応用</div>
-        <p class="fade-in">&mdash; APPLICATIONS &mdash;</p>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第1部<br>******</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第2部<br>******</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第3部<br>******</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section">
-        <div class="section-title">数学</div>
-        <p class="fade-in">&mdash; MATHEMATICS &mdash;</p>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第1部<br>確率論</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第2部<br>確率微分方程式</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
- 
-      <div class="section content-section">
-        <div class="content">
-          <h2 class="fade-in">第3部<br>統計学</h2>
-          <p class="fade-in">******</p>
-        </div>
-      </div>
-    </div>
- 
-  </div>
- 
-  <a href="#" class="link-button" id="linkButton">→</a>
- 
-    <script>
-      let currentSection = 0;
-      const sections = document.querySelectorAll('.section');
-      const totalSections = sections.length;
-      const container = document.querySelector('.container');
-      const linkButton = document.getElementById('linkButton');
-      let isScrolling = false;
-      const scrollThreshold = 300;
-      let scrollY = 0;
-      let touchStartY = 0;
- 
-      const sectionLinks = [
-        "", // section1
-        "", // 基礎編タイトル
-        "市場・投資.html", // 第1部 市場・投資
-        "https://example.com/micro_macro", // 第2部 ミクロ・マクロ
-        "https://example.com/finance", // 第3部 財務・ファイナンス
-        "", // 応用編タイトル
-        "https://example.com/portfolio", // 応用第1部 ポートフォリオ
-        "https://example.com/game_theory", // 応用第2部 ゲーム理論
-        "https://example.com/behavioral", // 応用第3部 行動経済学
-        "", // 数学タイトル
-        "https://example.com/portfolio", // 応用第1部 ポートフォリオ
-        "https://example.com/game_theory", // 応用第2部 ゲーム理論
-        "https://example.com/behavioral", // 応用第3部 行動経済学
-      ];
- 
-      function fadeInElements(section) {
-        const fadeInElements = section.querySelectorAll('.fade-in');
-        fadeInElements.forEach((element, index) => {
-          element.style.transitionDelay = `${index * 0.8}s`;
-          element.classList.add('active');
-        });
-      }
- 
-      function updateSection() {
-       container.style.transform = `translateY(${-currentSection * 100}vh)`;
- 
-       sections.forEach((section, index) => {
-         section.classList.toggle('active', index === currentSection);
-         if (index === currentSection) {
-           fadeInElements(section);
-         } else {
-           resetFadeElements(section);
+     
+      <a href="#" class="link-button" id="linkButton">→</a>
+     
+        <script>
+          let currentSection = 0;
+          const sections = document.querySelectorAll('.section');
+          const totalSections = sections.length;
+          const container = document.querySelector('.container');
+          const linkButton = document.getElementById('linkButton');
+          let isScrolling = false;
+          const scrollThreshold = 300;
+          let scrollY = 0;
+          let touchStartY = 0;
+     
+          const sectionLinks = [
+            "", // section1
+            "", // 基礎編タイトル
+            "市場・投資.html", // 第1部 市場・投資
+            "https://example.com/micro_macro", // 第2部 ミクロ・マクロ
+            "https://example.com/finance", // 第3部 財務・ファイナンス
+            "", // 応用編タイトル
+            "https://example.com/portfolio", // 応用第1部 ポートフォリオ
+            "https://example.com/game_theory", // 応用第2部 ゲーム理論
+            "https://example.com/behavioral", // 応用第3部 行動経済学
+            "", // 数学タイトル
+            "https://example.com/portfolio", // 応用第1部 ポートフォリオ
+            "https://example.com/game_theory", // 応用第2部 ゲーム理論
+            "https://example.com/behavioral", // 応用第3部 行動経済学
+          ];
+     
+          function fadeInElements(section) {
+            const fadeInElements = section.querySelectorAll('.fade-in');
+            fadeInElements.forEach((element, index) => {
+              element.style.transitionDelay = `${index * 0.8}s`;
+              element.classList.add('active');
+            });
+          }
+     
+          function updateSection() {
+           container.style.transform = `translateY(${-currentSection * 100}vh)`;
+     
+           sections.forEach((section, index) => {
+             section.classList.toggle('active', index === currentSection);
+             if (index === currentSection) {
+               fadeInElements(section);
+             } else {
+               resetFadeElements(section);
+             }
+           });
+     
+           // 一枚目 (section1) のときはヘッダーを非表示、それ以外は表示
+           const header = document.querySelector('.header');
+           if (currentSection === 0) {
+             header.style.display = 'none';
+           } else {
+             header.style.display = 'flex';
+           }
+     
+           const link = sectionLinks[currentSection];
+           if (link) {
+             linkButton.href = link;
+             linkButton.classList.add('active');
+           } else {
+             linkButton.href = "#";
+             linkButton.classList.remove('active');
+           }
+     
+           setTimeout(() => isScrolling = false, 800);
          }
-       });
- 
-       // 一枚目 (section1) のときはヘッダーを非表示、それ以外は表示
-       const header = document.querySelector('.header');
-       if (currentSection === 0) {
-         header.style.display = 'none';
-       } else {
-         header.style.display = 'flex';
-       }
- 
-       const link = sectionLinks[currentSection];
-       if (link) {
-         linkButton.href = link;
-         linkButton.classList.add('active');
-       } else {
-         linkButton.href = "#";
-         linkButton.classList.remove('active');
-       }
- 
-       setTimeout(() => isScrolling = false, 800);
-     }
- 
-     function fadeInElements(section) {
-       const fadeInElements = section.querySelectorAll('.fade-in');
-       fadeInElements.forEach((element, index) => {
-         element.style.transitionDelay = `${index * 0.8}s`;
-         element.classList.add('active');
-       });
-     }
- 
-     function resetFadeElements(section) {
-       const fadeInElements = section.querySelectorAll('.fade-in');
-       fadeInElements.forEach(element => {
-         element.classList.remove('active');
-         element.style.transitionDelay = '0s';
-       });
-     }
- 
-     // **PC: マウスホイールでスクロール**
-     window.addEventListener('wheel', (event) => {
-       if (isScrolling) return;
- 
-       scrollY += event.deltaY;
-       if (Math.abs(scrollY) >= scrollThreshold) {
-         isScrolling = true;
-         currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
-         scrollY = 0;
-         updateSection();
-       }
-     });
- 
-     // **スマホ: スワイプでスクロール**
-     window.addEventListener("touchstart", (event) => {
-       touchStartY = event.touches[0].clientY;
-     });
- 
-     window.addEventListener("touchend", (event) => {
-       let touchEndY = event.changedTouches[0].clientY;
-       let touchDiff = touchStartY - touchEndY;
- 
-       if (Math.abs(touchDiff) > 50) { // スワイプ判定
-         isScrolling = true;
-         currentSection = Math.max(0, Math.min(currentSection + (touchDiff > 0 ? 1 : -1), totalSections - 1));
-         updateSection();
-       }
-     });
-   </script>
- 
-  </body>
-  </html>
+     
+         function fadeInElements(section) {
+           const fadeInElements = section.querySelectorAll('.fade-in');
+           fadeInElements.forEach((element, index) => {
+             element.style.transitionDelay = `${index * 0.8}s`;
+             element.classList.add('active');
+           });
+         }
+     
+         function resetFadeElements(section) {
+           const fadeInElements = section.querySelectorAll('.fade-in');
+           fadeInElements.forEach(element => {
+             element.classList.remove('active');
+             element.style.transitionDelay = '0s';
+           });
+         }
+     
+         // **PC: マウスホイールでスクロール**
+         window.addEventListener('wheel', (event) => {
+           if (isScrolling) return;
+     
+           scrollY += event.deltaY;
+           if (Math.abs(scrollY) >= scrollThreshold) {
+             isScrolling = true;
+             currentSection = Math.max(0, Math.min(currentSection + (scrollY > 0 ? 1 : -1), totalSections - 1));
+             scrollY = 0;
+             updateSection();
+           }
+         });
+     
+         // **スマホ: スワイプでスクロール**
+         window.addEventListener("touchstart", (event) => {
+           touchStartY = event.touches[0].clientY;
+         });
+     
+         window.addEventListener("touchend", (event) => {
+           let touchEndY = event.changedTouches[0].clientY;
+           let touchDiff = touchStartY - touchEndY;
+     
+           if (Math.abs(touchDiff) > 50) { // スワイプ判定
+             isScrolling = true;
+             currentSection = Math.max(0, Math.min(currentSection + (touchDiff > 0 ? 1 : -1), totalSections - 1));
+             updateSection();
+           }
+         });
+       </script>
+     
+    </body>
+</html>
