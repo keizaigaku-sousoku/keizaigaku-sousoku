@@ -8,15 +8,16 @@
         @import "compass/css3";
         @import "compass/reset";
 
-        * {
-            box-sizing: border-box;
+        html, body {
+            margin: 0; /* マージンをリセット */
+            padding: 0; /* パディングをリセット */
         }
 
         body {
             background-color: #ecf0f1;
             font-family: helvetica, arial, sans-serif;
             font-size: 16px;
-            padding-top: 330px;
+            padding-top: 330px; /* ヘッダーの高さに合わせたパディング */
             transition: padding-top .5s ease;
         }
         
