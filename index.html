@@ -28,6 +28,7 @@
             top: 0;
             overflow: hidden;
             transition: all 0.5s ease;
+            z-index: 1000;
         }
 
         header h1 {
@@ -38,6 +39,7 @@
             transition: all 0.3s ease;
         }
 
+        /* 共通ナビスタイル */
         .main-nav {
             display: flex;
             justify-content: center;
@@ -57,6 +59,7 @@
             box-shadow: 0 0 0 1px #fff;
         }
 
+        /* ハンバーガー */
         .menu-toggle {
             display: none;
             width: 30px;
@@ -64,7 +67,7 @@
             position: absolute;
             top: 15px;
             right: 20px;
-            z-index: 1100;
+            z-index: 1101;
             cursor: pointer;
         }
 
@@ -127,7 +130,7 @@
             transform: scale(0);
         }
 
-        /* スマホスタイル */
+        /* スマホ */
         @media (max-width: 768px) {
             body {
                 font-size: 18px;
@@ -191,10 +194,15 @@
             }
         }
 
-        /* PC向けの強制表示（スマホから戻ったとき） */
+        /* PC修正：navを通常フローに戻す */
         @media (min-width: 769px) {
             .main-nav {
                 display: flex !important;
+                position: static !important;
+                width: auto !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
             }
 
             .menu-toggle {
@@ -220,7 +228,7 @@
     </header>
 
     <div class="wrapper">
-        <section id="steezy">
+        <section>
             <h2>市場・投資</h2>
             <p>
                 経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -229,17 +237,17 @@
             </p>
         </section>
 
-        <section id="real">
+        <section>
             <h2>ミクロ・マクロ経済学</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
 
-        <section id="finance">
+        <section>
             <h2>財務・ファイナンス理論</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
 
-        <section id="math">
+        <section>
             <h2>数学</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
@@ -248,19 +256,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function() {
-            // スクロールによるヘッダー縮小
+            // スクロール時にヘッダーを縮小
             $(window).scroll(function() {
-                var winTop = $(window).scrollTop();
-                $("body").toggleClass("sticky-header", winTop >= 30);
+                $("body").toggleClass("sticky-header", $(window).scrollTop() >= 30);
             });
 
-            // メニューの開閉制御
+            // メニュー開閉
             $('.menu-toggle').on('click', function() {
                 $(this).toggleClass('open');
                 $('.main-nav').toggleClass('show');
             });
 
-            // ウィンドウ幅がPCに戻ったときは閉じる
+            // PCに戻ったときに状態をリセット
             $(window).on('resize', function() {
                 if ($(window).width() > 768) {
                     $('.main-nav').removeClass('show');
