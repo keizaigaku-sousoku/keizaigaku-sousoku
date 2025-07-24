@@ -5,11 +5,7 @@
     <title>経済学総則</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <style>
-        @import "compass/css3";
-        @import "compass/reset";
-
         html, body {
             margin: 0;
             padding: 0;
@@ -18,12 +14,11 @@
 
         body {
             background-color: #ecf0f1;
-            font-family: helvetica, arial, sans-serif;
             font-size: 16px;
             padding-top: 330px;
             transition: padding-top .5s ease;
         }
-        
+
         header {
             width: 100%;
             height: 300px;
@@ -34,7 +29,7 @@
             overflow: hidden;
             transition: all .5s ease;
         }
-        
+
         header h1 {
             font-size: 42px;
             color: #fff;
@@ -42,47 +37,78 @@
             font-weight: 100;
             transition: all .3s ease;
         }
-        
-        nav {
-            position: absolute;
-            bottom: 0;
-            height: 60px;
-            line-height: 60px;
-            width: 100%;
+
+        /* ナビゲーション共通 */
+        .main-nav {
+            display: flex;
+            justify-content: center;
             background-color: rgba(0, 0, 0, .1);
+            transition: all .3s ease;
         }
-        
-        nav a {
+
+        .main-nav a {
             color: #fff;
             display: inline-block;
             padding: 10px 15px;
-            line-height: 1;
             text-decoration: none;
             border-radius: 2px;
         }
-        
-        nav a:hover {
+
+        .main-nav a:hover {
             box-shadow: 0 0 0 1px #fff;
         }
-        
+
+        /* ハンバーガーメニュー */
+        .menu-toggle {
+            display: none;
+            width: 30px;
+            height: 25px;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1100;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
         h2 {
             font-size: 34px;
             font-weight: 500;
             line-height: 2;
             color: #493759;
         }
-        
+
         p {
             margin-bottom: 2rem;
             line-height: 2;
             color: #7f8c8d;
         }
-        
+
         .wrapper {
             width: 800px;
             margin: 0 auto;
         }
-        
+
         section {
             padding: 20px;
             margin-bottom: 40px;
@@ -91,16 +117,16 @@
             box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
         }
 
-        /* Sticky Header Style */    
+        /* Sticky Header Style */
         body.sticky-header {
             padding-top: 100px;
         }
-        
+
         body.sticky-header header {
             height: 60px;
             background-color: #493759;
         }
-        
+
         body.sticky-header header h1 {
             transform: scale(0);
         }
@@ -108,73 +134,84 @@
         @media (max-width: 768px) {
             body {
                 font-size: 18px;
-                padding-top: 200px;
+                padding-top: 220px;
             }
-            
+
             header {
-                height: 180px;
-                /*padding: 10px 0;*/
+                height: auto;
+                padding-bottom: 10px;
             }
-            
+
             header h1 {
                 font-size: 24px;
                 line-height: 1.5;
                 margin: 20px 0 10px;
             }
-            
-            nav {
-                display: flex;
-                /*flex-direction: column;*/
-                align-items: center;
-                height: auto;
-                padding: 10px 0;
-                background-color: rgba(0, 0, 0, 0.1);
-            }
-            
-            nav a {
-                font-size: 10px;
-                margin: 2px 0;
-            }
-        
+
             .wrapper {
                 width: 95%;
                 padding: 0 10px;
             }
-        
+
             h2 {
                 font-size: 22px;
             }
-        
+
             p {
                 font-size: 18px;
             }
+
+            /* メニュー切り替え */
+            .menu-toggle {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #493759;
+                z-index: 1000;
+            }
+
+            .main-nav.show {
+                display: flex;
+            }
+
+            .main-nav a {
+                display: block;
+                padding: 15px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            .main-nav a:hover {
+                background-color: rgba(255,255,255,0.1);
+            }
         }
-        
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function() {
-            $(window).scroll(function() {
-                var winTop = $(window).scrollTop();
-                if (winTop >= 30) {
-                    $("body").addClass("sticky-header");
-                } else {
-                    $("body").removeClass("sticky-header");
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
         <h1>No Fair Value, Just Bid and Ask</h1>
-        <nav>
-            <a href="">市場・投資</a>
-            <a href="">ミクロ・マクロ経済学</a>
-            <a href="">財務・ファイナンス理論</a>
-            <a href="">数学</a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav">
+            <a href="#">市場・投資</a>
+            <a href="#">ミクロ・マクロ経済学</a>
+            <a href="#">財務・ファイナンス理論</a>
+            <a href="#">数学</a>
         </nav>
     </header>
+
     <div class="wrapper">
         <section id='steezy'>
             <h2>市場・投資</h2>
@@ -187,30 +224,35 @@
 
         <section id='real'>
             <h2>ミクロ・マクロ経済学</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
 
         <section id='big'>
             <h2>財務・ファイナンス理論</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
 
-        <section id='big'>
+        <section id='math'>
             <h2>数学</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // スクロールによるヘッダーの縮小
+            $(window).scroll(function() {
+                var winTop = $(window).scrollTop();
+                $("body").toggleClass("sticky-header", winTop >= 30);
+            });
+
+            // メニュー開閉
+            $('.menu-toggle').on('click', function() {
+                $(this).toggleClass('open'); // ☰↔×
+                $('.main-nav').toggleClass('show');
+            });
+        });
+    </script>
 </body>
 </html>
