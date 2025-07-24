@@ -28,7 +28,6 @@
             top: 0;
             overflow: hidden;
             transition: all 0.5s ease;
-            z-index: 1000;
         }
 
         header h1 {
@@ -39,57 +38,26 @@
             transition: all 0.3s ease;
         }
 
-        /* 共通ナビスタイル */
-        .main-nav {
-            display: flex;
-            justify-content: center;
+        nav {
+            position: absolute;
+            bottom: 0;
+            height: 60px;
+            line-height: 60px;
+            width: 100%;
             background-color: rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
         }
 
-        .main-nav a {
+        nav a {
             color: #fff;
             display: inline-block;
             padding: 10px 15px;
+            line-height: 1;
             text-decoration: none;
             border-radius: 2px;
         }
 
-        .main-nav a:hover {
+        nav a:hover {
             box-shadow: 0 0 0 1px #fff;
-        }
-
-        /* ハンバーガー */
-        .menu-toggle {
-            display: none;
-            width: 30px;
-            height: 25px;
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            z-index: 1101;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            display: block;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: 0.4s;
-            border-radius: 2px;
-        }
-
-        .menu-toggle.open span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .menu-toggle.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.open span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
         }
 
         h2 {
@@ -124,28 +92,40 @@
 
         body.sticky-header header {
             height: 60px;
+            background-color: #493759;
         }
 
         body.sticky-header header h1 {
             transform: scale(0);
         }
 
-        /* スマホ */
         @media (max-width: 768px) {
             body {
                 font-size: 18px;
-                padding-top: 220px;
+                padding-top: 200px;
             }
 
             header {
-                height: auto;
-                padding-bottom: 10px;
+                height: 200px;
             }
 
             header h1 {
                 font-size: 24px;
-                line-height: 1.5;
-                margin: 20px 0 10px;
+                line-height: 150px;
+            }
+
+            nav {
+                height: auto;
+                line-height: normal;
+                padding: 10px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                font-size: 16px;
+                padding: 10px;
             }
 
             .wrapper {
@@ -160,66 +140,13 @@
             p {
                 font-size: 18px;
             }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .main-nav {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #493759;
-                z-index: 1000;
-            }
-
-            .main-nav.show {
-                display: flex;
-            }
-
-            .main-nav a {
-                display: block;
-                padding: 15px;
-                width: 100%;
-                text-align: center;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
-            }
-
-            .main-nav a:hover {
-                background-color: rgba(255,255,255,0.1);
-            }
-        }
-
-        /* PC修正：navを通常フローに戻す */
-        @media (min-width: 769px) {
-            .main-nav {
-                display: flex !important;
-                position: static !important;
-                width: auto !important;
-                flex-direction: row !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-
-            .menu-toggle {
-                display: none !important;
-            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>No Fair Value, Just Bid and Ask</h1>
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="main-nav">
+        <nav>
             <a href="#">市場・投資</a>
             <a href="#">ミクロ・マクロ経済学</a>
             <a href="#">財務・ファイナンス理論</a>
@@ -230,23 +157,16 @@
     <div class="wrapper">
         <section>
             <h2>市場・投資</h2>
-            <p>
-                経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
-                またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
-                そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
-            </p>
+            <p>経済学という大きな理論を展開するための舞台を明示的に定義することは…</p>
         </section>
-
         <section>
             <h2>ミクロ・マクロ経済学</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
-
         <section>
             <h2>財務・ファイナンス理論</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
-
         <section>
             <h2>数学</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
@@ -256,23 +176,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function() {
-            // スクロール時にヘッダーを縮小
             $(window).scroll(function() {
                 $("body").toggleClass("sticky-header", $(window).scrollTop() >= 30);
-            });
-
-            // メニュー開閉
-            $('.menu-toggle').on('click', function() {
-                $(this).toggleClass('open');
-                $('.main-nav').toggleClass('show');
-            });
-
-            // PCに戻ったときに状態をリセット
-            $(window).on('resize', function() {
-                if ($(window).width() > 768) {
-                    $('.main-nav').removeClass('show');
-                    $('.menu-toggle').removeClass('open');
-                }
             });
         });
     </script>
