@@ -16,7 +16,7 @@
             background-color: #ecf0f1;
             font-size: 16px;
             padding-top: 330px;
-            transition: padding-top .5s ease;
+            transition: padding-top 0.5s ease;
         }
 
         header {
@@ -27,7 +27,7 @@
             position: fixed;
             top: 0;
             overflow: hidden;
-            transition: all .5s ease;
+            transition: all 0.5s ease;
         }
 
         header h1 {
@@ -35,15 +35,14 @@
             color: #fff;
             line-height: 230px;
             font-weight: 100;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
         }
 
-        /* ナビゲーション共通 */
         .main-nav {
             display: flex;
             justify-content: center;
-            background-color: rgba(0, 0, 0, .1);
-            transition: all .3s ease;
+            background-color: rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
         .main-nav a {
@@ -58,7 +57,6 @@
             box-shadow: 0 0 0 1px #fff;
         }
 
-        /* ハンバーガーメニュー */
         .menu-toggle {
             display: none;
             width: 30px;
@@ -117,20 +115,19 @@
             box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
         }
 
-        /* Sticky Header Style */
         body.sticky-header {
             padding-top: 100px;
         }
 
         body.sticky-header header {
             height: 60px;
-            background-color: #493759;
         }
 
         body.sticky-header header h1 {
             transform: scale(0);
         }
 
+        /* スマホスタイル */
         @media (max-width: 768px) {
             body {
                 font-size: 18px;
@@ -161,7 +158,6 @@
                 font-size: 18px;
             }
 
-            /* メニュー切り替え */
             .menu-toggle {
                 display: block;
             }
@@ -194,6 +190,17 @@
                 background-color: rgba(255,255,255,0.1);
             }
         }
+
+        /* PC向けの強制表示（スマホから戻ったとき） */
+        @media (min-width: 769px) {
+            .main-nav {
+                display: flex !important;
+            }
+
+            .menu-toggle {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -213,7 +220,7 @@
     </header>
 
     <div class="wrapper">
-        <section id='steezy'>
+        <section id="steezy">
             <h2>市場・投資</h2>
             <p>
                 経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -222,17 +229,17 @@
             </p>
         </section>
 
-        <section id='real'>
+        <section id="real">
             <h2>ミクロ・マクロ経済学</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
 
-        <section id='big'>
+        <section id="finance">
             <h2>財務・ファイナンス理論</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
 
-        <section id='math'>
+        <section id="math">
             <h2>数学</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
         </section>
@@ -241,16 +248,24 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function() {
-            // スクロールによるヘッダーの縮小
+            // スクロールによるヘッダー縮小
             $(window).scroll(function() {
                 var winTop = $(window).scrollTop();
                 $("body").toggleClass("sticky-header", winTop >= 30);
             });
 
-            // メニュー開閉
+            // メニューの開閉制御
             $('.menu-toggle').on('click', function() {
-                $(this).toggleClass('open'); // ☰↔×
+                $(this).toggleClass('open');
                 $('.main-nav').toggleClass('show');
+            });
+
+            // ウィンドウ幅がPCに戻ったときは閉じる
+            $(window).on('resize', function() {
+                if ($(window).width() > 768) {
+                    $('.main-nav').removeClass('show');
+                    $('.menu-toggle').removeClass('open');
+                }
             });
         });
     </script>
