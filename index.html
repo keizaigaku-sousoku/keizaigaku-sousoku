@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>経済学総則</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+                font-weight: 300;
+                font-size: 18px;
+                height: 100vh;
+            }
+            h2 {
+                font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+                font-weight: 400;
+                font-size: 28px;
+                margin-bottom: 20px;
+                line-height: 1.6;
+                color: #333;
+            }
+            .container {
+                transition: transform 0.8s ease;
+            }
+            .section {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 40px;
+                box-sizing: border-box;
+                flex-direction: column;
+            }
+            .header {
+                display: none;
+                align-items: center;
+                justify-content: center; /* 要素を中央寄せ */
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            } 
+            .header-title {
+                flex: 1;
+                text-align: center;
+                font-size: 1.1rem;
+                white-space: nowrap;
+            }
+            .header-separator {
+                flex: 0; 
+                margin: 0 10px;
+                font-size: 1rem;
+            }
+            .header-nav {
+                flex: 2; /* タイトルよりやや広め */
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .header-item {
+                position: relative;
+                text-align: center;
+                font-size: 1.2rem;
+                white-space: nowrap;
+                margin: 0 10px;
+            }
+            .dropdown {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: none;
+                background-color: #333;
+                border: 1px solid #333;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                z-index: 100;
+                min-width: 150px;
+                padding: 8px 0;
+                border-radius: 10px;
+                backdrop-filter: blur(6px);
+            }
+            .header-item:hover .dropdown {
+                display: block; /* ホバー時に表示 */
+            }
+            .dropdown-item {
+                padding: 8px 15px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 300;
+                color: #fff;
+                white-space: nowrap;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+            .dropdown-item:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #fff;
+            }
+            .section1 {
+                background-color: black;
+            }
+            .section1 .text-overlay {
+                color: white;
+                font-size: 2.5rem;
+                opacity: 0;
+                animation: fadeIn 4s forwards;
+            }
+            .section-title {
+                font-size: 40px;
+                opacity: 0;
+                animation: fadeIn 4s forwards;
+                color: #333;
+                font-weight: 200;
+            }
+            .content-section {
+                background-color: #fff;
+                color: #333;
+            }
+            .content {
+                max-width: 800px;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 1.5s ease, transform 1.5s ease;
+                font-weight: 300;
+            }
+            .section.active .content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+            .fade-in.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .link-button {
+                position: fixed;
+                bottom: 12px;
+                right: 16px;
+                background-color: white;
+                color: #333;
+                border-radius: 50%;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                text-decoration: none;
+                z-index: 1000;
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.5s ease;
+                border: 1.5px solid #333;
+                padding: 12px 16px;
+                /*width: auto;*/     /* 明示的な固定幅を解除 */
+                /*height: auto;*/    /* 明示的な固定高さを解除 */
+            }
+            .link-button.active {
+                opacity: 1;
+                pointer-events: auto;
+                display: flex;
+            }
+            .link-button:hover {
+                background-color: #333;
+                color: white;
+                transform: scale(1.1);
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+     
+            /* スマホ版 */
+            @media (max-width: 768px) {
+                body {
+                    margin: 0;
+                    overflow: hidden;
+                    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+                    font-weight: 300;
+                    font-size: 16px;
+                    height: 100vh;
+                }
+                .header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; /* 中央寄せ */
+                    width: 100%;
+                }
+                .header-title {
+                    flex: 1; /* 均等配置 */
+                    text-align: center;
+                    font-size: 1rem;
+                    white-space: nowrap;
+                }
+                .header-separator {
+                    flex: 0;
+                    margin: 0 10px; /* 適切な余白 */
+                    font-size: 0.9rem;
+                }
+                .header-nav {
+                    flex: 2; /* タイトルよりやや広め */
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+                .header-item {
+                    position: relative; /* 親要素として基準を作る */
+                    text-align: center;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    margin: 0 10px; /* 各項目間の余白 */
+                }
+                .dropdown {
+                    position: absolute;
+                    top: 100%; /* ヘッダーのすぐ下 */
+                    left: 0; /* デフォルトでは左揃え */
+                    min-width: 120px; /* 最低限の横幅 */
+                    max-width: calc(100vw - 20px); /* 画面端からはみ出さない */
+                    width: max-content; /* テキストの長さに応じて広がる */
+                    height: auto; /* 必要に応じた高さ */
+                    display: none;
+                    background-color: #333;
+                    border: 1px solid #333;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                    z-index: 100;
+                    padding: 10px 0;
+                    backdrop-filter: blur(6px);
+                    overflow-y: auto; /* 長いリストでもスクロール可能 */
+                }
+                /* 右端ではみ出す場合は位置を調整 */
+                .dropdown.right-edge {
+                    right: 0;
+                    left: auto;
+                }
+                /* 画面端にはみ出るのを防ぐ */
+                .dropdown:before {
+                    content: "";
+                    position: absolute;
+                    top: -8px; /* ドロップダウンとの間隔 */
+                    left: 10px; /* 矢印の位置 */
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-bottom: 8px solid #333; /* 三角形の矢印 */
+                }
+                .header-item:hover .dropdown {
+                    display: block;
+                }
+                .dropdown-item {
+                    padding: 12px;
+                    text-align: left;
+                    font-size: 1rem;
+                    color: #fff;
+                    white-space: nowrap; /* 改行を防ぐ */
+                }
+                .dropdown-item:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: #fff;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        a
+    </body>
+</html>
