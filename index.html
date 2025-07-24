@@ -99,47 +99,57 @@
             transform: scale(0);
         }
 
-        @media (max-width: 768px) {
-            body {
-                font-size: 18px;
-                padding-top: 200px;
-            }
-
-            header {
-                height: 200px;
-            }
-
-            header h1 {
-                font-size: 24px;
-                line-height: 150px;
-            }
-
-            nav {
-                height: auto;
-                line-height: normal;
-                padding: 10px 0;
-                display: flex;
-                align-items: center;
-            }
-
-            nav a {
-                font-size: 16px;
-                padding: 10px;
-            }
-
-            .wrapper {
-                width: 95%;
-                padding: 0 10px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
-
-            p {
-                font-size: 18px;
-            }
+            @media (max-width: 768px) {
+        body {
+            font-size: 18px;
+            padding-top: 200px;
         }
+
+        header {
+            height: 200px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            line-height: 150px;
+        }
+
+        nav {
+            height: auto;
+            line-height: normal;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;         /* 横スクロール可能に */
+            white-space: nowrap;      /* 改行を防ぐ */
+            gap: 10px;                /* ナビ項目の間隔 */
+            padding-left: 10px;
+            -webkit-overflow-scrolling: touch; /* スムーズなスクロール */
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;            /* スクロールバー非表示（任意） */
+        }
+
+        nav a {
+            font-size: 16px;
+            padding: 10px;
+            flex-shrink: 0;           /* 縮ませない */
+        }
+
+        .wrapper {
+            width: 95%;
+            padding: 0 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
     </style>
 </head>
 <body>
