@@ -1,118 +1,140 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+:root {
+  --text-color: #2c2c2c;
+  --accent-color: #493759;
+  --hover-bg: #eee;
+  --bg-color: #f5f5f7;
+  --card-bg: #ffffff;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
 * {
   box-sizing: border-box;
 }
+
 html, body {
-  width: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'Roboto', 'Noto Sans JP', sans-serif;
   font-weight: 300;
   font-size: 15px;
-  color: #333;
-  background-color: #f9f9f9;
-  overflow-x: hidden;
   line-height: 2;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 a {
-  color: #333;
+  color: var(--text-color);
   text-decoration: none;
-}
-a:visited {
-  color: #333;
+  transition: color 0.3s;
 }
 a:hover {
-  color: #000;
+  color: var(--accent-color);
 }
 
 header {
   width: 100%;
+  padding: 2rem 1rem;
   text-align: center;
-  padding: 1.5rem 0;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
 }
 header h2 {
   margin: 0;
+  font-size: 24px;
   font-weight: 400;
+  color: var(--accent-color);
 }
 
 main {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: var(--accent-color);
+}
+
+h3 {
+  font-size: 16px;
+  margin: 2em 0 1em;
+  padding-left: 1rem;
+  border-left: 4px solid var(--accent-color);
+}
+
+h4 {
+  font-size: 15px;
+  margin: 1.5em 0 0.5em;
+  padding: 0.5rem 1rem;
+  background-color: var(--hover-bg);
+  border-left: 5px solid var(--accent-color);
+  border-radius: 0 6px 6px 0;
 }
 
 p {
   margin: 0 0 1.5em;
   letter-spacing: 0.025em;
   text-align: justify;
-}
-
-h2 {
-  font-size: 28px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 1.5em;
-}
-
-h3 {
-  font-size: 15px;
-  margin: 20px 0;
-  padding: 1rem 1.5rem;
-}
-
-h4 {
-  font-size: 15px;
-  margin: 10px 0;
-  padding: 1rem;
-  border-left: 7px solid #333;
-  border-radius: 10px 0 0 10px;
+  font-weight: 300;
 }
 
 .part,
 .theorem-tile,
 .proof {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 0 auto 20px;
-  max-width: 600px;
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 0 auto 30px;
+  max-width: 700px;
 }
 
 .part-title,
 .theorem-tile .title,
 .proof .title {
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 17px;
   text-align: center;
-  border-bottom: 2px solid #333;
   margin-bottom: 1em;
-  padding-bottom: 0.5em;
+  color: var(--accent-color);
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4em;
 }
 
 .toc-container {
-  max-width: 1000px;
-  margin: 20px auto;
+  max-width: 800px;
+  margin: 40px auto;
   padding: 20px;
 }
 .toc-container a {
   display: block;
-  padding: 10px;
-  margin: 5px 0;
+  padding: 12px 16px;
+  margin-bottom: 10px;
   font-size: 15px;
-  border-radius: 5px;
-  transition: transform 0.3s, background-color 0.3s;
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: var(--shadow);
 }
 .toc-container a:hover {
-  background-color: #333;
+  background-color: var(--accent-color);
   color: #fff;
-  transform: translateX(10px);
+  transform: translateX(8px);
 }
 
 .comment-box {
   position: relative;
-  padding: 1em;
-  border: 1px solid #333;
+  padding: 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  background-color: #fafafa;
 }
 .comment-box p {
   margin: 0;
@@ -127,11 +149,11 @@ h4 {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 999;
 }
 #nav-toggle {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: white;
   border: none;
   padding: 12px 16px;
   border-radius: 50%;
@@ -139,24 +161,23 @@ h4 {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
+
 #nav-menu {
   position: absolute;
   bottom: 60px;
   right: 0;
-  background-color: #333;
+  background-color: var(--accent-color);
   border-radius: 10px;
   padding: 8px 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   min-width: 200px;
 }
 #nav-menu a {
-  display: block;
   padding: 10px 15px;
   color: white;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 #nav-menu a:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -175,7 +196,6 @@ h4 {
 
 @media (min-width: 1024px) {
   .toc-container {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 0 50px;
   }
 }
