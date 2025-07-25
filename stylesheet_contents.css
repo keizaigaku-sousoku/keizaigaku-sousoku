@@ -69,12 +69,11 @@ a:visited {
     transform: translateX(10px);
 }
 .part {
-    background-color: white;
     color: #493759;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -90,8 +89,8 @@ a:visited {
 .theorem-tile {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     margin-bottom: 20px;
     max-width: 1200px;
     margin-left: auto;
