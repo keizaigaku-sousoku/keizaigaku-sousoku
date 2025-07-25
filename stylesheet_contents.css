@@ -1,201 +1,256 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-:root {
-  --text-color: #2c2c2c;
-  --accent-color: #493759;
-  --hover-bg: #eee;
-  --bg-color: #f5f5f7;
-  --card-bg: #ffffff;
-  --shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-}
-
 * {
   box-sizing: border-box;
 }
-
 html, body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   overflow-x: hidden;
-  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 2;
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
-  transition: color 0.3s;
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    height: 100vh;
+    box-sizing: border-box;
 }
-a:hover {
-  color: var(--accent-color);
+header, main, p, h2, h3, h4, .part, .part-title, .theorem-tile, .theorem-tile .title, .proof, .proof .title, .comment-box, .toc-container a {
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
 }
-
 header {
-  width: 100%;
-  padding: 2rem 1rem;
-  text-align: center;
-  background-color: var(--card-bg);
-  box-shadow: var(--shadow);
+    width: 100%;
+    max-width: none;
+    position: relative;
+    margin: 0;
+    padding: 1.5rem 0;
+    text-align: center;
 }
 header h2 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--accent-color);
+    margin: 0;
 }
-
 main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 30px 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-
-h2 {
-  font-size: 26px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 1.5em;
-  color: var(--accent-color);
-}
-
-h3 {
-  font-size: 16px;
-  margin: 2em 0 1em;
-  padding-left: 1rem;
-  border-left: 4px solid var(--accent-color);
-}
-
-h4 {
-  font-size: 15px;
-  margin: 1.5em 0 0.5em;
-  padding: 0.5rem 1rem;
-  background-color: var(--hover-bg);
-  border-left: 5px solid var(--accent-color);
-  border-radius: 0 6px 6px 0;
-}
-
 p {
-  margin: 0 0 1.5em;
-  letter-spacing: 0.025em;
-  text-align: justify;
-  font-weight: 300;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.025em;
+    line-height: 2;
 }
-
-.part,
-.theorem-tile,
-.proof {
-  background-color: var(--card-bg);
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  margin: 0 auto 30px;
-  max-width: 700px;
+a:visited {
+  color: black;
 }
-
-.part-title,
-.theorem-tile .title,
-.proof .title {
-  font-weight: 700;
-  font-size: 17px;
-  text-align: center;
-  margin-bottom: 1em;
-  color: var(--accent-color);
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.4em;
+.new-word {
+    color: #333;
+    font-weight: bold;
 }
-
 .toc-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
+    display: block;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
 }
 .toc-container a {
-  display: block;
-  padding: 12px 16px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  background-color: var(--card-bg);
-  border-radius: 6px;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: var(--shadow);
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 .toc-container a:hover {
-  background-color: var(--accent-color);
-  color: #fff;
-  transform: translateX(8px);
+    background-color: #333;
+    color: white;
+    transform: translateX(10px);
 }
-
+.part {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.part-title {
+    font-size: 15px;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.theorem-tile {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.theorem-tile .title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.theorem-tile p {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.025em;
+    line-height: 2;
+}
+.proof {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.025em;
+    line-height: 2;
+    background-color: white;
+    color: #333;
+}
+.proof .title {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.proof .end-symbol {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+}
 .comment-box {
-  position: relative;
-  padding: 1rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 8px;
-  background-color: #fafafa;
+    position: relative;
+    padding: 0.25em 1em;
+}
+.comment-box:before,
+.comment-box:after {
+    content: '';
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    display: inline-block;
+}
+.comment-box:before {
+    border-left: solid 1px #333;
+    border-top: solid 1px #333;
+    top: 0;
+    left: 0;
+}
+.comment-box:after {
+    border-right: solid 1px #333;
+    border-bottom: solid 1px #333;
+    bottom: 0;
+    right: 0;
 }
 .comment-box p {
-  margin: 0;
+    margin: 0;
+    padding: 10px;
 }
-
 .math-container {
-  overflow-x: auto;
-  white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
-
+h2 {
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+}
+h3 {
+    position: relative;
+    padding: 1rem 2rem 1rem 1.5rem;
+    margin: 20px 0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+h4 {
+    position: relative;
+    padding: 1rem 2rem 1rem 1rem;
+    margin: 10px 0;
+    border-left: 7px solid #333;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.2;
+}
 .nav-toggle-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 #nav-toggle {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
-#nav-menu {
-  position: absolute;
-  bottom: 60px;
-  right: 0;
-  background-color: var(--accent-color);
-  border-radius: 10px;
-  padding: 8px 0;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
+.nav-menu {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
 }
+/*.nav-menu a {*/
+/*    text-decoration: none;*/
+/*    color: white;*/
+/*    padding: 5px 0;*/
+/*}*/
 #nav-menu a {
+  display: block;
   padding: 10px 15px;
   color: white;
+  text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 #nav-menu a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
-
 .nav-divider {
-  border-top: 1px solid white;
-  margin: 8px 0;
-  width: 100%;
+    border: none;
+    /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
+    border-top: 1px solid white;
+    margin: 8px 0;
+    width: 100%;
 }
-
 .hidden {
-  display: none;
+    display: none;
 }
-
 @media (min-width: 1024px) {
-  .toc-container {
-    padding: 0 50px;
-  }
+    .toc-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
