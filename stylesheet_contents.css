@@ -36,7 +36,7 @@ main {
 }
 p {
     text-align: justify;
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-size: 15px;
     letter-spacing: 0.025em;
     line-height: 2;
@@ -105,14 +105,14 @@ a:visited {
 }
 .theorem-tile p {
     margin: 0;
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-size: 15px;
     letter-spacing: 0.025em;
     line-height: 2;
 }
 .proof {
     margin-bottom: 20px;
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-size: 15px;
     letter-spacing: 0.025em;
     line-height: 2;
