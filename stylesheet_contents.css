@@ -194,7 +194,6 @@ h4 {
     color: #493759;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-left: 5px solid #493759;
-    border-radius: 8px;
 }
 .nav-toggle-container {
     position: fixed;
