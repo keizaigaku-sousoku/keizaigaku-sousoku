@@ -112,51 +112,48 @@
                 line-height: 150px;
             }
             
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #493759;
-    overflow: hidden;
-    z-index: 10;
-}
-
-/* スクロールナビ */
-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 10px;
-    padding: 10px 10px 10px 10px;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* スクロールバーを非表示 */
-nav::-webkit-scrollbar {
-    display: none;
-}
-
-/* フェード効果（擬似要素で右端にグラデーション） */
-nav::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 100%;
-    background: linear-gradient(to right, transparent, #493759);
-    pointer-events: none;
-}
-
-/* スマホ用のナビリンク */
-nav a {
-    color: #fff;
-    font-size: 16px;
-    padding: 10px;
-    flex-shrink: 0;
-}            
+            header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: #493759;
+                overflow: hidden;
+                z-index: 10;
+            }
+            
+            nav {
+                position: relative;
+                display: flex;
+                align-items: center;
+                overflow-x: auto;
+                white-space: nowrap;
+                gap: 10px;
+                padding: 10px 10px 10px 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+            
+            nav::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 40px;
+                height: 100%;
+                background: linear-gradient(to right, transparent, #493759);
+                pointer-events: none;
+            }
+            
+            nav a {
+                color: #fff;
+                font-size: 16px;
+                padding: 10px;
+                flex-shrink: 0;
+            }
+            
             .wrapper {
                 width: 95%;
                 padding: 0 10px;
