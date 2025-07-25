@@ -2,22 +2,23 @@
 * {
   box-sizing: border-box;
 }
-html, body {
+html {
   width: 100%;
   overflow-x: hidden;
 }
 body {
+    width: 100%;
     margin: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-weight: 300;
     font-size: 15px;
     height: 100vh;
     box-sizing: border-box;
 }
 header, main, p, h2, h3, h4, .part, .part-title, .theorem-tile, .theorem-tile .title, .proof, .proof .title, .comment-box, .toc-container a {
-    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 header {
     width: 100%;
@@ -46,7 +47,7 @@ a:visited {
   color: black;
 }
 .new-word {
-    color: #333;
+    color: #493759;
     font-weight: bold;
 }
 .toc-container {
@@ -56,7 +57,7 @@ a:visited {
     padding: 20px;
 }
 .toc-container a {
-    color: #333;
+    color: #493759;
     text-decoration: none;
     display: block;
     font-size: 15px;
@@ -66,13 +67,13 @@ a:visited {
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 .toc-container a:hover {
-    background-color: #333;
+    background-color: #493759;
     color: white;
     transform: translateX(10px);
 }
 .part {
     background-color: white;
-    color: #333;
+    color: #493759;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -83,8 +84,8 @@ a:visited {
 }
 .part-title {
     font-size: 15px;
-    color: #333;
-    border-bottom: 2px solid #333;
+    color: #493759;
+    border-bottom: 2px solid #493759;
     padding-bottom: 5px;
     margin-bottom: 15px;
     text-align: center;
@@ -101,7 +102,7 @@ a:visited {
 }
 .theorem-tile .title {
     font-weight: bold;
-    color: #333;
+    color: #493759;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -119,11 +120,11 @@ a:visited {
     letter-spacing: 0.025em;
     line-height: 2;
     background-color: white;
-    color: #333;
+    color: #493759;
 }
 .proof .title {
     font-weight: bold;
-    color: #333;
+    color: #493759;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -131,7 +132,7 @@ a:visited {
     display: block;
     text-align: right;
     font-size: 15px;
-    color: #333;
+    color: #493759;
     margin-top: 10px;
 }
 .comment-box {
@@ -147,14 +148,14 @@ a:visited {
     display: inline-block;
 }
 .comment-box:before {
-    border-left: solid 1px #333;
-    border-top: solid 1px #333;
+    border-left: solid 1px #493759;
+    border-top: solid 1px #493759;
     top: 0;
     left: 0;
 }
 .comment-box:after {
-    border-right: solid 1px #333;
-    border-bottom: solid 1px #333;
+    border-right: solid 1px #493759;
+    border-bottom: solid 1px #493759;
     bottom: 0;
     right: 0;
 }
@@ -172,7 +173,7 @@ h2 {
     font-size: 28px;
     margin-bottom: 20px;
     line-height: 1.6;
-    color: #333;
+    color: #493759;
     text-align: center;
 }
 h3 {
@@ -180,18 +181,18 @@ h3 {
     padding: 1rem 2rem 1rem 1.5rem;
     margin: 20px 0;
     font-size: 15px;
-    color: #333;
+    color: #493759;
     line-height: 1.6;
 }
 h4 {
     position: relative;
     padding: 1rem 2rem 1rem 1rem;
     margin: 10px 0;
-    border-left: 7px solid #333;
+    border-left: 7px solid #493759;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     font-size: 15px;
-    color: #333;
+    color: #493759;
     line-height: 1.2;
 }
 .nav-toggle-container {
@@ -201,7 +202,7 @@ h4 {
     z-index: 1000;
 }
 #nav-toggle {
-    background-color: #333;
+    background-color: #493759;
     color: white;
     border: none;
     padding: 12px 16px;
@@ -214,7 +215,7 @@ h4 {
     position: absolute;
     bottom: 60px;
     right: 0;
-    background-color: #333;
+    background-color: #493759;
     border-radius: 10px;
     padding: 8px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -222,11 +223,6 @@ h4 {
     flex-direction: column;
     min-width: 200px;
 }
-/*.nav-menu a {*/
-/*    text-decoration: none;*/
-/*    color: white;*/
-/*    padding: 5px 0;*/
-/*}*/
 #nav-menu a {
   display: block;
   padding: 10px 15px;
@@ -240,7 +236,6 @@ h4 {
 }
 .nav-divider {
     border: none;
-    /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
     border-top: 1px solid white;
     margin: 8px 0;
     width: 100%;
