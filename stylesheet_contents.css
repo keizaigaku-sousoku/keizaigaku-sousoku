@@ -17,6 +17,12 @@ body {
     height: 100vh;
     box-sizing: border-box;
 }
+body, p, a, .part, .theorem-tile, .proof, .comment-box {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'Kaisei Opti', serif;
+}
 header {
     width: 100%;
     max-width: none;
@@ -27,7 +33,6 @@ header {
 }
 header h2 {
     margin: 0;
-    font-family: 'Kaisei Opti', serif;
 }
 main {
     padding: 20px;
