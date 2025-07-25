@@ -2,23 +2,20 @@
 * {
   box-sizing: border-box;
 }
-html {
-  width: 100%;
-  overflow-x: hidden;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 body {
     width: 100%;
     margin: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
+    /*font-weight: 300;*/
     font-size: 15px;
     height: 100vh;
     box-sizing: border-box;
-}
-header, main, p, h2, h3, h4, .part, .part-title, .theorem-tile, .theorem-tile .title, .proof, .proof .title, .comment-box, .toc-container a {
-    font-family: 'Noto Sans JP', sans-serif;
 }
 header {
     width: 100%;
@@ -44,7 +41,7 @@ p {
     line-height: 2;
 }
 a:visited {
-  color: black;
+    color: black;
 }
 .new-word {
     color: #493759;
