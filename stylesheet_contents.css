@@ -59,6 +59,7 @@ a:visited {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
+    /*background-color: #ffffff;*/
 }
 .toc-container a {
     color: #493759;
@@ -84,6 +85,7 @@ a:visited {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #ffffff;
 }
 .part-title {
     font-size: 15px;
@@ -122,7 +124,7 @@ a:visited {
     font-size: 15px;
     letter-spacing: 0.025em;
     line-height: 2;
-    background-color: white;
+    background-color: #f5f5f7;
     color: #493759;
 }
 .proof .title {
