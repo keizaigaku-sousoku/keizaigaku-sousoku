@@ -7,26 +7,26 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(html => {
         navPlaceholder.innerHTML = html;
 
-        // DOMが追加された後に取得
         const toggle = document.getElementById("nav-toggle");
         const menu = document.getElementById("nav-menu");
         const container = document.querySelector(".nav-toggle-container");
-        const iconOpen = document.getElementById("icon-open");
-        const iconClose = document.getElementById("icon-close");
 
-        if (toggle && menu && iconOpen && iconClose) {
-          toggle.addEventListener("click", function () {
+        if (toggle && menu) {
+          toggle.addEventListener("click", function (event) {
             const isHidden = menu.classList.toggle("hidden");
-            iconOpen.classList.toggle("hidden", !isHidden);
-            iconClose.classList.toggle("hidden", isHidden);
+            toggle.setAttribute("aria-expanded", !isHidden);
+            // SVGのクラス切り替えでアニメーション制御
+            toggle.querySelector("svg").classList.toggle("open", !isHidden);
+            event.stopPropagation();
           });
 
+          // メニュー外クリックで閉じる
           document.addEventListener("click", function (event) {
             if (!container.contains(event.target)) {
               if (!menu.classList.contains("hidden")) {
                 menu.classList.add("hidden");
-                iconOpen.classList.remove("hidden");
-                iconClose.classList.add("hidden");
+                toggle.setAttribute("aria-expanded", false);
+                toggle.querySelector("svg").classList.remove("open");
               }
             }
           });
