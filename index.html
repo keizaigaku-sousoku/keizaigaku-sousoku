@@ -89,13 +89,18 @@
                 color: #1D1D1F;
                 text-align: justify;
             }
-    
+            
             .wrapper {
                 max-width: 800px;
-                margin: 500px auto 20px;
+                margin: 100vh auto 20px;
                 padding: 20px;
+                transition: margin-top 0.3s ease;
             }
-    
+            
+            body.sticky-header .wrapper {
+                margin-top: 100px;
+            }
+            
             section {
                 padding: 20px;
                 margin-bottom: 40px;
