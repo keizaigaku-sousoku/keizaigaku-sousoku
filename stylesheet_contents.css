@@ -205,6 +205,7 @@ h4 {
     border-left: 5px solid #493759;
 }
 
+/* ナビボタンとメニュー */
 .nav-toggle-container {
     position: fixed;
     bottom: 20px;
@@ -212,6 +213,7 @@ h4 {
     z-index: 1000;
 }
 
+/* ボタン自体 */
 #nav-toggle {
     position: relative;
     width: 44px;
@@ -225,31 +227,50 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
-.material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 28px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-    color: white;
-    pointer-events: none;
+/* SVGのスタイル */
+#nav-toggle svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    stroke-width: 2.5;
+    fill: none;
+    transition: all 0.3s ease;
+    overflow: visible;
 }
 
-#nav-toggle .material-symbols-outlined {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* メニューアイコンのパス */
+#nav-toggle svg path.menu {
+    opacity: 1;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* クローズアイコンのパス */
+#nav-toggle svg path.close {
+    opacity: 0;
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* openクラス付与時のアニメーション */
+#nav-toggle.open svg path.menu {
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+}
+
+#nav-toggle.open svg path.close {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* メニュー本体 */
 .nav-menu {
     position: absolute;
     bottom: 60px;
