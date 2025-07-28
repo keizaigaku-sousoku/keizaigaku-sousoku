@@ -240,7 +240,7 @@ h4 {
 .nav-toggle span:nth-child(1) {
   top: 12px;
   left: 11px;
-  transform-origin: left center; /* ← 左端を中心に */
+  transform-origin: left center;
 }
 
 .nav-toggle span:nth-child(2) {
@@ -251,7 +251,7 @@ h4 {
 .nav-toggle span:nth-child(3) {
   top: 30px;
   left: 11px;
-  transform-origin: right center; /* ← 右端を中心に */
+  transform-origin: right center;
 }
 
 .nav-toggle.open span:nth-child(1) {
