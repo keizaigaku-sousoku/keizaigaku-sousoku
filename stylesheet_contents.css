@@ -223,15 +223,34 @@ h4 {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* アイコンの共通設定（フォントなど） */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    pointer-events: none; /* アイコン自体がクリック妨げないように */
+}
+
+/* トグルボタン内のアイコンを中央に重ねて配置 */
 #nav-toggle .material-symbols-outlined {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 28px;
-    color: white;
 }
 
 /* メニュー本体 */
@@ -268,25 +287,10 @@ h4 {
     width: 100%;
 }
 
-.material-symbols-outlined {
-    font-family: 'Material Symbols Outlined';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 28px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-    cursor: pointer;
-}
-
+/* 非表示にするためのユーティリティクラス */
 .hidden {
     display: none;
 }
-
 @media (min-width: 1024px) {
     .toc-container {
         padding-left: 50px;
