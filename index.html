@@ -139,20 +139,19 @@
                 font-size: 26px;
                 line-height: 100vh;
             }
-
+            
             nav {
-                height: auto;
-                line-height: normal;
-                padding: 10px 0;
+                height: 60px;
+                padding: 0 10px;
                 display: flex;
-                align-items: center;
+                align-items: center;       /* 縦中央揃え */
+                justify-content: flex-start; /* 左寄せ。中央にしたければ center */
                 overflow-x: auto;
                 white-space: nowrap;
                 gap: 10px;
-                padding-left: 10px;
                 -webkit-overflow-scrolling: touch;
             }
-
+            
             nav::-webkit-scrollbar {
                 display: none;
             }
