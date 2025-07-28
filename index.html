@@ -1,252 +1,266 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>経済学総則</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: #f5f5f7;
-    }
+    <head>
+        <meta charset="UTF-8">
+        <title>経済学総則</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                font-family: 'Noto Sans JP', sans-serif;
+            }
+    
+            body {
+            background-color: #f5f5f7;
+            font-size: 16px;
+            padding-top: 100vh;
+            transition: padding-top 0.5s ease;
+            }
+            
+            header {
+                width: 100%;
+                height: 100vh;
+                background-color: #493759;
+                position: fixed;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 60px;
+                box-sizing: border-box;
+                transition: all 0.5s ease;
+                text-align: center;
+            }
+            
+            header h1 {
+                font-family: 'Marcellus', serif;
+                font-size: 50px;
+                color: #fff;
+                font-weight: 100;
+                margin: 0 0 10px 0;
+                transition: all 0.3s ease;
+            }
+            
+            header .subtitle {
+                font-family: 'Kaisei Opti', serif;
+                font-size: 18px;
+                color: #ffffffcc;
+                margin: 0;
+                transition: transform 0.3s ease;
+            }
+            
+            nav {
+                position: absolute;
+                bottom: 0;
+                height: 60px;
+                line-height: 60px;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+    
+            nav a {
+                color: #fff;
+                display: inline-block;
+                padding: 10px 15px;
+                line-height: 1;
+                text-decoration: none;
+                border-radius: 2px;
+            }
+    
+            nav a:hover {
+                box-shadow: 0 0 0 1px #fff;
+            }
+    
+            h2 {
+                font-family: 'Kaisei Opti', serif;
+                font-size: 34px;
+                font-weight: 700;
+                line-height: 2;
+                color: #493759;
+            }
+    
+            p {
+                margin-bottom: 2rem;
+                line-height: 2;
+                color: #1D1D1F;
+                text-align: justify;
+            }
+            
+            .wrapper {
+                max-width: 800px;
+                margin: 100vh auto 20px;
+                padding: 20px;
+                transition: margin-top 0.3s ease;
+            }
+            
+            body.sticky-header .wrapper {
+                margin-top: 100px;
+            }
+            
+            section {
+                padding: 20px;
+                margin-bottom: 40px;
+                background-color: #ffffff;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            }
+            
+            body.sticky-header {
+                padding-top: 100px;
+            }
+    
+            body.sticky-header header {
+                height: 60px;
+                background-color: #493759;
+            }
+    
+            body.sticky-header header h1 {
+                transform: scale(0);
+            }
 
-    body {
-      font-size: 16px;
-      padding-top: 100vh;
-      transition: padding-top 0.5s ease;
-    }
+            body.sticky-header header .subtitle {
+                transform: scale(0);
+                transition: transform 0.3s ease;
+            }
+            
+            footer {
+                background-color: #493759;
+                color: white;
+                text-align: center;
+                padding: 20px 10px;
+                margin-top: 60px;
+                font-size: 14px;
+            }
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: #493759;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 60px;
-      box-sizing: border-box;
-      text-align: center;
-      z-index: 1;
-    }
+            footer p {
+                color: #fff;
+            }
+            
+            .footer-inner {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+    
+            @media (max-width: 768px) {
+                body {
+                    font-size: 18px;
+                    padding-top: 100vh;
+                }
+            
+                header {
+                    height: 100vh;
+                }
+            
+                header h1 {
+                    font-size: 26px;
+                    line-height: 100vh;
+                }
+                
+                nav {
+                    height: auto;
+                    line-height: normal;
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    gap: 10px;
+                    padding-left: 10px;
+                    -webkit-overflow-scrolling: touch;
+                }
+                
+                nav::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                nav a {
+                    font-size: 16px;
+                    padding: 10px;
+                    flex-shrink: 0;
+                }
+                
+                .wrapper {
+                    width: 95%;
+                    padding: 0 10px;
+                }
+                
+                h2 {
+                    font-size: 22px;
+                }
+                
+                p {
+                    font-size: 16px;
+                }
 
-    header h1 {
-      font-family: 'Marcellus', serif;
-      font-size: 50px;
-      color: #fff;
-      font-weight: 100;
-      margin: 0 0 10px 0;
-    }
-
-    .subtitle {
-      font-family: 'Kaisei Opti', serif;
-      font-size: 18px;
-      color: #ffffffcc;
-      margin: 0;
-    }
-
-    nav {
-      position: fixed;
-      width: 100%;
-      height: 60px;
-      bottom: 0;
-      transform: translateY(0);
-      transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-      background-color: rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      z-index: 10;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 2px;
-    }
-
-    nav a:hover {
-      box-shadow: 0 0 0 1px #fff;
-    }
-
-    body.nav-top nav {
-      top: 0;
-      bottom: auto;
-      transform: translateY(0);
-      background-color: #493759;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .wrapper {
-      max-width: 800px;
-      margin: 100vh auto 20px;
-      padding: 20px;
-    }
-
-    h2 {
-      font-family: 'Kaisei Opti', serif;
-      font-size: 34px;
-      font-weight: 700;
-      line-height: 2;
-      color: #493759;
-    }
-
-    p {
-      margin-bottom: 2rem;
-      line-height: 2;
-      color: #1D1D1F;
-      text-align: justify;
-    }
-
-    section {
-      padding: 20px;
-      margin-bottom: 40px;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    }
-
-    footer {
-      background-color: #493759;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 60px;
-      font-size: 14px;
-    }
-
-    .footer-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        font-size: 18px;
-      }
-
-      header h1 {
-        font-size: 26px;
-      }
-
-      nav {
-        padding: 0 10px;
-        gap: 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      nav::-webkit-scrollbar {
-        display: none;
-      }
-
-      nav a {
-        font-size: 16px;
-        padding: 10px;
-        flex-shrink: 0;
-      }
-
-      .wrapper {
-        width: 95%;
-        padding: 0 10px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-
-      footer {
-        font-size: 13px;
-        padding: 15px 10px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>No Fair Value, Just Bid and Ask</h1>
-    <p class="subtitle">モノのフェア・バリュー（適正価格）は存在するか</p>
-    <p class="subtitle">存在するとして、それは一意か</p>
-    <p class="subtitle">一意であるとして、それはいつ実現するか</p>
-    <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
-    <p class="subtitle">---経済学総則</p>
-  </header>
-
-  <nav>
-    <a href="市場・投資.html">市場・投資</a>
-    <a href="#">ミクロ・マクロ経済学</a>
-    <a href="#">財務・ファイナンス理論</a>
-    <a href="#">数学</a>
-    <a href="#">記号一覧</a>
-  </nav>
-
-  <div class="wrapper">
-    <a href="市場・投資.html" style="text-decoration: none;">
-      <section>
-        <h2>市場・投資</h2>
-        <p>
-          経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
-          またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
-          そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
-        </p>
-      </section>
-    </a>
-    <section>
-      <h2>ミクロ・マクロ経済学</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-    </section>
-    <section>
-      <h2>財務・ファイナンス理論</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-    </section>
-    <section>
-      <h2>数学</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-    </section>
-    <section>
-      <h2>記号一覧</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-    </section>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <p>&copy; 2025 経済学総則. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(function () {
-      const headerHeight = $("header").outerHeight();
-      const nav = $("nav");
-
-      $(window).on("scroll", function () {
-        const scrollTop = $(window).scrollTop();
-
-        if (scrollTop >= headerHeight - 60) {
-          $("body").addClass("nav-top");
-        } else {
-          $("body").removeClass("nav-top");
-          const progress = scrollTop / (headerHeight - 60);
-          const translateY = 60 * (1 - progress);
-          nav.css("transform", `translateY(${translateY}px)`);
-        }
-      });
-    });
-  </script>
-</body>
+                footer {
+                    font-size: 13px;
+                    padding: 15px 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>No Fair Value, Just Bid and Ask</h1>
+            <p class="subtitle">モノのフェア・バリュー（適正価格）は存在するか</p>
+            <p class="subtitle">存在するとして、それは一意か</p>
+            <p class="subtitle">一意であるとして、それはいつ実現するか</p>
+            <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
+            <p class="subtitle">---経済学総則</p>
+            <nav>
+                <a href="市場・投資.html">市場・投資</a>
+                <a href="#">ミクロ・マクロ経済学</a>
+                <a href="#">財務・ファイナンス理論</a>
+                <a href="#">数学</a>
+                <a href="#">記号一覧</a>
+            </nav>
+        </header>
+    
+        <div class="wrapper">
+            <a href="市場・投資.html" style="text-decoration: none;">
+                <section>
+                    <h2>市場・投資</h2>
+                    <p>
+                        経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
+                        またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
+                        そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
+                    </p>
+                </section>
+            </a>
+            <section>
+                <h2>ミクロ・マクロ経済学</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            </section>
+            <section>
+                <h2>財務・ファイナンス理論</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            </section>
+            <section>
+                <h2>数学</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            </section>
+            <section>
+                <h2>記号一覧</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            </section>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $(window).scroll(function() {
+                    $("body").toggleClass("sticky-header", $(window).scrollTop() >= 30);
+                });
+            });
+        </script>
+        <footer>
+            <div class="footer-inner">
+                <p>&copy; 2025 経済学総則. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
 </html>
