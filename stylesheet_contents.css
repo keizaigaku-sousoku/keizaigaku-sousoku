@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&family=Material+Symbols+Outlined&display=swap');
+
 * {
     box-sizing: border-box;
 }
+
 html, body {
-    width: 100%;
-    overflow-x: hidden;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-body {
     width: 100%;
     margin: 0;
     overflow-x: hidden;
-    overflow-y: auto;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 15px;
     height: 100vh;
-    box-sizing: border-box;
     background-color: #f5f5f7;
 }
+
 body, p, a, .part, .theorem-tile, .proof, .comment-box {
     font-family: 'Noto Sans JP', sans-serif;
 }
+
 h1, h2 {
     font-family: 'Kaisei Opti', serif;
 }
+
 header {
     width: 100%;
-    max-width: none;
     position: relative;
-    margin: 0;
     padding: 1.5rem 0;
     text-align: center;
 }
+
 header h2 {
     margin: 0;
 }
+
 main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
+
 p {
     text-align: justify;
     font-size: 15px;
@@ -46,19 +46,23 @@ p {
     line-height: 2;
     color: #1D1D1F;
 }
+
 a:visited {
     color: black;
 }
+
 .new-word {
     color: #493759;
     font-weight: 700;
 }
+
 .toc-container {
     display: block;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
 }
+
 .toc-container a {
     color: #493759;
     text-decoration: none;
@@ -69,22 +73,23 @@ a:visited {
     border-radius: 5px;
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
+
 .toc-container a:hover {
     background-color: #493759;
     color: white;
     transform: translateX(10px);
 }
+
 .part {
     color: #493759;
     padding: 20px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #ffffff;
 }
+
 .part-title {
     font-size: 15px;
     color: #493759;
@@ -93,41 +98,36 @@ a:visited {
     margin-bottom: 15px;
     text-align: center;
 }
+
 .theorem-tile {
     background-color: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
-.theorem-tile .title {
-    font-weight: bold;
-    color: #493759;
-    margin-bottom: 10px;
-    text-align: left;
-}
-.theorem-tile p {
-    margin: 0;
-    font-size: 15px;
-    letter-spacing: 0.025em;
-    line-height: 2;
-}
-.proof {
-    margin-bottom: 20px;
-    font-size: 15px;
-    letter-spacing: 0.025em;
-    line-height: 2;
-    background-color: #f5f5f7;
-}
+
+.theorem-tile .title,
 .proof .title {
     font-weight: bold;
     color: #493759;
     margin-bottom: 10px;
     text-align: left;
 }
+
+.theorem-tile p,
+.proof {
+    font-size: 15px;
+    letter-spacing: 0.025em;
+    line-height: 2;
+}
+
+.proof {
+    margin-bottom: 20px;
+    background-color: #f5f5f7;
+}
+
 .proof .end-symbol {
     display: block;
     text-align: right;
@@ -135,10 +135,12 @@ a:visited {
     color: #493759;
     margin-top: 10px;
 }
+
 .comment-box {
     position: relative;
     padding: 0.25em 1em;
 }
+
 .comment-box:before,
 .comment-box:after {
     content: '';
@@ -147,34 +149,39 @@ a:visited {
     position: absolute;
     display: inline-block;
 }
+
 .comment-box:before {
     border-left: solid 1px #493759;
     border-top: solid 1px #493759;
     top: 0;
     left: 0;
 }
+
 .comment-box:after {
     border-right: solid 1px #493759;
     border-bottom: solid 1px #493759;
     bottom: 0;
     right: 0;
 }
+
 .comment-box p {
     margin: 0;
     padding: 10px;
 }
+
 .math-container {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
 }
+
 h2 {
-    font-family: 'Kaisei Opti', serif;
     font-size: 28px;
     margin-bottom: 20px;
     color: #493759;
     text-align: center;
 }
+
 h3 {
     position: relative;
     padding: 1rem 2rem 1rem 1.5rem;
@@ -182,6 +189,7 @@ h3 {
     font-size: 15px;
     color: #493759;
 }
+
 h4 {
     position: sticky;
     top: 0;
@@ -196,22 +204,37 @@ h4 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-left: 5px solid #493759;
 }
+
+/* ナビボタンとメニュー */
 .nav-toggle-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 1000;
 }
+
 #nav-toggle {
-    background-color: #493759;
-    color: white;
+    position: relative;
+    width: 44px;
+    height: 44px;
     border: none;
-    padding: 12px 16px;
+    background-color: #493759;
     border-radius: 50%;
-    font-size: 20px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 0;
 }
+
+#nav-toggle .material-symbols-outlined {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    color: white;
+}
+
+/* メニュー本体 */
 .nav-menu {
     position: absolute;
     bottom: 60px;
@@ -224,31 +247,46 @@ h4 {
     flex-direction: column;
     min-width: 200px;
 }
+
 #nav-menu a {
-  display: block;
-  padding: 10px 15px;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 #nav-menu a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
+
 .nav-divider {
     border: none;
     border-top: 1px solid white;
     margin: 8px 0;
     width: 100%;
 }
+
 .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
     font-size: 28px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
     cursor: pointer;
-    vertical-align: middle;
 }
+
 .hidden {
     display: none;
 }
+
 @media (min-width: 1024px) {
     .toc-container {
         padding-left: 50px;
