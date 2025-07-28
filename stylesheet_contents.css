@@ -205,7 +205,6 @@ h4 {
     border-left: 5px solid #493759;
 }
 
-/* ナビボタンとメニュー */
 .nav-toggle-container {
     position: fixed;
     bottom: 20px;
@@ -228,7 +227,6 @@ h4 {
     justify-content: center;
 }
 
-/* アイコンの共通設定（フォントなど） */
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
@@ -242,10 +240,9 @@ h4 {
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
     color: white;
-    pointer-events: none; /* アイコン自体がクリック妨げないように */
+    pointer-events: none;
 }
 
-/* トグルボタン内のアイコンを中央に重ねて配置 */
 #nav-toggle .material-symbols-outlined {
     position: absolute;
     top: 50%;
@@ -253,7 +250,6 @@ h4 {
     transform: translate(-50%, -50%);
 }
 
-/* メニュー本体 */
 .nav-menu {
     position: absolute;
     bottom: 60px;
@@ -287,10 +283,10 @@ h4 {
     width: 100%;
 }
 
-/* 非表示にするためのユーティリティクラス */
 .hidden {
     display: none;
 }
+
 @media (min-width: 1024px) {
     .toc-container {
         padding-left: 50px;
