@@ -230,42 +230,38 @@ h4 {
 
 .nav-toggle span {
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 22px;
   height: 2px;
   background-color: white;
   border-radius: 1px;
   transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
 }
 
+/* 上・中・下のバー位置調整 */
 .nav-toggle span:nth-child(1) {
-  top: 12px;
-  left: 11px;
+  transform: translate(-50%, -9px);
   transform-origin: left center;
 }
-
 .nav-toggle span:nth-child(2) {
-  top: 21px;
-  left: 11px;
+  transform: translate(-50%, 0px);
 }
-
 .nav-toggle span:nth-child(3) {
-  top: 30px;
-  left: 11px;
+  transform: translate(-50%, 9px);
   transform-origin: right center;
 }
 
+/* OPEN時の変形 */
 .nav-toggle.open span:nth-child(1) {
-  top: 21px;
-  transform: rotate(45deg);
+  transform: translate(-50%, 0px) rotate(45deg) scaleX(1.4142);
 }
-
 .nav-toggle.open span:nth-child(2) {
   opacity: 0;
 }
-
 .nav-toggle.open span:nth-child(3) {
-  top: 21px;
-  transform: rotate(-45deg);
+  transform: translate(-50%, 0px) rotate(-45deg) scaleX(1.4142);
 }
 
 /* メニュー本体 */
