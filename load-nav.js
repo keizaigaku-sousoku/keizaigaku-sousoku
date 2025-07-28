@@ -12,17 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const container = document.querySelector(".nav-toggle-container");
 
         if (toggle && menu) {
+          // ボタンのクリックでメニュー表示切り替え
           toggle.addEventListener("click", function () {
-            const isHidden = menu.classList.toggle("hidden");
-            toggle.classList.toggle("open", !isHidden);
+            const isOpen = menu.classList.toggle("show");
+            toggle.classList.toggle("open", isOpen);
           });
 
+          // メニュー外クリックで閉じる
           document.addEventListener("click", function (event) {
-            if (!container.contains(event.target)) {
-              if (!menu.classList.contains("hidden")) {
-                menu.classList.add("hidden");
-                toggle.classList.remove("open");
-              }
+            const isClickInside = container.contains(event.target);
+            if (!isClickInside && menu.classList.contains("show")) {
+              menu.classList.remove("show");
+              toggle.classList.remove("open");
             }
           });
         }
