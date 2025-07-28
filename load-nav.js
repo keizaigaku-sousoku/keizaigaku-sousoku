@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (toggle && menu) {
           toggle.addEventListener("click", function () {
             menu.classList.toggle("hidden");
-            toggle.textContent = menu.classList.contains("hidden") ? "≡" : "×?";
+            toggle.textContent = menu.classList.contains("hidden") ? "≡" : "×";
           });
         }
 
