@@ -241,6 +241,11 @@ h4 {
     margin: 8px 0;
     width: 100%;
 }
+.material-symbols-outlined {
+    font-size: 28px;
+    cursor: pointer;
+    vertical-align: middle;
+}
 .hidden {
     display: none;
 }
