@@ -50,20 +50,22 @@
             position: absolute;
             bottom: 0;
             height: 60px;
-            line-height: 60px;
             width: 100%;
             background-color: #3b2c45;
-            text-align: center;
+            display: flex;                /* ← 追加 */
+            justify-content: center;     /* ← 横中央揃え */
+            align-items: center;         /* ← 縦中央揃え */
+            gap: 10px;                   /* ← ナビ項目の間隔を確保 */
         }
         
         nav a {
             color: #fff;
-            display: inline-block;
-            padding: 10px 15px;
+            padding: 8px 15px;           /* 少し縦は控えめに */
             text-decoration: none;
             border-radius: 2px;
+            font-size: 15px;
         }
-
+        
         /*nav a:hover {
             box-shadow: 0 0 0 1px #fff;
         }*/
