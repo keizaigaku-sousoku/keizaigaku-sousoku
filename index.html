@@ -40,7 +40,11 @@
             padding-top: 100px;
             padding-bottom: 100px;
         }
-
+        
+        .mobile-break {
+            display: inline;
+        }
+        
         .subtitle {
             font-family: 'Kaisei Opti', serif;
             font-size: 18px;
@@ -169,6 +173,10 @@
                 padding-bottom: 50px;
             }
             
+            .mobile-break {
+                display: block;
+            }
+            
             .subtitle {
                 font-size: 14px;
             }
@@ -221,7 +229,11 @@
 </head>
 <body>
     <header>
-        <h1>No Fair Value, Just Bid and Ask</h1>
+        <h1>
+            <span class="title-mobile-break">
+                No Fair Value, <span class="mobile-break">Just Bid and Ask</span>
+            </span>
+        </h1>
         <p class="subtitle">モノのフェア・バリュー（適正価格）は存在するか</p>
         <p class="subtitle">存在するとして、それは一意か</p>
         <p class="subtitle">一意であるとして、それはいつ実現するか</p>
