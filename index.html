@@ -47,6 +47,22 @@
             margin: 10px 0;
         }
 
+        .scroll-prompt {
+            margin-top: 20px; /* 上部のマージン */
+            font-size: 18px; /* フォントサイズ */
+            color: #fff; /* テキストカラー */
+            animation: bounce 1s infinite; /* バウンスアニメーション */
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
         nav {
             position: absolute;
             bottom: 0;
@@ -194,6 +210,9 @@
         <p class="subtitle">一意であるとして、それはいつ実現するか</p>
         <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
         <p class="subtitle">&mdash; 経済学総則 &mdash;</p>
+        <div class="scroll-prompt">
+            <p>↓ スクロールして続きを見る ↓</p>
+        </div>
         <nav id="mainNav">
             <a href="市場・投資.html">市場・投資</a>
             <a href="#">ミクロ・マクロ経済学</a>
