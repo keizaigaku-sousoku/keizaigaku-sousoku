@@ -50,12 +50,17 @@
         .scroll-prompt {
             margin-top: 100px;
             font-size: 18px;
-            /*color: #fff;*/
-            animation: bounce 2s infinite;
+            text-align: center; /* 中央揃えにする */
         }
-
+        
         .scroll-prompt p {
             color: #fff;
+            margin: 0; /* マージンをリセット */
+        }
+        
+        .arrow {
+            font-size: 24px; /* 矢印のサイズを調整 */
+            animation: bounce 2s infinite; /* アニメーションを適用 */
         }
         
         @keyframes bounce {
@@ -215,7 +220,8 @@
         <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
         <p class="subtitle">&mdash; 経済学総則 &mdash;</p>
         <div class="scroll-prompt">
-            <p>↓ スクロールして続きを見る ↓</p>
+            <p>Scroll Down</p>
+            <p class="arrow">↓</p>
         </div>
         <nav id="mainNav">
             <a href="市場・投資.html">市場・投資</a>
