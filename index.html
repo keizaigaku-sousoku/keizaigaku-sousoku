@@ -319,10 +319,11 @@
         const canvas = document.getElementById('fractalCanvas');
         const ctx = canvas.getContext('2d');
     
-        let depth = 0;
+        let t = 0;
         let increasing = true;
+        const maxDepth = 4;
     
-        function drawKochCurve(x1, y1, x2, y2, depth) {
+        function interpolateKoch(x1, y1, x2, y2, depth, t) {
             if (depth === 0) {
                 ctx.beginPath();
                 ctx.moveTo(x1, y1);
@@ -340,17 +341,24 @@
             const x5 = x1 + 2 * dx;
             const y5 = y1 + 2 * dy;
     
+            // 通常の頂点位置
             const angle = Math.PI / 3;
-            const x4 = x3 + Math.cos(angle) * dx - Math.sin(angle) * dy;
-            const y4 = y3 + Math.sin(angle) * dx + Math.cos(angle) * dy;
+            const peakX = x3 + Math.cos(angle) * dx - Math.sin(angle) * dy;
+            const peakY = y3 + Math.sin(angle) * dx + Math.cos(angle) * dy;
     
-            drawKochCurve(x1, y1, x3, y3, depth - 1);
-            drawKochCurve(x3, y3, x4, y4, depth - 1);
-            drawKochCurve(x4, y4, x5, y5, depth - 1);
-            drawKochCurve(x5, y5, x2, y2, depth - 1);
+            // 線分中央の直線補間で滑らかに出現させる
+            const midX = (x3 + x5) / 2;
+            const midY = (y3 + y5) / 2;
+            const x4 = peakX * t + midX * (1 - t);
+            const y4 = peakY * t + midY * (1 - t);
+    
+            interpolateKoch(x1, y1, x3, y3, depth - 1, t);
+            interpolateKoch(x3, y3, x4, y4, depth - 1, t);
+            interpolateKoch(x4, y4, x5, y5, depth - 1, t);
+            interpolateKoch(x5, y5, x2, y2, depth - 1, t);
         }
     
-        function drawSnowflake(depth) {
+        function drawSnowflake(t) {
             const size = 400;
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2 - 50;
@@ -366,9 +374,9 @@
             const cx = centerX;
             const cy = centerY - 2 * height / 3;
     
-            drawKochCurve(ax, ay, bx, by, depth);
-            drawKochCurve(bx, by, cx, cy, depth);
-            drawKochCurve(cx, cy, ax, ay, depth);
+            interpolateKoch(ax, ay, bx, by, maxDepth, t);
+            interpolateKoch(bx, by, cx, cy, maxDepth, t);
+            interpolateKoch(cx, cy, ax, ay, maxDepth, t);
         }
     
         function animate() {
@@ -376,27 +384,25 @@
             ctx.strokeStyle = "#493759";
             ctx.lineWidth = 1.5;
     
-            drawSnowflake(Math.floor(depth));
+            drawSnowflake(t);
     
+            // t を 0〜1 の間でゆらぎさせる
             if (increasing) {
-                depth += 0.02;
-                if (depth >= 5) {
-                    depth = 5;
+                t += 0.01;
+                if (t >= 1) {
+                    t = 1;
                     increasing = false;
                 }
             } else {
-                depth -= 0.02;
-                if (depth <= 0) {
-                    depth = 0;
+                t -= 0.01;
+                if (t <= 0) {
+                    t = 0;
                     increasing = true;
                 }
             }
     
             requestAnimationFrame(animate);
         }
-    
-        /*canvas.width = canvas.parentElement.clientWidth;*/
-        /*canvas.height = 600;*/
     
         animate();
     </script>
