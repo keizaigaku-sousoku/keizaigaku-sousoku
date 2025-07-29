@@ -142,7 +142,13 @@
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
         }
-
+        
+        canvas {
+          display: block;
+          margin: auto;
+          background-color: #fff;
+        }
+        
         footer {
             background-color: #493759;
             color: white;
@@ -259,6 +265,7 @@
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
             <section>
+                <canvas id="fractalCanvas" width="800" height="600"></canvas>
                 <h2>市場・投資</h2>
                 <p>
                     経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -306,5 +313,54 @@
             });
         });
     </script>
+    <script>
+    const canvas = document.getElementById('fractalCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let depth = 0;
+
+    function drawKochCurve(x1, y1, x2, y2, depth) {
+      if (depth === 0) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        return;
+      }
+
+      const dx = (x2 - x1) / 3;
+      const dy = (y2 - y1) / 3;
+
+      const x3 = x1 + dx;
+      const y3 = y1 + dy;
+
+      const x5 = x1 + 2 * dx;
+      const y5 = y1 + 2 * dy;
+
+      const angle = Math.PI / 3;
+      const x4 = x3 + Math.cos(angle) * dx - Math.sin(angle) * dy;
+      const y4 = y3 + Math.sin(angle) * dx + Math.cos(angle) * dy;
+
+      drawKochCurve(x1, y1, x3, y3, depth - 1);
+      drawKochCurve(x3, y3, x4, y4, depth - 1);
+      drawKochCurve(x4, y4, x5, y5, depth - 1);
+      drawKochCurve(x5, y5, x2, y2, depth - 1);
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = "#493759"; // 線の色（紫）
+      ctx.lineWidth = 1.5;
+
+      drawKochCurve(100, 300, 700, 300, depth);
+
+      depth++;
+      if (depth > 5) depth = 0;
+
+      setTimeout(animate, 1000);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
