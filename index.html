@@ -331,10 +331,12 @@
             const imageData = ctx.createImageData(width, height);
             const data = imageData.data;
     
-            // ジュリア集合のパラメータ（落ち着いた形）
+            // 背景白で塗る（忘れずに！）
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, width, height);
+    
             const cRe = -0.70176;
             const cIm = -0.3842;
-    
             const maxIter = 200;
             let row = 0;
     
@@ -343,7 +345,6 @@
                 for (let col = 0; col < width; col++) {
                     const x0 = (col - width / 2) / (0.5 * zoom * width);
                     const y0 = (row - height / 2) / (0.5 * zoom * height);
-    
                     let x = x0;
                     let y = y0;
                     let iteration = 0;
@@ -356,12 +357,21 @@
                     }
     
                     const idx = (row * width + col) * 4;
-                    const color = iteration === maxIter ? 0 : 255 - Math.sqrt(iteration / maxIter) * 255;
     
-                    data[idx] = 73;      // R (紫がかった色)
-                    data[idx + 1] = 55;  // G
-                    data[idx + 2] = 89 + color * 0.5; // B
-                    data[idx + 3] = 255; // A
+                    if (iteration === maxIter) {
+                        // 発散しなかった点：白（背景と同化）
+                        data[idx] = 255;
+                        data[idx + 1] = 255;
+                        data[idx + 2] = 255;
+                        data[idx + 3] = 255;
+                    } else {
+                        const t = iteration / maxIter;
+                        // 紫系グラデーション
+                        data[idx]     = 110 + 100 * t; // R
+                        data[idx + 1] = 80 * (1 - t);  // G
+                        data[idx + 2] = 140 + 100 * t; // B
+                        data[idx + 3] = 255;
+                    }
                 }
     
                 ctx.putImageData(imageData, 0, 0);
