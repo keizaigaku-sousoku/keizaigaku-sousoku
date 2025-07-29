@@ -34,15 +34,16 @@
             box-sizing: border-box;
             text-align: center;
         }
-
+        
         header h1 {
             font-family: 'Marcellus', serif;
-            font-size: 50px;
+            font-size: 50px; /* PC版のフォントサイズ */
             color: #fff;
             margin: 0 0 10px 0;
-            white-space: nowrap;
+            text-align: center; /* 中央寄せ */
+            white-space: nowrap; /* 改行を無視 */
         }
-
+        
         .subtitle {
             font-family: 'Kaisei Opti', serif;
             font-size: 18px;
@@ -164,13 +165,14 @@
             header {
                 height: 90vh;
             }
-
-            header h1 {
-                text-align: left;
-                font-size: 26px;
-                white-space: normal;
-            }
             
+            header h1 {
+                    font-size: 26px; /* スマホ用のフォントサイズ */
+                    text-align: left; /* 左寄せにする */
+                    margin: 0; /* マージンをリセット */
+                    white-space: normal; /* 改行を有効にする */
+                }
+            }
             .subtitle {
                 font-size: 14px;
             }
