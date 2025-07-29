@@ -350,14 +350,34 @@
             drawKochCurve(x5, y5, x2, y2, depth - 1);
         }
     
+        function drawSnowflake(depth) {
+            const size = 400;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2 - 50;
+    
+            const height = Math.sqrt(3) / 2 * size;
+    
+            const ax = centerX - size / 2;
+            const ay = centerY + height / 3;
+    
+            const bx = centerX + size / 2;
+            const by = ay;
+    
+            const cx = centerX;
+            const cy = centerY - 2 * height / 3;
+    
+            drawKochCurve(ax, ay, bx, by, depth);
+            drawKochCurve(bx, by, cx, cy, depth);
+            drawKochCurve(cx, cy, ax, ay, depth);
+        }
+    
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.strokeStyle = "#493759";
             ctx.lineWidth = 1.5;
     
-            drawKochCurve(100, 300, 700, 300, Math.floor(depth));
+            drawSnowflake(Math.floor(depth));
     
-            // 滑らかに depth を変化（0〜5 の間を往復）
             if (increasing) {
                 depth += 0.02;
                 if (depth >= 5) {
@@ -374,6 +394,9 @@
     
             requestAnimationFrame(animate);
         }
+    
+        /*canvas.width = canvas.parentElement.clientWidth;*/
+        /*canvas.height = 600;*/
     
         animate();
     </script>
