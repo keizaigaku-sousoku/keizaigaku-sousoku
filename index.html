@@ -224,18 +224,17 @@
                 font-size: 16px;
             }
             
-            .section-pattern {
-                width: 100%;
+            .section-fractal {
                 text-align: center;
                 margin-bottom: 20px;
             }
             
-            .section-pattern svg {
-                width: 80%;
+            #juliaCanvas {
+                max-width: 100%;
                 height: auto;
-                stroke-dasharray: 300;
-                stroke-dashoffset: 300;
-                opacity: 0;
+                display: block;
+                margin: 0 auto;
+                border-radius: 8px;
             }
             
             footer {
@@ -273,19 +272,8 @@
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
             <section>
-                <div class="section-pattern">
-                    <svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
-                        <g stroke="#B4A8C2" stroke-width="1.5" fill="none">
-                            <polygon points="50,0 100,25 100,75 50,100 0,75 0,25">
-                                <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1.5s" fill="freeze" />
-                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" fill="freeze" />
-                            </polygon>
-                            <polygon points="150,0 200,25 200,75 150,100 100,75 100,25">
-                                <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1.8s" fill="freeze" />
-                                <animate attributeName="opacity" from="0" to="1" dur="1.8s" fill="freeze" />
-                            </polygon>
-                        </g>
-                    </svg>
+                <div class="section-fractal">
+                    <canvas id="juliaCanvas" width="800" height="200"></canvas>
                 </div>
                 <h2>市場・投資</h2>
                 <p>
@@ -332,6 +320,59 @@
                     nav.removeClass('fixed-nav');
                 }
             });
+        });
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('juliaCanvas');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+            const height = canvas.height;
+            const imageData = ctx.createImageData(width, height);
+            const data = imageData.data;
+    
+            // ジュリア集合のパラメータ（落ち着いた形）
+            const cRe = -0.70176;
+            const cIm = -0.3842;
+    
+            const maxIter = 200;
+            let row = 0;
+    
+            function drawRow() {
+                const zoom = 1.5;
+                for (let col = 0; col < width; col++) {
+                    const x0 = (col - width / 2) / (0.5 * zoom * width);
+                    const y0 = (row - height / 2) / (0.5 * zoom * height);
+    
+                    let x = x0;
+                    let y = y0;
+                    let iteration = 0;
+    
+                    while (x * x + y * y < 4 && iteration < maxIter) {
+                        const xTemp = x * x - y * y + cRe;
+                        y = 2 * x * y + cIm;
+                        x = xTemp;
+                        iteration++;
+                    }
+    
+                    const idx = (row * width + col) * 4;
+                    const color = iteration === maxIter ? 0 : 255 - Math.sqrt(iteration / maxIter) * 255;
+    
+                    data[idx] = 73;      // R (紫がかった色)
+                    data[idx + 1] = 55;  // G
+                    data[idx + 2] = 89 + color * 0.5; // B
+                    data[idx + 3] = 255; // A
+                }
+    
+                ctx.putImageData(imageData, 0, 0);
+    
+                row++;
+                if (row < height) {
+                    requestAnimationFrame(drawRow);
+                }
+            }
+    
+            drawRow();
         });
     </script>
 </body>
