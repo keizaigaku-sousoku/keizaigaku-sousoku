@@ -224,16 +224,14 @@
                 font-size: 16px;
             }
             
-            .geometric-bg {
+            .section-pattern {
                 width: 100%;
-                max-width: 800px;
-                margin: 0 auto 40px;
-                padding-top: 20px;
                 text-align: center;
+                margin-bottom: 20px;
             }
             
-            .geometric-bg svg {
-                width: 100%;
+            .section-pattern svg {
+                width: 80%;
                 height: auto;
                 stroke-dasharray: 300;
                 stroke-dashoffset: 300;
@@ -274,25 +272,21 @@
 
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
-            <div class="geometric-bg">
-                <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
-                    <g stroke="#ccc" stroke-width="1" fill="none">
-                        <polygon points="50,0 100,25 100,75 50,100 0,75 0,25">
-                            <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2s" fill="freeze" />
-                            <animate attributeName="opacity" from="0" to="1" dur="2s" fill="freeze" />
-                        </polygon>
-                        <polygon points="150,0 200,25 200,75 150,100 100,75 100,25">
-                            <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2.5s" fill="freeze" />
-                            <animate attributeName="opacity" from="0" to="1" dur="2.5s" fill="freeze" />
-                        </polygon>
-                        <polygon points="250,0 300,25 300,75 250,100 200,75 200,25">
-                            <animate attributeName="stroke-dashoffset" from="300" to="0" dur="3s" fill="freeze" />
-                            <animate attributeName="opacity" from="0" to="1" dur="3s" fill="freeze" />
-                        </polygon>
-                    </g>
-                </svg>
-            </div>
             <section>
+                <div class="section-pattern">
+                    <svg viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
+                        <g stroke="#B4A8C2" stroke-width="1.5" fill="none">
+                            <polygon points="50,0 100,25 100,75 50,100 0,75 0,25">
+                                <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1.5s" fill="freeze" />
+                                <animate attributeName="opacity" from="0" to="1" dur="1.5s" fill="freeze" />
+                            </polygon>
+                            <polygon points="150,0 200,25 200,75 150,100 100,75 100,25">
+                                <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1.8s" fill="freeze" />
+                                <animate attributeName="opacity" from="0" to="1" dur="1.8s" fill="freeze" />
+                            </polygon>
+                        </g>
+                    </svg>
+                </div>
                 <h2>市場・投資</h2>
                 <p>
                     経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
