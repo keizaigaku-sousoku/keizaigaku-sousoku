@@ -312,115 +312,53 @@
             });
         });
     </script>
-    
     <script>
-        function scale(vector, scale_factor) {
-            return {
-                x: vector.x * scale_factor,
-                y: vector.y * scale_factor
-            };
+        function createLine(x1, y1, x2, y2) {
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", x1);
+            line.setAttribute("y1", y1);
+            line.setAttribute("x2", x2);
+            line.setAttribute("y2", y2);
+            line.setAttribute("stroke", "#493759");
+            line.setAttribute("stroke-width", "2");
+            return line;
         }
 
-        function normalClockwise(vector) {
-            return {
-                x: -vector.y,
-                y: vector.x
-            };
-        }
-
-        function normalCounterClockwise(vector) {
-            return {
-                x: vector.y,
-                y: -vector.x
-            };
-        }
-
-        function calcVectors(point1, point2, sections) {
-            const vector = {
-                x: point2.x - point1.x,
-                y: point2.y - point1.y
-            };
-            const segment = scale(vector, 1 / sections);
-            return {
-                segment: segment,
-                clockwise: normalClockwise(segment),
-                counter_clockwise: normalCounterClockwise(segment)
-            };
-        }
-
-        class Dragon {
-            fractalize(point1, point2, odd) {
-                const vectors = calcVectors(point1, point2, 2);
-                const down45Deg = {
-                    x: vectors.segment.x + vectors.clockwise.x,
-                    y: vectors.segment.y + vectors.clockwise.y
-                };
-                const up45Deg = {
-                    x: vectors.segment.x + vectors.counter_clockwise.x,
-                    y: vectors.segment.y + vectors.counter_clockwise.y
-                };
-                return odd ? [down45Deg, up45Deg] : [up45Deg, down45Deg];
+        function drawDragonCurve(p1, p2, depth) {
+            if (depth === 0) {
+                return [{ x: p1.x, y: p1.y }, { x: p2.x, y: p2.y }];
             }
-        }
 
-        function fractalizeLines(lines, curve, odd) {
-            const new_lines = [];
-            let current_point = lines[0];
-            new_lines.push(current_point);
+            const mid = {
+                x: (p1.x + p2.x) / 2,
+                y: (p1.y + p2.y) / 2
+            };
 
-            for (let i = 0; i < lines.length - 1; i++) {
-                const segments = curve.fractalize(lines[i], lines[i + 1], odd);
-                odd = !odd;
+            const dx = (p2.x - p1.x) / 2;
+            const dy = (p2.y - p1.y) / 2;
 
-                for (const segment of segments) {
-                    current_point = {
-                        x: current_point.x + segment.x,
-                        y: current_point.y + segment.y
-                    };
-                    new_lines.push(current_point);
-                }
-            }
-            return new_lines;
-        }
+            const newPoint = {
+                x: mid.x - dy,
+                y: mid.y + dx
+            };
 
-        function createLine(point1, point2) {
-            const new_line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            new_line.setAttribute("x1", point1.x);
-            new_line.setAttribute("y1", point1.y);
-            new_line.setAttribute("x2", point2.x);
-            new_line.setAttribute("y2", point2.y);
-            new_line.setAttribute("stroke", "#493759"); // 線の色を設定
-            new_line.setAttribute("stroke-width", "2"); // 線の太さを設定
-            return new_line;
-        }
-
-        function draw(lines, svg_canvas) {
-            svg_canvas.innerHTML = ''; // 既存の線をクリア
-            for (let i = 0; i < lines.length - 1; i++) {
-                const line = createLine(lines[i], lines[i + 1]);
-                svg_canvas.appendChild(line);
-            }
+            return [
+                ...drawDragonCurve(p1, newPoint, depth - 1),
+                ...drawDragonCurve(newPoint, p2, depth - 1)
+            ];
         }
 
         window.onload = () => {
             const svg_canvas = document.getElementById("canvas");
-            const initialLines = [{ x: 20, y: 50 }, { x: 80, y: 50 }];
-            const curve = new Dragon();
-            let odd = true;
+            const depth = 10; // 再帰の深さ
 
-            let lines = initialLines;
-            const duration = 3; // seconds
+            const lines = drawDragonCurve({ x: 20, y: 50 }, { x: 80, y: 50 }, depth);
 
-            const interval = setInterval(() => {
-                lines = fractalizeLines(lines, curve, odd);
-                draw(lines, svg_canvas);
-                odd = !odd;
-
-                if (lines.length > 100) { // 最大深さを制限
-                    clearInterval(interval);
-                }
-            }, duration * 1000);
+            for (let i = 0; i < lines.length - 1; i++) {
+                const line = createLine(lines[i].x, lines[i].y, lines[i + 1].x, lines[i + 1].y);
+                svg_canvas.appendChild(line);
+            }
         };
-    </script>
+    </script>    
 </body>
 </html>
