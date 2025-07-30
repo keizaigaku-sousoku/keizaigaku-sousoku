@@ -143,11 +143,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
         }
         
-        svg {
-            height: 100%;
-            aspect-ratio: 1;
-        }
-        
         footer {
             background-color: #493759;
             color: white;
@@ -264,7 +259,6 @@
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
             <section>
-                <svg id="canvas"></svg>
                 <h2>市場・投資</h2>
                 <p>
                     経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -312,53 +306,5 @@
             });
         });
     </script>
-    <script>
-        function createLine(x1, y1, x2, y2) {
-            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", x1);
-            line.setAttribute("y1", y1);
-            line.setAttribute("x2", x2);
-            line.setAttribute("y2", y2);
-            line.setAttribute("stroke", "#493759");
-            line.setAttribute("stroke-width", "2");
-            return line;
-        }
-
-        function drawDragonCurve(p1, p2, depth) {
-            if (depth === 0) {
-                return [{ x: p1.x, y: p1.y }, { x: p2.x, y: p2.y }];
-            }
-
-            const mid = {
-                x: (p1.x + p2.x) / 2,
-                y: (p1.y + p2.y) / 2
-            };
-
-            const dx = (p2.x - p1.x) / 2;
-            const dy = (p2.y - p1.y) / 2;
-
-            const newPoint = {
-                x: mid.x - dy,
-                y: mid.y + dx
-            };
-
-            return [
-                ...drawDragonCurve(p1, newPoint, depth - 1),
-                ...drawDragonCurve(newPoint, p2, depth - 1)
-            ];
-        }
-
-        window.onload = () => {
-            const svg_canvas = document.getElementById("canvas");
-            const depth = 10; // 再帰の深さ
-
-            const lines = drawDragonCurve({ x: 20, y: 50 }, { x: 80, y: 50 }, depth);
-
-            for (let i = 0; i < lines.length - 1; i++) {
-                const line = createLine(lines[i].x, lines[i].y, lines[i + 1].x, lines[i + 1].y);
-                svg_canvas.appendChild(line);
-            }
-        };
-    </script>    
 </body>
 </html>
