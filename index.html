@@ -218,7 +218,48 @@
             p {
                 font-size: 16px;
             }
-
+            
+            .icon-section {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 20px;
+                margin-bottom: 40px;
+                background-color: #ffffff;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            }
+            
+            .icon-box {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                background-color: #493759;
+                border-radius: 8px;
+            }
+            
+            .icon-box .material-icons {
+                color: white;
+                font-size: 28px;
+            }
+            
+            .text-box h2 {
+                margin: 0 0 10px 0;
+                font-size: 24px;
+                color: #493759;
+                font-family: 'Kaisei Opti', serif;
+            }
+            
+            .text-box p {
+                margin: 0;
+                line-height: 2;
+                color: #1D1D1F;
+                text-align: justify;
+            }
+            
             footer {
                 font-size: 13px;
                 padding: 15px 10px;
@@ -253,13 +294,18 @@
 
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
-            <section>
-                <h2>市場・投資</h2>
-                <p>
-                    経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
-                    またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
-                    そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
-                </p>
+            <section class="icon-section">
+                <div class="icon-box">
+                    <span class="material-icons">insights</span>
+                </div>
+                <div class="text-box">
+                    <h2>市場・投資</h2>
+                    <p>
+                        経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
+                        またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
+                        そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
+                    </p>
+                </div>
             </section>
         </a>
         <section>
