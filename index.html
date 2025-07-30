@@ -142,6 +142,10 @@
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
         }
+
+        canvas {
+            border: 1px solid black;
+        }
         
         footer {
             background-color: #493759;
@@ -259,6 +263,7 @@
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
             <section>
+                <canvas id="dragoncurve" width="800" height="600"></canvas>
                 <h2>市場・投資</h2>
                 <p>
                     経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -305,6 +310,106 @@
                 }
             });
         });
+    </script>
+    <script>
+        (() => {
+            let backgroundColor = "black";
+            // fractal color is hsl going from 0 to 60
+        
+            let { canvas, ctx } = ogloadCanvas("dragoncurve", 1);
+        
+            ctx.translate(canvas.width, canvas.height);
+            ctx.rotate(Math.PI);
+        
+            function clear() {
+                ctx.fillStyle = backgroundColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+        
+            let side = canvas.width * 0.5;
+        
+            let topOff = canvas.height / 2;
+            let leftOff = (canvas.width - side) * 0.5;
+        
+            let corner1 = new Vector2(leftOff, topOff);
+            let corner2 = new Vector2(leftOff + side, topOff);
+        
+            let logodepth = 12;
+            function drawBackground() {
+                // ctx.strokeStyle = "hsl(0,100%,50%)";
+                // ctx.beginPath();
+                // ctx.moveTo(...corner1.toArray());
+                // ctx.lineTo(...corner2.toArray());
+                // ctx.stroke();
+            }
+        
+            function dragoncurve(coords, depth) {
+                let [point1, point2] = coords; // point 1 is where we spawned from
+        
+                // precalculate our direction vectors
+                let dirvecs = new Vector2().subVectors(point2, point1); // goes from 1 to 2
+        
+                // now, we want to return a couple of functions
+                // the main one is a drawer, that will draw this segment to a fraction
+                let draw = (step) => {
+                    if (step == -1) return; // the dragon curve does not preserve previous iterations
+                    ctx.strokeStyle = "hsl(" + ((100 / logodepth) * depth) + ",100%,50%)";
+        
+                    let theta = Math.PI * step / 4;
+                    let target = dirvecs.clone().rotateAround(new Vector2(0, 0), theta).multiplyScalar(0.5 * (1 / Math.cos(theta))).add(point1);
+        
+                    ctx.beginPath();
+                    ctx.moveTo(...point1.toArray());
+                    ctx.lineTo(...target.toArray());
+                    ctx.lineTo(...point2.toArray());
+                    ctx.stroke();
+                }
+                // once the drawer is complete, this will be called to make the children for next paints
+                let makeChildren = () => {
+                    let theta = Math.PI * 1 / 4;
+                    let target = dirvecs.clone().rotateAround(new Vector2(0, 0), theta).multiplyScalar(0.5 * (1 / Math.cos(theta))).add(point1);
+                    let children = [
+                        [point1, target],
+                        [point2, target]
+                    ];
+        
+                    return [dragoncurve(children[0], depth + 1), dragoncurve(children[1], depth + 1)];
+                }
+                return { "draw": draw, "makeChildren": makeChildren };
+            }
+        
+            let click = new sound("click.mp3");
+            let stagestep = () => {
+                //click.play();
+            }
+            let spski = new Fractal({
+                "clear": clear,
+                "drawBackground": drawBackground,
+                "timingFunc": animate_quadratic,
+                "stagestep": stagestep,
+                "endInProgress": true
+            })
+        
+            let begin = () => {
+                console.log("finished");
+                spski.animcontext.animating = false;
+                spski.animcontext.completeds = [];
+                spski.animcontext.inprogress = [];
+                spski.animcontext.inprogress.push(dragoncurve([corner1, corner2], 1));
+        
+                spski.animcontext.progress = 0;
+                spski.animcontext.framecount = 45;
+                spski.animcontext.currDepth = 0;
+                spski.animcontext.maxDepth = logodepth;
+                setTimeout(() => {
+                    spski.animcontext.animating = true;
+                    spski.animate()
+                }, 1000);
+            }
+            spski.finish = begin;
+            begin();
+        
+        })()
     </script>
 </body>
 </html>
