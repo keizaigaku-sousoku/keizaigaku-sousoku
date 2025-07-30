@@ -267,7 +267,9 @@
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
             <section>
-                <canvas id="fractalCanvas" width="800" height="600"></canvas>
+                <svg id="canvas">
+                    <line id="line" x1="20" y1="50" x2="80" y2="50" stroke="#eaf2e3" stroke-width="1"></line>
+                </svg>
                 <h2>市場・投資</h2>
                 <p>
                     経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -315,45 +317,113 @@
             });
         });
     </script>
+    
     <script>
-        const canvas = document.getElementById('fractalCanvas');
-        const ctx = canvas.getContext('2d');
+        function scale(vector, scale_factor) {
+            return {
+                x: vector.x * scale_factor,
+                y: vector.y * scale_factor
+            };
+        }
 
-        let t = 0;
-        let increasing = true;
-        const maxDepth = 10; // 深さを調整
-        const angle = Math.PI / 2; // 90度の回転
+        function normalClockwise(vector) {
+            return {
+                x: -vector.y,
+                y: vector.x
+            };
+        }
 
-        function drawDragonCurve(x, y, length, depth, direction) {
-            if (depth === 0) {
-                ctx.lineTo(x, y);
-                return;
+        function normalCounterClockwise(vector) {
+            return {
+                x: vector.y,
+                y: -vector.x
+            };
+        }
+
+        function calcVectors(point1, point2, sections) {
+            const vector = {
+                x: point2.x - point1.x,
+                y: point2.y - point1.y
+            };
+            const segment = scale(vector, 1 / sections);
+            return {
+                segment: segment,
+                clockwise: normalClockwise(segment),
+                counter_clockwise: normalCounterClockwise(segment)
+            };
+        }
+
+        class Dragon {
+            fractalize(point1, point2, odd) {
+                const vectors = calcVectors(point1, point2, 2);
+                const down45Deg = {
+                    x: vectors.segment.x + vectors.clockwise.x,
+                    y: vectors.segment.y + vectors.clockwise.y
+                };
+                const up45Deg = {
+                    x: vectors.segment.x + vectors.counter_clockwise.x,
+                    y: vectors.segment.y + vectors.counter_clockwise.y
+                };
+                return odd ? [down45Deg, up45Deg] : [up45Deg, down45Deg];
             }
-
-            const newLength = length / Math.sqrt(2);
-            drawDragonCurve(x, y, newLength, depth - 1, direction);
-            x += newLength * Math.cos(direction);
-            y += newLength * Math.sin(direction);
-            ctx.lineTo(x, y);
-
-            direction += angle; // 右に90度回転
-            drawDragonCurve(x, y, newLength, depth - 1, direction);
         }
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = "#493759";
-            ctx.lineWidth = 1.5;
+        function fractalizeLines(lines, curve, odd) {
+            const new_lines = [];
+            let current_point = lines[0];
+            new_lines.push(current_point);
 
-            ctx.beginPath();
-            ctx.moveTo(canvas.width / 2, canvas.height / 2);
-            drawDragonCurve(canvas.width / 2, canvas.height / 2, 300, maxDepth, 0);
-            ctx.stroke();
+            for (let i = 0; i < lines.length - 1; i++) {
+                const segments = curve.fractalize(lines[i], lines[i + 1], odd);
+                odd = !odd;
 
-            requestAnimationFrame(animate);
+                for (const segment of segments) {
+                    current_point = {
+                        x: current_point.x + segment.x,
+                        y: current_point.y + segment.y
+                    };
+                    new_lines.push(current_point);
+                }
+            }
+            return new_lines;
         }
 
-        animate();
+        function createLine(point1, point2) {
+            const new_line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            new_line.setAttribute("x1", point1.x);
+            new_line.setAttribute("y1", point1.y);
+            new_line.setAttribute("x2", point2.x);
+            new_line.setAttribute("y2", point2.y);
+            return new_line;
+        }
+
+        function draw(lines, svg_canvas) {
+            svg_canvas.innerHTML = ''; // 既存の線をクリア
+            for (let i = 0; i < lines.length - 1; i++) {
+                const line = createLine(lines[i], lines[i + 1]);
+                svg_canvas.appendChild(line);
+            }
+        }
+
+        window.onload = () => {
+            const svg_canvas = document.getElementById("canvas");
+            const initialLines = [{ x: 20, y: 50 }, { x: 80, y: 50 }];
+            const curve = new Dragon();
+            let odd = true;
+
+            let lines = initialLines;
+            const duration = 3; // seconds
+
+            const interval = setInterval(() => {
+                lines = fractalizeLines(lines, curve, odd);
+                draw(lines, svg_canvas);
+                odd = !odd;
+
+                if (lines.length > 100) { // 最大深さを制限
+                    clearInterval(interval);
+                }
+            }, duration * 1000);
+        };
     </script>
 </body>
 </html>
