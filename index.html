@@ -318,92 +318,41 @@
     <script>
         const canvas = document.getElementById('fractalCanvas');
         const ctx = canvas.getContext('2d');
-    
+
         let t = 0;
         let increasing = true;
-        const maxDepth = 5;
-    
-        function interpolateKoch(x1, y1, x2, y2, depth, t) {
+        const maxDepth = 10; // 深さを調整
+        const angle = Math.PI / 2; // 90度の回転
+
+        function drawDragonCurve(x, y, length, depth, direction) {
             if (depth === 0) {
-                ctx.beginPath();
-                ctx.moveTo(x1, y1);
-                ctx.lineTo(x2, y2);
-                ctx.stroke();
+                ctx.lineTo(x, y);
                 return;
             }
-    
-            const dx = (x2 - x1) / 3;
-            const dy = (y2 - y1) / 3;
-    
-            const x3 = x1 + dx;
-            const y3 = y1 + dy;
-    
-            const x5 = x1 + 2 * dx;
-            const y5 = y1 + 2 * dy;
-    
-            // 通常の頂点位置
-            const angle = Math.PI / 3;
-            const peakX = x3 + Math.cos(angle) * dx - Math.sin(angle) * dy;
-            const peakY = y3 + Math.sin(angle) * dx + Math.cos(angle) * dy;
-    
-            // 線分中央の直線補間で滑らかに出現させる
-            const midX = (x3 + x5) / 2;
-            const midY = (y3 + y5) / 2;
-            const x4 = peakX * t + midX * (1 - t);
-            const y4 = peakY * t + midY * (1 - t);
-    
-            interpolateKoch(x1, y1, x3, y3, depth - 1, t);
-            interpolateKoch(x3, y3, x4, y4, depth - 1, t);
-            interpolateKoch(x4, y4, x5, y5, depth - 1, t);
-            interpolateKoch(x5, y5, x2, y2, depth - 1, t);
+
+            const newLength = length / Math.sqrt(2);
+            drawDragonCurve(x, y, newLength, depth - 1, direction);
+            x += newLength * Math.cos(direction);
+            y += newLength * Math.sin(direction);
+            ctx.lineTo(x, y);
+
+            direction += angle; // 右に90度回転
+            drawDragonCurve(x, y, newLength, depth - 1, direction);
         }
-    
-        function drawSnowflake(t) {
-            const size = 400;
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2 - 50;
-    
-            const height = Math.sqrt(3) / 2 * size;
-    
-            const ax = centerX - size / 2;
-            const ay = centerY + height / 3;
-    
-            const bx = centerX + size / 2;
-            const by = ay;
-    
-            const cx = centerX;
-            const cy = centerY - 2 * height / 3;
-    
-            interpolateKoch(ax, ay, bx, by, maxDepth, t);
-            interpolateKoch(bx, by, cx, cy, maxDepth, t);
-            interpolateKoch(cx, cy, ax, ay, maxDepth, t);
-        }
-    
+
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.strokeStyle = "#493759";
             ctx.lineWidth = 1.5;
-    
-            drawSnowflake(t);
-    
-            // t を 0〜1 の間でゆらぎさせる
-            if (increasing) {
-                t += 0.01;
-                if (t >= 1) {
-                    t = 1;
-                    increasing = false;
-                }
-            } else {
-                t -= 0.01;
-                if (t <= 0) {
-                    t = 0;
-                    increasing = true;
-                }
-            }
-    
+
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, canvas.height / 2);
+            drawDragonCurve(canvas.width / 2, canvas.height / 2, 300, maxDepth, 0);
+            ctx.stroke();
+
             requestAnimationFrame(animate);
         }
-    
+
         animate();
     </script>
 </body>
