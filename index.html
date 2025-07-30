@@ -267,9 +267,7 @@
     <div class="wrapper">
         <a href="市場・投資.html" style="text-decoration: none;">
             <section>
-                <svg id="canvas">
-                    <line id="line" x1="20" y1="50" x2="80" y2="50" stroke="#eaf2e3" stroke-width="1"></line>
-                </svg>
+                <svg id="canvas"></svg>
                 <h2>市場・投資</h2>
                 <p>
                     経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
@@ -394,6 +392,8 @@
             new_line.setAttribute("y1", point1.y);
             new_line.setAttribute("x2", point2.x);
             new_line.setAttribute("y2", point2.y);
+            new_line.setAttribute("stroke", "#493759"); // 線の色を設定
+            new_line.setAttribute("stroke-width", "2"); // 線の太さを設定
             return new_line;
         }
 
