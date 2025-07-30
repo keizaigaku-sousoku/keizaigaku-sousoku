@@ -180,25 +180,35 @@
         footer {
             background-color: #493759;
             color: #fff;
-            text-align: center;
             padding: 20px 10px;
             margin-top: 60px;
             font-size: 14px;
         }
-
+        
         footer p {
             color: #fff;
-        }
-
-        .footer-socials i {
-            font-size: 28px;
-            color: #fff;
-            transition: transform 0.3s;
-            justify-content: flex-start;
-            gap: 24px;  
+            text-align: center;
+            margin-top: 10px;
         }
         
-        .footer-socials a:hover i {
+        /* アイコンのコンテナ */
+        .footer-socials {
+            display: flex;
+            justify-content: flex-start; /* 左寄せ */
+            gap: 24px;                   /* アイコンの間隔 */
+            padding-left: 10px;
+        }
+        
+        /* 各リンク（アイコン） */
+        .footer-socials a {
+            color: #fff;
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        /* ホバー時の拡大 */
+        .footer-socials a:hover {
             transform: scale(1.2);
         }
         
@@ -368,7 +378,6 @@
     </div>
     
     <footer>
-        <p>&copy; 2025 経済学総則. All rights reserved.</p>
         <div class="footer-socials">
             <a href="https://www.linkedin.com/in/春樹-坂田-4453b3358/" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
@@ -376,12 +385,13 @@
             <a href="https://x.com/Cw2dENlXNQ14553" target="_blank" aria-label="X">
                 <i class="fab fa-x-twitter"></i>
             </a>
-            <a href="keizaigaku.sousoku@gmail.com" aria-label="Email">
+            <a href="mailto:keizaigaku.sousoku@gmail.com" aria-label="Email">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
+        <p>&copy; 2025 経済学総則. All rights reserved.</p>
     </footer>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function () {
