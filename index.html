@@ -143,9 +143,14 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
         }
 
-		.material-icons-container {
-			font-size: 100px;
-		}
+        .materal-icons-container {
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+        
+        .material-icons-containr .material-icons {
+            font-size: 100px;
+        }
 		
 		.left-right-container {
 		    display: flex;
@@ -288,7 +293,9 @@
 		    -->
 			<section class="left-right-container">
 			    <div class="icon-container">
-			        <span class="material-icons-container">keyboard_arrow_down</span> <!-- ここにGoogle Fonts Iconsのアイコンを挿入 -->
+			        <material-icons-container>
+						<span class="material-icons">keyboard_arrow_down</span>
+					</material-icons-container> <!-- ここにGoogle Fonts Iconsのアイコンを挿入 -->
 			    </div>
 			    <div class="text-container">
 			        <h2>市場・投資</h2>
