@@ -136,36 +136,7 @@
                 </p>
             </section>
         </main>
-        <div class="nav-toggle-container">
-            <button id="nav-toggle">≡</button>
-            <div id="nav-menu" class="nav-menu hidden">
-                <a href="../index.html">トップページ</a>
-                <hr class="nav-divider">
-                <a href="../市場・投資.html">市場・投資</a>
-                <a href="../ミクロ・マクロ経済学.html">ミクロ・マクロ経済学</a>
-                <a href="../財務・ファイナンス理論.html">財務・ファイナンス理論</a>
-            </div>
-        </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const toggle = document.getElementById("nav-toggle");
-                const menu = document.getElementById("nav-menu");
-                toggle.addEventListener("click", function () {
-                    menu.classList.toggle("hidden");
-                    toggle.textContent = menu.classList.contains("hidden") ? "≡" : "×";
-                });
-            });
-            document.addEventListener("click", function (event) {
-                const toggle = document.getElementById("nav-toggle");
-                const menu = document.getElementById("nav-menu");
-                const container = document.querySelector(".nav-toggle-container");
-                if (!container.contains(event.target)) {
-                    if (!menu.classList.contains("hidden")) {
-                        menu.classList.add("hidden");
-                        toggle.textContent = "≡";
-                    }
-                }
-            });
-        </script>
+        <div id="nav-placeholder"></div>
+        <script src="../共通/load-nav.js" defer></script>
     </body>
 </html>
