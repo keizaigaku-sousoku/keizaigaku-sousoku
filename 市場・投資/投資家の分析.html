@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>投資家の分析</title>
         <link rel="stylesheet" href="../共通/stylesheet_contents.css">
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script src="../共通/mathjax-config.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
         <header>
@@ -265,7 +265,7 @@
                         またそれぞれを \( n=0,1,...,T/\Delta t-1 \) と添字づけ、各 \( n \) においてそれまでに得た収益を再投資することにする。
                         ここで \( R_t \) は単位時間あたりの収益率であるから、各 \( n \) における収益率は \( R_{n\Delta t} \Delta t + o(\Delta t) \) である。
                         したがって収益率の累積は
-                        <!--<div class="math-container">-->
+                        <div class="math-container">
                             \[
                                 \begin{align}
                                         \prod_{n=0}^{T/\Delta t-1}[1+R_{n\Delta t}\Delta t+o(\Delta t)]-1=&\prod_{n=0}^{T/\Delta t-1}(1+R_{n\Delta t}\Delta t)-1+o(\Delta t) \nonumber\\
@@ -274,7 +274,7 @@
                                         \rightarrow & e^{\int_0^T R_t \mathrm{d}t}-1\ \ \ (\Delta t\rightarrow 0)
                                 \end{align}
                             \]
-                        <!--</div>-->
+                        </div>
                         である。
                     </p>
                     <div class="end-symbol">■</div>
