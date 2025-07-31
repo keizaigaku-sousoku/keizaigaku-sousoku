@@ -1,494 +1,494 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>経済学総則</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: #f5f5f7;
-        }
-
-        body {
-            font-size: 16px;
-        }
-        
-        header {
-            width: 100%;
-            height: 100vh;
-            background-color: #493759;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        header h1 {
-            font-family: 'Marcellus', serif;
-            font-size: 50px;
-            color: #fff;
-            margin: 0 0 10px 0;
-            padding-top: 100px;
-            padding-bottom: 100px;
-        }
-
-        .mobile-break {
-            display: inline;
-        }
-
-        .subtitle {
-            font-family: 'Kaisei Opti', serif;
-            font-size: 18px;
-            color: #fff;
-            margin: 5px 0;
-        }
-
-        .scroll-prompt {
-            margin-top: 80px;
-            font-size: 18px;
-            text-align: center;
-        }
-
-        .scroll-prompt p {
-            color: #fff;
-            margin: 0;
-        }
-
-        .arrow {
-            text-align: center;
-            animation: bounce 2s infinite;
-        }
-
-        .arrow .material-icons {
-            font-size: 50px;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
+    <head>
+        <meta charset="UTF-8">
+        <title>経済学総則</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                font-family: 'Noto Sans JP', sans-serif;
+                background-color: #f5f5f7;
             }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        nav {
-            bottom: 0;
-            height: 80px;
-            width: 100%;
-            background-color: #3b2c45;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        nav a {
-            color: #fff;
-            padding: 8px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 15px;
-            transition: transform 0.3s, background-color 0.3s, color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: #fff;
-            color: #493759;
-            transform: translateX(10px);
-        }
-        
-        .nav-wrapper {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-        }
-        
-        .nav-fade-left,
-        .nav-fade-right {
-            position: absolute;
-            top: 0;
-            width: 60px;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
-        
-        .nav-fade-left {
-            left: 0;
-            background: linear-gradient(to right, #3b2c45 0%, transparent 100%);
-        }
-        
-        .nav-fade-right {
-            right: 0;
-            background: linear-gradient(to left, #3b2c45 0%, transparent 100%);
-        }
-        
-        .nav-fade-left.hidden,
-        .nav-fade-right.hidden {
-            display: none;
-        }
-        
-        .fixed-wrapper {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
-        }
-        
-        .wrapper {
-            max-width: 800px;
-            margin: 20px auto 20px;
-            padding: 20px;
-        }
-
-        h2 {
-            font-family: 'Kaisei Opti', serif;
-            font-size: 34px;
-            font-weight: 700;
-            line-height: 2;
-            color: #493759;
-        }
-
-        p {
-            margin-bottom: 2rem;
-            line-height: 2;
-            color: #1D1D1F;
-            text-align: justify;
-        }
-
-        section {
-            padding: 20px;
-            margin-bottom: 40px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-        }
-        
-        .icon-section {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px;
-            margin-bottom: 40px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-        }
-        
-        .icon-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .icon-box .material-symbols-outlined {
-            font-size: 100px;
-            color: #493759;
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        
-        .text-box h2 {
-            margin: 0 0 10px 0;
-            font-size: 24px;
-            color: #493759;
-            font-family: 'Kaisei Opti', serif;
-        }
-        
-        .text-box p {
-            margin: 0;
-            line-height: 2;
-            color: #1D1D1F;
-            text-align: justify;
-        }
-        
-        footer {
-            background-color: #493759;
-            color: #fff;
-            padding: 20px 10px;
-            margin-top: 60px;
-            font-size: 14px;
-            text-align: right;
-        }
-                
-        footer p {
-            color: #fff;
-            text-align: right;
-            margin-top: 10px;
-            margin-right: 20px;
-        }
-        
-        .footer-socials {
-            display: flex;
-            justify-content: flex-end;
-            gap: 24px;
-            padding-top: 20px;
-            padding-right: 20px;
-            padding-bottom: 20px;
-        }
-        
-        .footer-socials a {
-            color: #fff;
-            font-size: 28px;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-        
-        .footer-socials a:hover {
-            transform: scale(1.2);
-        }
-        
-        @media (max-width: 768px) {
+    
             body {
-                font-size: 18px;
-            }
-
-            header {
-                height: 90vh;
-            }
-
-            header h1 {
-                font-size: 45px;
-                padding-top: 50px;
-                padding-bottom: 50px;
-                text-align: left;
-            }
-
-            .mobile-break {
-                display: block;
-            }
-
-            .subtitle {
-                font-size: 15px;
-                line-height: 1.4;
+                font-size: 16px;
             }
             
-            .scroll-prompt {
-                margin-top: 40px;
-            }
-
-            nav {
-                height: 80px;
+            header {
+                width: 100%;
+                height: 100vh;
+                background-color: #493759;
+                position: relative;
                 display: flex;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                justify-content: flex-start;
-                overflow-x: auto;
-                white-space: nowrap;
-                gap: 8px;
-                -webkit-overflow-scrolling: touch;
+                box-sizing: border-box;
+                text-align: center;
             }
-
-            nav::-webkit-scrollbar {
+    
+            header h1 {
+                font-family: 'Marcellus', serif;
+                font-size: 50px;
+                color: #fff;
+                margin: 0 0 10px 0;
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+    
+            .mobile-break {
+                display: inline;
+            }
+    
+            .subtitle {
+                font-family: 'Kaisei Opti', serif;
+                font-size: 18px;
+                color: #fff;
+                margin: 5px 0;
+            }
+    
+            .scroll-prompt {
+                margin-top: 80px;
+                font-size: 18px;
+                text-align: center;
+            }
+    
+            .scroll-prompt p {
+                color: #fff;
+                margin: 0;
+            }
+    
+            .arrow {
+                text-align: center;
+                animation: bounce 2s infinite;
+            }
+    
+            .arrow .material-icons {
+                font-size: 50px;
+            }
+    
+            @keyframes bounce {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+    
+            nav {
+                bottom: 0;
+                height: 80px;
+                width: 100%;
+                background-color: #3b2c45;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            nav a {
+                color: #fff;
+                padding: 8px 30px;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 15px;
+                transition: transform 0.3s, background-color 0.3s, color 0.3s;
+            }
+            
+            nav a:hover {
+                background-color: #fff;
+                color: #493759;
+                transform: translateX(10px);
+            }
+            
+            .nav-wrapper {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 80px;
+            }
+            
+            .nav-fade-left,
+            .nav-fade-right {
+                position: absolute;
+                top: 0;
+                width: 60px;
+                height: 100%;
+                pointer-events: none;
+                z-index: 2;
+            }
+            
+            .nav-fade-left {
+                left: 0;
+                background: linear-gradient(to right, #3b2c45 0%, transparent 100%);
+            }
+            
+            .nav-fade-right {
+                right: 0;
+                background: linear-gradient(to left, #3b2c45 0%, transparent 100%);
+            }
+            
+            .nav-fade-left.hidden,
+            .nav-fade-right.hidden {
                 display: none;
             }
-
-            nav a {
-                font-size: 16px;
-                padding: 8px 16px;
-                flex-shrink: 0;
-            }
             
-            .nav-scroll-indicator {
-                right: 5px;
+            .fixed-wrapper {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 999;
             }
             
             .wrapper {
-                width: 95%;
-                padding: 0 10px;
-                margin-top: 40px;
+                max-width: 800px;
+                margin: 20px auto 20px;
+                padding: 20px;
             }
-
+    
+            h2 {
+                font-family: 'Kaisei Opti', serif;
+                font-size: 34px;
+                font-weight: 700;
+                line-height: 2;
+                color: #493759;
+            }
+    
+            p {
+                margin-bottom: 2rem;
+                line-height: 2;
+                color: #1D1D1F;
+                text-align: justify;
+            }
+    
+            section {
+                padding: 20px;
+                margin-bottom: 40px;
+                background-color: #ffffff;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            }
+            
             .icon-section {
-                gap: 10px;
-                /*padding: 20px;*/
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 20px;
+                margin-bottom: 40px;
+                background-color: #ffffff;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            }
+            
+            .icon-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             
             .icon-box .material-symbols-outlined {
-                font-size: 40px;
+                font-size: 100px;
+                color: #493759;
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             }
             
-            h2 {
-                font-size: 22px;
+            .text-box h2 {
+                margin: 0 0 10px 0;
+                font-size: 24px;
+                color: #493759;
+                font-family: 'Kaisei Opti', serif;
             }
-
-            p {
-                font-size: 16px;
+            
+            .text-box p {
+                margin: 0;
+                line-height: 2;
+                color: #1D1D1F;
+                text-align: justify;
             }
-                        
+            
             footer {
-                font-size: 13px;
+                background-color: #493759;
+                color: #fff;
+                padding: 20px 10px;
+                margin-top: 60px;
+                font-size: 14px;
+                text-align: right;
             }
             
             footer p {
-            margin-right: 0px;
-        }
-
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>
-            <span class="title-mobile-break">
-                No Fair Value, <span class="mobile-break">Just Bid and Ask</span>
-            </span>
-        </h1>
-        <p class="subtitle">モノのフェア・バリューは存在するか</p>
-        <p class="subtitle">存在するとして、それは一意か</p>
-        <p class="subtitle">一意であるとして、それはいつ実現するか</p>
-        <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
-        <p class="subtitle">&mdash; 経済学総則 &mdash;</p>
-        <div class="scroll-prompt">
-            <p>Scroll Down</p>
-            <p class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></p>
-        </div>
-        <div class="nav-wrapper">
-            <nav id="mainNav">
-                <a href="分野/市場・投資.html">市場・投資</a>
-                <a href="#">ミクロ・マクロ経済学</a>
-                <a href="#">財務・ファイナンス理論</a>
-                <a href="#">数学</a>
-                <a href="#">記号一覧</a>
-            </nav>
-            <div class="nav-fade-left"></div>
-            <div class="nav-fade-right"></div>
-        </div>
-    </header>
-
-    <div class="wrapper">
-        <a href="分野/市場・投資.html" style="text-decoration: none;">
-            <section class="icon-section">
-                <div class="icon-box">
-                    <span class="material-symbols-outlined">query_stats</span>
-                </div>
-                <div class="text-box">
-                    <h2>市場・投資</h2>
-                    <p>
-                        経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
-                        またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
-                        そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
-                    </p>
-                </div>
-            </section>
-        </a>
-
-            <section class="icon-section">
-                <div class="icon-box">
-                    <span class="material-symbols-outlined">home_work</span>
-                </div>
-                <div class="text-box">
-                    <h2>ミクロ・マクロ経済学</h2>
-                    <p>
-                        ******
-                    </p>
-                </div>
-            </section>
-
-            <section class="icon-section">
-                <div class="icon-box">
-                    <span class="material-symbols-outlined">balance</span>
-                </div>
-                <div class="text-box">
-                    <h2>財務・ファイナンス理論</h2>
-                    <p>
-                        ******
-                    </p>
-                </div>
-            </section>
-
-            <section class="icon-section">
-                <div class="icon-box">
-                    <span class="material-symbols-outlined">function</span>
-                </div>
-                <div class="text-box">
-                    <h2>数学</h2>
-                    <p>
-                        ******
-                    </p>
-                </div>
-            </section>
-
-            <section class="icon-section">
-                <div class="icon-box">
-                    <span class="material-symbols-outlined">list</span>
-                </div>
-                <div class="text-box">
-                    <h2>記号一覧</h2>
-                    <p>
-                        ******
-                    </p>
-                </div>
-            </section>
-
-    </div>
-    
-    <footer>
-        <div class="footer-socials">
-            <a href="https://www.linkedin.com/in/春樹-坂田-4453b3358/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://x.com/Cw2dENlXNQ14553" target="_blank" aria-label="X">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-            <a href="mailto:keizaigaku.sousoku@gmail.com" aria-label="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-        </div>
-        <p>&copy; 2025 経済学総則. All rights reserved.</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(function () {
-            const $nav = $('#mainNav');
-            const $navWrapper = $('.nav-wrapper');
-            const $fadeLeft = $('.nav-fade-left');
-            const $fadeRight = $('.nav-fade-right');
-            const navTop = $navWrapper.offset().top; // 重要：navではなくnavWrapperで取得
-    
-            function updateFade() {
-                const scrollLeft = $nav.scrollLeft();
-                const scrollWidth = $nav[0].scrollWidth;
-                const clientWidth = $nav[0].clientWidth;
-    
-                if (scrollLeft <= 0) {
-                    $fadeLeft.addClass('hidden');
-                } else {
-                    $fadeLeft.removeClass('hidden');
+                color: #fff;
+                text-align: right;
+                margin-top: 10px;
+                margin-right: 20px;
+            }
+            
+            .footer-socials {
+                display: flex;
+                justify-content: flex-end;
+                gap: 24px;
+                padding-top: 20px;
+                padding-right: 20px;
+                padding-bottom: 20px;
+            }
+            
+            .footer-socials a {
+                color: #fff;
+                font-size: 28px;
+                text-decoration: none;
+                transition: transform 0.3s;
+            }
+            
+            .footer-socials a:hover {
+                transform: scale(1.2);
+            }
+            
+            @media (max-width: 768px) {
+                body {
+                    font-size: 18px;
                 }
     
-                if (scrollLeft + clientWidth >= scrollWidth - 1) {
-                    $fadeRight.addClass('hidden');
-                } else {
-                    $fadeRight.removeClass('hidden');
+                header {
+                    height: 90vh;
                 }
+    
+                header h1 {
+                    font-size: 45px;
+                    padding-top: 50px;
+                    padding-bottom: 50px;
+                    text-align: left;
+                }
+    
+                .mobile-break {
+                    display: block;
+                }
+    
+                .subtitle {
+                    font-size: 15px;
+                    line-height: 1.4;
+                }
+                
+                .scroll-prompt {
+                    margin-top: 40px;
+                }
+    
+                nav {
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    gap: 8px;
+                    -webkit-overflow-scrolling: touch;
+                }
+    
+                nav::-webkit-scrollbar {
+                    display: none;
+                }
+    
+                nav a {
+                    font-size: 16px;
+                    padding: 8px 16px;
+                    flex-shrink: 0;
+                }
+                
+                .nav-scroll-indicator {
+                    right: 5px;
+                }
+                
+                .wrapper {
+                    width: 95%;
+                    padding: 0 10px;
+                    margin-top: 40px;
+                }
+    
+                .icon-section {
+                    gap: 10px;
+                    /*padding: 20px;*/
+                }
+                
+                .icon-box .material-symbols-outlined {
+                    font-size: 40px;
+                }
+                
+                h2 {
+                    font-size: 22px;
+                }
+    
+                p {
+                    font-size: 16px;
+                }
+                            
+                footer {
+                    font-size: 13px;
+                }
+                
+                footer p {
+                margin-right: 0px;
             }
     
-            $(window).on('scroll', function () {
-                if ($(window).scrollTop() >= navTop) {
-                    $navWrapper.addClass('fixed-wrapper');
-                } else {
-                    $navWrapper.removeClass('fixed-wrapper');
-                }
-            });
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <span class="title-mobile-break">
+                    No Fair Value, <span class="mobile-break">Just Bid and Ask</span>
+                </span>
+            </h1>
+            <p class="subtitle">モノのフェア・バリューは存在するか</p>
+            <p class="subtitle">存在するとして、それは一意か</p>
+            <p class="subtitle">一意であるとして、それはいつ実現するか</p>
+            <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
+            <p class="subtitle">&mdash; 経済学総則 &mdash;</p>
+            <div class="scroll-prompt">
+                <p>Scroll Down</p>
+                <p class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></p>
+            </div>
+            <div class="nav-wrapper">
+                <nav id="mainNav">
+                    <a href="分野/市場・投資.html">市場・投資</a>
+                    <a href="#">ミクロ・マクロ経済学</a>
+                    <a href="#">財務・ファイナンス理論</a>
+                    <a href="#">数学</a>
+                    <a href="#">記号一覧</a>
+                </nav>
+                <div class="nav-fade-left"></div>
+                <div class="nav-fade-right"></div>
+            </div>
+        </header>
     
-            updateFade();
-            $nav.on('scroll', updateFade);
-            $(window).on('resize', updateFade);
-        });
-    </script>
-</body>
+        <div class="wrapper">
+            <a href="分野/市場・投資.html" style="text-decoration: none;">
+                <section class="icon-section">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">query_stats</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>市場・投資</h2>
+                        <p>
+                            経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
+                            またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
+                            そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
+                        </p>
+                    </div>
+                </section>
+            </a>
+    
+                <section class="icon-section">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">home_work</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>ミクロ・マクロ経済学</h2>
+                        <p>
+                            ******
+                        </p>
+                    </div>
+                </section>
+    
+                <section class="icon-section">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">balance</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>財務・ファイナンス理論</h2>
+                        <p>
+                            ******
+                        </p>
+                    </div>
+                </section>
+    
+                <section class="icon-section">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">function</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>数学</h2>
+                        <p>
+                            ******
+                        </p>
+                    </div>
+                </section>
+    
+                <section class="icon-section">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">list</span>
+                    </div>
+                    <div class="text-box">
+                        <h2>記号一覧</h2>
+                        <p>
+                            ******
+                        </p>
+                    </div>
+                </section>
+    
+        </div>
+        
+        <footer>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/春樹-坂田-4453b3358/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/Cw2dENlXNQ14553" target="_blank" aria-label="X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="mailto:keizaigaku.sousoku@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 経済学総則. All rights reserved.</p>
+        </footer>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function () {
+                const $nav = $('#mainNav');
+                const $navWrapper = $('.nav-wrapper');
+                const $fadeLeft = $('.nav-fade-left');
+                const $fadeRight = $('.nav-fade-right');
+                const navTop = $navWrapper.offset().top; // 重要：navではなくnavWrapperで取得
+        
+                function updateFade() {
+                    const scrollLeft = $nav.scrollLeft();
+                    const scrollWidth = $nav[0].scrollWidth;
+                    const clientWidth = $nav[0].clientWidth;
+        
+                    if (scrollLeft <= 0) {
+                        $fadeLeft.addClass('hidden');
+                    } else {
+                        $fadeLeft.removeClass('hidden');
+                    }
+        
+                    if (scrollLeft + clientWidth >= scrollWidth - 1) {
+                        $fadeRight.addClass('hidden');
+                    } else {
+                        $fadeRight.removeClass('hidden');
+                    }
+                }
+        
+                $(window).on('scroll', function () {
+                    if ($(window).scrollTop() >= navTop) {
+                        $navWrapper.addClass('fixed-wrapper');
+                    } else {
+                        $navWrapper.removeClass('fixed-wrapper');
+                    }
+                });
+        
+                updateFade();
+                $nav.on('scroll', updateFade);
+                $(window).on('resize', updateFade);
+            });
+        </script>
+    </body>
 </html>
