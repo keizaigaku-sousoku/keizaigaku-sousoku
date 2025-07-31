@@ -20,20 +20,22 @@ window.MathJax = {
                 });
             }, ''],
 
-            // ← ここに追加
             add_math_container: [20, function (doc) {
-                // ブロック数式だけを探す
-                doc.math.forEach((mathItem) => {
-                    if (mathItem.display) {
-                        const node = mathItem.start.node.parentNode.querySelector('mjx-container[jax="CHTML"][display="true"]');
-                        if (node && !node.parentNode.classList.contains('math-container')) {
+                setTimeout(() => {
+                    document.querySelectorAll('mjx-container[jax="CHTML"][display="true"]').forEach(container => {
+                        if (!container.parentElement.classList.contains('math-container')) {
                             const wrapper = document.createElement('div');
-                            wrapper.className = 'math-container';
-                            node.parentNode.insertBefore(wrapper, node);
-                            wrapper.appendChild(node);
+                            wrapper.classList.add('math-container');
+                            container.parentNode.insertBefore(wrapper, container);
+                            wrapper.appendChild(container);
                         }
-                    }
-                });
+
+                        const wrapper = container.parentElement;
+
+                        const needsScroll = container.scrollWidth > container.clientWidth + 1;
+                        wrapper.classList.add(needsScroll ? 'scrollable' : 'centered');
+                    });
+                }, 0); // MathJax描画完了後に実行
             }, '']
         }
     }
