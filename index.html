@@ -107,16 +107,7 @@
             color: #493759;
             transform: translateX(10px);
         }
-        
-        .fixed-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999;
-            background-color: #3b2c45;
-        }
-        
+                
         .nav-wrapper {
             position: relative;
             bottom: 0;
@@ -153,7 +144,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 998;
+            z-index: 999;
         }
         
         .wrapper {
@@ -463,7 +454,7 @@
             const $navWrapper = $('.nav-wrapper');
             const $fadeLeft = $('.nav-fade-left');
             const $fadeRight = $('.nav-fade-right');
-            const navTop = $nav.offset().top;
+            const navTop = $navWrapper.offset().top; // 重要：navではなくnavWrapperで取得
     
             function updateFade() {
                 const scrollLeft = $nav.scrollLeft();
@@ -485,10 +476,8 @@
     
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() >= navTop) {
-                    $nav.addClass('fixed-nav');
                     $navWrapper.addClass('fixed-wrapper');
                 } else {
-                    $nav.removeClass('fixed-nav');
                     $navWrapper.removeClass('fixed-wrapper');
                 }
             });
