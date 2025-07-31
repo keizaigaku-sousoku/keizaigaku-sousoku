@@ -108,17 +108,15 @@
             transform: translateX(10px);
         }
         
-        .fixed-nav {
+        .fixed-nav-wrapper {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 999;
-            background-color: #3b2c45;
         }
         
         .nav-wrapper {
-            position: absolute;
             bottom: 0;
             width: 100%;
         }
@@ -465,11 +463,22 @@
     </script>
     <script>
         $(function () {
-            const $nav = $('#mainNav');
-            const $fadeLeft = $('.nav-fade-left');
-            const $fadeRight = $('.nav-fade-right');
+            const navWrapper = $('.nav-wrapper');
+            const navTop = navWrapper.offset().top;
+    
+            function updateFixedNav() {
+                if ($(window).scrollTop() >= navTop) {
+                    navWrapper.addClass('fixed-nav-wrapper');
+                } else {
+                    navWrapper.removeClass('fixed-nav-wrapper');
+                }
+            }
     
             function updateFade() {
+                const $nav = $('#mainNav');
+                const $fadeLeft = $('.nav-fade-left');
+                const $fadeRight = $('.nav-fade-right');
+    
                 const scrollLeft = $nav.scrollLeft();
                 const scrollWidth = $nav[0].scrollWidth;
                 const clientWidth = $nav[0].clientWidth;
@@ -487,9 +496,15 @@
                 }
             }
     
+            updateFixedNav();
             updateFade();
-            $nav.on('scroll', updateFade);
-            $(window).on('resize', updateFade);
+    
+            $(window).on('scroll resize', function () {
+                updateFixedNav();
+                updateFade();
+            });
+    
+            $('#mainNav').on('scroll', updateFade);
         });
     </script>
 </body>
