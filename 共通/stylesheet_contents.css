@@ -181,14 +181,6 @@ a:visited {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    display: block;
-    max-width: 100%;
-    padding-bottom: 8px;
-}
-
-.math-container .mjx-container {
-    display: inline-block !important;
 }
 
 h2 {
