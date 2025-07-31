@@ -20,9 +20,6 @@ window.MathJax = {
                 });
             }, ''],
 
-            //
-            // ★ MathJax が数式のレンダリングを終えたあとに横スクロールを設定
-            //
             wrap_long_display_math: [170, function (doc) {
                 setTimeout(() => {
                     document.querySelectorAll('.mjx-container').forEach(container => {
