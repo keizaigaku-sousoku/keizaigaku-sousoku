@@ -177,22 +177,26 @@ a:visited {
     padding: 10px;
 }
 
-.math-container {
+.math-container.centered {
+    overflow-x: visible;
+    white-space: normal;
+    text-align: center;
+}
+.math-container.centered mjx-container[jax="CHTML"][display="true"] {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+.math-container.centered mjx-container[jax="CHTML"][display="true"] > mjx-math {
+    min-width: auto !important;
+}
+
+.math-container.scrollable {
     overflow-x: auto;
-    overflow-y: hidden;
     white-space: nowrap;
+    text-align: left;
 }
-
-mjx-container[jax="CHTML"][display="true"] {
-    display: block;
-    overflow-x: auto;
-    overflow-y: hidden;
-    max-width: 100%;
-    padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
-}
-
-mjx-container[jax="CHTML"][display="true"] > mjx-math {
+.math-container.scrollable mjx-container[jax="CHTML"][display="true"] > mjx-math {
     min-width: 100%;
 }
 
