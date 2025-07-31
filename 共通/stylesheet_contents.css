@@ -178,17 +178,21 @@ a:visited {
 }
 
 .math-container.centered {
-    overflow-x: visible;
-    white-space: normal;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 4px;
 }
+
 .math-container.centered mjx-container[jax="CHTML"][display="true"] {
-    justify-content: center;
-    display: flex;
-    text-align: center;
+  display: inline-block; /* block → inline-block にする */
+  max-width: 100%;       /* はみ出し防止 */
+  text-align: center;
 }
-.math-container.centered mjx-container[jax="CHTML"][display="true"] > mjx-math {
-    min-width: auto !important;
+
+.math-container.centered mjx-container > mjx-math {
+  min-width: auto !important; /* 初期化 */
 }
 
 .math-container.scrollable {
