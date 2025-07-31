@@ -122,38 +122,7 @@
             bottom: 0;
             width: 100%;
         }
-        
-        .nav-scroll-indicator {
-            display: none; /* 初期状態で非表示 */
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            z-index: 1000;
-            pointer-events: none;
-        
-            background-color: #f5f5f7;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-scroll-indicator .material-symbols-outlined {
-            font-size: 20px;
-            color: #493759;
-            animation: fadeInOut 2s infinite;
-        }
-        
-        /* 点滅アニメーション（任意） */
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-        }
-        
+                
         .wrapper {
             max-width: 800px;
             margin: 20px auto 20px;
@@ -367,9 +336,6 @@
                 <a href="#">数学</a>
                 <a href="#">記号一覧</a>
             </nav>
-            <div class="nav-scroll-indicator">
-                <span class="material-symbols-outlined">keyboard_arrow_right</span>
-            </div>
         </div>
     </header>
 
