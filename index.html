@@ -295,7 +295,11 @@
                 padding: 10px;
                 flex-shrink: 0;
             }
-
+            
+            .nav-scroll-indicator {
+                right: 5px;
+            }
+            
             .wrapper {
                 width: 95%;
                 padding: 0 10px;
@@ -455,6 +459,33 @@
                     nav.removeClass('fixed-nav');
                 }
             });
+        });
+    </script>
+    <script>
+        $(function () {
+            const wrapper = $('.nav-wrapper');
+            const nav = $('#mainNav');
+            const scrollIndicator = $('.nav-scroll-indicator');
+            const navTop = wrapper.offset().top;
+        
+            function checkScrollOverflow() {
+                if (nav[0].scrollWidth > nav.outerWidth()) {
+                    scrollIndicator.css('display', 'block');
+                } else {
+                    scrollIndicator.css('display', 'none');
+                }
+            }
+        
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() >= navTop) {
+                    wrapper.addClass('fixed-nav');
+                } else {
+                    wrapper.removeClass('fixed-nav');
+                }
+            });
+        
+            checkScrollOverflow();
+            $(window).on('resize', checkScrollOverflow);
         });
     </script>
 </body>
