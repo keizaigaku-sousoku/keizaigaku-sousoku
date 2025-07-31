@@ -118,6 +118,33 @@
             background-color: #3b2c45;
         }
         
+        .nav-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        
+        .nav-scroll-indicator {
+            display: none; /* 初期状態で非表示 */
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .nav-scroll-indicator .material-symbols-outlined {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            animation: fadeInOut 2s infinite;
+        }
+        
+        /* 点滅アニメーション（任意） */
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        
         .wrapper {
             max-width: 800px;
             margin: 20px auto 20px;
@@ -319,13 +346,18 @@
             <p>Scroll Down</p>
             <p class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></p>
         </div>
-        <nav id="mainNav">
-            <a href="分野/市場・投資.html">市場・投資</a>
-            <a href="#">ミクロ・マクロ経済学</a>
-            <a href="#">財務・ファイナンス理論</a>
-            <a href="#">数学</a>
-            <a href="#">記号一覧</a>
-        </nav>
+        <div class="nav-wrapper">
+            <nav id="mainNav">
+                <a href="分野/市場・投資.html">市場・投資</a>
+                <a href="#">ミクロ・マクロ経済学</a>
+                <a href="#">財務・ファイナンス理論</a>
+                <a href="#">数学</a>
+                <a href="#">記号一覧</a>
+            </nav>
+            <div class="nav-scroll-indicator">
+                <span class="material-symbols-outlined">keyboard_arrow_right</span>
+            </div>
+        </div>
     </header>
 
     <div class="wrapper">
