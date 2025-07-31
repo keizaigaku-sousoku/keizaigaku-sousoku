@@ -20,7 +20,7 @@
         body {
             font-size: 16px;
         }
-        
+                
         header {
             display: flex;
             flex-direction: column;
@@ -40,6 +40,14 @@
             margin: 0 0 10px 0;
             padding-top: 100px;
             /*padding-bottom: 100px;*/
+        }
+        
+        .header-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         
         .mobile-break {
@@ -348,19 +356,21 @@
 </head>
 <body>
     <header>
-        <h1>
-            <span class="title-mobile-break">
-                No Fair Value, <span class="mobile-break">Just Bid and Ask</span>
-            </span>
-        </h1>
-        <p class="subtitle">モノのフェア・バリューは存在するか</p>
-        <p class="subtitle">存在するとして、それは一意か</p>
-        <p class="subtitle">一意であるとして、それはいつ実現するか</p>
-        <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
-        <p class="subtitle">&mdash; 経済学総則 &mdash;</p>
-        <div class="scroll-prompt">
-            <p>Scroll Down</p>
-            <p class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></p>
+        <div class="header-content">
+            <h1>
+                <span class="title-mobile-break">
+                    No Fair Value, <span class="mobile-break">Just Bid and Ask</span>
+                </span>
+            </h1>
+            <p class="subtitle">モノのフェア・バリューは存在するか</p>
+            <p class="subtitle">存在するとして、それは一意か</p>
+            <p class="subtitle">一意であるとして、それはいつ実現するか</p>
+            <p class="subtitle">そのようなものはない、という考えも悪くないでしょう</p>
+            <p class="subtitle">&mdash; 経済学総則 &mdash;</p>
+            <div class="scroll-prompt">
+                <p>Scroll Down</p>
+                <p class="arrow"><span class="material-symbols-outlined">keyboard_arrow_down</span></p>
+            </div>
         </div>
         <div class="nav-wrapper">
             <nav id="mainNav">
