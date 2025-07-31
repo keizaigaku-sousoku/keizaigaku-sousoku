@@ -18,22 +18,6 @@ window.MathJax = {
                     math.end = { node: text, delim: '', n: 0 };
                     doc.math.push(math);
                 });
-            }, ''],
-
-            wrap_long_display_math: [170, function (doc) {
-                setTimeout(() => {
-                    document.querySelectorAll('.mjx-container').forEach(container => {
-                        if (container.parentElement.classList.contains('math-container')) return;
-            
-                        const display = container.querySelector('.mjx-display');
-                        if (!display) return;
-            
-                        const wrapper = document.createElement('div');
-                        wrapper.className = 'math-container';
-                        container.replaceWith(wrapper);
-                        wrapper.appendChild(container);
-                    });
-                }, 0);
             }, '']
         }
     }
