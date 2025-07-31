@@ -123,16 +123,29 @@
             width: 100%;
         }
         
-        .nav-wrapper::after {
-            content: "";
+        .nav-fade-left,
+        .nav-fade-right {
             position: absolute;
             top: 0;
-            right: 0;
             width: 40px;
             height: 100%;
             pointer-events: none;
-            background: linear-gradient(to left, #3b2c45 0%, transparent 100%);
             z-index: 2;
+        }
+        
+        .nav-fade-left {
+            left: 0;
+            background: linear-gradient(to right, #3b2c45 0%, transparent 100%);
+        }
+        
+        .nav-fade-right {
+            right: 0;
+            background: linear-gradient(to left, #3b2c45 0%, transparent 100%);
+        }
+        
+        .nav-fade-left.hidden,
+        .nav-fade-right.hidden {
+            display: none;
         }
         
         .wrapper {
@@ -348,6 +361,8 @@
                 <a href="#">数学</a>
                 <a href="#">記号一覧</a>
             </nav>
+            <div class="nav-fade-left"></div>
+            <div class="nav-fade-right"></div>
         </div>
     </header>
 
@@ -450,29 +465,31 @@
     </script>
     <script>
         $(function () {
-            const wrapper = $('.nav-wrapper');
-            const nav = $('#mainNav');
-            const scrollIndicator = $('.nav-scroll-indicator');
-            const navTop = wrapper.offset().top;
-        
-            function checkScrollOverflow() {
-                if (nav[0].scrollWidth > nav.outerWidth()) {
-                    scrollIndicator.css('display', 'block');
+            const $nav = $('#mainNav');
+            const $fadeLeft = $('.nav-fade-left');
+            const $fadeRight = $('.nav-fade-right');
+    
+            function updateFade() {
+                const scrollLeft = $nav.scrollLeft();
+                const scrollWidth = $nav[0].scrollWidth;
+                const clientWidth = $nav[0].clientWidth;
+    
+                if (scrollLeft <= 0) {
+                    $fadeLeft.addClass('hidden');
                 } else {
-                    scrollIndicator.css('display', 'none');
+                    $fadeLeft.removeClass('hidden');
+                }
+    
+                if (scrollLeft + clientWidth >= scrollWidth - 1) {
+                    $fadeRight.addClass('hidden');
+                } else {
+                    $fadeRight.removeClass('hidden');
                 }
             }
-        
-            $(window).on('scroll', function () {
-                if ($(window).scrollTop() >= navTop) {
-                    wrapper.addClass('fixed-nav');
-                } else {
-                    wrapper.removeClass('fixed-nav');
-                }
-            });
-        
-            checkScrollOverflow();
-            $(window).on('resize', checkScrollOverflow);
+    
+            updateFade();
+            $nav.on('scroll', updateFade);
+            $(window).on('resize', updateFade);
         });
     </script>
 </body>
