@@ -148,6 +148,14 @@
             display: none;
         }
         
+        .fixed-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 998;
+        }
+        
         .wrapper {
             max-width: 800px;
             margin: 20px auto 20px;
@@ -447,27 +455,15 @@
         </div>
         <p>&copy; 2025 経済学総則. All rights reserved.</p>
     </footer>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function () {
-            const nav = $('#mainNav');
-            const navTop = nav.offset().top;
-
-            $(window).on('scroll', function () {
-                if ($(window).scrollTop() >= navTop) {
-                    nav.addClass('fixed-nav');
-                } else {
-                    nav.removeClass('fixed-nav');
-                }
-            });
-        });
-    </script>
-    <script>
-        $(function () {
             const $nav = $('#mainNav');
+            const $navWrapper = $('.nav-wrapper');
             const $fadeLeft = $('.nav-fade-left');
             const $fadeRight = $('.nav-fade-right');
+            const navTop = $nav.offset().top;
     
             function updateFade() {
                 const scrollLeft = $nav.scrollLeft();
@@ -486,6 +482,16 @@
                     $fadeRight.removeClass('hidden');
                 }
             }
+    
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() >= navTop) {
+                    $nav.addClass('fixed-nav');
+                    $navWrapper.addClass('fixed-wrapper');
+                } else {
+                    $nav.removeClass('fixed-nav');
+                    $navWrapper.removeClass('fixed-wrapper');
+                }
+            });
     
             updateFade();
             $nav.on('scroll', updateFade);
