@@ -18,24 +18,6 @@ window.MathJax = {
                     math.end = { node: text, delim: '', n: 0 };
                     doc.math.push(math);
                 });
-            }, ''],
-
-            add_math_container: [20, function (doc) {
-                setTimeout(() => {
-                    document.querySelectorAll('mjx-container[jax="CHTML"][display="true"]').forEach(container => {
-                        if (!container.parentElement.classList.contains('math-container')) {
-                            const wrapper = document.createElement('div');
-                            wrapper.classList.add('math-container');
-                            container.parentNode.insertBefore(wrapper, container);
-                            wrapper.appendChild(container);
-                        }
-
-                        const wrapper = container.parentElement;
-
-                        const needsScroll = container.scrollWidth > container.clientWidth + 1;
-                        wrapper.classList.add(needsScroll ? 'scrollable' : 'centered');
-                    });
-                }, 0); // MathJax描画完了後に実行
             }, '']
         }
     }
