@@ -276,7 +276,8 @@ h4 {
     position: absolute;
     bottom: 60px;
     right: 0;
-    background-color: rgba(73, 55, 89, 0.95);
+    background-color: #49375990;
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 8px 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
