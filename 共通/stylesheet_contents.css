@@ -203,6 +203,7 @@ h4 {
     top: 20px;
     background-color: #ffffff80;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 10;
     padding: 1rem 1.5rem;
     margin: 10px 0;
