@@ -1,3 +1,3 @@
 $(function() {
-    $("#footer-container").load("footer.html");
+    $("#footer-container").load("共通/footer.html");
 });
