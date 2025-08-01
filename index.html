@@ -169,7 +169,6 @@
             }
     
             p {
-                /*margin-bottom: 2rem;*/
                 line-height: 2;
                 color: #1D1D1F;
                 text-align: justify;
@@ -224,7 +223,6 @@
                 background-color: #493759;
                 color: #fff;
                 padding: 20px 10px;
-                /*margin-top: 60px;*/
                 font-size: 14px;
                 text-align: right;
             }
@@ -309,13 +307,7 @@
                 .nav-scroll-indicator {
                     right: 5px;
                 }
-                
-                .wrapper {
-                    /*width: 95%;*/
-                    /*padding: 0 10px;*/
-                    /*margin-top: 40px;*/
-                }
-    
+                    
                 .icon-section {
                     margin: 20px;
                 }
@@ -337,9 +329,8 @@
                 }
                 
                 footer p {
-                margin-right: 0px;
-            }
-    
+                    margin-right: 0px;
+                }
             }
         </style>
     </head>
@@ -461,7 +452,7 @@
                 const $navWrapper = $('.nav-wrapper');
                 const $fadeLeft = $('.nav-fade-left');
                 const $fadeRight = $('.nav-fade-right');
-                const navTop = $navWrapper.offset().top; // 重要：navではなくnavWrapperで取得
+                const navTop = $navWrapper.offset().top;
         
                 function updateFade() {
                     const scrollLeft = $nav.scrollLeft();
