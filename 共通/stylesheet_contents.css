@@ -201,7 +201,7 @@ h3 {
 h4 {
     position: sticky;
     top: 0;
-    background-color: #ffffff;
+    background-color: #ffffff90;
     backdrop-filter: blur(10px);
     z-index: 10;
     padding: 1rem 1.5rem;
