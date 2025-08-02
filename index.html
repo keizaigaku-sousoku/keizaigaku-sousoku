@@ -23,27 +23,34 @@
             header {
                 width: 100%;
                 height: 100vh;
-                /*background: linear-gradient(135deg, #493759F2, #F6C555CC);*/
-                background: linear-gradient(-45deg, #493759, #F6C555, #b176c7, #493759);
-                background-size: 600% 600%;
                 display: flex;
-                background-size: 400% 400%;
-                animation: gradientAnimation 16s ease infinite;
                 flex-direction: column;
                 align-items: center;
                 position: relative;
+                
+                background-image: 
+                    linear-gradient(135deg, #493759, #F6C555, #8B5FBF, #2D1E2F),
+                    linear-gradient(45deg, #F6C555, #493759, #8B5FBF, #2D1E2F);
+                
+                background-size: 400% 400%, 600% 600%;
+                background-blend-mode: overlay;
+                
+                animation: gradient1 20s ease-in-out infinite, gradient2 35s ease-in-out infinite;
             }
             
-            @keyframes gradientAnimation {
-                0% {
-                    background-position: 0% 50%;
-                }
-                50% {
-                    background-position: 100% 50%;
-                }
-                100% {
-                    background-position: 0% 50%;
-                }
+            @keyframes gradient1 {
+                0% { background-position: 0% 50%, 50% 50%; }
+                25% { background-position: 50% 0%, 60% 40%; }
+                50% { background-position: 100% 50%, 70% 60%; }
+                75% { background-position: 50% 100%, 40% 70%; }
+                100% { background-position: 0% 50%, 50% 50%; }
+            }
+            
+            @keyframes gradient2 {
+                0% { background-position: 50% 0%, 0% 0%; }
+                30% { background-position: 40% 40%, 100% 20%; }
+                60% { background-position: 60% 70%, 30% 100%; }
+                100% { background-position: 50% 0%, 0% 0%; }
             }
             
             .header-above {
