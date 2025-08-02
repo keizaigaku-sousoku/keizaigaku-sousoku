@@ -256,7 +256,9 @@ h4::before {
     width: 44px;
     height: 44px;
     border: none;
-    background-color: #493759;
+    background-color: #49375980;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -306,9 +308,10 @@ h4::before {
     position: absolute;
     bottom: 60px;
     right: 0;
-    background-color: #493759;
+    background-color: #49375980;
     backdrop-filter: blur(10px);
-    border-radius: 16px;
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
     padding: 8px 0;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     display: flex;
