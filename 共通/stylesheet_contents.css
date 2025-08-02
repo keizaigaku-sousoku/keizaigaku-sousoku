@@ -203,7 +203,7 @@ h2 {
 h3 {
     position: relative;
     padding: 1rem 2rem 1rem 1.5rem;
-    margin: 20px 0;
+    /*margin: 20px 0;*/
     font-size: 15px;
     color: #493759;
 }
