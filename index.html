@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>経済学総則</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <style>
@@ -13,24 +13,22 @@
                 padding: 0;
                 overflow-x: hidden;
                 font-family: 'Noto Sans JP', sans-serif;
-                /*background-color: #493759;*/
             }
     
             body {
                 font-size: 16px;
             }
-            
+    
             header {
                 width: 100%;
                 height: 100vh;
-                /*background: linear-gradient(135deg, #F6C555CC, #493759F2);*/
                 background: linear-gradient(135deg, #493759F2, #F6C555CC);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 position: relative;
             }
-            
+    
             .header-above {
                 width: 100%;
                 padding-bottom: 80px;
@@ -41,7 +39,7 @@
                 align-items: center;
                 gap: 50px;
             }
-            
+    
             header h1 {
                 font-family: 'Marcellus', serif;
                 font-size: 50px;
@@ -50,8 +48,8 @@
                 margin-bottom: 60px;
             }
     
-            .mobile-break {
-                display: inline;
+            .mobile-br {
+                display: none;
             }
     
             .subtitle {
@@ -60,7 +58,7 @@
                 color: #fff;
                 line-height: 1;
             }
-            
+    
             .subtitle-box {
                 display: flex;
                 flex-direction: column;
@@ -88,14 +86,10 @@
             }
     
             @keyframes bounce {
-                0%, 100% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-10px);
-                }
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
             }
-            
+    
             nav {
                 bottom: 0;
                 height: 80px;
@@ -109,23 +103,22 @@
                 gap: 30px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             }
-            
+    
             nav a {
-                color: #493759;/*#1D1D1F;#fff;*/
+                color: #493759;
                 padding: 8px 30px;
                 text-decoration: none;
                 border-radius: 5px;
                 font-size: 15px;
-                /*font-weight: 700;*/
                 transition: transform 0.3s, background-color 0.3s, color 0.3s;
             }
-            
+    
             nav a:hover {
-                background-color: #493759;/*#fff;*/
-                color: #fff;/*#493759;*/
+                background-color: #493759;
+                color: #fff;
                 transform: translateX(10px);
             }
-            
+    
             .nav-wrapper {
                 position: absolute;
                 bottom: 0;
@@ -133,34 +126,7 @@
                 width: 100%;
                 height: 80px;
             }
-
-            /*
-            .nav-fade-left,
-            .nav-fade-right {
-                position: absolute;
-                top: 0;
-                width: 60px;
-                height: 100%;
-                pointer-events: none;
-                z-index: 2;
-            }
-            
-            .nav-fade-left {
-                left: 0;
-                background: linear-gradient(to right, rgba(255, 255, 255, 0.6), transparent);
-            }
-            
-            .nav-fade-right {
-                right: 0;
-                background: linear-gradient(to left, rgba(255, 255, 255, 0.6), transparent);
-            }           
-            
-            .nav-fade-left.hidden,
-            .nav-fade-right.hidden {
-                display: none;
-            }
-            */
-            
+    
             .fixed-wrapper {
                 position: fixed;
                 top: 0;
@@ -168,7 +134,7 @@
                 width: 100%;
                 z-index: 999;
             }
-            
+    
             .wrapper {
                 width: 100%;
                 background-color: #f5f5f7;
@@ -201,7 +167,7 @@
                 border-radius: 12px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-            
+    
             .icon-section {
                 max-width: 800px;
                 display: flex;
@@ -212,33 +178,32 @@
                 border-radius: 12px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-            
+    
             .icon-box {
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
-            
+    
             .icon-box .material-symbols-outlined {
                 font-size: 100px;
                 color: #493759;
-                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             }
-            
+    
             .text-box h2 {
                 margin: 0 0 10px 0;
                 font-size: 24px;
                 color: #493759;
                 font-family: 'Kaisei Opti', serif;
             }
-            
+    
             .text-box p {
                 margin: 0;
                 line-height: 2;
                 color: #1D1D1F;
                 text-align: justify;
             }
-            
+    
             footer {
                 background-color: #493759;
                 color: #fff;
@@ -246,14 +211,14 @@
                 font-size: 14px;
                 text-align: right;
             }
-            
+    
             footer p {
                 color: #fff;
                 text-align: right;
                 margin-top: 10px;
                 margin-right: 20px;
             }
-            
+    
             .footer-socials {
                 display: flex;
                 justify-content: flex-end;
@@ -262,62 +227,50 @@
                 padding-right: 20px;
                 padding-bottom: 20px;
             }
-            
+    
             .footer-socials a {
                 color: #fff;
                 font-size: 28px;
                 text-decoration: none;
                 transition: transform 0.3s;
             }
-            
+    
             .footer-socials a:hover {
                 transform: scale(1.2);
             }
-            
+    
             @media (max-width: 768px) {
                 body {
                     font-size: 18px;
                 }
-                
+    
                 header {
-                    height: 100svh; /*90vh;*/
+                    height: 100svh;
                 }
-                
+    
                 header h1 {
                     font-size: 45px;
                     text-align: left;
                     margin-bottom: 30px;
                 }
-                
+    
                 .header-above {
-                    /*flex-grow: 0;*/
                     gap: 20px;
-                    /*padding-bottom: 20px;*/
-                }
-                
-                .mobile-break {
-                    display: block;
                 }
     
                 .subtitle {
                     font-size: 15px;
-                    /*line-height: 1.4;*/
                 }
-                
+    
                 .subtitle-box {
                     height: auto;
                 }
-
+    
                 .scroll-prompt {
                     font-size: 13px;
                 }
-                
-                .scroll-prompt p {
-                    margin: 0;
-                }
-                                
+    
                 nav {
-                    /*height: 80px;*/
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
@@ -336,22 +289,17 @@
                     padding: 8px 16px;
                     flex-shrink: 0;
                 }
-                
-                .nav-scroll-indicator {
-                    right: 5px;
-                }
-                    
+    
                 .icon-section {
-                    /*margin: 20px;*/
                     width: 100vw;
                     box-sizing: border-box;
                     border-radius: 0px;
                 }
-                
+    
                 .icon-box .material-symbols-outlined {
                     font-size: 40px;
                 }
-                
+    
                 h2 {
                     font-size: 22px;
                 }
@@ -359,13 +307,17 @@
                 p {
                     font-size: 16px;
                 }
-                            
+    
                 footer {
                     font-size: 13px;
                 }
-                
+    
                 footer p {
                     margin-right: 0px;
+                }
+    
+                .mobile-br {
+                    display: inline;
                 }
             }
         </style>
@@ -374,9 +326,7 @@
         <header>
             <div class="header-above">
                 <h1>
-                    <span class="title-mobile-break">
-                        No Fair Value, <span class="mobile-break">Just Bid and Ask</span>
-                    </span>
+                    No Fair Value,<br class="mobile-br">Just Bid and Ask
                 </h1>
                 <div class="subtitle-box">
                     <p class="subtitle">モノのフェア・バリューは存在するか</p>
@@ -398,8 +348,6 @@
                     <a href="#">数学</a>
                     <a href="#">記号一覧</a>
                 </nav>
-                <div class="nav-fade-left"></div>
-                <div class="nav-fade-right"></div>
             </div>
         </header>
     
@@ -469,7 +417,7 @@
                 </section>
     
         </div>
-        
+    
         <footer>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/in/春樹-坂田-4453b3358/" target="_blank" aria-label="LinkedIn">
@@ -486,33 +434,12 @@
         </footer>
     
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
         <script>
             $(function () {
                 const $nav = $('#mainNav');
                 const $navWrapper = $('.nav-wrapper');
-                const $fadeLeft = $('.nav-fade-left');
-                const $fadeRight = $('.nav-fade-right');
                 const navTop = $navWrapper.offset().top;
-        
-                function updateFade() {
-                    const scrollLeft = $nav.scrollLeft();
-                    const scrollWidth = $nav[0].scrollWidth;
-                    const clientWidth = $nav[0].clientWidth;
-        
-                    if (scrollLeft <= 0) {
-                        $fadeLeft.addClass('hidden');
-                    } else {
-                        $fadeLeft.removeClass('hidden');
-                    }
-        
-                    if (scrollLeft + clientWidth >= scrollWidth - 1) {
-                        $fadeRight.addClass('hidden');
-                    } else {
-                        $fadeRight.removeClass('hidden');
-                    }
-                }
-        
+    
                 $(window).on('scroll', function () {
                     if ($(window).scrollTop() >= navTop) {
                         $navWrapper.addClass('fixed-wrapper');
@@ -520,10 +447,6 @@
                         $navWrapper.removeClass('fixed-wrapper');
                     }
                 });
-        
-                updateFade();
-                $nav.on('scroll', updateFade);
-                $(window).on('resize', updateFade);
             });
         </script>
     </body>
