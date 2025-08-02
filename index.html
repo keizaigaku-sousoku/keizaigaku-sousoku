@@ -37,20 +37,88 @@
                 
                 animation: gradient1 20s ease-in-out infinite, gradient2 35s ease-in-out infinite;
             }
-            
-            @keyframes gradient1 {
-                0% { background-position: 0% 50%, 50% 50%; }
-                25% { background-position: 50% 0%, 60% 40%; }
-                50% { background-position: 100% 50%, 70% 60%; }
-                75% { background-position: 50% 100%, 40% 70%; }
-                100% { background-position: 0% 50%, 50% 50%; }
+
+            .floating-particles {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 0; /* 他の要素の下に */
             }
             
-            @keyframes gradient2 {
-                0% { background-position: 50% 0%, 0% 0%; }
-                30% { background-position: 40% 40%, 100% 20%; }
-                60% { background-position: 60% 70%, 30% 100%; }
-                100% { background-position: 50% 0%, 0% 0%; }
+            .floating-particles span {
+                position: absolute;
+                display: block;
+                width: 60px;
+                height: 60px;
+                background: radial-gradient(circle, #F6C555, #493759);
+                border-radius: 50%;
+                opacity: 0.2;
+                filter: blur(20px);
+                animation: float 20s linear infinite;
+            }
+            
+            /* 各点にランダムな初期位置とアニメーション速度を */
+            .floating-particles span:nth-child(1) {
+                top: 10%;
+                left: 20%;
+                animation-duration: 25s;
+            }
+            .floating-particles span:nth-child(2) {
+                top: 70%;
+                left: 15%;
+                animation-duration: 18s;
+            }
+            .floating-particles span:nth-child(3) {
+                top: 40%;
+                left: 60%;
+                animation-duration: 22s;
+            }
+            .floating-particles span:nth-child(4) {
+                top: 80%;
+                left: 70%;
+                animation-duration: 30s;
+            }
+            .floating-particles span:nth-child(5) {
+                top: 20%;
+                left: 80%;
+                animation-duration: 26s;
+            }
+            .floating-particles span:nth-child(6) {
+                top: 55%;
+                left: 35%;
+                animation-duration: 19s;
+            }
+            .floating-particles span:nth-child(7) {
+                top: 65%;
+                left: 50%;
+                animation-duration: 23s;
+            }
+            .floating-particles span:nth-child(8) {
+                top: 30%;
+                left: 25%;
+                animation-duration: 21s;
+            }
+            
+            /* ランダム風な動き（左右＆上下） */
+            @keyframes float {
+                0% {
+                    transform: translate(0, 0) scale(1);
+                }
+                25% {
+                    transform: translate(20px, -30px) scale(1.2);
+                }
+                50% {
+                    transform: translate(-15px, 20px) scale(0.9);
+                }
+                75% {
+                    transform: translate(10px, -25px) scale(1.1);
+                }
+                100% {
+                    transform: translate(0, 0) scale(1);
+                }
             }
             
             .header-above {
@@ -422,6 +490,16 @@
                 </nav>
                 <div class="nav-fade-left"></div>
                 <div class="nav-fade-right"></div>
+            </div>
+            <div class="floating-particles">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </header>
     
