@@ -101,7 +101,8 @@ a:visited {
 .part-title {
     font-size: 15px;
     color: #493759;
-    border-bottom: 2px solid #493759;
+    /*border-bottom: 2px solid #493759;*/
+    border-bottom: linear-gradient(0deg, #493759F2, #F6C555CC);
     padding-bottom: 5px;
     margin-bottom: 15px;
     text-align: center;
