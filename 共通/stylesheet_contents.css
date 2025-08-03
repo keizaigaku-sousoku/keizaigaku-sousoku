@@ -19,7 +19,8 @@ body, p, a, .part, .theorem-tile, .proof, .comment-box {
 }
 
 h1, h2 {
-    font-family: 'Kaisei Opti', serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    /*font-family: 'Kaisei Opti', serif;*/
 }
 
 header {
