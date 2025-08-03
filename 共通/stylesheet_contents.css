@@ -213,13 +213,13 @@ main {
 .comment-box::before {
   content: "“";
   text-align: left;
-  margin-bottom: 12px;
+  margin-bottom: -20px;
 }
 
 .comment-box::after {
   content: "”";
   text-align: right;
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .comment-box p {
