@@ -381,5 +381,6 @@ h4::before {
     
     .comment-box {
         margin: 10px;
+        padding: 10px;
     }
 }
