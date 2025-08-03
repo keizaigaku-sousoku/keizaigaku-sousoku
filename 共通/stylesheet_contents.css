@@ -64,6 +64,7 @@ h2 {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
+    display: inline-block;
     background: linear-gradient(135deg, #7f1184f2, #004898cc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
