@@ -203,7 +203,10 @@ a:visited {
 h2 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #004898;/*#7f1184;*/
+    /*color: #7f1184;*/
+    background: linear-gradient(0deg, #7f1184, #004898);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
 }
 
