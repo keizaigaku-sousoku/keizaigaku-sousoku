@@ -203,9 +203,8 @@ main {
 .comment-box::after {
   content: "";
   font-family: 'Georgia', serif;
-  font-size: 40px;
+  font-size: 80px;
   color: #004898;
-  opacity: 0.6;
   display: block;
   line-height: 1;
   width: 100%;
