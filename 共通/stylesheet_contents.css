@@ -6,11 +6,11 @@
 
 html, body {
     width: 100%;
+    height: 100vh;
     margin: 0;
     overflow-x: hidden;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 15px;
-    height: 100vh;
     background-color: #f5f5f7;
 }
 
@@ -18,11 +18,7 @@ body, p, a, .part, .theorem-tile, .proof, .comment-box {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-h1, h2 {
-    font-family: 'Noto Sans JP', sans-serif;
-    /*font-family: 'Kaisei Opti', serif;*/
-}
-
+/* Header */
 header {
     width: 100%;
     position: relative;
@@ -42,12 +38,7 @@ header h2 {
     color: #1d1d1f;
 }
 
-main {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
+/* Typography */
 p {
     text-align: justify;
     font-size: 15px;
@@ -61,10 +52,55 @@ a:visited {
 }
 
 .new-word {
-    color: #004898;/*#7f1184;*/
+    color: #004898;
     font-weight: 700;
 }
 
+h1, h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #7f1184f2, #004898cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    position: relative;
+    padding: 1rem 2rem 1rem 1.5rem;
+    font-size: 15px;
+    color: #7f1184;
+}
+
+h4 {
+    position: sticky;
+    top: 20px;
+    background-color: #ffffff80;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10;
+    padding: 1rem 1.5rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #7f1184;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #7f1184;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* TOC */
 .toc-container {
     display: block;
     max-width: 1200px;
@@ -89,57 +125,60 @@ a:visited {
     transform: translateX(10px);
 }
 
+/* Part block */
 .part {
     color: #7f1184;
     padding: 20px;
     margin: 0 auto 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    max-width: 500px;
     background-color: #fff;
+    max-width: 500px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
 .part-title {
     font-size: 15px;
     color: #7f1184;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
     text-align: center;
     position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
     border-bottom: 2px solid #7f1184;
+}
+
+/* Theorem / Proof */
+.theorem-tile, .proof {
+    font-size: 15px;
+    letter-spacing: 0.025em;
+    line-height: 2;
 }
 
 .theorem-tile {
     background-color: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     margin: 0 auto 20px;
     max-width: 1200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
-.theorem-tile .title,
-.proof .title {
+.theorem-tile .title {
     font-weight: bold;
     color: #7f1184;
     margin-bottom: 10px;
     text-align: left;
 }
 
-.proof .title {
-    color: #004898;
-}
-
-.theorem-tile p,
-.proof {
-    font-size: 15px;
-    letter-spacing: 0.025em;
-    line-height: 2;
-}
-
 .proof {
     margin-bottom: 20px;
     background-color: #f5f5f7;
+}
+
+.proof .title {
+    font-weight: bold;
+    color: #004898;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .proof .end-symbol {
@@ -150,16 +189,12 @@ a:visited {
     margin-top: 10px;
 }
 
+/* Comment Box */
 .comment-box {
     position: relative;
     padding: 40px;
-    /*background: #f9f6fb;*/
-    /*border-radius: 8px;*/
-    /*font-family: 'Noto Sans JP', sans-serif;*/
-    /*color: #333;*/
     max-width: 1000px;
     margin: 20px auto;
-    /*box-shadow: 0 0 10px rgba(127, 17, 132, 0.15);*/
 }
 
 .comment-box:before,
@@ -190,79 +225,16 @@ a:visited {
     position: relative;
     margin: 0;
     z-index: 1;
-    /*font-size: 17px;*/
-    /*line-height: 1.8;*/
 }
 
+/* Math */
 .math-container {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
 }
 
-h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    /*color: #7f1184;*/
-    background: linear-gradient(135deg, #7f1184f2, #004898cc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-
-h3 {
-    position: relative;
-    padding: 1rem 2rem 1rem 1.5rem;
-    /*margin: 20px 0;*/
-    font-size: 15px;
-    color: #7f1184;
-}
-
-h4 {
-    position: sticky;
-    top: 20px;
-    background-color: #ffffff80;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 10;
-    padding: 1rem 1.5rem;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: #7f1184;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #7f1184;
-}
-
-/*
-h4 {
-  position: sticky;
-  top: 20px;
-  background-color: #ffffff80;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 10;
-  padding: 15px 25px 15px 20px;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #7f1184;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-h4::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(135deg, #7f1184F2, #F6C555CC);
-}
-*/
-
+/* Floating Nav Toggle */
 .nav-toggle-container {
     position: fixed;
     bottom: 20px;
@@ -271,19 +243,18 @@ h4::before {
 }
 
 .nav-toggle {
-    position: relative;
     width: 44px;
     height: 44px;
     border: none;
+    border-radius: 50%;
     background-color: #ffffff80;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     padding: 0;
 }
 
@@ -293,36 +264,21 @@ h4::before {
     top: 50%;
     width: 22px;
     height: 2px;
-    background-color: #7f1184;/*white;*/
+    background-color: #7f1184;
     border-radius: 1px;
     transform-origin: center;
     transition: all 0.3s ease;
 }
 
-.nav-toggle span:nth-child(1) {
-    transform: translate(-50%, -8px) rotate(0deg);
-}
+.nav-toggle span:nth-child(1) { transform: translate(-50%, -8px); }
+.nav-toggle span:nth-child(2) { transform: translate(-50%, 0); }
+.nav-toggle span:nth-child(3) { transform: translate(-50%, 8px); }
 
-.nav-toggle span:nth-child(2) {
-    transform: translate(-50%, 0px) rotate(0deg);
-}
+.nav-toggle.open span:nth-child(1) { transform: translate(-50%, 0) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translate(-50%, 0) rotate(-45deg); }
 
-.nav-toggle span:nth-child(3) {
-    transform: translate(-50%, 8px) rotate(0deg);
-}
-
-.nav-toggle.open span:nth-child(1) {
-    transform: translate(-50%, 0px) rotate(45deg);
-}
-
-.nav-toggle.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav-toggle.open span:nth-child(3) {
-    transform: translate(-50%, 0px) rotate(-45deg);
-}
-
+/* Nav Menu */
 .nav-menu {
     position: absolute;
     bottom: 60px;
@@ -351,12 +307,12 @@ h4::before {
 #nav-menu a {
     display: block;
     padding: 10px 24px;
-    color: #7f1184;/*white;*/
+    color: #7f1184;
     text-decoration: none;
     font-size: 15px;
     letter-spacing: 0.4px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
     line-height: 1.4;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #nav-menu a:hover {
@@ -365,22 +321,21 @@ h4::before {
 }
 
 .nav-divider {
-    border: none;
-    /*border-top: 1px solid rgba(255, 255, 255, 0.5);*/
     border-top: 1px solid #7f1184;
     margin: 6px 0;
     width: 80%;
     align-self: center;
 }
 
+/* Responsive */
 @media (min-width: 1024px) {
     .toc-container {
         padding-left: 50px;
         padding-right: 50px;
     }
-    
+
     .comment-box {
         margin: 10px;
-        padding: 0px;
+        padding: 0;
     }
 }
