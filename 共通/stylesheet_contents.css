@@ -152,7 +152,7 @@ a:visited {
 
 .comment-box {
     position: relative;
-    padding: 40px 40px;
+    padding: 40px;
     /*background: #f9f6fb;*/
     /*border-radius: 8px;*/
     /*font-family: 'Noto Sans JP', sans-serif;*/
@@ -377,5 +377,9 @@ h4::before {
     .toc-container {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    
+    .comment-box {
+        margin: 10px;
     }
 }
