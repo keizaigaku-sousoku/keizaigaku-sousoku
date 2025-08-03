@@ -72,7 +72,7 @@ a:visited {
 }
 
 .toc-container a {
-    color: #1d1d1f;/*#7f1184;*/
+    color: #9cc5e6;/*#7f1184;*/
     text-decoration: none;
     display: block;
     font-size: 15px;
@@ -83,8 +83,8 @@ a:visited {
 }
 
 .toc-container a:hover {
-    background-color: #898989;/*#7f1184;*/
-    color: white;
+    background-color: #9cc5e6;/*#7f1184;*/
+    color: #fff;
     transform: translateX(10px);
 }
 
