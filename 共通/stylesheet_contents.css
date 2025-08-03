@@ -60,7 +60,7 @@ a:visited {
 }
 
 .new-word {
-    color: #493759;
+    color: #7f1184;
     font-weight: 700;
 }
 
@@ -72,7 +72,7 @@ a:visited {
 }
 
 .toc-container a {
-    color: #1d1d1f;/*#493759;*/
+    color: #1d1d1f;/*#7f1184;*/
     text-decoration: none;
     display: block;
     font-size: 15px;
@@ -83,13 +83,13 @@ a:visited {
 }
 
 .toc-container a:hover {
-    background-color: #898989;/*#493759;*/
+    background-color: #898989;/*#7f1184;*/
     color: white;
     transform: translateX(10px);
 }
 
 .part {
-    color: #493759;
+    color: #7f1184;
     padding: 20px;
     margin: 0 auto 40px;
     border-radius: 12px;
@@ -100,12 +100,12 @@ a:visited {
 
 .part-title {
     font-size: 15px;
-    color: #493759;
+    color: #7f1184;
     padding-bottom: 5px;
     margin-bottom: 15px;
     text-align: center;
     position: relative;
-    border-bottom: 2px solid #493759;
+    border-bottom: 2px solid #7f1184;
 }
 
 .theorem-tile {
@@ -120,7 +120,7 @@ a:visited {
 .theorem-tile .title,
 .proof .title {
     font-weight: bold;
-    color: #493759;
+    color: #7f1184;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -141,7 +141,7 @@ a:visited {
     display: block;
     text-align: right;
     font-size: 15px;
-    color: #493759;
+    color: #7f1184;
     margin-top: 10px;
 }
 
@@ -160,15 +160,15 @@ a:visited {
 }
 
 .comment-box:before {
-    border-left: solid 1px #493759;
-    border-top: solid 1px #493759;
+    border-left: solid 1px #7f1184;
+    border-top: solid 1px #7f1184;
     top: 0;
     left: 0;
 }
 
 .comment-box:after {
-    border-right: solid 1px #493759;
-    border-bottom: solid 1px #493759;
+    border-right: solid 1px #7f1184;
+    border-bottom: solid 1px #7f1184;
     bottom: 0;
     right: 0;
 }
@@ -187,7 +187,7 @@ a:visited {
 h2 {
     font-size: 28px;
     margin-bottom: 20px;
-    color: #493759;
+    color: #7f1184;
     text-align: center;
 }
 
@@ -196,7 +196,7 @@ h3 {
     padding: 1rem 2rem 1rem 1.5rem;
     /*margin: 20px 0;*/
     font-size: 15px;
-    color: #493759;
+    color: #7f1184;
 }
 
 h4 {
@@ -211,9 +211,9 @@ h4 {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: #493759;
+    color: #7f1184;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #493759;
+    border-left: 5px solid #7f1184;
 }
 
 /*
@@ -229,7 +229,7 @@ h4 {
   display: flex;
   align-items: center;
   font-size: 15px;
-  color: #493759;
+  color: #7f1184;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -240,7 +240,7 @@ h4::before {
   left: 0;
   width: 5px;
   height: 100%;
-  background: linear-gradient(135deg, #493759F2, #F6C555CC);
+  background: linear-gradient(135deg, #7f1184F2, #F6C555CC);
 }
 */
 
@@ -274,7 +274,7 @@ h4::before {
     top: 50%;
     width: 22px;
     height: 2px;
-    background-color: #493759;/*white;*/
+    background-color: #7f1184;/*white;*/
     border-radius: 1px;
     transform-origin: center;
     transition: all 0.3s ease;
@@ -332,7 +332,7 @@ h4::before {
 #nav-menu a {
     display: block;
     padding: 10px 24px;
-    color: #493759;/*white;*/
+    color: #7f1184;/*white;*/
     text-decoration: none;
     font-size: 15px;
     letter-spacing: 0.4px;
@@ -348,7 +348,7 @@ h4::before {
 .nav-divider {
     border: none;
     /*border-top: 1px solid rgba(255, 255, 255, 0.5);*/
-    border-top: 1px solid #493759;
+    border-top: 1px solid #7f1184;
     margin: 6px 0;
     width: 80%;
     align-self: center;
