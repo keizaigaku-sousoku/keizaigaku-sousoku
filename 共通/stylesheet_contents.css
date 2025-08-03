@@ -125,6 +125,10 @@ a:visited {
     text-align: left;
 }
 
+.proof .title {
+    color: #004898;
+}
+
 .theorem-tile p,
 .proof {
     font-size: 15px;
@@ -141,7 +145,7 @@ a:visited {
     display: block;
     text-align: right;
     font-size: 15px;
-    color: #7f1184;
+    color: #004898;
     margin-top: 10px;
 }
 
