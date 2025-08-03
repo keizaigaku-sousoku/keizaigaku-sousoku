@@ -324,10 +324,11 @@ main {
 }
 
 .nav-divider {
-    border-top: 1px solid #7f1184;
-    margin: 6px 0;
-    width: 80%;
-    align-self: center;
+  height: 2px;
+  background-color: #7f1184;
+  width: 80%;
+  margin: 12px auto;
+  border: none;
 }
 
 /* Responsive */
