@@ -331,7 +331,7 @@ main {
 }
 
 /* Responsive */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .toc-container {
         padding-left: 50px;
         padding-right: 50px;
