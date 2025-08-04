@@ -344,6 +344,11 @@ main {
 
 /* Responsive */
 @media (max-width: 768px) {
+    main {
+    padding: 5px;
+    width: 100%;
+    }
+    
     .toc-container {
         padding-left: 50px;
         padding-right: 50px;
