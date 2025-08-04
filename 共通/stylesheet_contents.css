@@ -318,8 +318,9 @@ main {
 }
 
 #nav-menu a:hover {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
-    transform: translateX(4px);
+    background-color: #7f1184;
+    color: #fff;
+    transform: translateX(10px);
 }
 
 .nav-divider {
