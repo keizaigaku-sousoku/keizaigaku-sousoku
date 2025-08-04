@@ -515,44 +515,51 @@
             };
         
             async function fetchIndex(symbol, label) {
-                const res = await fetch(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${symbol}`, options);
+                const url = `https://yahoo-finance15.p.rapidapi.com/api/yahoo/hi/history/${symbol}/1d`; // ← reliable endpoint
+                const res = await fetch(url, options);
                 const data = await res.json();
-                return parseFloat(data.price.regularMarketPrice).toFixed(2);
+        
+                if (!data.items || !data.items[0] || !data.items[0].close) {
+                    throw new Error(`${label} データなし`);
+                }
+        
+                return parseFloat(data.items[0].close).toFixed(2);
             }
         
             async function updateAllIndexes() {
-                const today = new Date().toISOString().split("T")[0]; // yyyy-mm-dd
+                const today = new Date().toISOString().split("T")[0];
         
                 const lastUpdate = localStorage.getItem("economicDataLastUpdate");
                 if (lastUpdate === today) {
-                    // 既に更新済み → 保存されたデータを使う
                     const cached = JSON.parse(localStorage.getItem("economicDataCache") || "{}");
-                    if (cached.tokyo) document.getElementById("tokyo-data").textContent = cached.tokyo;
-                    if (cached.ny) document.getElementById("ny-data").textContent = cached.ny;
-                    if (cached.london) document.getElementById("london-data").textContent = cached.london;
-                    if (cached.hk) document.getElementById("hk-data").textContent = cached.hk;
+                    document.getElementById("tokyo-data").textContent = cached.tokyo || "取得失敗";
+                    document.getElementById("ny-data").textContent = cached.ny || "取得失敗";
+                    document.getElementById("london-data").textContent = cached.london || "取得失敗";
+                    document.getElementById("hk-data").textContent = cached.hk || "取得失敗";
                     return;
                 }
         
-                // 新規取得
                 try {
-                    const tokyo = `日経平均: ${await fetchIndex("^N225", "日経平均")}`;
-                    const ny    = `ダウ平均: ${await fetchIndex("^DJI", "ダウ平均")}`;
-                    const london= `FTSE100: ${await fetchIndex("^FTSE", "FTSE100")}`;
-                    const hk    = `ハンセン: ${await fetchIndex("^HSI", "ハンセン")}`;
+                    const tokyo  = `日経平均: ${await fetchIndex("^N225", "日経平均")}`;
+                    const ny     = `ダウ平均: ${await fetchIndex("^DJI", "ダウ平均")}`;
+                    const london = `FTSE100: ${await fetchIndex("^FTSE", "FTSE100")}`;
+                    const hk     = `ハンセン: ${await fetchIndex("^HSI", "ハンセン")}`;
         
                     document.getElementById("tokyo-data").textContent = tokyo;
                     document.getElementById("ny-data").textContent = ny;
                     document.getElementById("london-data").textContent = london;
                     document.getElementById("hk-data").textContent = hk;
         
-                    // キャッシュに保存
                     localStorage.setItem("economicDataLastUpdate", today);
                     localStorage.setItem("economicDataCache", JSON.stringify({
                         tokyo, ny, london, hk
                     }));
                 } catch (err) {
                     console.error("経済指標取得エラー:", err);
+                    document.getElementById("tokyo-data").textContent = "取得失敗";
+                    document.getElementById("ny-data").textContent = "取得失敗";
+                    document.getElementById("london-data").textContent = "取得失敗";
+                    document.getElementById("hk-data").textContent = "取得失敗";
                 }
             }
         
