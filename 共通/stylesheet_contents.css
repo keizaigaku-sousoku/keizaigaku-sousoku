@@ -213,7 +213,7 @@ main {
 .comment-box::before {
   content: "“";
   text-align: left;
-  margin-bottom: -20px;
+  margin-bottom: -40px;
 }
 
 .comment-box::after {
@@ -222,14 +222,12 @@ main {
   margin-top: 10px;
 }
 
-/*
 .comment-box p {
-  line-height: 30px;
-  margin: 0;
-  position: relative;
-  z-index: 1;
+  /*line-height: 30px;*/
+  margin: 20px;
+  /*position: relative;*/
+  /*z-index: 1;*/
 }
-*/
 
 /* Math */
 .math-container {
@@ -341,7 +339,6 @@ main {
 
     .comment-box {
         margin: 0px;
-        padding: 0px;
     }
     
     .comment-box p {
