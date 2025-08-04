@@ -133,7 +133,7 @@ main {
 /* Part block */
 .part {
     color: #7f1184;
-    /*padding: 20px;*/
+    padding: 20px;
     /*margin: 0 auto 40px;*/
     border-radius: 12px;
     background-color: #fff;
