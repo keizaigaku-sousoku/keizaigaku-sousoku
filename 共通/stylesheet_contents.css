@@ -339,9 +339,11 @@ main {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /*
     .part {
         width: 500px;
     }
+    */
     
     main {
     padding: 20px;
@@ -349,8 +351,9 @@ main {
     }
     
     .toc-container {
-        padding-left: 50px;
-        padding-right: 50px;
+        width: 90%;
+        /*padding-left: 50px;*/
+        /*padding-right: 50px;*/
     }
 
     .comment-box {
