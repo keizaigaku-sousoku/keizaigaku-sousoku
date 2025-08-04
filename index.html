@@ -515,7 +515,7 @@
             };
         
             async function fetchIndex(symbol, label) {
-                const url = `https://yahoo-finance15.p.rapidapi.com/api/yahoo/hi/history/${symbol}/1d`; // ← reliable endpoint
+                const url = 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/hi/history/${symbol}/1d'; // ← reliable endpoint
                 const res = await fetch(url, options);
                 const data = await res.json();
         
