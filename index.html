@@ -308,6 +308,40 @@
                     padding: 8px 16px;
                     flex-shrink: 0;
                 }
+                .map-section {
+                    background: #fff;
+                    padding: 40px 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .world-map {
+                    position: relative;
+                    width: 100%;
+                    max-width: 1000px;
+                    aspect-ratio: 2 / 1;
+                    background-color: #f5f5f5;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                }
+                
+                .world-map img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .city-data {
+                    position: absolute;
+                    background-color: rgba(127, 17, 132, 0.85);
+                    color: white;
+                    padding: 6px 10px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-family: 'Noto Sans JP', sans-serif;
+                }
     
                 .icon-section {
                     width: 100vw;
@@ -371,6 +405,16 @@
         </header>
     
         <div class="wrapper">
+            <div class="map-section">
+                <div class="world-map">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map">
+                    <div class="city-data" style="top: 40%; left: 65%;">Tokyo: <span id="tokyo-data">Loading...</span></div>
+                    <div class="city-data" style="top: 30%; left: 30%;">New York: <span id="ny-data">Loading...</span></div>
+                    <div class="city-data" style="top: 25%; left: 55%;">London: <span id="london-data">Loading...</span></div>
+                    <div class="city-data" style="top: 45%; left: 80%;">Hong Kong: <span id="hk-data">Loading...</span></div>
+                </div>
+            </div>
+            
             <div class="chapter-title">
                 <h2>FUNDAMENTALS</h2>
             </div>
@@ -460,7 +504,38 @@
             </div>
             <p>&copy; 2025 経済学総則. All rights reserved.</p>
         </footer>
-    
+
+        <script>
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '0369e19b85msh60ff201791cb967p199630jsne2328c0d2d01',
+                    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
+                }
+            };
+        
+            async function fetchIndex(symbol, elementId, label) {
+                try {
+                    const res = await fetch(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${symbol}`, options);
+                    const data = await res.json();
+                    const price = parseFloat(data.price.regularMarketPrice).toFixed(2);
+                    document.getElementById(elementId).textContent = `${label}: ${price}`;
+                } catch (err) {
+                    console.error(err);
+                    document.getElementById(elementId).textContent = `${label}: error`;
+                }
+            }
+        
+            function updateAllIndexes() {
+                fetchIndex('^N225', 'tokyo-data', '日経平均');
+                fetchIndex('^DJI', 'ny-data', 'ダウ平均');
+                fetchIndex('^FTSE', 'london-data', 'FTSE100');
+                fetchIndex('^HSI', 'hk-data', 'ハンセン');
+            }
+        
+            window.onload = updateAllIndexes;
+            setInterval(updateAllIndexes, 60000); // 1分ごと更新
+        </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(function () {
