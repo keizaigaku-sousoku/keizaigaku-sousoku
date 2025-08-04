@@ -325,7 +325,7 @@ main {
 .nav-divider {
   height: 1px;
   background-color: #7f1184;
-  width: 80%;
+  width: 100%;
   margin: 12px auto;
   border: none;
 }
