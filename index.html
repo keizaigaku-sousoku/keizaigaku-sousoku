@@ -514,27 +514,49 @@
                 }
             };
         
-            async function fetchIndex(symbol, elementId, label) {
+            async function fetchIndex(symbol, label) {
+                const res = await fetch(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${symbol}`, options);
+                const data = await res.json();
+                return parseFloat(data.price.regularMarketPrice).toFixed(2);
+            }
+        
+            async function updateAllIndexes() {
+                const today = new Date().toISOString().split("T")[0]; // yyyy-mm-dd
+        
+                const lastUpdate = localStorage.getItem("economicDataLastUpdate");
+                if (lastUpdate === today) {
+                    // 既に更新済み → 保存されたデータを使う
+                    const cached = JSON.parse(localStorage.getItem("economicDataCache") || "{}");
+                    if (cached.tokyo) document.getElementById("tokyo-data").textContent = cached.tokyo;
+                    if (cached.ny) document.getElementById("ny-data").textContent = cached.ny;
+                    if (cached.london) document.getElementById("london-data").textContent = cached.london;
+                    if (cached.hk) document.getElementById("hk-data").textContent = cached.hk;
+                    return;
+                }
+        
+                // 新規取得
                 try {
-                    const res = await fetch(`https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${symbol}`, options);
-                    const data = await res.json();
-                    const price = parseFloat(data.price.regularMarketPrice).toFixed(2);
-                    document.getElementById(elementId).textContent = `${label}: ${price}`;
+                    const tokyo = `日経平均: ${await fetchIndex("^N225", "日経平均")}`;
+                    const ny    = `ダウ平均: ${await fetchIndex("^DJI", "ダウ平均")}`;
+                    const london= `FTSE100: ${await fetchIndex("^FTSE", "FTSE100")}`;
+                    const hk    = `ハンセン: ${await fetchIndex("^HSI", "ハンセン")}`;
+        
+                    document.getElementById("tokyo-data").textContent = tokyo;
+                    document.getElementById("ny-data").textContent = ny;
+                    document.getElementById("london-data").textContent = london;
+                    document.getElementById("hk-data").textContent = hk;
+        
+                    // キャッシュに保存
+                    localStorage.setItem("economicDataLastUpdate", today);
+                    localStorage.setItem("economicDataCache", JSON.stringify({
+                        tokyo, ny, london, hk
+                    }));
                 } catch (err) {
-                    console.error(err);
-                    document.getElementById(elementId).textContent = `${label}: error`;
+                    console.error("経済指標取得エラー:", err);
                 }
             }
         
-            function updateAllIndexes() {
-                fetchIndex('^N225', 'tokyo-data', '日経平均');
-                fetchIndex('^DJI', 'ny-data', 'ダウ平均');
-                fetchIndex('^FTSE', 'london-data', 'FTSE100');
-                fetchIndex('^HSI', 'hk-data', 'ハンセン');
-            }
-        
             window.onload = updateAllIndexes;
-            setInterval(updateAllIndexes, 60000); // 1分ごと更新
         </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
