@@ -350,7 +350,7 @@ main {
     width: 100%;
     }
     
-    .toc-container {
+    .toc-container, .part {
         width: 90%;
         /*padding-left: 50px;*/
         /*padding-right: 50px;*/
