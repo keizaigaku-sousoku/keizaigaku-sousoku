@@ -284,7 +284,7 @@ main {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 12px;
-    padding: 8px 0;
+    padding: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     display: flex;
     flex-direction: column;
@@ -301,7 +301,7 @@ main {
     pointer-events: auto;
 }
 
-#nav-menu a {
+.nav-menu a {
     display: block;
     padding: 10px;/* 24px;*/
     color: #7f1184;
@@ -313,7 +313,7 @@ main {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#nav-menu a:hover {
+.nav-menu a:hover {
     background-color: #7f1184;
     color: #fff;
     transform: translateX(10px);
