@@ -308,7 +308,7 @@ main {
 
 #nav-menu a {
     display: block;
-    padding: 10px 24px;
+    padding: 10px;/* 24px;*/
     color: #7f1184;
     text-decoration: none;
     font-size: 15px;
