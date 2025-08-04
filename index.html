@@ -403,43 +403,41 @@
             </div>
             <div class="world-map">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
-                <!-- 東京 -->
-                <div class="tv-box tv-box--tokyo">
-                    <iframe
-                        src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?symbol=INDEX%3ANKY&locale=ja"
-                        frameborder="0"
-                        allowtransparency="true"
-                        scrolling="no"
-                        title="東京・日経平均株価"
-                        style="width: 100%; height: 100%;"
-                    ></iframe>
-                </div>
-                
-                <!-- Dow30 代替: DIA ETF -->
-<div class="tv-box" style="top: 30%; left: 30%;">
+                <!-- 東京（日経平均） -->
+<div class="tv-box" style="top: 40%; left: 65%;">
     <iframe
-        src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?symbol=AMEX%3ADIA&locale=ja"
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=%5B%7B%22s%22%3A%22TVC%3ANI225%22%7D%5D&locale=ja&colorTheme=light&isTransparent=true&autosize=false&width=200&height=100"
         frameborder="0" allowtransparency="true" scrolling="no"
-        style="width: 200px; height: 130px;">
+        style="width: 200px; height: 100px;">
     </iframe>
 </div>
-                <!-- ドイツ・フランクフルト -->
-                <div class="tv-box" style="top: 25%; left: 55%;">
-                    <iframe src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?symbol=XETR%3ADAX&locale=ja"
-                        frameborder="0" allowtransparency="true" scrolling="no"
-                        style="width: 200px; height: 130px;"></iframe>
-                </div>
-                <!-- 香港 -->
-                <div class="tv-box tv-box--hk">
-                    <iframe
-                        src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?symbol=INDEX%3AHSI&locale=ja"
-                        frameborder="0"
-                        allowtransparency="true"
-                        scrolling="no"
-                        title="香港・ハンセン指数"
-                        style="width: 100%; height: 100%;"
-                    ></iframe>
-                </div>
+
+<!-- ニューヨーク（DIA: Dow 30 ETF） -->
+<div class="tv-box" style="top: 30%; left: 30%;">
+    <iframe
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=%5B%7B%22s%22%3A%22AMEX%3ADIA%22%7D%5D&locale=ja&colorTheme=light&isTransparent=true&autosize=false&width=200&height=100"
+        frameborder="0" allowtransparency="true" scrolling="no"
+        style="width: 200px; height: 100px;">
+    </iframe>
+</div>
+
+<!-- ロンドン（DAX: ドイツ株価指数） -->
+<div class="tv-box" style="top: 25%; left: 55%;">
+    <iframe
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=%5B%7B%22s%22%3A%22XETR%3ADAX%22%7D%5D&locale=ja&colorTheme=light&isTransparent=true&autosize=false&width=200&height=100"
+        frameborder="0" allowtransparency="true" scrolling="no"
+        style="width: 200px; height: 100px;">
+    </iframe>
+</div>
+
+<!-- 香港（ハンセン指数） -->
+<div class="tv-box" style="top: 45%; left: 80%;">
+    <iframe
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=%5B%7B%22s%22%3A%22INDEX%3AHSI%22%7D%5D&locale=ja&colorTheme=light&isTransparent=true&autosize=false&width=200&height=100"
+        frameborder="0" allowtransparency="true" scrolling="no"
+        style="width: 200px; height: 100px;">
+    </iframe>
+</div>
             </div>
             
             <div class="chapter-title">
