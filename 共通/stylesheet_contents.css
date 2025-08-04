@@ -345,7 +345,7 @@ main {
 /* Responsive */
 @media (max-width: 768px) {
     main {
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     }
     
