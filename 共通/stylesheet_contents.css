@@ -133,6 +133,7 @@ main {
 .part {
     width: 500px;
     color: #7f1184;
+    margin: 20px;
     padding: 20px;
     border-radius: 12px;
     background-color: #fff;
