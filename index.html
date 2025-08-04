@@ -405,16 +405,23 @@
         </header>
     
         <div class="wrapper">
-            <div class="map-section">
-                <div class="world-map">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map">
-                    <div class="city-data" style="top: 40%; left: 65%;">Tokyo: <span id="tokyo-data">Loading...</span></div>
-                    <div class="city-data" style="top: 30%; left: 30%;">New York: <span id="ny-data">Loading...</span></div>
-                    <div class="city-data" style="top: 25%; left: 55%;">London: <span id="london-data">Loading...</span></div>
-                    <div class="city-data" style="top: 45%; left: 80%;">Hong Kong: <span id="hk-data">Loading...</span></div>
-                </div>
+            <div class="tradingview-widget-container" style="margin: 40px 0;">
+              <div class="tradingview-widget-container__widget"></div>
+              <script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+              {
+                "symbols": [
+                  { "proName": "INDEX:NKY", "title": "日経平均" },
+                  { "proName": "DJI:DJI", "title": "ダウ平均" },
+                  { "proName": "INDEX:FTSE", "title": "FTSE100" },
+                  { "proName": "INDEX:HSI", "title": "ハンセン" }
+                ],
+                "colorTheme": "light",
+                "isTransparent": false,
+                "displayMode": "adaptive",
+                "locale": "ja"
+              }
+              </script>
             </div>
-            
             <div class="chapter-title">
                 <h2>FUNDAMENTALS</h2>
             </div>
@@ -505,66 +512,6 @@
             <p>&copy; 2025 経済学総則. All rights reserved.</p>
         </footer>
 
-        <script>
-            const options = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': '0369e19b85msh60ff201791cb967p199630jsne2328c0d2d01',
-                    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
-                }
-            };
-        
-            async function fetchIndex(symbol, label) {
-                const url = 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/${symbol}'; // ← reliable endpoint
-                const res = await fetch(url, options);
-                const data = await res.json();
-        
-                if (!data.items || !data.items[0] || !data.items[0].close) {
-                    throw new Error(`${label} データなし`);
-                }
-        
-                return parseFloat(data.items[0].close).toFixed(2);
-            }
-        
-            async function updateAllIndexes() {
-                const today = new Date().toISOString().split("T")[0];
-        
-                const lastUpdate = localStorage.getItem("economicDataLastUpdate");
-                if (lastUpdate === today) {
-                    const cached = JSON.parse(localStorage.getItem("economicDataCache") || "{}");
-                    document.getElementById("tokyo-data").textContent = cached.tokyo || "取得失敗";
-                    document.getElementById("ny-data").textContent = cached.ny || "取得失敗";
-                    document.getElementById("london-data").textContent = cached.london || "取得失敗";
-                    document.getElementById("hk-data").textContent = cached.hk || "取得失敗";
-                    return;
-                }
-        
-                try {
-                    const tokyo  = `日経平均: ${await fetchIndex("^N225", "日経平均")}`;
-                    const ny     = `ダウ平均: ${await fetchIndex("^DJI", "ダウ平均")}`;
-                    const london = `FTSE100: ${await fetchIndex("^FTSE", "FTSE100")}`;
-                    const hk     = `ハンセン: ${await fetchIndex("^HSI", "ハンセン")}`;
-        
-                    document.getElementById("tokyo-data").textContent = tokyo;
-                    document.getElementById("ny-data").textContent = ny;
-                    document.getElementById("london-data").textContent = london;
-                    document.getElementById("hk-data").textContent = hk;
-        
-                    localStorage.setItem("economicDataLastUpdate", today);
-                    localStorage.setItem("economicDataCache", JSON.stringify({
-                        tokyo, ny, london, hk
-                    }));
-                } catch (err) {
-                    console.error("経済指標取得エラー:", err);
-                    document.getElementById("tokyo-data").textContent = "取得失敗";
-                    document.getElementById("ny-data").textContent = "取得失敗";
-                    document.getElementById("london-data").textContent = "取得失敗";
-                    document.getElementById("hk-data").textContent = "取得失敗";
-                }
-            }
-        
-            window.onload = updateAllIndexes;
-        </script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(function () {
