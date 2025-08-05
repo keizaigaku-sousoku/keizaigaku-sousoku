@@ -151,7 +151,36 @@
                 padding-bottom: 80px;
                 gap: 40px;
             }
-    
+
+            .tv-box {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 130px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .tv-box--tokyo { top: 40%; left: 65%; }
+            .tv-box--ny    { top: 30%; left: 30%; }
+            .tv-box--london{ top: 25%; left: 55%; }
+            .tv-box--hk    { top: 45%; left: 80%; }
+            
+            .world-map {
+            position: relative;
+            width: 100%;
+            }
+            
+            .world-map img {
+            width: 100%;
+            height: auto;
+            display: block;
+            }
+
+
+
+            
             h2 {
                 font-family: 'Kaisei Opti', serif;
                 font-size: 34px;
@@ -370,6 +399,24 @@
         </header>
     
         <div class="wrapper">
+
+
+
+        <div class="chapter-title">
+        <h2>GLOBAL MARKETS</h2>
+        </div>
+        <div class="world-map">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
+        <!-- 東京（日経平均） -->
+        <div class="tv-box" style="top: 40%; left: 65%;">
+        <iframe
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'TVC:NI225'}]&locale=ja&colorTheme=light&isTransparent=true"
+        frameborder="0" allowtransparency="true" scrolling="no"
+        style="width: 200px; height: 100px;">
+        </iframe>
+        </div>
+        <!-- sp500 -->
+        <div class="tv-box" style="top: 10%; left: 10%;">
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
@@ -385,6 +432,28 @@
               </script>
             </div>
             <!-- TradingView Widget END -->
+        </div>
+        <!-- ロンドン（DAX: ドイツ株価指数） -->
+        <div class="tv-box" style="top: 25%; left: 55%;">
+        <iframe
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'XETR:DAX'}]&locale=ja&colorTheme=light&isTransparent=true"
+        frameborder="0" allowtransparency="true" scrolling="no"
+        style="width: 200px; height: 100px;">
+        </iframe>
+        </div>
+        
+        <!-- 香港（ハンセン指数） -->
+        <div class="tv-box" style="top: 45%; left: 80%;">
+        <iframe
+        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'INDEX:HSI'}]&locale=ja&colorTheme=light&isTransparent=true"
+        frameborder="0" allowtransparency="true" scrolling="no"
+        style="width: 200px; height: 100px;">
+        </iframe>
+        </div>
+        </div>
+
+
+            
             <div class="chapter-title">
                 <h2>FUNDAMENTALS</h2>
             </div>
