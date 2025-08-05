@@ -179,34 +179,6 @@
                 -webkit-text-fill-color: transparent;
             }
             
-            .tv-box {
-                position: absolute;
-                transform: translate(-50%, -50%);
-                width: 200px;
-                height: 130px;
-                background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 8px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            }
-            
-            .tv-box--tokyo { top: 40%; left: 65%; }
-            .tv-box--ny    { top: 30%; left: 30%; }
-            .tv-box--london{ top: 25%; left: 55%; }
-            .tv-box--hk    { top: 45%; left: 80%; }
-            
-            .world-map {
-                position: relative; /* これで .tv-box が地図に対して位置指定される */
-                width: 100%;
-                /*max-width: 1200px;*/
-                /*margin: 0 auto;*/
-            }
-            
-            .world-map img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            
             section {
                 padding: 20px;
                 border-radius: 12px;
@@ -398,83 +370,6 @@
         </header>
     
         <div class="wrapper">
-            <div class="chapter-title">
-                <h2>GLOBAL MARKETS</h2>
-            </div>
-            <div class="world-map">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
-                <!-- 東京（日経平均） -->
-                <div class="tv-box" style="top: 40%; left: 65%;">
-                    <iframe
-                        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'TVC:NI225'}]&locale=ja&colorTheme=light&isTransparent=true"
-                        frameborder="0" allowtransparency="true" scrolling="no"
-                        style="width: 200px; height: 100px;">
-                    </iframe>
-                </div>
-                <div class="tv-box" style="top:20%; left: 10%;">
-                    <!-- TradingView Widget BEGIN -->
-                    <div class="tradingview-widget-container">
-                      <div class="tradingview-widget-container__widget"></div>
-                      <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Market data by TradingView</span></a></div>
-                      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-                      {
-                      "colorTheme": "dark",
-                      "dateRange": "12M",
-                      "locale": "en",
-                      "largeChartUrl": "",
-                      "isTransparent": false,
-                      "showFloatingTooltip": false,
-                      "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
-                      "plotLineColorFalling": "rgba(41, 98, 255, 1)",
-                      "gridLineColor": "rgba(240, 243, 250, 0)",
-                      "scaleFontColor": "#DBDBDB",
-                      "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-                      "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-                      "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-                      "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-                      "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
-                      "tabs": [
-                        {
-                          "title": "Indices",
-                          "symbols": [
-                            {
-                              "s": "FOREXCOM:SPXUSD",
-                              "d": "S&P 500 Index"
-                            }
-                          ],
-                          "originalTitle": "Indices"
-                        }
-                      ],
-                      "support_host": "https://www.tradingview.com",
-                      "backgroundColor": "#131722",
-                      "width": 300,
-                      "height": 120,
-                      "showSymbolLogo": true,
-                      "showChart": false
-                    }
-                      </script>
-                    </div>
-                    <!-- TradingView Widget END -->
-                </div>
-                <!-- ロンドン（DAX: ドイツ株価指数） -->
-                <div class="tv-box" style="top: 25%; left: 55%;">
-                    <iframe
-                        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'XETR:DAX'}]&locale=ja&colorTheme=light&isTransparent=true"
-                        frameborder="0" allowtransparency="true" scrolling="no"
-                        style="width: 200px; height: 100px;">
-                    </iframe>
-                </div>
-                
-                <!-- 香港（ハンセン指数） -->
-                <div class="tv-box" style="top: 45%; left: 80%;">
-                    <iframe
-                        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'INDEX:HSI'}]&locale=ja&colorTheme=light&isTransparent=true"
-                        frameborder="0" allowtransparency="true" scrolling="no"
-                        style="width: 200px; height: 100px;">
-                    </iframe>
-                </div>
-            </div>
-            
             <div class="chapter-title">
                 <h2>FUNDAMENTALS</h2>
             </div>
