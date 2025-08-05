@@ -412,15 +412,49 @@
                     </iframe>
                 </div>
                 
-                <!-- ニューヨーク（DIA: Dow 30 ETF） -->
-                <div class="tv-box" style="top: 30%; left: 30%;">
-                    <iframe
-                        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'AMEX:DIA'}]&locale=ja&colorTheme=light&isTransparent=true"
-                        frameborder="0" allowtransparency="true" scrolling="no"
-                        style="width: 200px; height: 100px;">
-                    </iframe>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Market data by TradingView</span></a></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                  {
+                  "colorTheme": "dark",
+                  "dateRange": "12M",
+                  "locale": "en",
+                  "largeChartUrl": "",
+                  "isTransparent": false,
+                  "showFloatingTooltip": false,
+                  "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                  "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                  "gridLineColor": "rgba(240, 243, 250, 0)",
+                  "scaleFontColor": "#DBDBDB",
+                  "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                  "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                  "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                  "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                  "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+                  "tabs": [
+                    {
+                      "title": "Indices",
+                      "symbols": [
+                        {
+                          "s": "FOREXCOM:SPXUSD",
+                          "d": "S&P 500 Index"
+                        }
+                      ],
+                      "originalTitle": "Indices"
+                    }
+                  ],
+                  "support_host": "https://www.tradingview.com",
+                  "backgroundColor": "#131722",
+                  "width": "400",
+                  "height": "550",
+                  "showSymbolLogo": true,
+                  "showChart": false
+                }
+                  </script>
                 </div>
-                
+                <!-- TradingView Widget END -->                
                 <!-- ロンドン（DAX: ドイツ株価指数） -->
                 <div class="tv-box" style="top: 25%; left: 55%;">
                     <iframe
