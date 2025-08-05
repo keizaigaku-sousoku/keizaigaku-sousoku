@@ -392,17 +392,21 @@
         </div>
         <div class="world-map">
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
-                <!-- 東京 -->
-                <div class="tv-box tv-box--tokyo">
-                    <iframe
-                        src="https://jp.tradingview.com/symbols/INDEX-NKY/"
-                        frameborder="0"
-                        allowtransparency="true"
-                        scrolling="no"
-                        title="東京・日経平均株価"
-                        style="width: 40%; height: 100%;"
-                    ></iframe>
+                <!-- NK225 TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/OSE-TOPIX1!/?exchange=OSE" rel="noopener nofollow" target="_blank"><span class="blue-text">TOPIX1! quotes by TradingView</span></a></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+                  {
+                  "symbol": "OSE:TOPIX1!",
+                  "colorTheme": "light",
+                  "isTransparent": false,
+                  "locale": "en",
+                  "width": 350
+                }
+                  </script>
                 </div>
+                <!-- TradingView Widget END -->
         </div>
 
 
