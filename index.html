@@ -151,16 +151,6 @@
                 padding-bottom: 80px;
                 gap: 40px;
             }
-
-            .tv-box {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 430px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            }
             
             .world-map {
             position: relative;
@@ -401,75 +391,44 @@
         <h2>GLOBAL MARKETS</h2>
         </div>
         <div class="world-map">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
-        <!-- 東京（日経平均） -->
-        <div class="tv-box" style="top: 40%; left: 65%;">
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
               {
+              "symbols": [
+                {
+                  "proName": "FOREXCOM:SPXUSD",
+                  "title": "S&P 500 Index"
+                },
+                {
+                  "proName": "FOREXCOM:NSXUSD",
+                  "title": "US 100 Cash CFD"
+                },
+                {
+                  "proName": "FX_IDC:EURUSD",
+                  "title": "EUR to USD"
+                },
+                {
+                  "proName": "BITSTAMP:BTCUSD",
+                  "title": "Bitcoin"
+                },
+                {
+                  "proName": "BITSTAMP:ETHUSD",
+                  "title": "Ethereum"
+                }
+              ],
               "colorTheme": "light",
-              "isTransparent": true,
               "locale": "en",
-              "countryFilter": "jp",
-              "importanceFilter": "-1,0,1",
-              "width": "100%",
-              "height": "100%"
+              "largeChartUrl": "",
+              "isTransparent": true,
+              "showSymbolLogo": true,
+              "displayMode": "adaptive"
             }
               </script>
             </div>
             <!-- TradingView Widget END -->
-
-        </div>
-        <!-- us -->
-        <div class="tv-box" style="top: 10%; left: 10%;">
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-              {
-              "colorTheme": "light",
-              "isTransparent": true,
-              "locale": "en",
-              "countryFilter": "us",
-              "importanceFilter": "-1,0,1",
-              "width": "100%",
-              "height": "100%"
-            }
-              </script>
-            </div>
-            <!-- TradingView Widget END -->
-        </div>
-        <!-- ロンドン（DAX: ドイツ株価指数） -->
-        <div class="tv-box" style="top: 25%; left: 55%;">
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-              {
-              "colorTheme": "light",
-              "isTransparent": true,
-              "locale": "en",
-              "countryFilter": "eu,gb",
-              "importanceFilter": "-1,0,1",
-              "width": "100%",
-              "height": "100%"
-            }
-              </script>
-            </div>
-            <!-- TradingView Widget END -->
-
-        </div>
-        
-        <!-- 香港（ハンセン指数） -->
-        <div class="tv-box" style="top: 45%; left: 80%;">
-        <iframe
-        src="https://s.tradingview.com/embed-widget/symbol-overview/?symbols=[{s:'INDEX:HSI'}]&locale=ja&colorTheme=light&isTransparent=true"
-        frameborder="0" allowtransparency="true" scrolling="no"
-        style="width: 200px; height: 100px;">
-        </iframe>
-        </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
         </div>
 
 
