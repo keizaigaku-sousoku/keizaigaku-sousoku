@@ -415,19 +415,21 @@
         style="width: 200px; height: 100px;">
         </iframe>
         </div>
-        <!-- sp500 -->
+        <!-- us -->
         <div class="tv-box" style="top: 10%; left: 10%;">
             <!-- TradingView Widget BEGIN -->
             <div class="tradingview-widget-container">
               <div class="tradingview-widget-container__widget"></div>
-              <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BLACKBULL-US30/?exchange=BLACKBULL" rel="noopener nofollow" target="_blank"><span class="blue-text">US30 quotes by TradingView</span></a></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
+              <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/economic-calendar/" rel="noopener nofollow" target="_blank"><span class="blue-text">Economic calendar by TradingView</span></a></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
               {
-              "symbol": "BLACKBULL:US30",
               "colorTheme": "dark",
-              "isTransparent": false,
+              "isTransparent": true,
               "locale": "en",
-              "width": 350
+              "countryFilter": "us",
+              "importanceFilter": "-1,0,1",
+              "width": "100%",
+              "height": "100%"
             }
               </script>
             </div>
