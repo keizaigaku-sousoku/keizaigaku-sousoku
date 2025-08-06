@@ -83,12 +83,10 @@ header {
     position: relative;
     padding: 40px;
     text-align: center;
-    background: linear-gradient(135deg, #7f1184f2, #004898cc);
 }
 
 header h2 {
     margin: 0;
-    color: #fff;
 }
 
 .subtitle {
