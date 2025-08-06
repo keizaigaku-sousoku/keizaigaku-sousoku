@@ -239,17 +239,17 @@
                 color: #898989;/*#1D1D1F;*/
                 text-align: justify;
             }
-    
+
+            /*
             footer {
-                background-color: #fff;/*#7f1184;*/
-                color: #7f1184;/*#fff;*/
+                background-color: #fff;
+                color: #7f1184;
                 padding: 20px 10px;
                 font-size: 14px;
                 text-align: right;
             }
     
             footer p {
-                /*color: #fff;*/
                 color: #898989;
                 text-align: right;
                 margin-top: 10px;
@@ -266,7 +266,7 @@
             }
     
             .footer-socials a {
-                color: #7f1184;/*#fff;*/
+                color: #7f1184;
                 font-size: 28px;
                 text-decoration: none;
                 transition: transform 0.3s;
@@ -275,6 +275,7 @@
             .footer-socials a:hover {
                 transform: scale(1.2);
             }
+            */
     
             @media (max-width: 768px) {
                 body {
@@ -560,23 +561,7 @@
                 </section>
             </a>
         </div>
-    
-        <footer>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/春樹-坂田-4453b3358/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://x.com/Cw2dENlXNQ14553" target="_blank" aria-label="X">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="mailto:keizaigaku.sousoku@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-            <p>&copy; 2025 経済学総則. All rights reserved.</p>
-        </footer>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
         <script>
             $(function () {
                 const $nav = $('#mainNav');
@@ -592,5 +577,14 @@
                 });
             });
         </script>
+
+        <div id="footer-placeholder"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $('#footer-placeholder').load('footer.html');
+            });
+        </script>
+        
     </body>
 </html>
