@@ -37,16 +37,9 @@ footer p {
 @media (max-width: 768px) {
     footer {
         font-size: 13px;
-        text-align: center;
     }
 
     footer p {
         margin-right: 0px;
-        text-align: center;
-    }
-
-    .footer-socials {
-        justify-content: center;
-        padding-right: 0;
     }
 }
