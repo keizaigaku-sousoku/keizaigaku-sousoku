@@ -322,6 +322,10 @@
                     flex-shrink: 0;
                 }
                 
+                .global-market-wrapper {
+                    display: none;
+                }
+                
                 .icon-section {
                     width: 100vw;
                     box-sizing: border-box;
@@ -386,94 +390,94 @@
         <div class="wrapper">
 
 
-
-        <div class="chapter-title">
-        <h2>GLOBAL MARKETS</h2>
-        </div>
-        <div class="world-map">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
-            <!-- 日経平均先物 -->
-            <div style="position: absolute; top: 10%; left: 80%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src="https://s.tradingview.com/embed-widget/symbol-info/?symbol=OSE%3ANK2251%21"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 190px;"
-                ></iframe>
+            <div class="global-market-wrapper">
+                <div class="chapter-title">
+                    <h2>GLOBAL MARKETS</h2>
+                </div>
+                <div class="world-map">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" alt="World Map" />
+                    <!-- 日経平均先物 -->
+                    <div style="position: absolute; top: 10%; left: 80%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src="https://s.tradingview.com/embed-widget/symbol-info/?symbol=OSE%3ANK2251%21"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 190px;"
+                        ></iframe>
+                    </div>
+                    <!-- ダウ先物 -->
+                    <div style="position: absolute; top: 15%; left: 5%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BLACKBULL%3ADJ30.F"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 195px;"
+                        ></iframe>
+                    </div>
+                    <!-- T-Note先物 -->
+                    <div style="position: absolute; top: 15%; left: 22%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BLACKBULL%3ATY10.F"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 195px;"
+                        ></iframe>
+                    </div>
+                    <!-- STOXX先物 ?symbol=EUREX%3AFESX1%21, ?symbol=BMFBOVESPA%3AESX1%21 -->
+                    <div style="position: absolute; top: 10%; left: 40%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=EUREX%3AFXXP1%21"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 190px;"
+                        ></iframe>
+                    </div>
+                    <!-- ハンセン先物 -->
+                    <div style="position: absolute; top: 40%; left: 80%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=HSI%3AHSFI"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 190px;"
+                        ></iframe>
+                    </div>
+                    <!-- ASX先物 -->
+                    <div style="position: absolute; top: 70%; left: 65%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=ASX24%3AAP1%21"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 190px;"
+                        ></iframe>
+                    </div>
+                    <!-- SENSEX先物 ?symbol=BSE%3ABSX1%21 -->
+                    <div style="position: absolute; top: 53%; left: 60%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BSE%3ABSX1%21"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 190px;"
+                        ></iframe>
+                    </div>
+                    <!-- BOVESPA先物 -->
+                    <div style="position: absolute; top: 60%; left: 10%; transform: scale(0.6); transform-origin: top left;">
+                        <iframe
+                            src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BMFBOVESPA%3AIND1%21"
+                            frameborder="0"
+                            allowtransparency="true"
+                            scrolling="no"
+                            style="width: 400px; height: 190px;"
+                        ></iframe>
+                    </div>
+                </div>
             </div>
-            <!-- ダウ先物 -->
-            <div style="position: absolute; top: 15%; left: 5%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BLACKBULL%3ADJ30.F"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 195px;"
-                ></iframe>
-            </div>
-            <!-- T-Note先物 -->
-            <div style="position: absolute; top: 15%; left: 22%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BLACKBULL%3ATY10.F"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 195px;"
-                ></iframe>
-            </div>
-            <!-- STOXX先物 ?symbol=EUREX%3AFESX1%21, ?symbol=BMFBOVESPA%3AESX1%21 -->
-            <div style="position: absolute; top: 10%; left: 40%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=EUREX%3AFXXP1%21"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 190px;"
-                ></iframe>
-            </div>
-            <!-- ハンセン先物 -->
-            <div style="position: absolute; top: 40%; left: 80%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=HSI%3AHSFI"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 190px;"
-                ></iframe>
-            </div>
-            <!-- ASX先物 -->
-            <div style="position: absolute; top: 70%; left: 65%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=ASX24%3AAP1%21"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 190px;"
-                ></iframe>
-            </div>
-            <!-- SENSEX先物 ?symbol=BSE%3ABSX1%21 -->
-            <div style="position: absolute; top: 53%; left: 60%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BSE%3ABSX1%21"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 190px;"
-                ></iframe>
-            </div>
-            <!-- BOVESPA先物 -->
-            <div style="position: absolute; top: 60%; left: 10%; transform: scale(0.6); transform-origin: top left;">
-                <iframe
-                    src ="https://s.tradingview.com/embed-widget/symbol-info/?symbol=BMFBOVESPA%3AIND1%21"
-                    frameborder="0"
-                    allowtransparency="true"
-                    scrolling="no"
-                    style="width: 400px; height: 190px;"
-                ></iframe>
-            </div>
-
-        </div>
 
 
             
