@@ -9,9 +9,9 @@ html, body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex;
+    /*display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;*/
     position: relative;
     overflow-x: hidden;
     font-size: 15px;
