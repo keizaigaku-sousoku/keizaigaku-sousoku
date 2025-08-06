@@ -83,6 +83,7 @@ header {
     position: relative;
     padding: 40px;
     text-align: center;
+    background-color: #fff;
 }
 
 header h2 {
