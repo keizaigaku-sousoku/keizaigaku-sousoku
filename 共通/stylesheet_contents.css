@@ -167,11 +167,23 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
+/*
 .theorem-tile .title {
     font-weight: bold;
     color: #7f1184;
     margin-bottom: 10px;
     text-align: left;
+}
+*/
+.theorem-tile .title {
+    display: inline-block;
+    font-weight: bold;
+    /*font-size: 15px;*/
+    color: white;
+    background: #7f1184;
+    padding: 4px 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .proof {
