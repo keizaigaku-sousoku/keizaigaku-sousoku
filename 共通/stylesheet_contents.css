@@ -178,28 +178,20 @@ main {
 
 .theorem-tile {
     background-color: white;
-    padding: 20px;
-    padding-top: 12px;
     border-radius: 12px;
     margin: 0 auto 20px;
-    max-width: 1200px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    border-left: 6px solid #7f1184;
-    position: relative;
 }
 
 .theorem-tile .title {
-    display: inline-block;
     background-color: #7f1184;
     color: white;
-    font-size: 14px;
     font-weight: bold;
     padding: 6px 14px;
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 0;
-    margin: 0;
 }
 
 .proof {
