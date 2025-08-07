@@ -195,6 +195,10 @@ main {
     border-bottom-left-radius: 0;
 }
 
+.theorem-tile p {
+    margin: 20px;
+}
+
 .proof {
     margin-bottom: 20px;
     background-color: #f5f5f7;
