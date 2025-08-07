@@ -184,6 +184,7 @@ main {
 }
 
 .theorem-tile .title {
+    display: inline-block;
     background-color: #7f1184;
     color: white;
     font-weight: bold;
