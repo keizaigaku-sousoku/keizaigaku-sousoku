@@ -183,7 +183,7 @@ main {
     border-radius: 12px;
     margin: 0 auto 20px;
     max-width: 1200px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     border-left: 6px solid #7f1184;
 }
 
