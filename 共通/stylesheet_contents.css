@@ -158,6 +158,7 @@ main {
     line-height: 2;
 }
 
+/*
 .theorem-tile {
     background-color: white;
     padding: 20px;
@@ -167,7 +168,6 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
-/*
 .theorem-tile .title {
     font-weight: bold;
     color: #7f1184;
@@ -175,15 +175,32 @@ main {
     text-align: left;
 }
 */
+
+.theorem-tile {
+    position: relative;
+    background-color: white;
+    padding: 30px 20px 20px 20px;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+    max-width: 1200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #7f1184;
+}
+
 .theorem-tile .title {
-    display: inline-block;
-    font-weight: bold;
-    /*font-size: 15px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, -50%);
+    background-color: #7f1184;
     color: white;
-    background: #7f1184;
-    padding: 4px 12px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 .proof {
