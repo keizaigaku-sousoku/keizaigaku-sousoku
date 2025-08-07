@@ -196,6 +196,7 @@ main {
 }
 
 .theorem-tile p {
+    margin: 0;
     padding: 20px;
 }
 
