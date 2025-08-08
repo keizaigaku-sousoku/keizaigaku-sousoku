@@ -158,24 +158,6 @@ main {
     line-height: 2;
 }
 
-/*
-.theorem-tile {
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin: 0 auto 20px;
-    max-width: 1200px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-}
-
-.theorem-tile .title {
-    font-weight: bold;
-    color: #7f1184;
-    margin-bottom: 10px;
-    text-align: left;
-}
-*/
-
 .theorem-tile {
     background-color: white;
     border-radius: 12px;
@@ -250,6 +232,30 @@ main {
 
 .comment-box p {
   margin: 20px;
+}
+
+/* Table */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+th {
+    background-color: #004898;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) td {
+    background-color: #e6f0fa;
 }
 
 /* Math */
