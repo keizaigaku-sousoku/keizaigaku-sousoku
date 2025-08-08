@@ -236,7 +236,7 @@ main {
 
 /* Table */
 table {
-    margin: 0 auto;
+    margin: 20px;
     border-collapse: collapse;
     width: 80%;
     text-align: center;
