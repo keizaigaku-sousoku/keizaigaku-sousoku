@@ -1,1 +1,59 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>記号一覧</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../共通/stylesheet_contents.css">
+        <link rel="stylesheet" href="../共通/stylesheet_footer.css">
+        <script src="../共通/mathjax-config.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>記号一覧</h2>
+        </header>
+        <div class="subtitle">
+            記号で躓くのは勿体無いので念の為
+        </div>
+        <div class="toc-container">
+            <div class="part">
+                <h3 class="part-title">目次</h3>
+                <a href="#section1">集合論</a>
+                <a href="#section2">解析学</a>
+                <a href="#section3">確率論</a>
+            </div>
+        </div>
+        <main>
+            <section id="section1">
+                <h4>集合論</h4>
+                <table>
+                    <tr>
+                        <td>データ1</td>
+                        <td>データ2</td>
+                    </tr>
+                    <tr>
+                        <td>データ3</td>
+                        <td>データ4</td>
+                    </tr>
+                </table>
+            </section>
+            <section id="section2">
+                <h4>解析学</h4>
+            </section>
+            <section id="section3">
+                <h4>確率論</h4>
+            </section>
+        </main>
+        <div id="nav-placeholder"></div>
+        <script src="../共通/load-nav.js" defer></script>
+        <div id="footer-placeholder"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $('#footer-placeholder').load('../共通/footer.html');
+            });
+        </script>
+    </body>
+</html>
