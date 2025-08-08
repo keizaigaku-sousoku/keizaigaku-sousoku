@@ -236,7 +236,7 @@ main {
 
 /* Table */
 table {
-    margin: 20px;
+    margin: 20px auto;
     border-collapse: collapse;
     width: 80%;
     text-align: center;
@@ -254,7 +254,7 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: #004898cc;
+    background-color: #00489833;
 }
 
 /* Math */
