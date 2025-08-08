@@ -380,4 +380,8 @@ tr:nth-child(even) td {
     .comment-box p {
         margin: 5px;
     }
+
+    table {
+        width: 90%;
+    }
 }
