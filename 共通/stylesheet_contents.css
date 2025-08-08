@@ -241,7 +241,6 @@ table {
     width: 80%;
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 th {
@@ -255,7 +254,7 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: #e6f0fa;
+    background-color: #004898cc;
 }
 
 /* Math */
