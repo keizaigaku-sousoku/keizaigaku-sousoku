@@ -48,7 +48,7 @@ h2 {
     margin-bottom: 20px;
     text-align: center;
     display: inline-block;
-    background: linear-gradient(135deg, #7f1184f2, #6967ab);
+    background: linear-gradient(135deg, #7f1184, #6967ab);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
