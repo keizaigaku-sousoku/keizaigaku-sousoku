@@ -34,6 +34,12 @@ a:visited {
     color: black;
 }
 
+.black-link,
+.black-link:visited {
+    color: black !important;
+    text-decoration: none !important;
+}
+
 .new-word {
     color: #6967ab;
     font-weight: 700;
