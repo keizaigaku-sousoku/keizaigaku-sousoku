@@ -90,12 +90,35 @@
                     　償還価格とクーポンが与えられたとき、その債券の取引が起これば債券価格が決まり、そこから債券のもっとも重要な指標の1つが導かれる。
                     割引債は利付債のクーポンが \( 0 \) である契約に過ぎないので、一般性を失わず償還価格 \( F \) 、クーポンの列 \( \mathcal{C} = (C_t)_{t=1}^T \) が与えられたとする。
                     債券とは組 \( (F,\mathcal{C}) \) に他ならず、これを市場参加者が取引した結果として債券価格 \( P \geq 0 \) がつく。
-                    このとき、\( r=r(F,\mathcal{C},P) \in \textbf{R} \) であって
+                    このとき、\( r=r(F,\mathcal{C},P) \in \textbf{R}_{\geq-1} \) であって
                     \[
                         P=\sum_{t=1}^{T-1}\frac{C_t}{(1+r)^t}+\frac{C_T+F}{(1+r)^T}
                     \]
                     を満たすものを(存在すれば）<span class="new-word">複利最終利回り（compound final yield）</span>と呼ぶ。
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        債券価格が \( 0 \) でなければ複利最終利回りは存在する。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        簡単のため
+                        \[
+                            f(r)=\sum_{t=1}^{T-1}\frac{C_t}{(1+r)^t}+\frac{C_T+F}{(1+r)^T}
+                        \]
+                        とおく。
+                        微分すると
+                        \[
+                            f^\prime(r)=-\sum_{t=1}^{T-1}\frac{tC_t}{(1+r)^{t+1}}-\frac{T(C_T+F)}{(1+r)^{T+1}}
+                        \]
+                        であり、明らかに \( f^\prime(r)&lt;0 \) 。
+                        よって
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
             </section>
         </main>
         <div id="nav-placeholder"></div>
