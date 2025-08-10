@@ -27,18 +27,20 @@ p {
     font-size: 15px;
     /*letter-spacing: 0.025em;*/
     line-height: 2;
-    color: #1D1D1F;
+    color: #1d1d1f;
 }
 
-a:visited {
-    color: black;
+a, a:visited {
+    color: #1d1d1f;
 }
 
+/*
 .black-link,
 .black-link:visited {
     color: black !important;
     text-decoration: none !important;
 }
+*/
 
 .new-word {
     color: #6967ab;
