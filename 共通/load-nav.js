@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navPlaceholder = document.getElementById("nav-placeholder");
 
   if (navPlaceholder) {
-    fetch("../../共通/nav.html")
+    fetch("https://github.com/keizaigaku-sousoku/keizaigaku-sousoku/blob/main/共通/nav.html")
       .then(response => response.text())
       .then(html => {
         navPlaceholder.innerHTML = html;
