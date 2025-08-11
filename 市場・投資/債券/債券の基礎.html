@@ -183,7 +183,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        固定利付債がパー債となる必要十分条件は、複利最終利回りがクーポン・レートに一致することである。
+                        複利最終利回りが \( 0 \) でない固定利付債がパー債となる必要十分条件は、複利最終利回りがクーポン・レートに一致することである。
                     </p>
                 </div>            
                 <div class="proof">
@@ -198,8 +198,8 @@
 						<div class="math-container">
 	                        \[
 	                            \begin{align}
-	                                1=\sum_{t=1}^{T}\frac{c}{(1+r)^{t}}+\frac{1}{(1+r)^{T}}\Longleftrightarrow&1=\frac{c}{1+r}\sum_{t=1}^{T}\bigg{(}\frac{1}{1+r}\bigg{)}^{t-1}+\frac{1}{(1+r)^{T}}\nonumber\\
-	                                \Longleftrightarrow&1=\frac{c}{1+r}\cdot\frac{1-(\frac{1}{1+r})^{T-1}}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}\nonumber\\
+	                                1=\sum_{t=1}^{T}\frac{c}{(1+r)^{t}}+\frac{1}{(1+r)^{T}}\Longleftrightarrow&1=c\cdot\frac{\frac{1}{1+r}[1-(\frac{1}{1+r})^T]}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}\nonumber\\
+	                                \Longleftrightarrow&1=\frac{c}{r}\bigg{[}1-\frac{1}{(1+r)^T}\bigg{]}+\frac{1}{(1+r)^{T}}\nonumber\\
 			                        \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0
 	                            \end{align}
 	                        \]
