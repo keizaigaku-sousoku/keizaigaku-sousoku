@@ -170,8 +170,41 @@
                         r_\textrm{DY}=r_\textrm{DY}(F,\mathcal{C},P):=\frac{C_t}{P}
                     \]
                     を定め、これを<span class="new-word">直接利回り（direct yield）</span>と呼ぶ。
-                    直接利回りは償還価格や債券価格の変化を考慮しないので、
+                    直接利回りは償還価格のみならず債券価格の変化も考慮しないので、実際の投資において直接利回りを収益率として享受することは（ほとんど確実に）不可能である。
                 </p>
+            </section>
+            <section id="section4">
+                <h4>パー債</h4>
+                <p>
+                    　債券価格と償還価格は一般には一致しないが、一致する場合もある。
+                    割引債であれば複利最終利回りが \( 0 \) でない限り両者は一致しないが、利付債であれば複利最終利回りが \( 0 \) でなくてもクーポンの額によっては両者が一致する。
+                    このような特別な利付債を<span class="new-word">パー債（par bond）</span>、その複利最終利回りを<span class="new-word">パー・イールド（par yield）</span>と呼ぶ。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        固定利付債がパー債となる必要十分条件は、複利最終利回りがクーポン・レートに一致することである。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        \( F \) を償還価格、\( c \) をクーポン・レート、\( P \) を債券価格、\( r \) を複利最終利回りとすれば
+                        \[
+                            P=\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}
+                        が成り立つ。
+                        まず必要性について、パー債であることを仮定すれば \( P=F \) であるから
+                        \[
+                            \begin{align}
+                                1=\sum_{t=1}^{T}\frac{c}{(1+r)^{t}}+\frac{1}{(1+r)^{T}}\Longleftrightarrow&1=\frac{c}{1+r}\sum_{t=1}^{T}\bigg{(}\frac{1}{1+r}\bigg{)}^{t-1}+\frac{1}{(1+r)^{T}}\nonumber\\
+                                \Longleftrightarrow&1=\frac{c}{1+r}\cdot\frac{1-(\frac{1}{1+r})^{T-1}}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}\nonumber\\
+		                        \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0
+                            \end{align}
+                        \]
+                    </p>
+                    <div class="end-symbol">■</div>
+
+            </section>
         </main>
         <div id="nav-placeholder"></div>
         <script src="../../共通/load-nav.js" defer></script>
