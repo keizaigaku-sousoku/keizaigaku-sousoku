@@ -229,20 +229,20 @@
                     <p>
                         固定利付債において \( c \) をクーポン・レート、\( r \) を複利最終利回り、\( r_\textrm{SFY} \) を単利最終利回り、\( r_\textrm{DY} \) を直接利回りとする。
                         このとき、以下が成り立つ。<br>
-                        (i) パー債では \( r=c \) かつ \( r_\textrm{SFY}=r=r_\textrm{DY} \) 。<br>
-                        (ii) オーバー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
-                        (iii) アンダー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。
+                        (i) オーバー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
+                        (ii) アンダー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
+                        (iii) パー債では \( r=c \) かつ \( r_\textrm{SFY}=r=r_\textrm{DY} \) 。
                     </p>
                 </div>
                 <div class="proof">
                     <div class="title">証明</div>
-
-                    $T$を残存期間，$F$を償還価格，$P$を債券価格，$c$をクーポン・レート，$r$を複利最終利回り，$r_{\textrm{sfy}}$を単利最終利回り，$r_{\textrm{dy}}$を直接利回りとする．
-    第1式について，
-    \begin{align}
-        P=\sum_{t=1}^{T}\frac{cF}{(1+r)^{t}}+\frac{F}{(1+r)^{T}}\label{exp for r<c}
-    \end{align}
-    を$F<P$に代入して整理すれば$r<c$となるので容易に示される．\par
+                    <p>
+                        (i)について、償還価格を \( F \) 、債券価格を \( P \) とする。
+                        第1式は
+                        \[
+                            P=\sum_{t=1}^{T}\frac{cF}{(1+r)^{t}}+\frac{F}{(1+r)^{T}}
+                        \]
+                        を \( F&lt;P \) に代入して整理すれば \( r&lt;c \) となるので容易に示される。
     第2式1番目の不等号について．
     ある$T\in\textbf{Z}_{\geq1}$で式(\ref{exp for r<c})と$r_{\textrm{sfy}}\geq r$がともに成り立つと仮定して矛盾を導く．
     例えば$T=2$のとき，
