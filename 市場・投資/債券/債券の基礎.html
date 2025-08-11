@@ -194,13 +194,15 @@
                             P=\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}
                         が成り立つ。
                         まず必要性について、パー債であることを仮定すれば \( P=F \) であるから
-                        \[
-                            \begin{align}
-                                1=\sum_{t=1}^{T}\frac{c}{(1+r)^{t}}+\frac{1}{(1+r)^{T}}\Longleftrightarrow&1=\frac{c}{1+r}\sum_{t=1}^{T}\bigg{(}\frac{1}{1+r}\bigg{)}^{t-1}+\frac{1}{(1+r)^{T}}\nonumber\\
-                                \Longleftrightarrow&1=\frac{c}{1+r}\cdot\frac{1-(\frac{1}{1+r})^{T-1}}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}\nonumber\\
-		                        \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0
-                            \end{align}
-                        \]
+						<div class="math-container">
+	                        \[
+	                            \begin{align}
+	                                1=\sum_{t=1}^{T}\frac{c}{(1+r)^{t}}+\frac{1}{(1+r)^{T}}\Longleftrightarrow&1=\frac{c}{1+r}\sum_{t=1}^{T}\bigg{(}\frac{1}{1+r}\bigg{)}^{t-1}+\frac{1}{(1+r)^{T}}\nonumber\\
+	                                \Longleftrightarrow&1=\frac{c}{1+r}\cdot\frac{1-(\frac{1}{1+r})^{T-1}}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}\nonumber\\
+			                        \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0
+	                            \end{align}
+	                        \]
+						</div>
                     </p>
                     <div class="end-symbol">■</div>
 
