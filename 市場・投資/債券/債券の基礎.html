@@ -149,11 +149,16 @@
             <section id="section3">
                 <h4>単利最終利回り</h4>
                 <p>
-                    　複利最終利回りが再投資に係る解釈を与えられた一方で、再投資をしない単純な収益率も考えられる。
+                    　複利最終利回りが再投資に係る解釈を与えられた一方で、再投資を考慮しない単純な収益率も考えられる。
                     償還価格を \( F \) 、クーポンの列を \( \mathcal{C} = ( C_t )_t \) 、債券価格を \( P \) とする。
                     このとき、収益率として
                     \[
-                        r_\textrm{SFY}=r_\textrm{SFY}(F,\mathcal{C},P):=\frac{\sum_{t=1}^TC_t+F-P}{P}
+                        \frac{\sum_{t=1}^TC_t+F-P}{P}
+                    \]
+                    が定まる。
+                    複利最終利回りが単位時間あたりの指標であるから、上記の収益率を単位時間あたりに換算した
+                    \[
+                        r_\textrm{SFY}=r_\textrm{SFY}(F,\mathcal{C},P):=\frac{\sum_{t=1}^TC_t+F-P}{TP}
                     \]
                     を定め、これを<span class="new-word">単利最終利回り（simple final yield）</span>と呼ぶ。
                 </p>
