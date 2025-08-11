@@ -193,7 +193,7 @@
                 <div class="proof">
                     <div class="title">証明</div>
                     <p>
-                        償還価格を \( F \) 、クーポン・レートを \( c \) 、債券価格を \( P \) 、複利最終利回りを \( r \neq 0 \) とすれば
+                        償還価格を \( F \) 、クーポン・レートを \( c \) 、債券価格を \( P \) 、複利最終利回りを \( r \) とすれば
                         \[
                             P=\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}
 						\]
@@ -207,12 +207,14 @@
 						もし \( r=0 \) ならば \( 1=cT+1 \) となるがこれは不成立であるから \( r \neq 0 \) 。
 						そこで
 						<div class="math-container">
-							\[
-								1=c\cdot\frac{\frac{1}{1+r}[1-(\frac{1}{1+r})^T]}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}
-	                            \Longleftrightarrow&1=\frac{c}{r}\bigg{[}1-\frac{1}{(1+r)^T}\bigg{]}+\frac{1}{(1+r)^{T}}\nonumber\\
-			                    \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0\nonumber\\
-								\Longleftrightarrow&r=c
-							\]
+							\begin{align}
+								\[
+									1=c\cdot\frac{\frac{1}{1+r}[1-(\frac{1}{1+r})^T]}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}
+		                            \Longleftrightarrow&1=\frac{c}{r}\bigg{[}1-\frac{1}{(1+r)^T}\bigg{]}+\frac{1}{(1+r)^{T}}\nonumber\\
+				                    \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0\nonumber\\
+									\Longleftrightarrow&r=c
+								\]
+							\end{align}
 						</div>
 						となる。
 						十分性は逆をたどれば示される。
