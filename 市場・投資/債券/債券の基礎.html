@@ -22,9 +22,8 @@
                 <h3 class="part-title">目次</h3>
                 <a href="#section1">債券とは何か</a>
                 <a href="#section2">複利最終利回り</a>
-                <a href="#section3">単利最終利回り</a>
-                <a href="#section4">直接利回り</a>
-                <a href="#section5">パー債</a>
+                <a href="#section3">単利最終利回り・直接利回り</a>
+                <a href="#section4">パー債</a>
             </div>
         </div>
         <main>
@@ -147,7 +146,7 @@
                 </div>
             </section>
             <section id="section3">
-                <h4>単利最終利回り</h4>
+                <h4>単利最終利回り・直接利回り</h4>
                 <p>
                     　複利最終利回りが再投資に係る解釈を与えられた一方で、再投資を考慮しない単純な収益率も考えられる。
                     償還価格を \( F \) 、クーポンの列を \( \mathcal{C} = ( C_t )_t \) 、債券価格を \( P \) とする。
@@ -161,6 +160,14 @@
                         r_\textrm{SFY}=r_\textrm{SFY}(F,\mathcal{C},P):=\frac{\sum_{t=1}^TC_t+F-P}{TP}
                     \]
                     を定め、これを<span class="new-word">単利最終利回り（simple final yield）</span>と呼ぶ。
+                </p>
+                <p>
+                    　複利最終利回りや単利最終利回りは満期までの保有を仮定した場合にのみ有効な収益率であり、単にクーポンのみに注目した収益率も考えられる。                    　
+                    素朴に、単位時間に1回のクーポンを受け取ることから時刻 \( ( t-1,t ) \) において
+                    \[
+                        r_\textrm{DY}=r_\textrm{DY}(F,\mathcal{C},P):=\frac{C_t}{P}
+                    \]
+                    を定め、これを<span class="new-word">直接利回り（direct yield）</span>と呼ぶ。
                 </p>
         </main>
         <div id="nav-placeholder"></div>
