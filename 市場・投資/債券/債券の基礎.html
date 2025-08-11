@@ -224,6 +224,59 @@
                     　パー債でない任意の利付債は2通りに分類される。
                     すなわち、債券価格が償還価格より高いものを<span class="new-word">オーバー・パー債（over par bond）</span>、<span class="new-word">アンダー・パー債（under par bond）</span>と呼ぶ。
 				</p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        固定利付債において \( c \) をクーポン・レート、\( r \) を複利最終利回り、\( r_\textrm{SFY} \) 、\( r_\textrm{DY} \) とする。
+                        このとき、以下が成り立つ。\\
+                        (i) パー債では \( r=c \) かつ \( r_\textrm{SFY}=r=r_\textrm{DY} \) 。\\
+                        (ii) \\
+                        (iii) 
+                    </p>
+                </div>
+                <div class="proof">
+                    <div class="title">証明</div>
+
+                    $T$を残存期間，$F$を償還価格，$P$を債券価格，$c$をクーポン・レート，$r$を複利最終利回り，$r_{\textrm{sfy}}$を単利最終利回り，$r_{\textrm{dy}}$を直接利回りとする．
+    第1式について，
+    \begin{align}
+        P=\sum_{t=1}^{T}\frac{cF}{(1+r)^{t}}+\frac{F}{(1+r)^{T}}\label{exp for r<c}
+    \end{align}
+    を$F<P$に代入して整理すれば$r<c$となるので容易に示される．\par
+    第2式1番目の不等号について．
+    ある$T\in\textbf{Z}_{\geq1}$で式(\ref{exp for r<c})と$r_{\textrm{sfy}}\geq r$がともに成り立つと仮定して矛盾を導く．
+    例えば$T=2$のとき，
+    \begin{align}
+        P=\frac{cF}{1+r}+\frac{cF+F}{(1+r)^{2}}
+    \end{align}
+    であり，単利最終利回りは
+    \begin{align}
+        r_{\textrm{sfy}}=\frac{cF+\frac{F-P}{2}}{P}\Longleftrightarrow P=\frac{1+2c}{1+2r_{\textrm{sfy}}}F.
+    \end{align}
+    よって
+    \begin{align}
+        \frac{c}{1+r}+\frac{1+c}{(1+r)^{2}}=\frac{1+2c}{1+2r_{\textrm{sfy}}}\leq\frac{1+2c}{1+2r}.
+    \end{align}
+    これを整理すれば$c\leq r$を得るが，すでに示した第1式に矛盾する．
+    第2式2番目の不等号について．
+    ある$T\in\textbf{Z}_{\geq1}$で式(\ref{exp for r<c})と$r\geq r_{\textrm{dy}}$がともに成り立つと仮定して矛盾を導く．
+    例えば$T=1$のとき，
+    \begin{align}
+        P=\frac{cF+F}{1+r}
+    \end{align}
+    であり，直接利回りは
+    \begin{align}
+        r_{\textrm{dy}}=\frac{cF}{P}\Longleftrightarrow P=\frac{cF}{r_{\textrm{dy}}}.
+    \end{align}
+    よって
+    \begin{align}
+        \frac{c}{r_{\textrm{dy}}}=\frac{1+c}{1+r}\leq\frac{1+c}{1+r_{\textrm{dy}}}.
+    \end{align}
+    これを整理すれば$c\leq r_{\textrm{dy}}$を得るが，$r_{\textrm{dy}}\leq r$により$c\leq r$となって，第1式に矛盾する．\par
+    アンダー・パー債についてはすべての不等号を反転させて議論すればよい．
+    パー債についてはすべての不等号を等号にして議論すればよい．
+
+
             </section>
         </main>
         <div id="nav-placeholder"></div>
