@@ -253,41 +253,38 @@
                             P=\sum_{t=1}^{T}\frac{cF}{(1+r)^{t}}+\frac{F}{(1+r)^{T}}
                         \]
                         を \( F&lt;P \) に代入して整理すれば \( r&lt;c \) となるので容易に示される。
-						
-    第2式1番目の不等号について．
-    ある$T\in\textbf{Z}_{\geq1}$で式(\ref{exp for r<c})と$r_{\textrm{sfy}}\geq r$がともに成り立つと仮定して矛盾を導く．
-    例えば$T=2$のとき，
-    \begin{align}
-        P=\frac{cF}{1+r}+\frac{cF+F}{(1+r)^{2}}
-    \end{align}
-    であり，単利最終利回りは
-    \begin{align}
-        r_{\textrm{sfy}}=\frac{cF+\frac{F-P}{2}}{P}\Longleftrightarrow P=\frac{1+2c}{1+2r_{\textrm{sfy}}}F.
-    \end{align}
-    よって
-    \begin{align}
-        \frac{c}{1+r}+\frac{1+c}{(1+r)^{2}}=\frac{1+2c}{1+2r_{\textrm{sfy}}}\leq\frac{1+2c}{1+2r}.
-    \end{align}
-    これを整理すれば$c\leq r$を得るが，すでに示した第1式に矛盾する．
-    第2式2番目の不等号について．
-    ある$T\in\textbf{Z}_{\geq1}$で式(\ref{exp for r<c})と$r\geq r_{\textrm{dy}}$がともに成り立つと仮定して矛盾を導く．
-    例えば$T=1$のとき，
-    \begin{align}
-        P=\frac{cF+F}{1+r}
-    \end{align}
-    であり，直接利回りは
-    \begin{align}
-        r_{\textrm{dy}}=\frac{cF}{P}\Longleftrightarrow P=\frac{cF}{r_{\textrm{dy}}}.
-    \end{align}
-    よって
-    \begin{align}
-        \frac{c}{r_{\textrm{dy}}}=\frac{1+c}{1+r}\leq\frac{1+c}{1+r_{\textrm{dy}}}.
-    \end{align}
-    これを整理すれば$c\leq r_{\textrm{dy}}$を得るが，$r_{\textrm{dy}}\leq r$により$c\leq r$となって，第1式に矛盾する．\par
-    アンダー・パー債についてはすべての不等号を反転させて議論すればよい．
-    パー債についてはすべての不等号を等号にして議論すればよい．
-
-
+                        第2式1番目の不等号は、ある \( T\in\textbf{Z}_{\geq1} \) で式(\ref{})と \( r_{\textrm{}}\geq r \) がともに成り立つと仮定して矛盾を導く。
+                        例えば \( T=2 \) のとき
+                        \[
+                            P=\frac{cF}{1+r}+\frac{cF+F}{(1+r)^{2}}
+                        \]
+                        であり、単利最終利回りは
+                        \[
+                            r_{\textrm{sfy}}=\frac{cF+\frac{F-P}{2}}{P}\Longleftrightarrow P=\frac{1+2c}{1+2r_{\textrm{sfy}}}F.
+                        \]
+                        よって
+                        \[
+                            \frac{c}{1+r}+\frac{1+c}{(1+r)^{2}}=\frac{1+2c}{1+2r_{\textrm{sfy}}}\leq\frac{1+2c}{1+2r}.
+                        \]
+                        これを整理すれば \( c\leq r \) を得るが、すでに示した第1式に矛盾する。
+                        第2式2番目の不等号は、ある \( T\in\textbf{Z}_{\geq1} \) で式(\ref{})と \( r\geq r_{\textrm{dy}} \) がともに成り立つと仮定して矛盾を導く。
+                        例えば \( T=1 \) のとき
+                        \[
+                            P=\frac{cF+F}{1+r}
+                        \]
+                        であり、直接利回りは
+                        \[
+                            r_{\textrm{dy}}=\frac{cF}{P}\Longleftrightarrow P=\frac{cF}{r_{\textrm{dy}}}.
+                        \]
+                        よって
+                        \[
+                            \frac{c}{r_{\textrm{dy}}}=\frac{1+c}{1+r}\leq\frac{1+c}{1+r_{\textrm{dy}}}.
+                        \]
+                        これを整理すれば \( c\leq r_{\textrm{dy}} \) を得るが，\( r_{\textrm{dy}}\leq r \) により \( c\leq r \) となって、第1式に矛盾する．\par
+                        アンダー・パー債についてはすべての不等号を反転させて議論すればよい．
+                        パー債についてはすべての不等号を等号にして議論すればよい．
+                    </p>
+                </div>
             </section>
         </main>
         <div id="nav-placeholder"></div>
