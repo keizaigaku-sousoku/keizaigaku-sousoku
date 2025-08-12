@@ -55,7 +55,7 @@
                     　すべての債券にではないが、多くの債券に共通の事項もある。
                     例えば公的機関や企業が債券を発行するにあたり、そもそも貨幣の貸し手がいなければ契約は成立しない。
                     そこで契約のインセンティブとして、償還とは別に満期までの一般には複数の時刻において、借り手である発行体が貸し手である債券の保有者に貨幣を渡すことを契約で定める場合がある。
-					また状況によっては借り手である発行体が貸し手である債券の保有者から貨幣を受け取ることを契約で定める場合もある。
+                    また状況によっては借り手である発行体が貸し手である債券の保有者から貨幣を受け取ることを契約で定める場合もある。
                     この貨幣を<span class="new-word">クーポン（coupon）</span>あるいは<span class="new-word">利子（interest）</span>と呼ぶ。
                     クーポンを \( C \in \textbf{R} \) 、償還価格を \( F &gt; 0 \) とおいたとき、比率
                     \[
@@ -91,7 +91,7 @@
                     割引債は利付債のクーポンが \( 0 \) である契約に過ぎないので、一般性を失わず償還価格 \( F &gt; 0 \) 、クーポンの列 \( \mathcal{C} = (C_t)_{t=1}^T \) 、\( C_t \in \textbf{R} \) 、\( T \in \textbf{Z}_{\geq1} \) が与えられたとする。
                     また現在 \( t=0 \) は債券が発行された時刻以降かつ満期より1単位時間以前であれば任意の時刻とする。
                     <!--債券とは組 \( (F,\mathcal{C}) \) に他ならず、これを市場参加者が取引した結果として債券価格 \( P \geq 0 \) がつく。-->
-					こうして決まる債券が取引されると、結果として債券価格 \( P \geq 0 \) が定まる。
+                    こうして決まる債券が取引されると、結果として債券価格 \( P \geq 0 \) が定まる。
                     このとき、\( r=r(F,\mathcal{C},P) \geq -1 \) であって
                     \[
                         P=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T} \label{price-yield}
@@ -154,16 +154,16 @@
                             f(r)=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T}
                         \]
                         とおく。
-						極限 \( f(r) \rightarrow 0 \ (r \rightarrow \infty) \) により、任意の \( P &gt; 0 \) に対して \( P = f(r) \) が一意の解をもつ必要十分条件は
-						\[
-							\begin{cases}
-								f^\prime(r) &lt; 0 \\
-								f(r) \rightarrow \infty \ (r \rightarrow -1)
-							\end{cases}
-						\]
-						である。
-						第1式が与式の第1式に等しい。
-						第2式について、\( r \rightarrow -1 \) の極限で \( f(r) \) の主要項は \( 1/(1+r)^T \) であり、これが正の無限大に発散することは与式の第2式に等しい。
+                        極限 \( f(r) \rightarrow 0 \ (r \rightarrow \infty) \) により、任意の \( P &gt; 0 \) に対して \( P = f(r) \) が一意の解をもつ必要十分条件は
+                        \[
+                            \begin{cases}
+                                f^\prime(r) &lt; 0 \\
+                                f(r) \rightarrow \infty \ (r \rightarrow -1)
+                            \end{cases}
+                        \]
+                        である。
+                        第1式が与式の第1式に等しい。
+                        第2式について、\( r \rightarrow -1 \) の極限で \( f(r) \) の主要項は \( 1/(1+r)^T \) であり、これが正の無限大に発散することは与式の第2式に等しい。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
@@ -256,7 +256,7 @@
                                     \Longleftrightarrow&r=c
                                 \end{align}
                             \]
-						</div>
+                        </div>
                         となる。
                         十分性は逆をたどれば示される。
                     </p>
@@ -272,9 +272,9 @@
                         固定利付債において \( c \) をクーポン・レート、\( r \neq 0 \) を複利最終利回り、\( r_\textrm{SFY} \) を単利最終利回り、\( r_\textrm{DY} \) を直接利回りとする。
                         このとき、以下が成り立つ。<br>
                         (i) \( r &gt; 0 \) のオーバー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
-						(i)' \( r &lt; 0 \) のオーバー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
+                        (i)' \( r &lt; 0 \) のオーバー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
                         (ii) \( r &gt; 0 \) のアンダー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
-						(ii)' \( r &lt; 0 \) のアンダー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
+                        (ii)' \( r &lt; 0 \) のアンダー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
                         (iii) パー債では \( r=c \) かつ \( r_\textrm{SFY}=r=r_\textrm{DY} \) 。
                     </p>
                 </div>
