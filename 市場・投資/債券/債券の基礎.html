@@ -124,19 +124,20 @@
                         </div>
                         であり、\( F &gt; 0 \) かつ \( C_t &gt; 0 \) ゆえ \( f^\prime(r)&lt;0 \) 。
                         よって \( f(r) \) は単調減少である。
-                        極限は \( f(r) \nearrow \infty \ ( r \searrow -1 ) \) 、\( f(r) \searrow 0 \ ( r \nearrow \infty ) \) であるから、\( P &gt; 0 \) ならば \( P=f(r) \) の解が一意に存在する。
+                        極限は \( f(r) \rightarrow \infty \ ( r \searrow -1 ) \) 、\( f(r) \searrow 0 \ ( r \rightarrow \infty ) \) であるから、\( P &gt; 0 \) ならば \( P=f(r) \) の解が一意に存在する。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
 				<p>
                     　少なくとも1回のクーポンが負である場合、複利最終利回りが一意に存在するかは分からない。
                     実際、クーポンによっては複利最終利回りが存在しなかったり、存在しても一意でなかったりする。
-					複利最終利回りを良定義にする条件を調べることは重要であり、以下が債券 \( ( F, \mathcal{C} ) \) の情報のみを用いた主張である。
+					複利最終利回りを良定義にする条件を調べることは重要であり、以下が \( ( F, \mathcal{C} ) \) の情報のみを用いた主張である。
 				</p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        任意の正の債券価格に対して、複利最終利回りが一意に存在する必要十分条件は
+						\( F &gt; 0 \) を償還価格、\( \mathcal{C} = (C_t)_{t=1}^T \) 、\( C_t \in \textbf{R} \) 、\( T \in \textbf{Z}_{\geq1} \) をクーポンの列、\( P &gt; 0 \) を債券価格とする。
+                        このとき、複利最終利回りが一意に存在する必要十分条件は
                         \[
                             \begin{cases}
                                 \sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T} &gt; 0\\
@@ -158,12 +159,12 @@
                         \[
                             \begin{cases}
                                 f^\prime(r) &lt; 0 \\
-                                f(r) \rightarrow \infty \ (r \rightarrow -1)
+                                f(r) \rightarrow \infty \ (r \searrow -1)
                             \end{cases}
                         \]
                         である。
-                        第1式が与式の第1式に等しい。
-                        第2式について、\( r \rightarrow -1 \) の極限で \( f(r) \) の主要項は \( 1/(1+r)^T \) であり、これが正の無限大に発散することは与式の第2式に等しい。
+                        第1式は与式の第1式に等しい。
+                        第2式について、\( r \searrow -1 \) の極限で \( f(r) \) の主要項は \( 1/(1+r)^T \) であり、これが正の無限大に発散することは与式の第2式に等しい。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
