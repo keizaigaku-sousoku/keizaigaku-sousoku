@@ -200,7 +200,7 @@
             <section id="section3">
                 <h4>単利最終利回り・直接利回り</h4>
                 <p>
-                    　複利最終利回りが再投資に係る解釈を与えられた一方で、再投資を考慮しない単純な収益率も考えられる。
+                    　複利最終利回りに再投資を伴う解釈を与えた一方で、再投資を考慮しない単純な収益率も考えられる。
                     
                     償還価格を \( F \) 、クーポンの列を \( \mathcal{C} = ( C_t )_{t=1}^T \) 、債券価格を \( P \) とする。
                     このとき、収益率として
@@ -271,24 +271,24 @@
                 </div>
 				<p>
                     　パー債でない任意の利付債は2通りに分類される。
-                    すなわち、債券価格が償還価格より高いものを<span class="new-word">オーバー・パー債（over par bond）</span>、<span class="new-word">アンダー・パー債（under par bond）</span>と呼ぶ。
+                    すなわち、債券価格が償還価格より高いものを<span class="new-word">オーバー・パー債（over par bond）</span>、債券価格が償還価格より低いものを<span class="new-word">アンダー・パー債（under par bond）</span>と呼ぶ。
 				</p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
                         固定利付債において \( c \) をクーポン・レート、\( r \neq 0 \) を複利最終利回り、\( r_\textrm{SFY} \) を単利最終利回り、\( r_\textrm{DY} \) を直接利回りとする。
                         このとき、以下が成り立つ。<br>
-                        (i) \( r &gt; 0 \) のオーバー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
-                        (i)' \( r &lt; 0 \) のオーバー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
-                        (ii) \( r &gt; 0 \) のアンダー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
-                        (ii)' \( r &lt; 0 \) のアンダー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
+                        (i-a) \( r &gt; 0 \) のオーバー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
+                        (i-b) \( r &lt; 0 \) のオーバー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
+                        (ii-a) \( r &gt; 0 \) のアンダー・パー債では \( r&gt;c \) かつ \( r_\textrm{SFY}&gt;r&gt;r_\textrm{DY} \) 。<br>
+                        (ii-b) \( r &lt; 0 \) のアンダー・パー債では \( r&lt;c \) かつ \( r_\textrm{SFY}&lt;r&lt;r_\textrm{DY} \) 。<br>
                         (iii) パー債では \( r=c \) かつ \( r_\textrm{SFY}=r=r_\textrm{DY} \) 。
                     </p>
                 </div>
                 <div class="proof">
                     <div class="title">証明</div>
                     <p>
-                        (i)について、償還価格を \( F \) 、債券価格を \( P \) とする。
+                        (i-a)について、償還価格を \( F \) 、債券価格を \( P \) とする。
                         第1式は
                         \[
                             P=\sum_{t=1}^{T}\frac{cF}{(1+r)^{t}}+\frac{F}{(1+r)^{T}}
