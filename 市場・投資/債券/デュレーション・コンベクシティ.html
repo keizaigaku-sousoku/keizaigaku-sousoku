@@ -2,20 +2,20 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width、 initial-scale=1。0">
         <title>デュレーション・コンベクシティ</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="stylesheet" href="../../共通/stylesheet_contents.css">
-        <link rel="stylesheet" href="../../共通/stylesheet_footer.css">
-        <script src="../../共通/mathjax-config.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="stylesheet" href="https://cdnjs。cloudflare。com/ajax/libs/font-awesome/6。5。0/css/all。min。css">
+        <link rel="stylesheet" href="。。/。。/共通/stylesheet_contents。css">
+        <link rel="stylesheet" href="。。/。。/共通/stylesheet_footer。css">
+        <script src="。。/。。/共通/mathjax-config。js"></script>
+        <script src="https://cdn。jsdelivr。net/npm/mathjax@3/es5/tex-mml-chtml。js"></script>
     </head>
     <body>
         <header>
             <h2>デュレーション・コンベクシティ</h2>
         </header>
         <div class="subtitle">
-            債券といえばこれ
+            債券の分析といえばこれ
         </div>
         <div class="toc-container">
             <div class="part">
@@ -28,6 +28,120 @@
             <section id="section1">
                 <h4>デュレーション</h4>
                 <p>
+                    　債券に対して市場参加者は勝手な売り気配値や買い気配値を出すが、もちろん値にある程度の水準があると便利である。
+                    彼らが参考にできるのは、当該債券と同等または同様
+                    
+                    　複利最終利回りは債券価格を1つの引数とする関数であるが、一意の存在を仮定しているので、便宜的に債券価格を複利最終利回りの関数とみなせる。
+                    
+                    するとイールド・カーブが時間変化したとき、複利最終利回りが変化して債券価格も変化する。
+                    債券価格の変化は、債券を満期までは保有しない投資家にとって収益に直結するので、これを定量的に議論することは重要である。
+                    一般に、$T$を残存期間、$F$を償還価格、$P=P(r)$を債券価格、$C\geq0$をクーポン、$r$を複利最終利回りとすれば
+                    \begin{align}
+                        P=P(r)=\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}+\frac{C+F}{(1+r)^{T}}
+                    \end{align}
+                    であった。
+                    よって複利最終利回りが変化するときの債券価格の変化は
+                    \begin{align}
+                        \Delta P=&P(r+\Delta r)-P(r)\nonumber\\
+                        =&\sum_{t=1}^{T-1}\frac{C}{(1+r+\Delta r)^{t}}+\frac{C+F}{(1+r+\Delta r)^{T}}-\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}-\frac{C+F}{(1+r)^{T}}\nonumber\\
+                        =&\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}\nonumber\\
+                        &+\frac{C+F}{(1+r)^{T}}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}+\mathcal{O}((\Delta r)^3)\nonumber\\
+                        =&-\bigg{[}\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
+                        &+\frac{1}{2}\bigg{[}\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}+\mathcal{O}((\Delta r)^3)。
+                    \end{align}
+                    ここで
+                    \begin{align}
+                        D_{\textrm{mod}}=D_{\textrm{mod}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}}{P}\cdot\frac{1}{1+r}、\label{modified duration}
+                    \end{align}
+                    また
+                    \begin{align}
+                        C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}}{P}\cdot\frac{1}{(1+r)^{2}}
+                    \end{align}
+                    を定めれば
+                    \begin{align}
+                        \frac{\Delta P}{P}=-D_{\textrm{mod}}\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^{2}+\mathcal{O}((\Delta r)^3)。
+                    \end{align}
+                    これは複利最終利回りの変化に対する債券価格の変化を無次元化したものに過ぎない。
+                    係数$D_{\textrm{mod}}$を\textbf{\color{royalred}修正デュレーション（modified duration）\color{black}}、$C_{\textrm{v}}$を\textbf{\color{royalred}コンベクシティ（convexity）\color{black}}と呼ぶ。
+                    \begin{leftbar}
+                        \begin{prop}
+                            債券価格は複利最終利回りに関して狭義単調減少かつ下に凸である。
+                        \end{prop}
+                    \end{leftbar}
+                    \begin{proof}
+                        $P>0$ゆえ、$-D_{\textrm{mod}}$は$\textrm{d}P/\textrm{d}r$と、$C_{\textrm{v}}$は$\textrm{d}^{2}P/\textrm{d}r^{2}$と符号が一致する。
+                        定義から明らかに$D_{\textrm{mod}}、\ C_{\textrm{v}}>0$であり、$\textrm{d}P/\textrm{d}r<0$、$\textrm{d}^{2}P/\textrm{d}r^{2}>0$である。
+                    \end{proof}
+                    
+                    \subsubsection{残存期間やクーポン・レートに対する変化}
+                    債券価格を複利最終利回りの関数とみなしたとき、残る変数は定数として固定されている。
+                    実際、残存期間やクーポン・レートは債券の発行時に決まるものであり、満期まで変化しないことが一般的である。
+                    複数の債券が与えられたとき、それらの債券価格の複利最終利回りに対する変化を調べるには、そういった変数を変化させればよい。
+                    次の命題は債券価格の振る舞いを直感的に理解する上で有益である。
+                    %まず残存期間に対する変化について。
+                    %クーポン債（クーポン0のゼロ・クーポン債含む）の複利最終利回りは将来受け取るクーポンや償還価格を割り引く係数の中で定義された。
+                    %残存期間が長いということは、満期までの時間に
+                    
+                    \begin{leftbar}
+                        \begin{prop}
+                            複利最終利回りが変化するとき、債券価格$P$の変化$\Delta P$について次が成り立つ。\\
+                            (i)残存期間が長いほど$|\Delta P|/P$は大きい。\\
+                            (ii)クーポン・レートが高いほど$|\Delta P|$は大きく、$|\Delta P|/P$は小さい。
+                        \end{prop}
+                    \end{leftbar}
+                    \begin{proof}
+                        (i)クーポン・レート$c$を用いれば
+                        \begin{align}
+                            D_{\textrm{mod}}=\frac{\sum_{t=1}^{T-1}\frac{cFt}{(1+r)^{t}}+\frac{(1+c)FT}{(1+r)^{T}}}{\sum_{t=1}^{T-1}\frac{cF}{(1+r)^{t}}+\frac{(1+c)F}{(1+r)^{T}}}\cdot\frac{1}{1+r}=\frac{\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T}}+(1+\frac{1}{c})T}{\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T}}+1+\frac{1}{c}}\cdot\frac{1}{1+r}。
+                        \end{align}
+                        修正デュレーションの引数として$T\in\textbf{Z}_{\geq1}$を$D_{\textrm{mod}}(T)$とあらわに書き、$A=\sum_{t=1}^{T-1}t/(1+r)^{t-T}$、$B=\sum_{t=1}^{T-1}1/(1+r)^{t-T}$、$\gamma=1+1/c$とおけば
+                        \begin{align}
+                            &D_{\textrm{mod}}(T+1)-D_{\textrm{mod}}(T)\nonumber\\
+                            =&\frac{\sum_{t=1}^{T}\frac{t}{(1+r)^{t-T-1}}+\gamma(T+1)}{\sum_{t=1}^{T}\frac{1}{(1+r)^{t-T-1}}+\gamma}\cdot\frac{1}{1+r}-\frac{A+\gamma T}{B+\gamma}\cdot\frac{1}{1+r}\nonumber\\
+                            =&\bigg{[}\frac{A+(1+r)T+\gamma(T+1)}{B+1+r+\gamma}-\frac{A+\gamma T}{B+\gamma}\bigg{]}\frac{1}{1+r}\nonumber\\
+                            =&\frac{[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]}{(B+2\gamma+1)(B+\gamma)(1+r)}。
+                        \end{align}
+                        分子は
+                        \begin{align}
+                            &[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]\nonumber\\
+                            =&\bigg{(}1+\gamma+\frac{\gamma}{T}\bigg{)}TB-(1+\gamma)A\nonumber\\
+                            >&(1+\gamma)TB-(1+\gamma)A\nonumber\\
+                            =&(1+\gamma)\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}\nonumber\\
+                            >&0。
+                        \end{align}
+                        よって$D_{\textrm{mod}}(T+1)>D_{\textrm{mod}}(T)$であり、$D_{\textrm{mod}}(T)$は$T$に関して狭義単調増加である。
+                        しかも明らかに$D_{\textrm{mod}}(T)>0$。
+                        したがって残存期間が長いほど$|\Delta P|/P$は大きい。\\
+                        (ii)定義より
+                        \begin{align}
+                            D_{\textrm{mod}}P=\sum_{t=1}^{T-1}\frac{cFt}{(1+r)^{t}}+\frac{(1+c)FT}{(1+r)^{T}}>0。
+                        \end{align}
+                        これは$c$に関して狭義単調増加であり、$-D_{\textrm{mod}}P$は$c$が大きいほど負に大きくなる。
+                        よってクーポン・レートが高いほど$|\Delta P|$は大きい。
+                        また
+                        \begin{align}
+                            \frac{\partial D_{\textrm{mod}}}{\partial c}=-\frac{\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}}{c^{2}[\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T}}+1+\frac{1}{c}]^{2}}\cdot\frac{1}{1+r}<0。
+                        \end{align}
+                        よって$D_{\textrm{mod}}$は$c$に関して狭義単調減少である。
+                        しかも明らかに$D_{\textrm{mod}}>0$。
+                        したがってクーポン・レートが高いほど$|\Delta P|/P$は小さい。
+                    \end{proof}
+                    
+                    \subsubsection{Macaulayデュレーション}
+                    修正デュレーションはその名の通り、歴史的には別の量を修正したものである。
+                    それは単に
+                    \begin{align}
+                        D_{\textrm{Mac}}:=\frac{\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}}{P}
+                    \end{align}
+                    であって、明らかに
+                    \begin{align}
+                        D_{\textrm{mod}}=\frac{D_{\textrm{Mac}}}{1+r}。
+                    \end{align}
+                    時刻の単位をもった$D_{\textrm{Mac}}$を\textbf{\color{royalred}Macaulayデュレーション（Macaulay duration）\color{black}}と呼ぶ。
+                    これは残存期間のキャッシュ・フローに関する加重平均に他ならず、残存期間のある意味での平均である。
+                    一般に債券の投資において、投資家が投資額分の収益を得るまでに要する時間を\textbf{\color{royalred}デュレーション（duration）\color{black}}と呼ぶ。
+                    Macaulayデュレーションはデュレーションの1つであると解釈される。
+
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -47,29 +161,29 @@
                 <h4>コンベクシティ</h4>
                 <p>
                 </p>
+                <div class="comment-box">
+                    <p>
+                        <span class="new-word">コラム：せどりと転売</span>
+                    </p>
+                    <p>
+                        せどり（競取り、糶取り）はモノの売値と買値の差額を利用して貨幣を獲得する戦略であり、いわゆる転売に近い行為である。
+                        実際、転売でもモノを買い、それを一定時間保有した後より高い価格で売って差額の貨幣を獲得する。
+                        現実世界においては、せどりは中古のモノを買いやや高い売値で売って小銭を稼ぐことを指し、転売は新品のモノを買い占めて品薄の状況を作り出し売値を吊り上げてから売って大金を稼ぐことを指す。
+                        また転売を行う者はそのモノの生産に携わった訳でないにもかかわらず多くの貨幣を得るので、しばしば厳しい非難を受ける。
+                        しかしそもそもせどりと転売を区別する明確な基準は存在せず、また転売も法律を破らなければ問題はない。
+                        厳しい非難というのは結局の所、そのモノを高値で買わざるを得ない者あるいは楽をして稼ぐことを羨む者の私怨に過ぎない。
+                        自由主義的な見方をすれば、転売にも相応のリスクがあり、非難する暇があるならその者も転売をすれば良いだけである。
+                    </p>
+                </div>
             </section>
-            <div class="comment-box">
-                <p>
-                    <span class="new-word">コラム：せどりと転売</span>
-                </p>
-                <p>
-                    せどり（競取り、糶取り）はモノの売値と買値の差額を利用して貨幣を獲得する戦略であり、いわゆる転売に近い行為である。
-                    実際、転売でもモノを買い、それを一定時間保有した後より高い価格で売って差額の貨幣を獲得する。
-                    現実世界においては、せどりは中古のモノを買いやや高い売値で売って小銭を稼ぐことを指し、転売は新品のモノを買い占めて品薄の状況を作り出し売値を吊り上げてから売って大金を稼ぐことを指す。
-                    また転売を行う者はそのモノの生産に携わった訳でないにもかかわらず多くの貨幣を得るので、しばしば厳しい非難を受ける。
-                    しかしそもそもせどりと転売を区別する明確な基準は存在せず、また転売も法律を破らなければ問題はない。
-                    厳しい非難というのは結局の所、そのモノを高値で買わざるを得ない者あるいは楽をして稼ぐことを羨む者の私怨に過ぎない。
-                    自由主義的な見方をすれば、転売にも相応のリスクがあり、非難する暇があるならその者も転売をすれば良いだけである。
-                </p>
-            </div>
         </main>
         <div id="nav-placeholder"></div>
-        <script src="../../共通/load-nav.js" defer></script>
+        <script src="。。/。。/共通/load-nav。js" defer></script>
         <div id="footer-placeholder"></div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code。jquery。com/jquery-3。6。0。min。js"></script>
         <script>
             $(function() {
-                $('#footer-placeholder').load('../../共通/footer.html');
+                $('#footer-placeholder')。load('。。/。。/共通/footer。html');
             });
         </script>
     </body>
