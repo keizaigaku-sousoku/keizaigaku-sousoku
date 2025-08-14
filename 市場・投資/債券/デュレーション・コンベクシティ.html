@@ -46,28 +46,38 @@
                     複利最終利回りは債券の多くの情報を含んでいることに加え、債券価格と一対一対応である（と仮定している） [<a href="債券の基礎.html#section2" style="text-decoration: none"><span class="new-word">債券の基礎/複利最終利回り</span></a>] 。
                     したがってある債券の債券価格 \( P_1 \) が変化すると複利最終利回り \( r_1 \) が変化し、それに呼応するように他の債券の債券価格 \( P_2 \) が変化して複利最終利回り \( r_2 \) が \( r_1 \) と何らかの意味で整合する、というダイナミクスの描像を得られる。
                     ここで債券価格が相互作用するというのが現象つまり市場の状態の変化であり、複利最終利回りが相互作用するというのが市場参加者たちの描像つまり情報収集（の結果）である [<a href="../市場/市場とは何か.html#section4" style="text-decoration: none"><span class="new-word">市場とは何か/情報・目的関数</span></a>] 。
-                    こう考えれば、あるいは現実世界でこう考える人々が多いので、償還価格 \( F \) 、クーポンの列 \( \mathcal{C} \) 、債券価格 \( P \) の関数である複利最終利回り \( r=r(F,\mathcal{C},P) \) を逆に解いた \( P(r):=P=P(F,\mathcal{C},r) \) は議論の重要な対象である。
+                    こう考えれば、あるいは現実世界でこう考える人々が多いので、償還価格 \( F \) 、クーポンの列 \( \mathcal{C} \) 、債券価格 \( P \) の関数である複利最終利回り \( r=r(F,\mathcal{C},P) \) を逆に解いた \( P=P(F,\mathcal{C},r) \) は議論の重要な対象である。
                 </p>
             </section>
             <section id="section2">
                 <h4>デュレーション</h4>
                 <p>
                     　債券価格を複利最終利回りの関数とみなせば、解析は煩雑であるが直線的である。
-                    まず償還価格 \( F \) 、クーポンの列 \( \mathcal{C}=(C_t)_{t=1}^T \) 、\( C_t \in \textbf{R} \) 、\( T \in \textbf{Z}_{\geq1} \) に対して、複利最終利回りが一意に存在する条件
-                    
-                    \begin{align}
-                        P=P(r)=\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}+\frac{C+F}{(1+r)^{T}}
-                    \end{align}
-                    であった。
-                    よって複利最終利回りが変化するときの債券価格の変化は
-                    \begin{align}
-                        \Delta P=&P(r+\Delta r)-P(r)\nonumber\\
-                        =&\sum_{t=1}^{T-1}\frac{C}{(1+r+\Delta r)^{t}}+\frac{C+F}{(1+r+\Delta r)^{T}}-\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}-\frac{C+F}{(1+r)^{T}}\nonumber\\
-                        =&\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}\nonumber\\
-                        &+\frac{C+F}{(1+r)^{T}}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}+\mathcal{O}((\Delta r)^3)\nonumber\\
-                        =&-\bigg{[}\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
-                        &+\frac{1}{2}\bigg{[}\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}+\mathcal{O}((\Delta r)^3)。
-                    \end{align}
+                    まず償還価格 \( F \) 、クーポンの列 \( \mathcal{C}=(C_t)_{t=1}^T \) 、\( C_t \in \textbf{R} \) 、\( T \in \textbf{Z}_{\geq1} \) に対して、複利最終利回りが一意に存在する必要十分条件
+                    \[
+                        \begin{cases}
+                            \sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T} &gt; 0\\
+                            C_T+F &gt; 0
+                        \end{cases}
+                    \]
+                    を課す [<a href="債券の基礎.html#section2" style="text-decoration: none"><span class="new-word">債券の基礎/複利最終利回り</span></a>] 。
+                    このとき、
+                    \[
+                        P(r):=P=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T}
+                    \]
+                    が \( (-1,\infty) \) 上で良定義である。
+                    複利最終利回りが変化するときの債券価格の変化は
+                    \[
+                        \begin{align}
+                            \Delta P=&P(r+\Delta r)-P(r)\nonumber\\
+                            =&\sum_{t=1}^{T-1}\frac{C}{(1+r+\Delta r)^{t}}+\frac{C+F}{(1+r+\Delta r)^{T}}-\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}-\frac{C+F}{(1+r)^{T}}\nonumber\\
+                            =&\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}\nonumber\\
+                            &+\frac{C+F}{(1+r)^{T}}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}+\mathcal{O}((\Delta r)^3)\nonumber\\
+                            =&-\bigg{[}\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
+                            &+\frac{1}{2}\bigg{[}\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}+\mathcal{O}((\Delta r)^3)
+                        \end{align}
+                    \]
+                    と展開される。
                     ここで
                     \begin{align}
                         D_{\textrm{mod}}=D_{\textrm{mod}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}}{P}\cdot\frac{1}{1+r}、\label{modified duration}
