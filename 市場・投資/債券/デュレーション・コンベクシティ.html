@@ -63,18 +63,18 @@
                     を課す [<a href="債券の基礎.html#section2" style="text-decoration: none"><span class="new-word">債券の基礎/複利最終利回り</span></a>] 。
                     このとき、
                     \[
-                        P(r):=P=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T}
+                        P(r):=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T}
                     \]
                     が \( (-1,\infty) \) 上で良定義である。
-                    複利最終利回りが変化するときの債券価格の変化は
+                    次に複利最終利回りが \( r \) から \( r+\Delta r \) に変化すると
                     \[
                         \begin{align}
                             \Delta P=&P(r+\Delta r)-P(r)\nonumber\\
-                            =&\sum_{t=1}^{T-1}\frac{C}{(1+r+\Delta r)^{t}}+\frac{C+F}{(1+r+\Delta r)^{T}}-\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}-\frac{C+F}{(1+r)^{T}}\nonumber\\
-                            =&\sum_{t=1}^{T-1}\frac{C}{(1+r)^{t}}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}\nonumber\\
-                            &+\frac{C+F}{(1+r)^{T}}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}\bigg{]}+\mathcal{O}((\Delta r)^3)\nonumber\\
-                            =&-\bigg{[}\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
-                            &+\frac{1}{2}\bigg{[}\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^{2}+\mathcal{O}((\Delta r)^3)
+                            =&\sum_{t=1}^T\frac{C_t}{(1+r+\Delta r)^t}+\frac{F}{(1+r+\Delta r)^T}-\sum_{t=1}^T\frac{C_t}{(1+r)^t}-\frac{F}{(1+r)^T\nonumber\\
+                            =&\sum_{t=1}^T\frac{C}{(1+r)^t}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2\bigg{]}\nonumber\\
+                            &+\frac{F}{(1+r)^T}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2\bigg{]}+o((\Delta r)^2)\nonumber\\
+                            =&-\bigg{[}\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
+                            &+\frac{1}{2}\bigg{[}\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{T(T+1)F}{(1+r)^T}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2+o((\Delta r)^2)
                         \end{align}
                     \]
                     と展開される。
