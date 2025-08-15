@@ -95,15 +95,20 @@
                     と表せる。
                     これは複利最終利回りの変化に対する債券価格の変化を無次元化したものに過ぎない。
                     係数 \( D_{\textrm{mod}} \) を<span class="new-word">修正デュレーション（modified duration）</span>、\( C_{\textrm{v}} \) を<span class="new-word">コンベクシティ（convexity）</span>と呼ぶ。
-                    \begin{leftbar}
-                        \begin{prop}
+                    <div class="theorem-tile">
+                        <div class="title">命題</div>
+                        <p>
                             債券価格は複利最終利回りに関して狭義単調減少かつ下に凸である。
-                        \end{prop}
-                    \end{leftbar}
-                    \begin{proof}
-                        $P>0$ゆえ、$-D_{\textrm{mod}}$は$\textrm{d}P/\textrm{d}r$と、$C_{\textrm{v}}$は$\textrm{d}^{2}P/\textrm{d}r^{2}$と符号が一致する。
-                        定義から明らかに$D_{\textrm{mod}}、\ C_{\textrm{v}}>0$であり、$\textrm{d}P/\textrm{d}r<0$、$\textrm{d}^{2}P/\textrm{d}r^{2}>0$である。
-                    \end{proof}
+                        </p>
+                    </div>            
+                    <div class="proof">
+                        <div class="title">証明</div>
+                        <p>
+                            \( P &gt; 0 \) ゆえ、\( -D_{\textrm{mod}} \) は \( \textrm{d}P/\textrm{d}r \) と、\( C_{\textrm{v}} \) は \( \textrm{d}^{2}P/\textrm{d}r^{2} \) と符号が一致する。
+                            定義から明らかに \( D_{\textrm{mod}} \) 、\( C_{\textrm{v}} &gt; 0 \) であり、\( \textrm{d}P/\textrm{d}r &lt; 0 \) 、\( \textrm{d}^{2}P/\textrm{d}r^{2} &gt; 0 \) である。
+                        </p>
+                        <div class="end-symbol">■</div>
+                    </div>
                     
                     \subsubsection{残存期間やクーポン・レートに対する変化}
                     債券価格を複利最終利回りの関数とみなしたとき、残る変数は定数として固定されている。
