@@ -82,11 +82,11 @@
                     と展開される。
                     ここで
                     \[
-                        D_{\textrm{mod}}=D_{\textrm{mod}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}}{P}\cdot\frac{1}{1+r}、\label{modified duration}
+                        D_{\textrm{mod}}=D_{\textrm{mod}}(r):=\frac{\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}}{P}\cdot\frac{1}{1+r}
                     \]
                     また
                     \[
-                        C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}}{P}\cdot\frac{1}{(1+r)^{2}}
+                        C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{TF(T+1)}{(1+r)^T}}{P}\cdot\frac{1}{(1+r)^2}
                     \]
                     を定めれば
                     \[
