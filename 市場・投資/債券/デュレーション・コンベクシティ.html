@@ -65,9 +65,9 @@
                         P(r):=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T}
                     \]
                     が \( (-1,\infty) \) 上で良定義である。
+                    次に複利最終利回りが \( r \) から \( r+\Delta r \) に変化すると
                 </p>
                 <p>
-                    次に複利最終利回りが \( r \) から \( r+\Delta r \) に変化すると
                     <div class="math-container">
                         \[
                             \begin{align}
@@ -80,19 +80,29 @@
                             \end{align}
                         \]
                     </div>
+                </p>
+                <p>
                     と展開される。
                     ここで
+                </p>
+                <p>
                     <div class="math-container">
                         \[
                             D=D(r):=\frac{\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}}{P}\cdot\frac{1}{1+r}
                         \]
                     </div>
+                </p>
+                <p>
                     また
+                </p>
+                <p>
                     <div class="math-container">
                         \[
                             C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{T(T+1)F}{(1+r)^T}}{P}\cdot\frac{1}{(1+r)^2}
                         \]
                     </div>
+                </p>
+                <p>
                     を定めれば
                     \[
                         \frac{\Delta P}{P}=-D\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^2+o((\Delta r)^2)
@@ -102,7 +112,6 @@
                     係数 \( D \) を<span class="new-word">修正デュレーション（modified duration）</span>、\( C_{\textrm{v}} \) を<span class="new-word">コンベクシティ（convexity）</span>と呼ぶ。
                     これらの量は単なる展開係数に過ぎないが、債券の保有による収益率を議論する上では重要であり、とくに修正デュレーションは実務において頻出である。
                     以下の主張により、修正デュレーションは断らない限り正であることが仮定される。
-                
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
