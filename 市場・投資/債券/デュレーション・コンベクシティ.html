@@ -200,7 +200,7 @@
                     <p>
                         (i)について、クーポン・レート \( c \) を用いれば
                         \[
-                            D_{\textrm{mod}}=\frac{\sum_{t=1}^{T-1}\frac{cFt}{(1+r)^{t}}+\frac{(1+c)FT}{(1+r)^{T}}}{\sum_{t=1}^{T-1}\frac{cF}{(1+r)^{t}}+\frac{(1+c)F}{(1+r)^{T}}}\cdot\frac{1}{1+r}=\frac{\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T}}+(1+\frac{1}{c})T}{\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T}}+1+\frac{1}{c}}\cdot\frac{1}{1+r}。
+                            D=\frac{\sum_{t=1}^T\frac{cFt}{(1+r)^t}+\frac{FT}{(1+r)^T}}{\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}}\cdot\frac{1}{1+r}=\frac{\sum_{t=1}^T\frac{t}{(1+r)^{t-T}}+(1+\frac{1}{c})T}{\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+1+\frac{1}{c}}\cdot\frac{1}{1+r}。
                         \]
                         修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書き、\( A=\sum_{t=1}^{T-1}t/(1+r)^{t-T} \) 、\( B=\sum_{t=1}^{T-1}1/(1+r)^{t-T} \) 、\( \gamma=1+1/c \) とおけば
                         \[
