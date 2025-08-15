@@ -82,7 +82,7 @@
                     と展開される。
                     ここで
                     \[
-                        D_{\textrm{mod}}=D_{\textrm{mod}}(r):=\frac{\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}}{P}\cdot\frac{1}{1+r}
+                        D=D(r):=\frac{\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}}{P}\cdot\frac{1}{1+r}
                     \]
                     また
                     \[
@@ -90,11 +90,33 @@
                     \]
                     を定めれば
                     \[
-                        \frac{\Delta P}{P}=-D_{\textrm{mod}}\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^{2}+o((\Delta r)^2)
+                        \frac{\Delta P}{P}=-D\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^{2}+o((\Delta r)^2)
                     \]
                     と表せる。
                     これは複利最終利回りの変化に対する債券価格の変化を無次元化したものに過ぎない。
-                    係数 \( D_{\textrm{mod}} \) を<span class="new-word">修正デュレーション（modified duration）</span>、\( C_{\textrm{v}} \) を<span class="new-word">コンベクシティ（convexity）</span>と呼ぶ。
+                    係数 \( D \) を<span class="new-word">修正デュレーション（modified duration）</span>、\( C_{\textrm{v}} \) を<span class="new-word">コンベクシティ（convexity）</span>と呼ぶ。
+                    <div class="theorem-tile">
+                        <div class="title">命題</div>
+                        <p>
+                            \( F \) を償還価格、\( C_T \) を満期のクーポン、\( P &gt; 0 \) を債券価格、\( D \) を修正デュレーションとする。
+                            このとき、複利最終利回りが一意に存在して逆に債券価格を良定義にする必要十分条件は
+                            \[
+                                \begin{cases}
+                                    D &gt; 0\\
+                                    C_T+F &gt; 0
+                                \end{cases}
+                            \]
+                            である。
+                        </p>
+                    </div>            
+                    <div class="proof">
+                        <div class="title">証明</div>
+                        <p>
+                            修正デュレーションの定義より自明。
+                        </p>
+                        <div class="end-symbol">■</div>
+                    </div>
+
                     <div class="theorem-tile">
                         <div class="title">命題</div>
                         <p>
