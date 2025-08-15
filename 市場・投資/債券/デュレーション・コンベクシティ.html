@@ -203,20 +203,24 @@
                             D=\frac{\sum_{t=1}^T\frac{tcF}{(1+r)^t}+\frac{TF}{(1+r)^T}}{\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}}\cdot\frac{1}{1+r}=\frac{\sum_{t=1}^T\frac{t}{(1+r)^{t-T}}+\frac{T}{c}}{\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+\frac{1}{c}}\cdot\frac{1}{1+r}
                         \]
                         である。
-                        修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書き、\( A=\sum_{t=1}^{T-1}t/(1+r)^{t-T} \) 、\( B=\sum_{t=1}^{T-1}1/(1+r)^{t-T} \) 、\( \gamma=1+1/c \) とおけば
+                        修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書き、\( A=\sum_{t=1}^T t/(1+r)^{t-T} \) 、\( B=\sum_{t=1}^T 1/(1+r)^{t-T} \) とおけば
                         \[
-                            &D_{\textrm{mod}}(T+1)-D_{\textrm{mod}}(T)\nonumber\\
-                            =&\frac{\sum_{t=1}^{T}\frac{t}{(1+r)^{t-T-1}}+\gamma(T+1)}{\sum_{t=1}^{T}\frac{1}{(1+r)^{t-T-1}}+\gamma}\cdot\frac{1}{1+r}-\frac{A+\gamma T}{B+\gamma}\cdot\frac{1}{1+r}\nonumber\\
-                            =&\bigg{[}\frac{A+(1+r)T+\gamma(T+1)}{B+1+r+\gamma}-\frac{A+\gamma T}{B+\gamma}\bigg{]}\frac{1}{1+r}\nonumber\\
-                            =&\frac{[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]}{(B+2\gamma+1)(B+\gamma)(1+r)}。
+                            \begin{align}
+                                &D_{\textrm{mod}}(T+1)-D_{\textrm{mod}}(T)\nonumber\\
+                                =&\frac{\sum_{t=1}^{T}\frac{t}{(1+r)^{t-T-1}}+\gamma(T+1)}{\sum_{t=1}^{T}\frac{1}{(1+r)^{t-T-1}}+\gamma}\cdot\frac{1}{1+r}-\frac{A+\gamma T}{B+\gamma}\cdot\frac{1}{1+r}\nonumber\\
+                                =&\bigg{[}\frac{A+(1+r)T+\gamma(T+1)}{B+1+r+\gamma}-\frac{A+\gamma T}{B+\gamma}\bigg{]}\frac{1}{1+r}\nonumber\\
+                                =&\frac{[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]}{(B+2\gamma+1)(B+\gamma)(1+r)}
+                            \end{align}
                         \]
                         分子は
                         \[
-                            &[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]\nonumber\\
-                            =&\bigg{(}1+\gamma+\frac{\gamma}{T}\bigg{)}TB-(1+\gamma)A\nonumber\\
-                            >&(1+\gamma)TB-(1+\gamma)A\nonumber\\
-                            =&(1+\gamma)\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}\nonumber\\
-                            >&0。
+                            \begin{align}
+                                &[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]\nonumber\\
+                                =&\bigg{(}1+\gamma+\frac{\gamma}{T}\bigg{)}TB-(1+\gamma)A\nonumber\\
+                                >&(1+\gamma)TB-(1+\gamma)A\nonumber\\
+                                =&(1+\gamma)\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}\nonumber\\
+                                >&0。
+                            \end{align}
                         \]
                         よって \( D(T+1)>D(T) \) であり、\( D(T) \) は \( T \) に関して狭義単調増加である。
                         しかも明らかに \( D &gt; 0 \)。
