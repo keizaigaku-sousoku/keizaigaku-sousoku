@@ -92,46 +92,47 @@
                         \frac{\Delta P}{P}=-D\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^{2}+o((\Delta r)^2)
                     \]
                     と表せる。
-                    これは複利最終利回りの変化に対する債券価格の変化を無次元化したものに過ぎない。
+                    これは複利最終利回りの変化に対する債券価格の収益率である。
                     係数 \( D \) を<span class="new-word">修正デュレーション（modified duration）</span>、\( C_{\textrm{v}} \) を<span class="new-word">コンベクシティ（convexity）</span>と呼ぶ。
-                    これらの量は単なる展開係数に過ぎないが、債券価格の複利最終利回りに対する変化を議論する上では重要であり、とくに修正デュレーションは実務において頻出である。
+                    これらの量は単なる展開係数に過ぎないが、債券の保有による収益率を議論する上では重要であり、とくに修正デュレーションは実務において頻出である。
                     以下の主張により、修正デュレーションは断らない限り正であることが仮定される。
-                    <div class="theorem-tile">
-                        <div class="title">命題</div>
-                        <p>
-                            \( F \) を償還価格、\( C_T \) を満期のクーポン、\( P &gt; 0 \) を債券価格、\( D \) を修正デュレーションとする。
-                            このとき、複利最終利回りが一意に存在して逆に債券価格を良定義にする必要十分条件は
-                            \[
-                                \begin{cases}
-                                    D &gt; 0\\
-                                    C_T+F &gt; 0
-                                \end{cases}
-                            \]
-                            である。
-                        </p>
-                    </div>            
-                    <div class="proof">
-                        <div class="title">証明</div>
-                        <p>
-                            修正デュレーションの定義より自明。
-                        </p>
-                        <div class="end-symbol">■</div>
-                    </div>
-
-                    <div class="theorem-tile">
-                        <div class="title">命題</div>
-                        <p>
-                            債券価格は複利最終利回りに関して狭義単調減少かつ下に凸である。
-                        </p>
-                    </div>            
-                    <div class="proof">
-                        <div class="title">証明</div>
-                        <p>
-                            \( P &gt; 0 \) ゆえ、\( -D_{\textrm{mod}} \) は \( \textrm{d}P/\textrm{d}r \) と、\( C_{\textrm{v}} \) は \( \textrm{d}^{2}P/\textrm{d}r^{2} \) と符号が一致する。
-                            定義から明らかに \( D_{\textrm{mod}} \) 、\( C_{\textrm{v}} &gt; 0 \) であり、\( \textrm{d}P/\textrm{d}r &lt; 0 \) 、\( \textrm{d}^{2}P/\textrm{d}r^{2} &gt; 0 \) である。
-                        </p>
-                        <div class="end-symbol">■</div>
-                    </div>
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( F \) を償還価格、\( C_T \) を満期のクーポン、\( P &gt; 0 \) を債券価格、\( D \) を修正デュレーションとする。
+                        このとき、複利最終利回りが一意に存在して逆に債券価格を良定義にする必要十分条件は
+                        \[
+                            \begin{cases}
+                                D &gt; 0\\
+                                C_T+F &gt; 0
+                            \end{cases}
+                        \]
+                        である。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        修正デュレーションの定義より自明。
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
+                第2式は
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        債券価格は複利最終利回りに関して狭義単調減少かつ下に凸である。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        \( P &gt; 0 \) ゆえ、\( -D_{\textrm{mod}} \) は \( \textrm{d}P/\textrm{d}r \) と、\( C_{\textrm{v}} \) は \( \textrm{d}^{2}P/\textrm{d}r^{2} \) と符号が一致する。
+                        定義から明らかに \( D_{\textrm{mod}} \) 、\( C_{\textrm{v}} &gt; 0 \) であり、\( \textrm{d}P/\textrm{d}r &lt; 0 \) 、\( \textrm{d}^{2}P/\textrm{d}r^{2} &gt; 0 \) である。
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
                     
                     \subsubsection{残存期間やクーポン・レートに対する変化}
                     債券価格を複利最終利回りの関数とみなしたとき、残る変数は定数として固定されている。
