@@ -81,19 +81,20 @@
                     </div>
                     と展開される。
                     ここで
-                    \begin{align}
+                    \[
                         D_{\textrm{mod}}=D_{\textrm{mod}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct}{(1+r)^{t}}+\frac{(C+F)T}{(1+r)^{T}}}{P}\cdot\frac{1}{1+r}、\label{modified duration}
-                    \end{align}
+                    \]
                     また
-                    \begin{align}
+                    \[
                         C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^{T-1}\frac{Ct(t+1)}{(1+r)^{t}}+\frac{(C+F)T(T+1)}{(1+r)^{T}}}{P}\cdot\frac{1}{(1+r)^{2}}
-                    \end{align}
+                    \]
                     を定めれば
-                    \begin{align}
-                        \frac{\Delta P}{P}=-D_{\textrm{mod}}\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^{2}+\mathcal{O}((\Delta r)^3)。
-                    \end{align}
+                    \[
+                        \frac{\Delta P}{P}=-D_{\textrm{mod}}\Delta r+\frac{C_{\textrm{v}}}{2}(\Delta r)^{2}+\mathcal{O}((\Delta r)^3)
+                    \]
+                    と表せる。
                     これは複利最終利回りの変化に対する債券価格の変化を無次元化したものに過ぎない。
-                    係数$D_{\textrm{mod}}$を\textbf{\color{royalred}修正デュレーション（modified duration）\color{black}}、$C_{\textrm{v}}$を\textbf{\color{royalred}コンベクシティ（convexity）\color{black}}と呼ぶ。
+                    係数 \( D_{\textrm{mod}} \) を<span class="new-word">修正デュレーション（modified duration）</span>、\( C_{\textrm{v}} \) を<span class="new-word">コンベクシティ（convexity）</span>と呼ぶ。
                     \begin{leftbar}
                         \begin{prop}
                             債券価格は複利最終利回りに関して狭義単調減少かつ下に凸である。
