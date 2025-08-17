@@ -254,28 +254,24 @@
                         式(<a href="#exists-of-r">\ref{exists-of-r}</a>)の第2式より \( 1+c &gt; 0 \) であり、分母は正である。
                         分子を整理すれば \( (c-r)(TB-A) \) とまとめられる。
                         仮定から \( c-r &gt; 0 \) であり、定義から \( TB-A &gt; 0 \) である。
-                        したがって \( D(T)-D(T-1) &gt; 0 \) であり、題意が示された。<br>
+                        したがって \( D(T)-D(T-1) &gt; 0 \) であり、修正デュレーションは残存期間に関して狭義単調増加であり、式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。<br>
                         (ii)について、定義より
                         \[
-                            DP=\sum_{t=1}^{T-1}\frac{cFt}{(1+r)^{t}}+\frac{(1+c)FT}{(1+r)^{T}}>0。
+                            DP=\sum_{t=1}^T\frac{tcF}{(1+r)^{t}}+\frac{TF}{(1+r)^{T}}>0
                         \]
-                        これは \( c \) に関して狭義単調増加であり、\( -DP \) は \( c \) が大きいほど負に大きくなる。
+                        であり、これは \( c \) に関して狭義単調増加であるから、\( -DP \) は \( c \) が大きいほど負に大きくなる。
                         よってクーポン・レートが高いほど \( |\Delta P| \) は大きい。
                         また
                         \[
                             \frac{\partial D_{\textrm{mod}}}{\partial c}=-\frac{\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}}{c^{2}[\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T}}+1+\frac{1}{c}]^{2}}\cdot\frac{1}{1+r}<0。
                         \]
                         よって \( D \) は \( c \) に関して狭義単調減少である。
-                        しかも明らかに$ \( D &gt; 0 \)。
+                        しかも明らかに \( D &gt; 0 \)。
                         したがってクーポン・レートが高いほど \( |\Delta P|/P \) は小さい。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
-
-                    
             </section>
-            -->
-
         </main>
         <div id="nav-placeholder"></div>
         <script src="../../共通/load-nav.js" defer></script>
