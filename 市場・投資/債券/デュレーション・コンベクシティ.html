@@ -207,14 +207,14 @@
                     　債券価格を複利最終利回りの関数とみなしたとき、残る変数は定数として固定されている。
                     実際、残存期間やクーポン・レートは債券の発行時に決まるものであり、満期まで変化しないことが多い。
                     （変動利付債でクーポン・レートの変化が発行時に未定であるものは例外である。）
-                    しかし複数の債券が与えられた上で、それらの債券価格の複利最終利回りに対する変化を比較する場合、それらの変数を変化させる必要がある。
+                    しかし複数の債券が与えられた上で、それらの債券価格の複利最終利回りに対する変化を比較する場合、固定した変数を変化させる必要がある。
                     簡単のため固定利付債を考えれば、以下が導かれる。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        固定利付債を考え、\( c \in \textbf{R} \) をクーポン・レート、\( P \) を債券価格、\( r \) を複利最終利回りとする。
-                        このとき、債券価格 \( P \) の変化 \( \Delta P \) について次が成り立つ。<br>
+                        固定利付債を考え、\( c \in \textbf{R} \) をクーポン・レート、\( P &gt; 0 \) を債券価格、\( r \in (-1,\infty) \) を複利最終利回りとする。
+                        このとき、債券価格の変化 \( \Delta P \) について次が成り立つ。<br>
                         (i) \( r &lt; c \) ならば、残存期間が長いほど \( |\Delta P|/P \) は大きい。<br>
                         (ii) クーポン・レートが高いほど \( |\Delta P| \) は大きく、\( |\Delta P|/P \) は小さい。
                     </p>
@@ -222,27 +222,31 @@
                 <div class="proof">
                     <div class="title">証明</div>
                     <p>
-                        (i)について、
+                        (i)について、修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書けば
                         \[
-                            D=\frac{\sum_{t=1}^T\frac{tcF}{(1+r)^t}+\frac{TF}{(1+r)^T}}{\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}}\cdot\frac{1}{1+r}=\frac{\sum_{t=1}^T\frac{t}{(1+r)^{t-T}}+\frac{T}{c}}{\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+\frac{1}{c}}\cdot\frac{1}{1+r}
+                            D(T)=\frac{\sum_{t=1}^T\frac{tcF}{(1+r)^t}+\frac{TF}{(1+r)^T}}{\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}}\cdot\frac{1}{1+r}=\frac{c\sum_{t=1}^T\frac{t}{(1+r)^{t-T}}+T}{c\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+1}\cdot\frac{1}{1+r}
                         \]
                         である。
-                        修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書き、\( A=\sum_{t=1}^T t/(1+r)^{t-T} \) 、\( B=\sum_{t=1}^T 1/(1+r)^{t-T} \) 、\( \gamma=1/c \) とおけば
+                        また \( A=c\sum_{t=1}^{T-1}t/(1+r)^{t-T+1} &gt; 0 \) 、\( B=c\sum_{t=1}^{T-1}1/(1+r)^{t-T+1} &gt; 0 \) とおけば
                         \[
                             \begin{align}
-                                D(T+1)-D(T)=&\frac{\sum_{t=1}^T\frac{t}{(1+r)^{t-T-1}}+\gamma(T+1)}{\sum_{t=1}^T\frac{1}{(1+r)^{t-T-1}}+\gamma}\cdot\frac{1}{1+r}-\frac{A+\gamma T}{B+\gamma}\cdot\frac{1}{1+r}\nonumber\\
-                                =&\bigg{[}\frac{A+(1+r)T+\gamma(T+1)}{B+1+r+\gamma}-\frac{A+\gamma T}{B+\gamma}\bigg{]}\frac{1}{1+r}\nonumber\\
-                                =&\frac{[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]}{(B+2\gamma+1)(B+\gamma)(1+r)}
+                                D(T)=&\frac{(1+r)c[\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T+1}}+\frac{T}{1+r}]+T}{(1+r)c[\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T+1}}+\frac{1}{1+r}]+1}\cdot\frac{1}{1+r}\nonumber\\
+                                =&\frac{(1+r)A+cT+T}{(1+r)B+c+1}\cdot\frac{1}{1+r}
                             \end{align}
                         \]
-                        分子は
+                        さらに
                         \[
                             \begin{align}
-                                &[(A+\gamma T)+\gamma T+\gamma+T](B+\gamma)-(A+\gamma T)[(B+\gamma)+1+\gamma]\nonumber\\
-                                =&\bigg{(}1+\gamma+\frac{\gamma}{T}\bigg{)}TB-(1+\gamma)A\nonumber\\
-                                >&(1+\gamma)TB-(1+\gamma)A\nonumber\\
-                                =&(1+\gamma)\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}\nonumber\\
-                                >&0。
+                                D(T-1)=&\frac{c\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T+1}}+T-1}{c\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T+1}}+1}\cdot\frac{1}{1+r}\nonumber
+                                =&\frac{A+T-1}{B+1}\nonumber\\
+                                &lt;&\frac{A+T}{B+1}
+                            \end{align}
+                        \]
+                        が成り立つ。
+                        よって
+                        \[
+                            \begin{align}
+                                D(T)-D(T-1)
                             \end{align}
                         \]
                         よって \( D(T+1)>D(T) \) であり、\( D(T) \) は \( T \) に関して狭義単調増加である。
