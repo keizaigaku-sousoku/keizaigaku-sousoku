@@ -216,7 +216,7 @@
                         固定利付債を考え、\( c \in \textbf{R} \) をクーポン・レート、\( P &gt; 0 \) を債券価格、\( r &gt; -1 \) を複利最終利回りとする。
                         このとき、債券価格の変化 \( \Delta P \) について次が成り立つ。<br>
                         (i) \( r &lt; c \) ならば、残存期間が長いほど \( |\Delta P|/P \) は大きい。<br>
-                        (ii) クーポン・レートが高いほど \( |\Delta P| \) は大きく、\( |\Delta P|/P \) は小さい。
+                        (ii) \( T \geq 2 \) ならば、クーポン・レートが高いほど \( |\Delta P| \) は大きく、\( |\Delta P|/P \) は小さい。
                     </p>
                 </div>            
                 <div class="proof">
@@ -263,11 +263,10 @@
                         よってクーポン・レートが高いほど \( |\Delta P| \) は大きい。
                         また
                         \[
-                            \frac{\partial D}{\partial c}=-\frac{\sum_{t=1}^{T-1}\frac{T-t}{(1+r)^{t-T}}}{c^{2}[\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T}}+1+\frac{1}{c}]^{2}}\cdot\frac{1}{1+r}<0。
+                            \frac{\partial D}{\partial c}=\frac{\sum_{t=1}^T\frac{t}{(1+r)^{t-T}}-T\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}}{[c\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}}+1]^2}\cdot\frac{1}{1+r}
                         \]
-                        よって \( D \) は \( c \) に関して狭義単調減少である。
-                        しかも明らかに \( D &gt; 0 \)。
-                        したがってクーポン・レートが高いほど \( |\Delta P|/P \) は小さい。
+                        であり、仮定から分子が負であるから \( D \) は \( c \) に関して狭義単調減少である。
+                        したがって式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
