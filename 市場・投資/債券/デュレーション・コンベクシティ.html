@@ -238,20 +238,23 @@
                         \[
                             \begin{align}
                                 D(T-1)=&\frac{c\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T+1}}+T-1}{c\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T+1}}+1}\cdot\frac{1}{1+r}\nonumber\\
-                                =&\frac{A+T-1}{B+1}\nonumber\\
-                                &lt;&\frac{A+T}{B+1}
+                                =&\frac{A+T-1}{B+1}\cdot\frac{1}{1+r}\nonumber\\
+                                &lt;&\frac{A+T}{B+1}\cdot\frac{1}{1+r}
                             \end{align}
                         \]
                         が成り立つ。
                         よって
                         \[
                             \begin{align}
-                                D(T)-D(T-1)
+                                D(T)-D(T-1)&gt;&\bigg{[}\frac{(A+T)+rA+cT}{(B+1)+rB+c}-\frac{A+T}{B+1}\bigg{]}\cdot\frac{1}{1+r}\nonumber\\
+                                =&\frac{[(A+T)+rA+cT](B+1)-(A+T)[(B+1)+rB+c]}{[(1+r)B+(1+c)](B+1)(1+r)}
                             \end{align}
                         \]
-                        よって \( D(T+1)>D(T) \) であり、\( D(T) \) は \( T \) に関して狭義単調増加である。
-                        しかも明らかに \( D &gt; 0 \)。
-                        したがって残存期間が長いほど \( |\Delta P|/P \) は大きい。<br>
+                        である。
+                        式(<a href="#exists-of-r">\ref{exists-of-r}</a>)の第2式より \( 1+c &gt; 0 \) であり、分母は正である。
+                        分子を整理すれば \( (c-r)(TB-A) \) とまとめられる。
+                        仮定から \( c-r &gt; 0 \) であり、定義から \( TB-A &gt; 0 \) である。
+                        したがって \( D(T)-D(T-1) &gt; 0 \) であり、題意が示された。<br>
                         (ii)について、定義より
                         \[
                             DP=\sum_{t=1}^{T-1}\frac{cFt}{(1+r)^{t}}+\frac{(1+c)FT}{(1+r)^{T}}>0。
