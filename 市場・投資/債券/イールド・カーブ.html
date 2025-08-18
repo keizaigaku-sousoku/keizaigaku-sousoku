@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>デュレーション・コンベクシティ</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../../共通/stylesheet_contents.css">
+        <link rel="stylesheet" href="../../共通/stylesheet_footer.css">
+        <script src="../../共通/mathjax-config.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>[更新中] イールド・カーブ</h2>
+        </header>
+        <div class="subtitle">
+            専門家の飯の種
+        </div>
+        <div class="toc-container">
+            <div class="part">
+                <h3 class="part-title">目次</h3>
+                <a href="#section1">スポット・レート</a>
+                <a href="#section2">イールド・カーブ</a>
+                <a href="#section3">純粋期待仮説</a>
+                <a href="#section4">流動性プレミアム仮説</a>
+                <a href="#section5">市場分断仮説</a>
+            </div>
+        </div>
+        <main>
+            <section id="section1">
+                <h4>スポット・レート</h4>
+                <p>
+                    　割引債の複利最終利回りは式が単純であり、
+                    複利最終利回りは "債券の取引において売り手と買い手が再投資による収益率をどれだけ見込んでいたかを表現する" と解釈され、割引債の複利最終利回りはその定量化
+                </p>
+            </section>
+          
+          <!--
+          <div class="math-container">
+                        \[
+                            \begin{align}
+                                \Delta P=&P(r+\Delta r)-P(r)\nonumber\\
+                                =&\sum_{t=1}^T\frac{C_t}{(1+r+\Delta r)^t}+\frac{F}{(1+r+\Delta r)^T}-\sum_{t=1}^T\frac{C_t}{(1+r)^t}-\frac{F}{(1+r)^T}\nonumber\\
+                                =&\sum_{t=1}^T\frac{C_t}{(1+r)^t}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2\bigg{]}\nonumber\\
+                                &+\frac{F}{(1+r)^T}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2\bigg{]}+o((\Delta r)^2)\nonumber\\
+                                =&-\bigg{[}\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
+                                &+\frac{1}{2}\bigg{[}\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{T(T+1)F}{(1+r)^T}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2+o((\Delta r)^2)
+                            \end{align}
+                        \]
+                    </div>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( F \) を償還価格、\( C_T \) を満期のクーポン、\( P &gt; 0 \) を債券価格、\( D \) を修正デュレーションとする。
+                        このとき、複利最終利回りが一意に存在して逆に債券価格を良定義にする必要十分条件は
+                        \[
+                            \begin{cases}
+                                D &gt; 0\\
+                                C_T+F &gt; 0
+                            \end{cases}
+                        \]
+                        である。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        式(<a href="#exists-of-r">\ref{exists-of-r}</a>)と修正デュレーションの定義より自明。
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
+          -->
 
+        </main>
+        <div id="nav-placeholder"></div>
+        <script src="../../共通/load-nav.js" defer></script>
+        <div id="footer-placeholder"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $('#footer-placeholder').load('../../共通/footer.html');
+            });
+        </script>
+    </body>
+</html>
