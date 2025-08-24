@@ -31,12 +31,12 @@
                 <h4>債券とは何か</h4>
                 <p>
                     　公的機関や企業は目的を達成するため多額の貨幣を要することが多く、それを借金で工面することがある。
-                    借金は契約であるからモノであり、実際に取引されるかはさておき、取引の対象である [<a href="../市場/安全資産.html#section1" style="text-decoration: none"><span class="new-word">安全資産/約束・契約</span></a>] 。
+                    借金は契約であるからモノであり、実際に取引されるかはさておき、取引の対象である [<a href="../市場/安全資産.html#section-contract" style="text-decoration: none"><span class="new-word">安全資産/約束・契約</span></a>] 。
                     もし取引されるならば貸し手は取引によって入れ替わるが、借り手は取引において不変であり、彼は公的機関または企業であるとき<span class="new-word">発行体（issuer）</span>と呼ばれる。
                     このような発行体が紐づいた借金の契約を<span class="new-word">債券（bond, fixed income）</span>、発行体が債券という契約を結ぶことを<span class="new-word">発行（issue）</span>あるいは<span class="new-word">起債（issue a bond）</span>と呼ぶ。
                     債券は契約の内容によって無数の種類を生むが、発行体が公的機関であるか企業であるかで大別されることが多い。
                     公的機関であるものを<span class="new-word">公債（public bond）</span>、企業であるものを<span class="new-word">社債（corporate bond）</span>と呼ぶ。
-                    言うまでもなく、公債は安全資産に他ならない [<a href="../市場/安全資産.html#section2" style="text-decoration: none"><span class="new-word">安全資産/安全資産・利子率</span></a>] 。
+                    言うまでもなく、公債は安全資産に他ならない [<a href="../市場/安全資産.html#section-yield" style="text-decoration: none"><span class="new-word">安全資産/安全資産・利子率</span></a>] 。
                 </p>
                 <p>
                     　債券の種類は多岐にわたるが、多くの債券において共通の事項がある。
@@ -47,7 +47,7 @@
                     次に債券には発行の時刻から満期までの時間が紐づけられる。
                     この時間が \( T &gt; 0 \) である債券を<span class="new-word">\( T \) 物債券（\( T \) bond）</span>と呼ぶ。
                     （例えば \( T = 10 \) 年であるものを10年物債券という。）
-                    さらに債券の価格は必ず取引の結果として決まる [<a href="../市場/市場とは何か.html#section7" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。
+                    さらに債券の価格は必ず取引の結果として決まる [<a href="../市場/市場とは何か.html#section-exchange-price" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。
                     これはとくに<span class="new-word">債券価格（bond price）</span>と呼ばれ、様々な要因で一般には値が時々刻々と変化する。
                     実際、契約の履行は発行体が存在することが前提であるから、例えば市場参加者が発行体の消滅する公算が高まったと判断すればそれまでの債券価格では取引を行わない（可能性がある）。
                 </p>
@@ -177,16 +177,16 @@
                     　定義から明らかなように複利最終利回りは償還価格、クーポン、債券価格から定まるものであって、アプリオリに与えられるものではない。
                     実務においても頻出である式(<a href="#price-yield">\ref{price-yield}</a>)は、一見すると "償還価格、クーポン、複利最終利回りから債券価格を定める式" である。
                     しかし債券価格は取引において市場参加者たちが勝手に決めるのであって、彼らがそのような "理論債券価格" で取引しなければならない理由はない。
-                    つまり売り気配値と買い気配値が一致すれば任意の債券価格で取引が成立する [<a href="../市場/市場とは何か.html#section7" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。
+                    つまり売り気配値と買い気配値が一致すれば任意の債券価格で取引が成立する [<a href="../市場/市場とは何か.html#section-exchange-price" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。
                     また複利最終利回りは、同等あるいは同様の債券の過去の取引における債券価格から算出される値が分かるのみであって、現在当該債券を取引しようとしてもその複利最終利回りに基づく債券価格で取引できるとは限らない。
                 </p>
                 <p>
                     　複利最終利回りには明確な解釈がある。
                     債券の保有者が満期 \( t = T \) に受け取る償還を仮に現在 \( t = 0 \) に受け取り、その契約変更によって償還価格が本来の \( F \) から一般には異なる \( F^\prime \) になったと仮定する。
                     またそれを満期まで単位時間あたり収益率 \( r \) で再投資によって増加させられると仮定する。
-                    すると満期には \( (1+r)^T F^\prime \) だけの貨幣を獲得する [<a href="../市場/投資家の分析.html#section3" style="text-decoration: none"><span class="new-word">投資家の分析/収益率</span></a>] 。
+                    すると満期には \( (1+r)^T F^\prime \) だけの貨幣を獲得する [<a href="../市場/投資家の分析.html#section-return" style="text-decoration: none"><span class="new-word">投資家の分析/収益率</span></a>] 。
                     債券の保有者にとっては、素朴には再投資によって \( (1+r)^T F^\prime \) を得ても満期まで待って \( F \) の償還を受け取っても、満期まで貨幣が手元にないことに変わりはない。
-                    そこで市場が無裁定であるならば、議論の余地はあるものの一物一価の法則が成り立ち [<a href="../市場/裁定の基礎.html#section3" style="text-decoration: none"><span class="new-word">裁定の基礎/一物一価の法則</span></a>] 、\( (1+r)^T F^\prime = F \) つまり \( F^\prime = F / (1+r)^T \) である。
+                    そこで市場が無裁定であるならば、議論の余地はあるものの一物一価の法則が成り立ち [<a href="../市場/裁定の基礎.html#section-one-price" style="text-decoration: none"><span class="new-word">裁定の基礎/一物一価の法則</span></a>] 、\( (1+r)^T F^\prime = F \) つまり \( F^\prime = F / (1+r)^T \) である。
                     これは式(<a href="#price-yield">\ref{price-yield}</a>)の右辺の項の1つである。
                     同様にして時刻 \( t \) のクーポン \( C_t \) を現在受け取ったと仮定して、本来受け取る時刻まで再投資で増加させた場合、現在受け取る貨幣は素朴には \( C_t/(1+r)^t \) になる。
                     これも式(<a href="#price-yield">\ref{price-yield}</a>)の右辺の項の1つである。
