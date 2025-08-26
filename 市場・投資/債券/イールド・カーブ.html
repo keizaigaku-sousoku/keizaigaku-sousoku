@@ -70,8 +70,31 @@
                         f_{T,S}=E[R_{T,S}]
                     \]
                     が成り立つと仮定することを<span class="new-word">純粋期待仮説（pure expectation hypothesis）</span>と呼ぶ。
-                    
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        純粋期待仮説が成り立つとする。
+                        このとき、残存期間 \( T \) の割引債の複利最終利回りは、残存期間 \( 1 \) の割引債に \( T \) 回再投資するときの複利最終利回りの期待値の幾何平均に一致する.
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        フォワード・レートを用いれば
+                        <div class="math-container">
+                            \[
+                                \begin{align}
+                                    r_{0,T}=&[(1+r_{0,T})^T]^{1/T}-1\nonumber\\
+                                    =&[(1+r_{0,1})(1+f_{1,2})\cdots(1+f_{T-1,T})]^{1/T}-1\nonumber\\
+                                    =&[(1+r_{0,1})(1+E[R_{1,2}])\cdots(1+E[R_{T-1,T}])]^{1/T}-1
+                                \end{align}
+                            \]
+                        </div>
+                        であり、これは \( E[R_{0,1}]=r_{0,1} \) 、\( E[R_{1,2}] \) 、\( \cdots E[R_{T-1,T}] \) の幾何平均に他ならない。
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
             </section>
           <!--
           <div class="math-container">
