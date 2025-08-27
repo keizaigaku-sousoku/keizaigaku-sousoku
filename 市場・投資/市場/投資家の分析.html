@@ -325,6 +325,11 @@
                         \bar{r}_\textrm{g}:=\bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T}-1
                     \]
                     を定義し、これを収益率の<span class="new-word">幾何平均（geometric mean）</span>と呼ぶことにする。
+                    なお
+                    \[
+                        \frac{1}{T}\sum_{t=1}^T(1+r_t)-1=1+\frac{1}{T}\sum_{t=1}^Tr_t-1=\frac{1}{T}\sum_{t=1}^Tr_t
+                    \]
+                    であるから、収益率の平均は \( 1+r_t \) に対してふつうの算術平均や幾何平均をとってから \( 1 \) を引いたものとして定義を統一的に解釈できる。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -333,6 +338,7 @@
                             このとき、
                             \[
                                 \bar{R}_\textrm{a} \leq \bar{R}_\textrm{g}
+                            \]
                             が成り立つ。
                         </p>
                 </div>
