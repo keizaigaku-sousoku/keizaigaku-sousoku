@@ -326,6 +326,33 @@
                     \]
                     を定義し、これを収益率の<span class="new-word">幾何平均（geometric mean）</span>と呼ぶことにする。
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                        <p>
+                            任意の収益率の列に対して、\( \bar{R}_\textrm{a} \) を算術平均、\( \bar{R}_\textrm{g} \) を幾何平均とする。
+                            このとき、
+                            \[
+                                \bar{R}_\textrm{a} \leq \bar{R}_\textrm{g}
+                            が成り立つ。
+                        </p>
+                </div>
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        再投資を繰り返して \( r_t \) 、\( t=1,...,T \) 、\( T \in \textbf{Z}_{\geq 1} \) の収益率を得たとする。
+                        一般化された相加・相乗平均の関係を \( 1+r_t \) 、\( t=1,...,T \) に対して用いれば
+                        <div class="math-container">
+                            \[
+                                \begin{align}
+                                    \bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T} \leq \frac{1}{T}\sum_{t=1}^T(1+r_t) \Longleftrightarrow& \bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T} \leq 1+\frac{1}{T}\sum_{t=1}^Tr_t\nonumber\\
+                                    \Longleftrightarrow& \bar{R}_\textrm{a} \leq \bar{R}_\textrm{g}
+                                \end{align}
+                            \]
+                        </div>
+                        を得る。
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
             </section>
         </main>
         <div id="nav-placeholder"></div>
