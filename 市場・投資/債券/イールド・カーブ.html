@@ -43,6 +43,13 @@
                     現在のイールド・カーブから市場参加者たちの予想を考察すること、イールド・カーブに起きた変化から市場参加者たちの予想がどう変わったのかを考察すること、またイールド・カーブが将来どう変わるのかを予想すること等は、実務において盛んに行われている。
                 </p>
                 <p>
+                    　イールド・カーブは狭義単調増加または狭義単調減少なる場合がある。
+                    市場の局面に応じてイールド・カーブは変化するが、狭義単調変化であるとき、特徴的な局面であるとみなされることが多い。
+                    （あるいは局面をイールド・カーブが狭義単調変化であることによって定義することもある。）
+                    またイールド・カーブの一部のみを見て、局所的に狭義単調変化を見出すこともある。
+                    慣習的に、イールド・カーブが狭義単調増加であることを<span class="new-word">順イールド（normal yield）</span>、狭義単調減少であることを<span class="new-word">逆イールド（inverted yield）</span>と呼ぶ。
+                </p>
+                <p>
                     　スポット・レートはイールド・カーブ以外にも重要な議論の対象を誘導する。
                     一般にスポット・レート \( r_{0,T} \) 、\( r_{0,S} \) 、\( T &lt; S \) が与えられたとする。
                     このとき、
@@ -144,8 +151,34 @@
                         \end{align}
                     \]
                     のようにフォワード・レートのみによって表される。
-                    
+                    この収益率を<span class="new-word">ローリング・イールド（rolling yield）</span>、このような収益の発生を<span class="new-word">ロールダウン効果（rolldown effect, rolling down）</span>と呼ぶ。
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        イールド・カーブが順イールドであり、任意のスポット・レートが \( 0 \) 以上であるとする。
+                        このとき、ローリング・イールドは正である。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                        イールド・カーブを \( (r_{0,T})_T \) とおけば、仮定より \( 0\geq r_{0,T-1} &lt; r_{0,T} \) である。
+                        2番目の不等号より
+                        <div class="math-container">
+                            \[
+                                \begin{align}
+                                    r_{0,T-1} &lt; r_{0,T} \Longleftrightarrow& (1+r_{0,T-1})^T &lt; (1+r_{0,T})^T\nonumber\\
+                                    \Longleftrightarrow& (1+r_{0,T-1})^{T-1}(1+r_{0,T-1}) &lt; (1+r_{0,T-1})^{T-1}(1+f_{T-1,T})\nonumber\\
+                                    \Longleftrightarrow& 1+r_{0,T-1} &lt; 1+f_{T-1,T}
+                                \end{align}
+                            \]
+                        </div>
+                        が成り立ち、1番目の不等号より \( 1 &lt; 1+r_{0,T-1} &lt; 1+f_{T-1,T} \) 。
+                        したがって \( f_{T-1,T} &gt; 0 \) であり題意が示された。
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
             </section>
         </main>
         <div id="nav-placeholder"></div>
