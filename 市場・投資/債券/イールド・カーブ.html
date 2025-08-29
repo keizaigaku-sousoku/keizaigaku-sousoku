@@ -28,7 +28,7 @@
             <section id="section-yield-curve">
                 <h4>イールド・カーブの定義</h4>
                 <p>
-                    　割引債はクーポンがないため課される条件が少なく、モノとして普遍性が高い。
+                    　割引債はクーポンがないためある意味で煩雑さがなく、モノとして普遍性が高い。
                     そこでその複利最終利回りは市場における何らかの普遍性を反映すると考えられる。
                     すでに定義されているように [<a href="債券の基礎.html#section-cfy" style="text-decoration: none"><span class="new-word">債券の基礎/複利最終利回り</span></a>] 、割引債の償還価格 \( F &gt; 0 \) 、残存期間 \( T \in \textbf{Z}_{\geq 1} \) 、債券価格 \( P &gt; 0 \) に対する複利最終利回りは
                     \[
@@ -70,6 +70,7 @@
                         f_{T,S}=E[R_{T,S}]
                     \]
                     が成り立つと仮定することを<span class="new-word">純粋期待仮説（pure expectation hypothesis）</span>と呼ぶ。
+                    定義から明らかなようにフォワード・レートとイールド・カーブは一方から他方が導かれるので、純粋期待仮説はイールド・カーブに対する仮定でもある。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -96,7 +97,7 @@
                     <div class="end-symbol">■</div>
                 </div>
                 <p>
-                    　上記の命題において再投資の残存期間を \( 1 \) 以上に一般化することは容易であり、むしろ一括の投資がある意味で分割されることが本質的である。
+                    　上記の命題において再投資の残存期間を \( 1 \) 以上に一般化することは容易であり、本質的なのは複利最終利回りに関して一括の投資が再投資の繰り返しに分割されることである。
                     式(<a href="#pure-hypothesis">\ref{pure-hypothesis}</a>)から
                     \[
                         (1+r_{0,T})^T-1=(1+r_{0,1})(1+E[R_{1,2}])\cdots(1+E[R_{T-1,T}])-1
@@ -113,45 +114,18 @@
                     \]
                     のような補正項を加えて等号をつねに成り立たせる。
                     補正項を<span class="new-word">リスク・プレミアム（risk premium）</span>と呼ぶ。
-                    また現在得られる \( f_{T,S} \) と整合するように、様々な仮定のもと \( E[R_{T,S}] \) や \( \textrm{RP}_{T,S} \) を求めその仮定の妥当性を検証するとき、<span class="new-word">リスク・プレミアム仮説（risk premium hypothesis）</span>をおいたと言う。
+                    現在得られる \( f_{T,S} \) と整合するように、様々な仮定のもと \( E[R_{T,S}] \) や \( \textrm{RP}_{T,S} \) を求めその仮定の妥当性を検証するとき、<span class="new-word">リスク・プレミアム仮説（risk premium hypothesis）</span>をおいたと言う。
+                    したがってリスク・プレミアム仮説は純粋期待仮説と現実世界の市場との乖離を分析する手法のことである。
+                    フォワード・レートとイールド・カーブは等価であるから、リスク・プレミアム仮説はイールド・カーブに対する仮定でもある。
+                </p>
+                <p>
+                    　フォワード・レートやイールド・カーブをまったく別の観点から分析することもある。
+                    フォワード・レートやイールド・カーブはスポット・レートから決まり、スポット・レートは債券価格から決まり、債券価格は市場参加者たちの取引によって決まるため、元をたどればフォワード・レートやイールド・カーブは市場参加者たちの行動によって決まる。
+                    また市場参加者たちは一様ではないため、取引する残存期間に選好があると考えられる。
+                    イールド・カーブをいくつかに分割したとき、それぞれに影響を与える市場参加者が互いに独立に振る舞うと仮定することを<span class="new-word">市場分断仮説（market segmentation hypothesis）</span>と呼ぶ。
+                    実務において債券への投資は残存期間に制限があることは多く、市場分断仮説は定性的には一定の支持を得ている。
                 </p>
             </section>
-          <!--
-          <div class="math-container">
-                        \[
-                            \begin{align}
-                                \Delta P=&P(r+\Delta r)-P(r)\nonumber\\
-                                =&\sum_{t=1}^T\frac{C_t}{(1+r+\Delta r)^t}+\frac{F}{(1+r+\Delta r)^T}-\sum_{t=1}^T\frac{C_t}{(1+r)^t}-\frac{F}{(1+r)^T}\nonumber\\
-                                =&\sum_{t=1}^T\frac{C_t}{(1+r)^t}\bigg{[}-t\cdot\frac{\Delta r}{1+r}+\frac{t(t+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2\bigg{]}\nonumber\\
-                                &+\frac{F}{(1+r)^T}\bigg{[}-T\cdot\frac{\Delta r}{1+r}+\frac{T(T+1)}{2}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2\bigg{]}+o((\Delta r)^2)\nonumber\\
-                                =&-\bigg{[}\sum_{t=1}^T\frac{tC_t}{(1+r)^t}+\frac{TF}{(1+r)^T}\bigg{]}\frac{\Delta r}{1+r}\nonumber\\
-                                &+\frac{1}{2}\bigg{[}\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{T(T+1)F}{(1+r)^T}\bigg{]}\bigg{(}\frac{\Delta r}{1+r}\bigg{)}^2+o((\Delta r)^2)
-                            \end{align}
-                        \]
-                    </div>
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        \( F \) を償還価格、\( C_T \) を満期のクーポン、\( P &gt; 0 \) を債券価格、\( D \) を修正デュレーションとする。
-                        このとき、複利最終利回りが一意に存在して逆に債券価格を良定義にする必要十分条件は
-                        \[
-                            \begin{cases}
-                                D &gt; 0\\
-                                C_T+F &gt; 0
-                            \end{cases}
-                        \]
-                        である。
-                    </p>
-                </div>            
-                <div class="proof">
-                    <div class="title">証明</div>
-                    <p>
-                        式(<a href="#exists-of-r">\ref{exists-of-r}</a>)と修正デュレーションの定義より自明。
-                    </p>
-                    <div class="end-symbol">■</div>
-                </div>
-          -->
-
         </main>
         <div id="nav-placeholder"></div>
         <script src="../../共通/load-nav.js" defer></script>
