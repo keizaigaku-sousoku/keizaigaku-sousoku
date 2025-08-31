@@ -214,15 +214,32 @@
                     <div class="title">証明</div>
                     <p>
                         償還価格を \( F &gt; 0 \) 、時刻 \( t=0 \) 、\( 1 \) における債券価格をそれぞれ \( P_0 \) 、\( P_1 &gt; 0 \) とおくと
+                    </p>
+                    <div class="math-container">
                         \[
                             P_0=\frac{F}{[1+r_{0,T}(0)]^T},\ \ \ P_1=\frac{F}{[1+r_{0,T-1}(1)]^{T-1}}
                         \]
+                    </div>
+                    <p>
                         であり、時刻 \( t=1 \) において残存期間は \( T-1 \) になるので修正デュレーションは
+                    </p>
+                    <div class="math-container">
                         \[
                             D(1)=\frac{(T-1)F/[1+r_{0,T-1}(1)]^{T-1}}{F/[1+r_{0,T-1}(1)]^{T-1}}\cdot\frac{1}{1+r_{0,T-1}(1)}=\frac{T-1}{1+r_{0,T-1}(1)}
                         \]
+                    </div>
+                    <p>
                         である。
+                        よって収益率は
                     </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{P_1}{P_0}-1=&\frac{[1+r_{0,T}(0)]^T}{[1+r_{0,T-1}(0)+\Delta r]^{T-1}}-1\nonumber\\
+                                =&\frac{[1+r_{0,T}(0)]^T}{[1+r_{0,T-1}(0)+\Delta r]^{T-1}[1+\frac{\Delta r}{1+r_{0,T-1}(0)}]^{T-1}}-1\nonumber\\
+                            \end{align}
+                        \]
+                    </div>
                     <div class="end-symbol">■</div>
                 </div>
             </section>
