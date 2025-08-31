@@ -144,15 +144,17 @@
                     イールド・カーブ \( (r_{0,T^\prime})_{T^\prime} \) が不変であり、市場が無裁定であると仮定すれば、割引債の債券価格は複利最終利回りがイールド・カーブに沿うように変化する [<a href="../市場/裁定の基礎.html#section-one-price" style="text-decoration: none"><span class="new-word">裁定の基礎/一物一価の法則</span></a>] 。
                     単位時間が経過したときの債券価格を \( P_1 &gt; 0 \) とおけば \( P_1=F/(1+r_{0,T-1})^{T-1} \) が成り立つ。
                     したがってこの時点での収益率は
-                    <div class="math-container">
-                        \[
-                            \begin{align}
-                                \frac{P_1}{P_0}-1=&\frac{(1+r_{0,T})^T}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
-                                =&\frac{(1+r_{0,T-1})^{T-1}(1+f_{T-1,T})}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
-                                =&f_{T-1,T}
-                            \end{align}
-                        \]
-                    </div>
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \frac{P_1}{P_0}-1=&\frac{(1+r_{0,T})^T}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
+                            =&\frac{(1+r_{0,T-1})^{T-1}(1+f_{T-1,T})}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
+                            =&f_{T-1,T}
+                        \end{align}
+                    \]
+                </div>
+                <p>
                     のようにフォワード・レートのみによって表される。
                     この収益率を<span class="new-word">ローリング・イールド（rolling yield）</span>、このような収益の発生を<span class="new-word">ロールダウン効果（rolldown effect, rolling down）</span>と呼ぶ。
                 </p>
@@ -198,11 +200,13 @@
                         また時刻 \( t=0 \) に残存期間 \( T \) 、修正デュレーション \( D \) の割引債に単位時間だけ投資する。
                         さらにイールド・カーブが \( r_{0,T-1}(1)=r_{0,T-1}(0)+\Delta r \) となるよう変化して \( f_{T-1,T}(0)=o(\Delta r) \) であるとする。
                         このとき、割引債の投資における収益率は
-                        <div class="math-container">
-                            \[
-                                f_{T-1,T}(0) - D\Delta r-f_{T-1,T}(0)D\Delta r +o(\Delta r)
-                            \]
-                        </div>
+                    </p>
+                    <div class="math-container">
+                        \[
+                            f_{T-1,T}(0) - D\Delta r-f_{T-1,T}(0)D\Delta r +o(\Delta r)
+                        \]
+                    </div>
+                    <p>
                         である。
                     </p>
                 </div>            
