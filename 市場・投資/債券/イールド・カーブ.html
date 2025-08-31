@@ -229,7 +229,7 @@
                                 \frac{P_1}{P_0}-1=&\frac{[1+r_{0,T}(0)]^T}{[1+r_{0,T-1}(0)+\Delta r]^{T-1}}-1\nonumber\\
                                 =&\frac{[1+r_{0,T-1}(0)]^{T-1}[1+f_{T-1,T}(0)]}{[1+r_{0,T-1}(0)]^{T-1}[1+\frac{\Delta r}{1+r_{0,T-1}(0)}]^{T-1}}-1\nonumber\\
                                 =&[1+f_{T-1,T}(0)]\bigg{[}1-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r+o(\Delta r)\bigg{]}-1\nonumber\\
-                                =&f_{T-1,T}(0)-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r+o(\Delta r)
+                                =&f_{T-1,T}(0)-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r+o(\Delta r)\label{return}
                             \end{align}
                         \]
                     </div>
@@ -242,7 +242,7 @@
                         \]
                     </div>
                     <p>
-                        であり、
+                        であり、式(<a href="#return">\ref{return}</a>)の最右辺第2項が
                     </p>
                     <div class="math-container">
                         \[
@@ -251,12 +251,12 @@
                                 =&\frac{T-1}{[1+r_{0,T-1}(1)][1-\frac{\Delta r}{1+r_{0,T-1}(1)}]}\Delta r\nonumber\\
                                 =&\frac{T-1}{1+r_{0,T-1}(1)}\bigg{[}1+\frac{\Delta r}{1+r_{0,T-1}(1)}+o(\Delta r)\bigg{]}\Delta r\nonumber\\
                                 =&\frac{T-1}{1+r_{0,T-1}(1)}\Delta r+o(\Delta r)\nonumber\\
-                                =&D\Delta r+o(\Delta r)
+                                =&D(1)\Delta r+o(\Delta r)
                             \end{align}
                         \]
                     </div>
                     <p>
-                        であるから与式が成り立つ。
+                        になるので与式が成り立つ。
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
