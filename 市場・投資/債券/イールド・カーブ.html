@@ -144,13 +144,15 @@
                     イールド・カーブ \( (r_{0,T^\prime})_{T^\prime} \) が不変であり、市場が無裁定であると仮定すれば、割引債の債券価格は複利最終利回りがイールド・カーブに沿うように変化する [<a href="../市場/裁定の基礎.html#section-one-price" style="text-decoration: none"><span class="new-word">裁定の基礎/一物一価の法則</span></a>] 。
                     単位時間が経過したときの債券価格を \( P_1 &gt; 0 \) とおけば \( P_1=F/(1+r_{0,T-1})^{T-1} \) が成り立つ。
                     したがってこの時点での収益率は
-                    \[
-                        \begin{align}
-                            \frac{P_1}{P_0}-1=&\frac{(1+r_{0,T})^T}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
-                            =&\frac{(1+r_{0,T-1})^{T-1}(1+f_{T-1,T})}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
-                            =&f_{T-1,T}
-                        \end{align}
-                    \]
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{P_1}{P_0}-1=&\frac{(1+r_{0,T})^T}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
+                                =&\frac{(1+r_{0,T-1})^{T-1}(1+f_{T-1,T})}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
+                                =&f_{T-1,T}
+                            \end{align}
+                        \]
+                    </div>
                     のようにフォワード・レートのみによって表される。
                     この収益率を<span class="new-word">ローリング・イールド（rolling yield）</span>、このような収益の発生を<span class="new-word">ロールダウン効果（rolldown effect, rolling down）</span>と呼ぶ。
                 </p>
@@ -186,9 +188,30 @@
                 </div>
                 <p>
                     　イールド・カーブが不変かつ投資対象が割引債の議論は、より一般性のある議論に拡張される。
-                    イールド・カーブが不変であることは便宜的な仮定であり、現実世界では起こり得ないため、イールド・カーブの変化を許す必要がある。
-                    また割引債はクーポンがないため計算が簡単であるが、実務では利付債を扱うことの方が多い。
+                    まずイールド・カーブが不変であることは便宜的な仮定であり、現実世界では起こり得ないため、イールド・カーブの変化を許す必要がある。
+                    イールド・カーブが変化するとき、割引債の収益率について以下が成り立つ。
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (r_{0,T}(t))_T \) 、\( r_{0,T} &gt; -1 \) 、\( T \in \textbf{Z}_{\geq2} \) を時刻 \( t \) のイールド・カーブ、\( f_{T,S} &gt; -1 \) 、\( S &gt; T \) をフォワード・レートとする。
+                        また時刻 \( t=0 \) に残存期間 \( T \) 、修正デュレーション \( D \) の割引債に単位時間だけ投資する。
+                        さらにイールド・カーブが \( r_{0,T-1}(1)=r_{0,T-1}(0)+\Delta r \) となるよう変化して \( f_{T-1,T}(0)=o(\Delta r) \) であるとする。
+                        このとき、割引債の投資における収益率は
+                        <div class="math-container">
+                            \[
+                                f_{T-1,T}(0) - D\Delta r-f_{T-1,T}(0)D\Delta r +o(\Delta r)
+                            \]
+                        </div>
+                        である。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <div class="title">証明</div>
+                    <p>
+                    </p>
+                    <div class="end-symbol">■</div>
+                </div>
             </section>
         </main>
         <div id="nav-placeholder"></div>
