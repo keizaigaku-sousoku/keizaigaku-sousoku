@@ -221,16 +221,7 @@
                         \]
                     </div>
                     <p>
-                        であり、時刻 \( t=1 \) において残存期間は \( T-1 \) になるので修正デュレーションは
-                    </p>
-                    <div class="math-container">
-                        \[
-                            D(1)=\frac{(T-1)F/[1+r_{0,T-1}(1)]^{T-1}}{F/[1+r_{0,T-1}(1)]^{T-1}}\cdot\frac{1}{1+r_{0,T-1}(1)}=\frac{T-1}{1+r_{0,T-1}(1)}
-                        \]
-                    </div>
-                    <p>
-                        である。
-                        よって収益率は
+                        であり、収益率は
                     </p>
                     <div class="math-container">
                         \[
@@ -243,7 +234,15 @@
                         \]
                     </div>
                     <p>
-                        になる。さらに
+                        になる。時刻 \( t=1 \) において残存期間は \( T-1 \) になるので修正デュレーションは
+                    </p>
+                    <div class="math-container">
+                        \[
+                            D(1)=\frac{(T-1)F/[1+r_{0,T-1}(1)]^{T-1}}{F/[1+r_{0,T-1}(1)]^{T-1}}\cdot\frac{1}{1+r_{0,T-1}(1)}=\frac{T-1}{1+r_{0,T-1}(1)}
+                        \]
+                    </div>
+                    <p>
+                        であり、
                     </p>
                     <div class="math-container">
                         \[
@@ -251,7 +250,8 @@
                                 \frac{T-1}{1+r_{0,T-1}(0)}\Delta r=&\frac{T-1}{1+r_{0,T-1}(1)-\Delta r}\Delta r\nonumber\\
                                 =&\frac{T-1}{[1+r_{0,T-1}(1)][1-\frac{\Delta r}{1+r_{0,T-1}(1)}]}\Delta r\nonumber\\
                                 =&\frac{T-1}{1+r_{0,T-1}(1)}\bigg{[}1+\frac{\Delta r}{1+r_{0,T-1}(1)}+o(\Delta r)\bigg{]}\Delta r\nonumber\\
-                                =&\frac{T-1}{1+r_{0,T-1}(1)}\Delta r+o(\Delta r)
+                                =&\frac{T-1}{1+r_{0,T-1}(1)}\Delta r+o(\Delta r)\nonumber\\
+                                =&D\Delta r+o(\Delta r)
                             \end{align}
                         \]
                     </div>
