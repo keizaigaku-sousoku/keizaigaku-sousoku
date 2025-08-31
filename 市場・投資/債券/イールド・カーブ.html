@@ -23,6 +23,7 @@
                 <a href="#section-yield-curve">イールド・カーブの定義</a>
                 <a href="#section-hypothesis">イールド・カーブの諸仮説</a>
                 <a href="#section-rolldown">ロールダウン効果</a>
+                <a href="#section-decomposition">収益率の分解</a>
             </div>
         </div>
         <main>
@@ -188,9 +189,12 @@
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
+            </section>
+            <section id="section-decomposition">
+                <h4>収益率の分解</h4>
                 <p>
-                    　イールド・カーブが不変かつ投資対象が割引債の議論は、より一般性のある議論に拡張される。
-                    まずイールド・カーブが不変であることは便宜的な仮定であり、現実世界では起こり得ないため、イールド・カーブの変化を許す必要がある。
+                    　ロールダウン効果を考えるときはイールド・カーブが不変であることを仮定したが、これはより一般の議論に拡張される。
+                    言うまでもなく、イールド・カーブが不変であることは便宜的な仮定であり、現実世界では起こり得ない。
                     イールド・カーブが変化するとき、割引債の収益率について以下が成り立つ。
                 </p>
                 <div class="theorem-tile">
@@ -247,11 +251,11 @@
                     <div class="math-container">
                         \[
                             \begin{align}
-                                \frac{T-1}{1+r_{0,T-1}(0)}\Delta r=&\frac{T-1}{1+r_{0,T-1}(1)-\Delta r}\Delta r\nonumber\\
-                                =&\frac{T-1}{[1+r_{0,T-1}(1)][1-\frac{\Delta r}{1+r_{0,T-1}(1)}]}\Delta r\nonumber\\
-                                =&\frac{T-1}{1+r_{0,T-1}(1)}\bigg{[}1+\frac{\Delta r}{1+r_{0,T-1}(1)}+o(\Delta r)\bigg{]}\Delta r\nonumber\\
-                                =&\frac{T-1}{1+r_{0,T-1}(1)}\Delta r+o(\Delta r)\nonumber\\
-                                =&D(1)\Delta r+o(\Delta r)
+                                -\frac{T-1}{1+r_{0,T-1}(0)}\Delta r=&\frac{T-1}{1+r_{0,T-1}(1)-\Delta r}\Delta r\nonumber\\
+                                =&-\frac{T-1}{[1+r_{0,T-1}(1)][1-\frac{\Delta r}{1+r_{0,T-1}(1)}]}\Delta r\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}(1)}\bigg{[}1+\frac{\Delta r}{1+r_{0,T-1}(1)}+o(\Delta r)\bigg{]}\Delta r\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}(1)}\Delta r+o(\Delta r)\nonumber\\
+                                =&-D(1)\Delta r+o(\Delta r)
                             \end{align}
                         \]
                     </div>
@@ -260,6 +264,11 @@
                     </p>
                     <div class="end-symbol">■</div>
                 </div>
+                <p>
+                    　上の命題の主張を解釈することは容易である。
+                    すなわち、割引債への投資で単位時間後に得た収益率は、投資時点でのローリング・イールドの寄与、単位時間後までに起こったイールド・カーブの変化による寄与、その他の複合的な寄与に分解される。
+                    
+                </p>
             </section>
         </main>
         <div id="nav-placeholder"></div>
