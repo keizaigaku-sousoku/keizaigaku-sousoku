@@ -248,6 +248,7 @@ table {
     border-collapse: collapse;
     width: 80%;
     text-align: center;
+    table-layout: fixed;
     font-family: 'Noto Sans JP', sans-serif;
     border-bottom: 1px solid #6967ab;
 }
