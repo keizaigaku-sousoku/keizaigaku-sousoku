@@ -192,9 +192,9 @@ main {
     font-weight: bold;
     font-size: 18px;
     color: #7f1184;
-    padding: 2px 0;
-    border-top: 2px solid #7f1184;
-    border-bottom: 2px solid #7f1184;
+    padding: 6px 30px;
+    border-top: 1px solid #7f1184;
+    border-bottom: 1px solid #7f1184;
 }
 
 .theorem-tile p {
