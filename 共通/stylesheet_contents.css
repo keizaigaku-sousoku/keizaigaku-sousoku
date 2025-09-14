@@ -58,8 +58,8 @@ h2 {
     display: inline-block;
     /*background: linear-gradient(135deg, #7f1184, #004898);*/
     color: #7f1184;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /*-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
 }
 
 h3 {
