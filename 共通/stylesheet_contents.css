@@ -181,53 +181,53 @@ main {
 }
 */
 .part-title {
-  position: relative;
-  padding: 8px 12px;
-  font-family: 'Noto Serif JP', serif; /* 落ち着いたフォント */
-  font-size: 18px;
-  letter-spacing: 0.05em;
-  color: #333;
-  font-weight: 500;
-  display: block;
-  box-sizing: border-box;
-  max-width: 160px;   /* タイトル幅に合わせて調整 */
-  text-align: center; 
-  margin: 32px auto;  /* 中央寄せ */
+    position: relative;
+    padding: 8px 12px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    color: #333;
+    font-weight: 500;
+    display: block;
+    box-sizing: border-box;
+    max-width: 160px;
+    text-align: center; 
+    margin: 32px auto;
 }
 
 /* 左上の斜めの装飾 */
 .part-title::before {
-  content:'';
-  position: absolute;
-  left:0;
-  top:0;
-  width: 50px;
-  height: 50px;
-  rotate: 45deg;
-  border-bottom: solid 1px #333;
-  border-left: solid 1px #333;
+    content:'';
+    position: absolute;
+    left:0;
+    top:0;
+    width: 50px;
+    height: 50px;
+    rotate: 45deg;
+    border-bottom: solid 1px #333;
+    border-left: solid 1px #333;
 }
 
 /* タイトル内にspanを入れておくと左右に装飾を追加できる */
 .part-title span::before,
 .part-title span::after {
-  content:'';
-  position: absolute;
-  background: #333;
-  width: 36px;
-  height: 1px;
+    content:'';
+    position: absolute;
+    background: #333;
+    width: 36px;
+    height: 1px;
 }
 
 .part-title span::before {
-  left: 25px;
-  top: 2px;
-  rotate: 45deg;
+    left: 25px;
+    top: 2px;
+    rotate: 45deg;
 }
 
 .part-title span::after {
-  left: 25px; 
-  bottom: 2px;
-  rotate: -45deg;
+    left: 25px; 
+    bottom: 2px;
+    rotate: -45deg;
 }
 
 /* Theorem / Proof */
