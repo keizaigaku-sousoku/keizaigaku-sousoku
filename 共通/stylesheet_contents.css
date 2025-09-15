@@ -115,14 +115,14 @@ header::after {
 header::before {
     top: 0;
     border-top: 1px solid #7f1184;  /* 太い線 */
-    border-bottom: 4px solid #7f1184; /* 細い線 */
+    border-bottom: 2px solid #7f1184; /* 細い線 */
     height: 6px; /* 太い線＋細い線の分だけ確保 */
 }
 
 header::after {
     bottom: 0;
     border-bottom: 1px solid #7f1184; /* 太い線 */
-    border-top: 4px solid #7f1184;   /* 細い線 */
+    border-top: 2px solid #7f1184;   /* 細い線 */
     height: 6px;
 }
 
