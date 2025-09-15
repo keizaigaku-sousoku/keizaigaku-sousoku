@@ -169,6 +169,7 @@ main {
     border-bottom: 2px solid #7f1184;
 }
 */
+/*
 .part-title {
     position: relative;
     font-size: 15px;
@@ -177,6 +178,13 @@ main {
     background-color: #7f1184;
     padding: 6px 12px;
     border-radius: 9999px;
+}
+*/
+.part-title {
+    display: inline-block;
+    color: #7f1184;
+    background: linear-gradient(transparent 60%, rgba(127,17,132,0.2) 60%);
+    padding: 2px 4px;
 }
 
 /* Theorem / Proof */
