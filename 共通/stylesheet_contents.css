@@ -9,9 +9,6 @@ html, body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    /*display: flex;
-    flex-direction: column;
-    align-items: center;*/
     position: relative;
     overflow-x: hidden;
     font-size: 15px;
@@ -32,14 +29,6 @@ p {
 a, a:visited {
     color: #1d1d1f;
 }
-
-/*
-.black-link,
-.black-link:visited {
-    color: black !important;
-    text-decoration: none !important;
-}
-*/
 
 .new-word {
     color: #6967ab;
@@ -83,14 +72,6 @@ h4 {
 }
 
 /* Header */
-/*
-header {
-    width: 100%;
-    position: relative;
-    padding: 40px;
-    text-align: center;
-}
-*/
 header {
     width: 90%;
     position: relative;
@@ -177,6 +158,7 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
+/*
 .part-title {
     font-size: 15px;
     color: #7f1184;
@@ -185,6 +167,16 @@ main {
     padding-bottom: 5px;
     margin-bottom: 15px;
     border-bottom: 2px solid #7f1184;
+}
+*/
+.part-title {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    background-color: #7f1184;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 /* Theorem / Proof */
