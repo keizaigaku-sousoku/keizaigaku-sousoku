@@ -190,9 +190,9 @@ main {
 .theorem-tile .title {
     display: inline-block;
     font-weight: bold;
-    font-size: 18px;
+    /*font-size: 18px;*/
     color: #7f1184;
-    padding: 6px 30px;
+    /*padding: 6px 30px;*/
     border-top: 1px solid #7f1184;
     border-bottom: 1px solid #7f1184;
 }
