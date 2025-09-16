@@ -182,7 +182,7 @@ main {
 */
 .part-title {
     font-size: 15px;
-    color: #7f1184;
+    color: #6967ab;
     text-align: center;
     position: relative;
     padding-bottom: 5px;
@@ -191,14 +191,13 @@ main {
 
 .part-title::before,
 .part-title::after {
-    content: "<";
-    font-size: 18px;
+    content: "＜";
+    font-size: 15px;
     color: #7f1184;
-    margin: 0 8px;
 }
 
 .part-title::after {
-    content: ">";
+    content: "＞";
 }
 
 /* Theorem / Proof */
