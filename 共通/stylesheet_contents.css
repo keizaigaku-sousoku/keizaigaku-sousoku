@@ -181,7 +181,7 @@ main {
 }
 */
 .part-title {
-    font-size: 15px;
+    font-size: 20px;
     color: #6967ab;
     text-align: center;
     position: relative;
@@ -192,8 +192,8 @@ main {
 .part-title::before,
 .part-title::after {
     content: "＜";
-    font-size: 15px;
-    color: #7f1184;
+    font-size: 20px;
+    color: #6967ab;
 }
 
 .part-title::after {
