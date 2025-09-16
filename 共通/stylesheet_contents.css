@@ -183,11 +183,7 @@ main {
 .part-title {
   position: relative;
   padding: 4px 8px;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 24px;
-  letter-spacing: 0.1em;
-  color: #333;
-  font-weight: 400;
+  color: #7f1184;
   display: block;
   box-sizing: border-box;
   max-width: 480px;
@@ -204,7 +200,7 @@ main {
   display: block;
   width: 100%;
   height: 4px;
-  background: linear-gradient(135deg, transparent 25%, #d8bfd8 25%, #d8bfd8 50%, transparent 50%, transparent 75%, #d8bfd8 75%, #d8bfd8);
+  background: linear-gradient(135deg, transparent 25%, #7f1184 25%, #7f1184 50%, transparent 50%, transparent 75%, #7f1184 75%, #7f1184);
   background-size: 4px 4px;
   z-index: 0;
 }
