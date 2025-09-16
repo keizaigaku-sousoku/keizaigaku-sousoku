@@ -181,24 +181,20 @@ main {
 }
 */
 .part-title {
-    position: relative;
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
+    font-size: 15px;
+    color: #7f1184;
     text-align: center;
-    display: inline-block;
-    font-family: 'Noto Sans JP', sans-serif;
-    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .part-title::before,
 .part-title::after {
     content: "<";
     font-size: 18px;
-    font-weight: 400;
     color: #7f1184;
     margin: 0 8px;
-    font-family: 'Courier New', monospace; /* タグ感を強調 */
 }
 
 .part-title::after {
