@@ -79,7 +79,7 @@ header {
     margin: 20px auto;
     text-align: center;
 }
-
+/*
 header::before,
 header::after {
     content: "";
@@ -100,6 +100,25 @@ header::after {
     border-bottom: 1px solid #7f1184;
     border-top: 2px solid #7f1184;
     height: 6px;
+}
+*/
+
+header::before, header::after {
+  content:'';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7f1184;
+  width: 40px;
+  height: 1px;
+  rotate: -25deg;
+  display: inline-block;
+}
+header::before {
+  top: -8px;
+}
+header::after {
+  bottom: 12px;
 }
 
 header h2 {
