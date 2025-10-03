@@ -210,7 +210,7 @@ main {
   margin: 24px;
   margin-inline: auto;
 }
-
+/*
 .part-title::after {
   content: "";
   position: absolute;
@@ -223,7 +223,7 @@ main {
   background-size: 4px 4px;
   z-index: 0;
 }
-
+*/
 /* Theorem / Proof */
 .theorem-tile, .proof {
     font-size: 15px;
