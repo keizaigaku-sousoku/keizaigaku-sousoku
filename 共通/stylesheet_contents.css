@@ -102,7 +102,7 @@ header::after {
     height: 6px;
 }
 */
-
+/*
 header::before, header::after {
     content:'';
     position: absolute;
@@ -120,7 +120,7 @@ header::before {
 header::after {
   bottom: 12px;
 }
-
+*/
 header h2 {
     margin: 0;
 }
