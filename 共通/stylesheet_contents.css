@@ -200,15 +200,17 @@ main {
 }
 */
 .part-title {
-  position: relative;
-  padding: 10px 0px;
-  color: #7f1184;
-  display: block;
-  box-sizing: border-box;
-  max-width: 480px;
-  text-align: center; 
-  margin: 24px;
-  margin-inline: auto;
+    position: relative;
+    padding: 10px 0px;
+    color: #7f1184;
+    display: block;
+    box-sizing: border-box;
+    max-width: 480px;
+    text-align: center; 
+    margin: 24px;
+    margin-inline: auto;
+    border-top: 1px solid #7f1184;
+    border-bottom: 1px solid #7f1184;
 }
 /*
 .part-title::after {
