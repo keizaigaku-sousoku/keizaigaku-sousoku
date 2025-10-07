@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&family=Tangerine&display=swap');
 
 * {
     box-sizing: border-box;
@@ -286,6 +286,10 @@ main {
 /* Comment Box */
 .comment-box {
     margin: 20px;
+}
+
+.comment-box h2 {
+    font-family: 'Tangerine';
 }
 
 .comment-box::before,
