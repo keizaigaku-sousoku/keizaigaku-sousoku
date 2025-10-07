@@ -288,8 +288,10 @@ main {
     margin: 20px;
 }
 
-.comment-box h3 {
+.comment-box h2 {
     font-family: 'Tangerine';
+    font-size: 28px;
+    color: #6967ab;
 }
 
 .comment-box::before,
