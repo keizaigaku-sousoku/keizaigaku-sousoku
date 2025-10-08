@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&family=Tangerine@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&family=Tangerine:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -322,8 +322,9 @@ main {
 .comment-box-title::before {
     content: "Column.    ";
     color: #6967ab;
-    font-family: 'Tangerine';
+    font-family: 'Tangerine', cursive;
     font-size: 40px;
+    font-weight: 700;
 }
 
 /* Table */
