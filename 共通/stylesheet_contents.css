@@ -287,13 +287,6 @@ main {
 .comment-box {
     margin: 20px;
 }
-/*
-.comment-box h2 {
-    font-family: 'Tangerine';
-    font-size: 28px;
-    color: #6967ab;
-}
-*/
 
 .comment-box::before,
 .comment-box::after {
@@ -327,10 +320,10 @@ main {
 }
 
 .comment-box-title::before {
-    content: "Column";
+    content: "Column   ";
     color: #6967ab;
     font-family: 'Tangerine';
-    font-size: 28px;
+    font-size: 40px;
 }
 
 /* Table */
