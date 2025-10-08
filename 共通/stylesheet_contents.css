@@ -320,7 +320,7 @@ main {
 }
 
 .comment-box-title::before {
-    content: "Column   ";
+    content: "Column.    ";
     color: #6967ab;
     font-family: 'Tangerine';
     font-size: 40px;
