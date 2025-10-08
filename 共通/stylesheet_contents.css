@@ -317,6 +317,7 @@ main {
 
 .comment-box-title {
     color: #6967ab;
+    font-weight: 700;
 }
 
 .comment-box-title::before {
