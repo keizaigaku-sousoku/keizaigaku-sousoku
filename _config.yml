@@ -1,3 +1,11 @@
-url: "https://keizaigaku-sousoku.github.io/keizaigaku-sousoku"
+title: "経済学総則"
+description: "市場・投資、ミクロ・マクロ経済学、財務・ファイナンス理論等を解説するWebサイト"
+url: "https://keizaigaku-sousoku.github.io"
+baseurl: "/keizaigaku-sousoku"
+
 plugins:
   - jekyll-sitemap
+
+# sitemap.xml の生成を明示
+sitemap:
+  filename: "sitemap.xml"
