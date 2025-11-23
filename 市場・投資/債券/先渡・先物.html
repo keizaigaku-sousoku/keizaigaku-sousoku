@@ -185,16 +185,26 @@
                     具体的には、まず標準物を償還価格 \( F_\textrm{S} &gt; 0 \)、クーポン・レート \( c_\textrm{S} \in \textbf{R} \)、残存期間 \( T_\textrm{S} \in \textbf{Z}_{\geq1} \) の仮想的な固定利付債と定める。
                     数値 \( F_\textrm{S} \)、\( c_\textrm{S} \)、\( T_\textrm{S} \) は先物取引所が標準物を定めた時点で固定され、それ以降特段の理由がなければ数値は変更されない。
                     ここで最終取引日において先物単価がいくらであり、それから定まる複利最終利回りがどのような値であったとしても、仮に複利最終利回りがクーポン・レート \( c_\textrm{S} \) に等しいとする。
-                    するとこの仮定のもとで標準物はパー債になり、債券価格は償還価格 \( F_\textrm{S} \) に一致する [<a href="債券の基礎.html#section-par" style="text-decoration: none"><span class="new-word">債券の基礎/パー債</span></a>] 。
+                    この仮定のもとで標準物はパー債になり、債券価格は償還価格 \( F_\textrm{S} \) に一致する [<a href="債券の基礎.html#section-par" style="text-decoration: none"><span class="new-word">債券の基礎/パー債</span></a>] 。
                     次に任意の受渡適格銘柄を償還価格 \( F &gt; 0 \)、クーポン・レート \( c \in \textbf{R} \)、残存期間 \( T \in [T_\textrm{min},T_\textrm{max}] \) 、\( T_\textrm{min},T_\textrm{max} \in \textbf{Z}_{\geq1} \) の固定利付債と定める。
                     数値 \( T_\textrm{min} \) 、\( T_\textrm{max} \) は先物取引所が標準物を定めた時点で固定され、それ以降特段の理由がなければ数値は変更されない。
                     ここで最終取引日において当債券の債券価格がいくらであり、それから定まる複利最終利回りがどのような値であったとしても、仮に複利最終利回りが標準物のクーポン・レート \( c_\textrm{S} \) に等しいとする。
-                    この仮定のもとでの当債券の債券価格と標準物の債券価格の比率
+                    この仮定のもとで債券価格は
                 </p>
                 <div class="math-container">
                     \[
                         \begin{align}
-                            \textrm{CF}=\textrm{CF}(c_\textrm{S},c,T):=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}
+                            \sum_{t=1}^T\frac{cF}{(1+c_\textrm{S})^t}+\frac{F}{(1+c_\textrm{S})^T}=\frac{\frac{cF}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+F}{(1+c_\textrm{S})^T}=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}\cdot F
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    であり、これと標準物の債券価格の比率
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \textrm{CF}=\textrm{CF}(c_\textrm{S},c,T):=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}\cdot \frac{F}{F_\textrm{S}}
                         \end{align}
                     \]
                 </div>
