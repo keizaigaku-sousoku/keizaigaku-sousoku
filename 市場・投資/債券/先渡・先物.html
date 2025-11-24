@@ -92,7 +92,6 @@
                     1つ目の条件は、当契約が任意の互いを知らない2市場参加者間で結ばれ、両者は相手の同意を得ず契約の主体を自身から、合意を得た互いを知らない第三者に移せることである。
                     このような契約の締結や移転を行う市場参加者の集合を<span class="new-word">先物取引所（future exchange）</span>と呼ぶ。
                     また先物取引所にはこれを円滑に運営するための市場参加者、つまり運営者が存在する。
-                    <!--先物取引所ではモノが取引されることはなく、術語として先物取引所は取引所でない [<a href="../市場/市場とは何か.html#section-exchange-price" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。-->
                     2つ目の条件は、当契約が契約者に先物取引所へ貨幣の一時的な預入を要求することである。
                     この貨幣を<span class="new-word">証拠金（margin）</span>と呼ぶ。
                     3つ目の条件は、当契約が一定の手順に従ってモノたちを同一視することである。
@@ -210,82 +209,19 @@
                     受渡適格銘柄は固定利付債としているので、最終取引日までに取引以外に利子等の貨幣の受渡が発生し得る。
                     貨幣の受取りの合計から支払いの合計を控除した値を<span class="new-word">キャリー（carry）</span>と呼び、グロス・ベーシスからキャリーを控除した値を<span class="new-word">ネット・ベーシス（net basis）</span>と呼ぶ。
                     もし彼が損失を最小にすることを望むならば、ネット・ベーシスを最小にする受渡適格銘柄を選べばよい。
+                    すなわち、\( P_\textrm{S} \) を先物単価、\( P_i \) を任意の受渡適格銘柄 \( i \) の買値、\( \textrm{CF}_i \) をそのコンバージョン・ファクター、\( \textrm{Carry}_i \) をそのキャリーとするとき、
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \underset{i}{ \textrm{arg} \min }[P_i-\textrm{CF}_i \cdot P_\textrm{S}-\textrm{Carry}_i]
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    で定まる \( i \) を
                     このような受渡適格銘柄は彼にとっての<span class="new-word">チーペスト（cheapest to deliver）</span>と呼ばれる。
                 </p>
-                
-                <!--
-                <p>
-                    　受渡適格銘柄たちと標準物への同一視は、複利最終利回りの一様化によって行われる。
-                    具体的には、まず標準物を償還価格 \( F_\textrm{S} &gt; 0 \)、クーポン・レート \( c_\textrm{S} \in \textbf{R} \)、残存期間 \( T_\textrm{S} \in \textbf{Z}_{\geq1} \) の仮想的な固定利付債と定める。
-                    数値 \( F_\textrm{S} \)、\( c_\textrm{S} \)、\( T_\textrm{S} \) は先物取引所が標準物を定めた時点で固定され、それ以降特段の理由がなければ数値は変更されない。
-                    次に任意の受渡適格銘柄を償還価格 \( F &gt; 0 \)、クーポン・レート \( c \in \textbf{R} \)、残存期間 \( T \in \textbf{Z}_{\geq1} \) の固定利付債と定める。
-                    （これに該当しない債券は受渡適格銘柄としない。）
-                    先物取引所以外で受渡適格銘柄の債券価格がいくらになるかは実際の取引次第であり、一切の決まりはない [<a href="../市場/市場とは何か.html#section-exchange-price" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。
-                    しかし先物取引所では、最終取引日において、複利最終利回りが \( c_\textrm{S} \) となるような債券価格で受渡適格銘柄を取引することが定められている。
-                    （あらかじめこれに同意した市場参加者のみが先物取引所を利用できる。）
-                    債券は償還価格、クーポン（・レート）、残存期間がアプリオリに決まった契約であるから、先物取引所がアポステリオリに債券価格あるいは複利最終利回りを定めて受渡適格銘柄たちと標準物を同一視することは限られた方法の中でもっとも有効なものの1つである。
-                </p>
-                <p>
-                    　最終取引日における債券価格を容易に求めるため、ある係数が実務で頻出である。
-                    任意の受渡適格銘柄の債券価格は最終取引日の取引で
-                </p>
-                <div class="math-container">
-                    \[
-                        \begin{align}
-                            \sum_{t=1}^T\frac{cF}{(1+c_\textrm{S})^t}+\frac{F}{(1+c_\textrm{S})^T}=\frac{\frac{cF}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+F}{(1+c_\textrm{S})^T}=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}\cdot F
-                        \end{align}
-                    \]
-                </div>
-                <p>
-                    と定められる。
-                    そこで当債券の債券価格を求めるには、受渡適格銘柄の償還価格 \( F \) に
-                    \[
-                        \textrm{CF}=\textrm{CF}(c_\textrm{S},c,T):=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}
-                    \]
-                    を乗じればよい。
-                    この数値を<span class="new-word">コンバージョン・ファクター（conversion factor）</span>と呼ぶ。
-                    実務上用いられるコンバージョン・ファクターの定義式は上記よりも煩雑であるが、
-                </p>
-                -->
-                <!--
-                <p>
-                    　標準物から受渡適格銘柄への同一視は価格の変換によって行われる。
-                    具体的には、まず標準物を償還価格 \( F_\textrm{S} &gt; 0 \)、クーポン・レート \( c_\textrm{S} \in \textbf{R} \)、残存期間 \( T_\textrm{S} \in \textbf{Z}_{\geq1} \) の仮想的な固定利付債と定める。
-                    数値 \( F_\textrm{S} \)、\( c_\textrm{S} \)、\( T_\textrm{S} \) は先物取引所が標準物を定めた時点で固定され、それ以降数値は変更されない。
-                    次に任意の受渡適格銘柄を償還価格 \( F &gt; 0 \)、クーポン・レート \( c \in \textbf{R} \)、残存期間 \( T \in \textbf{Z}_{\geq1} \) の固定利付債と定める。
-                    （これに該当しない債券は受渡適格銘柄としない。）
-                    さらにこれらの複利最終利回りが \( c_\textrm{S} \) であると仮定する。
-                    このとき、標準物はパー債であり債券価格は償還価格 \( F_\textrm{S} \) に一致する [<a href="債券の基礎.html#section-par" style="text-decoration: none"><span class="new-word">債券の基礎/パー債</span></a>] 。
-                    また受渡適格銘柄の債券価格は
-                </p>
-                <div class="math-container">
-                    \[
-                        \begin{align}
-                            \sum_{t=1}^T\frac{cF}{(1+c_\textrm{S})^t}+\frac{F}{(1+c_\textrm{S})^T}=\frac{\frac{cF}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+F}{(1+c_\textrm{S})^T}=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}\cdot F
-                        \end{align}
-                    \]
-                </div>
-                <p>
-                    である。
-                    よって上記仮定のもとでは標準物の償還価格に
-                    \[
-                        \textrm{CF}=\textrm{CF}(c_\textrm{S},c,T):=\frac{\frac{c}{c_\textrm{S}}[(1+c_\textrm{S})^T-1]+1}{(1+c_\textrm{S})^T}
-                    \]
-                    を乗じることが、標準物の債券価格から受渡適格銘柄の債券価格への変換になる。
-                    これを<span class="new-word">コンバージョン・ファクター（conversion factor）</span>と呼ぶ。
-                </p>
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        \( P \) を任意の受渡適格銘柄の債券価格、\( \textrm{CF} \) をそのコンバージョン・ファクターとする。
-                        このとき、売建をした市場参加者にとって受渡適格銘柄を渡すにあたり貨幣を最も失わないのは \( P/\textrm{CF} \) が最小になる受渡適格銘柄である。
-                    </p>
-                </div>            
-                <div class="proof">
-                    <p>
-                    </p>
-                </div>
-                -->
             </section>
         </main>
         <div id="nav-placeholder"></div>
