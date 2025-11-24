@@ -202,25 +202,20 @@
                     　売建を行った市場参加者は、上記多数の仮定に従いさらにある指標を用いることで、合理的に受渡適格銘柄を決められる。
                     彼が最終取引日以前に任意の受渡適格銘柄を得たときの買値を \( P \) とおけば
                     \[
-                        P-\textrm{CF} \cdot P_\textrm{S}
+                        \textrm{GB}:=P-\textrm{CF} \cdot P_\textrm{S}
                     \]
                     は彼が一連の取引で失う貨幣の量である。
+                    （値が負の場合、その絶対値は彼が得る貨幣の量である。）
                     これを<span class="new-word">グロス・ベーシス（gross basis）</span>と呼ぶ。
                     受渡適格銘柄は固定利付債としているので、最終取引日までに取引以外に利子等の貨幣の受渡が発生し得る。
-                    貨幣の受取りの合計から支払いの合計を控除した値を<span class="new-word">キャリー（carry）</span>と呼び、グロス・ベーシスからキャリーを控除した値を<span class="new-word">ネット・ベーシス（net basis）</span>と呼ぶ。
-                    もし彼が損失を最小にすることを望むならば、ネット・ベーシスを最小にする受渡適格銘柄を選べばよい。
-                    すなわち、\( P_\textrm{S} \) を先物単価、\( P_i \) を任意の受渡適格銘柄 \( i \) の買値、\( \textrm{CF}_i \) をそのコンバージョン・ファクター、\( \textrm{Carry}_i \) をそのキャリーとするとき、
-                </p>
-                <div class="math-container">
+                    貨幣の受取りの合計から支払いの合計を控除した値を<span class="new-word">キャリー（carry）</span>と呼ぶ。
+                    これを \( \textrm{Carry} \) とおいたときの
                     \[
-                        \begin{align}
-                            \underset{i}{ \textrm{arg} \min }[P_i-\textrm{CF}_i \cdot P_\textrm{S}-\textrm{Carry}_i]
-                        \end{align}
+                        \textrm{NB}:=P-\textrm{Carry}-\textrm{CF} \cdot P_\textrm{S}
                     \]
-                </div>
-                <p>
-                    で定まる \( i \) を
-                    このような受渡適格銘柄は彼にとっての<span class="new-word">チーペスト（cheapest to deliver）</span>と呼ばれる。
+                    を<span class="new-word">ネット・ベーシス（net basis）</span>と呼ぶ。
+                    もし彼が損失を最小にすることを望むならば、ネット・ベーシスを最小にする受渡適格銘柄を選べばよい
+                    そのような受渡適格銘柄を彼にとっての<span class="new-word">チーペスト（cheapest to deliver）</span>と呼ぶ。
                 </p>
             </section>
         </main>
