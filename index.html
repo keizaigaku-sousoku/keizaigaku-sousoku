@@ -217,7 +217,7 @@
                 margin-top: 0;
             }
         
-            /* V字カット用CSS - V字型の白い背景を作成 (上辺V字、下辺V字) */
+            /* V字カット用CSS - V字型の白い背景を作成 (上辺逆V字、下辺逆V字) */
             .wrapper > a::before {
                 content: "";
                 position: absolute;
@@ -231,14 +231,14 @@
                 /* PC用 V字の高さ */
                 --v-height: 30px; 
                 
-                /* 上辺と下辺が両方V字（6点）のシェイプ */
+                /* 最終修正: 上辺と下辺が両方逆V字（谷型）のシェイプ */
                 clip-path: polygon(
-                    0% var(--v-height),               /* 1. 左上 (V字の始点) */
-                    50% 0%,                           /* 2. 中央上のV字の頂点 */
-                    100% var(--v-height),             /* 3. 右上 (V字の終点) */
-                    100% 100%,                        /* 4. 右下 */
-                    50% calc(100% - var(--v-height)), /* 5. 中央下のV字の山 */
-                    0% 100%                           /* 6. 左下 */
+                    0% 0%,                            /* 1. 左上 */
+                    50% var(--v-height),              /* 2. 中央上のV字の谷 */
+                    100% 0%,                          /* 3. 右上 */
+                    100% 100%,                         /* 4. 右下 */
+                    50% calc(100% - var(--v-height)),  /* 5. 中央下のV字の谷 */
+                    0% 100%                            /* 6. 左下 */
                 );
             }
             
@@ -249,8 +249,8 @@
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                /* セクションコンテンツの開始位置をV字の深さ分下にずらす */
-                padding: calc(30px + var(--v-height)) 30px 30px; /* V字の切り込みを避けるための調整 */
+                /* セクションコンテンツの開始位置をV字の深さ分だけ確保 */
+                padding: calc(30px + var(--v-height)) 30px 30px; 
                 background-color: transparent;
                 overflow: hidden;
                 margin: 0 auto;
