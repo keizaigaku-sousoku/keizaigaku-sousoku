@@ -202,12 +202,11 @@
                 border-top: 1px solid #7f1184;
                 border-bottom: 1px solid #7f1184;
             }
-
-            /*
+            
             section {
                 padding: 20px;
-                border-radius: 12px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+                /*border-radius: 12px;*/
+                /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);*/
             }
             
             .icon-section {
@@ -232,78 +231,6 @@
             .icon-box .material-symbols-outlined {
                 font-size: 120px;
                 color: #7f1184;
-            }
-            */
-            
-            section {
-                padding: 0; /* paddingを擬似要素ではなく内側のdivで調整 */
-                border-radius: 0; /* V字にするため角丸は不要 */
-                box-shadow: none; /* V字のエッジを綺麗に見せるため影は一旦削除 */
-                position: relative;
-            }
-            
-            .icon-section {
-                max-width: 800px;
-                /* padding: 30px; -> text-boxに移動 */
-                background-color: #fff;
-                border-radius: 0; /* V字に合わせて削除 */
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03); /* 親要素に影を戻す */
-                overflow: hidden; /* 擬似要素をはみ出させるための必須設定 */
-                transition: transform 0.3s; /* ホバーエフェクトの継続 */
-            }
-            
-            /* テキストボックスのpaddingを調整 */
-            .text-box {
-                padding: 30px; /* ここでセクションのパディングを設定 */
-                position: relative;
-                z-index: 1;
-            }
-            
-            /* V字カットのスタイル */
-            .v-cut-section {
-                margin-bottom: 20px; /* セクション間にスペースを追加しV字を見やすく */
-                /* マージンは必要に応じて調整 */
-            }
-            
-            .v-cut-section::before,
-            .v-cut-section::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 30px; /* V字の深さ (必要に応じて調整) */
-                background-color: #f5f5f7; /* 背景色と一致させる */
-                z-index: 2; /* テキストの上に表示してカットする */
-                pointer-events: none;
-            }
-            
-            /* 上辺のV字カット */
-            .v-cut-section::before {
-                top: 0;
-                transform: skewY(-2deg); /* 傾きを調整してV字の角度を設定 */
-                transform-origin: 0% 0; /* 左上を軸に傾ける */
-            }
-            
-            /* 下辺のV字カット */
-            .v-cut-section::after {
-                bottom: 0;
-                transform: skewY(2deg); /* 傾きを逆にしてV字の角度を設定 */
-                transform-origin: 100% 100%; /* 右下を軸に傾ける */
-            }
-            
-            /* ホバー時の上辺・下辺のV字を少し動かすことでインタラクティブに */
-            .icon-section:hover::before {
-                transform: skewY(-1deg);
-            }
-            
-            .icon-section:hover::after {
-                transform: skewY(1deg);
-            }
-            
-            /* icon-box の調整 */
-            .icon-box {
-                bottom: 30px; /* パディングに合わせて位置調整 */
-                right: 30px; /* パディングに合わせて位置調整 */
             }
             
             .text-box h2 {
@@ -438,7 +365,7 @@
                 <h2>FUNDAMENTALS</h2>
             </div>
             <a href="分野/市場・投資.html" style="text-decoration: none;">
-                <section class="icon-section v-cut-section">
+                <section class="icon-section">
                     <div class="icon-box">
                         <span class="material-symbols-outlined">query_stats</span>
                     </div>
