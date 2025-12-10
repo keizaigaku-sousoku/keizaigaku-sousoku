@@ -166,7 +166,7 @@
                 align-items: center;
                 padding-top: 80px;
                 padding-bottom: 80px;
-                gap: 0; /* 連続させるため gap: 0 を維持 */
+                gap: 0;
             }
             
             h2 {
@@ -231,7 +231,7 @@
                 /* PC用 V字の高さ */
                 --v-height: 30px; 
                 
-                /* 最終修正: 上辺と下辺が両方逆V字（谷型）のシェイプ */
+                /* 逆V字（谷型）に修正 */
                 clip-path: polygon(
                     0% 0%,                            /* 1. 左上 */
                     50% var(--v-height),              /* 2. 中央上のV字の谷 */
@@ -249,7 +249,7 @@
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                /* セクションコンテンツの開始位置をV字の深さ分だけ確保 */
+                /* セクションコンテンツの開始位置をV字の深さ分だけ確保（谷型の場合、パディングを確保して谷を避ける） */
                 padding: calc(30px + var(--v-height)) 30px 30px; 
                 background-color: transparent;
                 overflow: hidden;
