@@ -157,7 +157,6 @@
                 color: #7f1184;
             }
         
-            /* 変更点: セクション間の隙間をなくす */
             .wrapper {
                 width: 100%;
                 background-color: #f5f5f7;
@@ -167,11 +166,10 @@
                 align-items: center;
                 padding-top: 80px;
                 padding-bottom: 80px;
-                gap: 0; /* 連続させるため gap: 0 に変更 */
+                gap: 0; /* 連続させるため gap: 0 を維持 */
             }
             
             h2 {
-                /*font-family: 'Kaisei Opti', serif;*/
                 font-size: 34px;
                 font-weight: 700;
                 line-height: 2;
@@ -186,7 +184,7 @@
         
             .chapter-title {
                 max-width: 800px;
-                margin-bottom: 40px; /* タイトル下のマージンを確保 */
+                margin-bottom: 40px;
             }
         
             .chapter-title h2 {
@@ -200,7 +198,7 @@
                 border-bottom: 1px solid #7f1184;
             }
             
-            /* 変更点: <a>タグ（セクションコンテナ）のスタイルと重なり */
+            /* V字カット用CSS - <a>タグ（セクションコンテナ）のスタイルと重なり */
             .wrapper > a {
                 display: block;
                 width: 100%;
@@ -211,15 +209,15 @@
         
                 /* V字の高さ分だけ上にずらして重なりを作成 */
                 --v-height: 30px; /* デフォルトのV字の高さ */
-                margin-top: calc(-1 * var(--v-height)); /* 変更 */
+                margin-top: calc(-1 * var(--v-height)); 
             }
         
-            /* 変更点: 最初のセクションの重なりを無効にする（不要な隙間を詰める） */
+            /* V字カット用CSS - 最初のセクションの重なりを無効にする */
             .wrapper > a:first-of-type {
                 margin-top: 0;
             }
         
-            /* 変更点: V字型カットの白い背景を作成 */
+            /* V字カット用CSS - V字型の白い背景を作成 (上辺V字、下辺V字) */
             .wrapper > a::before {
                 content: "";
                 position: absolute;
@@ -233,14 +231,14 @@
                 /* PC用 V字の高さ */
                 --v-height: 30px; 
                 
-                /* 新しい V字型シェイプの定義（逆VとVの両方）*/
+                /* 上辺と下辺が両方V字（6点）のシェイプ */
                 clip-path: polygon(
-                    0% 0%,                           /* 1. 左上から開始 */
-                    50% var(--v-height),             /* 2. 中央上のV字の谷 */
-                    100% 0%,                         /* 3. 右上で終了 */
-                    100% 100%,                       /* 4. 右下 */
+                    0% var(--v-height),               /* 1. 左上 (V字の始点) */
+                    50% 0%,                           /* 2. 中央上のV字の頂点 */
+                    100% var(--v-height),             /* 3. 右上 (V字の終点) */
+                    100% 100%,                        /* 4. 右下 */
                     50% calc(100% - var(--v-height)), /* 5. 中央下のV字の山 */
-                    0% 100%                          /* 6. 左下 */
+                    0% 100%                           /* 6. 左下 */
                 );
             }
             
@@ -251,7 +249,8 @@
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                padding: 30px;
+                /* セクションコンテンツの開始位置をV字の深さ分下にずらす */
+                padding: calc(30px + var(--v-height)) 30px 30px; /* V字の切り込みを避けるための調整 */
                 background-color: transparent;
                 overflow: hidden;
                 margin: 0 auto;
@@ -293,22 +292,22 @@
                 header {
                     height: 100svh;
                 }
-                /* ... (ヘッダー関連の既存のモバイルCSSは省略) ... */
         
                 .mobile-br {
                     display: inline;
                 }
         
-                /* 変更点: モバイル用のV字高さ調整 */
+                /* モバイル用のV字高さ調整 */
                 .wrapper > a {
-                    --v-height: 20px; /* モバイル用のV字の深さ */
+                    --v-height: 20px;
                 }
                 .wrapper > a::before {
                     --v-height: 20px;
                 }
         
                 .icon-section {
-                    padding: 20px;
+                    /* モバイル用のパディングを修正 */
+                    padding: calc(20px + var(--v-height)) 20px 20px;
                 }
             }
         </style>
