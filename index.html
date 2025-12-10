@@ -218,6 +218,23 @@
                 /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);*/
                 overflow: hidden;
             }
+
+            .icon-section::after {
+                content: "";
+                position: absolute;
+                bottom: -20px; /* セクションの下端から少し下に配置 */
+                left: 0;
+                width: 100vw; /* 画面幅いっぱいに広げる */
+                height: 40px; /* 帯の高さ */
+                background-color: #f5f5f7; /* 背景色（wrapperの背景色に合わせる） */
+                
+                /* V字を作るための変形 */
+                transform-origin: bottom left;
+                transform: skewY(-1.5deg) translateX(calc(-50vw + 50%)); /* 左右の傾きを反転させ、中央に調整 */
+                
+                /* 擬似要素がセクション内のコンテンツに重ならないようにする */
+                z-index: 1;
+            }
             
             .icon-box {
                 position: absolute;
