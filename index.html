@@ -212,7 +212,9 @@
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                margin-bottom: 0;
+                background: #fff;
+                overflow: visible; /* ←必須 */
+                z-index: 1; /* stacking context を作る */
             }
             
             /* ▼画面いっぱいの逆三角形（下向きV） */
@@ -221,12 +223,12 @@
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%);
-                bottom: -50px; /* V の深さ調整 */
+                bottom: -50px;
                 width: 100vw;
-                height: 100px; /* V の高さ */
-                background: #fff; /* 本体と色を揃える */
+                height: 100px;
+                background: #fff;
                 clip-path: polygon(50% 100%, 0 0, 100% 0);
-                z-index: -1;
+                z-index: 0; /* ← これで見えるようになる */
             }
             
             .icon-box {
