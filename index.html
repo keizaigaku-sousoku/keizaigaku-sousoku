@@ -213,6 +213,7 @@
                 position: relative;
                 max-width: 800px;
                 margin-bottom: 60px; /* ↘ 三角形の高さと同じ値 */
+                z-index: 1;
             }
             
             .icon-section::after {
@@ -225,7 +226,7 @@
                 height: 60px;
                 background: #fff;
                 clip-path: polygon(50% 100%, 0 0, 100% 0);
-                z-index: -1;
+                z-index: 0;
             }
             
             .icon-box {
