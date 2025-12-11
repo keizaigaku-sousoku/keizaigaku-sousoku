@@ -192,46 +192,20 @@
                 margin-right: auto;
             }
 
-            .section-back {
+            .section {
                 width: 100%;
-                padding-top: 100px;
-                padding-bottom: 100px;
-                background-color: #11CAF4;
-                position: relative;
-                /*z-index: 0;*/
-            }
+                background: #4A90E2;
+                padding: 80px 20px;
+                color: white;
             
-            .section-back::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -60px;
-                width: 100%;
-                height: 60px;
-                background: #11CAF4;
-                clip-path: polygon(50% 100%, 0 0, 100% 0);
-                /*z-index: 1;*/
-            }
-            
-            .section-back2 {
-                width: 100%;
-                padding-top: 160px; /* 100 + 三角60 */
-                padding-bottom: 100px;
-                background: #F4E511;
-                position: relative;
-            }
-            
-            .section-back2::before {
-                content: "";
-                position: absolute;
-                top: -60px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-                height: 60px;
-                background: #F4E511;
-                clip-path: polygon(50% 0, 0 100%, 100% 100%);
+                clip-path: polygon(
+                    50% 10%,   /* 上の尖り（下向き） */
+                    100% 0%,   /* 上右の角 */
+                    100% 90%,  /* 下右の角 */
+                    50% 100%,  /* 下の尖り（下向き） */
+                    0% 90%,    /* 下左の角 */
+                    0% 0%      /* 上左の角 */
+                );
             }
             
             @media (max-width: 768px) {
@@ -351,7 +325,7 @@
                 <h2>FUNDAMENTALS</h2>
             </div>
             <a href="分野/市場・投資.html" style="text-decoration: none;">
-                <div class="section-back">
+                <div class="section">
                     <div class="section-wrapper">
                         <span class="material-symbols-outlined">query_stats</span>
                         <h2>市場・投資</h2>
@@ -364,7 +338,7 @@
                 </div>
             </a>
             <a href="分野/ミクロ・マクロ経済学.html" style="text-decoration: none;">
-                <div class="section-back2">
+                <div class="section">
                     <div class="section-wrapper">
                         <span class="material-symbols-outlined">home_work</span>
                         <h2>ミクロ・マクロ経済学</h2>
