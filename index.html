@@ -25,18 +25,18 @@
             #6967ab：竜胆色
             #004898：瑠璃色
             */
-        
+            
             html, body {
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
                 font-family: 'Noto Sans JP', sans-serif;
             }
-        
+            
             body {
                 font-size: 16px;
             }
-        
+            
             header {
                 width: 100%;
                 height: 100vh;
@@ -46,7 +46,7 @@
                 align-items: center;
                 position: relative;
             }
-        
+            
             .header-above {
                 width: 100%;
                 padding-bottom: 80px;
@@ -57,7 +57,7 @@
                 align-items: center;
                 gap: 50px;
             }
-        
+            
             header h1 {
                 font-family: 'Marcellus', serif;
                 font-size: 50px;
@@ -65,18 +65,18 @@
                 margin-top: 60px;
                 margin-bottom: 60px;
             }
-        
+            
             .mobile-br {
                 display: none;
             }
-        
+            
             .subtitle {
                 font-family: 'Kaisei Opti', serif;
                 font-size: 18px;
                 color: #fff;
                 line-height: 1;
             }
-        
+            
             .subtitle-box {
                 display: flex;
                 flex-direction: column;
@@ -84,30 +84,30 @@
                 align-items: center;
                 height: 300px;
             }
-        
+            
             .scroll-prompt {
                 font-size: 15px;
                 text-align: center;
             }
-        
+            
             .scroll-prompt p {
                 color: #fff;
             }
-        
+            
             .arrow {
                 text-align: center;
                 animation: bounce 2s infinite;
             }
-        
+            
             .arrow .material-symbols-outlined {
                 font-size: 50px;
             }
-        
+            
             @keyframes bounce {
                 0%, 100% { transform: translateY(0); }
                 50% { transform: translateY(-10px); }
             }
-        
+            
             nav {
                 bottom: 0;
                 height: 80px;
@@ -121,22 +121,22 @@
                 gap: 30px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-        
+            
             nav a {
                 color: #fff;
                 padding: 8px 30px;
                 text-decoration: none;
                 border-radius: 5px;
                 font-size: 15px;
-                transition: transform 0.3s, background-color 0.3s, color 0.3s;
+                transition: transform 0.3s, background-color 0.3s, color(0.3s);
             }
-        
+            
             nav a:hover {
                 background-color: #7f1184;
                 color: #fff;
                 transform: translateX(10px);
             }
-        
+            
             .nav-wrapper {
                 position: absolute;
                 bottom: 0;
@@ -144,7 +144,7 @@
                 width: 100%;
                 height: 80px;
             }
-        
+            
             .fixed-wrapper {
                 position: fixed;
                 top: 0;
@@ -152,11 +152,11 @@
                 width: 100%;
                 z-index: 999;
             }
-        
+            
             .fixed-wrapper a {
                 color: #7f1184;
             }
-        
+            
             .wrapper {
                 width: 100%;
                 background-color: #f5f5f7;
@@ -175,18 +175,18 @@
                 line-height: 2;
                 color: #1d1d1f;
             }
-        
+            
             p {
                 line-height: 2;
                 color: #1d1d1f;
                 text-align: justify;
             }
-        
+            
             .chapter-title {
                 max-width: 800px;
                 margin-bottom: 40px;
             }
-        
+            
             .chapter-title h2 {
                 font-size: 28px;
                 font-family: 'Noto Sans JP', sans-serif;
@@ -198,26 +198,31 @@
                 border-bottom: 1px solid #7f1184;
             }
             
-            /* V字カット用CSS - <a>タグ（セクションコンテナ）のスタイルと重なり */
+            /* ============================================================
+                  ★ あなたのV字構造を維持したまま「干渉」だけ解決する修正版 ★
+               ============================================================ */
+            
+            /* wrapper > a : ここが干渉の原因。margin-top の重ね処理を削除し、通常の余白に変更 */
             .wrapper > a {
                 display: block;
                 width: 100%;
                 position: relative;
                 padding: 0;
                 text-decoration: none;
-                z-index: 1; 
-        
-                /* V字の高さ分だけ上にずらして重なりを作成 */
-                --v-height: 30px; /* デフォルトのV字の高さ */
-                margin-top: calc(-1 * var(--v-height)); 
+                z-index: 1;
+            
+                /* 変更：重ね合わせを削除  
+                   margin-top: calc(-1 * var(--v-height)); を撤去 */
+                margin: 60px 0;  /* ← 適切な間隔に変更 */
+            
+                --v-height: 30px;
             }
-        
-            /* V字カット用CSS - 最初のセクションの重なりを無効にする */
+            
             .wrapper > a:first-of-type {
                 margin-top: 0;
             }
-        
-            /* V字カット用CSS - V字型の白い背景を作成 (上辺V字、下辺V字) */
+            
+            /* clip-path の形状はそのまま維持 */
             .wrapper > a::before {
                 content: "";
                 position: absolute;
@@ -230,15 +235,14 @@
             
                 --v-height: 30px;
             
-                /* 上も下も中央が下に凹む形 */
                 clip-path: polygon(
                     0% 0%,                     
                     50% var(--v-height),      
                     100% 0%,
             
-                    100% calc(100% - 0px),
+                    100% 100%,
                     50% calc(100% - var(--v-height)),
-                    0% calc(100% - 0px)
+                    0% 100%
                 );
             }
             
@@ -246,11 +250,11 @@
                 padding: 20px;
             }
             
+            /* icon-section ：上のV字と被らないよう padding-top を調整 */
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                /* セクションコンテンツの開始位置をV字の深さ分下にずらす */
-                padding: calc(30px + var(--v-height)) 30px 30px; /* V字の切り込みを避けるための調整 */
+                padding: calc(40px + var(--v-height)) 30px 40px;
                 background-color: transparent;
                 overflow: hidden;
                 margin: 0 auto;
@@ -276,38 +280,40 @@
                 font-size: 24px;
                 color: #7f1184;
             }
-        
+            
             .text-box p {
                 margin: 0;
                 line-height: 2;
                 color: #898989;
                 text-align: justify;
             }
-        
+            
             @media (max-width: 768px) {
                 body {
                     font-size: 18px;
                 }
-        
+            
                 header {
                     height: 100svh;
                 }
-        
+            
                 .mobile-br {
                     display: inline;
                 }
-        
-                /* モバイル用のV字高さ調整 */
+            
                 .wrapper > a {
                     --v-height: 20px;
+            
+                    /* 同じく margin-top の重ね処理を削除 */
+                    margin: 40px 0;
                 }
+            
                 .wrapper > a::before {
                     --v-height: 20px;
                 }
-        
+            
                 .icon-section {
-                    /* モバイル用のパディングを修正 */
-                    padding: calc(20px + var(--v-height)) 20px 20px;
+                    padding: calc(30px + var(--v-height)) 20px 30px;
                 }
             }
         </style>
