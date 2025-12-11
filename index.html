@@ -25,18 +25,18 @@
             #6967ab：竜胆色
             #004898：瑠璃色
             */
-            
+
             html, body {
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
                 font-family: 'Noto Sans JP', sans-serif;
             }
-            
+
             body {
                 font-size: 16px;
             }
-            
+
             header {
                 width: 100%;
                 height: 100vh;
@@ -46,7 +46,7 @@
                 align-items: center;
                 position: relative;
             }
-            
+
             .header-above {
                 width: 100%;
                 padding-bottom: 80px;
@@ -57,7 +57,7 @@
                 align-items: center;
                 gap: 50px;
             }
-            
+
             header h1 {
                 font-family: 'Marcellus', serif;
                 font-size: 50px;
@@ -65,18 +65,18 @@
                 margin-top: 60px;
                 margin-bottom: 60px;
             }
-            
+
             .mobile-br {
                 display: none;
             }
-            
+
             .subtitle {
                 font-family: 'Kaisei Opti', serif;
                 font-size: 18px;
                 color: #fff;
                 line-height: 1;
             }
-            
+
             .subtitle-box {
                 display: flex;
                 flex-direction: column;
@@ -84,30 +84,30 @@
                 align-items: center;
                 height: 300px;
             }
-            
+
             .scroll-prompt {
                 font-size: 15px;
                 text-align: center;
             }
-            
+
             .scroll-prompt p {
                 color: #fff;
             }
-            
+
             .arrow {
                 text-align: center;
                 animation: bounce 2s infinite;
             }
-            
+
             .arrow .material-symbols-outlined {
                 font-size: 50px;
             }
-            
+
             @keyframes bounce {
                 0%, 100% { transform: translateY(0); }
                 50% { transform: translateY(-10px); }
             }
-            
+
             nav {
                 bottom: 0;
                 height: 80px;
@@ -121,22 +121,22 @@
                 gap: 30px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-            
+
             nav a {
                 color: #fff;
                 padding: 8px 30px;
                 text-decoration: none;
                 border-radius: 5px;
                 font-size: 15px;
-                transition: transform 0.3s, background-color 0.3s, color(0.3s);
+                transition: transform 0.3s, background-color 0.3s, color 0.3s;
             }
-            
+
             nav a:hover {
                 background-color: #7f1184;
                 color: #fff;
                 transform: translateX(10px);
             }
-            
+
             .nav-wrapper {
                 position: absolute;
                 bottom: 0;
@@ -144,7 +144,7 @@
                 width: 100%;
                 height: 80px;
             }
-            
+
             .fixed-wrapper {
                 position: fixed;
                 top: 0;
@@ -152,11 +152,11 @@
                 width: 100%;
                 z-index: 999;
             }
-            
+
             .fixed-wrapper a {
                 color: #7f1184;
             }
-            
+
             .wrapper {
                 width: 100%;
                 background-color: #f5f5f7;
@@ -166,30 +166,35 @@
                 align-items: center;
                 padding-top: 80px;
                 padding-bottom: 80px;
-                gap: 0; /* 連続させるため gap: 0 を維持 */
+                gap: 40px;
             }
-            
+
             h2 {
+                /*font-family: 'Kaisei Opti', serif;*/
                 font-size: 34px;
                 font-weight: 700;
                 line-height: 2;
                 color: #1d1d1f;
             }
-            
+
             p {
                 line-height: 2;
                 color: #1d1d1f;
                 text-align: justify;
             }
-            
+
             .chapter-title {
                 max-width: 800px;
-                margin-bottom: 40px;
             }
-            
+
             .chapter-title h2 {
                 font-size: 28px;
                 font-family: 'Noto Sans JP', sans-serif;
+                /*font-family: 'Marcellus', serif;*/
+                display: inline-block;
+                /*background: linear-gradient(135deg, #7f1184, #004898);/*
+                /*-webkit-background-clip: text;*/
+                /*-webkit-text-fill-color: transparent;*/
                 font-weight: bold;
                 color: #7f1184;
                 padding: 0px 10px;
@@ -197,119 +202,135 @@
                 border-top: 1px solid #7f1184;
                 border-bottom: 1px solid #7f1184;
             }
-                        
-            /* wrapper > a : ここが干渉の原因。margin-top の重ね処理を削除し、通常の余白に変更 */
-            .wrapper > a {
-                display: block;
-                width: 100%;
-                position: relative;
-                padding: 0;
-                text-decoration: none;
-                z-index: 1;
-            
-                /* 変更：重ね合わせを削除  
-                   margin-top: calc(-1 * var(--v-height)); を撤去 */
-                margin: 60px 0;  /* ← 適切な間隔に変更 */
-            
-                --v-height: 30px;
-            }
-            
-            .wrapper > a:first-of-type {
-                margin-top: 0;
-            }
-            
-            /* clip-path の形状はそのまま維持 */
-            .wrapper > a::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #fff;
-                z-index: 0; 
-            
-                --v-height: 30px;
-            
-                clip-path: polygon(
-                    0% var(--v-height),
-                    50% 0%,
-                    100% var(--v-height),
-                
-                    100% calc(100% - var(--v-height)),
-                    50% calc(100% + var(--v-height)),   /* ここが超重要 */
-                    0% calc(100% - var(--v-height))
-                );
-            }
-            
+
             section {
                 padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-            
-            /* icon-section ：上のV字と被らないよう padding-top を調整 */
+
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                padding: calc(40px + var(--v-height)) 30px 40px;
-                background-color: transparent;
+                padding: 30px;
+                background-color: #fff;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
                 overflow: hidden;
-                margin: 0 auto;
-                z-index: 1;
             }
-            
+
             .icon-box {
                 position: absolute;
                 bottom: 15px;
                 right: 15px;
                 pointer-events: none;
                 opacity: 0.1;
-                z-index: 2;
+                z-index: 0;
             }
-            
+
             .icon-box .material-symbols-outlined {
                 font-size: 120px;
                 color: #7f1184;
             }
-            
+
             .text-box h2 {
                 margin: 0 0 10px 0;
                 font-size: 24px;
                 color: #7f1184;
+                /*font-family: 'Kaisei Opti', serif;*/
             }
-            
+
             .text-box p {
                 margin: 0;
                 line-height: 2;
-                color: #898989;
+                color: #898989;/*#1D1D1F;*/
                 text-align: justify;
             }
-            
+
             @media (max-width: 768px) {
                 body {
                     font-size: 18px;
                 }
-            
+
                 header {
                     height: 100svh;
                 }
-            
+
+                header h1 {
+                    font-size: 45px;
+                    text-align: left;
+                    margin-bottom: 30px;
+                }
+
+                .header-above {
+                    gap: 20px;
+                }
+
+                .subtitle {
+                    font-size: 15px;
+                }
+
+                .subtitle-box {
+                    height: auto;
+                }
+
+                .scroll-prompt {
+                    font-size: 13px;
+                }
+
+                nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    gap: 8px;
+                    -webkit-overflow-scrolling: touch;
+                }
+
+                nav::-webkit-scrollbar {
+                    display: none;
+                }
+
+                nav a {
+                    font-size: 16px;
+                    padding: 8px 16px;
+                    flex-shrink: 0;
+                }
+
+                .global-market-wrapper {
+                    display: none;
+                }
+                
+                .text-box {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .text-box h2 {
+                    margin: 0 0 10px 0;
+                    font-size: 24px;
+                    color: #7f1184;
+                    /*font-family: 'Kaisei Opti', serif;*/
+                }
+
+                .text-box p {
+                    margin: 0;
+                    line-height: 2;
+                    color: #898989;
+                    text-align: justify;
+                }
+
+                h2 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+
                 .mobile-br {
                     display: inline;
-                }
-            
-                .wrapper > a {
-                    --v-height: 20px;
-            
-                    /* 同じく margin-top の重ね処理を削除 */
-                    margin: 40px 0;
-                }
-            
-                .wrapper > a::before {
-                    --v-height: 20px;
-                }
-            
-                .icon-section {
-                    padding: calc(30px + var(--v-height)) 20px 30px;
                 }
             }
         </style>
