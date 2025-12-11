@@ -206,29 +206,19 @@
             section {
                 padding: 20px;
                 border-radius: 12px;
-                /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);*/
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-            
+
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                margin-bottom: 60px;
-                z-index: 1;
+                padding: 30px;
+                background-color: #fff;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+                overflow: hidden;
             }
-            
-            .icon-section::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -60px;
-                width: 100vw;
-                height: 60px;
-                background: #fff;
-                clip-path: polygon(50% 100%, 0 0, 100% 0);
-                z-index: 0;
-            }
-            
+
             .icon-box {
                 position: absolute;
                 bottom: 15px;
