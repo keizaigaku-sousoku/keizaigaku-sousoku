@@ -1,3 +1,7 @@
+sectionは長方形だよね
+長方形の横幅制限をなくして（文字等の制限はそのまま）、各セクションの下部に逆三角形で横幅が画面いっぱいのものを配置したらどうだろう
+もちろん色は揃えてね
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -208,24 +212,27 @@
                 border-radius: 12px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-
+            
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                padding: 30px;
-                background-color: #fff;
-                border-radius: 12px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-                overflow: hidden;
-                clip-path: path(
-                    "M0,20 
-                    Q50%,0 100%,20 
-                    L100%,calc(100% - 20) 
-                    Q50%,100% 0,calc(100% - 20) 
-                    Z"
-                );
+                margin-bottom: 0;
             }
-
+            
+            /* ▼画面いっぱいの逆三角形（下向きV） */
+            .icon-section::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -50px; /* V の深さ調整 */
+                width: 100vw;
+                height: 100px; /* V の高さ */
+                background: #fff; /* 本体と色を揃える */
+                clip-path: polygon(50% 100%, 0 0, 100% 0);
+                z-index: -1;
+            }
+            
             .icon-box {
                 position: absolute;
                 bottom: 15px;
@@ -476,3 +483,4 @@
 
     </body>
 </html>
+
