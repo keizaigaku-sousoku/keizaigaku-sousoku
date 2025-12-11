@@ -212,16 +212,16 @@
             .icon-section {
                 position: relative;
                 max-width: 800px;
-                margin-bottom: 0;
-                padding-bottom: 0; /* ←下の余白を消すのが重要 */
+                margin-bottom: 60px; /* ↘ 三角形の高さと同じ値 */
             }
             
             .icon-section::after {
                 content: "";
                 position: absolute;
-                left: 0;
-                bottom: -60px; /* ↘ V字の深さ（好みで調整） */
-                width: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -60px;     /* 三角形の高さ分だけ下に出す */
+                width: 100vw;
                 height: 60px;
                 background: #fff;
                 clip-path: polygon(50% 100%, 0 0, 100% 0);
