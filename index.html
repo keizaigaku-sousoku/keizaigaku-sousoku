@@ -186,37 +186,25 @@
                 border-bottom: 1px solid #7f1184;
             }
 
-            .section {
+            .section-wrapper {
                 max-width: 800px;
-                margin: 0 auto;
-                padding: 80px 20px;
-                background: #4A90E2;
-                color: #fff;
-            
-                clip-path: polygon(
-                    50% 10%,
-                    100% 0%,
-                    100% 90%,
-                    50% 100%,
-                    0% 90%,
-                    0% 0%
-                );
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            .section2 {
-                max-width: 800px;
-                margin: 0 auto;
+            .section {
+                width: 100%;
+                background: #4A90E2;
                 padding: 80px 20px;
-                background: #fff;
-                color: #4A90E2;
+                color: white;
             
                 clip-path: polygon(
-                    50% 10%,
-                    100% 0%,
-                    100% 90%,
-                    50% 100%,
-                    0% 90%,
-                    0% 0%
+                    50% 10%,   /* 上の尖り（下向き） */
+                    100% 0%,   /* 上右の角 */
+                    100% 90%,  /* 下右の角 */
+                    50% 100%,  /* 下の尖り（下向き） */
+                    0% 90%,    /* 下左の角 */
+                    0% 0%      /* 上左の角 */
                 );
             }
             
@@ -338,6 +326,7 @@
             </div>
             <a href="分野/市場・投資.html" style="text-decoration: none;">
                 <div class="section">
+                    <div class="section-wrapper">
                         <span class="material-symbols-outlined">query_stats</span>
                         <h2>市場・投資</h2>
                         <p>
@@ -345,10 +334,11 @@
                             またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
                             そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
                         </p>
+                    </div>
                 </div>
             </a>
             <a href="分野/ミクロ・マクロ経済学.html" style="text-decoration: none;">
-                    <div class="section2">
+                    <div class="section-wrapper">
                         <span class="material-symbols-outlined">home_work</span>
                         <h2>ミクロ・マクロ経済学</h2>
                         <p>
@@ -358,11 +348,13 @@
             </a>
             <a href="分野/財務・ファイナンス理論.html" style="text-decoration: none;">
                 <div class="section">
+                    <div class="section-wrapper">
                         <span class="material-symbols-outlined">balance</span>
                         <h2>財務・ファイナンス理論</h2>
                         <p>
                             テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
                         </p>
+                    </div>
                 </div>
             </a>
             <div class="chapter-title">
