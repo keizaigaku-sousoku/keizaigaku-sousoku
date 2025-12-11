@@ -25,18 +25,18 @@
             #6967ab：竜胆色
             #004898：瑠璃色
             */
-           
+        
             html, body {
                 margin: 0;
                 padding: 0;
                 overflow-x: hidden;
                 font-family: 'Noto Sans JP', sans-serif;
             }
-           
+        
             body {
                 font-size: 16px;
             }
-           
+        
             header {
                 width: 100%;
                 height: 100vh;
@@ -46,7 +46,7 @@
                 align-items: center;
                 position: relative;
             }
-           
+        
             .header-above {
                 width: 100%;
                 padding-bottom: 80px;
@@ -57,7 +57,7 @@
                 align-items: center;
                 gap: 50px;
             }
-           
+        
             header h1 {
                 font-family: 'Marcellus', serif;
                 font-size: 50px;
@@ -65,18 +65,18 @@
                 margin-top: 60px;
                 margin-bottom: 60px;
             }
-           
+        
             .mobile-br {
                 display: none;
             }
-           
+        
             .subtitle {
                 font-family: 'Kaisei Opti', serif;
                 font-size: 18px;
                 color: #fff;
                 line-height: 1;
             }
-           
+        
             .subtitle-box {
                 display: flex;
                 flex-direction: column;
@@ -84,30 +84,30 @@
                 align-items: center;
                 height: 300px;
             }
-           
+        
             .scroll-prompt {
                 font-size: 15px;
                 text-align: center;
             }
-           
+        
             .scroll-prompt p {
                 color: #fff;
             }
-           
+        
             .arrow {
                 text-align: center;
                 animation: bounce 2s infinite;
             }
-           
+        
             .arrow .material-symbols-outlined {
                 font-size: 50px;
             }
-           
+        
             @keyframes bounce {
                 0%, 100% { transform: translateY(0); }
                 50% { transform: translateY(-10px); }
             }
-           
+        
             nav {
                 bottom: 0;
                 height: 80px;
@@ -121,7 +121,7 @@
                 gap: 30px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
             }
-           
+        
             nav a {
                 color: #fff;
                 padding: 8px 30px;
@@ -130,13 +130,13 @@
                 font-size: 15px;
                 transition: transform 0.3s, background-color 0.3s, color 0.3s;
             }
-           
+        
             nav a:hover {
                 background-color: #7f1184;
                 color: #fff;
                 transform: translateX(10px);
             }
-           
+        
             .nav-wrapper {
                 position: absolute;
                 bottom: 0;
@@ -144,7 +144,7 @@
                 width: 100%;
                 height: 80px;
             }
-           
+        
             .fixed-wrapper {
                 position: fixed;
                 top: 0;
@@ -152,11 +152,11 @@
                 width: 100%;
                 z-index: 999;
             }
-           
+        
             .fixed-wrapper a {
                 color: #7f1184;
             }
-           
+        
             .wrapper {
                 width: 100%;
                 background-color: #f5f5f7;
@@ -168,25 +168,25 @@
                 padding-bottom: 80px;
                 gap: 0; /* 連続させるため gap: 0 を維持 */
             }
-           
+            
             h2 {
                 font-size: 34px;
                 font-weight: 700;
                 line-height: 2;
                 color: #1d1d1f;
             }
-           
+        
             p {
                 line-height: 2;
                 color: #1d1d1f;
                 text-align: justify;
             }
-           
+        
             .chapter-title {
                 max-width: 800px;
                 margin-bottom: 40px;
             }
-           
+        
             .chapter-title h2 {
                 font-size: 28px;
                 font-family: 'Noto Sans JP', sans-serif;
@@ -206,18 +206,18 @@
                 padding: 0;
                 text-decoration: none;
                 z-index: 1; 
-           
+        
                 /* V字の高さ分だけ上にずらして重なりを作成 */
                 --v-height: 30px; /* デフォルトのV字の高さ */
                 margin-top: calc(-1 * var(--v-height)); 
             }
-           
+        
             /* V字カット用CSS - 最初のセクションの重なりを無効にする */
             .wrapper > a:first-of-type {
                 margin-top: 0;
             }
-           
-            /* V字カット用CSS - V字型の白い背景を作成 (上辺谷、下辺谷に修正) */
+        
+            /* V字カット用CSS - V字型の白い背景を作成 (上辺V字、下辺V字) */
             .wrapper > a::before {
                 content: "";
                 position: absolute;
@@ -231,14 +231,14 @@
                 /* PC用 V字の高さ */
                 --v-height: 30px; 
                 
-                /* 上辺と下辺が両方「谷」（中央がへこむ）のシェイプ */
+                /* 上辺と下辺が両方V字（6点）のシェイプ */
                 clip-path: polygon(
-                    0% var(--v-height),             /* 1. 左上 (V字の始点) */
-                    50% 0%,                         /* 2. 中央上のV字の谷の頂点 */
-                    100% var(--v-height),           /* 3. 右上 (V字の終点) */
-                    100% 100%,                      /* 4. 右下 */
-                    50% calc(100% + var(--v-height)), /* 5. 【修正】中央下のV字の谷の頂点（下に突き出す）*/
-                    0% 100%                         /* 6. 左下 */
+                    0% var(--v-height),               /* 1. 左上 (V字の始点) */
+                    50% 0%,                           /* 2. 中央上のV字の頂点 */
+                    100% var(--v-height),             /* 3. 右上 (V字の終点) */
+                    100% 100%,                        /* 4. 右下 */
+                    50% calc(100% - var(--v-height)), /* 5. 中央下のV字の山 */
+                    0% 100%                           /* 6. 左下 */
                 );
             }
             
@@ -276,44 +276,35 @@
                 font-size: 24px;
                 color: #7f1184;
             }
-           
+        
             .text-box p {
                 margin: 0;
                 line-height: 2;
                 color: #898989;
                 text-align: justify;
             }
-           
+        
             @media (max-width: 768px) {
                 body {
                     font-size: 18px;
                 }
-           
+        
                 header {
                     height: 100svh;
                 }
-           
+        
                 .mobile-br {
                     display: inline;
                 }
-           
+        
                 /* モバイル用のV字高さ調整 */
                 .wrapper > a {
                     --v-height: 20px;
                 }
                 .wrapper > a::before {
                     --v-height: 20px;
-                    /* モバイルも下辺を「谷」にするために修正 */
-                    clip-path: polygon(
-                        0% var(--v-height),
-                        50% 0%,
-                        100% var(--v-height),
-                        100% 100%,
-                        50% calc(100% + var(--v-height)), /* 【修正】中央下のV字の谷の頂点 */
-                        0% 100%
-                    );
                 }
-           
+        
                 .icon-section {
                     /* モバイル用のパディングを修正 */
                     padding: calc(20px + var(--v-height)) 20px 20px;
