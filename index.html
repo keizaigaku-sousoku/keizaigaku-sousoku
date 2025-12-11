@@ -227,18 +227,18 @@
                 height: 100%;
                 background-color: #fff;
                 z-index: 0; 
-                
-                /* PC用 V字の高さ */
-                --v-height: 30px; 
-                
-                /* 上辺と下辺が両方V字（6点）のシェイプ */
+            
+                --v-height: 30px;
+            
+                /* 上も下も中央が下に凹む形 */
                 clip-path: polygon(
-                    0% var(--v-height),               /* 1. 左上 (V字の始点) */
-                    50% 0%,                           /* 2. 中央上のV字の頂点 */
-                    100% var(--v-height),             /* 3. 右上 (V字の終点) */
-                    100% 100%,                        /* 4. 右下 */
-                    50% calc(100% - var(--v-height)), /* 5. 中央下のV字の山 */
-                    0% 100%                           /* 6. 左下 */
+                    0% 0%,                     
+                    50% var(--v-height),      
+                    100% 0%,
+            
+                    100% calc(100% - 0px),
+                    50% calc(100% - var(--v-height)),
+                    0% calc(100% - 0px)
                 );
             }
             
