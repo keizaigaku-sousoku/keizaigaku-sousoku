@@ -186,26 +186,34 @@
                 border-bottom: 1px solid #7f1184;
             }
 
-            .section-wrapper {
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
             .section {
+                position: relative;
                 width: 100%;
-                background: #4A90E2;
-                padding: 80px 20px;
-                color: white;
+                overflow: hidden;
+                padding: 80px 0;
+            }
             
+            .section-bg {
+                position: absolute;
+                inset: 0;
+                background: #4A90E2;
                 clip-path: polygon(
-                    50% 10%,   /* 上の尖り（下向き） */
-                    100% 0%,   /* 上右の角 */
-                    100% 90%,  /* 下右の角 */
-                    50% 100%,  /* 下の尖り（下向き） */
-                    0% 90%,    /* 下左の角 */
-                    0% 0%      /* 上左の角 */
+                    50% 10%,
+                    100% 0%,
+                    100% 90%,
+                    50% 100%,
+                    0% 90%,
+                    0% 0%
                 );
+                z-index: 0;
+            }
+            
+            .section-wrapper {
+                position: relative;
+                z-index: 1;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 20px;
             }
             
             @media (max-width: 768px) {
@@ -326,6 +334,7 @@
             </div>
             <a href="分野/市場・投資.html" style="text-decoration: none;">
                 <div class="section">
+                    <div class="section-bg"></div>
                     <div class="section-wrapper">
                         <span class="material-symbols-outlined">query_stats</span>
                         <h2>市場・投資</h2>
