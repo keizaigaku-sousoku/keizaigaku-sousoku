@@ -44,14 +44,13 @@
             gap: 50px;
         }
         
-        #dotCanvas {
+        #chaosCanvas {
             position: absolute;
             inset: 0;
             z-index: 0;
             pointer-events: none;
         }
         
-        /* 文字などは必ず前面に */
         .header-above,
         .nav-wrapper {
             position: relative;
@@ -201,7 +200,7 @@
 </head>
 <body>
     <header>
-        <canvas id="dotCanvas"></canvas>
+        <canvas id="chaosCanvas"></canvas>
         <div class="header-above">
             <h1>No Fair Value, <br class="mobile-br">Just Bid and Ask</h1>
             <div class="subtitle-box">
@@ -319,12 +318,10 @@
     </script>
     <script>
     (() => {
-        const canvas = document.getElementById('dotCanvas');
+        const canvas = document.getElementById('chaosCanvas');
         const ctx = canvas.getContext('2d');
     
-        let w, h;
-        const DOT_COUNT = 120;
-        const dots = [];
+        let w, h, t = 0;
     
         function resize() {
             w = canvas.width = window.innerWidth;
@@ -333,37 +330,40 @@
         window.addEventListener('resize', resize);
         resize();
     
-        // ロジスティック写像パラメータ（カオス領域）
-        const r = 3.99;
-    
-        for (let i = 0; i < DOT_COUNT; i++) {
-            dots.push({
-                x: Math.random(),
-                y: Math.random(),
-                a: Math.random()
-            });
+        // 疑似パーリン（簡易）
+        function noise(x, y) {
+            return Math.sin(x * 0.003 + t) * Math.sin(y * 0.003 - t);
         }
     
-        function step() {
-            ctx.clearRect(0, 0, w, h);
+        function draw() {
+            t += 0.002;
     
-            dots.forEach(d => {
-                // logistic map
-                d.x = r * d.x * (1 - d.x);
-                d.y = r * d.y * (1 - d.y);
+            const img = ctx.createImageData(w, h);
+            const d = img.data;
     
-                const px = d.x * w;
-                const py = d.y * h;
+            for (let y = 0; y < h; y++) {
+                for (let x = 0; x < w; x++) {
+                    const i = (y * w + x) * 4;
     
-                ctx.beginPath();
-                ctx.arc(px, py, 1.2, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(220,200,255,${0.15 + d.y * 0.4})`;
-                ctx.fill();
-            });
+                    const n = noise(x, y);
+    
+                    // 紫→青ベースをカオスで歪ませる
+                    const r = 120 + 40 * n;
+                    const g = 30  + 20 * n;
+                    const b = 180 + 60 * (1 - n);
+    
+                    d[i]     = r;
+                    d[i + 1] = g;
+                    d[i + 2] = b;
+                    d[i + 3] = 255;
+                }
+            }
+    
+            ctx.putImageData(img, 0, 0);
+            requestAnimationFrame(draw);
         }
     
-        // 離散時間で更新（クロック感）
-        setInterval(step, 120);
+        draw();
     })();
     </script>
     <script>
