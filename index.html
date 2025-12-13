@@ -44,13 +44,6 @@
             gap: 50px;
         }
         
-        #chaosCanvas {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
         header h1 {
             font-family: 'Marcellus', serif;
             font-size: 50px;
@@ -194,7 +187,6 @@
 </head>
 <body>
     <header>
-        <canvas id="chaosCanvas"></canvas>
         <div class="header-above">
             <h1>No Fair Value, <br class="mobile-br">Just Bid and Ask</h1>
             <div class="subtitle-box">
@@ -309,56 +301,6 @@
         $(function() {
             $('#footer-placeholder').load('共通/footer.html');
         });
-    </script>
-    <script>
-    (() => {
-        const canvas = document.getElementById('chaosCanvas');
-        const ctx = canvas.getContext('2d');
-    
-        let w, h, t = 0;
-    
-        function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-    
-        // 疑似パーリン（簡易）
-        function noise(x, y) {
-            return Math.sin(x * 0.003 + t) * Math.sin(y * 0.003 - t);
-        }
-    
-        function draw() {
-            t += 0.002;
-    
-            const img = ctx.createImageData(w, h);
-            const d = img.data;
-    
-            for (let y = 0; y < h; y++) {
-                for (let x = 0; x < w; x++) {
-                    const i = (y * w + x) * 4;
-    
-                    const n = noise(x, y);
-    
-                    // 紫→青ベースをカオスで歪ませる
-                    const r = 120 + 40 * n;
-                    const g = 30  + 20 * n;
-                    const b = 180 + 60 * (1 - n);
-    
-                    d[i]     = r;
-                    d[i + 1] = g;
-                    d[i + 2] = b;
-                    d[i + 3] = 255;
-                }
-            }
-    
-            ctx.putImageData(img, 0, 0);
-            requestAnimationFrame(draw);
-        }
-    
-        draw();
-    })();
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
