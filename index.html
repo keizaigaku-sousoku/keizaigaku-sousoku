@@ -323,10 +323,7 @@
         const ctx = canvas.getContext('2d');
     
         let w, h;
-        const GRID = 40;          // 格子サイズ（大きいほど機械感）
-        const DOT_COUNT = 70;
-        const INTERVAL = 600;     // ms（クロック感）
-    
+        const DOT_COUNT = 120;
         const dots = [];
     
         function resize() {
@@ -336,42 +333,37 @@
         window.addEventListener('resize', resize);
         resize();
     
-        function snap(v, g) {
-            return Math.round(v / g) * g;
-        }
+        // ロジスティック写像パラメータ（カオス領域）
+        const r = 3.99;
     
         for (let i = 0; i < DOT_COUNT; i++) {
             dots.push({
-                x: snap(Math.random() * w, GRID),
-                y: snap(Math.random() * h, GRID),
-                r: 1.5,
-                alpha: Math.random() * 0.4 + 0.2
+                x: Math.random(),
+                y: Math.random(),
+                a: Math.random()
             });
         }
     
-        function draw() {
+        function step() {
             ctx.clearRect(0, 0, w, h);
     
             dots.forEach(d => {
-                // 離散的にジャンプ
-                if (Math.random() < 0.4) {
-                    d.x = snap(d.x + (Math.random() < 0.5 ? -GRID : GRID), GRID);
-                    d.y = snap(d.y + (Math.random() < 0.5 ? -GRID : GRID), GRID);
-                }
+                // logistic map
+                d.x = r * d.x * (1 - d.x);
+                d.y = r * d.y * (1 - d.y);
     
-                // 画面外防止
-                d.x = Math.max(0, Math.min(w, d.x));
-                d.y = Math.max(0, Math.min(h, d.y));
+                const px = d.x * w;
+                const py = d.y * h;
     
                 ctx.beginPath();
-                ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(220,220,255,${d.alpha})`;
+                ctx.arc(px, py, 1.2, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(220,200,255,${0.15 + d.y * 0.4})`;
                 ctx.fill();
             });
         }
     
-        draw();
-        setInterval(draw, INTERVAL);
+        // 離散時間で更新（クロック感）
+        setInterval(step, 120);
     })();
     </script>
     <script>
