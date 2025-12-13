@@ -318,54 +318,61 @@
         });
     </script>
     <script>
-        (() => {
-            const canvas = document.getElementById('dotCanvas');
-            const ctx = canvas.getContext('2d');
-        
-            let w, h;
-            const DOT_COUNT = 80;
-            const dots = [];
-        
-            function resize() {
-                w = canvas.width = window.innerWidth;
-                h = canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resize);
-            resize();
-        
-            for (let i = 0; i < DOT_COUNT; i++) {
-                dots.push({
-                    x: Math.random() * w,
-                    y: Math.random() * h,
-                    r: Math.random() * 1.5 + 0.5,
-                    vx: (Math.random() - 0.5) * 0.2,
-                    vy: (Math.random() - 0.5) * 0.2,
-                    alpha: Math.random() * 0.5 + 0.3
-                });
-            }
-        
-            function animate() {
-                ctx.clearRect(0, 0, w, h);
-        
-                dots.forEach(d => {
-                    d.x += d.vx;
-                    d.y += d.vy;
-        
-                    // 端で折り返し
-                    if (d.x < 0 || d.x > w) d.vx *= -1;
-                    if (d.y < 0 || d.y > h) d.vy *= -1;
-        
-                    ctx.beginPath();
-                    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(255,255,255,${d.alpha})`;
-                    ctx.fill();
-                });
-        
-                requestAnimationFrame(animate);
-            }
-        
-            animate();
-        })();
+    (() => {
+        const canvas = document.getElementById('dotCanvas');
+        const ctx = canvas.getContext('2d');
+    
+        let w, h;
+        const GRID = 40;          // 格子サイズ（大きいほど機械感）
+        const DOT_COUNT = 70;
+        const INTERVAL = 600;     // ms（クロック感）
+    
+        const dots = [];
+    
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+    
+        function snap(v, g) {
+            return Math.round(v / g) * g;
+        }
+    
+        for (let i = 0; i < DOT_COUNT; i++) {
+            dots.push({
+                x: snap(Math.random() * w, GRID),
+                y: snap(Math.random() * h, GRID),
+                r: 1.5,
+                alpha: Math.random() * 0.4 + 0.2
+            });
+        }
+    
+        function draw() {
+            ctx.clearRect(0, 0, w, h);
+    
+            dots.forEach(d => {
+                // 離散的にジャンプ
+                if (Math.random() < 0.4) {
+                    d.x = snap(d.x + (Math.random() < 0.5 ? -GRID : GRID), GRID);
+                    d.y = snap(d.y + (Math.random() < 0.5 ? -GRID : GRID), GRID);
+                }
+    
+                // 画面外防止
+                d.x = Math.max(0, Math.min(w, d.x));
+                d.y = Math.max(0, Math.min(h, d.y));
+    
+                ctx.beginPath();
+                ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(220,220,255,${d.alpha})`;
+                ctx.fill();
+            });
+        }
+    
+        draw();
+        setInterval(draw, INTERVAL);
+    })();
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
