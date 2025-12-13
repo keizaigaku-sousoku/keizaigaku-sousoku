@@ -147,7 +147,20 @@
         .section .section-bg + .section-wrapper .material-symbols-outlined {
             color: #fff;
         }
-
+        
+        /* section-wrapper 内のアニメーション対象 */
+        .section-wrapper > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        /* 表示状態 */
+        .section-wrapper > *.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .mobile-br { display: none; }
 
         @media (max-width: 768px) {
@@ -289,7 +302,32 @@
             $('#footer-placeholder').load('共通/footer.html');
         });
     </script>
-
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const wrappers = document.querySelectorAll('.section-wrapper');
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.children;
+    
+                    [...items].forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('show');
+                        }, index * 300); // 0.3秒ずつ遅らせる
+                    });
+    
+                    observer.unobserve(entry.target); // 一度だけ発火
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+    
+        wrappers.forEach(wrapper => observer.observe(wrapper));
+    });
+    </script>
+    
     <div id="footer-placeholder"></div>
 </body>
 </html>
