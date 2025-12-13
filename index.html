@@ -43,7 +43,21 @@
             align-items: center;
             gap: 50px;
         }
-
+        
+        #dotCanvas {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* 文字などは必ず前面に */
+        .header-above,
+        .nav-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
         header h1 {
             font-family: 'Marcellus', serif;
             font-size: 50px;
@@ -187,6 +201,7 @@
 </head>
 <body>
     <header>
+        <canvas id="dotCanvas"></canvas>
         <div class="header-above">
             <h1>No Fair Value, <br class="mobile-br">Just Bid and Ask</h1>
             <div class="subtitle-box">
@@ -301,6 +316,56 @@
         $(function() {
             $('#footer-placeholder').load('共通/footer.html');
         });
+    </script>
+    <script>
+        (() => {
+            const canvas = document.getElementById('dotCanvas');
+            const ctx = canvas.getContext('2d');
+        
+            let w, h;
+            const DOT_COUNT = 80;
+            const dots = [];
+        
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+        
+            for (let i = 0; i < DOT_COUNT; i++) {
+                dots.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    r: Math.random() * 1.5 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.2,
+                    vy: (Math.random() - 0.5) * 0.2,
+                    alpha: Math.random() * 0.5 + 0.3
+                });
+            }
+        
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+        
+                dots.forEach(d => {
+                    d.x += d.vx;
+                    d.y += d.vy;
+        
+                    // 端で折り返し
+                    if (d.x < 0 || d.x > w) d.vx *= -1;
+                    if (d.y < 0 || d.y > h) d.vy *= -1;
+        
+                    ctx.beginPath();
+                    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255,255,255,${d.alpha})`;
+                    ctx.fill();
+                });
+        
+                requestAnimationFrame(animate);
+            }
+        
+            animate();
+        })();
     </script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
