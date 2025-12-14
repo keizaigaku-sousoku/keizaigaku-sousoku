@@ -319,24 +319,15 @@
         });
     </script>
     <script>
-        /* =========================
-           Canvas setup
-        ========================= */
         const canvasBody = document.getElementById("canvas");
         const drawArea = canvasBody.getContext("2d");
         const header = document.querySelector("header");
         
-        /* =========================
-           State
-        ========================= */
         let w, h;
         let particles = [];
         let tid;
         const delay = 200;
         
-        /* =========================
-           Options
-        ========================= */
         const opts = { 
             particleColor: "rgb(255,255,255)",
             lineColor: "rgb(255,255,255)",
@@ -360,9 +351,6 @@
         
         const rgb = opts.lineColor.match(/\d+/g);
         
-        /* =========================
-           Resize (mobile scroll safe)
-        ========================= */
         let baseWidth, baseHeight;
         
         function resizeReset() {
@@ -384,16 +372,10 @@
         
         window.addEventListener("orientationchange", resizeReset);
         
-        /* =========================
-           Utils
-        ========================= */
         function checkDistance(x1, y1, x2, y2) {
             return Math.hypot(x2 - x1, y2 - y1);
         }
         
-        /* =========================
-           Particle
-        ========================= */
         function Particle() {
             this.x = Math.random() * w;
             this.y = Math.random() * h;
@@ -424,9 +406,6 @@
             };
         }
         
-        /* =========================
-           Lines
-        ========================= */
         function linkPoints(point, hubs) {
             for (let i = 0; i < hubs.length; i++) {
                 const dist = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
@@ -446,9 +425,6 @@
             }
         }
         
-        /* =========================
-           Setup
-        ========================= */
         function setupParticles() {
             particles = [];
         
@@ -459,9 +435,6 @@
             }
         }
         
-        /* =========================
-           Loop
-        ========================= */
         function loop() {
             drawArea.clearRect(0, 0, w, h);
         
@@ -475,9 +448,6 @@
             requestAnimationFrame(loop);
         }
         
-        /* =========================
-           Init
-        ========================= */
         resizeReset();
         requestAnimationFrame(loop);
         </script>
