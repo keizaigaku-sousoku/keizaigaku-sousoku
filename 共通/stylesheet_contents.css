@@ -59,7 +59,7 @@ h4 {
     background-color: #ffffff80;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    z-index: 10;
+    z-index: 30;
     padding: 1rem 1.5rem;
     margin: 10px 0;
     display: flex;
@@ -70,10 +70,14 @@ h4 {
     border-left: 5px solid #7f1184;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
+
 header {
     width: 90%;
     position: relative;
+    z-index: 20; /* ← 帯より上 */
     padding: 20px;
     margin: 20px auto;
     text-align: center;
@@ -83,20 +87,21 @@ header h2 {
     margin: 0;
 }
 
-.subtitle {
-    width: fit-content;
-    margin: 2rem auto;
-    text-align: center;
-    font-size: 16px;
-    color: #1d1d1f;
-}
+/* =========================
+   Main
+========================= */
 
-/* Main */
 main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    z-index: 20; /* ← 帯より上 */
 }
+
+/* =========================
+   TOC Band（装飾専用）
+========================= */
 
 .toc-band {
     position: fixed;
@@ -104,7 +109,13 @@ main {
     left: 0;
     width: 10vw;
     height: 60vh;
-    z-index: 50;
+    z-index: 10;
+    pointer-events: none; /* ← 重要 */
+}
+
+/* 子要素も完全に非干渉にする */
+.toc-band,
+.toc-band * {
     pointer-events: none;
 }
 
@@ -127,31 +138,25 @@ main {
     left: 50%;
     transform: translate(-50%, -50%) rotate(180deg);
     writing-mode: vertical-lr;
-
+    text-orientation: mixed;
     font-size: 13px;
     letter-spacing: 0.35em;
-    color: #fff;
+    color: #ffffff;
     white-space: nowrap;
     opacity: 0.9;
 }
 
-.toc-band span {
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    font-size: 13px;
-    letter-spacing: 0.35em;
-    color: #fff;
-    white-space: nowrap;
-}
+/* =========================
+   TOC
+========================= */
 
-/* TOC */
 .toc-container {
     margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 20;
 }
 
 .toc-container a {
@@ -162,23 +167,29 @@ main {
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
-    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 .toc-container a:hover {
     background-color: #7f1184;
-    color: #fff;
+    color: #ffffff;
     transform: translateX(10px);
 }
 
-/* Part block */
+/* =========================
+   Part block
+========================= */
+
 .part {
     width: 500px;
     color: #7f1184;
     margin: 20px;
     padding: 20px;
     border-radius: 12px;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
@@ -195,13 +206,16 @@ main {
     position: absolute;
     left: 50%;
     bottom: 0;
-    width: 120px;
+    width: 120px; /* ← 短すぎ問題はここ */
     height: 1.5px;
     background-color: #7f1184;
     transform: translateX(-50%);
 }
 
-/* Theorem / Proof */
+/* =========================
+   Theorem / Proof
+========================= */
+
 .theorem-tile, .proof {
     font-size: 15px;
     letter-spacing: 0.025em;
@@ -209,32 +223,18 @@ main {
 }
 
 .theorem-tile {
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 12px;
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
-/*
-.theorem-tile .title {
-    display: inline-block;
-    background-color: #7f1184;
-    color: white;
-    font-weight: bold;
-    padding: 6px 30px;
-    border-top-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-*/
 .theorem-tile .title {
     display: inline-block;
     font-weight: bold;
     color: #7f1184;
-    padding: 0px 10px;
-    line-height: 1.5;
+    padding: 0 10px;
     border-top: 1px solid #7f1184;
     border-bottom: 1px solid #7f1184;
 }
@@ -248,230 +248,30 @@ main {
     content: "証明";
     font-weight: bold;
     color: #6967ab;
+    display: block;
     margin-bottom: 10px;
-    text-align: left;
 }
 
 .proof::after {
     content: "■";
     display: block;
     text-align: right;
-    font-size: 15px;
     color: #6967ab;
     margin-top: 10px;
 }
 
+/* =========================
+   Responsive
+========================= */
 
-.proof .title {
-    font-weight: bold;
-    color: #6967ab;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.proof .end-symbol {
-    display: block;
-    text-align: right;
-    font-size: 15px;
-    color: #6967ab;
-    margin-top: 10px;
-}
-
-/* Comment Box */
-.comment-box {
-    margin: 20px;
-}
-
-.comment-box::before,
-.comment-box::after {
-  content: "";
-  font-family: 'Georgia', serif;
-  font-size: 80px;
-  color: #6967ab;
-  display: block;
-  line-height: 1;
-  width: 100%;
-}
-
-.comment-box::before {
-  content: "“";
-  text-align: left;
-  margin-bottom: -40px;
-}
-
-.comment-box::after {
-  content: "”";
-  text-align: right;
-  margin-top: 10px;
-}
-
-.comment-box p {
-  margin: 20px;
-}
-
-.comment-box-title {
-    color: #6967ab;
-    font-weight: 700;
-}
-
-.comment-box-title::before {
-    content: "Column.    ";
-    color: #6967ab;
-    font-family: 'Tangerine', cursive;
-    font-size: 40px;
-    font-weight: 700;
-}
-
-/* Table */
-table {
-    margin: 40px auto;
-    border-collapse: collapse;
-    width: 80%;
-    text-align: center;
-    table-layout: fixed;
-    font-family: 'Noto Sans JP', sans-serif;
-    border-bottom: 1px solid #6967ab;
-}
-
-th {
-    background-color: #6967ab;
-    color: white;
-    padding: 10px;
-}
-
-td {
-    padding: 10px;
-}
-
-tr:nth-child(even) td {
-    background-color: #6967ab1a;
-}
-
-/* Math */
-.math-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-}
-
-/* Floating Nav Toggle */
-.nav-toggle-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.nav-toggle {
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background-color: #ffffff80;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    padding: 0;
-}
-
-.nav-toggle span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 22px;
-    height: 2px;
-    background-color: #7f1184;
-    border-radius: 1px;
-    transform-origin: center;
-    transition: all 0.3s ease;
-}
-
-.nav-toggle span:nth-child(1) { transform: translate(-50%, -8px); }
-.nav-toggle span:nth-child(2) { transform: translate(-50%, 0); }
-.nav-toggle span:nth-child(3) { transform: translate(-50%, 8px); }
-
-.nav-toggle.open span:nth-child(1) { transform: translate(-50%, 0) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translate(-50%, 0) rotate(-45deg); }
-
-/* Nav Menu */
-.nav-menu {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    background-color: #ffffff80;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    display: flex;
-    flex-direction: column;
-    min-width: 220px;
-    opacity: 0;
-    transform: translateY(10px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.nav-menu.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.nav-menu a {
-    display: block;
-    margin: 5px 0;
-    padding: 5px;/* 24px;*/
-    color: #7f1184;
-    text-decoration: none;
-    /*font-size: 13px;*/
-    /*letter-spacing: 0.4px;*/
-    /*line-height: 1.4;*/
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.nav-menu a:hover {
-    background-color: #7f1184;
-    color: #fff;
-    transform: translateX(10px);
-}
-
-.nav-divider {
-  height: 1px;
-  background-color: #7f1184;
-  width: 100%;
-  margin: 12px auto;
-  border: none;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
     main {
-    padding: 20px;
-    width: 100%;
-    }
-    
-    .toc-container, .part {
-        width: 90%;
+        padding: 20px;
+        width: 100%;
     }
 
-    .comment-box {
-        margin: 0px;
-    }
-    
-    .comment-box p {
-        margin: 5px;
-    }
-
-    table {
+    .toc-container,
+    .part {
         width: 90%;
     }
 }
