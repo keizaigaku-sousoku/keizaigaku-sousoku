@@ -103,7 +103,7 @@ main {
     top: 0;
     left: 0;
     width: 10vw;
-    min-width: 72px;     /* ← これが効く */
+    min-width: 72px;
     height: 100vh;
     background-color: #7f1184;
     display: flex;
@@ -115,6 +115,7 @@ main {
 .toc-band span {
     writing-mode: vertical-lr;
     text-orientation: mixed;
+    transform: rotate(180deg);
     font-size: 13px;
     letter-spacing: 0.35em;
     color: #fff;
