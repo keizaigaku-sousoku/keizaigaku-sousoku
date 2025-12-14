@@ -327,9 +327,6 @@
         let w, h, particles = [];
         let delay = 200, tid;
         
-        /* =========================
-           設定
-        ========================= */
         const opts = { 
             particleColor: "rgb(255,255,255)",
             lineColor: "rgb(255,255,255)",
@@ -342,24 +339,16 @@
         
         let rgb = opts.lineColor.match(/\d+/g);
         
-        /* =========================
-           リサイズ処理
-        ========================= */
         function resizeReset() {
             w = canvasBody.width  = header.clientWidth;
             h = canvasBody.height = header.clientHeight;
         }
         
-        /* =========================
-           粒子数を画面サイズから計算
-        ========================= */
         function calcParticleAmount() {
             const area = w * h;
         
-            // 密度（数値が大きいほど粒子が減る）
             let density = 12000;
         
-            // スマホは少し疎に
             if (window.innerWidth < 768) {
                 density = 16000;
             }
@@ -370,17 +359,11 @@
             );
         }
         
-        /* =========================
-           イベント
-        ========================= */
         window.addEventListener("resize", () => {
             clearTimeout(tid);
             tid = setTimeout(setup, delay); // ★粒子数も再計算
         });
         
-        /* =========================
-           ユーティリティ
-        ========================= */
         function checkDistance(x1, y1, x2, y2) {
             return Math.hypot(x2 - x1, y2 - y1);
         }
@@ -402,9 +385,6 @@
             }
         }
         
-        /* =========================
-           Particle クラス
-        ========================= */
         function Particle() {
             this.x = Math.random() * w;
             this.y = Math.random() * h;
@@ -434,9 +414,6 @@
             };
         }
         
-        /* =========================
-           初期化
-        ========================= */
         function setup() {
             particles = [];
             resizeReset();
@@ -450,9 +427,6 @@
             requestAnimationFrame(loop);
         }
         
-        /* =========================
-           ループ
-        ========================= */
         function loop() {
             drawArea.clearRect(0, 0, w, h);
         
@@ -466,9 +440,6 @@
             requestAnimationFrame(loop);
         }
         
-        /* =========================
-           開始
-        ========================= */
         setup();
     </script>
     <script>
