@@ -31,6 +31,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
+            overflow: hidden;   /* はみ出し防止 */
         }
 
         .header-above {
@@ -52,7 +53,21 @@
             margin-bottom: 60px;
             text-align: center;
         }
-
+        
+        #canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .header-above {
+            position: relative;
+            z-index: 1;         /* テキストを前面に */
+            pointer-events: none; /* マウス操作を邪魔しない */
+        }
+        
         .subtitle { font-family: 'Kaisei Opti', serif; font-size: 18px; color: #fff; line-height: 1; }
 
         .subtitle-box { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 300px; }
@@ -187,6 +202,7 @@
 </head>
 <body>
     <header>
+        <canvas id="canvas"></canvas>
         <div class="header-above">
             <h1>No Fair Value, <br class="mobile-br">Just Bid and Ask</h1>
             <div class="subtitle-box">
@@ -302,6 +318,104 @@
             $('#footer-placeholder').load('共通/footer.html');
         });
     </script>
+    <script>
+        const canvasBody = document.getElementById("canvas"),
+              drawArea = canvasBody.getContext("2d");
+        
+        const header = document.querySelector("header");
+        
+        let w, h, particles = [];
+        let delay = 200, tid;
+        
+        const opts = { 
+            particleColor: "rgb(255,255,255)",
+            lineColor: "rgb(255,255,255)",
+            particleAmount: 35,
+            defaultSpeed: 0.6,
+            variantSpeed: 0.6,
+            defaultRadius: 1.5,
+            variantRadius: 1.5,
+            linkRadius: 180,
+        };
+        
+        let rgb = opts.lineColor.match(/\d+/g);
+        
+        function resizeReset() {
+            w = canvasBody.width  = header.clientWidth;
+            h = canvasBody.height = header.clientHeight;
+        }
+        
+        window.addEventListener("resize", () => {
+            clearTimeout(tid);
+            tid = setTimeout(resizeReset, delay);
+        });
+        
+        function checkDistance(x1, y1, x2, y2) {
+            return Math.hypot(x2 - x1, y2 - y1);
+        }
+        
+        function linkPoints(point, hubs) {
+            for (let i = 0; i < hubs.length; i++) {
+                const distance = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
+                const opacity = 1 - distance / opts.linkRadius;
+                if (opacity > 0) {
+                    drawArea.strokeStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${opacity})`;
+                    drawArea.lineWidth = 0.5;
+                    drawArea.beginPath();
+                    drawArea.moveTo(point.x, point.y);
+                    drawArea.lineTo(hubs[i].x, hubs[i].y);
+                    drawArea.stroke();
+                }
+            }
+        }
+        
+        function Particle() {
+            this.x = Math.random() * w;
+            this.y = Math.random() * h;
+            this.speed = opts.defaultSpeed + Math.random() * opts.variantSpeed;
+            const angle = Math.random() * Math.PI * 2;
+            this.vector = {
+                x: Math.cos(angle) * this.speed,
+                y: Math.sin(angle) * this.speed
+            };
+            this.radius = opts.defaultRadius + Math.random() * opts.variantRadius;
+        
+            this.update = () => {
+                if (this.x <= 0 || this.x >= w) this.vector.x *= -1;
+                if (this.y <= 0 || this.y >= h) this.vector.y *= -1;
+                this.x += this.vector.x;
+                this.y += this.vector.y;
+            };
+        
+            this.draw = () => {
+                drawArea.beginPath();
+                drawArea.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                drawArea.fillStyle = opts.particleColor;
+                drawArea.fill();
+            };
+        }
+        
+        function setup() {
+            particles = [];
+            resizeReset();
+            for (let i = 0; i < opts.particleAmount; i++) {
+                particles.push(new Particle());
+            }
+            requestAnimationFrame(loop);
+        }
+        
+        function loop() {
+            drawArea.clearRect(0, 0, w, h);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            particles.forEach(p => linkPoints(p, particles));
+            requestAnimationFrame(loop);
+        }
+        
+        setup();
+        </script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const wrappers = document.querySelectorAll('.section-wrapper');
