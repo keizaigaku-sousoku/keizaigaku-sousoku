@@ -116,10 +116,9 @@ main {
     writing-mode: vertical-lr;
     text-orientation: mixed;
     font-size: 13px;
-    letter-spacing: 0.4em;
-    color: #ffffff;
-    opacity: 1;
-    user-select: none;
+    letter-spacing: 0.35em;
+    color: #fff;
+    white-space: nowrap;
 }
 
 /* TOC */
