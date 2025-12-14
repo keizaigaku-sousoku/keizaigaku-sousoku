@@ -172,15 +172,21 @@ main {
 
 .part-title {
     position: relative;
-    padding: 10px 0px;
+    text-align: center;
+    margin: 40px auto 24px;
+    padding-bottom: 14px;
     color: #7f1184;
-    display: block;
-    box-sizing: border-box;
-    max-width: 480px;
-    text-align: center; 
-    margin: 24px;
-    margin-inline: auto;
-    border-bottom: 1.5px solid #7f1184;
+}
+
+.part-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 120px;
+    height: 1.5px;
+    background-color: #7f1184;
+    transform: translateX(-50%);
 }
 
 /* Theorem / Proof */
