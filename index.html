@@ -408,7 +408,7 @@
             this.draw = () => {
                 drawArea.beginPath();
                 drawArea.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                drawArea.fillStyle = opts.particleColor;
+                drawArea.fillStyle =`rgba(${opts.particleColor}, ${opts.particleOpacity})`;
                 drawArea.fill();
             };
         }
