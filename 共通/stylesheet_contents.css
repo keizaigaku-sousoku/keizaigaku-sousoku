@@ -112,12 +112,12 @@ main {
 }
 
 .toc-band span {
-    writing-mode: vertical-rl;
+    writing-mode: vertical-lr;
     text-orientation: mixed;
     font-size: 13px;
-    letter-spacing: 0.35em;
-    color: #7f1184;
-    opacity: 0.6;
+    letter-spacing: 0.4em;
+    color: #ffffff;
+    opacity: 1;
     user-select: none;
 }
 
