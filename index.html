@@ -371,8 +371,7 @@
         function linkPoints(point, hubs) {
             for (let i = 0; i < hubs.length; i++) {
                 const distance = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
-                const opacity = 1 - distance / opts.linkRadius;
-        
+                const opacity = (1 - distance / opts.linkRadius) * 0.35;
                 if (opacity > 0) {
                     drawArea.strokeStyle =
                         `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${opacity})`;
