@@ -70,14 +70,10 @@ h4 {
     border-left: 5px solid #7f1184;
 }
 
-/* =========================
-   Header
-========================= */
-
 header {
     width: 90%;
     position: relative;
-    z-index: 20; /* ← 帯より上 */
+    z-index: 20;
     padding: 20px;
     margin: 20px auto;
     text-align: center;
@@ -87,21 +83,13 @@ header h2 {
     margin: 0;
 }
 
-/* =========================
-   Main
-========================= */
-
 main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
-    z-index: 20; /* ← 帯より上 */
+    z-index: 20;
 }
-
-/* =========================
-   TOC Band（装飾専用）
-========================= */
 
 .toc-band {
     position: fixed;
@@ -110,10 +98,9 @@ main {
     width: 10vw;
     height: 60vh;
     z-index: 10;
-    pointer-events: none; /* ← 重要 */
+    pointer-events: none;
 }
 
-/* 子要素も完全に非干渉にする */
 .toc-band,
 .toc-band * {
     pointer-events: none;
@@ -146,10 +133,6 @@ main {
     opacity: 0.9;
 }
 
-/* =========================
-   TOC
-========================= */
-
 .toc-container {
     margin: 20px;
     display: flex;
@@ -179,10 +162,6 @@ main {
     transform: translateX(10px);
 }
 
-/* =========================
-   Part block
-========================= */
-
 .part {
     width: 500px;
     color: #7f1184;
@@ -206,15 +185,11 @@ main {
     position: absolute;
     left: 50%;
     bottom: 0;
-    width: 120px; /* ← 短すぎ問題はここ */
+    width: 120px;
     height: 1.5px;
     background-color: #7f1184;
     transform: translateX(-50%);
 }
-
-/* =========================
-   Theorem / Proof
-========================= */
 
 .theorem-tile, .proof {
     font-size: 15px;
@@ -259,10 +234,6 @@ main {
     color: #6967ab;
     margin-top: 10px;
 }
-
-/* =========================
-   Responsive
-========================= */
 
 @media (max-width: 768px) {
     main {
