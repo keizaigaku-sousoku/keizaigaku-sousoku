@@ -104,23 +104,35 @@ main {
     left: 0;
     width: 10vw;
     height: 60vh;
-    background-color: #6967ab;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 50;
+    pointer-events: none;
 }
 
-.toc-band::after {
-    content: "";
+.toc-band-bg {
     position: absolute;
-    bottom: -18px;
+    inset: 0;
+    background: #6967ab;
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 90%,
+        50% 100%,
+        0% 90%
+    );
+}
+
+.toc-band span {
+    position: absolute;
+    top: 50%;
     left: 50%;
-    width: 18px;
-    height: 18px;
-    border-left: 2px solid #6967ab;
-    border-bottom: 2px solid #6967ab;
-    transform: translateX(-50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(180deg);
+    writing-mode: vertical-lr;
+
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    color: #fff;
+    white-space: nowrap;
+    opacity: 0.9;
 }
 
 .toc-band span {
