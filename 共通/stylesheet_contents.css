@@ -103,7 +103,7 @@ main {
     top: 0;
     left: 0;
     width: 10vw;
-    min-width: 72px;
+    /*min-width: 72px;*/
     height: 100vh;
     background-color: #7f1184;
     display: flex;
