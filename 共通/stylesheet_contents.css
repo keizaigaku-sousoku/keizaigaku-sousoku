@@ -136,6 +136,16 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
+.part-toc {
+    width: 500px;
+    color: #7f1184;
+    margin: 20px;
+    padding: 20px;
+    /*border-radius: 12px;*/
+    /*background-color: #fff;*/
+    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);*/
+}
+
 .part-title {
     position: relative;
     padding: 10px 0px;
