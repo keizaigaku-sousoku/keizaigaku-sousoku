@@ -423,6 +423,7 @@ tr:nth-child(even) td {
 
     .toc-container, .part {
         width: 90%;
+        margin: 20px auto;
     }
 
     .comment-box {
