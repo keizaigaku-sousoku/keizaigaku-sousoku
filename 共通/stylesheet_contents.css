@@ -136,12 +136,12 @@ main {
     text-align: center;
 }
 
-.part-title,
-.toc-part-title {
+.part-title {
     display: inline-block;
     position: relative;
     margin: 0 auto 20px;
-    line-height: 1.4;
+    text-align: center;
+    color: #7f1184;
 }
 
 .part-title::after {
@@ -151,6 +151,11 @@ main {
     height: 1.5px;
     background-color: #7f1184;
     margin: 8px auto 0;
+}
+
+.toc-part-title {
+    position: relative;
+    text-align: center;
 }
 
 .toc-part-title::after {
