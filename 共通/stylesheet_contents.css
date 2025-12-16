@@ -133,20 +133,24 @@ main {
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    text-align: center;
 }
 
 .part-title {
+    display: inline-block;
     position: relative;
+    margin: 0 auto 20px;
     text-align: center;
+    color: #7f1184;
 }
 
 .part-title::after {
     content: "";
     display: block;
-    width: 200px;
+    width: 60px;
     height: 1.5px;
     background-color: #7f1184;
-    margin: 20px auto;
+    margin: 8px auto 0;
 }
 
 .toc-part-title {
