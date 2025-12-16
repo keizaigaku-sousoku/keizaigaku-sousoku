@@ -8,19 +8,15 @@ footer {
 
 footer p {
     color: #898989;
-    text-align: right;
-    margin-top: 10px;
-    margin-right: 20px;
-    margin-bottom: 40px;
+    text-align: center;
+    margin: 10px 0 40px;
 }
 
 .footer-socials {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 24px;
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
 .footer-socials a {
