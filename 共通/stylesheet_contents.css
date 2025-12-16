@@ -136,18 +136,18 @@ main {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
 
-
 .part-title {
     position: relative;
-    padding: 10px 0px;
-    color: #7f1184;
+    text-align: center;
+}
+
+.part-title::after {
+    content: "";
     display: block;
-    box-sizing: border-box;
-    max-width: 200px;
-    text-align: center; 
-    margin: 24px;
-    margin-inline: auto;
-    border-bottom: 1.5px solid #7f1184;
+    width: 60px;
+    height: 1.5px;
+    background-color: #7f1184;
+    margin: 6px auto 0;
 }
 
 /* Theorem / Proof */
