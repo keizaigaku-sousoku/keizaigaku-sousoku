@@ -123,7 +123,7 @@ main {
 .toc-container a:hover {
     background-color: #7f1184;
     color: #fff;
-    transform: translateX(10px);
+    transform: scale(1.05);
 }
 
 /* Part block */
