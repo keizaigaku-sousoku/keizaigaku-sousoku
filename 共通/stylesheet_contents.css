@@ -134,6 +134,8 @@ main {
     background-color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .part a {
