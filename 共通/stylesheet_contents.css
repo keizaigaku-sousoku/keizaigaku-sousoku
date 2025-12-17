@@ -1,4 +1,4 @@
-toc-part-titleとpart-titleでアンダーラインの上下の余白が異なる気がする
+まだスマホでアンダーラインが右にずれている
 
 @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&family=Tangerine:wght@400;700&display=swap');
 
@@ -123,36 +123,32 @@ main {
 .toc-container a:hover {
     background-color: #7f1184;
     color: #fff;
-    transform: scale(1.05;
+    transform: translateX(10px);
 }
 
 /* Part block */
 .part {
-    width: 300px;
+    width: 500px;
     color: #7f1184;
     margin: 20px;
     padding: 20px;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    text-align: center;
 }
 
 .part-title {
-    display: inline-block;
     position: relative;
-    margin: 0 auto 20px;
     text-align: center;
-    color: #7f1184;
 }
 
 .part-title::after {
     content: "";
     display: block;
-    width: 60px;
+    width: 200px;
     height: 1.5px;
     background-color: #7f1184;
-    margin: 8px auto 0;
+    margin: 20px auto;
 }
 
 .toc-part-title {
@@ -166,7 +162,7 @@ main {
     width: 60px;
     height: 1.5px;
     background-color: #7f1184;
-    margin: 8px auto 0;
+    margin: 6px auto 0;
 }
 
 /* Theorem / Proof */
