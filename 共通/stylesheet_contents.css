@@ -136,6 +136,13 @@ main {
     text-align: center;
 }
 
+.part a {
+    display: inline-block;
+    padding: 6px 16px;
+    margin: 4px auto;
+    width: auto;
+}
+
 .part-title {
     position: relative;
     text-align: center;
