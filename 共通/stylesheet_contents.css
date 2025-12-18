@@ -15,6 +15,31 @@ html, body {
     background-color: #f5f5f7;
 }
 
+body {
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        #f5f5f7 0%,
+        #f5f5f7 180px,
+        #6967ab 260px,
+        #5a4fa3 420px,
+        #433a8f 650px,
+        #2f2a73 1000px,
+        #1f1c5a 100%
+    );
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.05), transparent 40%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 body, p, a, .part, .theorem-tile, .proof, .comment-box {
     font-family: 'Noto Sans JP', sans-serif;
 }
@@ -77,6 +102,25 @@ header {
     padding: 20px;
     margin: 20px auto;
     text-align: center;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 200%;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90'%3E%3Cpath fill='%236967ab' d='M0,40 C120,60 240,20 360,30 480,40 600,70 720,60 840,50 960,20 1080,30 1200,40 1320,70 1440,60 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+    background-size: 1440px 60px;
+    animation: waveMove 10s linear infinite;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+@keyframes waveMove {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-720px); }
 }
 
 header h2 {
