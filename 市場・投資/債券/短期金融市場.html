@@ -54,6 +54,7 @@
                     5つ目の条件は、借り手が1つ目の条件の貨幣で発行された国債を担保に入れられることである。
                     国債の担保は借り手が短期金利を下げてもらうための交渉材料であり、国債を用いるのは単に商慣習である。
                     とくに国債の担保がついた翌日物を<span class="new-word">有担保翌日物（collateralized overnight call, collateralized overnight）</span>、担保がない翌日物を<span class="new-word">無担保翌日物（uncollateralized overnight call, uncollateralized overnight）</span>と呼ぶ。
+                    無担保翌日物の（しばしば年率換算した）複利最終利回りは<span class="new-word">無担保翌日物レート（uncollateralized overnight call rate, uncollateralized overnight rate）</span>と呼ばれ、貸し倒れの懸念や担保の存在等の個別要因をできる限り排した複利最終利回りとして注目される。
                     6つ目の条件は、貨幣の貸借や国債の担保の扱いを円滑に遂行するための市場参加者、つまり運営者が一般には複数存在することである。
                     彼らを<span class="new-word">短資会社（call loan dealer, money market dealer）</span>と呼ぶ。
                     4つ目の条件における複利最終利回りの公開は、主に短資会社が請け負う。
@@ -92,7 +93,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        市場が無裁定であるとして、\(\textrm{A}\) 、\(\textrm{B}\) を任意の2貨幣、\( r_\textrm{A}, r_\textrm{B} \geq -1 \) をそれぞれ \( \textrm{A} \) 、\( \textrm{B} \) のコール市場における無担保翌日物の日率の複利最終利回り、\( s \) を \( \textrm{A} \) の1単位に対する \( \textrm{B} \) のスポット・レート、\( f \) を決済日まで \( T+2 \) 日のフォワード・レートとする。
+                        市場が無裁定であるとして、\(\textrm{A}\) 、\(\textrm{B}\) を任意の2貨幣、\( r_\textrm{A}, r_\textrm{B} \geq -1 \) をそれぞれ \( \textrm{A} \) 、\( \textrm{B} \) のコール市場における日率の無担保翌日物レート、\( s \) を \( \textrm{A} \) の1単位に対する \( \textrm{B} \) のスポット・レート、\( f \) を決済日まで \( T+2 \) 日のフォワード・レートとする。
                         また複利最終利回りは不変であり、\(\textrm{A}\) 、\(\textrm{B}\) のコール市場いずれにも属する市場参加者が存在すると仮定する。
                         このとき、
                         \[
@@ -109,6 +110,9 @@
                         一物一価の法則により \( (1+r_\textrm{A})^T=(1+r_\textrm{B})^Ts/f \) であり与式を得る。
                     </p>
                 </div>
+                <p>
+                    　上記のような2コール市場における無担保翌日物の複利最終利回りで
+                </p>
                 <div class="comment-box">
                     <p>
                         <span class="comment-box-title">ビットコインのコール市場</span>
