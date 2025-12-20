@@ -89,6 +89,33 @@
                     彼らを<span class="new-word">短資会社（call loan dealer, money market dealer）</span>と呼ぶ。
                     現実世界では、コール市場の短資会社と外国為替市場の短資会社は別の企業たちである。
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( \textrm{A} \) 、\( \textrm{B} \) を任意の2貨幣、\( r_\textrm{A}, r_\textrm{A} \geq -1 \) をそれぞれ\( \textrm{A} \) 、\( \textrm{B} \) のコール市場における無担保翌日物の複利最終利回り、\( S \) を\( \textrm{A} \) 1単位に対する　\( \textrm{B{ \)　のスポット・レート、\( F \) を決済日まで \( T+2 \) のフォワード・レートとする。
+                        このとき、
+                    </p>
+                </div>            
+                <div class="proof">
+                    <p>
+                        償還価格を \( F &gt; 0 \)、クーポンの列を \( \mathcal{C} = (C_t)_{t=1}^T \) 、\( C_t &gt; 0 \) 、\( T \in \textbf{Z}_{\geq1} \)　、債券価格を \( P &gt; 0 \) とおく。
+                        簡単のため
+                        \[
+                            f(r)=\sum_{t=1}^T\frac{C_t}{(1+r)^t}+\frac{F}{(1+r)^T}
+                        \]
+                        とおく。
+                        明らかに \( f(r) \) は \( (-1,\infty) \) において \( C^1 \) 級である。
+                        微分すると
+                        <div class="math-container">
+                            \[
+                                f^\prime(r)=-\sum_{t=1}^T\frac{tC_t}{(1+r)^{t+1}}-\frac{TF}{(1+r)^{T+1}}
+                            \]
+                        </div>
+                        であり、\( F &gt; 0 \) かつ \( C_t &gt; 0 \) ゆえ \( f^\prime(r)&lt;0 \) 。
+                        よって \( f(r) \) は単調減少である。
+                        極限は \( f(r) \rightarrow \infty \ ( r \searrow -1 ) \) 、\( f(r) \searrow 0 \ ( r \rightarrow \infty ) \) であるから、\( P &gt; 0 \) ならば \( P=f(r) \) の解が一意に存在する。
+                    </p>
+                </div>
                 <div class="comment-box">
                     <p>
                         <span class="comment-box-title">ビットコインのコール市場</span>
