@@ -124,7 +124,8 @@ header h2 {
 .toc-right a {
     text-decoration: none;
     position: relative;
-    padding-left: 0;
+    padding: 10px;
+    margin: 5px 0;
 }
 
 /* ホバー演出 */
