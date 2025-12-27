@@ -94,7 +94,6 @@ header h2 {
 /* 目次全体の1ブロック */
 .toc-section {
     max-width: 900px;
-    margin: 80px auto;
     display: grid;
     grid-template-columns: 120px 1px 1fr;
     column-gap: 40px;
@@ -103,18 +102,12 @@ header h2 {
 
 /* 左側の大見出し */
 .toc-left {
-    font-family: "Yu Mincho", "游明朝", serif;
     font-size: 28px;
-    letter-spacing: 0.15em;
-    text-align: right;
-    padding-top: 4px;
-    color: #222;
 }
 
 /* 中央の縦線 */
 .toc-line {
     width: 1px;
-    background-color: #bbb;
     height: 100%;
 }
 
@@ -128,14 +121,12 @@ header h2 {
 /* 各リンク */
 .toc-right a {
     text-decoration: none;
-    color: #222;
-    font-size: 16px;
     position: relative;
     padding-left: 0;
-    transition: color 0.3s ease;
 }
 
 /* ホバー演出 */
+/*
 .toc-right a::before {
     content: "—";
     position: absolute;
@@ -152,6 +143,7 @@ header h2 {
     opacity: 1;
     left: -16px;
 }
+*/
 
 /* Main */
 main {
