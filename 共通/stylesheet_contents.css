@@ -98,7 +98,7 @@ header h2 {
     grid-template-columns: 120px 1px 1fr;
     column-gap: 40px;
     align-items: start;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 /* 左側の大見出し */
