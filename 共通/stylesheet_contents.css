@@ -98,6 +98,7 @@ header h2 {
     grid-template-columns: 120px 1px 1fr;
     column-gap: 40px;
     align-items: start;
+    margin: 0 auto;
 }
 
 /* 左側の大見出し */
@@ -109,6 +110,7 @@ header h2 {
 .toc-line {
     width: 1px;
     height: 100%;
+    background-color: #bbb;
 }
 
 /* 右側のリンク群 */
