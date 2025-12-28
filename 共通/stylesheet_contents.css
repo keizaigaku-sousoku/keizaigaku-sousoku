@@ -547,7 +547,7 @@ tr:nth-child(even) td {
     
     .toc-section {
         grid-template-columns: 110px 1fr;
-        column-gap: 60px;
+        column-gap: 20px;
     }
     
     .toc-right a {
