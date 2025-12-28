@@ -92,7 +92,7 @@ header h2 {
 }
 
 .toc-wrapper {
-    max-width: 900px;
+    max-width: 600px;
     margin: 50px auto;
     position: relative;
 }
@@ -101,14 +101,14 @@ header h2 {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 140px;          /* ← ここで線のx位置を固定 */
+    left: 140px;
     width: 1px;
     background-color: #bbb;
 }
 
 .toc-section {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 120px 1fr;
     column-gap: 40px;
     margin: 40px 0;
 }
