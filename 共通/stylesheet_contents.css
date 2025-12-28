@@ -91,27 +91,31 @@ header h2 {
     color: #1d1d1f;
 }
 
-/* 目次全体の1ブロック */
-.toc-section {
+.toc-wrapper {
     max-width: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 40px;
     margin: 50px auto;
+    position: relative;
 }
 
-/* 左側の大見出し */
-.toc-left {
-    font-size: 20px;
-    padding: 10px;
-    margin: 5px 0;
-}
-
-/* 中央の縦線 */
-.toc-line {
+.toc-line-global {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 140px;          /* ← ここで線のx位置を固定 */
     width: 1px;
     background-color: #bbb;
+}
+
+.toc-section {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    column-gap: 40px;
+    margin: 40px 0;
+}
+
+.toc-left {
+    text-align: right;
+    font-size: 20px;
 }
 
 /* 右側のリンク群 */
