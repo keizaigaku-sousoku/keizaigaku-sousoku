@@ -95,6 +95,7 @@ header h2 {
 .toc-section {
     max-width: 900px;
     display: flex;
+    justify-content: space-around;
     align-items: stretch; /* ← 重要 */
     margin: 50px auto;
 }
