@@ -101,14 +101,14 @@ header h2 {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 200px;
+    left: 240px;
     width: 1.5px;
     background-color: #6967ab;
 }
 
 .toc-section {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 220px 1fr;
     column-gap: 60px;
     margin: 40px 0;
 }
