@@ -94,6 +94,7 @@ header h2 {
 /* 目次全体の1ブロック */
 .toc-section {
     max-width: 900px;
+    display: flex;
     justify-content: space-around;
     /*display: grid;
     grid-template-columns: 50px 1px 1fr;
