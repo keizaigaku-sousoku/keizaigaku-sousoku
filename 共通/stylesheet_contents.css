@@ -529,7 +529,11 @@ tr:nth-child(even) td {
     padding: 20px;
     width: 100%;
     }
-
+    
+    .toc-title-en {
+        font-size: 20px;
+    }
+    
     .toc-container, .part {
         width: 90%;
         margin: 20px auto;
