@@ -115,9 +115,11 @@ header h2 {
 
 .toc-left {
     /*text-align: right;*/
-    font-size: 20px;
     font-weight: 700;
     color: #6967ab;
+    position: relative;
+    padding: 10px;
+    margin: 5px 0;
 }
 
 /* 右側のリンク群 */
