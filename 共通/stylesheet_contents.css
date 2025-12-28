@@ -529,6 +529,13 @@ tr:nth-child(even) td {
     padding: 20px;
     width: 100%;
     }
+
+    .toc-title-ja {
+        font-size: 15px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
     
     .toc-title-en {
         font-size: 20px;
