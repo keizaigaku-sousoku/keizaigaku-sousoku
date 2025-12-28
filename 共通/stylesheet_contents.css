@@ -207,7 +207,7 @@ main {
 }
 
 .toc-container a {
-    color: #7f1184;
+    /*color: #7f1184;*/
     text-decoration: none;
     display: block;
     padding: 10px;
@@ -218,7 +218,7 @@ main {
 
 .toc-container a:hover {
     background-color: #7f1184;
-    color: #fff;
+    color: #ffffff;
     transform: scale(1.05);
 }
 
