@@ -550,6 +550,10 @@ tr:nth-child(even) td {
         column-gap: 60px;
     }
     
+    .toc-right a {
+        padding: 10px 20px;
+    }
+    
     .toc-container, .part {
         width: 90%;
         margin: 20px auto;
