@@ -113,6 +113,24 @@ header h2 {
     margin: 40px 0;
 }
 
+.toc-title {
+    line-height: 1.2;
+}
+
+.toc-title-ja {
+    font-size: 22px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.toc-title-en {
+    font-size: 40px;   /* ← ここを自由に調整 */
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
 .toc-left {
     text-align: right;
     font-weight: 700;
