@@ -108,7 +108,7 @@ header h2 {
 
 .toc-section {
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 300px 1fr;
     column-gap: 40px;
     margin: 40px 0;
 }
