@@ -95,11 +95,7 @@ header h2 {
 .toc-section {
     max-width: 900px;
     display: flex;
-    justify-content: space-around;
-    /*display: grid;
-    grid-template-columns: 50px 1px 1fr;
-    column-gap: 40px;
-    align-items: start;*/
+    align-items: stretch; /* ← 重要 */
     margin: 50px auto;
 }
 
@@ -113,7 +109,6 @@ header h2 {
 /* 中央の縦線 */
 .toc-line {
     width: 1px;
-    height: 100%;
     background-color: #bbb;
 }
 
