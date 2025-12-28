@@ -129,7 +129,7 @@ header h2 {
     font-weight: 700;
     display: inline-block;
     color: #ffffff;
-    background: linear-gradient(transparent 40%, #f5ff00 60%);
+    background: linear-gradient(135deg, #7f1184, #6967ab);
 }
 
 .toc-left {
