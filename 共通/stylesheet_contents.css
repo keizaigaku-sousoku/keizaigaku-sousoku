@@ -534,6 +534,15 @@ tr:nth-child(even) td {
         font-size: 20px;
     }
     
+    .toc-line-global {
+        left: 120px;
+    }
+    
+    .toc-section {
+        grid-template-columns: 110px 1fr;
+        column-gap: 60px;
+    }
+    
     .toc-container, .part {
         width: 90%;
         margin: 20px auto;
