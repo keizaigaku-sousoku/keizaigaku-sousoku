@@ -128,6 +128,8 @@ header h2 {
     font-size: 40px;
     font-weight: 700;
     display: inline-block;
+    color: #ffffff;
+    background: linear-gradient(transparent 40%, #f5ff00 60%);
 }
 
 .toc-left {
