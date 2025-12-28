@@ -154,6 +154,22 @@ header h2 {
     margin: 5px 0;
 }
 
+.toc-right a {
+    color: #6967ab;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.toc-right a:hover {
+    background-color: #6967ab;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
 /* ホバー演出 */
 /*
 .toc-right a::before {
@@ -194,7 +210,6 @@ main {
     color: #7f1184;
     text-decoration: none;
     display: block;
-    /*font-size: 15px;*/
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
