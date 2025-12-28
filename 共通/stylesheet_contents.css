@@ -114,7 +114,7 @@ header h2 {
 }
 
 .toc-left {
-    text-align: right;
+    /*text-align: right;*/
     font-size: 20px;
 }
 
