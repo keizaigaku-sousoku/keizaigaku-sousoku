@@ -19,7 +19,6 @@
             padding: 0;
             overflow-x: hidden;
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #0b3c6f;
         }
 
         body { font-size: 16px; }
@@ -27,11 +26,12 @@
         header {
             width: 100%;
             height: 100vh;
-            background: linear-gradient(135deg, #f6ea8c, #f6ea8c);/*#0b3c6f);*/
+            background: linear-gradient(135deg, #7f1184, #6967ab);/*#004898);*/
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
+            overflow: hidden;   /* はみ出し防止 */
             overflow: hidden;
         }
 
@@ -45,16 +45,16 @@
             align-items: center;
             gap: 50px;
         }
-        
+
         header h1 {
-            /*font-family: 'Marcellus', serif;*/
+            font-family: 'Marcellus', serif;
             font-size: 50px;
-            color: #0b3c6f;/*#1d1d1f;*/
+            color: #fff;
             margin-top: 60px;
             margin-bottom: 60px;
             text-align: center;
         }
-        
+
         #canvas {
             position: absolute;
             inset: 0;
@@ -62,24 +62,19 @@
             height: 100%;
             z-index: 0;
         }
-        
+
         .header-above {
             position: relative;
-            z-index: 1;
-            pointer-events: none;
+            z-index: 1;         /* テキストを前面に */
+            pointer-events: none; /* マウス操作を邪魔しない */
         }
-        
-        .subtitle {
-            /*font-family: 'Kaisei Opti', serif;*/
-            font-size: 18px;
-            color: #0b3c6f;/*#1d1d1f;*/
-            line-height: 1;
-        }
+
+        .subtitle { font-family: 'Kaisei Opti', serif; font-size: 18px; color: #fff; line-height: 1; }
 
         .subtitle-box { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 300px; }
 
         .scroll-prompt { font-size: 15px; text-align: center; }
-        .scroll-prompt p { color: #0b3c6f; }/*#ffffff; }*/
+        .scroll-prompt p { color: #fff; }
 
         .arrow { text-align: center; animation: bounce 2s infinite; }
         .arrow .material-symbols-outlined { font-size: 50px; }
@@ -93,7 +88,7 @@
             bottom: 0;
             height: 80px;
             width: 100%;
-            background-color: #0b3c6f;/*#ffffff26;*/
+            background-color: #ffffff26;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             display: flex;
@@ -102,9 +97,9 @@
             gap: 30px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.03);
         }
-        
+
         nav a {
-            color: #ffffff;
+            color: #fff;
             padding: 8px 30px;
             text-decoration: none;
             border-radius: 5px;
@@ -112,11 +107,12 @@
             transition: transform 0.3s, background-color 0.3s, color 0.3s;
         }
 
-        nav a:hover { background-color: #0b3c6f; color: #ffffff; transform: scale(1.05); }
+        nav a:hover { background-color: #7f1184; color: #ffffff; transform: translateX(10px); }
+        nav a:hover { background-color: #7f1184; color: #ffffff; transform: scale(1.05); }
 
         .nav-wrapper { position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; }
         .fixed-wrapper { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; }
-        .fixed-wrapper a { color: #0b3c6f; }
+        .fixed-wrapper a { color: #7f1184; }
 
         h2 { font-size: 34px; font-weight: 700; line-height: 2; color: #1d1d1f; }
         p { line-height: 2; color: #1d1d1f; text-align: justify; }
@@ -127,7 +123,7 @@
             font-family: 'Marcellus', serif;
             display: inline-block;
             font-weight: bold;
-            color: #0b3c6f;
+            color: #7f1184;
         }
 
         .section {
@@ -140,7 +136,7 @@
         .section-bg {
             position: absolute;
             inset: 0;
-            background: #f6ea8c;
+            background: #6967ab;
             clip-path: polygon(50% 10%, 100% 0%, 100% 90%, 50% 100%, 0% 90%, 0% 0%);
             z-index: 0;
         }
@@ -153,35 +149,35 @@
             padding: 0 20px;
             text-align: center;
         }
-        
+
         .section-wrapper .material-symbols-outlined { font-size: 50px; margin: 20px 0px; }
-        
+
         .section-wrapper h2,
         .section-wrapper p,
         .section-wrapper .material-symbols-outlined {
-            color: #ffffff;
+            color: #7f1184;
         }
-        
+
         /* 背景色があるセクション用の文字色 */
         .section .section-bg + .section-wrapper h2,
         .section .section-bg + .section-wrapper p,
         .section .section-bg + .section-wrapper .material-symbols-outlined {
-            color: #ffffff;
+            color: #fff;
         }
-        
+
         /* section-wrapper 内のアニメーション対象 */
         .section-wrapper > * {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         /* 表示状態 */
         .section-wrapper > *.show {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .mobile-br { display: none; }
 
         @media (max-width: 768px) {
@@ -252,7 +248,7 @@
             </a>
         </div>
     </div>
-    
+
     <div class="section">
         <div class="section-wrapper">
             <span class="material-symbols-outlined">home_work</span>
@@ -275,9 +271,9 @@
             </a>
         </div>
     </div>
-    
+
     <div class="chapter-title"><h2>APPENDIX</h2></div>
-    
+
     <div class="section">
         <div class="section-bg"></div>
         <div class="section-wrapper">
@@ -289,7 +285,7 @@
             </a>
         </div>
     </div>
-    
+
     <div class="section">
         <div class="section-wrapper">
             <span class="material-symbols-outlined">dictionary</span>
@@ -328,82 +324,82 @@
         const canvasBody = document.getElementById("canvas");
         const drawArea = canvasBody.getContext("2d");
         const header = document.querySelector("header");
-        
+
         let w, h;
         let particles = [];
         let tid;
         const delay = 200;
-        
+
         const opts = { 
             particleColor: "rgb(255,255,255)",
             lineColor: "rgb(255,255,255)",
-        
+
             // 粒子数（画面サイズ連動）
             baseParticleDensity: 0.000035, // 画面1px²あたりの密度
-        
+
             // 動き（かなり穏やか）
             defaultSpeed: 0.35,
             variantSpeed: 0.25,
-        
+
             // 点の大きさ
             defaultRadius: 1.5,
             variantRadius: 1.2,
-        
+
             // 線
             linkRadius: 180,
             lineOpacityFactor: 0.35, // ← 線を薄くする係数
             particleOpacity: 0.45    // ← 点を薄くする
         };
-        
+
         const rgb = opts.lineColor.match(/\d+/g);
-        
+
         let baseWidth, baseHeight;
-        
+
         function resizeReset() {
             const newW = header.clientWidth;
             const newH = header.clientHeight;
-        
+
             // スクロールによる微妙な高さ変化は無視
             if (
                 baseWidth &&
                 Math.abs(newH - baseHeight) < 80 &&
                 Math.abs(newW - baseWidth) < 10
             ) return;
-        
+
             baseWidth = w = canvasBody.width  = newW;
             baseHeight = h = canvasBody.height = newH;
-        
+
             setupParticles();
         }
-        
+
         window.addEventListener("orientationchange", resizeReset);
-        
+
         function checkDistance(x1, y1, x2, y2) {
             return Math.hypot(x2 - x1, y2 - y1);
         }
-        
+
         function Particle() {
             this.x = Math.random() * w;
             this.y = Math.random() * h;
-        
+
             const speed = opts.defaultSpeed + Math.random() * opts.variantSpeed;
             const angle = Math.random() * Math.PI * 2;
-        
+
             this.vector = {
                 x: Math.cos(angle) * speed,
                 y: Math.sin(angle) * speed
             };
-        
+
             this.radius = opts.defaultRadius + Math.random() * opts.variantRadius;
-        
+
             this.update = () => {
                 if (this.x <= 0 || this.x >= w) this.vector.x *= -1;
                 if (this.y <= 0 || this.y >= h) this.vector.y *= -1;
-        
+
                 this.x += this.vector.x;
                 this.y += this.vector.y;
             };
-        
+
             this.draw = () => {
                 drawArea.beginPath();
                 drawArea.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -411,78 +407,78 @@
                 drawArea.fill();
             };
         }
-        
+
         function linkPoints(point, hubs) {
             for (let i = 0; i < hubs.length; i++) {
                 const dist = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y);
                 if (dist > opts.linkRadius) continue;
-        
+
                 const opacity =
                     (1 - dist / opts.linkRadius) * opts.lineOpacityFactor;
-        
+
                 drawArea.strokeStyle =
                     `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${opacity})`;
                 drawArea.lineWidth = 0.5;
-        
+
                 drawArea.beginPath();
                 drawArea.moveTo(point.x, point.y);
                 drawArea.lineTo(hubs[i].x, hubs[i].y);
                 drawArea.stroke();
             }
         }
-        
+
         function setupParticles() {
             particles = [];
-        
+
             const amount = Math.floor(w * h * opts.baseParticleDensity);
-        
+
             for (let i = 0; i < amount; i++) {
                 particles.push(new Particle());
             }
         }
-        
+
         function loop() {
             drawArea.clearRect(0, 0, w, h);
-        
+
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
-        
+
             particles.forEach(p => linkPoints(p, particles));
-        
+
             requestAnimationFrame(loop);
         }
-        
+
         resizeReset();
         requestAnimationFrame(loop);
         </script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const wrappers = document.querySelectorAll('.section-wrapper');
-    
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const items = entry.target.children;
-    
+
                     [...items].forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('show');
                         }, index * 300); // 0.3秒ずつ遅らせる
                     });
-    
+
                     observer.unobserve(entry.target); // 一度だけ発火
                 }
             });
         }, {
             threshold: 0.3
         });
-    
+
         wrappers.forEach(wrapper => observer.observe(wrapper));
     });
     </script>
-    
+
     <div id="footer-placeholder"></div>
 </body>
 </html>
