@@ -170,26 +170,6 @@ header h2 {
     transform: scale(1.05);
 }
 
-/* ホバー演出 */
-/*
-.toc-right a::before {
-    content: "—";
-    position: absolute;
-    left: -24px;
-    opacity: 0;
-    transition: opacity 0.3s ease, left 0.3s ease;
-}
-
-.toc-right a:hover {
-    color: #555;
-}
-
-.toc-right a:hover::before {
-    opacity: 1;
-    left: -16px;
-}
-*/
-
 /* Main */
 main {
     padding: 20px;
@@ -207,7 +187,6 @@ main {
 }
 
 .toc-container a {
-    /*color: #1e2f5b;*/
     text-decoration: none;
     display: block;
     padding: 10px;
