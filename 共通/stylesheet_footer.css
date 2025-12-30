@@ -1,6 +1,6 @@
 footer {
     background-color: #fff;
-    color: #ab67a9;
+    color: #1e2f5b;
     padding: 20px 10px;
     font-size: 14px;
     text-align: center;
@@ -20,7 +20,7 @@ footer p {
 }
 
 .footer-socials a {
-    color: #ab67a9;
+    color: #1e2f5b;
     font-size: 28px;
     text-decoration: none;
     transition: transform 0.3s;
