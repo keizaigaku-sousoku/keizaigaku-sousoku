@@ -9,7 +9,6 @@
     <meta name="author" content="経済学総則">
 
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Noto+Serif+JP:wght@400;700&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
-    <!--<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="共通/stylesheet_footer.css">
@@ -123,7 +122,30 @@
 
         h2 { font-size: 34px; font-weight: 700; line-height: 2; color: #1d1d1f; }
         p { line-height: 2; color: #1d1d1f; text-align: justify; }
-
+        
+        .jp-title {
+            position: relative;
+            display: inline-block;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
+            z-index: 1;
+        }
+        
+        /* 背景英語 */
+        .jp-title .en-bg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -55%);
+            font-family: 'Marcellus', serif;
+            font-size: 64px;
+            letter-spacing: 0.12em;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.15);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
         .chapter-title { text-align: center; margin-top: 100px; margin-bottom: 50px; }
         .chapter-title h2 {
             font-size: 28px;
@@ -244,7 +266,10 @@
         <div class="section-bg"></div>
         <div class="section-wrapper">
             <span class="material-symbols-outlined">query_stats</span>
-            <h2>市場・投資</h2>
+            <h2 class="jp-title">
+                市場・投資
+                <span class="en-bg" aria-hidden="true">MARKET AND INVESTMENT</span>
+            </h2>
             <p>
                 経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
                 またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
