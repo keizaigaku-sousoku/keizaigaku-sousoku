@@ -43,14 +43,14 @@ h2 {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
-    color: #7f1184;
+    color: #ab67a9;
 }
 
 h3 {
     position: relative;
     margin: 20px 50px;
     font-size: 15px;
-    color: #7f1184;
+    color: #ab67a9;
 }
 
 h4 {
@@ -65,9 +65,9 @@ h4 {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: #7f1184;
+    color: #ab67a9;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    border-left: 5px solid #7f1184;
+    border-left: 5px solid #ab67a9;
 }
 
 /* Header */
@@ -207,7 +207,7 @@ main {
 }
 
 .toc-container a {
-    /*color: #7f1184;*/
+    /*color: #ab67a9;*/
     text-decoration: none;
     display: block;
     padding: 10px;
@@ -217,7 +217,7 @@ main {
 }
 
 .toc-container a:hover {
-    background-color: #7f1184;
+    background-color: #ab67a9;
     color: #ffffff;
     transform: scale(1.05);
 }
@@ -225,7 +225,7 @@ main {
 /* Part block */
 .part {
     width: 500px;
-    color: #7f1184;
+    color: #ab67a9;
     margin: 20px;
     padding: 20px;
     border-radius: 12px;
@@ -253,7 +253,7 @@ main {
     display: block;
     width: 200px;
     height: 1.5px;
-    background-color: #7f1184;
+    background-color: #ab67a9;
     margin: 6px auto 0;
 }
 
@@ -267,7 +267,7 @@ main {
     display: block;
     width: 60px;
     height: 1.5px;
-    background-color: #7f1184;
+    background-color: #ab67a9;
     margin: 6px auto 0;
 }
 
@@ -289,7 +289,7 @@ main {
 /*
 .theorem-tile .title {
     display: inline-block;
-    background-color: #7f1184;
+    background-color: #ab67a9;
     color: white;
     font-weight: bold;
     padding: 6px 30px;
@@ -302,11 +302,11 @@ main {
 .theorem-tile .title {
     display: inline-block;
     font-weight: bold;
-    color: #7f1184;
+    color: #ab67a9;
     padding: 0px 10px;
     line-height: 1.5;
-    border-top: 1px solid #7f1184;
-    border-bottom: 1px solid #7f1184;
+    border-top: 1px solid #ab67a9;
+    border-bottom: 1px solid #ab67a9;
 }
 
 .proof {
@@ -455,7 +455,7 @@ tr:nth-child(even) td {
     top: 50%;
     width: 22px;
     height: 2px;
-    background-color: #7f1184;
+    background-color: #ab67a9;
     border-radius: 1px;
     transform-origin: center;
     transition: all 0.3s ease;
@@ -499,7 +499,7 @@ tr:nth-child(even) td {
     display: block;
     margin: 5px 0;
     padding: 5px;/* 24px;*/
-    color: #7f1184;
+    color: #ab67a9;
     text-decoration: none;
     /*font-size: 13px;*/
     /*letter-spacing: 0.4px;*/
@@ -510,14 +510,14 @@ tr:nth-child(even) td {
 }
 
 .nav-menu a:hover {
-    background-color: #7f1184;
+    background-color: #ab67a9;
     color: #fff;
     transform: translateX(10px);
 }
 
 .nav-divider {
   height: 1px;
-  background-color: #7f1184;
+  background-color: #ab67a9;
   width: 100%;
   margin: 12px auto;
   border: none;
