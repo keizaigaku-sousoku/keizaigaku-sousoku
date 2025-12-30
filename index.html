@@ -132,18 +132,20 @@
         }
         
         /* 背景英語 */
+        .jp-title {
+            position: relative;
+        }
+        
         .jp-title .en-bg {
             position: absolute;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -55%);
+            bottom: -0.2em;   /* ← 日本語の下に固定 */
+            transform: translateX(-50%);
             font-family: 'Great Vibes', 'Marcellus', serif;
             font-size: 80px;
             white-space: nowrap;
             color: rgba(255, 255, 255, 0.05);
-            filter: blur(0.6px);    
             z-index: -1;
-            pointer-events: none;
         }
         
         .chapter-title { text-align: center; margin-top: 100px; margin-bottom: 50px; }
