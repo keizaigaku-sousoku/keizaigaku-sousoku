@@ -57,10 +57,10 @@
                 </p>
                 <p>
                     　サーバーは情報を受信したとき、送信者を信頼できるか判定するために、古典的だが現代でも通用する巧妙な暗号理論の手法を用いる。
-                    まずサーバーSは任意の利用者に対して、一方に<span class="new-word">秘密鍵（secret key）</span>、もう一方に<span class="new-word">公開鍵（public key）</span>と名前をつけた彼固有の文字列を2つ送信しておく。
+                    まずサーバーSは任意の利用者に対して、一方に<span class="new-word">秘密鍵（secret key）</span>、もう一方に<span class="new-word">公開鍵（public key）</span>と名前をつけた利用者固有の文字列を2つ送信しておく。
                     同時にSは任意の公開鍵を任意の利用者に公開する。
-                    次にSは任意の文字列 \( m \) と任意の秘密鍵 \( \textrm{sk} \) に対して文字列を返す2変数関数 \( \textrm{sign}(m,\textrm{sk}) \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者に公開しておく。
-                    同時にSは任意の文字列 \( m \) 、 \( \sigma \) そして任意の秘密鍵 \( \textrm{pk} \) に対する2値3変数関数 \( \textrm{verify}(m,\sigma,\textrm{pk}) \) であって
+                    次にSは任意の文字列 \( m \) と任意の秘密鍵 \( \textrm{sk} \) に対して文字列を返す（文字列値）2変数関数 \( \textrm{sign}(m,\textrm{sk}) \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者に公開しておく。
+                    同時にSは任意の文字列 \( m \) 、 \( \sigma \) そして任意の秘密鍵 \( \textrm{pk} \) に対する（2値）3変数関数 \( \textrm{verify}(m,\sigma,\textrm{pk}) \) であって
                 </p>
                 \[
                     \textrm{verify}(m,\sigma,\textrm{pk})=
