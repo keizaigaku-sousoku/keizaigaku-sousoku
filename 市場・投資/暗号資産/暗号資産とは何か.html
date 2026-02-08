@@ -62,8 +62,8 @@
                 </div>
                 <p>
                     を満たすものを用意しておく。
-                    そして \(\textrm{X}\) は任意の利用者 \(\textrm{Y}\) に対して、任意の文字列 \( m \) を送信するときは、自身の公開鍵 \( \textrm{pk}_\textrm{Y} \) とデジタル署名 \( \sigma=\textrm{sign}(m,\textrm{sk}_\textrm{Y}) \) を添えなければそれを受信しない旨を伝えておく。
-                    以上の手順を準備しておけば、\(\textrm{X}\) は \( (m,\textrm{pk}_\textrm{Y};\sigma) \) を受信したとき、 \( \textrm{verify}(m,\textrm{pk}_\textrm{Y};\sigma) \) を計算し、結果が \( 1 \) になれば送信者が確かに \( \textrm{Y} \) であると信頼すればよい。
+                    そして \(\textrm{X}\) は任意の利用者 \(\textrm{Y}\) に対して、任意の文字列 \( m \) を送信するときは、自身の公開鍵 \( \textrm{pk}_\textrm{Y} \) とデジタル署名 \( \sigma=\textrm{sign}(m,\textrm{sk}_\textrm{Y}) \) を添えなければそれを信頼しない旨を伝えておく。
+                    以上の手順を準備しておけば、\(\textrm{X}\) は \(\textrm{Y}\) から受信したと断定できない情報 \( (m,\textrm{pk}_\textrm{Y};\sigma) \) に対して \( \textrm{verify}(m,\textrm{pk}_\textrm{Y};\sigma) \) を計算し、結果が \( 1 \) になれば送信者を確かに \( \textrm{Y} \) であると信頼すればよい。
                 </p>
                 </p>
                 <p>
