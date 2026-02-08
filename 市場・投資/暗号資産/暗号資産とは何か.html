@@ -46,32 +46,41 @@
                 <p>
                     　一部の者たちが蓄積した膨大な情報を他の者たちが利活用することは、現代におけるインターネットの典型的な使い方である。
                     一般に、一部の公的機関や企業（または稀に個人）であって標準的な個人よりも膨大な情報を蓄積する者あるいはそのための装置を<span class="new-word">サーバー（server）</span>と呼ぶ。
-                    インターネットの利用者はサーバーに対して、任意の文字列 \( m \) を蓄積するよう " \( m \) を蓄積せよ" という形式の情報を送信できる。
+                    インターネットの利用者はサーバーに対して、任意の文字列 \( m \) を蓄積するよう " \( m \) を蓄積せよ" という文字列形式の情報を送信できる。
                     サーバーはそのような情報をつねに受信し、後述の方法で送信者を信頼できると判定すれば、 \( m \) を自動で蓄積するよう設計されている。
                     もし送信者を信頼できるか確認する手順がなければ、なりすましによって悪意のある情報がいくらでも蓄積されてしまう。
-                    またインターネットの利用者はサーバーに対して、蓄積された情報 \( m^\prime \) を彼あるいは特定の者Xに宛てて送信するよう "Xへ \( m^\prime \) を送信せよ"  という形式の情報を送信できる。
+                    またインターネットの利用者はサーバーに対して、蓄積された情報 \( m^\prime \) を彼あるいは特定の者Xに宛てて送信するよう "Xへ \( m^\prime \) を送信せよ"  という文字列形式の情報を送信できる。
                     サーバーはそのような信号をつねに受信し、後述の方法で送信者を信頼できると判定すれば、Xへ \( m^\prime \) を自動で送信するよう設計されている。
                     もし送信者を信頼できるか確認する手順がなければ、なりすましによって悪意のある情報がXへ送信されてしまう。
                     もはや死語であろうが、いわゆる "ネットサーフィン" はサーバーから情報を受信する行為である。
                     またいずれ死語になるであろうが、いわゆる "SNS" はサーバーを介して利用者たちが情報を送受信する行為である。
                 </p>
                 <p>
-                    　サーバーは情報を受信したとき、送信者を信頼できるか判定するために、古典的だが現代でも通用する巧妙な暗号理論の手法を用いる。
+                    　サーバーは文字列形式の情報を受信したとき、送信者を信頼できるか判定するために、古典的だが現代でも通用する巧妙な暗号理論の手法を用いる。
                     まずサーバー \(\textrm{S}\) は任意の利用者 \(\textrm{X}\) に対して、一方に<span class="new-word">秘密鍵（secret key）</span>、もう一方に<span class="new-word">公開鍵（public key）</span>と名前をつけた \(\textrm{A}\) 固有の相異なる文字列 \( \textrm{sk}_\textrm{X} \)、\( \textrm{pk}_\textrm{X} \) を送信しておく。
                     同時に \(\textrm{S}\) は任意の公開鍵を任意の利用者に公開する。
                     次に \(\textrm{S}\) は任意の文字列 \( m \) と任意の秘密鍵 \( \textrm{sk}_\textrm{X} \) に対して文字列を返す2変数関数 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者に公開しておく。
                     関数値 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) を \( (m,\textrm{sk}_\textrm{X}) \) の<span class="new-word">デジタル署名（digital signature）</span>と呼ぶ。
                     同時に \(\textrm{S}\) は任意の文字列 \( m \) 、任意の公開鍵 \( \textrm{pk}_\textrm{X} \) 、任意の文字列 \( \sigma \) 対する3変数関数 \( \textrm{verify}(m,\textrm{pk}_\textrm{X};\sigma) \) であって
-                </p>
-                \[
-                    \textrm{verify}(m,\textrm{pk}_\textrm{X};\sigma)=
-                    \begin{cases}
-                        1 &(\sigma=\textrm{sign}(m,\textrm{sk}_\textrm{X}))\\
-                        0 &(\sigma\neq\textrm{sign}(m,\textrm{sk}_\textrm{X}))\\
-                    \end{cases}
-                \]
+                </p>    
+                <div class="math-container">
+                    \[
+                        \textrm{verify}(m,\textrm{pk}_\textrm{X};\sigma)=
+                        \begin{cases}
+                            1 &(\sigma=\textrm{sign}(m,\textrm{sk}_\textrm{X}))\\
+                            0 &(\sigma\neq\textrm{sign}(m,\textrm{sk}_\textrm{X}))\\
+                        \end{cases}
+                    \]
+                </div>
                 <p>
                     を満たすものを任意の利用者に公開しておく。
+                    そして \(\textrm{S}\) は任意の利用者 \(\textrm{X}\) に対して、任意の文字列 \( m \) を送信するときは、自身の公開鍵 \( \textrm{pk}_\textrm{X} \) とデジタル署名 \( \sigma=\textrm{sign}(m,\textrm{sk}_\textrm{X}) \) を添えなければそれを受信しない旨を伝えておく。
+                    以上の手続きを準備しておけば、\(\textrm{S}\) は都度 \( \textrm{verify}(m,\textrm{pk}_\textrm{X};\sigma) \) を計算し、結果が \( 1 \) になれば送信者を信頼できると判定する。
+                    なお利用者は秘密鍵を手元で保管しておりこれをサーバーに送信することはない。
+                    もし悪意ある者が \( (m,\textrm{pk}_\textrm{X};\sigma) \) を不正に傍受した場合、彼にとって有益な情報は \( m \) のみであり、\(\textrm{X}\) になりすまそうとしても方程式 \( \sigma=\textrm{sign}(m,\textrm{sk}_\textrm{X}) \) を \( \textrm{sk}_\textrm{X} \) について解く必要があり困難である。
+                </p>
+                    
+                <p>
                     つまり \( \textrm{verify} \) は任意の文字列 \( m \) と秘密鍵 \( \textrm{sk}_\textrm{X} \) およびそのデジタル署名 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) に対して、\( \sigma:=\textrm{sign}(m,\textrm{sk}) \in \{0,1\}^N \) 、\( N \in \textbf{Z}_{\geq1}\) としておくと便利である。
                     なお \( N \) が大きいほどデジタル署名を当てずっぽうで当てられる確率は下がるが、情報量が大きくなって不便になるため、状況に応じて適宜最適化する必要がある。
                     
