@@ -61,10 +61,10 @@
                     同時に \(\textrm{S}\) は任意の公開鍵を任意の利用者に公開する。
                     次に \(\textrm{S}\) は任意の文字列 \( m \) と任意の秘密鍵 \( \textrm{sk}_\textrm{X} \) に対して文字列を返す2変数関数 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者に公開しておく。
                     関数値 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) を \( (m,\textrm{sk}_\textrm{X}) \) の<span class="new-word">デジタル署名（digital signature）</span>と呼ぶ。
-                    同時に \(\textrm{S}\) は任意の文字列 \( m \) 、 \( \sigma \) そして任意の公開鍵 \( \textrm{pk}_\textrm{X} \) に対する3変数関数 \( \textrm{verify}(m,\sigma,\textrm{pk}_\textrm{X}) \) であって
+                    同時に \(\textrm{S}\) は任意の文字列 \( m \) 、任意の公開鍵 \( \textrm{pk}_\textrm{X} \) 、任意の文字列 \( \sigma \) 対する3変数関数 \( \textrm{verify}(m,\textrm{pk}_\textrm{X};\sigma) \) であって
                 </p>
                 \[
-                    \textrm{verify}(m,\sigma,\textrm{pk}_\textrm{X})=
+                    \textrm{verify}(m,\textrm{pk}_\textrm{X};\sigma)=
                     \begin{cases}
                         1 &(\sigma=\textrm{sign}(m,\textrm{sk}_\textrm{X}))\\
                         0 &(\sigma\neq\textrm{sign}(m,\textrm{sk}_\textrm{X}))\\
