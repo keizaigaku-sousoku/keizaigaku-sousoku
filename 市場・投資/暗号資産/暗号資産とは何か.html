@@ -57,7 +57,7 @@
                 </p>
                 <p>
                     　サーバーは情報を受信したとき、送信者を信頼できるか判定するために、古典的だが現代でも通用する巧妙な暗号理論の手法を用いる。
-                    まずサーバー \(\textrm{S}\) は任意の利用者 \(\textrm{A}\) に対して、一方に<span class="new-word">秘密鍵（secret key）</span>、もう一方に<span class="new-word">公開鍵（public key）</span>と名前をつけた \(\textrm{A}\) 固有の異なる文字列 \( \textrm{sk}_\textrm{A} \)、\( \textrm{pk}_\textrm{A} \) を送信しておく。
+                    まずサーバー \(\textrm{S}\) は任意の利用者 \(\textrm{X}\) に対して、一方に<span class="new-word">秘密鍵（secret key）</span>、もう一方に<span class="new-word">公開鍵（public key）</span>と名前をつけた \(\textrm{A}\) 固有の相異なる文字列 \( \textrm{sk}_\textrm{X} \)、\( \textrm{pk}_\textrm{X} \) を送信しておく。
                     同時に \(\textrm{S}\) は任意の公開鍵を任意の利用者に公開する。
                     次に \(\textrm{S}\) は任意の文字列 \( m \) と任意の秘密鍵 \( \textrm{sk}_\textrm{X} \) に対して文字列を返す2変数関数 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者に公開しておく。
                     関数値 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) を \( (m,\textrm{sk}_\textrm{X}) \) の<span class="new-word">デジタル署名（digital signature）</span>と呼ぶ。
@@ -72,8 +72,7 @@
                 \]
                 <p>
                     を満たすものを任意の利用者に公開しておく。
-                    つまり \( \textrm{verify} \) は
-                    任意の文字列 \( m \) と秘密鍵 \( \textrm{sk} \) に対して、\( \sigma:=\textrm{sign}(m,\textrm{sk}) \in \{0,1\}^N \) 、\( N \in \textbf{Z}_{\geq1}\) としておくと便利である。
+                    つまり \( \textrm{verify} \) は任意の文字列 \( m \) と秘密鍵 \( \textrm{sk}_\textrm{X} \) およびそのデジタル署名 \( \textrm{sign}(m,\textrm{sk}_\textrm{X}) \) に対して、\( \sigma:=\textrm{sign}(m,\textrm{sk}) \in \{0,1\}^N \) 、\( N \in \textbf{Z}_{\geq1}\) としておくと便利である。
                     なお \( N \) が大きいほどデジタル署名を当てずっぽうで当てられる確率は下がるが、情報量が大きくなって不便になるため、状況に応じて適宜最適化する必要がある。
                     
                     また
