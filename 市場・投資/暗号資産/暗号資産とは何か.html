@@ -149,9 +149,9 @@
                     次に台帳への記帳が \( L \in \textbf{Z}_{\geq1} \) 回（行）だけ行われたとき、希望する利用者は台帳を1つの文字列 \( \textrm{ledger} \) とみなしその文末に任意の文字列 \( m \) を追加して \( \textrm{ledger} \_ m \) とし \( \textrm{hash} \) に入力する。
                     （ここで " \( \_ \) " は文をつなぐための便宜的な装飾にすぎない。）
                     このような希望者を<span class="new-word">マイナー（miner）</span>と呼ぶ。
-                    任意の利用者にはあらかじめある \( T \leq N \) が共有されており、マイナーたちはある文字列 \( m \) で \( \textrm{hash}(\textrm{ledger}_m) &lt; T \) なるものを無作為に探す。
+                    任意の利用者にはあらかじめある \( T \leq N \) が共有されており、マイナーたちはある文字列 \( m \) で \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) なるものを無作為に探す。
                     明らかに \( m \) は一意でないが、ともかくマイナーたちの内で最初に \( m \) を見つけた者はそれを \( \textrm{ledger} \) とともに公開する。
-                    もし任意の利用者が \( \textrm{ledger} \) を信頼し（自身の記帳があれば正しいことを確認し）、 \( \textrm{hash}(\textrm{ledger}_m) &lt; T \) であることが確かめられれば、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>と呼ぶ。
+                    もし任意の利用者が \( \textrm{ledger} \) を信頼し（自身の記帳があれば正しいことを確認し）、 \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) であることが確かめられれば、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>と呼ぶ。
                     また \( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
                 </p>
                 <!--
