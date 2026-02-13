@@ -150,9 +150,11 @@
                     （ここで " \( \_ \) " は文をつなぐための便宜的な装飾にすぎない。）
                     このような希望者を<span class="new-word">マイナー（miner）</span>と呼ぶ。
                     任意の利用者にはあらかじめある \( T \leq N \) が共有されており、マイナーたちはある文字列 \( m \) で \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) なるものを無作為に探す。
-                    明らかに \( m \) は一意でないが、ともかくマイナーたちの内で最初に \( m \) を見つけた者はそれを \( \textrm{ledger} \) とともに公開する。
-                    もし任意の利用者が \( \textrm{ledger} \) を信頼し（自身の記帳があれば正しいことを確認し）、 \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) であることが確かめられれば、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>と呼ぶ。
-                    また \( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
+                    このような総当たりの計算を<span class="new-word">マイニング（mining）</span>と呼ぶ。
+                    明らかに \( m \) は一意でないが、ともかく一定の時間をかけてマイナーたちの内で最初に \( m \) を見つけた者はそれを \( \textrm{ledger} \) とともに公開する。
+                    任意の利用者は \( \textrm{ledger} \) を閲覧し、 \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) であること、また自身の記帳があれば改竄されていないことを確かめる。
+                    この確認が終わったとき、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>、\( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
+                    
                 </p>
                 <!--
                 <p>
