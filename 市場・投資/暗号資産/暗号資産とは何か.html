@@ -154,6 +154,7 @@
                     任意の利用者は \( \textrm{ledger} \) を閲覧し、 \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) であること、また自身の記帳があれば改竄されていないことを確かめる。
                     この確認が終わったとき、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>、\( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
                     続けて記帳をする場合は新たな台帳を用意し、その冒頭（ \( 0 \) 行目）に上記のPoWを記帳しておき、やはり \( L \) 回（行）だけ記帳を行い、PoWを見つける。
+                    なお最初の台帳 \( \textrm{ledger} \) に対するPoWである \( \textrm{PoW} \) が新たな台帳 \( \textrm{ledger'} \) の冒頭に記帳されているので、今度のPoWは \( \textrm{PoW} \_ \textrm{ledger'} \) に対するものである。
                     もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq1} \) 番目の台帳のPoW、\( n+1 \) 番目の台帳、そのPoWの組 \( ( \textrm{PoW}_n, \textrm{ledger}_{n+1}, \textrm{PoW}_{n+1} ) \) は "1本の鎖" として
                 </p>
                 <div class="math-container">
