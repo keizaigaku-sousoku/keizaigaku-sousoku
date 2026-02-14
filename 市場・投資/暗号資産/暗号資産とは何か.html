@@ -131,8 +131,8 @@
                     このとき、悪意ある者が台帳を改竄する可能性が生じる。
                     言うまでもなく公開鍵暗号方式によって \( \textrm{A} \) 以外の者が架空の記帳を行えないことは担保されている。
                     しかし例えば \( \textrm{Y} \) に悪意がある場合、公開されている \( m \) に同じく公開されている \( \sigma \) を添えて \( \textrm{A} \) へ送信すれば、それは支払をすべき \( \textrm{X} \) による記帳ではないにも関わらず台帳に記帳されてしまう。
-                    これを回避するには、\( \textrm{X} \) が記帳するとき \( m \) の文頭に固有の整数 \( k \in \textbf{Z}_{\geq1} \) を添えて \( m_k:= \) " \( k \_ m \) " とすればよい。
-                    （ここで " \( \_ \) " は文をつなぐための便宜的な装飾にすぎない。）
+                    これを回避するには、\( \textrm{X} \) が記帳するとき \( m \) の文頭に固有の整数 \( k \in \textbf{Z}_{\geq1} \) を添えて \( m_k:= \) " \( k:m \) " とすればよい。
+                    （ここで " \( : \) " は文をつなぐための便宜的な装飾にすぎない。）
                     具体的には台帳における \( k \) 番目（行目）の記帳では \( k \) を添えれば十分である。
                     すると公開されるのは \( m_k \) と \( \sigma_k:=\textrm{sign}(m_k,\textrm{sk}_\textrm{X}) \) であり、もし悪意ある者が \( m_l \) 、\( l\neq k \) を記帳しようとしても、彼は \( \textrm{sk}_\textrm{X} \) を知らず \( \sigma_l:=\textrm{sign}(m_l,\textrm{sk}_\textrm{X}) \) を生成できないので台帳を改竄できない。
                     上記の仕組みにおいて、台帳が \( \textrm{A} \) 以外の悪意ある者から改竄を受ける見込みは、サーバーが台帳を死守するときのそれよりも十分に低くなる。
@@ -145,27 +145,27 @@
                     このように運営される台帳を<span class="new-word">分散型台帳（distributed ledger）</span>と呼ぶ。
                     そして以下の手順によって改竄されていないことを最も信頼できる台帳を決め、それを真の台帳として扱う。
                     まず任意の文字列に対して \( \{ 1,2,3,...,2^N \} \) 、\( N \in \textbf{Z}_{\geq1} \) の元を返す関数 \( \textrm{hash} \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者で共有しておく。
-                    次に台帳への記帳が \( L \in \textbf{Z}_{\geq1} \) 回（行）だけ行われたとき、希望する利用者は台帳を1つの文字列 \( \textrm{ledger} \) とみなしその文末に任意の文字列 \( m \) を追加して \( \textrm{ledger} \_ m \) とし \( \textrm{hash} \) に入力する。
-                    （ここで " \( \_ \) " は文をつなぐための便宜的な装飾にすぎない。）
+                    次に台帳への記帳が \( L \in \textbf{Z}_{\geq1} \) 回（行）だけ行われたとき、希望する利用者は台帳を1つの文字列 \( \textrm{ledger} \) とみなしその文末に任意の文字列 \( m \) を追加して \( \textrm{ledger} : m \) とし \( \textrm{hash} \) に入力する。
+                    （ここで " \( : \) " は文をつなぐための便宜的な装飾にすぎない。）
                     このような希望者を<span class="new-word">マイナー（miner）</span>と呼ぶ。
-                    任意の利用者にはあらかじめある \( T \leq N \) が共有されており、マイナーたちはある文字列 \( m \) で \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) なるものを無作為に探す。
+                    任意の利用者にはあらかじめある \( T \leq N \) が共有されており、マイナーたちはある文字列 \( m \) で \( \textrm{hash}(\textrm{ledger} : m) &lt; T \) なるものを無作為に探す。
                     このような総当たりの計算を<span class="new-word">マイニング（mining）</span>と呼ぶ。
                     明らかに \( m \) は一意でないが、ともかく一定の時間をかけてマイナーたちの内で最初に \( m \) を見つけた者はそれを \( \textrm{ledger} \) とともに公開する。
-                    任意の利用者は \( \textrm{ledger} \) を閲覧し、 \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) であること、また自身の記帳があれば改竄されていないことを確かめる。
+                    任意の利用者は \( \textrm{ledger} \) を閲覧し、 \( \textrm{hash}(\textrm{ledger} : m) &lt; T \) であること、また自身の記帳があれば改竄されていないことを確かめる。
                     この確認が終わったとき、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>、\( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
                     続けて記帳をする場合は新たな台帳を用意し、その冒頭（ \( 0 \) 行目）に上記のPoWを記帳しておき、やはり \( L \) 回（行）だけ記帳を行い、PoWを見つける。
                     新しい台帳は最初の台帳のPoWを含んでいるため、今度見つけるべきPoWは最初の台帳に依存する点に注意が必要である。
-                    このことを明示するために、最初の台帳のPoWを \( \textrm{PoW} \) 、新しい台帳の \( \textrm{PoW} \) （1行目から \( L \) 行目）を \( \textrm{ledger}^\prime \) とおいたとき、マイニングの対象となる文字列を \( \textrm{PoW} \_ \textrm{ledger}^\prime \) と表す。
-                    もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq2} \) 番目の台帳とそのPoWの組 \( ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \) は "1本の鎖" として
+                    このことを明示するために、最初の台帳のPoWを \( \textrm{PoW} \) 、新しい台帳の \( \textrm{PoW} \) （1行目から \( L \) 行目）を \( \textrm{ledger}^\prime \) とおいたとき、マイニングの対象となる文字列を \( \textrm{PoW} : \textrm{ledger}^\prime \) と表す。
+                    もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq2} \) 番目の台帳とそのPoWの組 \( ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \) は "1本の鎖" として
                 </p>
                 <div class="math-container">
                     \[
-                        ( \textrm{ledger}_1, \textrm{PoW}_1 ) \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_1 \_ \textrm{ledger}_2, \textrm{PoW}_2 ) \overset{\textrm{mining}}{\rightarrow} \cdots \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \overset{\textrm{mining}}{\rightarrow} \cdots
+                        ( \textrm{ledger}_1, \textrm{PoW}_1 ) \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_1 : \textrm{ledger}_2, \textrm{PoW}_2 ) \overset{\textrm{mining}}{\rightarrow} \cdots \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \overset{\textrm{mining}}{\rightarrow} \cdots
                     \]
                 </div>
                 <p>
                     を生成する。
-                    各組 \( ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \) を<span class="new-word">ブロック（block）</span>、全体を<span class="new-word">ブロックチェーン（blockchain）</span>と呼ぶ。
+                    各組 \( ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \) を<span class="new-word">ブロック（block）</span>、全体を<span class="new-word">ブロックチェーン（blockchain）</span>と呼ぶ。
                     ここで \( \textrm{PoW}_{n+1} \) は \( \textrm{PoW}_n \) と \( \textrm{ledger}_n \) に対するPoWであるから、もし悪意ある者が \( n \) 番目のブロックを改竄するためには、\( n \) 番目以降のすべてのPoWを1人でマイニングしなければならない。
                     しかも他のマイナーの隙を窺って最新の台帳分までPoWを見つければよいだけでなく、それ以後の台帳に対するPoWを1人で他のマイナーよりも早く見つけ続けなければならない。
                     この意味でブロックチェーンはいくらでも改竄され得るものであるが、更新され続けている最長のブロックチェーンはもっとも信憑性が高い。
