@@ -154,17 +154,18 @@
                     任意の利用者は \( \textrm{ledger} \) を閲覧し、 \( \textrm{hash}(\textrm{ledger} \_ m) &lt; T \) であること、また自身の記帳があれば改竄されていないことを確かめる。
                     この確認が終わったとき、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>、\( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
                     続けて記帳をする場合は新たな台帳を用意し、その冒頭（ \( 0 \) 行目）に上記のPoWを記帳しておき、やはり \( L \) 回（行）だけ記帳を行い、PoWを見つける。
-                    なお最初の台帳 \( \textrm{ledger} \) に対するPoWである \( \textrm{PoW} \) が新たな台帳 \( \textrm{ledger'} \) の冒頭に記帳されているので、今度のPoWは \( \textrm{PoW} \_ \textrm{ledger'} \) に対するものである。
-                    もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq1} \) 番目の台帳のPoW、\( n+1 \) 番目の台帳、そのPoWの組 \( ( \textrm{PoW}_n, \textrm{ledger}_{n+1}, \textrm{PoW}_{n+1} ) \) は "1本の鎖" として
+                    新しい台帳は最初の台帳のPoWを含んでいるため、今度見つけるべきPoWは最初の台帳に依存する点に注意が必要である。
+                    このことを明示するために、最初の台帳のPoWを \( \textrm{PoW} \) 、新しい台帳を \( \textrm{ledger}^\prime \) とおいたとき、マイニングの対象となる文字列を \( \textrm{PoW} \_ \textrm{ledger}^\prime \) と表す。
+                    もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq2} \) 番目の台帳とそのPoWの組 \( ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \) は "1本の鎖" として
                 </p>
                 <div class="math-container">
                     \[
-                        ( \textrm{ledger}_1, \textrm{PoW}_1 ) \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_1, \textrm{ledger}_2, \textrm{PoW}_2 ) \overset{\textrm{mining}}{\rightarrow} \cdots \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_n, \textrm{ledger}_{n+1}, \textrm{PoW}_{n+1} ) \overset{\textrm{mining}}{\rightarrow} \cdots
+                        ( \textrm{ledger}_1, \textrm{PoW}_1 ) \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_1 \_ \textrm{ledger}_2, \textrm{PoW}_2 ) \overset{\textrm{mining}}{\rightarrow} \cdots \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \overset{\textrm{mining}}{\rightarrow} \cdots
                     \]
                 </div>
                 <p>
                     を生成する。
-                    各組 \( ( \textrm{PoW}_n, \textrm{ledger}_{n+1}, \textrm{PoW}_{n+1} ) \) を<span class="new-word">ブロック（block）</span>、全体を<span class="new-word">ブロックチェーン（blockchain）</span>と呼ぶ。
+                    各組 \( ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \) を<span class="new-word">ブロック（block）</span>、全体を<span class="new-word">ブロックチェーン（blockchain）</span>と呼ぶ。
                     ここで \( \textrm{PoW}_{n+1} \) は \( \textrm{PoW}_n \) と \( \textrm{ledger}_n \) に対するPoWであるから、もし悪意ある者が \( n \) 番目のブロックを改竄するためには、\( n \) 番目以降のすべてのPoWを1人でマイニングしなければならない。
                     しかも他のマイナーの隙を窺って最新の台帳分までPoWを見つければよいだけでなく、それ以後の台帳に対するPoWを1人で他のマイナーよりも早く見つけ続けなければならない。
                     この意味でブロックチェーンはいくらでも改竄され得るものであるが、更新され続けている最長のブロックチェーンはもっとも信憑性が高い。
