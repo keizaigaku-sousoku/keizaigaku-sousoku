@@ -156,7 +156,7 @@
                     続けて記帳をする場合は新たな台帳を用意し、その冒頭（ \( 0 \) 行目）に上記のPoWを記帳しておき、やはり \( L \) 回（行）だけ記帳を行い、PoWを見つける。
                     新しい台帳は最初の台帳のPoWを含んでいるため、今度見つけるべきPoWは最初の台帳に依存する点に注意が必要である。
                     このことを明示するために、最初の台帳のPoWを \( \textrm{PoW} \) 、新しい台帳の \( \textrm{PoW} \) 以外の部分（1行目から \( L \) 行目）を \( \textrm{ledger}^\prime \) とおいたとき、マイニングの対象となる文字列を \( \textrm{PoW} : \textrm{ledger}^\prime \) と表す。
-                    もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq2} \) 番目の台帳とそのPoWの組 \( ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \) は "1本の鎖" として
+                    もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの対 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq2} \) 番目の台帳とそのPoWの組 \( ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \) は "1本の鎖" として
                 </p>
                 <div class="math-container">
                     \[
@@ -165,10 +165,11 @@
                 </div>
                 <p>
                     を生成する。
-                    各組 \( ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \) を<span class="new-word">ブロック（block）</span>、全体を<span class="new-word">ブロックチェーン（blockchain）</span>と呼ぶ。
-                    ここで \( \textrm{PoW}_{n+1} \) は \( \textrm{PoW}_n \) と \( \textrm{ledger}_n \) に対するPoWであるから、もし悪意ある者が \( n \) 番目のブロックを改竄するためには、\( n \) 番目以降のすべてのPoWを1人でマイニングしなければならない。
+                    各対 \( ( \textrm{PoW}_{n-1} : \textrm{ledger}_n, \textrm{PoW}_n ) \) を<span class="new-word">ブロック（block）</span>、全体を<span class="new-word">ブロックチェーン（blockchain）</span>、それに属する台帳の数をブロックチェーンの<span class="new-word">長さ（lenght）</span>と呼ぶ。
+                    ここで \( \textrm{PoW}_n \) は \( \textrm{PoW}_{n-1} \) と \( \textrm{ledger}_n \) に対するPoWであるから、もし悪意ある者がいて \( n \) 番目のブロックを改竄するならば、\( n \) 番目以降のすべてのPoWを1人でマイニングしなければならない。
                     しかも他のマイナーの隙を窺って最新の台帳分までPoWを見つければよいだけでなく、それ以後の台帳に対するPoWを1人で他のマイナーよりも早く見つけ続けなければならない。
-                    この意味でブロックチェーンはいくらでも改竄され得るものであるが、更新され続けている最長のブロックチェーンはもっとも信憑性が高い。
+                    したがって悪意ある者のマイニングの能力が他のマイナーのそれと比べて圧倒的に高くない限り、改竄されたブロックチェーンは改竄されていないものよりもいずれ長さが短くなる。
+                    この意味でブロックチェーンはいくらでも改竄され、異なるブロックチェーンが複数生成され得るが、長さが最大のブロックチェーンはもっとも信憑性が高い。
                 </p>
                 <!--
                 <p>
