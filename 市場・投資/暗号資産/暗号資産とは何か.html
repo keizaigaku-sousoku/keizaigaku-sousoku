@@ -44,7 +44,7 @@
                     次に \(\textrm{X}\) は任意の文字列 \( m \) と任意の秘密鍵 \( \textrm{sk}_\textrm{Y} \) に対して文字列を返す2変数関数 \( \textrm{sign}(m,\textrm{sk}_\textrm{Y}) \) であって、引数から関数値を容易に求められるが、関数値から引数を推定することが困難なものを任意の利用者に公開しておく。
                     関数値 \( \textrm{sign}(m,\textrm{sk}_\textrm{Y}) \) を \( (m,\textrm{sk}_\textrm{Y}) \) の<span class="new-word">デジタル署名（digital signature）</span>と呼ぶ。
                     同時に \(\textrm{X}\) は任意の文字列 \( m \) 、任意の公開鍵 \( \textrm{pk}_\textrm{Y} \) 、任意の文字列 \( \sigma \) 対する3変数関数 \( \textrm{verify}(m,\textrm{pk}_\textrm{Y};\sigma) \) であって
-                </p>    
+                </p>
                 <div class="math-container">
                     \[
                         \textrm{verify}(m,\textrm{pk}_\textrm{Y};\sigma)=
@@ -157,9 +157,11 @@
                     続けて記帳をする場合は新たな台帳を用意し、その冒頭（ \( 0 \) 行目）に上記のPoWを記帳しておき、やはり \( L \) 回（行）だけ記帳を行い、PoWを見つける。
                     もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq1} \) 番目の台帳のPoW、\( n+1 \) 番目の台帳、そのPoWの組 \( ( \textrm{PoW}_n, \textrm{ledger}_{n+1}, \textrm{PoW}_{n+1} ) \) は "1本の鎖" として
                 </p>
-                \[
-                    ( \textrm{ledger}_1, \textrm{PoW}_1 ) \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_1, \textrm{ledger}_2, \textrm{PoW}_2 ) \overset{\textrm{mining}}{\rightarrow} \cdots
-                \]
+                <div class="math-container">
+                    \[
+                        ( \textrm{ledger}_1, \textrm{PoW}_1 ) \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_1, \textrm{ledger}_2, \textrm{PoW}_2 ) \overset{\textrm{mining}}{\rightarrow} \cdots \overset{\textrm{mining}}{\rightarrow} ( \textrm{PoW}_n, \textrm{ledger}_{n+1}, \textrm{PoW}_{n+1} ) \overset{\textrm{mining}}{\rightarrow} \cdots
+                    \]
+                </div>
                 <p>
                     を生成する。
                 </p>
