@@ -155,7 +155,7 @@
                     この確認が終わったとき、\( m \) を \( \textrm{ledger} \) に対する<span class="new-word">PoW（proof of work）</span>、\( T \) をその<span class="new-word">ターゲット（target）</span>と呼ぶ。
                     続けて記帳をする場合は新たな台帳を用意し、その冒頭（ \( 0 \) 行目）に上記のPoWを記帳しておき、やはり \( L \) 回（行）だけ記帳を行い、PoWを見つける。
                     新しい台帳は最初の台帳のPoWを含んでいるため、今度見つけるべきPoWは最初の台帳に依存する点に注意が必要である。
-                    このことを明示するために、最初の台帳のPoWを \( \textrm{PoW} \) 、新しい台帳を \( \textrm{ledger}^\prime \) とおいたとき、マイニングの対象となる文字列を \( \textrm{PoW} \_ \textrm{ledger}^\prime \) と表す。
+                    このことを明示するために、最初の台帳のPoWを \( \textrm{PoW} \) 、新しい台帳の \( \textrm{PoW} \) （1行目から \( L \) 行目）を \( \textrm{ledger}^\prime \) とおいたとき、マイニングの対象となる文字列を \( \textrm{PoW} \_ \textrm{ledger}^\prime \) と表す。
                     もしこのような手続きを繰り返した場合、最初の台帳とそのPoWの組 \( ( \textrm{ledger}_1, \textrm{PoW}_1 ) \) および \( n \in \textbf{Z}_{\geq2} \) 番目の台帳とそのPoWの組 \( ( \textrm{PoW}_{n-1} \_ \textrm{ledger}_n, \textrm{PoW}_n ) \) は "1本の鎖" として
                 </p>
                 <div class="math-container">
