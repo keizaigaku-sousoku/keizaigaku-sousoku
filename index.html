@@ -9,28 +9,131 @@
         <meta name="author" content="経済学総則">
     
         <!--<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP&family=Noto+Serif+JP:wght@400;700&family=Kaisei+Opti:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">-->
-        <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Cinzel&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="共通/stylesheet_footer.css">
     
         <style>
             html, body {
+                overflow-x: hidden;
                 margin: 0;
                 padding: 0;
-                overflow-x: hidden;
-                font-family: 'Hina Mincho', serif;
+                font-family: 'Hina Mincho', serif;                
             }
     
             body {
+                text-align: center;
                 font-size: 16px;
+                color: #4e4e4e;
+            }
+
+            .header-box {
+                min-height: 100svh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            header {
+                margin: 50px 0px;
+                text-align: center;
+                font-size: 30px;
+                font-family: 'Cinzel';
+                
+            }
+
+            .lead-text-box {
+                margin: 30px 0px;
+                line-height: 3;
+            }
+
+            .title-box {
+                margin: 30px 0px;
+                letter-spacing: 5px;
+                font-size: 25px;
+            }
+
+            .chapter-box {
+                width: 500px;
+                margin: 100px auto;
+                text-align: justify;
+                line-height: 2;
+            }
+
+            .chapter-box-title {
+                margin: 30px 0px;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            .chapter-box:hover .chapter-box-title {
+                color: #219dd0;
+                transition: color 0.3s ease;
+            }
+
+            .chapter-box-title {
+                transition: color 0.3s ease;
             }
     
         </style>
     </head>
     <body>
-        あいうえお
-        No Fair Value, Just Bid and Ask.
-        市場、経済、財務
+        <div class='header-box'>
+            <header>
+              No fair value, just bid and ask.
+            </header>
+            <div class='lead-text-box'>
+            モノのフェア・バリューは存在するか<br>
+            存在するとして、それは一意か<br>
+            一意であるとして、それはいつ実現するか<br>
+            そのようなものはない、という考えも悪くないでしょう<br>
+            <p style="color: #219dd0;">経済学総則</p><br>
+            </div>
+        </div>
+        <div class='title-box'>
+            -basics-
+        </div>
+        <div class='chapter-box'>
+            <div class='chapter-box-title'>
+                市場・投資
+            </div>
+            経済学という大きな理論を展開するための舞台を明示的に定義することは、経済学をよく理解する上で大きな手助けとなる。
+            またそこで取引される基本的なモノの仕組みを学ぶことは、経済学の数多くの概念を正確に把握する上で必要不可欠である。
+            そしてそれらのモノを適切に取引し管理する方法を学ぶことは、経済学によって豊かな生活を送るために重要である。
+        </div>
+        <div class='chapter-box'>
+            <div class='chapter-box-title'>
+                ミクロ・マクロ経済学
+            </div>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </div>
+        <div class='chapter-box'>
+            <div class='chapter-box-title'>
+                財務・ファイナンス理論
+            </div>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </div>
+        <div class='title-box'>
+            -appendix-
+        </div>
+        <div class='chapter-box'>
+            <div class='chapter-box-title'>
+                数学
+            </div>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </div>
+        <div class='title-box'>
+            -notations-
+        </div>
+        <div class='chapter-box'>
+            <div class='chapter-box-title'>
+                記号一覧
+            </div>
+            記号とは数学的対象を表すための文字に過ぎず、それ以上の何の意味もない。
+            ただし用いられる文字にはある程度の由来があり、また多くの人々が便利に使えるような配慮がある。
+            見慣れない記号であっても、物は試しで使ってみるのが良い。
+        </div>
     </body>
 </html>
