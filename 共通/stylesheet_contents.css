@@ -472,20 +472,17 @@ tr:nth-child(even) td {
 .nav-menu a {
     display: block;
     margin: 5px 0;
-    padding: 5px;/* 24px;*/
+    padding: 5px;
     color: #219dd0;
     text-decoration: none;
-    /*font-size: 13px;*/
-    /*letter-spacing: 0.4px;*/
-    /*line-height: 1.4;*/
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .nav-menu a:hover {
     background-color: #219dd0;
     color: #fff;
-    transform: translateX(10px);
+    transform: transform: scale(1.05);
 }
 
 .nav-divider {
