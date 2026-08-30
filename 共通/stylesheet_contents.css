@@ -456,7 +456,6 @@ tr:nth-child(even) td {
     background-color: #ffffff80;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
     display: flex;
@@ -484,7 +483,6 @@ tr:nth-child(even) td {
     /*letter-spacing: 0.4px;*/
     /*line-height: 1.4;*/
     text-align: center;
-    border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
