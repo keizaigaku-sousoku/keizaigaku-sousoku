@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP:wght@400;700&family=Kaisei+Opti&family=Tangerine:wght@400;700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Serif+Japanese&family=Cinzel&display=swap');
 
 * {
     box-sizing: border-box;
@@ -12,11 +12,11 @@ html, body {
     position: relative;
     overflow-x: hidden;
     font-size: 15px;
-    background-color: #f5f5f7;
+    background-color: #f3f5fa;
 }
 
 body, p, a, .part, .theorem-tile, .proof, .comment-box {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Hina Mincho', serif;
 }
 
 p {
