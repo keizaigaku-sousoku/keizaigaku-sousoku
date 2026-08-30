@@ -480,7 +480,7 @@ tr:nth-child(even) td {
 .nav-menu a:hover {
     background-color: #219dd0;
     color: #fff;
-    transform: transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .nav-divider {
