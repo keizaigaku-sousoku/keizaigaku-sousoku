@@ -23,11 +23,11 @@ p {
     text-align: justify;
     font-size: 15px;
     line-height: 2;
-    color: #4e4e4e;;
+    /*color: #4e4e4e;*/
 }
 
 a, a:visited {
-    color: #4e4e4e;;
+    /*color: #4e4e4e;*/;
 }
 
 .new-word {
@@ -88,7 +88,7 @@ header h2 {
     margin: 2rem auto;
     text-align: center;
     font-size: 16px;
-    color: #4e4e4e;
+    /*color: #4e4e4e;*/
 }
 
 .toc-wrapper {
