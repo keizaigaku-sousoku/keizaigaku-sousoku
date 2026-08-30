@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Serif+Japanese&family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Serif+Japanese&family=Cinzel&family=Tangerine&display=swap');
 
 * {
     box-sizing: border-box;
@@ -364,7 +364,7 @@ main {
 .comment-box-title::before {
     content: "Column.    ";
     color: #219dd0;
-    font-family: 'Cinzal', serif;
+    font-family: 'Tangerine', serif;
     font-size: 40px;
     font-weight: 700;
 }
