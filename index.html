@@ -59,10 +59,29 @@
             .chapter-box {
                 width: 500px;
                 margin: 100px auto;
+                position: relative;
+                isolation: isolate;
                 text-align: justify;
                 line-height: 2;
             }
-
+            
+            .chapter-box::before {
+                content: "";
+                position: absolute;
+                top: -20px;
+                right: -30px;
+                width: 260px;
+                height: calc(100% + 40px);
+                background-image: var(--chapter-bg);
+                background-size: cover;
+                background-position: center;
+                opacity: 0.45;
+                filter: grayscale(30%);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 55%);
+                mask-image: linear-gradient(to right, transparent, black 55%);
+                z-index: -1;
+            }
+            
             .chapter-box-title {
                 margin: 30px 0px;
                 text-align: center;
@@ -97,6 +116,8 @@
             -basics-
         </div>
         <a href="分野/市場・投資.html" style="text-decoration: none; color: inherit;">
+            <div class='chapter-box' style="--chapter-bg: url('images/image_市場・投資.jpg');">
+            </div>
             <div class='chapter-box'>
                 <div class='chapter-box-title'>
                     市場・投資
