@@ -392,6 +392,10 @@ tr:nth-child(even) td {
 }
 
 /* Math */
+mjx-container {
+    font-size: 130% !important;
+}
+
 .math-container {
     overflow-x: auto;
     overflow-y: hidden;
