@@ -103,7 +103,7 @@ header h2 {
     bottom: 0;
     left: 240px;
     width: 1.5px;
-    background-color: #1e2f5b;
+    background-color: #219dd0;
 }
 
 .toc-section {
@@ -196,7 +196,7 @@ main {
 }
 
 .toc-container a:hover {
-    background-color: #1e2f5b;
+    background-color: #219dd0;
     color: #ffffff;
     transform: scale(1.05);
 }
@@ -232,7 +232,7 @@ main {
     display: block;
     width: 200px;
     height: 1.5px;
-    background-color: #1e2f5b;
+    background-color: #219dd0;
     margin: 6px auto 0;
 }
 
@@ -246,7 +246,7 @@ main {
     display: block;
     width: 60px;
     height: 1.5px;
-    background-color: #1e2f5b;
+    background-color: #219dd0;
     margin: 6px auto 0;
 }
 
@@ -268,7 +268,7 @@ main {
 /*
 .theorem-tile .title {
     display: inline-block;
-    background-color: #1e2f5b;
+    background-color: #219dd0;
     color: white;
     font-weight: bold;
     padding: 6px 30px;
@@ -281,11 +281,11 @@ main {
 .theorem-tile .title {
     display: inline-block;
     font-weight: bold;
-    color: #1e2f5b;
+    color: #219dd0;
     padding: 0px 10px;
     line-height: 1.5;
-    border-top: 1px solid #1e2f5b;
-    border-bottom: 1px solid #1e2f5b;
+    border-top: 1px solid #219dd0;
+    border-bottom: 1px solid #219dd0;
 }
 
 .proof {
@@ -434,7 +434,7 @@ tr:nth-child(even) td {
     top: 50%;
     width: 22px;
     height: 2px;
-    background-color: #1e2f5b;
+    background-color: #219dd0;
     border-radius: 1px;
     transform-origin: center;
     transition: all 0.3s ease;
@@ -477,7 +477,7 @@ tr:nth-child(even) td {
     display: block;
     margin: 5px 0;
     padding: 5px;/* 24px;*/
-    color: #1e2f5b;
+    color: #219dd0;
     text-decoration: none;
     /*font-size: 13px;*/
     /*letter-spacing: 0.4px;*/
@@ -487,14 +487,14 @@ tr:nth-child(even) td {
 }
 
 .nav-menu a:hover {
-    background-color: #1e2f5b;
+    background-color: #219dd0;
     color: #fff;
     transform: translateX(10px);
 }
 
 .nav-divider {
   height: 1px;
-  background-color: #1e2f5b;
+  background-color: #219dd0;
   width: 100%;
   margin: 12px auto;
   border: none;
