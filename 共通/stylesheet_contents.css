@@ -23,34 +23,34 @@ p {
     text-align: justify;
     font-size: 15px;
     line-height: 2;
-    color: #1d1d1f;
+    color: #4e4e4e;;
 }
 
 a, a:visited {
-    color: #1d1d1f;
+    color: #4e4e4e;;
 }
 
 .new-word {
-    color: #6967ab;
+    color: #219dd0;
     font-weight: 700;
 }
 
 h1, h2 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Hina Mincho', serif;
 }
 
 h2 {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
-    color: #6967ab;
+    color: #219dd0;
 }
 
 h3 {
     position: relative;
     margin: 20px 50px;
     font-size: 15px;
-    color: #1e2f5b;
+    color: #219dd0;
 }
 
 h4 {
@@ -65,9 +65,9 @@ h4 {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: #1e2f5b;
+    color: #219dd0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    border-left: 5px solid #1e2f5b;
+    border-left: 5px solid #219dd0;
 }
 
 /* Header */
