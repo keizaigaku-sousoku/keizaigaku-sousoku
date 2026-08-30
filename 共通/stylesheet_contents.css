@@ -128,13 +128,13 @@ header h2 {
     font-size: 40px;
     font-weight: 700;
     display: inline-block;
-    font-family: 'Marcellus', serif;
+    font-family: 'Cinzel', serif;
 }
 
 .toc-left {
     text-align: right;
     font-weight: 700;
-    color: #6967ab;
+    color: #219dd0;
     position: relative;
     padding: 10px;
     margin: 5px 0;
@@ -165,7 +165,7 @@ header h2 {
 }
 
 .toc-right a:hover {
-    background-color: #6967ab;
+    background-color: #219dd0;
     color: #ffffff;
     transform: scale(1.05);
 }
@@ -204,7 +204,7 @@ main {
 /* Part block */
 .part {
     width: 500px;
-    color: #6967ab;
+    color: #219dd0;
     margin: 20px;
     padding: 20px;
     border-radius: 12px;
@@ -296,7 +296,7 @@ main {
 .proof::before {
     content: "証明";
     font-weight: bold;
-    color: #6967ab;
+    color: #219dd0;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -306,14 +306,14 @@ main {
     display: block;
     text-align: right;
     font-size: 15px;
-    color: #6967ab;
+    color: #219dd0;
     margin-top: 10px;
 }
 
 
 .proof .title {
     font-weight: bold;
-    color: #6967ab;
+    color: #219dd0;
     margin-bottom: 10px;
     text-align: left;
 }
@@ -322,7 +322,7 @@ main {
     display: block;
     text-align: right;
     font-size: 15px;
-    color: #6967ab;
+    color: #219dd0;
     margin-top: 10px;
 }
 
@@ -336,7 +336,7 @@ main {
   content: "";
   font-family: 'Georgia', serif;
   font-size: 80px;
-  color: #6967ab;
+  color: #219dd0;
   display: block;
   line-height: 1;
   width: 100%;
@@ -359,14 +359,14 @@ main {
 }
 
 .comment-box-title {
-    color: #6967ab;
+    color: #219dd0;
     font-weight: 700;
     font-size: 20px;
 }
 
 .comment-box-title::before {
     content: "Column.    ";
-    color: #6967ab;
+    color: #219dd0;
     font-family: 'Great Vibes', 'Tangerine', cursive;
     font-size: 40px;
     font-weight: 700;
@@ -380,11 +380,11 @@ table {
     text-align: center;
     table-layout: fixed;
     font-family: 'Noto Sans JP', sans-serif;
-    border-bottom: 1px solid #6967ab;
+    border-bottom: 1px solid #219dd0;
 }
 
 th {
-    background-color: #6967ab;
+    background-color: #219dd0;
     color: white;
     padding: 10px;
 }
@@ -394,7 +394,7 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: #6967ab1a;
+    background-color: #219dd01a;
 }
 
 /* Math */
