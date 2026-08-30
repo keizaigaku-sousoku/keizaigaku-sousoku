@@ -19,6 +19,7 @@ footer p {
 .footer-socials a {
     font-size: 28px;
     text-decoration: none;
+    color: #219dd0;
     transition: transform 0.3s;
 }
 
