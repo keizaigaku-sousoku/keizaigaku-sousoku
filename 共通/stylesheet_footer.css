@@ -1,1 +1,38 @@
+footer {
+    padding: 20px 10px;
+    font-size: 14px;
+    text-align: center;
+}
 
+footer p {
+    text-align: center;
+    margin: 10px 0 40px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.footer-socials a {
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer {
+        font-size: 13px;
+    }
+
+    footer p {
+        margin-right: 0px;
+    }
+}
