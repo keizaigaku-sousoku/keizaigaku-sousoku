@@ -148,8 +148,9 @@
                     align-self: flex-start;
                     margin-top: -52px;
                     padding: 28px 7vw 32px 5vw;
-                    background: linear-gradient(135deg, rgba(243, 245, 250, 0.97), rgba(243, 245, 250, 0.88));
-                    border-left: 3px solid #219dd0;
+                    background: rgba(243, 245, 250, 0.76);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
                     box-shadow: 0 12px 28px rgba(38, 56, 82, 0.12);
                 }
             
@@ -165,16 +166,7 @@
                 }
             
                 .chapter-box-text--overlap .chapter-box-title::before {
-                    content: "";
-                    position: absolute;
-                    top: -10px;
-                    bottom: -6px;
-                    left: -16px;
-                    right: -16px;
-                    background: rgba(243, 245, 250, 0.78);
-                    backdrop-filter: blur(8px);
-                    -webkit-backdrop-filter: blur(8px);
-                    z-index: -1;
+                    display: none;
                 }
             
                 .chapter-box-text-overlap {
