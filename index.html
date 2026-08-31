@@ -183,21 +183,29 @@
                     z-index: -1;
                 }
             
+                .chapter-box-text-overlap {
+                    max-width: 100%;
+                    overflow-wrap: break-word;
+                }
+            
                 .chapter-box-text-overlap::before {
-                    display: none;
+                    left: 0;
+                    right: 0;
                 }
             
                 .chapter-box-image {
                     width: 100%;
                     max-width: 420px;
-                    height: 260px;
+                    height: 320px;
+                    background-position: top center;
                     order: -1;
                 }
             
                 .chapter-box:hover .chapter-box-image {
                     box-shadow: 8px 10px 0 -4px #219dd0;
                 }
-            }            
+            }
+        
         </style>
     </head>
     <body>
