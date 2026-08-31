@@ -120,7 +120,60 @@
             .chapter-box:hover .chapter-box-title {
                 color: #219dd0;
             }
-    
+            
+            @media (max-width: 768px) {
+                header {
+                    font-size: 22px;
+                    margin: 30px 0px;
+                }
+            
+                .lead-text-box {
+                    font-size: 14px;
+                    line-height: 2.4;
+                    padding: 0 20px;
+                }
+            
+                .title-box {
+                    font-size: 18px;
+                    letter-spacing: 3px;
+                }
+            
+                .chapter-box {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    margin: 100px auto;
+                    padding: 0 24px;
+                }
+            
+                .chapter-box-text {
+                    width: 100%;
+                    max-width: 460px;
+                    padding-top: 0;
+                }
+            
+                .chapter-box-text--overlap {
+                    margin-right: 0;
+                }
+            
+                .chapter-box-title {
+                    font-size: 22px;
+                    letter-spacing: 6px;
+                    text-align: center;
+                }
+            
+                .chapter-box-image {
+                    width: 100%;
+                    max-width: 320px;
+                    height: 240px;
+                    margin-top: 30px;
+                }
+            
+                .chapter-box:hover .chapter-box-image {
+                    box-shadow: 8px 10px 0 -4px #219dd0;
+                }
+            }
+            
         </style>
     </head>
     <body>
