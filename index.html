@@ -135,16 +135,26 @@
                         
                 .chapter-box {
                     flex-direction: column;
-                    align-items: center;
+                    align-items: stretch;
                     width: 100%;
                     margin: 90px auto;
-                    padding: 0 24px;
+                    padding: 0;
+                    box-sizing: border-box;
                 }
             
                 .chapter-box-text {
+                    width: 80vw;
+                    box-sizing: border-box;
+                    align-self: flex-start;
+                    margin-top: -52px;
+                    padding: 28px 7vw 32px 5vw;
+                    background: linear-gradient(135deg, rgba(243, 245, 250, 0.97), rgba(243, 245, 250, 0.88));
+                    border-left: 3px solid #219dd0;
+                    box-shadow: 0 12px 28px rgba(38, 56, 82, 0.12);
                 }
             
                 .chapter-box-text--overlap {
+                    margin-right: 0;
                 }
             
                 .chapter-box-title {
@@ -171,12 +181,14 @@
                 }
             
                 .chapter-box-text-overlap::before {
+                    display: none;
                 }
             
                 .chapter-box-image {
-                    width: 100%;
-                    max-width: 420px;
-                    height: 320px;
+                    width: 80vw;
+                    max-width: none;
+                    height: 100vw;
+                    align-self: flex-end;
                     background-position: top center;
                     order: -1;
                 }
@@ -185,7 +197,7 @@
                     box-shadow: 8px 10px 0 -4px #219dd0;
                 }
             }
-        
+            
         </style>
     </head>
     <body>
