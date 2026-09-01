@@ -475,7 +475,7 @@ mjx-container {
     display: block;
     margin: 5px 0;
     padding: 5px;
-    color: #219dd0;
+    color: #000000;/*#219dd0;*/
     text-decoration: none;
     text-align: center;
     transition: transform 0.3s, background-color 0.3s, color 0.3s;
