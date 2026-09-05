@@ -272,7 +272,8 @@
                     <div class="math-container">
                         (M1) \( \mathcal{P} = ( G \cup C ) \oplus I \land G \neq \emptyset \land C \neq \emptyset \) <br>
                         (M2) \( ^\forall p \in \mathcal{P}, ^\forall (Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow \pi_s^p((Q(t))_{t\leq s})=\pi_s^p((Q(t))_{t\leq u}) \) <br>
-                        (M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow f_s^p(Q^p(s)|\pi_s^p(\gamma)) &lt; f_s^p(Q^p(u)|\pi_s^p(\gamma)) \)
+                        <!--(M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow f_s^p(Q^p(s)|\pi_s^p(\gamma)) &lt; f_s^p(Q^p(u)|\pi_s^p(\gamma)) \)-->
+                        (M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall t, ^\exists \epsilon &gt; 0, ^\forall h \in (0,\epsilon);\ \ \ f_t^p(Q^p(t)|\pi_t^p(\gamma)) &lt; f_t^p(Q^p(t+h)|\pi_t^p(\gamma)) \)
                     </div>
                 </p>
                 <p>
