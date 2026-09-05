@@ -15,7 +15,7 @@ html, body {
     background-color: #f3f5fa;
 }
 
-body, p, a, .part, .theorem-tile, .proof, .comment-box {
+body, a, .part, .theorem-tile, .proof, .comment-box {
     font-family: 'Hina Mincho', serif;
 }
 
@@ -23,6 +23,7 @@ p {
     text-align: justify;
     font-size: 15px;
     line-height: 2;
+    font-family: 'Noto Serif Japanese', serif;
     color: #000000;
 }
 
