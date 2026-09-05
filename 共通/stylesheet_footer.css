@@ -19,7 +19,7 @@ footer p {
 .footer-socials a {
     font-size: 28px;
     text-decoration: none;
-    /*color: #4e4e4e;*/
+    color: #000000;
     transition: color 0.3s ease;
 }
 .footer-socials a:hover {
