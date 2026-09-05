@@ -359,6 +359,7 @@ main {
     color: #219dd0;
     font-weight: 700;
     font-size: 20px;
+    font-family: 'Hina Mincho', serif;
 }
 
 .comment-box-title::before {
