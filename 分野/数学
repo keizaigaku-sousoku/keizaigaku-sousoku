@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>数学</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../共通/stylesheet_contents.css">
+        <link rel="stylesheet" href="../共通/stylesheet_footer.css">
+    </head>
+    <body>
+        <div class="toc-wrapper">
+            <div class="toc-line-global"></div>
+            <div class="toc-section">
+                <div class="toc-left toc-title">
+                    <span class="toc-title-ja">数学</span><br>
+                    <span class="toc-title-en">Table</span><br>
+                    <span class="toc-title-en">of</span><br>
+                    <span class="toc-title-en">Contents</span>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-left">線形代数</div>
+                <div class="toc-right">
+                    <a href="../数学/線形代数/ブラケット記法.html">ブラケット記法</a>
+                </div>
+            </div>
+            <div class="toc-section">
+                <div class="toc-left">確率論</div>
+                <div class="toc-right">
+                    <a href="../数学/確率論/確率空間.html">確率空間</a>
+                </div>
+            </div>
+        </div>
+        <main></main>
+        <div id="nav-placeholder"></div>
+        <script src="../共通/load-nav.js" defer></script>
+        <div id="footer-placeholder"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $('#footer-placeholder').load('../共通/footer.html');
+            });
+        </script>
+    </body>
+</html>
