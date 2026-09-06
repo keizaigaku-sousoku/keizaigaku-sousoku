@@ -21,17 +21,103 @@
             <div class="part">
                 <h3 class="part-title">目次</h3>
                 <a href="#section-ket-bra">ケット・ブラ</a>
-                <a href="#section-inner-product">内積</a>
-                <a href="#section-outer-product">外積</a>
-                <a href="#section-price-other"></a>
+                <a href="#section-product">内積・外積</a>
+                <a href="#section-standard-basis">標準基底</a>
             </div>
         </div>
         <main>
             <section id="section-ket-bra">
                 <h4>ケット・ブラ</h4>
                 <p>
-                    　
-                    ああ
+                    　集合 \( \textbf{R}^{n\times1} \) 、\( n\in\textbf{Z}_{\geq1} \) は実数値 \( n \) 次元縦ベクトル全体の集合であり、この元をどのように書くかは自由である。
+                    高校数学では \( \overrightarrow{v} \) のように文字の上に矢印を添える記法が標準的であり、大学の基礎的な課程では \( \boldsymbol{v} \) のように太字にする、あるいは \( \textbf{v} \) のように太字にした上で縦字にする記法がしばしば用いられる。
+                    さらに大学の発展的な課程では何の装飾もなく \( v \) と書くことがある。
+                    どのように書いても、それがベクトルであることを読み手へ伝えられれば良いので、記法はどれが正しくどれがより高級であるということはない。
+                </p>
+                <p>
+                    　大学で物理学を専攻した者たちは、量子力学を学ぶにあたり多用した特殊な記法を好む。
+                    それは
+                    \[
+                        \ket{v}
+                    \]
+                    と書かれ、<span class="new-word">ケット・ベクトル（ket vector）</span>あるいは単に<span class="new-word">ケット（ket）</span>と呼ばれる。
+                    この記法の便利な点として、何よりもまず文字の節約が挙げられる。
+                    書き方に決まりはないが、例えば何らかのデータのシグナルを並べたケットであれば \( \ket{\textrm{signal}} \) と書ける。
+                    他の記法であれば例えば \( \boldsymbol{v}^{\textrm{signal}} \) となることを考えれば、ケットは " \( v \) " という文字を必要としない。
+                    またケットが縦ベクトルであると保証していることも便利である。
+                    すなわち "ベクトル" と呼ばれる数学的対象はしばしば縦ベクトルであるが、横ベクトルであることも珍しくなく、流儀によっては横ベクトルを \( \boldsymbol{v} \) 等と書くことがある。
+                    ケットは常に縦ベクトルであるため、縦と横で混乱の恐れはない。
+                </p>
+                <p>
+                    　ケットが縦ベクトルであることから、自然に横ベクトルつまり集合 \( \textbf{R}^{1\times n} \) の元を表す記法が必要になる。
+                    それはケットの特徴的な記法を引継ぎ
+                    \[
+                        \bra{v}:=\ket{v}^{\textrm{T}}
+                    \]
+                    と書かれ、<span class="new-word">ブラ・ベクトル（bra vector）</span>あるいは単に<span class="new-word">ブラ（bra）</span>と呼ばれる。
+                    言うまでもなく
+                    \[
+                        \bra{v}^{\textrm{T}}=\ket{v}
+                    \]
+                    であり、三角括弧の位置と向きが転置によって反転する。
+                    再び何らかのデータのシグナルを並べたベクトルを考えれば、ケットとブラがそれぞれ \( \ket{\textrm{signal}} \)、\( \bra{\textrm{signal}} \) であるのに対し、他の記法が例えば \( \boldsymbol{v}^{\textrm{signal}} \) 、\( (\boldsymbol{v}^{\textrm{signal}})^{\textrm{T}} \) であるため、どちらが簡潔であるかは明らかである。
+                    一般にケットとブラを使う記法を<span class="new-word">ブラケット記法（bra-ket notation）</span>と呼ぶ。
+                </p>
+            </section>
+            <section id="section-product">
+                <h4>内積・外積</h4>
+                <p>
+                    　ブラケット記法の特徴付ける三角括弧は内積を意識したものである。
+                    任意に \( \ket{v} \) 、\( \ket{u} \in \textbf{R}^{n\times1} \) 、\( n\in\textbf{Z}_{\geq1} \) をとったとき、その内積を
+                    \[
+                        \braket{v|u}=\braket{u|v}:=(\bra{v})(\ket{u})=\ket{v}^{\textrm{T}}\ket{u}
+                    \]
+                    と書く。
+                    つまりブラとケットの（行列）積が内積である。
+                    大学の基礎的な課程の記法では縦ベクトル \( \boldsymbol{v} \)、\( \boldsymbol{u} \) に対する内積をしばしば \( \langle \boldsymbol{v},\boldsymbol{u} \rangle \) と書く。
+                    2つのベクトルが三角括弧に挟まれたまとまりが内積であるということは、ブラケット記法に馴染みがない者にも受入れられやすいだろう。
+                </p>
+                <p>
+                    　ブラとケットの（行列）積が内積であるため、ケットとブラの（行列）積も考えられる。
+                    それは特段の素朴に
+                    \[
+                        \ket{v}\bra{u}
+                    \]
+                    と書かれ、"外積" と呼ばれることがある。
+                    ただし "外積" という単語が何を指すかは数学一般に一意でなく、"内積" という単語に比べて使用頻度は極めて低い。
+                </p>
+            </section>
+            <section id="section-standard-basis">
+                <h4>標準基底</h4>
+                <p>
+                    　集合 \( \textbf{R}^{n\times1} \) を（\( \textbf{R} \) 上の）線形空間と考えれば標準基底が存在する。
+                    すなわち、これを \( \{ \ket{k} \}_{k=1}^n \) とおけば、まず規格化直交性（正規直交性）として
+                    \[
+                        \braket{k|l}=I_{kl}
+                    \]
+                    が成り立つ。
+                    そして完全性つまり任意の元 \( \ket{v} \in \textbf{R}^{n\times1} \) に対して、ある \( c_k \in \textbf{R} \) 、\( k=1,...,n \) が存在して \( \ket{v}=\sum_{k=1}^nc_k\ket{k} \) が成り立つ。
+                    両辺に左から \( \bra{l} \) を（行列積の意味で）掛けると \( \braket{l|v}=\sum_{k=1}^n c_k\braket{l|k}=\sum_{k=1}^n c_k I_{lk}=c_l \) であるから、恒等式 \( \ket{v}=\sum_{k=1}^n\braket{k|v}\ket{k}=(\sum_{k=1}^n\ket{k}\bra{k})\ket{v} \) を得る。
+                    したがって完全性をブラケット記法で書けば
+                    \[
+                        \sum_{k=1}^n\ket{k}\bra{k}=I
+                    \]
+                    である。
+                    とくに \( \ket{k} \) は \( k \) 番目の成分のみ \( 1 \) 、他の成分がすべて \( 0 \) のケットであるから、直接の計算により \( \ket{k}\bra{l} \) は \( (k,l)\) - 成分のみ \( 1 \) 、他の成分がすべて \( 0 \) の \( n\times n \) 行列（いわゆる行列単位）であることが分かる。
+                </p>
+                <p>
+                    　ブラケット記法は行列の表現において便利である。
+                    任意の \( A \in \textbf{R}^{n\times n} \) の \( (k,l)\) - 成分を \( A_{kl} \) とおけば、明らかに
+                    \[
+                        A=\sum_{k,l=1}^nA_{kl}\ket{k}\bra{l}
+                    \]
+                    である。
+                    左から \( \bra{i} \) 、右から \( \ket{j} \) を掛ければ
+                    \[
+                        \braket{i|A|j}=\sum_{k,l=1}^n A_{kl}\braket{i|k}\braket{l|j}=\sum_{k,l=1}^n A_{kl}I_{ik}I_{lj}=A_{ij}
+                    \]
+                    であるから、\( \braket{k|A|l} \) は \( A \) の \( (k,l)\) - 成分に他ならない。
+                    ブラとケットで行列を挟むことにより任意の成分を形式的に取出せることは、計算において重宝される。
                 </p>
             </section>
         </main>
