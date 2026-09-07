@@ -88,7 +88,7 @@
                 </p>
                 <div class="comment-box">
                     <p>
-                        <span class="comment-box-title">ブラケット記法という駄洒落</span>
+                        <span class="comment-box-title">ブラケット記法という大発明</span>
                     </p>
                     <p>
                         ブラケット記法は物理学者P. Diracが不朽の名作 "P. Dirac, The principles of quantum mechanics, Oxford University Press (1930)" において体系化した記法である。
@@ -129,6 +129,11 @@
                     \]
                     であるから、\( \braket{k|A|l} \) は \( A \) の \( (k,l)\) - 成分に他ならない。
                     ブラとケットで行列を挟むことにより任意の成分を形式的に取出せることは、計算において重宝される。
+                    なお上記の計算は規格化直交性を用いたが、完全性を用いても
+                    \[
+                        \sum_{k,l=1}^nA_{kl}\ket{k}\bra{l}=A=IAI=\sum_{k=1}^n\ket{k}\bra{k}A\sum_{l=1}^n\ket{l}\bra{l}=\sum_{k,l=1}^n\braket{k|A|l}\ket{k}\bra{l}
+                    \]
+                    から \( A_{kl}=\braket{k|A|l} \) を導ける。
                 </p>
             </section>
         </main>
