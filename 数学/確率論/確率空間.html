@@ -59,8 +59,10 @@
                 <p>
                     　無定義用語を排して "確率" を定義することは難しくない。
                     任意の集合 \( \Omega \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
-                    数学的な記述のハードルを下げるため、以下 \( \Omega \) は \( \textbf{R}^n \) 、\( \textbf{Z}^n \) 、\( n \in \textbf{Z}_{\geq1} \) あるいはそれらの任意の部分集合とする。
-                    そして \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼び、さらに写像 \( P:2^\Omega \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
+                    <!--数学的な記述のハードルを下げるため、以下 \( \Omega \) は \( \textbf{R}^n \) 、\( \textbf{Z}^n \) 、\( n \in \textbf{Z}_{\geq1} \) あるいはそれらの任意の部分集合とする。-->
+                    そして \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
+                    ここで \( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、数学的に性質の良いものを取ったとする（この仮定は本質的であるが実際の多くの計算では不要であるため、詳細は後述する書籍に譲る）。
+                    写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
                 </p>
                 <p>
                     <div class="math-container">
@@ -69,12 +71,13 @@
                     </div>
                 </p>
                 <p>
-                    最後に任意の事象 \( A\in 2^\Omega \) に対して、\( P(A) \) を \( A \) の<span class="new-word">確率（probability）</span>と呼ぶ。
+                    最後に任意の事象 \( A\in \mathcal{F} \) に対して、\( P(A) \) を \( A \) の<span class="new-word">確率（probability）</span>と呼ぶ。
                 </p>
                 <p>
                     　確率を議論するにあたり、標本空間と確率測度は所与であるとすることが多い。
-                    そこで組 \( (\Omega,P) \) を考え、これを<span class="new-word">確率空間（probability space）</span>と呼ぶ。
-                    上述の通り標本空間として実用的な集合を選んだことで抽象性は大きく下がったものの、任意の確率空間に対して曖昧さなく議論を進められる。
+                    そこで組 \( (\Omega,\mathcal{F},P) \) を考え、これを<span class="new-word">確率空間（probability space）</span>と呼ぶ。
+                    なお \( \mathcal{F} \) はしばしば都合の良い集合族でしかなく、実際の計算では不要なことも多いので、 \( (\Omega,P) \) と略記されることも珍しくない。
+                    <!--上述の通り標本空間として実用的な集合を選んだことで抽象性は大きく下がったものの、任意の確率空間に対して曖昧さなく議論を進められる。-->
                 </p>
                 <p>
                     　一般の標本空間を扱う書籍は多数存在し、また確率の重要性が増し続ける現代において、その数は留まる所を知らない。
