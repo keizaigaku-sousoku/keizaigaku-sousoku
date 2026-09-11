@@ -23,7 +23,6 @@
                 <a href="#section-equally-likely">同様に確からしい</a>
                 <a href="#section-measure-space">確率測度・確率空間</a>
                 <a href="#section-density">確率密度</a>
-                <a href="#section-price-other"></a>
             </div>
         </div>
         <main>
@@ -88,6 +87,34 @@
                     最後に最高級の書籍として "伊藤清, 確率論, 岩波書店 (1991)" は外せない。
                     数学かくあるべし、を体現した質・量ともに他の追随を許さない1冊である。
                 </p>
+                <p>
+                    　確率空間を規定する(P1)、(P2)は極めて単純な条件に過ぎないが、豊かで奥行きのある構造を有する。
+                    ごく基本的な主張として以下を導ける。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,\mathcal{F},P) \) を確率空間とする。
+                        このとき、次が成り立つ。<br>
+                        (i) \( P(\emptyset)=0 \) 。<br>
+                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset \ (i \neq j) \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
+                        (iii) \( ^\forall A,B\in\mathcal{F};\ \ \ P(A\cup B)=P(A)+P(B)-P(A\cap B) \) 。<br>
+                        (iv) \( ^\forall A,B\in\mathcal{F};\ \ \ A\subset B \Longrightarrow P(A)\leq P(B)\) 。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <p>
+                        (i) 空集合の性質より \( \emptyset\cup\emptyset=\emptyset \) であり、帰納的に \( P(\emptyset)=P(\bigcup_{i=1}^\infty\emptyset) \) 。
+                        また \( \emptyset\cap\emptyset=\emptyset \) であって、列 \( (\emptyset)_{i=1}^\infty \) に(P2)を用いて \( P(\bigcup_{i=1}^\infty\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) 。
+                        よって \( P(\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立ち、\( P(\emptyset)\leq1 \) ゆえ \( \sum_{i=1}^\infty P(\emptyset) \leq 1 &lt; \infty \) 。
+                        したがって \( P(\emptyset)=0 \) でなければ不等式が破れる。<br>
+                        (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定める。
+                        (P2)と(i)から題意が従う。<br>
+                        (iii) \( A\cup B = A\cup(B\backslash A)=A\cup[B\backslash(A\cap B)] \) 、\( A\cap[B\backslash(A\cap B)]=\emptyset \) 、
+                    </p>
+                </div>
+            </section>
+            <section id="section-density">
             </section>
         </main>
         <div id="nav-placeholder"></div>
