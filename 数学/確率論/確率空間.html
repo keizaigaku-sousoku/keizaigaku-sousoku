@@ -83,7 +83,7 @@
                     まず厳密さと文体の硬さを相当犠牲にし、読み物としての面白さを追求したものとして "小針宏, 確率・統計入門, 岩波書店 (1973)" がある。
                     議論の抽象度にムラが目立つものの、気がつけばページをめくる指が止まらないタイプの1冊である。
                     次に集合論の前提知識のみで通読できる稀有なものとして "佐藤坦, はじめての確率論 測度から確率へ, 共立出版 (1994)" がある。
-                    内容は厳密さにほとんど妥協がないため若干高度な記述はあるものの、1冊を根気強く読めば良いことが保証されている点は評価に値する。
+                    内容は厳密さにほとんど妥協がないため若干高度な記述はあるものの、セルフコンシステントである点は評価に値する。
                     最後に最高級の書籍として "伊藤清, 確率論, 岩波書店 (1991)" は外せない。
                     数学かくあるべし、を体現した質・量ともに他の追随を許さない1冊である。
                 </p>
@@ -99,7 +99,7 @@
                     </p>
                     <div class="math-container">
                         (i) \( P(\emptyset)=0 \) 。<br>
-                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset \ (i \neq j) \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
+                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset、 \ i \neq j \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
                         (iii) \( ^\forall A,B\in\mathcal{F};\ \ \ P(A\cup B)=P(A)+P(B)-P(A\cap B) \) 。<br>
                         (iv) \( ^\forall A,B\in\mathcal{F};\ \ \ A\subset B \Longrightarrow P(A)\leq P(B)\) 。
                     </div>
@@ -115,7 +115,7 @@
                         (iii) \( A\cup B = A\cup(B\backslash A)=A\cup[B\backslash(A\cap B)] \) および \( A\cap[B\backslash(A\cap B)]=\emptyset \) により、\( A \) と \( B\backslash(A\cap B) \) に(ii)を用いれば \( P(A\cup B)=P(A)+P(B\backslash(A\cap B)) \) が成り立つ。
                         一方で \( B=[B\backslash(A\cap B)]\cup(A\cap B) \) および \( [B\backslash(A\cap B)]\cap(A\cap B)=\emptyset \) により、\( B\backslash(A\cap B) \) と \( A\cap B \) に(ii)を用いれば \( P(B)=P(B\backslash(A\cap B))+P(A\cap B) \) が成り立つ。
                         2式から \( P(B\backslash(A\cap B)) \) を消去すれば題意が示される。<br>
-                        (iv)
+                        (iv) \( A\subset B \) であるから、 \( B=A\cup(B\backslash A) \) および \( A\cap(B\backslash A)=\emptyset \) により、\( A \) と \( B\backslash A \) に(ii)を用いれば \( P(B)=P(A\cup(B\backslash A))=P(A)+P(B\backslash A)\geq P(A) \) を得る。
                     </p>
                 </div>
             </section>
