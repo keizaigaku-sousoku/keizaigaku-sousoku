@@ -65,7 +65,7 @@
                 <p>
                     <div class="math-container">
                         (P1) \( P(\Omega)=1 \) <br>
-                        (P2) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ A_i \cap A_j=\emptyset \ (i \neq j) \Longrightarrow P(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty P(A_i) \)
+                        (P2) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ A_i \cap A_j=\emptyset、 \ i \neq j \Longrightarrow P(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty P(A_i) \)
                     </div>
                 </p>
                 <p>
@@ -96,21 +96,26 @@
                     <p>
                         \( (\Omega,\mathcal{F},P) \) を確率空間とする。
                         このとき、次が成り立つ。<br>
+                    </p>
+                    <div class="math-container">
                         (i) \( P(\emptyset)=0 \) 。<br>
                         (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset \ (i \neq j) \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
                         (iii) \( ^\forall A,B\in\mathcal{F};\ \ \ P(A\cup B)=P(A)+P(B)-P(A\cap B) \) 。<br>
                         (iv) \( ^\forall A,B\in\mathcal{F};\ \ \ A\subset B \Longrightarrow P(A)\leq P(B)\) 。
-                    </p>
+                    </div>
                 </div>            
                 <div class="proof">
                     <p>
-                        (i) 空集合の性質より \( \emptyset\cup\emptyset=\emptyset \) であり、帰納的に \( P(\emptyset)=P(\bigcup_{i=1}^\infty\emptyset) \) 。
-                        また \( \emptyset\cap\emptyset=\emptyset \) であって、列 \( (\emptyset)_{i=1}^\infty \) に(P2)を用いて \( P(\bigcup_{i=1}^\infty\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) 。
-                        よって \( P(\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立ち、\( P(\emptyset)\leq1 \) ゆえ \( \sum_{i=1}^\infty P(\emptyset) \leq 1 &lt; \infty \) 。
-                        したがって \( P(\emptyset)=0 \) でなければ不等式が破れる。<br>
+                        (i) 空集合の性質より \( \emptyset\cup\emptyset=\emptyset \) であり、帰納的に \( P(\emptyset)=P(\bigcup_{i=1}^\infty\emptyset) \) が成り立つ。
+                        また \( \emptyset\cap\emptyset=\emptyset \) であって、列 \( (\emptyset)_{i=1}^\infty \) に(P2)を用いれば \( P(\bigcup_{i=1}^\infty\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立つ。
+                        よって \( P(\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立ち、\( P(\emptyset)\leq1 \) ゆえ \( \sum_{i=1}^\infty P(\emptyset) \leq 1 &lt; \infty \) を得る。
+                        もし \( P(\emptyset)=0 \) でなければ不等式が破れる。<br>
                         (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定める。
-                        (P2)と(i)から題意が従う。<br>
-                        (iii) \( A\cup B = A\cup(B\backslash A)=A\cup[B\backslash(A\cap B)] \) 、\( A\cap[B\backslash(A\cap B)]=\emptyset \) 、
+                        (P2)と(i)から題意が示される。<br>
+                        (iii) \( A\cup B = A\cup(B\backslash A)=A\cup[B\backslash(A\cap B)] \) および \( A\cap[B\backslash(A\cap B)]=\emptyset \) により、\( A \) と \( B\backslash(A\cap B) \) に(ii)を用いれば \( P(A\cup B)=P(A)+P(B\backslash(A\cap B)) \) が成り立つ。
+                        一方で \( B=[B\backslash(A\cap B)]\cup(A\cap B) \) および \( [B\backslash(A\cap B)]\cap(A\cap B)=\emptyset \) により、\( B\backslash(A\cap B) \) と \( A\cap B \) に(ii)を用いれば \( P(B)=P(B\backslash(A\cap B))+P(A\cap B) \) が成り立つ。
+                        2式から \( P(B\backslash(A\cap B)) \) を消去すれば題意が示される。<br>
+                        (iv)
                     </p>
                 </div>
             </section>
