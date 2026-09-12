@@ -59,13 +59,13 @@
                     　無定義用語を排して "確率" を定義することは難しくない。
                     任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
                     そして \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
-                    ここで \( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、数学的に性質の良いものを取ったとする（具体的には " \( \sigma \) - 加法族 " と呼ばれるものであるが、詳細は後述する書籍に譲る）。
+                    ここで \( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、少なくとも \(\Omega \) と \( \emptyset \) を有する数学的に性質の良いものを取る（具体的に \( \mathcal{F} \) は " \( \sigma \) - 加法族 " と呼ばれるものであるが、詳細は後述の書籍に譲る）。
                     写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
                 </p>
                 <p>
                     <div class="math-container">
                         (P1) \( P(\Omega)=1 \) <br>
-                        (P2) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ A_i \cap A_j=\emptyset、 \ i \neq j \Longrightarrow P(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty P(A_i) \)
+                        (P2) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ A_i \cap A_j=\emptyset, \ i \neq j \Longrightarrow P(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty P(A_i) \)
                     </div>
                 </p>
                 <p>
@@ -99,7 +99,7 @@
                     </p>
                     <div class="math-container">
                         (i) \( P(\emptyset)=0 \) 。<br>
-                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset、 \ i \neq j \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
+                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset, \ i \neq j \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
                         (iii) \( ^\forall A,B\in\mathcal{F};\ \ \ P(A\cup B)=P(A)+P(B)-P(A\cap B) \) 。<br>
                         (iv) \( ^\forall A,B\in\mathcal{F};\ \ \ A\subset B \Longrightarrow P(A)\leq P(B)\) 。
                     </div>
@@ -120,6 +120,19 @@
                 </div>
             </section>
             <section id="section-density">
+                <h4>確率密度</h4>
+                <p>
+                    確率測度は標本空間の部分集合に対して実数を返すものであって、大雑把に積分と解釈できる。
+                    確率空間 \( (\textbf{R}^n,\mathcal{F},P) \) 、\( n\in\textbf{Z}_{\geq1} \) が与えられたとき、写像 \( p:\mathcal{F}\rightarrow[0,\infty) \) であって
+                </p>
+                \[
+                    ^\forall A\in\mathcal{F};\ \ \ P(A)=\int_A p(x)\ \textrm{d}x
+                \]
+                <p>
+                  を満たすものを<span class="new-word">確率密度（probability density）</span>と呼ぶ。
+                  ただし積分は \( n \) 重Riemann積分であり、必要があればより広義の積分を適用する。
+                  確率密度 \( p \) が所与であれば、確率測度は \( P=\int_\bullet p(x)\ \textrm{d}x \) という \( \mathcal{F} \) の元を受取る写像に他ならない。
+                </p>
             </section>
         </main>
         <div id="nav-placeholder"></div>
