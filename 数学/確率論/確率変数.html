@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>確率とは何か</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../../共通/stylesheet_contents.css">
+        <link rel="stylesheet" href="../../共通/stylesheet_footer.css">
+        <script src="../../共通/mathjax-config.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>確率とは何か</h2>
+        </header>
+        <div class="subtitle">
+            高校数学の "確率" を見つめ直す
+        </div>
+        <div class="toc-container">
+            <div class="part">
+                <h3 class="part-title">目次</h3>
+                <a href="#section-random-variable">確率変数</a>
+                <a href="#section-almost-surely">ほとんど確実に</a>
+                <a href="#section-simple-function">単関数</a>
+                <a href="#section-expectation-variance">期待値・分散</a>
+            </div>
+        </div>
+        <main>
+            <section id="section-random-variable">
+                <h4>確率変数</h4>
+                <p>
+                </p>
+            </section>
+            <section id="section-sigma">
+                <h4>\(\sigma\)-代数</h4>
+                <p>
+                    　無定義用語を排して "確率" を定義するには、数学の準備が必要である。
+                    任意の集合 \( \Omega \neq \emptyset \) を取ったとき、 \( \mathcal{F}\subset 2^\Omega \) であって、以下を満たすものを \( \Omega \) 上の<span class="new-word">\(\sigma\)-代数（\( \sigma \)-algebra, \( \sigma \)-field ）</span>と呼ぶ。
+                </p>
+                <p>
+                    <div class="math-container">
+                        (F1) \( \Omega\in\mathcal{F} \) <br>
+                        (F2) \( ^\forall A\in\mathcal{F};\ \ \ A^\textrm{c}\in\mathcal{F} \) <br>
+                        (F3) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcup_{i=1}^\infty A_i\in\mathcal{F} \)
+                    </div>
+                </p>
+                <p>
+                    ごく基本的な主張として以下を導ける。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( \mathcal{F} \) を \( \Omega \) 上の\(\sigma\)-代数とする。
+                        このとき、次が成り立つ。<br>
+                    </p>
+                    <div class="math-container">
+                        (i) \( \emptyset\in\mathcal{F} \) 。<br>
+                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ \bigcup_{i=1}^n A_i\in\mathcal{F} \) 。<br>
+                        (iii) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcap_{i=1}^\infty A_i\in\mathcal{F} \) 。<br>
+                        (iv) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ \bigcap_{i=1}^n A_i\in\mathcal{F} \) 。<br>
+                        (v) \( ^\forall A,B\in\mathcal{F};\ \ \ A\backslash B\in\mathcal{F} \) 。<br>
+                    </div>
+                </div>            
+                <div class="proof">
+                    <p>
+                        (i) (F1)、(F2)より明らか。<br>
+                        (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定めれば、(F3)から題意が示される。<br>
+                        (iii) (F2)より \( A_i^\textrm{c}\in\mathcal{F} \) であり、(F3)より \( \bigcup_{i=1}^\infty A_i^\textrm{c}\in\mathcal{F} \) が成り立つ。
+                        したがって(F2)より \( \mathcal{F}\ni(\bigcup_{i=1}^\infty A_i^\textrm{c})^\textrm{c}=\bigcap_{i=1}^\infty A_i\) と題意が示される。<br>
+                        (iv) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\Omega \) 、\( i &gt; n \) によって定めれば、(iii)から題意が示される。<br>
+                        (v) \( A\backslash B=A\cap B^\textrm{c} \) であり、(F2)と(iv)より題意が示される。
+                    </p>
+                </div>
+                <p>
+                    　\(\sigma\)-代数は \( \Omega \) に対して一般には一意に定まらない。
+                    例えば \( \{ \Omega,\emptyset \} \) は1つの \(\sigma\)-代数であるが、あまりにも自明であり、具体的な計算で利用されることは稀である。
+                    一般の \( \Omega \) に対して非自明な\(\sigma\)-代数を構成する様々な方法が知られており、状況に応じて便利なものが用いられる。
+                    網羅的な議論は例えば "伊藤清三, ルベーグ積分入門（新装版）, 裳華房 (2017)" を参照せよ。
+                </p>
+            </section>
+            <section id="section-measure-space">
+                <h4>確率測度・確率空間</h4>
+                <p>
+                    　\(\sigma\)-代数を用いて "確率" は曖昧さなく定義される。
+                    任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
+                    また \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
+                    そして \(\mathcal{F} \) を \(\Omega \) 上の \( \sigma\)-代数とし、写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
+                </p>
+                <p>
+                    <div class="math-container">
+                        (P1) \( P(\Omega)=1 \) <br>
+                        (P2) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ A_i \cap A_j=\emptyset, \ i \neq j \Longrightarrow P(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty P(A_i) \)
+                    </div>
+                </p>
+                <p>
+                    最後に任意の事象 \( A\in \mathcal{F} \) に対して、\( P(A) \) を \( A \) の<span class="new-word">確率（probability）</span>と呼ぶ。
+                </p>
+                <p>
+                    　確率を議論するにあたり、標本空間と確率測度は所与であるとすることが多い。
+                    そこで組 \( (\Omega,\mathcal{F},P) \) を考え、これを<span class="new-word">確率空間（probability space）</span>と呼ぶ。
+                    なお \( \mathcal{F} \) はしばしば都合の良い集合族でしかなく、実際の計算では不要なことも多いので、確率空間は \( (\Omega,P) \) と略記されることがある。
+                    その場合、それ以降の議論はある程度真面目に確率を扱うものの、数学的な厳密さには重きを置かないことが意図されていると考えて差し支えない。
+                </p>
+                <p>
+                    　確率空間を扱う書籍は多数存在し、また確率の重要性が増し続ける現代において、その数は留まる所を知らない。
+                    ここでは古典的であるものの、色褪せることがない特徴的な書籍を紹介する。
+                    まず厳密さと文体の硬さを相当犠牲にし、読み物としての面白さを追求したものとして "小針宏, 確率・統計入門, 岩波書店 (1973)" がある。
+                    議論の抽象度にムラが目立つものの、気がつけばページをめくる指が止まらないタイプの1冊である。
+                    次に集合論の前提知識のみで通読できる稀有なものとして "佐藤坦, はじめての確率論 測度から確率へ, 共立出版 (1994)" がある。
+                    内容は厳密さにほとんど妥協がないため若干高度な記述はあるものの、セルフコンシステントである点は評価に値する。
+                    最後に最高級の書籍として "伊藤清, 確率論, 岩波書店 (1991)" は外せない。
+                    数学かくあるべし、を体現した質・量ともに他の追随を許さない1冊である。
+                </p>
+                <p>
+                    　確率空間を規定する(P1)、(P2)は極めて単純な条件に過ぎないが、豊かで奥行きのある構造を有する。
+                    ごく基本的な主張として以下を導ける。
+                    証明ではいちいち明記しないが、\(\sigma\)-代数が和集合、差集合、共通部分等を取る操作に対して閉じていることを多用する。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,\mathcal{F},P) \) を確率空間とする。
+                        このとき、次が成り立つ。<br>
+                    </p>
+                    <div class="math-container">
+                        (i) \( P(\emptyset)=0 \) 。<br>
+                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset, \ i \neq j \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
+                        (iii) \( ^\forall A,B\in\mathcal{F};\ \ \ P(A\cup B)=P(A)+P(B)-P(A\cap B) \) 。<br>
+                        (iv) \( ^\forall A,B\in\mathcal{F};\ \ \ A\subset B \Longrightarrow P(A)\leq P(B)\) 。
+                    </div>
+                </div>            
+                <div class="proof">
+                    <p>
+                        (i) 空集合の性質より \( \emptyset\cup\emptyset=\emptyset \) であり、帰納的に \( P(\emptyset)=P(\bigcup_{i=1}^\infty\emptyset) \) が成り立つ。
+                        また \( \emptyset\cap\emptyset=\emptyset \) であって、列 \( (\emptyset)_{i=1}^\infty \) に(P2)を用いれば \( P(\bigcup_{i=1}^\infty\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立つ。
+                        よって \( P(\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立ち、\( P(\emptyset)\leq1 \) ゆえ \( \sum_{i=1}^\infty P(\emptyset) \leq 1 &lt; \infty \) を得る。
+                        もし \( P(\emptyset)=0 \) でなければ不等式が破れる。<br>
+                        (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定める。
+                        (P2)と(i)から題意が示される。<br>
+                        (iii) \( A\cup B = A\cup(B\backslash A)=A\cup[B\backslash(A\cap B)] \) および \( A\cap[B\backslash(A\cap B)]=\emptyset \) により、\( A \) と \( B\backslash(A\cap B) \) に(ii)を用いれば \( P(A\cup B)=P(A)+P(B\backslash(A\cap B)) \) が成り立つ。
+                        一方で \( B=[B\backslash(A\cap B)]\cup(A\cap B) \) および \( [B\backslash(A\cap B)]\cap(A\cap B)=\emptyset \) により、\( B\backslash(A\cap B) \) と \( A\cap B \) に(ii)を用いれば \( P(B)=P(B\backslash(A\cap B))+P(A\cap B) \) が成り立つ。
+                        2式から \( P(B\backslash(A\cap B)) \) を消去すれば題意が示される。<br>
+                        (iv) \( A\subset B \) であるから、 \( B=A\cup(B\backslash A) \) および \( A\cap(B\backslash A)=\emptyset \) により、\( A \) と \( B\backslash A \) に(ii)を用いれば \( P(B)=P(A\cup(B\backslash A))=P(A)+P(B\backslash A)\geq P(A) \) を得る。
+                    </p>
+                </div>
+            </section>
+            <section id="section-density">
+                <h4>確率密度</h4>
+                <p>
+                    　確率測度は標本空間の部分集合に対して実数を返すものであって、大雑把には積分と解釈される。
+                    確率空間 \( (\Omega,\mathcal{F},P) \) 、\( \Omega\subset\textbf{R}^n \) 、\( n\in\textbf{Z}_{\geq1} \) が与えられたとき、写像 \( p:\Omega\rightarrow[0,\infty) \) であって
+                </p>
+                \[
+                    ^\forall A\in\mathcal{F};\ \ \ P(A)=\int_A p(x)\ \textrm{d}x
+                \]
+                <p>
+                  を満たすものを<span class="new-word">確率密度（probability density）</span>と呼ぶ。
+                  ただし積分は \( n \) 重Riemann積分であり、必要があればより広義の積分を適用する。
+                  確率密度 \( p \) が所与であれば、確率測度は \( P=\int_\bullet p(x)\ \textrm{d}x \) という \( \mathcal{F} \) の元を受取る写像に他ならない。
+                </p>
+            </section>
+        </main>
+        <div id="nav-placeholder"></div>
+        <script src="../../共通/load-nav.js" defer></script>
+        <div id="footer-placeholder"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $('#footer-placeholder').load('../../共通/footer.html');
+            });
+        </script>
+    </body>
+</html>
