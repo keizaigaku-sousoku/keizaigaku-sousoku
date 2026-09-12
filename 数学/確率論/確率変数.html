@@ -27,6 +27,23 @@
             </div>
         </div>
         <main>
+            <section id="section-random-variable">
+                <h4>確率変数</h4>
+                <p>
+                    　標本空間上の関数を考える。
+                    確率空間 \( (\Omega,P) \) に対して、素朴に写像 \( X : \Omega \rightarrow \textbf{R} \) を定め、これを<span class="new-word">1次元実確率変数（1-dimensional real-random variable）</span>あるいは単に<span class="new-word">確率変数（random variable）</span>と呼ぶ。
+                    ここで確率変数は確率測度と無関係に定義されるため、もし確率測度に "確率的" の意味を持たせるのであれば、確率変数は名前に反して "決定論的" な数学的対象であることに注意しなければならない。
+                    慣習として確率変数はしばしばアルファベットの大文字（例えば \( X \)）で表され、標本点の像（\( X(ω) \) 、\(\omega\in\Omega \)）は対応する小文字（\(x \)）で表される。
+                    また確率変数 \( X \) を含んだ命題であって、標本点が決まってはじめて真偽の定まる形式的な命題 \( \mathrm{prop}(\Omega, X) \) に対して、結果が真になる標本点全体の集合の確率を \( P[\mathrm{prop}(\Omega,X)] \) と書く。
+                    例えば \( \Omega=\{a,b,c\} \) のとき、確率変数 \( X \) を \( X(a)=-1 \) 、 \( X(b)=0 \) 、 \( X(c)=1 \) によって定めれば、\( P[X\geq0]=P(\{b,c\}) \) である。
+                    一般に与えられた確率変数が特定の条件を満たす確率を求めることは重要な問題であるため、このような記法は重宝される。
+                </p>
+                <p>
+                    　確率変数に対してその "関数" を考えられる。
+                    すなわち、確率変数 \( X \) 、任意の写像 \( f : X(\Omega) \rightarrow \textbf{R} \) に対して、写像 \( f(X) : \Omega \rightarrow \textbf{R} \) を \( f(X)(\omega) = f(X(\omega)) \) 、\( \omega \in \Omega \) によって定める。
+                    例えば \( X \) の平方が \( 1 \) 以上になる確率を \( P[X^2\geq1] \) と表せる。
+                </p>
+            </section>
             <section id="section-almost-surely">
                 <h4>ほとんど確実に</h4>
                 <p>
