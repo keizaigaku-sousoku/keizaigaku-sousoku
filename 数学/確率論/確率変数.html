@@ -20,7 +20,6 @@
         <div class="toc-container">
             <div class="part">
                 <h3 class="part-title">目次</h3>
-                <a href="#section-borel">Borel集合</a>
                 <a href="#section-random-variable">確率変数</a>
                 <a href="#section-almost-surely">ほとんど確実に</a>
                 <a href="#section-simple-function">単関数</a>
@@ -28,41 +27,6 @@
             </div>
         </div>
         <main>
-           <section id="section-borel">
-                <h4>ボレル集合</h4>
-                <p>
-                    　標本空間上の関数を定義するには、数学の準備が必要である。
-                    確率変数を曖昧さなく定義するには、\( \textbf{R} \) 上に "測れる集合" をあらかじめ用意しておく必要がある。
-                    任意の \( \mathcal{A}\subset2^{\textbf{R}} \) に対して、\( \mathcal{A} \) を含むすべての \( \sigma \)-代数の共通部分を \( \sigma(\mathcal{A}) \) と書き、これを \( \mathcal{A} \) が<span class="new-word">生成する（generate）</span>\( \sigma \)-代数と呼ぶ（\( \sigma \)-代数の共通部分がまた \( \sigma \)-代数になることは容易に確かめられ、\( \sigma(\mathcal{A}) \) は \( \mathcal{A} \) を含む最小の \( \sigma \)-代数である）。
-                    そして \( \textbf{R} \) の開集合全体を \( \mathcal{O} \) としたとき、\( \mathcal{B}(\textbf{R}):=\sigma(\mathcal{O}) \) を<span class="new-word">ボレル\(\sigma\)-代数（Borel \(\sigma\)-algebra）</span>と呼び、その元を<span class="new-word">ボレル集合（Borel set）</span>と呼ぶ。
-                </p>
-                <p>
-                    \( \mathcal{B}(\textbf{R}) \) は開集合という抽象的な対象から生成されるが、実用上は半直線だけを使って同じものが得られる。
-                </p>
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        \( \mathcal{A}:=\{(-\infty,x]\ |\ x\in\textbf{R}\} \) とする。
-                        このとき、次が成り立つ。<br>
-                    </p>
-                    <div class="math-container">
-                        \( \sigma(\mathcal{A})=\mathcal{B}(\textbf{R}) \) 。
-                    </div>
-                </div>
-                <div class="proof">
-                    <p>
-                        \( (-\infty,x]=\bigcap_{n=1}^\infty(-\infty,x+1/n) \) であり、右辺は開集合の可算交わりだから \( (-\infty,x]\in\mathcal{B}(\textbf{R}) \) が成り立つ。
-                        したがって \( \mathcal{A}\subset\mathcal{B}(\textbf{R}) \) であり、\( \sigma(\mathcal{A}) \) の最小性から \( \sigma(\mathcal{A})\subset\mathcal{B}(\textbf{R}) \) を得る。<br>
-                        逆に \( (-\infty,x)=\bigcup_{n=1}^\infty(-\infty,x-1/n] \) であるから \( (-\infty,x)\in\sigma(\mathcal{A}) \) が成り立ち、任意の開区間について \( (a,b)=(-\infty,b)\backslash(-\infty,a] \) であるから \( (a,b)\in\sigma(\mathcal{A}) \) を得る。
-                        \( \textbf{R} \) の任意の開集合は可算個の開区間の和集合として書けるから、\( \mathcal{O}\subset\sigma(\mathcal{A}) \) であり、\( \mathcal{B}(\textbf{R})=\sigma(\mathcal{O})\subset\sigma(\mathcal{A}) \) を得る。
-                        以上より \( \sigma(\mathcal{A})=\mathcal{B}(\textbf{R}) \) が成り立つ。
-                    </p>
-                </div>
-                <p>
-                    　この事実は次節以降で頻繁に用いられる。
-                    ある写像がボレル集合すべてに関して "測れる" ことを確かめるには、開集合すべてに戻って確認する必要はなく、半直線 \( (-\infty,x] \) 、\( x\in\textbf{R} \) についてのみ確認すればよい。
-                </p>
-            </section>
             <section id="section-random-variable">
                 <h4>確率変数</h4>
                 <p>
