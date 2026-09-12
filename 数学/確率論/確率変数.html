@@ -30,53 +30,20 @@
             <section id="section-random-variable">
                 <h4>確率変数</h4>
                 <p>
+                    　標本点を引数として値を返す標本空間上の関数を考える。
+                    確率空間 \( (\Omega,P) \) に対して、素朴に写像 \( X : \Omega \rightarrow \textbf{R} \) を定め、これを<span class="new-word">1次元実確率変数（1-dimensional real-random variable）</span>あるいは単に<span class="new-word">確率変数（random variable）</span>と呼ぶ。
+                    ここで確率変数は確率測度と無関係に定義されるため、もし確率測度に "確率的" の意味を持たせるのであれば、確率変数は名前に反して "決定論的" な数学的対象であることに注意が必要である。
+                    慣習として確率変数はしばしばアルファベットの大文字（例えば \( X \)）で表され、標本点の像（\( X(ω) \) 、\(\omega\in\Omega \)）は対応する小文字（\(x \)）で表される。
+                    また \( \mathrm{prop}(\Omega, X) \) を確率変数 \( X \) を含んだ標本点を与えてはじめて真偽の決まる形式的な命題としたとき、その命題を満たす標本点全体の集合の確率を \( P[\mathrm{prop}(\Omega,X)] \) と書く。
+                    例えば \( \Omega=\{a,b,c\} \) のとき、確率変数 \( X \) を \( X(a)=-1 \) 、 \( X(b)=0 \) 、 \( X(c)=1 \) によって定めれば、\( P[X\geq0]=P(\{b,c\}) \) である。
+                    与えられた確率変数が特定の条件を満たす確率を求めることは重要な問題であるため、このような記法は重宝される。
                 </p>
             </section>
-            <section id="section-sigma">
-                <h4>\(\sigma\)-代数</h4>
+            <section id="section-almost-surely">
+                <h4>ほとんど確実に</h4>
                 <p>
-                    　無定義用語を排して "確率" を定義するには、数学の準備が必要である。
-                    任意の集合 \( \Omega \neq \emptyset \) を取ったとき、 \( \mathcal{F}\subset 2^\Omega \) であって、以下を満たすものを \( \Omega \) 上の<span class="new-word">\(\sigma\)-代数（\( \sigma \)-algebra, \( \sigma \)-field ）</span>と呼ぶ。
-                </p>
-                <p>
-                    <div class="math-container">
-                        (F1) \( \Omega\in\mathcal{F} \) <br>
-                        (F2) \( ^\forall A\in\mathcal{F};\ \ \ A^\textrm{c}\in\mathcal{F} \) <br>
-                        (F3) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcup_{i=1}^\infty A_i\in\mathcal{F} \)
-                    </div>
-                </p>
-                <p>
-                    ごく基本的な主張として以下を導ける。
-                </p>
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        \( \mathcal{F} \) を \( \Omega \) 上の\(\sigma\)-代数とする。
-                        このとき、次が成り立つ。<br>
-                    </p>
-                    <div class="math-container">
-                        (i) \( \emptyset\in\mathcal{F} \) 。<br>
-                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ \bigcup_{i=1}^n A_i\in\mathcal{F} \) 。<br>
-                        (iii) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcap_{i=1}^\infty A_i\in\mathcal{F} \) 。<br>
-                        (iv) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ \bigcap_{i=1}^n A_i\in\mathcal{F} \) 。<br>
-                        (v) \( ^\forall A,B\in\mathcal{F};\ \ \ A\backslash B\in\mathcal{F} \) 。<br>
-                    </div>
-                </div>            
-                <div class="proof">
-                    <p>
-                        (i) (F1)、(F2)より明らか。<br>
-                        (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定めれば、(F3)から題意が示される。<br>
-                        (iii) (F2)より \( A_i^\textrm{c}\in\mathcal{F} \) であり、(F3)より \( \bigcup_{i=1}^\infty A_i^\textrm{c}\in\mathcal{F} \) が成り立つ。
-                        したがって(F2)より \( \mathcal{F}\ni(\bigcup_{i=1}^\infty A_i^\textrm{c})^\textrm{c}=\bigcap_{i=1}^\infty A_i\) と題意が示される。<br>
-                        (iv) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\Omega \) 、\( i &gt; n \) によって定めれば、(iii)から題意が示される。<br>
-                        (v) \( A\backslash B=A\cap B^\textrm{c} \) であり、(F2)と(iv)より題意が示される。
-                    </p>
-                </div>
-                <p>
-                    　\(\sigma\)-代数は \( \Omega \) に対して一般には一意に定まらない。
-                    例えば \( \{ \Omega,\emptyset \} \) は1つの \(\sigma\)-代数であるが、あまりにも自明であり、具体的な計算で利用されることは稀である。
-                    一般の \( \Omega \) に対して非自明な\(\sigma\)-代数を構成する様々な方法が知られており、状況に応じて便利なものが用いられる。
-                    網羅的な議論は例えば "伊藤清三, ルベーグ積分入門（新装版）, 裳華房 (2017)" を参照せよ。
+                    　確率変数に関して、分野特有の言い回しがある。
+                    確率空間 \( (\Omega,P) \) に対して確率変数 \( X : \Omega \rightarrow \textbf{R} \) を定めたとき、命題 \( \textrm{prop}(\Omega,X) \) が<span class="new-word">ほとんど確実に（almost surely）</span>成り立つとは、\( P[\textrm{prop}(\Omega,X)] = 1 \) が成り立つことを言い、これを \( \textrm{prop}(\Omega,X), \textrm{a.s.} \) と書く。
                 </p>
             </section>
             <section id="section-measure-space">
