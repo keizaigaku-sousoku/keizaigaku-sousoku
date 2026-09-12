@@ -54,6 +54,71 @@
                     ある標本点に対して \( X \) が \( 0 \) を返さないにも関わらず計算上は \( P[X=0]=1 \) であるため、"ほとんど" という語が必要になる。
                 </p>
             </section>
+            <section id="section-expectation-variance">
+                <h4>期待値・分散</h4>
+                <p>
+                    　確率変数を特徴付ける最重要の量を定める。
+                    確率空間 \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) が与えられ、確率密度 \( p: \Omega \rightarrow [0,\infty) \) が定まっており、確率変数 \( X : \Omega \rightarrow \textbf{R} \) を考えているとする。
+                    これは数学としては極めて具体的な仮定であるが、実用上は十分に一般的である。
+                    このとき、
+                    \[
+                        E^P[X]=EX:=\int_\Omega xp(x)\ \textrm{d}x
+                    \]
+                    を \( X \) の \( P \) に関する<span class="new-word">期待値（expectation）</span>と呼ぶ。
+                    ごく基本的な主張として以下を導ける。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
+                        このとき、次が成り立つ。<br>
+                    </p>
+                    <div class="math-container">
+                        (i) \( ^\forall a,b\in\textbf{R};\ \ \ E^P[aX+bY]=aE^P[X]+bE^P[Y] \) 。<br>
+                        (ii) \( ^\forall \omega \in \Omega;\ \ \ X(\omega)\leq Y(\omega) \Longrightarrow E^P[X] \leq E^P[Y] \) 。
+                    </div>
+                </div>            
+                <div class="proof">
+                    <p>
+                        (i)、(ii)ともに自明。
+                    </p>
+                </div>
+                <p>
+                    　標本空間が1次元であるとき、以下の<span class="new-word">H&ouml;lder不等式（H&ouml;lder inequality）</span>と呼ばれる結果を得る。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
+                        このとき、 <br>
+                    </p>
+                    <div class="math-container">
+                        \[
+                            ^\forall p,q\in(1,\infty);\ \ \ \frac{1}{p}+\frac{1}{q}=1 \Longrightarrow E[|XY|]\leq E[|X|^p]^{1/p}E[|Y|^q]^{1/q}
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <p>
+                        容易に \( (1/p)t^p-t+1/q\geq0 \) 、\( t\geq0 \) が確かめられ、等号は \( t=1 \) のとき（またそのときに限り）成り立つ。
+                        そこで \( t=a/b^{q-1} \) 、\( a,b &gt; 0 \) を代入して整理すれば \( ab \leq a^p/p+b^q/q \) を得る。
+                        これは \( a,b \geq 0 \) でも成り立つ。
+                        そこで任意の \( \omega \in \Omega \) に対して \( a=|X(\omega)|E[|X|^p]^{-1/p} \) 、 \( b=|Y(\omega)|E[|Y|^q]^{-1/q} \) を代入すれば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \frac{|X(\omega)Y(\omega)|}{E[|X|^p]^{1/p}E[|Y|^q]^{1/q}}\leq\frac{|X(\omega)|^p}{pE[|X|^p]}+\frac{|Y(\omega)|^q}{qE[|Y|^q]}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        先の命題の(ii)を用いれば \( 1/p+1/q=1 \) により題意が示される。
+                    </p>
+                </div>
+            </section>
             <!--
             <section id="section-measure-space">
                 <h4>確率測度・確率空間</h4>
