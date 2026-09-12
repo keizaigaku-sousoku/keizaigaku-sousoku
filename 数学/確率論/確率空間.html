@@ -58,14 +58,14 @@
                 <h4>\(\sigma\)-加法族</h4>
                 <p>
                     　無定義用語を排して "確率" を定義するには、数学の準備が必要である。
-                    任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
-                    そして \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
-                    ここで \( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、以下を満たすものを \( \Omega \) 上の<span class="new-word">\(\sigma\)-加法族（\( \sigma \)-additive family）</span>と呼ぶ。
-                    <div class="math-container">
-                        (F1) \( \Omega\in\mathcal{F} \) <br>
-                        (F2) \( ^\forall A\in\mathcal{F};\ \ \ A^\textrm{c}\in\mathcal{F} \) <br>
-                        (F3) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcup_{i=1}^\infty A_i\in\mathcal{F} \)
-                    </div>                    
+                    任意の集合 \( \Omega \neq \emptyset \) を取ったとき、\( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、以下を満たすものを \( \Omega \) 上の<span class="new-word">\(\sigma\)-加法族（\( \sigma \)-additive family）</span>と呼ぶ。
+                </p>
+                <div class="math-container">
+                    (F1) \( \Omega\in\mathcal{F} \) <br>
+                    (F2) \( ^\forall A\in\mathcal{F};\ \ \ A^\textrm{c}\in\mathcal{F} \) <br>
+                    (F3) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcup_{i=1}^\infty A_i\in\mathcal{F} \)
+                </div>
+                <p>
                     ごく基本的な主張として以下を導ける。
                 </p>
                 <div class="theorem-tile">
@@ -92,15 +92,20 @@
                         (v) \( A\backslash B=A\cap B^\textrm{c} \) であり、(F2)と(iv)より題意が示される。
                     </p>
                 </div>
-
+                <p>
+                    　\(\sigma\)-加法族は \( \Omega \) に対して一般には一意に定まらない。
+                    例えば \( \{ \Omega,\emptyset \} \) は1つの \(\sigma\)-加法族であるが、あまりにも自明であり、具体的な計算で利用されることは稀である。
+                    一般の \( \Omega \) に対して非自明な\(\sigma\)-加法族を構成する様々な方法が知られており、状況に応じて便利なものが用いられる。
+                    網羅的な議論は例えば "伊藤清三, ルベーグ積分入門（新装版）, 裳華房 (2017)" を参照せよ。
                 </p>
             </section>
             <section id="section-measure-space">
                 <h4>確率測度・確率空間</h4>
                 <p>
-                    　無定義用語を排して "確率" を定義することは難しくない。
-                    少なくとも \(\Omega \) と \( \emptyset \) を有する数学的に性質の良いものを取る（具体的に \( \mathcal{F} \) は " \( \sigma \) - 加法族 " と呼ばれるものであるが、詳細は後述の書籍に譲る）。
-                    写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
+                    　\(\sigma\)-加法族を用いて "確率" は曖昧さなく定義される。
+                    任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
+                    また \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
+                    そして \(\mathcal{F} \) を \(\Omega \) 上の \( \sigma\)-加法族とし、写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
                 </p>
                 <p>
                     <div class="math-container">
@@ -114,7 +119,7 @@
                 <p>
                     　確率を議論するにあたり、標本空間と確率測度は所与であるとすることが多い。
                     そこで組 \( (\Omega,\mathcal{F},P) \) を考え、これを<span class="new-word">確率空間（probability space）</span>と呼ぶ。
-                    なお \( \mathcal{F} \) はしばしば都合の良い集合族でしかなく、実際の計算では不要なことも多いので、確率空間は \( (\Omega,P) \) と略記されることが珍しくない。
+                    なお \( \mathcal{F} \) はしばしば都合の良い集合族でしかなく、実際の計算では不要なことも多いので、確率空間は \( (\Omega,P) \) と略記されることがある。
                     その場合、それ以降の議論はある程度真面目に確率を扱うものの、数学的な厳密さには重きを置かないことが意図されていると考えて差し支えない。
                 </p>
                 <p>
