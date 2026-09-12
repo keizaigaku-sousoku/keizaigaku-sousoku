@@ -21,6 +21,7 @@
             <div class="part">
                 <h3 class="part-title">目次</h3>
                 <a href="#section-equally-likely">同様に確からしい</a>
+                <a href="#section-sigma">\(\sigma\)-加法族</a>
                 <a href="#section-measure-space">確率測度・確率空間</a>
                 <a href="#section-density">確率密度</a>
             </div>
@@ -53,13 +54,52 @@
                     仮に不必要な混乱を恐れず、それらの文字に有理数であることを課しておけば、何の問題も起こらない。
                 </p>
             </section>
+            <section id="section-sigma">
+                <h4>\(\sigma\)-加法族</h4>
+                <p>
+                    　無定義用語を排して "確率" を定義するには、数学の準備が必要である。
+                    任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
+                    そして \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
+                    ここで \( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、以下を満たすものを \( \Omega \) 上の<span class="new-word">\(\sigma\)-加法族（\( \sigma \)-additive family）</span>と呼ぶ。
+                    <div class="math-container">
+                        (F1) \( \Omega\in\mathcal{F} \) <br>
+                        (F2) \( ^\forall A\in\mathcal{F};\ \ \ A^\textrm{c}\in\mathcal{F} \) <br>
+                        (F3) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcup_{i=1}^\infty A_i\in\mathcal{F} \)
+                    </div>                    
+                    ごく基本的な主張として以下を導ける。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( \mathcal{F} \) を \( \Omega \) 上の\(\sigma\)-加法族とする。
+                        このとき、次が成り立つ。<br>
+                    </p>
+                    <div class="math-container">
+                        (i) \( \emptyset\in\mathcal{F} \) 。<br>
+                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ \bigcup_{i=1}^n A_i\in\mathcal{F} \) 。<br>
+                        (iii) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ \bigcap_{i=1}^\infty A_i\in\mathcal{F} \) 。<br>
+                        (iv) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ \bigcap_{i=1}^n A_i\in\mathcal{F} \) 。<br>
+                        (v) \( ^\forall A,B\in\mathcal{F};\ \ \ A\backslash B\in\mathcal{F} \) 。<br>
+                    </div>
+                </div>            
+                <div class="proof">
+                    <p>
+                        (i) (F1)、(F2)より明らか。<br>
+                        (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定めれば、(F3)から題意が示される。<br>
+                        (iii) (F2)より \( A_i^\textrm{c}\in\mathcal{F} \) であり、(F3)より \( \bigcup_{i=1}^\infty A_i^\textrm{c}\in\mathcal{F} \) が成り立つ。
+                        したがって(F2)より \( \mathcal{F}\ni(\bigcup_{i=1}^\infty A_i^\textrm{c})^\textrm{c}=\bigcap_{i=1}^\infty A_i\) と題意が示される。<br>
+                        (iv) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\Omega \) 、\( i &gt; n \) によって定めれば、(iii)から題意が示される。<br>
+                        (v) \( A\backslash B=A\cap B^\textrm{c} \) であり、(F2)と(iv)より題意が示される。
+                    </p>
+                </div>
+
+                </p>
+            </section>
             <section id="section-measure-space">
                 <h4>確率測度・確率空間</h4>
                 <p>
                     　無定義用語を排して "確率" を定義することは難しくない。
-                    任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
-                    そして \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
-                    ここで \( 2^\Omega \) の部分集合 \( \mathcal{F} \) であって、少なくとも \(\Omega \) と \( \emptyset \) を有する数学的に性質の良いものを取る（具体的に \( \mathcal{F} \) は " \( \sigma \) - 加法族 " と呼ばれるものであるが、詳細は後述の書籍に譲る）。
+                    少なくとも \(\Omega \) と \( \emptyset \) を有する数学的に性質の良いものを取る（具体的に \( \mathcal{F} \) は " \( \sigma \) - 加法族 " と呼ばれるものであるが、詳細は後述の書籍に譲る）。
                     写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
                 </p>
                 <p>
