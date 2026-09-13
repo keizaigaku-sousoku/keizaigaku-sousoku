@@ -74,17 +74,18 @@
                         このとき、次が成り立つ。<br>
                     </p>
                     <div class="math-container">
-                        (i) \( ^\forall a,b\in\textbf{R};\ \ \ E[aX+bY]=aEX+bEY \) 。<br>
-                        (ii) \( ^\forall \omega \in \Omega;\ \ \ X(\omega)\leq Y(\omega) \Longrightarrow EX \leq EY \) 。
+                        (i) \( ^\exists a\in\textbf{R}, ^\forall\omega\in\Omega;\ \ \ X(\omega)=a \Longrightarrow EX=a \) 。<br>
+                        (ii) \( ^\forall a,b\in\textbf{R};\ \ \ E[aX+bY]=aEX+bEY \) 。<br>
+                        (iii) \( ^\forall \omega \in \Omega;\ \ \ X(\omega)\leq Y(\omega) \Longrightarrow EX \leq EY \) 。
                     </div>
                 </div>            
                 <div class="proof">
                     <p>
-                        (i)、(ii)ともに自明。
+                        (i)-(iii)すべて自明。
                     </p>
                 </div>
                 <p>
-                    　標本空間が1次元であるとき、以下の<span class="new-word">H&ouml;lder不等式（H&ouml;lder inequality）</span>と呼ばれる結果を得る。
+                    　上記期待値の性質を用いることで、以下の<span class="new-word">H&ouml;lder不等式（H&ouml;lder inequality）</span>と呼ばれる結果を得る。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -115,7 +116,7 @@
                     </div>
                     <p>
                         である。
-                        期待値の性質(i)、(ii)を用いれば \( 1/p+1/q=1 \) により題意が示される。
+                        期待値の性質を用いれば \( 1/p+1/q=1 \) により題意が示される。
                     </p>
                 </div>
                 <p>
@@ -171,7 +172,7 @@
                         \[
                             ^\forall \omega \in \Omega; \ \ \ f(X(\omega))\geq f(EX)+c(X(\omega)-EX)
                         \]
-                        つまり期待値の性質(i)、(ii)より
+                        つまり期待値の性質より
                         \[
                             E[f(X)]\geq E[f(EX)+c(X-EX)]=f(EX)+c(EX-EX)=f(EX)
                         \]
@@ -184,7 +185,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) を確率変数、\( f : \textbf{R}_{&gt;0} \rightarrow \textbf{R}_{&gt;0} \) を広義単調増加関数とする。
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) を確率変数、\( f : \textbf{R}_{&gt;0} \rightarrow \textbf{R}_{&gt;0} \) を広義単調増加関数とする。
                         このとき、 <br>
                     </p>
                     <div class="math-container">
@@ -204,7 +205,7 @@
                             ^\forall \omega \in \Omega;\ \ \ 1_A(\omega)\leq\frac{f(|X(\omega)|)}{f(\epsilon)}
                         \]
                         が成り立つ。
-                        期待値の性質(i)、(ii)を用いれば \( E[1_A]\leq E[f(|X|)]/f(\epsilon) \) であり、左辺は \( E[1_A]=\int_\Omega 1_A(\omega)p(\omega)\ \textrm{d}\omega=\int_A p(\omega)\ \textrm{d}\omega=P(A)=P[|X| &gt; \epsilon] \) ゆえ題意が示される。
+                        期待値の性質を用いれば \( E[1_A]\leq E[f(|X|)]/f(\epsilon) \) であり、左辺は \( E[1_A]=\int_\Omega 1_A(\omega)p(\omega)\ \textrm{d}\omega=\int_A p(\omega)\ \textrm{d}\omega=P(A)=P[|X| &gt; \epsilon] \) ゆえ題意が示される。
                     </p>
                 </div>
             </section>
