@@ -74,8 +74,8 @@
                         このとき、次が成り立つ。<br>
                     </p>
                     <div class="math-container">
-                        (i) \( ^\forall a,b\in\textbf{R};\ \ \ E^P[aX+bY]=aE^P[X]+bE^P[Y] \) 。<br>
-                        (ii) \( ^\forall \omega \in \Omega;\ \ \ X(\omega)\leq Y(\omega) \Longrightarrow E^P[X] \leq E^P[Y] \) 。
+                        (i) \( ^\forall a,b\in\textbf{R};\ \ \ E[aX+bY]=aEX+bEY \) 。<br>
+                        (ii) \( ^\forall \omega \in \Omega;\ \ \ X(\omega)\leq Y(\omega) \Longrightarrow EX \leq EY \) 。
                     </div>
                 </div>            
                 <div class="proof">
@@ -89,7 +89,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
                         このとき、 <br>
                     </p>
                     <div class="math-container">
@@ -118,90 +118,74 @@
                         先の命題の(ii)を用いれば \( 1/p+1/q=1 \) により題意が示される。
                     </p>
                 </div>
-            </section>
-            <!--
-            <section id="section-measure-space">
-                <h4>確率測度・確率空間</h4>
                 <p>
-                    　\(\sigma\)-代数を用いて "確率" は曖昧さなく定義される。
-                    任意の集合 \( \Omega \neq \emptyset \) をとり、便宜的にこれを<span class="new-word">標本空間（sample space）</span>と呼ぶ。
-                    また \( \Omega \) の部分集合を<span class="new-word">事象（event）</span>とくに1点を<span class="new-word">標本点（sample point）</span>と呼ぶ。
-                    そして \(\mathcal{F} \) を \(\Omega \) 上の \( \sigma\)-代数とし、写像 \( P:\mathcal{F} \rightarrow [0,1] \) であって以下を満たすものを<span class="new-word">確率測度（probability measure）</span>と呼ぶ。
-                </p>
-                <p>
-                    <div class="math-container">
-                        (P1) \( P(\Omega)=1 \) <br>
-                        (P2) \( ^\forall (A_i)_{i=1}^\infty \in \mathcal{F}^\infty;\ \ \ A_i \cap A_j=\emptyset, \ i \neq j \Longrightarrow P(\bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty P(A_i) \)
-                    </div>
-                </p>
-                <p>
-                    最後に任意の事象 \( A\in \mathcal{F} \) に対して、\( P(A) \) を \( A \) の<span class="new-word">確率（probability）</span>と呼ぶ。
-                </p>
-                <p>
-                    　確率を議論するにあたり、標本空間と確率測度は所与であるとすることが多い。
-                    そこで組 \( (\Omega,\mathcal{F},P) \) を考え、これを<span class="new-word">確率空間（probability space）</span>と呼ぶ。
-                    なお \( \mathcal{F} \) はしばしば都合の良い集合族でしかなく、実際の計算では不要なことも多いので、確率空間は \( (\Omega,P) \) と略記されることがある。
-                    その場合、それ以降の議論はある程度真面目に確率を扱うものの、数学的な厳密さには重きを置かないことが意図されていると考えて差し支えない。
-                </p>
-                <p>
-                    　確率空間を扱う書籍は多数存在し、また確率の重要性が増し続ける現代において、その数は留まる所を知らない。
-                    ここでは古典的であるものの、色褪せることがない特徴的な書籍を紹介する。
-                    まず厳密さと文体の硬さを相当犠牲にし、読み物としての面白さを追求したものとして "小針宏, 確率・統計入門, 岩波書店 (1973)" がある。
-                    議論の抽象度にムラが目立つものの、気がつけばページをめくる指が止まらないタイプの1冊である。
-                    次に集合論の前提知識のみで通読できる稀有なものとして "佐藤坦, はじめての確率論 測度から確率へ, 共立出版 (1994)" がある。
-                    内容は厳密さにほとんど妥協がないため若干高度な記述はあるものの、セルフコンシステントである点は評価に値する。
-                    最後に最高級の書籍として "伊藤清, 確率論, 岩波書店 (1991)" は外せない。
-                    数学かくあるべし、を体現した質・量ともに他の追随を許さない1冊である。
-                </p>
-                <p>
-                    　確率空間を規定する(P1)、(P2)は極めて単純な条件に過ぎないが、豊かで奥行きのある構造を有する。
-                    ごく基本的な主張として以下を導ける。
-                    証明ではいちいち明記しないが、\(\sigma\)-代数が和集合、差集合、共通部分等を取る操作に対して閉じていることを多用する。
+                    　H&ouml;lder不等式を用いれば、以下の<span class="new-word">Schwarz不等式（Schwarz inequality）</span>と呼ばれる結果を得る。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,\mathcal{F},P) \) を確率空間とする。
-                        このとき、次が成り立つ。<br>
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
+                        このとき、 <br>
                     </p>
                     <div class="math-container">
-                        (i) \( P(\emptyset)=0 \) 。<br>
-                        (ii) \( ^\forall n \in \textbf{Z}_{\geq1}, ^\forall (A_i)_{i=1}^n \in \mathcal{F}^n;\ \ \ A_i \cap A_j=\emptyset, \ i \neq j \Longrightarrow P(\bigcup_{i=1}^n A_i)=\sum_{i=1}^n P(A_i) \) 。<br>
-                        (iii) \( ^\forall A,B\in\mathcal{F};\ \ \ P(A\cup B)=P(A)+P(B)-P(A\cap B) \) 。<br>
-                        (iv) \( ^\forall A,B\in\mathcal{F};\ \ \ A\subset B \Longrightarrow P(A)\leq P(B)\) 。
+                        \[
+                            E[|XY|]\leq\sqrt{E{[X^2]}}\sqrt{E[Y^2]}
+                        \]
                     </div>
+                    <p>
+                        が成り立つ。
+                    </p>
                 </div>            
                 <div class="proof">
                     <p>
-                        (i) 空集合の性質より \( \emptyset\cup\emptyset=\emptyset \) であり、帰納的に \( P(\emptyset)=P(\bigcup_{i=1}^\infty\emptyset) \) が成り立つ。
-                        また \( \emptyset\cap\emptyset=\emptyset \) であって、列 \( (\emptyset)_{i=1}^\infty \) に(P2)を用いれば \( P(\bigcup_{i=1}^\infty\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立つ。
-                        よって \( P(\emptyset)=\sum_{i=1}^\infty P(\emptyset) \) が成り立ち、\( P(\emptyset)\leq1 \) ゆえ \( \sum_{i=1}^\infty P(\emptyset) \leq 1 &lt; \infty \) を得る。
-                        もし \( P(\emptyset)=0 \) でなければ不等式が破れる。<br>
-                        (ii) 列 \( (B_i)_{i=1}^\infty \) を \( B_i=A_i \) 、\( i\leq n \) および \( B_i=\emptyset \) 、\( i &gt; n \) によって定める。
-                        (P2)と(i)から題意が示される。<br>
-                        (iii) \( A\cup B = A\cup(B\backslash A)=A\cup[B\backslash(A\cap B)] \) および \( A\cap[B\backslash(A\cap B)]=\emptyset \) により、\( A \) と \( B\backslash(A\cap B) \) に(ii)を用いれば \( P(A\cup B)=P(A)+P(B\backslash(A\cap B)) \) が成り立つ。
-                        一方で \( B=[B\backslash(A\cap B)]\cup(A\cap B) \) および \( [B\backslash(A\cap B)]\cap(A\cap B)=\emptyset \) により、\( B\backslash(A\cap B) \) と \( A\cap B \) に(ii)を用いれば \( P(B)=P(B\backslash(A\cap B))+P(A\cap B) \) が成り立つ。
-                        2式から \( P(B\backslash(A\cap B)) \) を消去すれば題意が示される。<br>
-                        (iv) \( A\subset B \) であるから、 \( B=A\cup(B\backslash A) \) および \( A\cap(B\backslash A)=\emptyset \) により、\( A \) と \( B\backslash A \) に(ii)を用いれば \( P(B)=P(A\cup(B\backslash A))=P(A)+P(B\backslash A)\geq P(A) \) を得る。
+                    </p>
+                </div>
+                <p>
+                    　******、以下の<span class="new-word">Chebysev不等式（Chebysev inequality）</span>と呼ばれる結果を得る。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) を確率変数、\( f : \textbf{R}_{&gt;0} \rightarrow \textbf{R}_{&gt;0} \) を広義単調増加関数とする。
+                        このとき、 <br>
+                    </p>
+                    <div class="math-container">
+                        \[
+                            ^\forall \epsilon &gt; 0;\ \ \ E[|X| &gt; \epsilon]\leq\frac{1}{f(\epsilon)}E[f(|X|)]
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <p>
+                    </p>
+                </div>
+                <p>
+                    　******、以下の<span class="new-word">Jensen不等式（Jensen inequality）</span>と呼ばれる結果を得る。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) を確率変数、\( f : \textbf{R} \rightarrow \textbf{R} \) を広義下に凸な関数とする。
+                        このとき、 <br>
+                    </p>
+                    <div class="math-container">
+                        \[
+                            f(EX)\leq E[f(X)]
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                        もし \( f \) が広義上に凸な関数であれば不等号は反転する。
+                    </p>
+                </div>            
+                <div class="proof">
+                    <p>
                     </p>
                 </div>
             </section>
-            <section id="section-density">
-                <h4>確率密度</h4>
-                <p>
-                    　確率測度は標本空間の部分集合に対して実数を返すものであって、大雑把には積分と解釈される。
-                    確率空間 \( (\Omega,\mathcal{F},P) \) 、\( \Omega\subset\textbf{R}^n \) 、\( n\in\textbf{Z}_{\geq1} \) が与えられたとき、写像 \( p:\Omega\rightarrow[0,\infty) \) であって
-                </p>
-                \[
-                    ^\forall A\in\mathcal{F};\ \ \ P(A)=\int_A p(x)\ \textrm{d}x
-                \]
-                <p>
-                  を満たすものを<span class="new-word">確率密度（probability density）</span>と呼ぶ。
-                  ただし積分は \( n \) 重Riemann積分であり、必要があればより広義の積分を適用する。
-                  確率密度 \( p \) が所与であれば、確率測度は \( P=\int_\bullet p(x)\ \textrm{d}x \) という \( \mathcal{F} \) の元を受取る写像に他ならない。
-                </p>
-            </section>
-            -->
         </main>
         <div id="nav-placeholder"></div>
         <script src="../../共通/load-nav.js" defer></script>
