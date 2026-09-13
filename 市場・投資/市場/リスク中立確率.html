@@ -63,8 +63,7 @@
                     <div class="title">命題</div>
                     <p>
                         (ASA1)-(ASA3)が成り立たない必要十分条件は、\( Q \) が存在することである。
-                </div>            
-                <div class="proof">
+                </div>
                     <p>
                         \( H:=\{\ket{w}\in\textbf{R}^{|\mathcal{G}|\times1}:\braket{w|S_0}=0\} \) とおき、線型写像 \( \Phi : H \rightarrow \textbf{R}^{n\times1} \) を
                         \[
@@ -76,7 +75,7 @@
                     </p>
                     <p>
                         十分性について、\( Q \) が存在すると仮定する。
-                        \( \ket{q}\in\textbf{R}^{n\times1} \) を \( \braket{i|q}=Q(\omega_i) \) で定めれば、任意の \( \ket{w} \in H \) に対して
+                        \( \ket{q}\in\textbf{R}^{n\times1} \) を \( \braket{i|q}=Q(\omega_i) &gt; 0 \) で定めれば、任意の \( \ket{w} \in H \) に対して
                         <div class="math-container">
                             \[
                                 \begin{align}
@@ -88,7 +87,8 @@
                                 \end{align}
                             \]
                         </div>
-                        であるから、任意の \( \ket{m} \in M \) に対して \( \braket{q|m}=0 \) が成り立つ。
+                        であるから、任意の \( \ket{m} \in M \) に対して \( 0=\braket{q|m}=\sum_{i=1}^n \braket{q|i}\braket{i|m} \) が成り立つ。
+                        ここで \( \braket{i|q} &gt; 0 \) であるから、\( M\cap\textbf{R}_{\geq0}^{n\times1}=\{0\} \) でなければならない。
                     </p>
                 </div>
             </section>
