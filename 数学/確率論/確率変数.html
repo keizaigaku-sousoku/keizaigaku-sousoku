@@ -22,7 +22,7 @@
                 <h3 class="part-title">目次</h3>
                 <a href="#section-random-variable">確率変数</a>
                 <a href="#section-almost-surely">ほとんど確実に</a>
-                <a href="#section-expectation-variance">期待値・分散</a>
+                <a href="#section-expectation">期待値</a>
             </div>
         </div>
         <main>
@@ -54,15 +54,15 @@
                     ある標本点に対して \( X \) が \( 0 \) を返さないにも関わらず計算上は \( P[X=0]=1 \) であるため、"ほとんど" という語が必要になる。
                 </p>
             </section>
-            <section id="section-expectation-variance">
-                <h4>期待値・分散</h4>
+            <section id="section-expectation">
+                <h4>期待値</h4>
                 <p>
                     　確率変数を特徴付ける最重要の量を定める。
                     確率空間 \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) が与えられ、確率密度 \( p: \Omega \rightarrow [0,\infty) \) が定まっており、確率変数 \( X : \Omega \rightarrow \textbf{R} \) を考えているとする。
                     これは数学としては極めて具体的な仮定であるが、実用上は十分に一般的である。
                     このとき、
                     \[
-                        E^P[X]=EX:=\int_\Omega xp(x)\ \textrm{d}x
+                        E^P[X]=EX:=\int_\Omega X(\omega)p(\omega)\ \textrm{d}\omega
                     \]
                     を \( X \) の \( P \) に関する<span class="new-word">期待値（expectation）</span>と呼ぶ。
                     ごく基本的な主張として以下を導ける。
@@ -89,7 +89,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
                         このとき、 <br>
                     </p>
                     <div class="math-container">
@@ -115,7 +115,7 @@
                     </div>
                     <p>
                         である。
-                        先の命題の(ii)を用いれば \( 1/p+1/q=1 \) により題意が示される。
+                        期待値の性質(i)、(ii)を用いれば \( 1/p+1/q=1 \) により題意が示される。
                     </p>
                 </div>
                 <p>
@@ -124,7 +124,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) 、\( Y \) を確率変数とする。
                         このとき、 <br>
                     </p>
                     <div class="math-container">
@@ -147,7 +147,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R} \) を確率空間、\( X \) を確率変数、\( f : \textbf{R} \rightarrow \textbf{R} \) を広義下に凸な関数とする。
+                        \( (\Omega,P) \) 、\( \Omega \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) を確率空間、\( X \) を確率変数、\( f : \textbf{R} \rightarrow \textbf{R} \) を広義下に凸な関数とする。
                         このとき、 <br>
                     </p>
                     <div class="math-container">
@@ -162,6 +162,20 @@
                 </div>            
                 <div class="proof">
                     <p>
+                        \( f \) が広義下に凸であるため、任意の \( x_\ast \in \textbf{R} \) に対して、ある \( c \in \textbf{R} \) が存在して
+                        \[
+                            ^\forall x \in \textbf{R}; \ \ \ f(x)\geq f(x_\ast)+c(x-x_\ast)
+                        \]
+                        が成り立つ。
+                        ここで \( x_\ast=EX \) 、\( x=X(\omega) \) を代入すれば
+                        \[
+                            ^\forall \omega \in \Omega; \ \ \ f(X(\omega))\geq f(EX)+c(X(\omega)-EX)
+                        \]
+                        つまり期待値の性質(i)、(ii)より
+                        \[
+                            E[f(X)]\geq E[f(EX)+c(X-EX)]=f(EX)+c(EX-EX)=f(EX)
+                        \]
+                        が示される。
                     </p>
                 </div>
                 <p>
@@ -175,7 +189,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            ^\forall \epsilon &gt; 0;\ \ \ E[|X| &gt; \epsilon]\leq\frac{1}{f(\epsilon)}E[f(|X|)]
+                            ^\forall \epsilon &gt; 0;\ \ \ P[|X| &gt; \epsilon]\leq\frac{1}{f(\epsilon)}E[f(|X|)]
                         \]
                     </div>
                     <p>
@@ -184,6 +198,13 @@
                 </div>            
                 <div class="proof">
                     <p>
+                        事象 \( A=\{\omega\in\Omega:|X(\omega)|&gt;\epsilon\} \) をとれば、\( f \) が広義単調増加であるから任意の \( \omega \in A \) に対して \( f(|X(\omega)|)\geq f(\epsilon) \) である。
+                        そこで確率変数 \( 1_A : \Omega \rightarrow \{0,1\} \) を \( 1_A(\omega)=1 \) 、\( \omega \in A \) 、\( 1_A(\omega)=0 \) 、\( \omega \notin A \) で定めれば
+                        \[
+                            ^\forall \omega \in \Omega;\ \ \ 1_A(\omega)\leq\frac{f(|X(\omega)|)}{f(\epsilon)}
+                        \]
+                        が成り立つ。
+                        期待値の性質(i)、(ii)を用いれば \( E[1_A]\leq E[f(|X|)]/f(\epsilon) \) であり、左辺は \( E[1_A]=\int_\Omega 1_A(\omega)p(\omega)\ \textrm{d}\omega=\int_A p(\omega)\ \textrm{d}\omega=P(A)=P[|X| &gt; \epsilon] \) ゆえ題意が示される。
                     </p>
                 </div>
             </section>
