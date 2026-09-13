@@ -50,6 +50,7 @@
             </section>
             <section id="section-fundamental-theorem-pricing">
                 <h4>資産価格付けの基本定理</h4>
+                <p>
                     ほとんど確実な裁定が成り立つことを認めるか否かは議論の仮定に過ぎないが、ある便利な計算の道具の存在が同値な条件になる。
                     上記の設定において、所与の確率測度 \( P \) とは一般には異なる確率測度 \( Q \) であって
                     \[
@@ -65,7 +66,29 @@
                 </div>            
                 <div class="proof">
                     <p>
-                        あああ
+                        \( H:=\{\ket{w}\in\textbf{R}^{|\mathcal{G}|\times1}:\braket{w|S_0}=0\} \) とおき、線型写像 \( \Phi : H \rightarrow \textbf{R}^{n\times1} \) を
+                        \[
+                            \braket{i|\Phi|w}=\frac{1}{1+r}\braket{w|S_1}(\omega_i)
+                        \]
+                        で定め、\( M:=\Phi(H)\subset\textbf{R}^{n\times1} \) とおく。
+                        すると(ASA1)-(ASA3)が成り立たつことは、\( M \) の元であってその \( n \) 個の成分がすべて \( 0 \) 以上かつある成分が \( 0 \) より大きいことであるから、必要十分に \( M\cap\textbf{R}_{\geq0}^{n\times1}\neq\{0\} \) と表せる。
+                        つまり(ASA1)-(ASA3)が成り立たない必要十分条件は \( M\cap\textbf{R}_{\geq0}^{n\times1}=\{0\} \) である。
+                    </p>
+                    <p>
+                        十分性について、\( Q \) が存在すると仮定する。
+                        \( \ket{q}\in\textbf{R}^{n\times1} \) を \( \braket{i|q}=Q(\omega_i) \) で定めれば、任意の \( \ket{w} \in H \) に対して
+                        <div class="math-container">
+                            \[
+                                \begin{align}
+                                    \braket{q|\Phi|w}&=\sum_{i=1}^n\braket{q|i}\braket{i|\Phi|w}\nonumber\\
+                                    =&\frac{1}{1+r}\sum_{i=1}^n Q(\omega_i)\braket{w|S_1}(\omega_i)\nonumber\\
+                                    =&\frac{1}{1+r}E^Q[\braket{w|S_1}]\nonumber\\
+                                    =&\bra{w}\frac{1}{1+r}E^Q[\ket{S_1}]\nonumber\\
+                                    =&\braket{w|S_0}=0
+                                \end{align}
+                            \]
+                        </div>
+                        であるから、任意の \( \ket{m} \in M \) に対して \( \braket{q|m}=0 \) が成り立つ。
                     </p>
                 </div>
             </section>
