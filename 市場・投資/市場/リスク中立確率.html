@@ -51,13 +51,14 @@
             <section id="section-fundamental-theorem-pricing">
                 <h4>資産価格付けの基本定理</h4>
                 <p>
-                    ほとんど確実な裁定が成り立つことを認めるか否かは議論の仮定に過ぎないが、ある便利な計算の道具の存在が同値な条件になる。
-                    上記の設定において、所与の確率測度 \( P \) とは一般には異なる確率測度 \( Q : \Omega \rightarrow (0,1) \) であって
+                    　ほとんど確実な裁定が成り立つか否かは決めの問題であって導かれるものではないが、その否定はある便利な確率測度の存在に同値であることが知られている。
+                    上記の設定において、確率測度 \( Q : \Omega \rightarrow (0,1) \) であって
                     \[
                         \ket{S_0}=\frac{1}{1+r}E^Q[\ket{S_1}]
                     \]
                     を満たすものを<span class="new-word">リスク中立確率（risk-neutral probability measure）</span>と呼ぶ。
-                    そして以下の<span class="new-word">資産価格付けの基本定理（fundamental theorem of asset pricing）</span>と呼ばれる主張が導かれる。
+                    これは所与の確率測度 \( P \) とは一般には異なり、必ずしも明確な意味付けが行われる必要はない。
+                    以下の<span class="new-word">資産価格付けの基本定理（fundamental theorem of asset pricing）</span>と呼ばれる主張が導かれる。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -67,9 +68,9 @@
                 </div>
                 <div class="proof">
                     <p>
-                        \( H:=\{\ket{w}\in\textbf{R}^{|\mathcal{G}|\times1}:\braket{w|S_0}=0\} \) とおき、線型写像 \( \Phi : H \rightarrow \textbf{R}^{n\times1} \) を
+                        \( H:=\{\ket{\theta}\in\textbf{R}^{|\mathcal{G}|\times1}:\braket{\theta|S_0}=0\} \) とおき、線型写像 \( \Phi : H \rightarrow \textbf{R}^{n\times1} \) を
                         \[
-                            \braket{i|\Phi|w}=\frac{1}{1+r}\braket{w|S_1}(\omega_i)
+                            \braket{i|\Phi|\theta}=\frac{1}{1+r}\braket{\theta|S_1}(\omega_i)
                         \]
                         で定め、\( M:=\Phi(H)\subset\textbf{R}^{n\times1} \) とおく。
                         すると(ASA1)-(ASA3)が成り立たつことは、\( M \) の元であってその \( n \) 個の成分がすべて \( 0 \) 以上かつある成分が \( 0 \) より大きいことであるから、必要十分に \( M\cap\textbf{R}_{\geq0}^{n\times1}\neq\{0\} \) と表せる。
@@ -77,16 +78,16 @@
                     </p>
                     <p>
                         十分性について、\( Q \) が存在すると仮定する。
-                        \( \ket{q}\in\textbf{R}^{n\times1} \) を \( \braket{i|q}=Q(\omega_i) &gt; 0 \) で定めれば、任意の \( \ket{w} \in H \) に対して
+                        \( \ket{q}\in\textbf{R}^{n\times1} \) を \( \braket{i|q}=Q(\omega_i) &gt; 0 \) で定めれば、任意の \( \ket{\theta} \in H \) に対して
                     </p>
                     <div class="math-container">
                         \[
                             \begin{align}
-                                \braket{q|\Phi|w}=&\sum_{i=1}^n\braket{q|i}\braket{i|\Phi|w}\nonumber\\
-                                =&\frac{1}{1+r}\sum_{i=1}^n Q(\omega_i)\braket{w|S_1}(\omega_i)\nonumber\\
-                                =&\frac{1}{1+r}E^Q[\braket{w|S_1}]\nonumber\\
+                                \braket{q|\Phi|\theta}=&\sum_{i=1}^n\braket{q|i}\braket{i|\Phi|\theta}\nonumber\\
+                                =&\frac{1}{1+r}\sum_{i=1}^n Q(\omega_i)\braket{\theta|S_1}(\omega_i)\nonumber\\
+                                =&\frac{1}{1+r}E^Q[\braket{\theta|S_1}]\nonumber\\
                                 =&\bra{w}\frac{1}{1+r}E^Q[\ket{S_1}]\nonumber\\
-                                =&\braket{w|S_0}=0
+                                =&\braket{\theta|S_0}=0
                             \end{align}
                         \]
                     </div>
@@ -109,12 +110,12 @@
                         が成り立つ。
                         明らかに \( \braket{q^\prime|m}=0 \) でなければならず、\( 0 \leq \alpha - \epsilon \) つまり \( 0 &lt; \epsilon \leq \alpha \) である。
                         また \( \ket{i} \in \Delta \) ゆえ \( \braket{q^\prime|i} \geq \alpha &gt; 0 \) である。
-                        よって \( c:=\sum_{i=1}^n\braket{i|q^\prime}&gt;0 \) 、\( \ket{i|q}:=(1/c)\ket{i|q^\prime} \) とおけば、\( Q : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
-                        ここで任意の \( \ket{w}\in H \) に対して \( \Phi\ket{w} \in M \) であるから、これと \( \ket{q^\prime} \) は直交して
+                        よって \( c:=\sum_{i=1}^n\braket{i|q^\prime}&gt;0 \) 、\( \braket{i|q}:=(1/c)\braket{i|q^\prime} \) とおけば、\( Q : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
+                        ここで任意の \( \ket{\theta}\in H \) に対して \( \Phi\ket{\theta} \in M \) であるから、これと \( \ket{q^\prime} \) は直交して
                     </p>
                     <div class="math-container">
                         \[
-                            0=\braket{q^\prime|\Phi|w}=\sum_{i=1}^n \braket{q^\prime|i}\braket{i|\Phi|w}=\frac{1}{1+r}\bigg{[}\sum_{i=1}^n\braket{q^\prime|i}\bra{S_1}(\omega_i)\bigg{]}\ket{w}
+                            0=\braket{q^\prime|\Phi|\theta}=\sum_{i=1}^n \braket{q^\prime|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bigg{[}\sum_{i=1}^n\braket{q^\prime|i}\bra{S_1}(\omega_i)\bigg{]}\ket{\theta}
                         \]
                     </div>
                     <p>
