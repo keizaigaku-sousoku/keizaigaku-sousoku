@@ -103,19 +103,19 @@
                     </p>
                     <div class="math-container">
                         \[
-                            ^\exists \ket{	ilde{q}} \in \textbf{R}^{n\times1}, ^\exists \alpha, \epsilon &gt; 0, ^\forall \ket{m} \in M, ^\forall \ket{x} \in \Delta;\ \ \ \braket{	ilde{q}|m} \ \leq \ \alpha-\epsilon \land \braket{	ilde{q}|x} \geq \alpha
+                            ^\exists \ket{\tilde{q}} \in \textbf{R}^{n\times1}, ^\exists \alpha, \epsilon &gt; 0, ^\forall \ket{m} \in M, ^\forall \ket{x} \in \Delta;\ \ \ \braket{\tilde{q}|m} \ \leq \ \alpha-\epsilon \land \braket{\tilde{q}|x} \geq \alpha
                         \]
                     </div>
                     <p>
                         が成り立つ。
-                        仮に \( \braket{	ilde{q}|m} \neq 0 \) ならばある \( \ket{m} \) で不等式が破れるので \( \braket{	ilde{q}|m} = 0 \) であり、\( 0 \leq \alpha - \epsilon \) つまり \( 0 &lt; \epsilon \leq \alpha \) である。
-                        また \( \ket{i} \in \Delta \) ゆえ \( \braket{	ilde{q}|i} \geq \alpha &gt; 0 \) である。
-                        よって \( c:=\sum_{i=1}^n\braket{i|	ilde{q}}&gt;0 \) 、\( \ket{q}:=(1/c)\ket{	ilde{q}} \) とおけば、\( 	ilde{q} : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
-                        ここで任意の \( \ket{\theta}\in H \) に対して \( \Phi\ket{\theta} \in M \) であるから、これと \( \ket{	ilde{q}} \) は直交して
+                        仮に \( \braket{\tilde{q}|m} \neq 0 \) ならばある \( \ket{m} \) で不等式が破れるので \( \braket{\tilde{q}|m} = 0 \) であり、\( 0 \leq \alpha - \epsilon \) つまり \( 0 &lt; \epsilon \leq \alpha \) である。
+                        また \( \ket{i} \in \Delta \) ゆえ \( \braket{\tilde{q}|i} \geq \alpha &gt; 0 \) である。
+                        よって \( c:=\sum_{i=1}^n\braket{i|\tilde{q}}&gt;0 \) 、\( \ket{q}:=(1/c)\ket{\tilde{q}} \) とおけば、\( Q^\prime : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
+                        ここで任意の \( \ket{\theta}\in H \) に対して \( \Phi\ket{\theta} \in M \) であるから、これと \( \ket{\tilde{q}} \) は直交して
                     </p>
                     <div class="math-container">
                         \[
-                            0=\braket{	ilde{q}|\Phi|\theta}=\sum_{i=1}^n \braket{	ilde{q}|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bigg{[}\sum_{i=1}^n\braket{	ilde{q}|i}\bra{S_1}(\omega_i)\bigg{]}\ket{\theta}
+                            0=\braket{\tilde{q}|\Phi|\theta}=\sum_{i=1}^n \braket{\tilde{q}|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bigg{[}\sum_{i=1}^n\braket{\tilde{q}|i}\bra{S_1}(\omega_i)\bigg{]}\ket{\theta}
                         \]
                     </div>
                     <p>
@@ -129,12 +129,12 @@
                             \begin{align}
                                 \ket{v}=c^\prime\ket{S_0}\Longleftrightarrow&\sum_{i=1}^n\braket{i|	ilde{q}}\ket{S_1}(\omega_i)=(1+r)c\ket{S_0}\nonumber\\
                                 \Longleftrightarrow&\frac{1}{1+r}\sum_{i=1}^n\braket{i|q}\ket{S_1}(\omega_i)=\ket{S_0}\nonumber\\
-                                \Longleftrightarrow&\frac{1}{1+r}E^{	ilde{q}}[\ket{S_1}]=\ket{S_0}
+                                \Longleftrightarrow&\frac{1}{1+r}E^{Q^\prime}[\ket{S_1}]=\ket{S_0}
                             \end{align}
                         \]
                     </div>
                     <p>
-                        が成り立つので、\( 	ilde{q} \) はリスク中立確率に他ならない。
+                        が成り立つので、\( Q^\prime \) はリスク中立確率に他ならない。
                     </p>
                 </div>
             </section>
