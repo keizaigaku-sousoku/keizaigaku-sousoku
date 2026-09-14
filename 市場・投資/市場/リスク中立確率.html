@@ -103,38 +103,38 @@
                     </p>
                     <div class="math-container">
                         \[
-                            ^\exists \ket{q^\prime} \in \textbf{R}^{n\times1}, ^\exists \alpha, \epsilon &gt; 0, ^\forall \ket{m} \in M, ^\forall \ket{x} \in \Delta;\ \ \ \braket{q^\prime|m} \ \leq \ \alpha-\epsilon \land \braket{q^\prime|x} \geq \alpha
+                            ^\exists \ket{	ilde{q}} \in \textbf{R}^{n\times1}, ^\exists \alpha, \epsilon &gt; 0, ^\forall \ket{m} \in M, ^\forall \ket{x} \in \Delta;\ \ \ \braket{	ilde{q}|m} \ \leq \ \alpha-\epsilon \land \braket{	ilde{q}|x} \geq \alpha
                         \]
                     </div>
                     <p>
                         が成り立つ。
-                        仮に \( \braket{q^\prime|m} \neq 0 \) ならばある \( \ket{m} \) で不等式が破れるので \( \braket{q^\prime|m} = 0 \) であり、\( 0 \leq \alpha - \epsilon \) つまり \( 0 &lt; \epsilon \leq \alpha \) である。
-                        また \( \ket{i} \in \Delta \) ゆえ \( \braket{q^\prime|i} \geq \alpha &gt; 0 \) である。
-                        よって \( c:=\sum_{i=1}^n\braket{i|q^\prime}&gt;0 \) 、\( \ket{q}:=(1/c)\ket{q^\prime} \) とおけば、\( Q^\prime : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
-                        ここで任意の \( \ket{\theta}\in H \) に対して \( \Phi\ket{\theta} \in M \) であるから、これと \( \ket{q^\prime} \) は直交して
+                        仮に \( \braket{	ilde{q}|m} \neq 0 \) ならばある \( \ket{m} \) で不等式が破れるので \( \braket{	ilde{q}|m} = 0 \) であり、\( 0 \leq \alpha - \epsilon \) つまり \( 0 &lt; \epsilon \leq \alpha \) である。
+                        また \( \ket{i} \in \Delta \) ゆえ \( \braket{	ilde{q}|i} \geq \alpha &gt; 0 \) である。
+                        よって \( c:=\sum_{i=1}^n\braket{i|	ilde{q}}&gt;0 \) 、\( \ket{q}:=(1/c)\ket{	ilde{q}} \) とおけば、\( 	ilde{q} : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
+                        ここで任意の \( \ket{\theta}\in H \) に対して \( \Phi\ket{\theta} \in M \) であるから、これと \( \ket{	ilde{q}} \) は直交して
                     </p>
                     <div class="math-container">
                         \[
-                            0=\braket{q^\prime|\Phi|\theta}=\sum_{i=1}^n \braket{q^\prime|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bigg{[}\sum_{i=1}^n\braket{q^\prime|i}\bra{S_1}(\omega_i)\bigg{]}\ket{\theta}
+                            0=\braket{	ilde{q}|\Phi|\theta}=\sum_{i=1}^n \braket{	ilde{q}|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bigg{[}\sum_{i=1}^n\braket{	ilde{q}|i}\bra{S_1}(\omega_i)\bigg{]}\ket{\theta}
                         \]
                     </div>
                     <p>
-                        つまり \( \ket{v}:=\sum_{i=1}^n\braket{i|q^\prime}\ket{S_1}(\omega_i) \) は \( H \) に直交する。
+                        つまり \( \ket{v}:=\sum_{i=1}^n\braket{i|	ilde{q}}\ket{S_1}(\omega_i) \) は \( H \) に直交する。
                         定義より \( \ket{S_0} \) も \( H \) に直交し、ある \( c^\prime \in \textbf{R} \) が存在して \( \ket{v}=c^\prime \ket{S_0} \) が成り立つ。
-                        両辺に左から \( \bra{g_\ast} \) を掛ければ、\( \sum_{i=1}^n\braket{i|q^\prime}S_1^{g_\ast}(\omega_i)=c^\prime S_0^{g_\ast} \) つまり \( (1+r)c=c^\prime \) を得る。
+                        両辺に左から \( \bra{g_\ast} \) を掛ければ、\( \sum_{i=1}^n\braket{i|	ilde{q}}S_1^{g_\ast}(\omega_i)=c^\prime S_0^{g_\ast} \) つまり \( (1+r)c=c^\prime \) を得る。
                         したがって
                     </p>
                     <div class="math-container">
                         \[
                             \begin{align}
-                                \ket{v}=c^\prime\ket{S_0}\Longleftrightarrow&\sum_{i=1}^n\braket{i|q^\prime}\ket{S_1}(\omega_i)=(1+r)c\ket{S_0}\nonumber\\
+                                \ket{v}=c^\prime\ket{S_0}\Longleftrightarrow&\sum_{i=1}^n\braket{i|	ilde{q}}\ket{S_1}(\omega_i)=(1+r)c\ket{S_0}\nonumber\\
                                 \Longleftrightarrow&\frac{1}{1+r}\sum_{i=1}^n\braket{i|q}\ket{S_1}(\omega_i)=\ket{S_0}\nonumber\\
-                                \Longleftrightarrow&\frac{1}{1+r}E^{Q^\prime}[\ket{S_1}]=\ket{S_0}
+                                \Longleftrightarrow&\frac{1}{1+r}E^{	ilde{q}}[\ket{S_1}]=\ket{S_0}
                             \end{align}
                         \]
                     </div>
                     <p>
-                        が成り立つので、\( Q^\prime \) はリスク中立確率に他ならない。
+                        が成り立つので、\( 	ilde{q} \) はリスク中立確率に他ならない。
                     </p>
                 </div>
             </section>
