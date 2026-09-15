@@ -39,7 +39,7 @@
                     \]
                     で定義し、効用関数の形を
                     \[
-                        f_t^p(Q^p|\pi_t^p(\gamma))=U^p(w_t)
+                        f_t^p(\theta^p|\pi_t^p(\gamma))=U^p(w_t)
                     \]
                     とする [<a href="市場とは何か.html#section-information-objective" style="text-decoration: none"><span class="new-word">市場とは何か/情報・目的関数</span></a>] 。
                     ここで \( U^p : \textbf{R} \rightarrow \textbf{R} \) は投資家 \( p \) とただ1つの引数のみに依存する。
@@ -339,14 +339,16 @@
                     <p>
                         再投資を繰り返して \( r_t \) 、\( t=1,...,T \) 、\( T \in \textbf{Z}_{\geq 1} \) の収益率を得たとする。
                         一般化された相加・相乗平均の関係を \( 1+r_t \) 、\( t=1,...,T \) に対して用いれば
-                        <div class="math-container">
-                            \[
-                                \begin{align}
-                                    \bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T} \leq \frac{1}{T}\sum_{t=1}^T(1+r_t) \Longleftrightarrow& \bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T} \leq 1+\frac{1}{T}\sum_{t=1}^Tr_t\nonumber\\
-                                    \Longleftrightarrow& \bar{r}_\textrm{g} \leq \bar{r}_\textrm{a}
-                                \end{align}
-                            \]
-                        </div>
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T} \leq \frac{1}{T}\sum_{t=1}^T(1+r_t) \Longleftrightarrow& \bigg{[}\prod_{t=1}^T(1+r_t)\bigg{]}^{1/T} \leq 1+\frac{1}{T}\sum_{t=1}^Tr_t\nonumber\\
+                                \Longleftrightarrow& \bar{r}_\textrm{g} \leq \bar{r}_\textrm{a}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
                         を得る。
                     </p>
                 </div>
