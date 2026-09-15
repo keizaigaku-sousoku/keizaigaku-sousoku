@@ -33,7 +33,7 @@
                     　損益が確率的に決まる状況であっても、ほとんど確実に利益を得る方法が存在し得る。
                     任意の2時刻 \( t\in\{0,1\} \) を考え、\( t=1 \) において確率空間 \( (\Omega,P) \) 、\( \Omega=\{\omega_i\}_{i=1}^n \) 、\( n \in \textbf{Z}_{\geq2} \) が与えられているとする [<a href="../../数学/確率論/確率とは何か.html#section-measure-space" style="text-decoration: none"><span class="new-word">確率とは何か/確率測度・確率空間</span></a>] 。
                     またモノ \( g \in \mathcal{G} \subset \textbf{Z} \) の \( t=0 \) における価格を \( S_0^g &gt; 0 \) とし、\( t=1 \) における価格を確率変数 \( S_1^g : \Omega \rightarrow \textbf{R}_{&gt;0} \) で与えるとする [<a href="../../数学/確率論/確率変数#section-random-variable.html" style="text-decoration: none"><span class="new-word">確率変数/確率変数</span></a>] 。
-                    ブラケット記法で書けば、\( \ket{S_t}:=\sum_{g\in\mathcal{G}}S_t^g\ket{g} \) が \( t \) における価格の縦ベクトルであり、とくに \( \ket{S_t(\omega_i)}:=\sum_{g\in\mathcal{G}}S_t^g\ket{g}(\omega_i) \) と書くことにする [<a href="../../数学/線形代数/ブラケット記法" style="text-decoration: none"><span class="new-word">ブラケット記法</span></a>] 。
+                    ブラケット記法で書けば、\( \ket{S_t}:=\sum_{g\in\mathcal{G}}S_t^g\ket{g} \) が \( t \) における価格の縦ベクトルであり、とくに \( \ket{S_t(\omega_i)}:=\sum_{g\in\mathcal{G}}S_t^g(\omega_i)\ket{g} \) と書くことにする [<a href="../../数学/線形代数/ブラケット記法" style="text-decoration: none"><span class="new-word">ブラケット記法</span></a>] 。
                     さらに安全資産として \( g=g_\ast \) で \( S_0^{g_\ast}=1 \) 、\( S_1^{g_\ast}(\omega_i)=1+r \) 、\( i=1,...,n \) 、\( r &gt; -1 \) になるとする [<a href="安全資産.html#section-interest" style="text-decoration: none"><span class="new-word">安全資産/利子率</span></a>] 。
                     ある市場参加者が \( t=0 \) に \( g \) を \( \theta_g \) 単位だけ取引したとき、\( \ket{\theta}:=\sum_{g\in\mathcal{G}}\theta_g\ket{g} \) とおけば、彼が失う貨幣は \( \braket{\theta|S_0} \in \textbf{R} \) である（ \( \theta_g &gt; 0 \) は \( g \) の買い、\( \theta_g &lt; 0 \) は \( g \) の売りを表す）。
                     同様に彼が \( t=1 \) に反対売買して得る貨幣は確率変数として \( \braket{\theta|S_1} : \Omega \rightarrow \textbf{R} \) である。
@@ -42,7 +42,7 @@
                 <p>
                     (ASA1) \( \braket{\theta|S_0}=0 \)<br>
                     (ASA2) \( ^\forall i \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_i)}\geq0 \)<br>
-                    (ASA3) \( ^\exists i_\ast \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_{i_\ast)}} &gt; 0 \)
+                    (ASA3) \( ^\exists i_\ast \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_{i_\ast})} &gt; 0 \)
                 </p>
                 <p>
                     これは一定の時間だけモノを保有するので裁定ではないが [<a href="裁定の基礎.html" style="text-decoration: none"><span class="new-word">裁定の基礎</span></a>] 、(ASA1)が表す通り \( t=0 \) に貨幣の変化がなく、(ASA2)が表す通り \( t=1 \) に任意の標本点で貨幣を失い得ず、(ASA3)が表す通り \( t=1 \) にある標本点で貨幣を得るため、裁定に近い概念あるいは流儀によっては裁定そのものである。
