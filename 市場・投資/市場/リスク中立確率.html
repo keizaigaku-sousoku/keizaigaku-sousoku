@@ -70,7 +70,7 @@
                     <p>
                         \( H:=\{\ket{\theta}\in\textbf{R}^{|\mathcal{G}|\times1}:\braket{\theta|S_0}=0\} \) とおき、線型写像 \( \Phi : H \rightarrow \textbf{R}^{n\times1} \) を
                         \[
-                            \braket{i|\Phi|\theta}=\frac{1}{1+r}\braket{\theta|S_1}(\omega_i)
+                            \braket{i|\Phi|\theta}=\frac{1}{1+r}\braket{\theta|S_1(\omega_i)}
                         \]
                         で定め、\( M:=\Phi(H)\subset\textbf{R}^{n\times1} \) とおく。
                         すると(ASA1)-(ASA3)が成り立たつことは、\( M \) の元であってその \( n \) 個の成分がすべて \( 0 \) 以上かつある成分が \( 0 \) より大きいことであるから、必要十分に \( M\cap\textbf{R}_{\geq0}^{n\times1}\neq\{0\} \) と表せる。
@@ -84,7 +84,7 @@
                         \[
                             \begin{align}
                                 \braket{q|\Phi|\theta}=&\sum_{i=1}^n\braket{q|i}\braket{i|\Phi|\theta}\nonumber\\
-                                =&\frac{1}{1+r}\sum_{i=1}^n Q(\omega_i)\braket{\theta|S_1}(\omega_i)\nonumber\\
+                                =&\frac{1}{1+r}\sum_{i=1}^n Q(\omega_i)\braket{\theta|S_1(\omega_i)}\nonumber\\
                                 =&\frac{1}{1+r}E^Q[\braket{\theta|S_1}]\nonumber\\
                                 =&\bra{w}\frac{1}{1+r}E^Q[\ket{S_1}]\nonumber\\
                                 =&\braket{\theta|S_0}=0
@@ -110,16 +110,16 @@
                         が成り立つ。
                         仮に \( \braket{\tilde{q}|m} \neq 0 \) ならばある \( \ket{m} \) で不等式が破れるので \( \braket{\tilde{q}|m} = 0 \) であり、\( 0 \leq \alpha - \epsilon \) つまり \( 0 &lt; \epsilon \leq \alpha \) である。
                         また \( \ket{i} \in \Delta \) ゆえ \( \braket{\tilde{q}|i} \geq \alpha &gt; 0 \) である。
-                        よって \( c:=\sum_{i=1}^n\braket{i|\tilde{q}}&gt;0 \) 、\( \ket{q}:=(1/c)\ket{\tilde{q}} \) とおけば、\( Q^\prime : \Omega \ni \omega_i \mapsto \braket{i|q} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
+                        よって \( c:=\sum_{i=1}^n\braket{i|\tilde{q}}&gt;0 \) 、\( \ket{q^\prime}:=(1/c)\ket{\tilde{q}} \) とおけば、\( Q^\prime : \Omega \ni \omega_i \mapsto \braket{i|q^\prime} \in (0,1) \) は \( \Omega \) に対する1つの確率測度になる。
                         ここで任意の \( \ket{\theta}\in H \) に対して \( \Phi\ket{\theta} \in M \) であるから、これと \( \ket{\tilde{q}} \) は直交して
                     </p>
                     <div class="math-container">
                         \[
-                            0=\braket{\tilde{q}|\Phi|\theta}=\sum_{i=1}^n \braket{\tilde{q}|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bra{\theta}\bigg{[}\sum_{i=1}^n\braket{i|\tilde{q}}\ket{S_1}(\omega_i)\bigg{]}
+                            0=\braket{\tilde{q}|\Phi|\theta}=\sum_{i=1}^n \braket{\tilde{q}|i}\braket{i|\Phi|\theta}=\frac{1}{1+r}\bra{\theta}\bigg{[}\sum_{i=1}^n\braket{i|\tilde{q}}\ket{S_1(\omega_i)}\bigg{]}
                         \]
                     </div>
                     <p>
-                        つまり \( \ket{v}:=\sum_{i=1}^n\braket{i|\tilde{q}}\ket{S_1}(\omega_i) \) は \( H \) に直交する。
+                        つまり \( \ket{v}:=\sum_{i=1}^n\braket{i|\tilde{q}}\ket{S_1(\omega_i)} \) は \( H \) に直交する。
                         定義より \( H \) の直交補空間は \( \ket{S_0} \) のみによって張られるので、ある \( c^\prime \in \textbf{R} \) が存在して \( \ket{v}=c^\prime \ket{S_0} \) が成り立つ。
                         両辺に左から \( \bra{g_\ast} \) を掛ければ、\( \sum_{i=1}^n\braket{i|\tilde{q}}S_1^{g_\ast}(\omega_i)=c^\prime S_0^{g_\ast} \) つまり \( (1+r)c=c^\prime \) を得る。
                         したがって
@@ -128,7 +128,7 @@
                         \[
                             \begin{align}
                                 \ket{v}=c^\prime\ket{S_0}\Longleftrightarrow&\sum_{i=1}^n\braket{i|\tilde{q}}\ket{S_1}(\omega_i)=(1+r)c\ket{S_0}\nonumber\\
-                                \Longleftrightarrow&\frac{1}{1+r}\sum_{i=1}^n\braket{i|q}\ket{S_1}(\omega_i)=\ket{S_0}\nonumber\\
+                                \Longleftrightarrow&\frac{1}{1+r}\sum_{i=1}^n\braket{i|q^\prime}\ket{S_1(\omega_i)}=\ket{S_0}\nonumber\\
                                 \Longleftrightarrow&\frac{1}{1+r}E^{Q^\prime}[\ket{S_1}]=\ket{S_0}
                             \end{align}
                         \]
