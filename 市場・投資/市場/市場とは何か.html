@@ -65,8 +65,8 @@
                     はモノ \( g \) が市場参加者たちの保有によってどれだけ存在しているかを表す。
                     また \( \theta :=(\theta^p)_{p \in \mathcal{P}} \) は市場参加者たちがどの状態であるかを表す。
                     議論の対象として定める状態たち全体の集合を \( \Theta \) とおいたとき、この上の作用素 \( \phi : \Theta \rightarrow \Theta \) は市場参加者たちの状態がどう変化をするかを表すので、これを<span class="new-word">発展作用素（development operator）</span>と呼ぶ。
-                    任意の状態 \( \theta \in \Theta \) を発展作用素でうつした \( \phi(\theta) \in \Theta \) についても、任意の市場参加者 \( p \in \mathcal{P} \) の状態を \( \phi(\theta)^p \) 、任意のモノ \( g \in \mathcal{G} \) が市場参加者たちの保有によってどれだけ存在しているかを \( \phi(\theta)_g \) 、\( p \) による \( g \) の保有量を \( \phi(theta)_g^p \) と表す。
-                    もっとも素朴に言えば、"市場" とは \( ( \mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi ) \) のことである。
+                    任意の状態 \( \theta \in \Theta \) を発展作用素でうつした \( \phi(\theta) \in \Theta \) についても、任意の市場参加者 \( p \in \mathcal{P} \) の状態を \( \phi(\theta)^p \) 、任意のモノ \( g \in \mathcal{G} \) が市場参加者たちの保有によってどれだけ存在しているかを \( \phi(\theta)_g \) 、\( p \) による \( g \) の保有量を \( \phi(\theta)_g^p \) と表す。
+                    もっとも素朴に言えば、"市場" とは \( ( \mathcal{P}, \mathcal{G}, \Theta, \phi ) \) のことである。
                 </p>
                 <p>
                     　発展作用素は \( \Theta \) 上に点列あるいは経路を生成する。
@@ -177,16 +177,16 @@
                     ある市場参加者が得る情報 \( \pi_t^p(\gamma^\mathrm{G}) \) 、\(\gamma^\mathrm{G} \in \Gamma_\phi \) を複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
                     すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{G} \subset \mathcal{G} \) とおいたとき
                     \[
-                        \pi_t^p(\gamma^\mathrm{G}) = ( Q_g (s) )_{g\in\mathcal{G}^\mathrm{G},s\leq t}
+                        \pi_t^p(\gamma^\mathrm{G}) = ( \theta_g (s) )_{g\in\mathcal{G}^\mathrm{G},s\leq t}
                     \]
                     である。
-                    ここで \( Q_g(s) \) は時刻の関数であり、任意に固定した時間での平均変化率 \( \tilde{Q}_g(s) \) の時系列を生成する。
-                    市場参加者の中で、比率 \( \tilde{Q}_g(s) / Q_g(s) \) の時系列の分散（あるいは標準偏差）を最小化することで目的関数の値が増加する者を<span class="new-word">公的機関（public institution）</span>と呼ぶ。
+                    ここで \( \theta_g(s) \) は時刻の関数であり、任意に固定した時間での平均変化率 \( \tilde{\theta}_g(s) \) の時系列を生成する。
+                    市場参加者の中で、比率 \( \tilde{\theta}_g(s) / \theta_g(s) \) の時系列の分散（あるいは標準偏差）を最小化することで目的関数の値が増加する者を<span class="new-word">公的機関（public institution）</span>と呼ぶ。
                     言い換えれば、公的機関の目的は "いくつかのモノの総量を持続的かつ安定的に変化させること" である。
                     またある市場参加者が得る情報 \( \pi_t^{p^\prime}(\gamma^\mathrm{C}) \) 、\( \gamma^\mathrm{C} \in \Gamma_\phi \) を複数のモノの市場参加者たちに保有される量の時刻 \( t \) までの時系列であるとする。
                     すなわち、そのモノたちの集合を \( \mathcal{G}^\mathrm{C} \subset \mathcal{G} \) とおいたとき
                     \[
-                        \pi_t^{p^\prime}(\gamma^\mathrm{C}) = ( Q_g (s) )_{g\in\mathcal{G}^\mathrm{C},s\leq t}
+                        \pi_t^{p^\prime}(\gamma^\mathrm{C}) = ( \theta_g (s) )_{g\in\mathcal{G}^\mathrm{C},s\leq t}
                     \]
                     である。
                     市場参加者の中で、この情報に基づいた貨幣の保有量の変化を最大化することで目的関数の値が増加する者を<span class="new-word">企業（corporation, company）</span>と呼ぶ。
@@ -197,50 +197,48 @@
                 </p>
                 <p>
                     　公的機関の目的から、立ち所に1つの命題が導かれる。
-                    <!--以下はほぼ自明であるが、現実世界で起こる事象に対して簡潔な解釈を与える重要な主張である。-->
                     以下の主張における仮定は非現実的であるものの、公的機関が究極的に果たすべき目的であり、彼が結果として何を追い求めているのかが分かるという意味で重要である。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        <!--もし公的機関がつねに目的を達成すれば、彼の調査して得るモノの総量は幾何級数的あるいは指数関数的に変化する。-->
                         もし公的機関が彼の目的における分散（あるいは標準偏差）を \( 0 \) になるよう最小化できるならば、彼の調査して得るモノの総量は幾何級数的あるいは指数関数的に変化する。
                     </p>
                 </div>            
                 <div class="proof">
                     <p>
-                        まず \( ( Q_g(t) )_t \) が点列のとき、平均変化率は
+                        まず \( ( \theta_g(t) )_t \) が点列のとき、平均変化率は
                         <div class="math-container">
                             \[
-                                \tilde{Q}_g(t)=\frac{Q_g(t+1)-Q_g(t)}{1}=Q_g(t+1)-Q_g(t)
+                                \tilde{\theta}_g(t)=\frac{\theta_g(t+1)-\theta_g(t)}{1}=\theta_g(t+1)-\theta_g(t)
                             \]
                         </div>
                         のように点列の差に他ならない。
                         （時刻を \( t \) と \( t+1 \) のように間隔を1としなくても議論は同様である。）
                         よって公的機関がみる比率は
                         \[
-                            \frac{Q_g(t+1)-Q_g(t)}{Q_g(t)}=\frac{Q_g(t+1)}{Q_g(t)}-1
+                            \frac{\theta_g(t+1)-\theta_g(t)}{\theta_g(t)}=\frac{\theta_g(t+1)}{\theta_g(t)}-1
                         \]
                         であり、これがもし変化せず一定値 \( k \in \textbf{R} \) をとるならば
                         <div class="math-container">
                             \[
-                                \frac{Q_g(t+1)}{Q_g(t)}-1=k \Longleftrightarrow Q_g(t+1)=(1+k)Q_g(t)
+                                \frac{\theta_g(t+1)}{\theta_g(t)}-1=k \Longleftrightarrow \theta_g(t+1)=(1+k)\theta_g(t)
                             \]
                         </div>
                         のように公比 \( 1+k \) の等比数列の漸化式を得る。
-                        したがって \( ( Q_g(t) )_t \) は幾何級数的に変化する。
-                        次に \( ( Q_g(t) )_t \) が経路のとき、平均変化率は任意の \( h \in \textbf{R} \) を用いて
+                        したがって \( ( \theta_g(t) )_t \) は幾何級数的に変化する。
+                        次に \( ( \theta_g(t) )_t \) が経路のとき、平均変化率は任意の \( h \in \textbf{R} \) を用いて
                         \[
-                            \tilde{Q}_g(t)=\frac{Q_g(t+h)-Q_g(t)}{h} \rightarrow \frac{\mathrm{d}Q_g}{\mathrm{d}t}
+                            \tilde{\theta}_g(t)=\frac{\theta_g(t+h)-\theta_g(t)}{h} \rightarrow \frac{\mathrm{d}\theta_g}{\mathrm{d}t}
                         \]
                         のように導関数の極限をもつ。
                         （極限をとらなくても振る舞いは極限をとった場合と同様である。）
                         よってもし公的機関がみる比率が一定値 \( k \in \textbf{R} \) をとるならば
                         \[
-                                \frac{\mathrm{d}Q_g}{\mathrm{d}t} = k Q_g(t)
+                                \frac{\mathrm{d}\theta_g}{\mathrm{d}t} = k \theta_g(t)
                         \]
                         のような一般解が指数関数の微分方程式を得る。
-                        したがって \( ( Q_g(t) )_t \) は指数関数的に変化する。
+                        したがって \( ( \theta_g(t) )_t \) は指数関数的に変化する。
                     </p>
                 </div>
                 <p>
@@ -267,14 +265,13 @@
                 <h4>市場の条件</h4>
                 <p>
                     　以上で"市場"を定義する準備が整った。
-                    記号はすでに定義したものをそのまま使うとし、数学的対象の列 \( (\mathcal{P} , \mathcal{G}, \mathcal{Q}, \phi, \pi, f ) \) が<span class="new-word">市場（market）</span>であるとは、以下の条件を満たすことをいう。
+                    記号はすでに定義したものをそのまま使うとし、数学的対象の列 \( (\mathcal{P} , \mathcal{G}, \Theta, \phi, \pi, f ) \) が<span class="new-word">市場（market）</span>であるとは、以下の条件を満たすことをいう。
                 </p>
                 <p>
                     <div class="math-container">
                         (M1) \( \mathcal{P} = ( G \cup C ) \oplus I \land G \neq \emptyset \land C \neq \emptyset \) <br>
-                        (M2) \( ^\forall p \in \mathcal{P}, ^\forall (Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow \pi_s^p((Q(t))_{t\leq s})=\pi_s^p((Q(t))_{t\leq u}) \) <br>
-                        <!--(M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow f_s^p(Q^p(s)|\pi_s^p(\gamma)) &lt; f_s^p(Q^p(u)|\pi_s^p(\gamma)) \)-->
-                        (M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(Q(t))_t \in \Gamma_\phi, ^\forall t, ^\exists \epsilon &gt; 0, ^\forall h \in (0,\epsilon);\ \ \ f_t^p(Q^p(t)|\pi_t^p(\gamma)) &lt; f_t^p(Q^p(t+h)|\pi_t^p(\gamma)) \)
+                        (M2) \( ^\forall p \in \mathcal{P}, ^\forall (\theta(t))_t \in \Gamma_\phi, ^\forall s, u;\ \ \ s &lt; u \Longrightarrow \pi_s^p((\theta(t))_{t\leq s})=\pi_s^p((\theta(t))_{t\leq u}) \) <br>
+                        (M3) \( ^\forall p \in \mathcal{P}, ^\forall \gamma=(\theta(t))_t \in \Gamma_\phi, ^\forall t, ^\exists \epsilon &gt; 0, ^\forall h \in (0,\epsilon);\ \ \ f_t^p(\theta^p(t)|\pi_t^p(\gamma)) &lt; f_t^p(\theta^p(t+h)|\pi_t^p(\gamma)) \)
                     </div>
                 </p>
                 <p>
@@ -289,7 +286,7 @@
                     彼は過去と現在の情報に基づき、現在の目的関数を大きくするように未来の状態を決める。
                     （そう見えるように発展作用素が定義される。）
                     もし未来で目的関数の形が大きく変われば、現在決めた状態が未来において目的関数のとる値を小さくしてしまうこともある。-->
-                    ここで目的関数の値が単調増加であることは要請されていない点に注意が必要であり、\( s &lt; u \) で \( f_s^p(Q^p(s)|\pi_s^p(\gamma)) \geq f_u^p(Q^p(u)|\pi_u^p(\gamma)) \) となることは否定されない。
+                    ここで目的関数の値が単調増加であることは要請されていない点に注意が必要であり、\( s &lt; u \) で \( f_s^p(\theta^p(s)|\pi_s^p(\gamma)) \geq f_u^p(\theta^p(u)|\pi_u^p(\gamma)) \) となることは否定されない。
                     例えば、現在はモノ1が大好きでそれをたくさん買ってみても、未来にモノ1をそれほど好きでなくなって損をした気分になることは、目的関数の関数形が変わったものとして表現される。
                 </p>
             </section>
@@ -302,31 +299,31 @@
                     例えば
                 </p>
                 <p>
-                    (ZS) \( ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G};\ \ \ \phi(Q)_g=Q_g \)
+                    (ZS) \( ^\forall \theta \in \Theta, ^\forall g \in \mathcal{G};\ \ \ \phi(\theta)_g=\theta_g \)
                 </p>
                 <p>
                     なる条件を追加できる。
-                    一見するとこれは公的機関の目的に矛盾しそうであるが、公的機関が \( \tilde{Q}_g / Q_g \) をつねに0にできるような市場を構成すれば問題はない。
+                    一見するとこれは公的機関の目的に矛盾しそうであるが、公的機関が \( \tilde{\theta}_g / \theta_g \) をつねに0にできるような市場を構成すれば問題はない。
                     つまり市場の指数関数的な発展は暗に市場の定常状態を含んでおり、矛盾は起こらない。
                     市場が (ZS) を満たすことを<span class="new-word">ゼロサム・ゲーム（zero-sum game）</span>であるという。
                     この市場では現実世界における資源の採掘や加工、紙幣の印刷といった、モノを増やしたり複数のモノを減らして1つのモノを増やしたりする過程が禁止されており、市場参加者はただモノを交換して目的関数を大きくする。
                 </p>
                 <p>
                     　ゼロサム・ゲームは条件が強すぎるので、局所的にゼロサム・ゲームを課すと便利である。
-                    定義から (ZS) は任意の \( Q \in \mathcal{Q} \) 、\( g \in \mathcal{G} \) に対して \( \sum_{p\in\mathcal{P}}\phi(Q)_g^p=\sum_{p\in\mathcal{P}}Q_g^p \) であり、これは数学的にかなり条件が強い。
+                    定義から (ZS) は任意の \( \theta \in \Theta \) 、\( g \in \mathcal{G} \) に対して \( \sum_{p\in\mathcal{P}}\phi(\theta)_g^p=\sum_{p\in\mathcal{P}}\theta_g^p \) であり、これは数学的にかなり条件が強い。
                     そこで代わりに
                 </p>
                 <p>
                     <div class="math-container">
-                        (LZS) \( ^\forall Q \in \mathcal{Q}, ^\forall g \in \mathcal{G}, ^\exists \mathcal{P}_{\mathrm{local}} \subset \mathcal{P};\ \ \ \sum_{p\in\mathcal{P}_{\mathrm{local}}}\phi(Q)_g^p=\sum_{p\in\mathcal{P}_{\mathrm{local}}}Q_g^p \)
+                        (LZS) \( ^\forall \theta \in \Theta, ^\forall g \in \mathcal{G}, ^\exists \mathcal{P}_{\mathrm{local}} \subset \mathcal{P};\ \ \ \sum_{p\in\mathcal{P}_{\mathrm{local}}}\phi(\theta)_g^p=\sum_{p\in\mathcal{P}_{\mathrm{local}}}\theta_g^p \)
                     </div>
                 </p>
                 <p>
                     を考える。
                     つまり任意の状態、任意の \( g \) に対してある市場参加者たち \( \mathcal{P}_{\mathrm{local}} \) が存在して、彼らによる \( g \) の保有量が \( \phi \) によって不変であることを課す。
                     公的機関は \( \mathcal{P}_{\mathrm{local}} \) に必ずしも属さなくてよいので、市場全体では非定常状態すなわちダイナミクスが起こり得る。
-                    また \( \mathcal{P}_{\mathrm{local}} \) は \( Q \) によって変化させられる。
-                    したがって \( (Q(t))_t \in \Gamma_\phi \) をとって \( t \) が変わると \( Q(t) \) と \( \mathcal{P}_{\mathrm{local}} \) がともに変わる状況を考えてもよい。
+                    また \( \mathcal{P}_{\mathrm{local}} \) は \( \theta \) によって変化させられる。
+                    したがって \( (\theta(t))_t \in \Gamma_\phi \) をとって \( t \) が変わると \( \theta(t) \) と \( \mathcal{P}_{\mathrm{local}} \) がともに変わる状況を考えてもよい。
                     さらに \( \mathcal{P}_{\mathrm{local}} \) は \( g \) によって変化させられる。
                     以上より、条件 (LZS) によって存在が保証される \( \mathcal{P}_{\mathrm{local}} \) は \( g \) ごとに定まりかつ時々刻々と属する市場参加者が入れ替わり得るものである。
                     これを \( g \) の<span class="new-word">取引所（exchange）</span>と呼ぶ。
