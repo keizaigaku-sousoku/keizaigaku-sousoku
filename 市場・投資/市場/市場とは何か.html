@@ -54,18 +54,18 @@
                     次に "モノ" を表すため、任意の高々可算無限の集合 \( \mathcal{G} \subset \textbf{Z} \) をとり、この元を<span class="new-word">モノ（thing）</span>と呼ぶ。
                     任意の市場参加者 \( p \in \mathcal{P} \) に対して、写像
                     \[
-                        Q^p : \mathcal{G} \ni g \mapsto Q_g^p \in \textbf{R}
+                        \theta^p : \mathcal{G} \ni g \mapsto \theta_g^p \in \textbf{R}
                     \]
-                    を定め、これを \( p \) の<span class="new-word">状態（state）</span>、像 \( Q_g^p \) を \( p \) による \( g \) の<span class="new-word">保有量（holdings）</span>と呼ぶ。
-                    またこのとき \( p \) は \( g \) を \( Q_g^p \) だけ<span class="new-word">保有する（holds）</span>と表現する。
+                    を定め、これを \( p \) の<span class="new-word">状態（state）</span>、像 \( \theta_g^p \) を \( p \) による \( g \) の<span class="new-word">保有量（holdings）</span>と呼ぶ。
+                    またこのとき \( p \) は \( g \) を \( \theta_g^p \) だけ<span class="new-word">保有する（holds）</span>と表現する。
                     明らかに
                     \[
-                        Q_g := \sum_{p \in \mathcal{P}} Q_g^p
+                        \theta_g := \sum_{p \in \mathcal{P}} \theta_g^p
                     \]
                     はモノ \( g \) が市場参加者たちの保有によってどれだけ存在しているかを表す。
-                    また \( Q :=(Q^p)_{p \in \mathcal{P}} \) は市場参加者たちがどの状態であるかを表す。
-                    議論の対象として定める状態たち全体の集合を \( \mathcal{Q} \) とおいたとき、この上の作用素 \( \phi : \mathcal{Q} \rightarrow \mathcal{Q} \) は市場参加者たちの状態がどう変化をするかを表すので、これを<span class="new-word">発展作用素（development operator）</span>と呼ぶ。
-                    任意の状態 \( Q \in \mathcal{Q} \) を発展作用素でうつした \( \phi(Q) \in \mathcal{Q} \) についても、任意の市場参加者 \( p \in \mathcal{P} \) の状態を \( \phi(Q)^p \) 、任意のモノ \( g \in \mathcal{G} \) が市場参加者たちの保有によってどれだけ存在しているかを \( \phi(Q)_g \) 、\( p \) による \( g \) の保有量を \( \phi(Q)_g^p \) と表す。
+                    また \( \theta :=(\theta^p)_{p \in \mathcal{P}} \) は市場参加者たちがどの状態であるかを表す。
+                    議論の対象として定める状態たち全体の集合を \( \Theta \) とおいたとき、この上の作用素 \( \phi : \Theta \rightarrow \Theta \) は市場参加者たちの状態がどう変化をするかを表すので、これを<span class="new-word">発展作用素（development operator）</span>と呼ぶ。
+                    任意の状態 \( \theta \in \Theta \) を発展作用素でうつした \( \phi(\theta) \in \Theta \) についても、任意の市場参加者 \( p \in \mathcal{P} \) の状態を \( \phi(\theta)^p \) 、任意のモノ \( g \in \mathcal{G} \) が市場参加者たちの保有によってどれだけ存在しているかを \( \phi(\theta)_g \) 、\( p \) による \( g \) の保有量を \( \phi(theta)_g^p \) と表す。
                     もっとも素朴に言えば、"市場" とは \( ( \mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi ) \) のことである。
                 </p>
                 <p>
