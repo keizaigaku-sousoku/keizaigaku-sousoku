@@ -128,12 +128,12 @@
                 <h4>情報・目的関数</h4>
                 <p>
                     　発展作用素によって時刻を定義しているので、市場参加者たちに "必ずしもすべての情報を知ることはできず、また知ることのできる情報は時刻によって変化する" という規則を与えられる。
-                    任意に点列あるいは経路 \( \gamma = ( Q(t) )_t \in \Gamma_\phi \) をとって固定する。
+                    任意に点列あるいは経路 \( \gamma = ( \theta(t) )_t \in \Gamma_\phi \) をとって固定する。
                     もし任意の市場参加者 \( p \in \mathcal{P} \) と \( \gamma \) の対 \( ( p, \gamma ) \) を " \( p \) が \( \gamma \) を知っている" と解釈すれば、彼は状態の変化をすべて知っていることになる。
                     しかしこれは "市場" というものを構成する上で非現実的である。
                     そこで任意の時刻 \( t \) において \( \gamma \) をその部分（点列であれば部分列、経路であれば部分集合）にうつす写像
                     \[
-                        \rho_t^p : \Gamma_\phi \ni \gamma \mapsto \rho_t^p(\gamma) \in 2^\gamma \subset 2^\mathcal{Q}
+                        \rho_t^p : \Gamma_\phi \ni \gamma \mapsto \rho_t^p(\gamma) \in 2^\gamma \subset 2^\Theta
                     \]
                     を定め、これを \( p \) の \( t \) における<span class="new-word">調査（research）</span>、像 \( \rho_t^p( \gamma ) \) を\( p \) が \( t \) において \( \gamma \) から得る<span class="new-word">生データ（raw data）</span>と呼ぶ。
                     続いて調査で得た結果に対する任意の数学的操作を \( o_t^p \) とおき、これを \( p \) の \( t \) における<span class="new-word">操作（operation）</span>と呼ぶ。
@@ -145,7 +145,7 @@
                     を \( p \) の \( t \) における<span class="new-word">情報収集（information gathering）</span>、像 \( \pi_t^p( \gamma ) \) を \( p \) が \( t \) において \( \gamma \) から得る<span class="new-word">情報（information）</span>と呼ぶ。
                     さらに対 \( (p, \pi_t^p( \gamma ) ) \) を " \( p \) が \( t \) において \( \pi_t^p( \gamma ) \) を知っている" と解釈する。
                     市場参加者たちの \( t \) における情報収集を \( \pi_t := ( \pi_t^p )_{p \in \mathcal{P}} \) とおき、その時系列を \( \pi := ( \pi_t )_t \) とおく。
-                    市場参加者たちに "必ずしもすべての情報を知ることはできず、また知ることのできる情報は時刻によって変化すること" を課すならば、"市場" とは \( ( \mathcal{P}, \mathcal{G}, \mathcal{Q}, \phi, \pi ) \) のことである。
+                    市場参加者たちに "必ずしもすべての情報を知ることはできず、また知ることのできる情報は時刻によって変化すること" を課すならば、"市場" とは \( ( \mathcal{P}, \mathcal{G}, \Theta, \phi, \pi ) \) のことである。
                 </p>
                 <p>
                     　市場参加者は各々が何らかの規則をもって行動する。
@@ -159,12 +159,12 @@
                 </p>
                 <p>
                     　必要な定義は済ませているので、定式化は直線的である。
-                    まず任意の市場参加者 \( p \in \mathcal{P} \) 、時刻 \( t \) 、状態 \( Q^p \) 、点列あるいは経路 \( \gamma \in \Gamma_\phi \) 、情報 \( \pi_t^p( \gamma ) \) に対して、非有界な写像
+                    まず任意の市場参加者 \( p \in \mathcal{P} \) 、時刻 \( t \) 、状態 \( \theta^p \) 、点列あるいは経路 \( \gamma \in \Gamma_\phi \) 、情報 \( \pi_t^p( \gamma ) \) に対して、非有界な写像
                     \[
-                        f_t^p : ( Q^p, \pi_t^p( \gamma ) ) \mapsto f_t^p ( Q^p | \pi_t^p( \gamma ) ) \in \textbf{R}
+                        f_t^p : ( \theta^p, \pi_t^p( \gamma ) ) \mapsto f_t^p ( \theta^p | \pi_t^p( \gamma ) ) \in \textbf{R}
                     \]
                     を定め、これを \( p \) の \( t \) における<span class="new-word">目的関数（objective function）</span>と呼ぶ。
-                    ここで状態 \( Q^p \) は発展作用素によって生成される \( \gamma \in \Gamma_\phi \) の元の \( p \) 成分である必要はなく、\( \mathcal{Q} \) の任意の状態の \( p \) 成分である。
+                    ここで状態 \( \theta^p \) は発展作用素によって生成される \( \gamma \in \Gamma_\phi \) の元の \( p \) 成分である必要はなく、\( \Theta \) の任意の状態の \( p \) 成分である。
                     次に目的関数のとる値の大きさを "目的の達成度" と解釈し、発展作用素に状態の変化はこれを大きくするよう適当に条件を課す。
                     条件式に一意性はないが、もっとも簡潔なものの1つを後述する。
                     初めからそのような発展作用素のみを使うと決めておけば、市場参加者はあたかも目的関数の値を大きくするよう状態を変化させる。
