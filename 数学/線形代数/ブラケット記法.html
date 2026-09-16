@@ -153,10 +153,38 @@
                     このとき \( A_{\mu\nu}=\braket{\mu|A|\nu} \) は \( A=\sum_{\mu,\nu=1}^n A_{\mu\nu}\ket{\mu}\bra{\nu} \) の表示に用いられる。
                 </p>
             </section>
-            <section id="section-basis">
-                <h4>基底</h4>
+            <section id="section-function-space">
+                <h4>関数空間</h4>
                 <p>
-                    
+                    　厳密な議論を避ければ、ブラケット記法で関数空間を扱うことは便利である。
+                    数学的に都合の良い、成分が \( X \subset \textbf{R}^n \) 、\( n \in \textbf{Z}_{\geq1} \) 上を走る連続なパラメータで添字付けられる線形空間 \( H \) が所与であり、内積 \( \braket{\cdot|\cdot} : H \otimes H \rightarrow \textbf{R} \) が備えられているとする。
+                    そしてある \( \{ \ket{x} \in H : x \in X \} \) で
+                    \[
+                        \braket{x|y}=\delta(x-y)
+                    \]
+                    および
+                    \[
+                        \int_{X} \ket{x}\bra{x}\ \textrm{d}x=1
+                    \]
+                    を満たすものを構成できたとする。
+                    ただし第1式右辺の \( \delta : X \rightarrow \{0,\infty\} \) はデルタ関数、第2式右辺の \( 1 : X \rightarrow X \) は恒等写像である。
+                    このとき、任意の \( \ket{f} \in H \) に対して形式的に
+                    \[
+                        \ket{f}=\bigg{(}\int_{X} \ket{x}\bra{x}\ \textrm{d}x\bigg{)}\ket{f}=\int_X\ket{x}\braket{x|f}\ \textrm{d}x=\int_X \braket{x|f}\ket{x}\ \textrm{d}x
+                    \]
+                    であるから、\( \ket{f} \) は \( \braket{x|f} \) を係数として \( \{ \ket{x} \in H : x \in X \} \) で展開される。
+                    そして \( f(x):=\braket{x|f} \) と書けば、これは1つの関数に他ならない。
+                    また逆に、数学的に都合の良い \( X \) 上の関数空間 \( C \) が所与であるとすれば、任意の \( f\in C \) に対して形式的に
+                    \[
+                        ^\forall x \in X;\ \ \ f(x)=\int_X f(y)\delta(x-y)\ \textrm{d}y=\int_X f(y)\braket{x|y}\ \textrm{d}y=\bra{x}\bigg{(}\int_X f(y)\ket{y}\ \textrm{d}y\bigg{)}
+                    \]
+                    であるから、\( \ket{f}:=\int_X f(y)\ket{y}\ \textrm{d}y \) によって \( H \) の元を構成できる。
+                    なお任意の \( f,g \in H \) に対して形式的に
+                    \[
+                        \braket{f|g}=\int_X \braket{f|x}\braket{x|g}\ \textrm{d}x=\int_X \braket{x|f}\braket{x|g}\ \textrm{d}x=\int_X f(x)g(x)\ \textrm{d}x
+                    \]
+                    であるから、\( H \) の内積は \( C \) 上の標準的な内積に数値および形式において一致する。
+                    内積の議論において \( H \) と \( C \) は同値な表現に過ぎず、便利なように好きな方を用いて良い。
                 </p>
             </section>
         </main>
