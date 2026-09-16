@@ -127,15 +127,23 @@
                     \]
                     である。
                     左から \( \bra{i} \) 、右から \( \ket{j} \) を掛ければ
+                </p>
+                <div class="math-container">
                     \[
                         \braket{i|A|j}=\sum_{k,l=1}^n A_{kl}\braket{i|k}\braket{l|j}=\sum_{k,l=1}^n A_{kl}I_{ik}I_{lj}=A_{ij}
                     \]
+                </div>
+                <p>
                     であるから、\( \braket{k|A|l} \) は \( A \) の \( (k,l)\) - 成分に他ならない。
                     ブラとケットで行列を挟むことにより任意の成分を形式的に取出せることは、計算において重宝される。
                     なお上記の計算は規格化直交性を用いたが、完全性を用いても
+                </p>
+                <div class="math-container">
                     \[
                         \sum_{k,l=1}^nA_{kl}\ket{k}\bra{l}=A=IAI=\sum_{k=1}^n\ket{k}\bra{k}A\sum_{l=1}^n\ket{l}\bra{l}=\sum_{k,l=1}^n\braket{k|A|l}\ket{k}\bra{l}
                     \]
+                </div>
+                <p>
                     から \( A_{kl}=\braket{k|A|l} \) を導ける。
                 </p>
                 <p>
@@ -169,20 +177,32 @@
                     を満たすものを構成できたとする。
                     ただし式(<a href="#delta">\ref{delta}</a>)右辺の \( \delta : X \rightarrow \{0,\infty\} \) はデルタ関数、式(<a href="#identity">\ref{identity}</a>)右辺の \( 1 : X \rightarrow X \) は恒等写像である。
                     このとき、任意の \( \ket{f} \in H \) に対して形式的に
+                </p>
+                <div class="math-container">
                     \[
                         \ket{f}=\bigg{(}\int_{X} \ket{x}\bra{x}\ \textrm{d}x\bigg{)}\ket{f}=\int_X\ket{x}\braket{x|f}\ \textrm{d}x=\int_X \braket{x|f}\ket{x}\ \textrm{d}x
                     \]
+                </div>
+                <p>
                     であるから、\( \ket{f} \) は \( \braket{x|f} \) を係数として \( \{ \ket{x} \in H : x \in X \} \) で展開される。
                     そして \( f(x):=\braket{x|f} \) と書けば、これは1つの関数に他ならない。
                     また逆に、数学的に都合の良い \( X \) 上の関数空間 \( C \) が所与であるとすれば、任意の \( f\in C \) に対して形式的に
+                </p>
+                <div class="math-container">
                     \[
                         ^\forall x \in X;\ \ \ f(x)=\int_X f(y)\delta(x-y)\ \textrm{d}y=\int_X f(y)\braket{x|y}\ \textrm{d}y=\bra{x}\bigg{(}\int_X f(y)\ket{y}\ \textrm{d}y\bigg{)}
                     \]
+                </div>
+                <p>
                     であるから、\( \ket{f}:=\int_X f(y)\ket{y}\ \textrm{d}y \) によって \( H \) の元を構成できる。
                     なお任意の \( f,g \in H \) に対して形式的に
+                </p>
+                <div class="math-container">
                     \[
                         \braket{f|g}=\int_X \braket{f|x}\braket{x|g}\ \textrm{d}x=\int_X \braket{x|f}\braket{x|g}\ \textrm{d}x=\int_X f(x)g(x)\ \textrm{d}x
                     \]
+                </div>
+                <p>
                     であるから、\( H \) の内積は \( C \) 上の標準的な内積に数値および形式において一致する。
                     内積の議論において \( H \) と \( C \) は同値な表現に過ぎず、便利なように好きな方を用いて良い。
                 </p>
