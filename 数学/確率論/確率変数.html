@@ -42,6 +42,11 @@
                     すなわち、確率変数 \( X \) 、任意の写像 \( f : X(\Omega) \rightarrow \textbf{R} \) に対して、写像 \( f(X) : \Omega \rightarrow \textbf{R} \) を \( f(X)(\omega) = f(X(\omega)) \) 、\( \omega \in \Omega \) によって定める。
                     ここで \( f(X) \) は合成写像 \( f \circ X \) に他ならず、 \( \Omega \) 上の写像であってそれ自身が1つの確率変数である。
                 </p>
+                <p>
+                    　定義関数は1つの確率変数である。
+                    すなわち、任意に固定した \( A \subset \Omega \) に対して \( 1_A : \Omega \rightarrow \{0,1\} \) を \( 1_A(\omega)=1 \) 、\( \omega \in A \) 、\( 1_A(\omega)=0 \) 、\( \omega \notin A \) で定めれば、これは解析学における一般的な定義関数であり、同時に確率変数の定義を満たす。
+                    定義関数は議論においてテクニカルに使われることがある。
+                </p>
             </section>
             <section id="section-almost-surely">
                 <h4>ほとんど確実に</h4>
@@ -204,7 +209,7 @@
                 <div class="proof">
                     <p>
                         事象 \( A=\{\omega\in\Omega:|X(\omega)|&gt;\epsilon\} \) をとれば、\( f \) が広義単調増加であるから任意の \( \omega \in A \) に対して \( f(|X(\omega)|)\geq f(\epsilon) \) である。
-                        そこで確率変数 \( 1_A : \Omega \rightarrow \{0,1\} \) を \( 1_A(\omega)=1 \) 、\( \omega \in A \) 、\( 1_A(\omega)=0 \) 、\( \omega \notin A \) で定めれば
+                        そこで定義関数 \( 1_A : \Omega \rightarrow \{0,1\} \) を用いれば
                         \[
                             ^\forall \omega \in \Omega;\ \ \ 1_A(\omega)\leq\frac{f(|X(\omega)|)}{f(\epsilon)}
                         \]
