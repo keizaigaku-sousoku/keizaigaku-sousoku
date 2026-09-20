@@ -378,6 +378,7 @@ table {
     text-align: center;
     table-layout: fixed;
     border-bottom: 1px solid #219dd0;
+    font-family: 'Noto Serif Japanese', serif;
 }
 
 th {
