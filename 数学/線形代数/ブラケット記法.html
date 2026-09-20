@@ -24,6 +24,7 @@
                 <a href="#section-product">内積・外積</a>
                 <a href="#section-basis">基底</a>
                 <a href="#section-function-space">関数空間</a>
+                <a href="#section-variation">変分法</a>
             </div>
         </div>
         <main>
@@ -208,6 +209,60 @@
                     であるから、\( H \) の内積は \( C \) 上の標準的な内積と数値および形式において一致する。
                     内積の議論において \( H \) と \( C \) は同値な表現に過ぎず、便利なように好きな方を用いて良い。
                 </p>
+            </section>
+            <section id="section-variation">
+                <h4>変分法</h4>
+                <p>
+                    　解析学の一般的な手法である変分法をブラケット記法で利用することがある。
+                    任意のケット \( \ket{v} \) 、その関数 \( f(\ket{v}) \) が与えられたとする。
+                    ケットに変分を加えて \( \ket{v}+\ket{\delta v} \) としたとき、ケット \( \ket{\delta_v f} \) は
+                    \[
+                        f(\ket{v}+\ket{\delta v})-f(\ket{v})=\braket{\delta v|\delta_v f}+\mathcal{O}(\braket{\delta v|\delta v})
+                    \]
+                    によって定められ、変分で関数が変化しない条件は
+                    \[
+                        \ket{\delta_v f}=0
+                    \]
+                    と表される。
+                    実際の計算において以下は頻出である。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        (i) \( f(\ket{v})=\braket{a|v} \) のとき \( \ket{\delta_v f}=\ket{a} \) 、ただし \( \ket{a} \) は \( \ket{v} \) によらない。<br>
+                        (ii) \( f(\ket{v})=\braket{v|v} \) のとき \( \ket{\delta_v f}=2\ket{v} \) 。<br>
+                        (iii) \( f(\ket{v})=F(\braket{a|v}) \) のとき \( \ket{\delta_v f}=F^\prime(\braket{a|v})\ket{a} \) 、ただし \( F : \textbf{R} \rightarrow \textbf{R} \) は任意の関数であり、 \( \ket{a} \) は \( \ket{v} \) によらない。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        (i) 計算すれば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            f(\ket{v}+\ket{\delta v})-f(\ket{v})=\braket{a|v}+\braket{a|\delta v}-\braket{a|v}=\braket{\delta v|a}
+                        \]
+                    </div>
+                    <p>
+                        であって確かに \( \ket{\delta_v f}=\ket{a} \) である。<br>                    
+                        (ii) 計算すれば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            f(\ket{v}+\ket{\delta v})-f(\ket{v})=(\bra{v}+\bra{\delta v})(\ket{v}+\ket{\delta v})-\braket{v|v}=\bra{\delta v}2\ket{v}+\braket{\delta v|\delta v}
+                        \]
+                    </div>
+                    <p>
+                        であって確かに \( \ket{\delta_v f}=2\ket{v} \) である。<br>
+                        (iii) 計算すれば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            f(\ket{v}+\ket{\delta v})-f(\ket{v})=F^\prime(\braket{a|v})\braket{a|\delta v}+\mathcal{O}(\braket{\delta v|\delta v})=\bra{\delta v}F^\prime(\braket{a|v})\ket{a}+\mathcal{O}(\braket{\delta v|\delta v})
+                        \]
+                    </div>
+                    <p>
+                        であって確かに \( \ket{\delta_v f}=F^\prime(\braket{a|v})\ket{a} \) である。                </div>
             </section>
         </main>
         <div id="nav-placeholder"></div>
