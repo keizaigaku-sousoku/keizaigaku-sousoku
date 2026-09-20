@@ -24,7 +24,7 @@
                 <a href="#section-product">内積・外積</a>
                 <a href="#section-basis">基底</a>
                 <a href="#section-function-space">関数空間</a>
-                <a href="#section-variation">変分法</a>
+                <a href="#section-gradient">勾配</a>
             </div>
         </div>
         <main>
@@ -210,12 +210,12 @@
                     内積の議論において \( H \) と \( C \) は同値な表現に過ぎず、便利なように好きな方を用いて良い。
                 </p>
             </section>
-            <section id="section-variation">
-                <h4>変分法</h4>
+            <section id="section-gradient">
+                <h4>勾配</h4>
                 <p>
-                    　解析学の一般的な手法である変分法をブラケット記法で利用することがある。
+                    　解析学の一般的な計算を遂行するため、勾配をブラケット記法で表す必要がある。
                     任意のケット \( \ket{v} \) 、その関数 \( F(\ket{v}) \) が与えられたとする。
-                    ケットに変分を加えて \( \ket{v}+\ket{\delta v} \) としたとき、ケット \( \ket{\delta_v F} \) は
+                    ケットに（微小な）変化を加えて \( \ket{v}+\ket{\delta v} \) としたとき、ケット \( \ket{\delta_v F} \) は
                 </p>
                 <div class="math-container">
                     \[
@@ -223,11 +223,12 @@
                     \]
                 </div>
                 <p>
-                    によって定められ、任意の変分で \( F(\ket{v}) \) の1次の変化が \( 0 \) になる条件は
+                    によって定められ、勾配と解釈される。
+                    任意の変化 \( \ket{\delta} \) で \( F(\ket{v}) \) の1次変化が \( 0 \) になる条件は
                     \[
                         \ket{\delta_v F}=0
                     \]
-                    と表される。
+                    である。
                     実際の計算において以下は頻出である。
                 </p>
                 <div class="theorem-tile">
