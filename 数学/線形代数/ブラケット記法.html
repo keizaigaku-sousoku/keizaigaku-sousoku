@@ -215,16 +215,16 @@
                 <p>
                     　解析学の基本的な計算を実行するため、勾配をブラケット記法で表す必要がある。
                     任意のケット \( \ket{v} \in \textbf{R}^{n\times1} \) 、\( n \in \textbf{Z}_{\geq1} \) およびその関数 \( F : \textbf{R}^{n\times1} \rightarrow \textbf{R} \) が与えられたとする。
-                    ケットに（微小な）変化を加えて \( \ket{v}+\ket{\delta v} \) としたとき、ケット \( \ket{\partial_v F} \) は
+                    ケットに（微小な）変化を加えて \( \ket{v}+\ket{\Delta v} \) としたとき、ケット \( \ket{\partial_v F} \) は
                 </p>
                 <div class="math-container">
                     \[
-                        F(\ket{v}+\ket{\delta v})-F(\ket{v})=\braket{\delta v|\partial_v F}+o\bigg{(}\sqrt{\braket{\delta v|\delta v}}\bigg{)}
+                        F(\ket{v}+\ket{\Delta v})-F(\ket{v})=\braket{\Delta v|\partial_v F}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}
                     \]
                 </div>
                 <p>
                     によって定められ、\( F \) の \( \ket{v} \) に関する勾配と解釈される。
-                    任意の変化 \( \ket{\delta} \) で \( F(\ket{v}) \) の1次変化が \( 0 \) になる条件は
+                    任意の変化 \( \ket{\Delta v} \) で \( F(\ket{v}) \) の1次変化が \( 0 \) になる条件は
                     \[
                         \ket{\partial_v F}=0
                     \]
@@ -245,7 +245,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            F(\ket{v}+\ket{\delta v})-F(\ket{v})=\braket{a|v}+\braket{a|\delta v}-\braket{a|v}=\braket{\delta v|a}
+                            F(\ket{v}+\ket{\Delta v})-F(\ket{v})=\braket{a|v}+\braket{a|\Delta v}-\braket{a|v}=\braket{\Delta v|a}
                         \]
                     </div>
                     <p>
@@ -254,7 +254,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            F(\ket{v}+\ket{\delta v})-F(\ket{v})=(\bra{v}+\bra{\delta v})(\ket{v}+\ket{\delta v})-\braket{v|v}=\bra{\delta v}2\ket{v}+\braket{\delta v|\delta v}
+                            F(\ket{v}+\ket{\Delta v})-F(\ket{v})=(\bra{v}+\bra{\Delta v})(\ket{v}+\ket{\Delta v})-\braket{v|v}=\bra{\Delta v}2\ket{v}+\braket{\Delta v|\Delta v}
                         \]
                     </div>
                     <p>
@@ -263,7 +263,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            F(\ket{v}+\ket{\delta v})-F(\ket{v})=f^\prime(\braket{a|v})\braket{a|\delta v}+o\bigg{(}\sqrt{\braket{\delta v|\delta v}}\bigg{)}=\bra{\delta v}f^\prime(\braket{a|v})\ket{a}+o\bigg{(}\sqrt{\braket{\delta v|\delta v}}\bigg{)}
+                            F(\ket{v}+\ket{\Delta v})-F(\ket{v})=f^\prime(\braket{a|v})\braket{a|\Delta v}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}=\bra{\Delta v}f^\prime(\braket{a|v})\ket{a}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}
                         \]
                     </div>
                     <p>
