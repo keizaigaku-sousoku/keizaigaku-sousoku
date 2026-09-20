@@ -22,7 +22,7 @@
                 <h3 class="part-title">目次</h3>
                 <a href="#section-almost-sure-arbitrage">ほとんど確実な裁定</a>
                 <a href="#section-fundamental-theorem-pricing">資産価格付けの基本定理</a>
-                <a href="#section-completeness">市場の完備性</a>
+                <a href="#section-replication-portfolio">複製ポートフォリオ</a>
                 <a href="#section-price-other"></a>
             </div>
         </div>
@@ -142,6 +142,57 @@
                     </div>
                     <p>
                         が成り立つので、\( Q^\prime \) はリスク中立確率に他ならない。
+                    </p>
+                </div>
+            </section>
+            <section id="section-replication-portfolio">
+                <h4>複製ポートフォリオ</h4>
+                <p>
+                    　ケット \( \ket{S_1} : \Omega \rightarrow \textbf{R}^{|\mathcal{G}|\times1} \) を引数に持つ関数も1つの確率変数である。
+                    すなわち、任意の \( X_1=X_1(\ket{S_1}) : \Omega \rightarrow \textbf{R} \) は1つの確率変数であり、議論の対象である。
+                    ここで \( t=0 \) の契約として、\( t=1 \) に \( X_1 \) だけ貨幣を受取るというものを考え、それを1つのモノとみなしたときに付けられる価格を \( X_0 &gt; 0 \) とおく。
+                    ある市場参加者が \( t=0 \) に \( X_0 \) を支払ってこれを買えば、彼は \( t=1 \) に \( X_1 \) を得る。
+                    逆に契約の相手になる市場参加者は \( t=0 \) に \( X_0 \) を受取ってこれを空売りし、彼は \( t=1 \) に \( X_1 \) を失う。
+                    このような契約を<span class="new-word">条件付き請求権（contingent claim）</span>あるいは単に<span class="new-word">クレイム（claim）</span>と呼ぶ。
+                </p>
+                <p>
+                    　クレイムについて議論する上で、一般に採用される重要な仮定がある。
+                    任意の \( X_1 \) に対して、もしある \( \ket{\theta}=\sum_{g\in\mathcal{G}}\theta_g\ket{g} \in \textbf{R}^{|\mathcal{G}|\times1}  \) が存在して
+                    \[
+                        ^\forall i \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_i)}=X_1(\omega_i)
+                    \]
+                    が成り立つならば、\( \ket{\theta} \) を \( X_1 \) の<span class="new-word">複製ポートフォリオ（replication portfolio）</span>と呼ぶ。
+                    市場に複製ポートフォリオが存在することは自明ではなく、一般に存在するとは限らない。
+                    もし複製ポートフォリオが存在するならば、市場は<span class="new-word">完備（complete）</span>であると言う。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        市場がほとんど確実に無裁定であり完備であるとする。
+                        このとき、
+                        \[
+                            X_0=\frac{1}{1+r}E^Q[X_1]
+                        \]
+                        が成り立つ。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        完備性より複製ポートフォリオ \( \ket{\theta} \) が存在して \( \braket{\theta|S_1(\omega_i)}=X_1(\omega_i) \) 、\( i=1,...,n \) が成り立つ。
+                        これの \( t=0 \) における価格を \( X_0^\prime:=\braket{\theta|S_0} \) とおく。
+                        またクレイムに \( t=0 \) で \( X_0 \) の価格が付けられたとする。
+                        もし \( X_0 &gt; X_0^\prime \) ならば、クレイムを空売りして貨幣を \( X_0 \) だけ得て、複製ポートフォリオでモノを取引して貨幣を \( X_0^\prime \) だけ失い、差額 \( X_0-X_0^\prime &gt; 0 \) だけ安全資産 \( g=g_\ast \) を買うことで、\( t=0 \) において貨幣の受渡しを合計で \( 0 \) にできる。
+                        そして \( t=1 \) になったときクレイムに従って \( X_1 \) を支払い、複製ポートフォリオの反対売買を行って \( X_1 \) を受取り、安全資産を売って \( (1+r)(X_0-X_0^\prime) &gt; 0 \) を得るが、これは (ASNA) に反する。
+                        同様に \( X_0 &lt; X_0^\prime \) のときも (ASNA) に反する結果を得る。
+                        したがって \( X_0=X_0^\prime=\braket{\theta|S_1} \) でなければならない。
+                        資産価格付けの基本定理より
+                    </p>
+                    <div class="math-container">
+                        \[
+                            X_0=\braket{\theta|S_0}=\braket{\theta|\frac{1}{1+r}E^Q[\ket{S_1}]}=\frac{1}{1+r}E^Q[\braket{\theta|S_1}]=\frac{1}{1+r}E^Q[X_1]
+                        \]
+                    <p>
+                        が成り立つ。
                     </p>
                 </div>
             </section>
