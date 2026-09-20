@@ -23,7 +23,7 @@
                 <a href="#section-almost-sure-arbitrage">ほとんど確実な裁定</a>
                 <a href="#section-fundamental-theorem-pricing">資産価格付けの基本定理</a>
                 <a href="#section-replication-portfolio">複製ポートフォリオ</a>
-                <a href="#section-price-other"></a>
+                <a href="#section-binomial-model"></a>
             </div>
         </div>
         <main>
@@ -32,7 +32,7 @@
                 <p>
                     　損益が確率的に決まる状況であっても、ほとんど確実に利益を得る方法が存在し得る。
                     任意の2時刻 \( t\in\{0,1\} \) を考え、\( t=1 \) において確率空間 \( (\Omega,P) \) 、\( \Omega=\{\omega_i\}_{i=1}^n \) 、\( n \in \textbf{Z}_{\geq2} \) が与えられているとする [<a href="../../数学/確率論/確率とは何か.html#section-measure-space" style="text-decoration: none"><span class="new-word">確率とは何か/確率測度・確率空間</span></a>] 。
-                    またモノ \( g \in \mathcal{G} \subset \textbf{Z} \) の \( t=0 \) における価格を \( S_0^g &gt; 0 \) とし、\( t=1 \) における価格を確率変数 \( S_1^g : \Omega \rightarrow \textbf{R}_{&gt;0} \) で与えるとする [<a href="../../数学/確率論/確率変数#section-random-variable.html" style="text-decoration: none"><span class="new-word">確率変数/確率変数</span></a>] 。
+                    またモノ \( g \in \mathcal{G} \subset \textbf{Z} \) の \( t=0 \) における価格を \( S_0^g &gt; 0 \) とし、\( t=1 \) における価格を確率変数 \( S_1^g : \Omega \rightarrow \textbf{R}_{&gt;0} \) で与えるとする [<a href="../../数学/確率論/確率変数.html#section-random-variable" style="text-decoration: none"><span class="new-word">確率変数/確率変数</span></a>] 。
                     ブラケット記法で書けば、\( \ket{S_t}:=\sum_{g\in\mathcal{G}}S_t^g\ket{g} \) が \( t \) における価格の縦ベクトルであり、とくに \( \ket{S_1(\omega_i)}:=\sum_{g\in\mathcal{G}}S_1^g(\omega_i)\ket{g} \) と書ける [<a href="../../数学/線形代数/ブラケット記法" style="text-decoration: none"><span class="new-word">ブラケット記法</span></a>] 。
                     さらに安全資産として \( g=g_\ast \) で \( S_0^{g_\ast}=1 \) 、\( S_1^{g_\ast}(\omega_i)=1+r \) 、\( i=1,...,n \) 、\( r &gt; -1 \) になるとする [<a href="安全資産.html#section-interest" style="text-decoration: none"><span class="new-word">安全資産/利子率</span></a>] 。
                     ある市場参加者が \( t=0 \) に \( g \) を \( \theta_g \) 単位だけ取引したとき、\( \ket{\theta}:=\sum_{g\in\mathcal{G}}\theta_g\ket{g} \) とおけば、彼が失う貨幣は \( \braket{\theta|S_0} \in \textbf{R} \) である（ \( \theta_g &gt; 0 \) は \( g \) の買い、\( \theta_g &lt; 0 \) は \( g \) の売りを表す）。
@@ -163,7 +163,7 @@
                     \]
                     が成り立つならば、\( \ket{\theta} \) を \( X_1 \) の<span class="new-word">複製ポートフォリオ（replication portfolio）</span>と呼ぶ。
                     市場に複製ポートフォリオが存在することは自明ではなく、一般に存在するとは限らない。
-                    もし複製ポートフォリオが存在するならば、市場は<span class="new-word">完備（complete）</span>であると言う。
+                    もし任意のクレイムに対して複製ポートフォリオが存在するならば、市場は<span class="new-word">完備（complete）</span>であると言う。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -184,7 +184,7 @@
                         もし \( X_0 &gt; X_0^\prime \) ならば、クレイムを空売りして貨幣を \( X_0 \) だけ得て、複製ポートフォリオでモノを取引して貨幣を \( X_0^\prime \) だけ失い、差額 \( X_0-X_0^\prime &gt; 0 \) だけ安全資産 \( g=g_\ast \) を買うことで、\( t=0 \) において貨幣の受渡しを合計で \( 0 \) にできる。
                         そして \( t=1 \) になったときクレイムに従って \( X_1 \) を支払い、複製ポートフォリオの反対売買を行って \( X_1 \) を受取り、安全資産を売って \( (1+r)(X_0-X_0^\prime) &gt; 0 \) を得るが、これは (ASNA) に反する。
                         同様に \( X_0 &lt; X_0^\prime \) のときも (ASNA) に反する結果を得る。
-                        したがって \( X_0=X_0^\prime=\braket{\theta|S_1} \) でなければならない。
+                        したがって \( X_0=X_0^\prime=\braket{\theta|S_0} \) でなければならない。
                         資産価格付けの基本定理より
                     </p>
                     <div class="math-container">
