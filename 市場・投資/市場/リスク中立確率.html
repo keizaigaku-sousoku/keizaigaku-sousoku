@@ -191,8 +191,43 @@
                         \[
                             X_0=\braket{\theta|S_0}=\braket{\theta|\frac{1}{1+r}E^Q[\ket{S_1}]}=\frac{1}{1+r}E^Q[\braket{\theta|S_1}]=\frac{1}{1+r}E^Q[X_1]
                         \]
+                    </div>
                     <p>
                         が成り立つ。
+                    </p>
+                </div>
+                <p>
+                    　クレイムが任意であることから、立ち所に以下が導かれる。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        市場がほとんど確実に無裁定であり完備であるとする。
+                        このとき、\( Q \) は一意である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        \( Q \) 、\( Q^\prime \) をともにリスク中立確率とする。
+                        任意に固定した \( \tilde{i} \in \{1,...,n\} \) に対して、定義関数を用いて \( X_1=1_{\{\omega_{\tilde{i}}\}} \) ととれば、\( Q \) について先の命題より
+                    </p>
+                    <div class="math-container">
+                        \[
+                            X_0=\frac{1}{1+r}E^Q[1_{\{\omega_{\tilde{i}}\}}]=\frac{1}{1+r}\sum_{i=1}^n Q(\omega_i)1_{\{\omega_{\tilde{i}}\}}(\omega_i)=\frac{1}{1+r}Q(\omega_{\tilde{i}})
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                        同様に \( Q^\prime \) についても
+                    </p>
+                    <div class="math-container">
+                        \[
+                            X_0=\frac{1}{1+r}E^{Q^\prime}[1_{\{\omega_{\tilde{i}}\}}]=\frac{1}{1+r}\sum_{i=1}^n Q^\prime(\omega_i)1_{\{\omega_{\tilde{i}}\}}(\omega_i)=\frac{1}{1+r}Q^\prime(\omega_{\tilde{i}})
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                        したがって \( Q=Q^\prime \) である。
                     </p>
                 </div>
             </section>
