@@ -287,30 +287,18 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \ket{S_0}=\frac{1}{1+r}E^P\bigg{[}\frac{U^\prime(W_1)}{E^P[U^\prime(W_1)]}\ket{S_1}\bigg{]}
+                            \begin{align}
+                                \ket{S_0}=&\frac{1}{1+r}E^P\bigg{[}\frac{U^\prime(W_1)}{E^P[U^\prime(W_1)]}\ket{S_1}\bigg{]}\nonumber\\
+                                =&\frac{1}{1+r}\sum_{i=1}^n P(\omega_i)\frac{U^\prime(W_1(\omega_i))}{E^P[U^\prime(W_1)]}\ket{S_1(\omega_i)}\nonumber\\
+                                =&\frac{1}{1+r}\sum_{i=1}^n Q^\prime(\omega_i)\ket{S_1(\omega_i)}\nonumber\\
+                                =&\frac{1}{1+r}E^{Q^\prime}[\ket{S_1}]
+                            \end{align}
                         \]
                     </div>
                     <p>
-                        である。
-                        ここで価格が \( X_t \) 、\( t=0,1 \) となる任意のクレイムに対して、\( \ket{\tilde{\theta}} \) を複製ポートフォリオとする。
-                        第1式の両辺に左から \( \bra{\tilde{\theta}} \) 掛けて
-                    </p>
-                    <div class="math-container">
-                        \[
-                            X_0=\frac{1}{1+r}E^P\bigg{[}\frac{U^\prime(W_1)}{E^P[U^\prime(W_1)]}X_1\bigg{]}
-                        \]
-                    </div>
-                    <p>
-                        が成り立つ一方で、クレイムの価格公式で
-                    </p>
-                    <div class="math-container">
-                        \[
-                            X_0=\frac{1}{1+r}E^Q[X_1]=\frac{1}{1+r}E^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P}\cdot X_1\bigg{]}
-                        \]
-                    </div>
-                    <p>
-                        が成り立つ。
-                        したがって題意が示される。
+                        ただし \( Q^\prime:=\{U^\prime(W_1)/E^P[U^\prime(W_1)]\}P \) である。
+                        定義より \( Q^\prime \) はリスク中立確率であり、その一意性より \( Q^\prime = Q \) である。
+                        Radon-Nikodym微分の一意性より題意が示される。
                     </p>
                 </div>
                 <p>
