@@ -214,19 +214,19 @@
                 <h4>勾配</h4>
                 <p>
                     　解析学の基本的な計算を実行するため、勾配をブラケット記法で表す必要がある。
-                    任意のケット \( \ket{v} \in \textbf{R}^{n\times1} \) 、\( n \in \textbf{Z}_{\geq1} \) およびその滑らかな関数 \( F : \textbf{R}^{n\times1} \rightarrow \textbf{R} \) が与えられたとする。
-                    ケットに（微小な）変化を加えて \( \ket{v}+\ket{\Delta v} \) としたとき、ケット \( \ket{\partial_v F} \) は
+                    任意のケット \( \ket{v} \in \textbf{R}^{n\times1} \) 、\( n \in \textbf{Z}_{\geq1} \) および滑らかな関数 \( F : \textbf{R}^{n\times1} \rightarrow \textbf{R} \) が与えられたとする。
+                    このとき、\( \ket{v} \) に（微小な）変化を加えて \( \ket{v}+\ket{\Delta v} \) としたとき、ケット \( \ket{\nabla_v F} \) を
                 </p>
                 <div class="math-container">
                     \[
-                        F(\ket{v}+\ket{\Delta v})-F(\ket{v})=\braket{\Delta v|\partial_v F}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}
+                        F(\ket{v}+\ket{\Delta v})-F(\ket{v})=\braket{\Delta v|\nabla_v F}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}
                     \]
                 </div>
                 <p>
-                    によって定められ、\( F \) の \( \ket{v} \) に関する勾配と解釈される。
+                    によって定められ、\( F \) の \( \ket{v} \) に関する勾配と解釈する。
                     任意の変化 \( \ket{\Delta v} \) で \( F \) の1次変化が \( 0 \) になる条件は
                     \[
-                        \ket{\partial_v F}=0
+                        \ket{\nabla_v F}=0
                     \]
                     である。
                     実際の計算において以下は頻出である。
@@ -234,40 +234,45 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        (i) \( F(\ket{v})=\braket{a|v} \) のとき \( \ket{\partial_v F}=\ket{a} \) 、ただし \( \ket{a} \) は \( \ket{v} \) によらない。<br>
-                        (ii) \( F(\ket{v})=\braket{v|v} \) のとき \( \ket{\partial_v F}=2\ket{v} \) 。<br>
-                        (iii) \( F(\ket{v})=f(\braket{a|v}) \) のとき \( \ket{\partial_v F}=f^\prime(\braket{a|v})\ket{a} \) 、ただし \( f : \textbf{R} \rightarrow \textbf{R} \) は任意の滑らかな関数であり、 \( \ket{a} \) は \( \ket{v} \) によらない。
+                        \( F \) 、\( G:\textbf{R}^{n\times1}\rightarrow\textbf{R} \) および \( f:\textbf{R}\rightarrow\textbf{R} \) を滑らかな関数、\( \alpha \) 、\( \beta \in \textbf{R} \) を定数、\( \ket{a} \in \textbf{R}^{n\times1} \) を定数からなるケットとする。
+                        このとき、以下が成り立つ。<br>
+                        (i) \( \ket{\nabla_v(\alpha F+\beta G)}=\alpha\ket{\nabla_v F}+\beta\ket{\nabla_v G} \) 。<br>
+                        (ii) \( \ket{\nabla_v(FG)}=G(\ket{v})\ket{\nabla_v F}+F(\ket{v})\ket{\nabla_v G}\) 。<br>
+                        (iii) \( \ket{\nabla_v f(\braket{a|v})}=f^\prime(\braket{a|v})\ket{a} \) 。<br>
+                        (iv) \( \ket{\nabla_v \braket{a|v}}=\ket{a} \) 。<br>
+                        (v) \( \ket{\partial_v \braket{v|v}}=2\ket{v} \) 。
                     </p>
                 </div>
                 <div class="proof">
                     <p>
-                        (i) 計算すれば
+                        (i)、(ii)解析学の標準的な計算から自明。<br>
                     </p>
-                    <div class="math-container">
-                        \[
-                            F(\ket{v}+\ket{\Delta v})-F(\ket{v})=\braket{a|v}+\braket{a|\Delta v}-\braket{a|v}=\braket{\Delta v|a}
-                        \]
-                    </div>
-                    <p>
-                        であって確かに \( \ket{\partial_v F}=\ket{a} \) である。<br>
-                        (ii) 計算すれば
-                    </p>
-                    <div class="math-container">
-                        \[
-                            F(\ket{v}+\ket{\Delta v})-F(\ket{v})=(\bra{v}+\bra{\Delta v})(\ket{v}+\ket{\Delta v})-\braket{v|v}=\bra{\Delta v}2\ket{v}+\braket{\Delta v|\Delta v}
-                        \]
-                    </div>
-                    <p>
-                        であって確かに \( \ket{\partial_v F}=2\ket{v} \) である。<br>
                         (iii) 計算すれば
                     </p>
                     <div class="math-container">
                         \[
-                            F(\ket{v}+\ket{\Delta v})-F(\ket{v})=f^\prime(\braket{a|v})\braket{a|\Delta v}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}=\bra{\Delta v}f^\prime(\braket{a|v})\ket{a}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}
+                            \begin{align}
+                                f(\braket{a|v}+\braket{a|\Delta v})-f(\braket{a|v})=&f^\prime(\braket{a|v})\braket{a|\Delta v}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}\nonumber\\
+                                =&\bra{\Delta v}f^\prime(\braket{a|v})\ket{a}+o\bigg{(}\sqrt{\braket{\Delta v|\Delta v}}\bigg{)}
+                            \end{align}
                         \]
                     </div>
                     <p>
-                        であって確かに \( \ket{\partial_v F}=f^\prime(\braket{a|v})\ket{a} \) である。
+                        であって確かに \( \ket{\nabla_v f(\braket{a|v})}=f^\prime(\braket{a|v})\ket{a} \) である。<br>
+                    </p>
+                    <p>
+                        (iv) (iii)で \( f(x)=x \) 、\( x \in \textbf{R} \) とおけば良い。<br>
+                    </p>
+                    <p>
+                        (v) 計算すれば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            (\bra{v}+\bra{\Delta v})(\ket{v}+\ket{\Delta v})-\braket{v|v}=\bra{\Delta v}2\ket{v}+\braket{\Delta v|\Delta v}
+                        \]
+                    </div>
+                    <p>
+                        であって確かに \( \ket{\nabla_v \braket{v|v}}=2\ket{v} \) である。
                 </div>
             </section>
         </main>
