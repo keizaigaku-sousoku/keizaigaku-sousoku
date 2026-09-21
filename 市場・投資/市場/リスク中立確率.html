@@ -236,13 +236,13 @@
                       E^Q[X]=E^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P}\cdot X\bigg{]}
                   \]
                   である。
-                  リスク中立確率について考えるには、以下の主張が重要である。
+                  リスク中立確率についてその意味考えるには、以下の主張が重要である。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
                         市場がほとんど確実に無裁定であり完備であるとする。
-                        また効用関数 \( U : \textbf{R} \rightarrow \textbf{R} \) をもつ市場参加者が \( t=0 \) に貨幣 \( W_0 \) をすべて使って取引するにあたり、\( t=1 \) に反対売買して得る貨幣 \( W_1 \) に対する \( E^P[U(W_1)] \) を最大化しているとする。
+                        また効用関数 \( U : \textbf{R} \rightarrow \textbf{R} \) をもつ投資家が \( t=0 \) に貨幣 \( W_0 \) をすべて使って取引するにあたり、\( t=1 \) に反対売買して得る貨幣 \( W_1 \) に対する \( E^P[U(W_1)] \) を最大化しているとする。
                         このとき、
                         \[
                             \frac{\textrm{d}Q}{\textrm{d}P}=\frac{U^\prime(W_1)}{E^P[U^\prime(W_1)]}
@@ -252,7 +252,7 @@
                 </div>
                 <div class="proof">
                     <p>
-                        市場参加者が \( t=0 \) に \( \ket{S_0} \) へ \( \ket{\theta} \) で取引して \( W_0=\braket{\theta|S_0} \) の貨幣を失い、\( t=1 \) に反対売買で \( W_1=\braket{\theta|S_1} \) の貨幣を得るとする。
+                        投資家が \( t=0 \) に \( \ket{S_0} \) へ \( \ket{\theta} \) で取引して \( W_0=\braket{\theta|S_0} \) の貨幣を失い、\( t=1 \) に反対売買で \( W_1=\braket{\theta|S_1} \) の貨幣を得るとする。
                         未定乗数 \( \lambda \) を用いれば、Lagrange関数は
                     </p>
                     <div class="math-container">
@@ -310,7 +310,19 @@
                     </div>
                     <p>
                         が成り立つ。
-                        したがって題意が示された。
+                        したがって題意が示される。
+                    </p>
+                </div>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        投資家がリスク中立型ならば、\( Q=P \) である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        投資家がリスク中立型ならば、効用関数の導関数は定数であり、\( \textrm{d}Q=\textrm{d}P=1 \) である。
+                        いま \( \Omega=\{\omega_i\}_{i=1}^n \) ゆえ \( \textrm{d}Q=\textrm{d}P(\omega_i)=Q(\omega_i)/P(\omega_i) \) 、\( i=1,...,n \) であって、題意が示される。
                     </p>
                 </div>
             </section>
