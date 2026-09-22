@@ -326,6 +326,58 @@
                     しかしいかなる場合であっても計算の道具としてリスク中立確率 \( Q \) を用いることはでき、仮にリスク中立型であった場合に所与の \( P \) に一致するものとして解釈できる。
                 </p>
             </section>
+            <section id="section-binomial-model">
+                <h4>二項モデル</h4>
+                <p>
+                    　具体例として、リスク中立確率を具体的に計算できる場合を考える。
+                    次元を大きく制限し、\( \Omega=\{\uparrow,\downarrow\} \) 、\( \mathcal{G}=\{g_\ast,1\} \) とする。
+                    また
+                </p>
+                <div class="math-container">
+                    \[
+                        \ket{S_0}=
+                        \begin{pmatrix}
+                            1 \\
+                            1
+                        \end{pmatrix},\ \ \ 
+                        \ket{S_1(\uparrow)}=
+                        \begin{pmatrix}
+                            1+r \\
+                            1+r_\uparrow
+                        \end{pmatrix},\ \ \ 
+                        \ket{S_1(\downarrow)}=
+                        \begin{pmatrix}
+                            1+r \\
+                            1+r_\downarrow
+                        \end{pmatrix}\ \ \ 
+                    \]
+                </div>
+                <p>
+                    ただし \( r_\downarrow \) 、\( r \) 、\( r_\uparrow &gt; -1 \) かつ \( r_\downarrow &lt; r &lt; r_\uparrow \) とする。
+                    このような設定を<span class="new-word">二項モデル（binomial model）</span>と呼ぶ。
+                    リスク中立確率を \( Q(\uparrow)=q \) 、\( Q(\downarrow)=1-q \) とおけば、定義より
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \ket{S_0}=&\frac{1}{1+r}E^Q[\ket{S_1}]\nonumber\\
+                            =&\frac{1}{1+r}[q\ket{S_1(\uparrow)}+(1-q)\ket{S_1(\downarrow)}]\nonumber\\
+                            =&
+                            \begin{pmatrix}
+                                1 \\
+                                \frac{(r_\uparrow-r_\downarrow)q+1+r_\downarrow}{1+r}
+                            \end{pmatrix}
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    つまり
+                    \[
+                        q=\frac{r-r_\downarrow}{r_\uparrow-r_\downarrow},\ \ \ 1-q=\frac{r_\uparrow-r}{r_\uparrow-r_\downarrow}
+                    \]
+                    である。
+                </p>
+            </section>
         </main>
         <div id="nav-placeholder"></div>
         <script src="../../共通/load-nav.js" defer></script>
