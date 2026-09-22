@@ -162,14 +162,18 @@
                     市場に複製ポートフォリオが存在することは自明ではなく、一般に存在するとは限らない。
                     また存在するとしても一意とは限らない。
                     もし任意のクレイムに対して複製ポートフォリオが存在するならば、市場は<span class="new-word">完備（complete）</span>であると言う。
-                </p>
+                    ここで
+                    \[
+                        S:=\sum_{i=1}^n \ket{i}\bra{S_1(\omega_i)} \in \textbf{R}^{n\times|\mathcal{G}|}
+                    \]
+                    とおき、これを<span class="new-word">ペイオフ行列（payoff matrix）</span>と呼ぶことにすれば、以下が成り立つ。
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( A:=\sum_{i=1}^n \ket{i}\bra{S_1(\omega_i)} \in \textbf{R}^{n\times|\mathcal{G}|} \) 、\( \ket{X_1}:=\sum_{i=1}^n X_1(\omega_i)\ket{i} \in \textbf{R}^{n\times1} \) とおき、\( (A:\ket{X_1}) \) を拡大行列とする。
+                        \( S \) をペイオフ行列とする。
                         このとき、市場が完備である必要十分条件は
                         \[
-                            \mathrm{rank}A=\mathrm{rank}(A:\ket{X_1})
+                            \mathrm{rank}S=n
                         \]
                         である。
                     </p>
@@ -182,18 +186,15 @@
                     <div class="math-container">
                         \[
                             \begin{align}
-                                A\ket{\theta}=&\sum_{i=1}^n \ket{i}\braket{S_1(\omega_i)|\theta}\nonumber\\
+                                S\ket{\theta}=&\sum_{i=1}^n \ket{i}\braket{S_1(\omega_i)|\theta}\nonumber\\
                                 =&\sum_{i=1}^n \braket{\theta|S_1(\omega_i)}\ket{i}\nonumber\\
-                                =&\sum_{i=1}^n X_1(\omega_i)\ket{i}\nonumber\\
-                                =&\ket{X_1}
+                                =&\sum_{i=1}^n X_1(\omega_i)\ket{i}=:\ket{X_1}
                             \end{align}
                         \]
                     </div>
                     <p>
-                        が成り立ち、\( \mathrm{rank}A=\mathrm{rank}(A:\ket{X_1}) \) でなければならない。<br>
-                        十分性について、\( \mathrm{rank}A=\mathrm{rank}(A:\ket{X_1}) \) が成り立つと仮定する。
-                        するとある \( \ket{\theta^\prime} \in \textbf{R}^{|\mathcal{G}|\times1} \) が存在して \( A\ket{\theta^\prime}=\ket{X_1} \) を満たす。
-                        これは \( \braket{\theta^\prime|S_1(\omega_i)}=X_1(\omega_i) \) 、\( i=1,...,n \) に他ならず、\( \ket{\theta^\prime} \) は複製ポートフォリオであり、したがって市場は完備である。
+                        が成り立ち、\( S\ket{\theta}=\ket{X_1} \) が任意の \( \ket{X_1} \) に対して成り立つ必要十分条件は \( \textrm{rank}S=n \) である。<br>
+                        十分性について、上の議論の逆をたどれば良い。
                     </p>
                 </div>
                 <p>
