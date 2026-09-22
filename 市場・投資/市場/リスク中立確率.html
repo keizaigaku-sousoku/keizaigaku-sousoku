@@ -29,31 +29,31 @@
         </div>
         <main>
             <section id="section-almost-sure-arbitrage">
-                <h4>ほとんど確実な裁定</h4>
+                <h4>一期間の裁定</h4>
                 <p>
-                    　損益が確率的に決まる状況であっても、ほとんど確実に利益を得る方法が存在し得る。
+                    　一期間において損益が確率的に決まる状況であっても、利益を得る方法は考えられる。
                     任意の2時刻 \( t\in\{0,1\} \) を考え、\( t=1 \) において確率空間 \( (\Omega,P) \) 、\( \Omega=\{\omega_i\}_{i=1}^n \) 、\( n \in \textbf{Z}_{\geq2} \) が与えられているとする [<a href="../../数学/確率論/確率とは何か.html#section-measure-space" style="text-decoration: none"><span class="new-word">確率とは何か/確率測度・確率空間</span></a>] 。
                     またモノ \( g \in \mathcal{G} \subset \textbf{Z} \) の \( t=0 \) における価格を \( S_0^g &gt; 0 \) とし、\( t=1 \) における価格を確率変数 \( S_1^g : \Omega \rightarrow \textbf{R}_{&gt;0} \) で与えるとする [<a href="../../数学/確率論/確率変数.html#section-random-variable" style="text-decoration: none"><span class="new-word">確率変数/確率変数</span></a>] 。
                     ブラケット記法で書けば、\( \ket{S_t}:=\sum_{g\in\mathcal{G}}S_t^g\ket{g} \) が \( t \) における価格の縦ベクトルであり、とくに \( \ket{S_1(\omega_i)}:=\sum_{g\in\mathcal{G}}S_1^g(\omega_i)\ket{g} \) と書ける [<a href="../../数学/線形代数/ブラケット記法.html" style="text-decoration: none"><span class="new-word">ブラケット記法</span></a>] 。
                     さらに安全資産として \( g=g_\ast \) で \( S_0^{g_\ast}=1 \) 、\( S_1^{g_\ast}(\omega_i)=1+r \) 、\( i=1,...,n \) 、\( r &gt; -1 \) になるとする [<a href="安全資産.html#section-interest" style="text-decoration: none"><span class="new-word">安全資産/利子率</span></a>] 。
                     ある市場参加者が \( t=0 \) に \( g \) を \( \theta_g \) 単位だけ取引したとき、\( \ket{\theta}:=\sum_{g\in\mathcal{G}}\theta_g\ket{g} \) とおけば、彼が失う貨幣は \( \braket{\theta|S_0} \in \textbf{R} \) である（ \( \theta_g &gt; 0 \) は \( g \) の買い、\( \theta_g &lt; 0 \) は \( g \) の売りを表す）。
                     同様に彼が \( t=1 \) に反対売買して得る貨幣は確率変数として \( \braket{\theta|S_1} : \Omega \rightarrow \textbf{R} \) である。
-                    ここで<span class="new-word">ほとんど確実な裁定（almost sure arbitrage）</span>とは、彼が以下の条件を満たすことをいう。
+                    ここで<span class="new-word">一期間の裁定（one-period arbitrage）</span>とは、彼が以下の条件を満たすことをいう。
                 </p>
                 <p>
-                    (ASA1) \( \braket{\theta|S_0}=0 \)<br>
-                    (ASA2) \( ^\forall i \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_i)}\geq0 \)<br>
-                    (ASA3) \( ^\exists i_\ast \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_{i_\ast})} &gt; 0 \)
+                    (OPA1) \( \braket{\theta|S_0}=0 \)<br>
+                    (OPA2) \( ^\forall i \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_i)}\geq0 \)<br>
+                    (OPA3) \( ^\exists i_\ast \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_{i_\ast})} &gt; 0 \)
                 </p>
                 <p>
-                    これは一定の時間だけモノを保有するので裁定ではないが [<a href="裁定の基礎.html" style="text-decoration: none"><span class="new-word">裁定の基礎</span></a>] 、(ASA1)が表す通り \( t=0 \) に貨幣の変化がなく、(ASA2)が表す通り \( t=1 \) に任意の標本点で貨幣を失い得ず、(ASA3)が表す通り \( t=1 \) にある標本点で貨幣を得るため、裁定に近い概念あるいは流儀によっては裁定そのものである。
-                    (ASA1)-(ASA3)の否定、つまり(ASA1)-(ASA3)の少なくとも1つが成り立たないとき、市場は<span class="new-word">ほとんど確実に無裁定（almost surely no arbitrage）</span>という。
+                    これは一定の時間だけモノを保有するので1時刻における裁定ではないが [<a href="裁定の基礎.html" style="text-decoration: none"><span class="new-word">裁定の基礎</span></a>] 、(OPA1)が表す通り \( t=0 \) に貨幣の変化がなく、(OPA2)が表す通り \( t=1 \) に任意の標本点で貨幣を失い得ず、(OPA3)が表す通り \( t=1 \) にある標本点で貨幣を得るため、1時刻における裁定に近い概念あるいは流儀によっては裁定そのものである。
+                    (OPA1)-(OPA3)の否定、つまり(OPA1)-(OPA3)の少なくとも1つが成り立たないとき、市場は<span class="new-word">一期間の無裁定（one-period no arbitrage）</span>という。
                 </p>
             </section>
             <section id="section-fundamental-theorem-pricing">
                 <h4>資産価格付けの基本定理</h4>
                 <p>
-                    　ほとんど確実な裁定が成り立つか否かは決めの問題であって導かれるものではないが、その否定はある便利な確率測度の存在に同値である。
+                    　一期間の裁定が成り立つか否かは決めの問題であって導かれるものではないが、その否定はある便利な確率測度の存在に同値である。
                     上記の設定において、確率測度 \( Q : \Omega \rightarrow (0,1) \) であって
                     \[
                         \ket{S_0}=\frac{1}{1+r}E^Q[\ket{S_1}]
@@ -65,7 +65,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        市場がほとんど確実に無裁定である必要十分条件は、\( Q \) が存在することである。
+                        市場が一期間の無裁定である必要十分条件は、\( Q \) が存在することである。
                     </p>
                 </div>
                 <div class="proof">
@@ -75,8 +75,8 @@
                             \braket{i|\Phi|\theta}=\frac{1}{1+r}\braket{\theta|S_1(\omega_i)}
                         \]
                         で定め、\( M:=\Phi(H)\subset\textbf{R}^{n\times1} \) とおく。
-                        すると(ASA1)-(ASA3)が成り立つことは、\( M \) の元であってその \( n \) 個の成分がすべて \( 0 \) 以上かつある成分が \( 0 \) より大きいことであるから、必要十分に \( M\cap\textbf{R}_{\geq0}^{n\times1}\neq\{0\} \) と表せる。
-                        つまり(ASA1)-(ASA3)が成り立たない必要十分条件は \( M\cap\textbf{R}_{\geq0}^{n\times1}=\{0\} \) である。
+                        すると(OPA1)-(OPA3)が成り立つことは、\( M \) の元であってその \( n \) 個の成分がすべて \( 0 \) 以上かつある成分が \( 0 \) より大きいことであるから、必要十分に \( M\cap\textbf{R}_{\geq0}^{n\times1}\neq\{0\} \) と表せる。
+                        つまり(OPA1)-(OPA3)が成り立たない必要十分条件は \( M\cap\textbf{R}_{\geq0}^{n\times1}=\{0\} \) である。
                     </p>
                     <p>
                         十分性について、\( Q \) が存在すると仮定する。
@@ -99,7 +99,7 @@
                     </p>
                     <p>
                         必要性について、\( M\cap\textbf{R}_{\geq0}^{n\times1}=\{0\} \) を仮定する。
-                        単体 \( \Delta:=\{\ket{x}\in\textbf{R}_{\geq0}^{n\times1}:\sum_{i=1}^n\braket{i|x}=1\} \) は空でないコンパクト凸集合であり、仮定および \( 0\notin\Delta \) より \( \Delta \cap M=\emptyset \) である。
+                        集合 \( \Delta:=\{\ket{x}\in\textbf{R}_{\geq0}^{n\times1}:\sum_{i=1}^n\braket{i|x}=1\} \) は空でないコンパクト凸集合であり、仮定および \( 0\notin\Delta \) より \( \Delta \cap M=\emptyset \) である。
                         また \( H \) は線形空間であり閉凸集合である。
                         したがって分離超平面定理より
                     </p>
@@ -164,7 +164,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        市場がほとんど確実に無裁定であり完備であるとする。
+                        市場が一期間の無裁定であり完備であるとする。
                         このとき、
                         \[
                             X_0=\frac{1}{1+r}E^Q[X_1]
@@ -178,8 +178,8 @@
                         これの \( t=0 \) における価格を \( X_0^\prime:=\braket{\theta|S_0} \) とおく。
                         またクレイムに \( t=0 \) で \( X_0 \) の価格が付けられたとする。
                         もし \( X_0 &gt; X_0^\prime \) ならば、クレイムを空売りして貨幣を \( X_0 \) だけ得て、複製ポートフォリオでモノを取引して貨幣を \( X_0^\prime \) だけ失い、差額 \( X_0-X_0^\prime &gt; 0 \) だけ安全資産 \( g=g_\ast \) を買うことで、\( t=0 \) において貨幣の受渡しを合計で \( 0 \) にできる。
-                        そして \( t=1 \) になったときクレイムに従って \( X_1 \) を支払い、複製ポートフォリオの反対売買を行って \( X_1 \) を受取り、安全資産を売って \( (1+r)(X_0-X_0^\prime) &gt; 0 \) を得るが、これはほとんど確実に無裁定であることに反する。
-                        同様に \( X_0 &lt; X_0^\prime \) のときも、ほとんど確実に無裁定であることに反する結果を得る。
+                        そして \( t=1 \) になったときクレイムに従って \( X_1 \) を支払い、複製ポートフォリオの反対売買を行って \( X_1 \) を受取り、安全資産を売って \( (1+r)(X_0-X_0^\prime) &gt; 0 \) を得るが、これは一期間の無裁定に反する。
+                        同様に \( X_0 &lt; X_0^\prime \) のときも、一期間の無裁定に反する結果を得る。
                         したがって \( X_0=X_0^\prime=\braket{\theta|S_0} \) でなければならない。
                         資産価格付けの基本定理より
                     </p>
@@ -198,7 +198,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        市場がほとんど確実に無裁定であり完備であるとする。
+                        市場が一期間の無裁定であり完備であるとする。
                         このとき、\( Q \) は一意である。
                     </p>
                 </div>
@@ -241,7 +241,7 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        市場がほとんど確実に無裁定であり完備であるとする。
+                        市場が一期間の無裁定であり完備であるとする。
                         また滑らかな効用関数 \( U : \textbf{R} \rightarrow \textbf{R} \) をもつ投資家が \( t=0 \) に貨幣 \( W_0 \) をすべて使って取引するにあたり、\( t=1 \) に反対売買して得る貨幣 \( W_1 \) に対する \( E^P[U(W_1)] \) を最大化しているとする。
                         このとき、
                         \[
