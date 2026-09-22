@@ -29,7 +29,7 @@
                 <p>
                     　確率空間 \( (\Omega,\mathcal{F},P) \) に新しい確率測度を導入することは自由である。
                     任意に確率測度 \( Q \) をとれば、\( (\Omega,\mathcal{F},Q) \) が新しい確率空間になる。
-                    これら2つの確率空間を別々に議論せず、一方を考えているとき他方へ移って議論を続ける場面は珍しくない。
+                    これら2つの確率空間を別々に議論せず、一方を考えているとき他方へ移って議論を続けることは珍しくない。
                     その際、条件として
                     \[
                         ^\forall A\in\mathcal{F};\ \ \ P(A)=0 \Longrightarrow Q(A)=0
@@ -43,8 +43,8 @@
             <section id="section-radon-nikodym">
                 <h4>Radon-Nikodym微分</h4>
                 <p>
-                    　確率測度の変換を一般に議論するには相当の数学的な準備を要するが、確率密度が定まる場合には内容は比較的平易である。
-                    以下で構成される \( \Omega \) 上の関数を<span class="new-word">Radon-Nikodym微分（Radon-Nikodym derivative）</span>と呼び、
+                    　確率測度の変換を抽象的な設定で議論するには相当の数学的な準備を要するが、確率密度が定まる場合に限れば内容は比較的平易である。
+                    以下で構成される \( \Omega \) 上の関数を \( Q \) の \( P \) に関する<span class="new-word">Radon-Nikodym微分（Radon-Nikodym derivative）</span>と呼び
                     \[
                         \frac{\mathrm{d}Q}{\mathrm{d}P}:\Omega\rightarrow\textbf{R}_{\geq0}
                     \]
@@ -102,24 +102,25 @@
                         が成り立つ。
                     </p>
                     <p>
-                        次に一意性を示す。
+                        続いてほとんど確実に一意であることを示す。
                         \( X \) 、\( X^\prime : \Omega \rightarrow \textbf{R}_{\geq0} \) について
                     </p>
                     <div class="math-container">
                         \[
-                            ^\forall A\in\mathcal{F};\ \ \ \int_A q(x)\ \textrm{d}x = \int_A X(x)p(x)\ \textrm{d}x = \int_A Y(x)p(x)\ \textrm{d}x
+                            ^\forall A\in\mathcal{F};\ \ \ \int_A q(x)\ \textrm{d}x = \int_A X(x)p(x)\ \textrm{d}x = \int_A X^\prime(x)p(x)\ \textrm{d}x
                         \]
                     </div>
                     <p>
                         が成り立つとする。
-                        \( M:=\{x:X(x)&gt; X^\prime(x)\} \) 、\( M_k:=\{x\in\Omega:X(x)\geq X^\prime(x)+1/k\} \) 、\( k\in\textbf{Z}_{\geq1} \) とおけば、\( M=\bigcup_{k=1}^\infty M_k \) である。
-                        ここで \( P(M)=P[X &gt; X^\prime] &gt; 0 \) を仮定すれば、ある \( k_\ast\in\textbf{Z}_{\geq1} \) に対して \( P(M_{k_\ast})&gt;0 \) でなければならない。
+                        \( M:=\{x\in\Omega:X(x)&gt; X^\prime(x)\} \) 、\( M_k:=\{x\in\Omega:X(x)\geq X^\prime(x)+1/k\} \) 、\( k\in\textbf{Z}_{\geq1} \) とおけば、\( M=\bigcup_{k=1}^\infty M_k \) である。
+                        ここで \( P(M)=P[X &gt; X^\prime] &gt; 0 \) を仮定すれば、ある \( k_\ast\in\textbf{Z}_{\geq1} \) が存在して \( P(M_{k_\ast})&gt;0 \) でなければならない。
                         すると
                     </p>
                     <div class="math-container">
                         \[
                             \begin{align}
                                 \int_{M_{k_\ast}}X(x)p(x)\ \textrm{d}x\geq&\int_{M_{k_\ast}}X^\prime(x)p(x)\ \textrm{d}x+\frac{1}{k_\ast}\int_{M_{k_\ast}}p(x)\ \textrm{d}x\nonumber\\
+                                =&\int_{M_{k_\ast}}X^\prime(x)p(x)\ \textrm{d}x+\frac{1}{k_\ast}P(M_{k_\ast})\nonumber\\
                                 &gt;&\int_{M_{k_\ast}}X^\prime(x)p(x)\ \textrm{d}x
                             \end{align}
                         \]
