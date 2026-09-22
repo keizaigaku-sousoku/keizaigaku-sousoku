@@ -66,7 +66,7 @@
                         が成り立つ。
                         さらに上記を満たす任意の \( X \) 、\( X^\prime : \Omega \rightarrow \textbf{R}_{\geq0} \)に対して
                         \[
-                            X=X^\prime, \textrm{ a.s.}
+                            P[X=X^\prime]=1
                         \]
                         である。
                     </p>
@@ -130,9 +130,17 @@
                         であるが、仮定より最左辺と最右辺はともに \( \int_{M_{k_\ast}}q(x)\ \textrm{d}x \) となるべきであって矛盾が生じる。
                         よって \( P[X &gt; X^\prime]=0 \) である。
                         同様にして \( P[X &lt; X^\prime]=0 \) である。
-                        したがって \( P[X = X^\prime]=1 \) つまり \( X=X^\prime, \textrm{ a.s.} \) である。
+                        したがって \( P[X = X^\prime]=1 \) である。
                     </p>
                 </div>
+                <p>
+                    　具体的に \( \Omega=\{x_i\}_{i=1}^\infty \subset \textbf{R}^n \) 、\( n\in\textbf{Z}_{\geq1} \) のような離散の場合、さらに任意の標本点に対して確率が \( 0 \) でなければRadon-Nikodym微分は単純である。
+                    すなわち、\( \mathrm{d}Q/\mathrm{d}P:\Omega\rightarrow\textbf{R}_{\geq0} \) は
+                    \[
+                        ^\forall i \in\{1,...,n\};\ \ \ \frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)=\frac{Q(x_i)}{P(x_i)}
+                    \]
+                    であり一意である。
+                </p>
                 <p>
                     　Radon-Nikodym微分は、確率測度を取替えるための重みである。
                     素朴には、Riemann積分で所与の変数を別の変数に取替えるつまり変数変換するにあたり、重みとしてヤコビアンが現れることに類似している。
