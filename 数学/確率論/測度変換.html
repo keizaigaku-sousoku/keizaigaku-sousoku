@@ -134,13 +134,30 @@
                     </p>
                 </div>
                 <p>
-                    　具体的に \( \Omega=\{x_i\}_{i=1}^\infty \subset \textbf{R}^n \) 、\( n\in\textbf{Z}_{\geq1} \) のような離散の場合、さらに任意の標本点に対して \( P \) による確率が \( 0 \) でなければRadon-Nikodym微分は単純である。
-                    すなわち、\( \mathrm{d}Q/\mathrm{d}P:\Omega\rightarrow\textbf{R}_{\geq0} \) は
-                    \[
-                        ^\forall i \in\{1,...,n\};\ \ \ \frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)=\frac{Q(x_i)}{P(x_i)}
-                    \]
-                    であり一意である。
+                    　具体的に離散の場合を考えるときは、以下の通りRadon-Nikodym微分は単純である。
                 </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (\Omega,\mathcal{F},P) \) 、\( \Omega=\{x_i\}_{i=1}^\infty \subset \textbf{R}^n \) 、\( n\in\textbf{Z}_{\geq1} \) を確率空間とし、別の確率測度 \(Q\) が所与であるとする。
+                        また \( P(x_i) &gt; 0 \) 、\( i \in \textbf{Z}_{\geq1} \) とする。
+                        このとき、
+                    </p>
+                    <div class="math-container">
+                        \[
+                            ^\forall i \in\{1,...,n\};\ \ \ \frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)=\frac{Q(x_i)}{P(x_i)}
+                        \]
+                    </div>
+                    <p>
+                        が成り立って一意である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        \( P(x_i) &gt; 0 \) 、\( i \in \textbf{Z}_{\geq1} \) から \( Q \ll P \) である。
+                        またRadon-Nikodym微分は
+                    </p>
+                </div>
                 <p>
                     　Radon-Nikodym微分は、確率測度を取替えるための重みである。
                     素朴には、Riemann積分で所与の変数を別の変数に取替えるつまり変数変換するにあたり、重みとしてヤコビアンが現れることに類似している。
