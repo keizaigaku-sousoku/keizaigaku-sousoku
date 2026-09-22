@@ -143,12 +143,13 @@
             <section id="section-replication-portfolio">
                 <h4>複製ポートフォリオ</h4>
                 <p>
-                    　ケット \( \ket{S_1} : \Omega \rightarrow \textbf{R}^{|\mathcal{G}|\times1} \) を引数に持つ関数も1つの確率変数である。
-                    すなわち、任意の \( X_1=X_1(\ket{S_1}) : \Omega \rightarrow \textbf{R} \) は1つの確率変数であり、議論の対象である [<a href="../../数学/確率論/確率変数.html#section-random-variable" style="text-decoration: none"><span class="new-word">確率変数/確率変数</span></a>] 。
-                    ここで \( t=0 \) の契約として、\( t=1 \) に \( X_1 \) だけ貨幣を受取るというものを考え、それを1つのモノとみなしたときに付けられる価格を \( X_0 &gt; 0 \) とおく [<a href="契約.html#section-contract" style="text-decoration: none"><span class="new-word">契約/約束・契約</span></a>] 。
-                    ある市場参加者が \( t=0 \) に \( X_0 \) を支払ってこれを買えば、彼は \( t=1 \) に \( X_1 \) を得る。
-                    逆に契約の相手になる市場参加者は \( t=0 \) に \( X_0 \) を受取ってこれを空売りし、彼は \( t=1 \) に \( X_1 \) を失う。
+                    　リスク中立確率と密接に関係する重要な契約がある。
+                    ケット \( \ket{S_1} : \Omega \rightarrow \textbf{R}^{|\mathcal{G}|\times1} \) を引数に持つ関数も1つの確率変数であり、任意の \( X_1=X_1(\ket{S_1}) : \Omega \rightarrow \textbf{R} \) は1つの確率変数であり、議論の対象である [<a href="../../数学/確率論/確率変数.html#section-random-variable" style="text-decoration: none"><span class="new-word">確率変数/確率変数</span></a>] 。
+                    ここで \( t=0 \) における契約として、\( t=1 \) に \( X_1 \) だけ貨幣を受取るというものを考え、それを1つのモノとみなしたときに付けられる価格を \( X_0 &gt; 0 \) とおく [<a href="契約.html#section-contract" style="text-decoration: none"><span class="new-word">契約/約束・契約</span></a>] 。
+                    ある市場参加者が \( t=0 \) に \( X_0 \) だけ貨幣を支払ってこれを買えば、彼は \( t=1 \) に \( X_1 \) だけ貨幣を受取る。
+                    逆に契約の相手になる市場参加者は \( t=0 \) に \( X_0 \) だけ貨幣を受取ってこれを空売りし、彼は \( t=1 \) に \( X_1 \) だけ貨幣を支払う。
                     このような契約を<span class="new-word">条件付き請求権（contingent claim）</span>あるいは単に<span class="new-word">クレイム（claim）</span>と呼ぶ。
+                    言うまでもなく、何の仮定もおかなければ \( t=0 \) に所与の情報は \( X_1 \) のみであり、\( X_0 \) の具体的な値は市場参加者たちが自由に決める。
                 </p>
                 <p>
                     　クレイムについて議論する上で、一般に採用される重要な仮定がある。
@@ -156,7 +157,7 @@
                     \[
                         ^\forall i \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_i)}=X_1(\omega_i)
                     \]
-                    が成り立つならば、\( \ket{\theta} \) を \( X_1 \) の<span class="new-word">複製ポートフォリオ（replication portfolio）</span>と呼ぶ。
+                    が成り立ち、さらに任意の市場参加者が \( t=0 \) に \( \braket{\theta|S_0} \) の取引をできるならば、\( \ket{\theta} \) を \( X_1 \) の<span class="new-word">複製ポートフォリオ（replication portfolio）</span>と呼ぶ。
                     市場に複製ポートフォリオが存在することは自明ではなく、一般に存在するとは限らない。
                     もし任意のクレイムに対して複製ポートフォリオが存在するならば、市場は<span class="new-word">完備（complete）</span>であると言う。
                     以下を<span class="new-word">クレイムの価格公式（claim pricing formula）</span>と呼ぶ。
