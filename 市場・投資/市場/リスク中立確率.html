@@ -394,7 +394,38 @@
                 <p>
                     ただし \( r_\downarrow \) 、\( r \) 、\( r_\uparrow &gt; -1 \) かつ \( r_\downarrow &lt; r &lt; r_\uparrow \) とする。
                     このような設定を<span class="new-word">二項モデル（binomial model）</span>と呼ぶ。
-                    リスク中立確率を \( Q(\uparrow)=q \) 、\( Q(\downarrow)=1-q \) とおけば、定義より
+                    まずペイオフ行列を計算すれば
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            S=&\sum_{i=\uparrow,\downarrow}\ket{i}\bra{S_1(\omega_i)}\nonumber\\
+                            =&
+                            \begin{pmatrix}
+                                1\\
+                                0
+                            \end{pmatrix}
+                            \begin{pmatrix}
+                                1+r & 1+r_\uparrow
+                            \end{pmatrix}+
+                            \begin{pmatrix}
+                                0\\
+                                1
+                            \end{pmatrix}
+                            \begin{pmatrix}
+                                1+r & 1+r_\downarrow
+                            \end{pmatrix}\nonumber\\
+                            =&
+                            \begin{pmatrix}
+                                1+r & 1+r_\uparrow\\
+                                1+r & 1+r_\downarrow
+                            \end{pmatrix}
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    であり、\( \textrm{rank}\ S=2 \) ゆえ二項モデルは完備である。
+                    次にリスク中立確率を \( Q(\uparrow)=q \) 、\( Q(\downarrow)=1-q \) とおけば、定義より
                 </p>
                 <div class="math-container">
                     \[
