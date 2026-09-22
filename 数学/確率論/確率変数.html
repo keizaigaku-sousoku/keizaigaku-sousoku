@@ -104,7 +104,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            ^\forall p,q\in(1,\infty);\ \ \ \frac{1}{p}+\frac{1}{q}=1 \Longrightarrow E[|XY|]\leq E[|X|^p]^{1/p}E[|Y|^q]^{1/q}
+                            ^\forall \alpha,\beta\in(1,\infty);\ \ \ \frac{1}{\alpha}+\frac{1}{\beta}=1 \Longrightarrow E[|XY|]\leq E[|X|^\alpha]^{1/\alpha}E[|Y|^\beta]^{1/\beta}
                         \]
                     </div>
                     <p>
@@ -113,19 +113,19 @@
                 </div>            
                 <div class="proof">
                     <p>
-                        容易に \( (1/p)t^p-t+1/q\geq0 \) 、\( t\geq0 \) が確かめられ、等号は \( t=1 \) のとき（またそのときに限り）成り立つ。
-                        そこで \( t=a/b^{q-1} \) 、\( a,b &gt; 0 \) を代入して整理すれば \( ab \leq a^p/p+b^q/q \) を得る。
+                        容易に \( (1/\alpha)t^\alpha-t+1/\beta\geq0 \) 、\( t\geq0 \) が確かめられ、等号は \( t=1 \) のとき（またそのときに限り）成り立つ。
+                        そこで \( t=a/b^{\beta-1} \) 、\( a,b &gt; 0 \) を代入して整理すれば \( ab \leq a^\alpha/\alpha+b^\beta/\beta \) を得る。
                         これは \( a,b \geq 0 \) でも成り立つ。
-                        そこで任意の \( \omega \in \Omega \) に対して \( a=|X(\omega)|E[|X|^p]^{-1/p} \) 、 \( b=|Y(\omega)|E[|Y|^q]^{-1/q} \) を代入すれば
+                        そこで任意の \( \omega \in \Omega \) に対して \( a=|X(\omega)|E[|X|^\alpha]^{-1/\alpha} \) 、 \( b=|Y(\omega)|E[|Y|^\beta]^{-1/\beta} \) を代入すれば
                     </p>
                     <div class="math-container">
                         \[
-                            \frac{|X(\omega)Y(\omega)|}{E[|X|^p]^{1/p}E[|Y|^q]^{1/q}}\leq\frac{|X(\omega)|^p}{pE[|X|^p]}+\frac{|Y(\omega)|^q}{qE[|Y|^q]}
+                            \frac{|X(\omega)Y(\omega)|}{E[|X|^\alpha]^{1/\alpha}E[|Y|^\beta]^{1/\beta}}\leq\frac{|X(\omega)|^\alpha}{\alpha E[|X|^\alpha]}+\frac{|Y(\omega)|^\beta}{\beta E[|Y|^\beta]}
                         \]
                     </div>
                     <p>
                         である。
-                        期待値の性質を用いれば \( 1/p+1/q=1 \) により題意が示される。
+                        期待値の性質を用いれば \( 1/\alpha+1/\beta=1 \) により題意が示される。
                     </p>
                 </div>
                 <p>
@@ -148,7 +148,7 @@
                 </div>            
                 <div class="proof">
                     <p>
-                        H&ouml;lder不等式で \( p=q=2 \) を代入すれば明らか。
+                        H&ouml;lder不等式で \( \alpha=\beta=2 \) を代入すれば明らか。
                     </p>
                 </div>
                 <p>
