@@ -149,6 +149,7 @@
                     ある市場参加者が \( t=0 \) に \( X_0 \) だけ貨幣を支払ってこれを買えば、彼は \( t=1 \) に \( X_1 \) だけ貨幣を受取る。
                     逆に契約の相手になる市場参加者は \( t=0 \) に \( X_0 \) だけ貨幣を受取ってこれを空売りし、彼は \( t=1 \) に \( X_1 \) だけ貨幣を支払う。
                     このような契約を<span class="new-word">条件付き請求権（contingent claim）</span>あるいは単に<span class="new-word">クレイム（claim）</span>と呼ぶ。
+                    また \( X_1 \) をクレイムの<span class="new-word">ペイオフ（payoff）</span>と呼ぶ。
                     言うまでもなく、何の仮定もなければ \( t=0 \) に \( X_0 \) の具体的な値は市場参加者たちによって自由に決められる [<a href="市場とは何か.html#section-exchange-price" style="text-decoration: none"><span class="new-word">市場とは何か/取引所・価格</span></a>] 。
                 </p>
                 <p>
@@ -157,9 +158,45 @@
                     \[
                         ^\forall i \in \{1,...,n\};\ \ \ \braket{\theta|S_1(\omega_i)}=X_1(\omega_i)
                     \]
-                    が成り立ち、さらに任意の市場参加者が \( t=0 \) に \( \braket{\theta|S_0} \) の取引をできるならば、\( \ket{\theta} \) を \( X_1 \) の<span class="new-word">複製ポートフォリオ（replication portfolio）</span>と呼ぶ。
+                    が成り立つならば、\( \ket{\theta} \) を \( X_1 \) の<span class="new-word">複製ポートフォリオ（replication portfolio）</span>と呼ぶ。
                     市場に複製ポートフォリオが存在することは自明ではなく、一般に存在するとは限らない。
+                    また存在するとしても一意とは限らない。
                     もし任意のクレイムに対して複製ポートフォリオが存在するならば、市場は<span class="new-word">完備（complete）</span>であると言う。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( A:=\sum_{i=1}^n \ket{i}\bra{S_1(\omega_i)} \in \textbf{R}^{n\times|\mathcal{G}|} \) 、\( \ket{X_1}:=\sum_{i=1}^n X_1(\omega_i)\ket{i} \in \textbf{R}^{n\times1} \) とおき、\( (A:\ket{X_1}) \) を拡大行列とする。
+                        このとき、市場が完備である必要十分条件は
+                        \[
+                            \mathrm{rank}A=\mathrm{rank}(A:\ket{X_1})
+                        \]
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        必要性について、市場が完備であると仮定する。
+                        すると \( \ket{\theta} \) を複製ポートフォリオとして
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                A\ket{\theta}=&\sum_{i=1}^n \ket{i}\braket{S_1(\omega_i)|\theta}\nonumber\\
+                                =&\sum_{i=1}^n \braket{\theta|S_1(\omega_i)}\ket{i}\nonumber\\
+                                =&\sum_{i=1}^n X_1(\omega_i)\ket{i}\nonumber\\
+                                =&\ket{X_1}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        が成り立ち、\( \mathrm{rank}A=\mathrm{rank}(A:\ket{X_1}) \) でなければならない。<br>
+                        十分性について、\( \mathrm{rank}A=\mathrm{rank}(A:\ket{X_1}) \) が成り立つと仮定する。
+                        するとある \( \ket{\theta^\prime} \in \textbf{R}^{|\mathcal{G}|\times1} \) が存在して \( A\ket{\theta^\prime}=\ket{X_1} \) を満たす。
+                        これは \( \braket{\theta^\prime|S_1(\omega_i)}=X_1(\omega_i) \) 、\( i=1,...,n \) に他ならず、\( \ket{\theta^\prime} \) は複製ポートフォリオであり、したがって市場は完備である。
+                    </p>
+                </div>
+                <p>
                     以下を<span class="new-word">クレイムの価格公式（claim pricing formula）</span>と呼ぶ。
                 </p>
                 <div class="theorem-tile">
