@@ -116,11 +116,13 @@
                         とおく。
                         明らかに \( f(r) \) は \( (-1,\infty) \) において \( C^1 \) 級である。
                         微分すると
-                        <div class="math-container">
-                            \[
-                                f^\prime(r)=-\sum_{t=1}^T\frac{tC_t}{(1+r)^{t+1}}-\frac{TF}{(1+r)^{T+1}}
-                            \]
-                        </div>
+					</p>
+                    <div class="math-container">
+                        \[
+                            f^\prime(r)=-\sum_{t=1}^T\frac{tC_t}{(1+r)^{t+1}}-\frac{TF}{(1+r)^{T+1}}
+                        \]
+                    </div>
+					<p>
                         であり、\( F &gt; 0 \) かつ \( C_t &gt; 0 \) ゆえ \( f^\prime(r)&lt;0 \) 。
                         よって \( f(r) \) は単調減少である。
                         極限は \( f(r) \rightarrow \infty \ ( r \searrow -1 ) \) 、\( f(r) \searrow 0 \ ( r \rightarrow \infty ) \) であるから、\( P &gt; 0 \) ならば \( P=f(r) \) の解が一意に存在する。
@@ -204,11 +206,13 @@
                     \]
                     が定まる。
                     複利最終利回りが単位時間あたりの指標であるから、上記の収益率を単位時間あたりに換算した
-                    <div class="math-container">
-                        \[
-                            r_\textrm{SFY}=r_\textrm{SFY}(F,\mathcal{C},P):=\frac{\sum_{t=1}^TC_t+F-P}{TP}
-                        \]
-                    </div>
+				</p>
+                <div class="math-container">
+                    \[
+                        r_\textrm{SFY}=r_\textrm{SFY}(F,\mathcal{C},P):=\frac{\sum_{t=1}^TC_t+F-P}{TP}
+                    \]
+                </div>
+				<p>
                     を定め、これを<span class="new-word">単利最終利回り（simple final yield）</span>と呼ぶ。
                 </p>
                 <p>
@@ -248,16 +252,18 @@
                         が成り立つ。
                         もし \( r=0 \) ならば \( 1=cT+1 \) となるがこれは不成立であるから \( r \neq 0 \) 。
                         そこで
-                        <div class="math-container">
-                            \[
-                                \begin{align}
-                                    1=c\cdot\frac{\frac{1}{1+r}[1-(\frac{1}{1+r})^T]}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}
-                                    \Longleftrightarrow&1=\frac{c}{r}\bigg{[}1-\frac{1}{(1+r)^T}\bigg{]}+\frac{1}{(1+r)^{T}}\nonumber\\
-                                    \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0\nonumber\\
-                                    \Longleftrightarrow&r=c
-                                \end{align}
-                            \]
-                        </div>
+					</p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                1=c\cdot\frac{\frac{1}{1+r}[1-(\frac{1}{1+r})^T]}{1-\frac{1}{1+r}}+\frac{1}{(1+r)^{T}}
+                                \Longleftrightarrow&1=\frac{c}{r}\bigg{[}1-\frac{1}{(1+r)^T}\bigg{]}+\frac{1}{(1+r)^{T}}\nonumber\\
+                                \Longleftrightarrow&\bigg{(}1-\frac{c}{r}\bigg{)}\bigg{[}1-\frac{1}{(1+r)^{T}}\bigg{]}=0\nonumber\\
+                                \Longleftrightarrow&r=c
+                            \end{align}
+                        \]
+                    </div>
+					<p>
                         となる。
                         十分性は逆をたどれば示される。
                     </p>
@@ -292,18 +298,22 @@
                             P=\frac{cF}{1+r}+\frac{cF+F}{(1+r)^{2}}
                         \]
                         であり、単利最終利回りは
-                        <div class="math-container">
-	                        \[
-	                            r_{\textrm{SFY}}=\frac{cF+\frac{F-P}{2}}{P}\Longleftrightarrow P=\frac{1+2c}{1+2r_{\textrm{SFY}}}F
-	                        \]
-						</div>
+					</p>
+                    <div class="math-container">
+	                    \[
+	                        r_{\textrm{SFY}}=\frac{cF+\frac{F-P}{2}}{P}\Longleftrightarrow P=\frac{1+2c}{1+2r_{\textrm{SFY}}}F
+	                    \]
+					</div>
+					<p>
 						になる。
                         よって式(<a href="#price-yield-2">\ref{price-yield-2}</a>)より
-                        <div class="math-container">
-	                        \[
-	                            \frac{c}{1+r}+\frac{1+c}{(1+r)^{2}}=\frac{1+2c}{1+2r_{\textrm{SFY}}}\leq\frac{1+2c}{1+2r}
-	                        \]
-						</div>
+					</p>
+                    <div class="math-container">
+	                    \[
+	                        \frac{c}{1+r}+\frac{1+c}{(1+r)^{2}}=\frac{1+2c}{1+2r_{\textrm{SFY}}}\leq\frac{1+2c}{1+2r}
+	                    \]
+					</div>
+					<p>
                         が成り立ち、これを整理すれば \( c\leq r \) を得る。
 						しかしこれはすでに示した第1式に矛盾する。
                         第2式2番目の不等号は、ある \( T\in\textbf{Z}_{\geq1} \) で式(<a href="#price-yield-2">\ref{price-yield-2}</a>)と \( r\geq r_{\textrm{DY}} \) がともに成り立つと仮定して矛盾を導く。
