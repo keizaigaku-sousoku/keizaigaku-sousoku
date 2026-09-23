@@ -6,6 +6,12 @@ window.MathJax = {
         tagSide: 'right',
         tagIndent: '0em'
     },
+    chtml: {
+        linebreaks: {
+            automatic: true,
+            width: 'container'
+        }
+    },
     options: {
         renderActions: {
             find_script: [10, function (doc) {
