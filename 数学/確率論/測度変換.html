@@ -139,13 +139,13 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (\Omega,\mathcal{F},P) \) 、\( \Omega=\{x_i\}_{i=1}^\infty \subset \textbf{R}^n \) 、\( n\in\textbf{Z}_{\geq1} \) を確率空間とし、別の確率測度 \(Q\) が所与であるとする。
-                        また \( P(x_i) &gt; 0 \) 、\( i \in \textbf{Z}_{\geq1} \) とする。
+                        \( (\Omega,\mathcal{F},P) \) 、\( \Omega=\{x_i\}_{i=1}^N \subset \textbf{R}^n \) 、\( N \in \textbf{Z}_{\geq1}\cup \{\infty\} \) 、\( n\in\textbf{Z}_{\geq1} \) を確率空間とし、別の確率測度 \(Q\) が所与であるとする。
+                        また \( P(x_i) &gt; 0 \) 、\( i=1,...,N \) とする。
                         このとき、
                     </p>
                     <div class="math-container">
                         \[
-                            ^\forall i \in\{1,...,n\};\ \ \ \frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)=\frac{Q(x_i)}{P(x_i)}
+                            ^\forall i \in\{1,...,N\};\ \ \ \frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)=\frac{Q(x_i)}{P(x_i)}
                         \]
                     </div>
                     <p>
@@ -154,9 +154,34 @@
                 </div>
                 <div class="proof">
                     <p>
-                        \( P(x_i) &gt; 0 \) 、\( i \in \textbf{Z}_{\geq1} \) から \( Q \ll P \) である。
-                        またRadon-Nikodym微分は
+                        より大きな標本空間 \( \tilde{\Omega}=\textbf{R}^n \) をとれば、その上での \( P \) 、\( Q \) の確率密度はそれぞれ
                     </p>
+                    <div class="math-container">
+                        \[
+                            p(x)=\sum_{i=1}^N P(x_i)\delta^n(x-x_i),\ \ \ q(x)=\sum_{i=1}^N Q(x_i)\delta^n(x-x_i)
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        また \( P(x_i) &gt; 0 \) 、\( i=1,...,N \) ゆえ \( Q \ll P \) である。
+                        Radon-Nikodym微分は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{\mathrm{d}Q}{\mathrm{d}P}(x)=&
+                                \begin{cases}
+                                    \frac{q(x)}{p(x)} &(x:p(x)&gt;0)\\
+                                    0 &(x:p(x)=0)
+                                \end{cases}\nonumber\\
+                                =&
+                                \begin{cases}
+                                    \frac{\sum_{i=1}^N Q(x_i)\delta^n(x-x_i)}{\sum_{i=1}^N P(x_i)\delta^n(x-x_i)} &(x\in\Omega)\\
+                                    0 &(x\notin\Omega)
+                                \end{cases}\nonumber\\
+                            \end{align}
+                        \]
+                    </div>                    
                 </div>
                 <p>
                     　Radon-Nikodym微分は、確率測度を取替えるための重みである。
