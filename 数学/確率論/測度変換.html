@@ -66,7 +66,7 @@
                         が成り立つ。
                         さらに上記を満たす任意の \( X \) 、\( X^\prime : \Omega \rightarrow \textbf{R}_{\geq0} \)に対して
                         \[
-                            P[X=X^\prime]=1
+                            P(\{x\in\Omega:X(x)=X^\prime(x)\})=1
                         \]
                         である。
                     </p>
@@ -114,7 +114,7 @@
                     <p>
                         が成り立つとする。
                         \( M:=\{x\in\Omega:X(x)&gt; X^\prime(x)\} \) 、\( M_k:=\{x\in\Omega:X(x)\geq X^\prime(x)+1/k\} \) 、\( k\in\textbf{Z}_{\geq1} \) とおけば、\( M=\bigcup_{k=1}^\infty M_k \) である。
-                        ここで \( P(M)=P[X &gt; X^\prime] &gt; 0 \) を仮定すれば、ある \( k_\ast\in\textbf{Z}_{\geq1} \) が存在して \( P(M_{k_\ast})&gt;0 \) でなければならない。
+                        ここで \( P(M) &gt; 0 \) を仮定すれば、ある \( k_\ast\in\textbf{Z}_{\geq1} \) が存在して \( P(M_{k_\ast})&gt;0 \) でなければならない。
                         すると
                     </p>
                     <div class="math-container">
@@ -128,9 +128,9 @@
                     </div>
                     <p>
                         であるが、仮定より最左辺と最右辺はともに \( \int_{M_{k_\ast}}q(x)\ \textrm{d}x \) となるべきであって矛盾が生じる。
-                        よって \( P[X &gt; X^\prime]=0 \) である。
-                        同様にして \( P[X &lt; X^\prime]=0 \) である。
-                        したがって \( P[X = X^\prime]=1 \) である。
+                        よって \( P(\{x\in\Omega:X(x) &gt; X^\prime(x)\})=0 \) である。
+                        同様にして \( P(\{x\in\Omega:X(x) &lt; X^\prime(x)\})=0 \) である。
+                        したがって \( P(\{x\in\Omega:X(x) = X^\prime(x)\})=1 \) である。
                     </p>
                 </div>
                 <p>
