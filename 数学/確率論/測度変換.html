@@ -141,20 +141,22 @@
                     <p>
                         \( (\Omega,\mathcal{F},P) \) 、\( \Omega=\{x_i\}_{i=1}^N \subset \textbf{R}^n \) 、\( N \in \textbf{Z}_{\geq1}\cup \{\infty\} \) 、\( n\in\textbf{Z}_{\geq1} \) を確率空間とし、別の確率測度 \(Q\) が所与であるとする。
                         また \( P(x_i) &gt; 0 \) 、\( i=1,...,N \) とする。
-                        このとき、
+                        このとき、\( \mathrm{d}Q/\mathrm{d}P:\Omega\ni x_i\mapsto Q(x_i)/P(x_i)\in\textbf{R}_{\geq0} \) が一意に存在して
                     </p>
                     <div class="math-container">
                         \[
-                            ^\forall i \in\{1,...,N\};\ \ \ \frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)=\frac{Q(x_i)}{P(x_i)}
+                            ^\forall A \in\mathcal{F};\ \ \ \sum_{x_i\in A}Q(x_i)=\sum_{x_i\in A}\frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)P(x_i)
                         \]
                     </div>
                     <p>
-                        が成り立って一意である。
+                        を満たす。                        
                     </p>
                 </div>
                 <div class="proof">
                     <p>
-                        より大きな標本空間 \( \tilde{\Omega}=\textbf{R}^n \) をとれば、その上での \( P \) 、\( Q \) の確率密度はそれぞれ
+                        まず存在を示す。
+                        より大きな標本空間 \( \tilde{\Omega}=\textbf{R}^n \) をとり、\( \tilde{\mathcal{F}} \) をその上の\(\sigma\)代数とする。
+                        確率密度
                     </p>
                     <div class="math-container">
                         \[
@@ -162,26 +164,57 @@
                         \]
                     </div>
                     <p>
-                        である。
-                        また \( P(x_i) &gt; 0 \) 、\( i=1,...,N \) ゆえ \( Q \ll P \) である。
-                        Radon-Nikodym微分は
+                        によってそれぞれ確率測度 \( \tilde{P} \) 、\( \tilde{Q} \) を与えれば、\( P(x_i)&gt;0 \) 、\( i=1,...,N \) より \( \tilde{Q}\ll\tilde{P} \) である。
+                        そこで先の命題より、Radon-Nikodym微分 \( \mathrm{d}\tilde{Q}/\mathrm{d}\tilde{P} \) が存在して、任意の \( A\in\tilde{\mathcal{F}} \) に対して
                     </p>
                     <div class="math-container">
                         \[
                             \begin{align}
-                                \frac{\mathrm{d}Q}{\mathrm{d}P}(x)=&
-                                \begin{cases}
-                                    \frac{q(x)}{p(x)} &(x:p(x)&gt;0)\\
-                                    0 &(x:p(x)=0)
-                                \end{cases}\nonumber\\
-                                =&
-                                \begin{cases}
-                                    \frac{\sum_{i=1}^N Q(x_i)\delta^n(x-x_i)}{\sum_{i=1}^N P(x_i)\delta^n(x-x_i)} &(x\in\Omega)\\
-                                    0 &(x\notin\Omega)
-                                \end{cases}\nonumber\\
+                                &\int_A q(x)\ \textrm{d}x=\int_A \frac{\textrm{d}\tilde{Q}}{\textrm{d}\tilde{P}}(x)p(x)\ \textrm{d}x\nonumber\\
+                                \Longleftrightarrow&\int_A \sum_{i=1}^N Q(x_i)\delta^n(x-x_i)\ \textrm{d}x=\int_A \frac{\textrm{d}\tilde{Q}}{\textrm{d}\tilde{P}}(x)\sum_{i=1}^N P(x_i)\delta^n(x-x_i)\ \textrm{d}x\nonumber\\
+                                \Longleftrightarrow&\sum_{x_i\in A}Q(x_i)=\sum_{x_i\in A}\frac{\mathrm{d}\tilde{Q}}{\mathrm{d}\tilde{P}}(x_i)P(x_i)
                             \end{align}
                         \]
-                    </div>                    
+                    </div>
+                    <p>
+                        が成り立つ。
+                        しかも \( A \) として任意の \( x_j \in \Omega \subset \tilde{\Omega} \) を有しかつ \( \Omega \) の他の元を有さない任意の \( D_j \subset \tilde{\Omega} \) を選べば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                &\sum_{x_i\in D_j}Q(x_i)=\sum_{x_i\in D_j}\frac{\mathrm{d}\tilde{Q}}{\mathrm{d}\tilde{P}}(x_i)P(x_i)\nonumber\\
+                                \Longleftrightarrow&Q(x_j)=\frac{\mathrm{d}\tilde{Q}}{\mathrm{d}\tilde{P}}(x_j)P(x_j)\nonumber\\
+                                \Longleftrightarrow&\frac{\mathrm{d}\tilde{Q}}{\mathrm{d}\tilde{P}}(x_j)=\frac{Q(x_j)}{P(x_j)}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        したがって題意の一意性以外が示された。
+                    </p>
+                    <p>
+                        続いて一意性を示す。
+                        ある \( X:\Omega\rightarrow\textbf{R}_{\geq0} \) が存在して
+                        \[
+                            ^\forall A\in\mathcal{F};\ \ \ \sum_{x_i\in A}Q(x_i)=\sum_{x_i\in A}\frac{\mathrm{d}Q}{\mathrm{d}P}(x_i)P(x_i)=\sum_{x_i\in A}X(x_i)P(x_i)
+                        \]
+                        を満たすとする。
+                        任意の \( j\in\{1,...,N\} \) に対して \( A=\{x_j\}\in\mathcal{F} \) を選べば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            Q(x_j)=\frac{\mathrm{d}Q}{\mathrm{d}P}(x_j)P(x_j)=X(x_j)P(x_j)
+                        \]
+                    </div>
+                    <p>
+                        であり、\( P(x_j)&gt;0 \) より両辺を \( P(x_j) \) で割って
+                        \[
+                            \frac{\mathrm{d}Q}{\mathrm{d}P}(x_j)=X(x_j)
+                        \]
+                        を得る。
+                        これがすべての \( j\in\{1,...,N\} \) について成り立つから一意性も示された。
+                    </p>
                 </div>
                 <p>
                     　Radon-Nikodym微分は、確率測度を取替えるための重みである。
