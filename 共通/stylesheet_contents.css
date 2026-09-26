@@ -499,6 +499,10 @@ mjx-container {
   border: none;
 }
 
+mjx-mtext > mjx-c {
+    clip-path: none !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     main {
