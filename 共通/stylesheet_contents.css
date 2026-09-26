@@ -397,7 +397,16 @@ tr:nth-child(even) td {
 
 /* Math */
 mjx-container {
-    font-size: 120% !important;
+    font-size: 110% !important;
+}
+
+mjx-mtext > mjx-c {
+    clip-path: none !important;
+}
+
+mjx-container a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .math-container {
@@ -497,10 +506,6 @@ mjx-container {
   width: 100%;
   margin: 12px auto;
   border: none;
-}
-
-mjx-mtext > mjx-c {
-    clip-path: none !important;
 }
 
 /* Responsive */
