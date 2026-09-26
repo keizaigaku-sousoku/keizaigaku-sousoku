@@ -11,7 +11,7 @@ window.MathJax = {
     },
     chtml: {
         linebreaks: {
-            inline: true,
+            inline: false/*true*/,
             width: '100%'
         }
     },
