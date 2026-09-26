@@ -37,6 +37,3 @@ window.MathJax = {
     script.async = false;
     document.head.appendChild(script);
 })();
-mjx-mtext > mjx-c {
-    clip-path: none !important;
-}
