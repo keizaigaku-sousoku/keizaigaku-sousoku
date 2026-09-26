@@ -97,13 +97,11 @@
                 <p>
                     また
                 </p>
-                <p>
-                    <div class="math-container">
-                        \[
-                            C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{T(T+1)F}{(1+r)^T}}{P}\cdot\frac{1}{(1+r)^2}
-                        \]
-                    </div>
-                </p>
+                <div class="math-container">
+                    \[
+                        C_{\textrm{v}}=C_{\textrm{v}}(r):=\frac{\sum_{t=1}^T\frac{t(t+1)C_t}{(1+r)^t}+\frac{T(T+1)F}{(1+r)^T}}{P}\cdot\frac{1}{(1+r)^2}
+                    \]
+                </div>
                 <p>
                     を定めれば
                     \[
@@ -225,9 +223,13 @@
                     </p>
                     <p>
                         （第1段）\( P(T)=\sum_{t=1}^{T}cFv^{t}+Fv^{T} \) と \( P(T-1)=\sum_{t=1}^{T-1}cFv^{t}+Fv^{T-1} \) で辺々差をとれば
+                    </p>
+                    <div class="math-container">
                         \[
                             P(T)-P(T-1)=cFv^{T}+Fv^{T}-Fv^{T-1}=cFv^{T}-Fv^{T-1}(1-v)
                         \]
+                    </div>
+                    <p>
                         である。
                         \( 1-v=rv \) ゆえ \( v^{T-1}(1-v)=rv^{T} \) であり、上式の両辺を \( F \) で割って
                         \[
@@ -235,9 +237,13 @@
                         \]
                         を得る。
                         同様に \( M(T):=\sum_{t=1}^{T}tcFv^{t}+TFv^{T} \) 、\( T \in \textbf{Z}_{\geq1} \) とおいたとき、\( M(T) \) と \( M(T-1) \) で辺々差をとれば
+                    </p>
+                    <div class="math-container">
                         \[
                             M(T)-M(T-1)=TcFv^{T}+TFv^{T}-(T-1)Fv^{T-1}
                         \]
+                    </div>
+                    <p>
                         であり、\( v^{T-1}=(1+r)v^{T} \) を用いて整理して
                         \[
                             m(T)=m(T-1)+v^{T}\big{[}T(c-r)+(1+r)\big{]} \label{m-recursion}
@@ -264,12 +270,16 @@
                         \]
                         を得る。
                         よって
+                    </p>
+                    <div class="math-container">
                         \[
                             \begin{align}
                             rK(n)+(1+r)A(n)+v^{n}=&\,n-v^{n}-A(n-1)+[A(n)+1-v^{n}]+v^{n}\nonumber\\
                             =&\,n+1+[A(n)-A(n-1)]-v^{n}=n+1\nonumber
                             \end{align}
                         \]
+                    </div>
+                    <p>
                         つまり
                         \[
                             rK(n)+(1+r)A(n)+v^{n}=n+1 \label{key-lemma}
@@ -278,6 +288,8 @@
                     </p>
                     <p>
                         （第3段）式(<a href="#p-recursion">\ref{p-recursion}</a>)、(<a href="#m-recursion">\ref{m-recursion}</a>)より
+                    </p>
+                    <div class="math-container">
                         \[
                             \begin{align}
                             &m(T)p(T-1)-m(T-1)p(T)\nonumber\\
@@ -285,18 +297,28 @@
                             =&v^{T}\bigg{\{}(c-r)[Tp(T-1)-m(T-1)]+(1+r)p(T-1)\bigg{\}}\nonumber
                             \end{align}
                         \]
+                    </div>
+                    <p>
                         である。
                         ここで \( n=T-1 \) とおけば \( p(T-1)=cA(n)+v^{n} \) 、\( m(T-1)=cB(n)+nv^{n} \) ゆえ角括弧内は
+                    </p>
+                    <div class="math-container">
                         \[
                             Tp(n)-m(n)=c[(n+1)A(n)-B(n)]+v^{n}=cK(n)+v^{n}
                         \]
+                    </div>
+                    <p>
                         であり、波括弧内は
+                    </p>
+                    <div class="math-container">
                         \[
                             \begin{align}
                                 Q(c):=&(c-r)[cK(n)+v^{n}]+(1+r)[cA(n)+v^{n}]\nonumber\\
                                 =&(1+r)+(c-r)[cK(n)+(1+r)A(n)+v^{n}] \label{Q-factored}
                             \end{align}
                         \]
+                    </div>
+                    <p>
                         である。
                         式(<a href="#key-lemma">\ref{key-lemma}</a>)より \( cK(n)+(1+r)A(n)+v^{n} \) は \( c=r \) のとき \( n+1=T \) をとる。
                         しかもこれは \( K(n)&gt;0 \) ゆえ \( c \) に関して狭義単調増加であり、\( c\geq r \) では
