@@ -283,23 +283,23 @@
                         \[
                             \begin{align}
                             &m(T)p(T-1)-m(T-1)p(T)\nonumber\\
-                            =&\{m(T-1)+v^{T}[T(c-r)+(1+r)]\} p(T-1)-m(T-1)[p(T-1)+(c-r)v^{T}]\nonumber\\
-                            =&v^{T}\{ (c-r)[Tp(T-1)-m(T-1)]+(1+r)p(T-1)\}\nonumber
+                            =&\bigg{\{}m(T-1)+v^{T}[T(c-r)+(1+r)]\bigg{\}}p(T-1)-m(T-1)[p(T-1)+(c-r)v^{T}]\nonumber\\
+                            =&v^{T}\bigg{\{}(c-r)[Tp(T-1)-m(T-1)]+(1+r)p(T-1)\bigg{\}}\nonumber
                             \end{align}
                         \]
                         である。
                         ここで \( n=T-1 \) とおけば、\( p(T-1)=cA(n)+v^{n} \) 、\( m(T-1)=cB(n)+nv^{n} \) であるから
                         \[
-                            Tp(T-1)-m(T-1)=c\big{[}(n+1)A(n)-A^{(1)}(n)\big{]}+v^{n}=cK(n)+v^{n}
+                            Tp(T-1)-m(T-1)=c[(n+1)A(n)-B(n)]+v^{n}=cK(n)+v^{n}
                         \]
                         となる。
                         これを代入すれば、波括弧の中身は
                         \[
-                            Q(c):=(c-r)\big{[}cK(n)+v^{n}\big{]}+(1+r)\big{[}cA(n)+v^{n}\big{]}
+                            Q(c):=(c-r)[cK(n)+v^{n}]+(1+r)[cA(n)+v^{n}]
                         \]
                         であり、これは \( c \) の2次式として整理すると
                         \[
-                            Q(c)=(1+r)+(c-r)\big{[}K(n)c+(1+r)A(n)+v^{n}\big{]} \label{Q-factored}
+                            Q(c)=(1+r)+(c-r)[K(n)c+(1+r)A(n)+v^{n}] \label{Q-factored}
                         \]
                         と書ける（右辺を展開して \( Q(c) \) の定義に一致することを確かめればよい）。
                         式(<a href="#key-lemma">\ref{key-lemma}</a>)より、括弧内の1次式 \( K(n)c+(1+r)A(n)+v^{n} \) は \( c=r \) のとき値 \( n+1=T \) をとる。
