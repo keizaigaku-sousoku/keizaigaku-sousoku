@@ -211,6 +211,145 @@
                         (i) \( r &lt; c \) ならば、残存期間が長いほど \( |\Delta P|/P \) は大きい。<br>
                         (ii) \( T \geq 2 \) ならば、クーポン・レートが高いほど \( |\Delta P| \) は大きく、\( |\Delta P|/P \) は小さい。
                     </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        (i)について、\( v:=1/(1+r)&gt;0 \) とおき、\( n\in\textbf{Z}_{\geq1} \) に対して
+                        \[
+                            A(n):=\sum_{t=1}^{n}v^{t},\qquad A^{(1)}(n):=\sum_{t=1}^{n}tv^{t}
+                        \]
+                        とおく（\( A(0):=0 \)）。
+                        既知の通り \( rA(n)=1-v^{n} \) である [<a href="../債券/債券の基礎.html#geo-sum">債券の基礎</a>] 。
+                        また修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書けば、
+                        \( p(T):=P(T)/F=cA(T)+v^{T} \) 、\( m(T):=cA^{(1)}(T)+Tv^{T} \) とおいて
+                        \[
+                            D(T)=v\cdot\frac{m(T)}{p(T)} \label{D-in-pm}
+                        \]
+                        と表せる。
+                        さらに \( p(T)-1=(c-r)A(T) \) であり [<a href="../債券/債券の基礎.html#step1">債券の基礎</a>] 、\( A(T)&gt;0 \) と仮定 \( r&lt;c \) より \( p(T)&gt;1&gt;0 \) が任意の \( T \) について成り立つ。
+                        したがって \( D(T)&gt;D(T-1) \) を示すには \( m(T)p(T-1)&gt;m(T-1)p(T) \) を示せばよい。
+                    </p>
+                    <p>
+                        （準備1：漸化式）
+                        \( P(T)=\sum_{t=1}^{T}cFv^{t}+Fv^{T} \) と \( P(T-1)=\sum_{t=1}^{T-1}cFv^{t}+Fv^{T-1} \) を比較すると、\( t=1,\dots,T-1 \) の項は共通であり、
+                        \[
+                            P(T)-P(T-1)=cFv^{T}+Fv^{T}-Fv^{T-1}=cFv^{T}-Fv^{T-1}(1-v)
+                        \]
+                        である。
+                        \( 1-v=rv \) より \( v^{T-1}(1-v)=rv^{T} \) であるから、両辺を \( F \) で割って
+                        \[
+                            p(T)=p(T-1)+(c-r)v^{T} \label{p-recursion}
+                        \]
+                        を得る。
+                        同様に \( M(T):=\sum_{t=1}^{T}tcFv^{t}+TFv^{T} \) と \( M(T-1) \) を比較すれば
+                        \[
+                            M(T)-M(T-1)=TcFv^{T}+TFv^{T}-(T-1)Fv^{T-1}
+                        \]
+                        であり、\( v^{T-1}=(1+r)v^{T} \) を用いて整理すると
+                        \[
+                            m(T)=m(T-1)+v^{T}\big{[}T(c-r)+(1+r)\big{]} \label{m-recursion}
+                        \]
+                        を得る。
+                    </p>
+                    <p>
+                        （準備2：補題）
+                        \( n\geq1 \) とし、\( K(n):=(n+1)A(n)-A^{(1)}(n)=\sum_{t=1}^{n}(n+1-t)v^{t}&gt;0 \) とおく。
+                        このとき
+                        \[
+                            rK(n)+(1+r)A(n)+v^{n}=n+1 \label{key-lemma}
+                        \]
+                        が成り立つ。
+                        実際、\( rv^{t}=v^{t-1}-v^{t} \) より
+                        \[
+                            \begin{align}
+                            rA^{(1)}(n)=&\sum_{t=1}^{n}t(v^{t-1}-v^{t})\nonumber\\
+                            =&v^{0}+v^{1}+\cdots+v^{n-1}-nv^{n}\nonumber\\
+                            =&1+A(n-1)-nv^{n}\nonumber
+                            \end{align}
+                        \]
+                        であり（隣接する係数の差を取ると望遠鏡式に潰れる）、これと \( rA(n)=1-v^{n} \) より
+                        \[
+                            \begin{align}
+                            rK(n)=&(n+1)rA(n)-rA^{(1)}(n)\nonumber\\
+                            =&(n+1)(1-v^{n})-[1+A(n-1)-nv^{n}]\nonumber\\
+                            =&n-v^{n}-A(n-1)\nonumber
+                            \end{align}
+                        \]
+                        を得る。
+                        よって
+                        \[
+                            \begin{align}
+                            rK(n)+(1+r)A(n)+v^{n}=&\,n-v^{n}-A(n-1)+[A(n)+1-v^{n}]+v^{n}\nonumber\\
+                            =&\,n+1+[A(n)-A(n-1)]-v^{n}\nonumber\\
+                            =&\,n+1+v^{n}-v^{n}=n+1\nonumber
+                            \end{align}
+                        \]
+                        であり、式(<a href="#key-lemma">\ref{key-lemma}</a>)が示された。
+                        \( K(n)&gt;0 \) であるから、左辺は \( c \) の1次式とみなせば \( c \) に関して狭義単調増加である（後述）。
+                    </p>
+                    <p>
+                        （結論）
+                        式(<a href="#p-recursion">\ref{p-recursion}</a>)、(<a href="#m-recursion">\ref{m-recursion}</a>)より
+                        \[
+                            \begin{align}
+                            m(T)p(T-1)-m(T-1)p(T)=&\big{[}m(T-1)+v^{T}(T(c-r)+(1+r))\big{]}p(T-1)-m(T-1)\big{[}p(T-1)+(c-r)v^{T}\big{]}\nonumber\\
+                            =&v^{T}\Big{\{}(c-r)\big{[}Tp(T-1)-m(T-1)\big{]}+(1+r)p(T-1)\Big{\}}\nonumber
+                            \end{align}
+                        \]
+                        である。
+                        ここで \( n:=T-1 \) とおけば、\( p(T-1)=cA(n)+v^{n} \) 、\( m(T-1)=cA^{(1)}(n)+nv^{n} \) であるから
+                        \[
+                            Tp(T-1)-m(T-1)=c\big{[}(n+1)A(n)-A^{(1)}(n)\big{]}+v^{n}=cK(n)+v^{n}
+                        \]
+                        となる。
+                        これを代入すれば、波括弧の中身は
+                        \[
+                            Q(c):=(c-r)\big{[}cK(n)+v^{n}\big{]}+(1+r)\big{[}cA(n)+v^{n}\big{]}
+                        \]
+                        であり、これは \( c \) の2次式として整理すると
+                        \[
+                            Q(c)=(1+r)+(c-r)\big{[}K(n)c+(1+r)A(n)+v^{n}\big{]} \label{Q-factored}
+                        \]
+                        と書ける（右辺を展開して \( Q(c) \) の定義に一致することを確かめればよい）。
+                        式(<a href="#key-lemma">\ref{key-lemma}</a>)より、括弧内の1次式 \( K(n)c+(1+r)A(n)+v^{n} \) は \( c=r \) のとき値 \( n+1=T \) をとる。
+                        \( K(n)&gt;0 \) ゆえこの1次式は \( c \) に関して狭義単調増加であるから、\( c\geq r \) では
+                        \[
+                            K(n)c+(1+r)A(n)+v^{n}\geq T&gt;0
+                        \]
+                        が成り立つ。
+                        これと \( c-r\geq0 \) 、\( 1+r&gt;0 \) を式(<a href="#Q-factored">\ref{Q-factored}</a>)に用いれば
+                        \[
+                            Q(c)\geq 1+r&gt;0\qquad(c\geq r)
+                        \]
+                        を得る。
+                        したがって \( c&gt;r \) のとき \( m(T)p(T-1)-m(T-1)p(T)=v^{T}Q(c)&gt;0 \) であり、\( D(T)&gt;D(T-1) \) が示された。
+                        この議論は \( c \) の符号によらず（負のクーポン・レートを含めて）成り立つ。
+                        よって修正デュレーションは残存期間に関して狭義単調増加であり、式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。
+                    </p>
+                    <p>
+                        (ii)について、定義より
+                        \[
+                            DP=\sum_{t=1}^T\frac{tcF}{(1+r)^{t}}+\frac{TF}{(1+r)^{T}}>0
+                        \]
+                        であり、これは \( c \) に関して狭義単調増加であるから、\( -DP \) は \( c \) が大きいほど負に大きくなる。
+                        よってクーポン・レートが高いほど \( |\Delta P| \) は大きい。
+                        また
+                        \[
+                            \frac{\partial D}{\partial c}=\frac{-\sum_{t=1}^T\frac{T-t}{(1+r)^{t-T}}}{[c\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+1]^2}\cdot\frac{1}{1+r}
+                        \]
+                        であり、仮定から分子が負であるから \( D \) は \( c \) に関して狭義単調減少である。
+                        したがって式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。
+                    </p>
+                </div>
+                <!--
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        固定利付債を考え、\( c \in \textbf{R} \) をクーポン・レート、\( P &gt; 0 \) を債券価格、\( r &gt; -1 \) を複利最終利回りとする。
+                        このとき、債券価格の変化 \( \Delta P \) について次が成り立つ。<br>
+                        (i) \( r &lt; c \) ならば、残存期間が長いほど \( |\Delta P|/P \) は大きい。<br>
+                        (ii) \( T \geq 2 \) ならば、クーポン・レートが高いほど \( |\Delta P| \) は大きく、\( |\Delta P|/P \) は小さい。
+                    </p>
                 </div>            
                 <div class="proof">
                     <p>
@@ -277,6 +416,7 @@
                         したがって式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。
                     </p>
                 </div>
+                -->
                 <p>
                     　上の命題の(i)において、複利最終利回りがクーポン・レートより小さいことは重要な条件である。
                     式の上で十分条件であることは証明の内容から明らかである。
