@@ -276,7 +276,6 @@
                             rK(n)+(1+r)A(n)+v^{n}=n+1 \label{key-lemma}
                         \]
                         が成り立つ。
-                        <!--\( K(n)&gt;0 \) であるから、左辺は \( c \) の1次式とみなせば \( c \) に関して狭義単調増加である（後述）。-->
                     </p>
                     <p>
                         （第3段）式(<a href="#p-recursion">\ref{p-recursion}</a>)、(<a href="#m-recursion">\ref{m-recursion}</a>)より
@@ -312,10 +311,6 @@
                         \]
                         を得る。
                         したがって \( c&gt;r \) のとき \( m(T)p(T-1)-m(T-1)p(T)=v^{T}Q(c)&gt;0 \) であり、\( m(T)p(T-1) &gt; m(T-1)p(T) \) が示された。
-                        <!--
-                        この議論は \( c \) の符号によらず（負のクーポン・レートを含めて）成り立つ。
-                        よって修正デュレーションは残存期間に関して狭義単調増加であり、式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。
-                        -->
                     </p>
                     <p>
                         (ii)定義より
@@ -332,82 +327,6 @@
                         したがって題意が示された。
                     </p>
                 </div>
-                <!--
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        固定利付債を考え、\( c \in \textbf{R} \) をクーポン・レート、\( P &gt; 0 \) を債券価格、\( r &gt; -1 \) を複利最終利回りとする。
-                        このとき、債券価格の変化 \( \Delta P \) について次が成り立つ。<br>
-                        (i) \( r &lt; c \) ならば、残存期間が長いほど \( |\Delta P|/P \) は大きい。<br>
-                        (ii) \( T \geq 2 \) ならば、クーポン・レートが高いほど \( |\Delta P| \) は大きく、\( |\Delta P|/P \) は小さい。
-                    </p>
-                </div>            
-                <div class="proof">
-                    <p>
-                        (i)について、修正デュレーションの引数として \( T\in\textbf{Z}_{\geq1} \) を \( D(T) \) とあらわに書けば
-                    </p>
-                    <div class="math-container">
-                        \[
-                            D(T)=\frac{\sum_{t=1}^T\frac{tcF}{(1+r)^t}+\frac{TF}{(1+r)^T}}{\sum_{t=1}^T\frac{cF}{(1+r)^t}+\frac{F}{(1+r)^T}}\cdot\frac{1}{1+r}=\frac{c\sum_{t=1}^T\frac{t}{(1+r)^{t-T}}+T}{c\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+1}\cdot\frac{1}{1+r}
-                        \]
-                    </div>
-                    <p>
-                        である。
-                        また \( A=c\sum_{t=1}^{T-1}t/(1+r)^{t-T+1} &gt; 0 \) 、\( B=c\sum_{t=1}^{T-1}1/(1+r)^{t-T+1} &gt; 0 \) とおけば
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \begin{align}
-                                D(T)=&\frac{(1+r)c[\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T+1}}+\frac{T}{1+r}]+T}{(1+r)c[\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T+1}}+\frac{1}{1+r}]+1}\cdot\frac{1}{1+r}\nonumber\\
-                                =&\frac{(1+r)A+cT+T}{(1+r)B+c+1}\cdot\frac{1}{1+r}
-                            \end{align}
-                        \]
-                    </div>
-                    <p>
-                        および
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \begin{align}
-                                D(T-1)=&\frac{c\sum_{t=1}^{T-1}\frac{t}{(1+r)^{t-T+1}}+T-1}{c\sum_{t=1}^{T-1}\frac{1}{(1+r)^{t-T+1}}+1}\cdot\frac{1}{1+r}\nonumber\\
-                                =&\frac{A+T-1}{B+1}\cdot\frac{1}{1+r}\nonumber\\
-                                &lt;&\frac{A+T}{B+1}\cdot\frac{1}{1+r}
-                            \end{align}
-                        \]
-                    </div>
-                    <p>
-                        が成り立つ。
-                        よって
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \begin{align}
-                                D(T)-D(T-1)&gt;&\bigg{[}\frac{(A+T)+rA+cT}{(B+1)+rB+c}-\frac{A+T}{B+1}\bigg{]}\cdot\frac{1}{1+r}\nonumber\\
-                                =&\frac{[(A+T)+rA+cT](B+1)-(A+T)[(B+1)+rB+c]}{[(1+r)B+(1+c)](B+1)(1+r)}\nonumber\\
-                                =&\frac{(c-r)(TB-A)}{[(1+r)B+(1+c)](B+1)(1+r)}
-                            \end{align}
-                        \]
-                    </div>
-                    <p>
-                        である。
-                        式(<a href="#exists-of-r">\ref{exists-of-r}</a>)の第2式より \( 1+c &gt; 0 \) であり、分母は正である。
-                        仮定から \( c-r &gt; 0 \)　、定義から \( TB-A \geq 0 \) であり、分子は \( 0 \) 以上である。
-                        したがって \( D(T)-D(T-1) &gt; 0 \) であり、修正デュレーションは残存期間に関して狭義単調増加であり、式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。<br>
-                        (ii)について、定義より
-                        \[
-                            DP=\sum_{t=1}^T\frac{tcF}{(1+r)^{t}}+\frac{TF}{(1+r)^{T}}>0
-                        \]
-                        であり、これは \( c \) に関して狭義単調増加であるから、\( -DP \) は \( c \) が大きいほど負に大きくなる。
-                        よってクーポン・レートが高いほど \( |\Delta P| \) は大きい。
-                        また
-                        \[
-                            \frac{\partial D}{\partial c}=\frac{-\sum_{t=1}^T\frac{T-t}{(1+r)^{t-T}}}{[c\sum_{t=1}^T\frac{1}{(1+r)^{t-T}}+1]^2}\cdot\frac{1}{1+r}
-                        \]
-                        であり、仮定から分子が負であるから \( D \) は \( c \) に関して狭義単調減少である。
-                        したがって式(<a href="#delta-P-delta-r">\ref{delta-P-delta-r}</a>)から題意が示される。
-                    </p>
-                </div>
-                -->
                 <p>
                     　上の命題の(i)において、複利最終利回りがクーポン・レートより小さいことは重要な条件である。
                     式の上で十分条件であることは証明の内容から明らかである。
