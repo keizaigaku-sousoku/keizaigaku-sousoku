@@ -282,12 +282,12 @@
                         （第3段）式(<a href="#p-recursion">\ref{p-recursion}</a>)、(<a href="#m-recursion">\ref{m-recursion}</a>)より
                         \[
                             \begin{align}
-                            m(T)p(T-1)-m(T-1)p(T)=&\big{[}m(T-1)+v^{T}(T(c-r)+(1+r))\big{]}p(T-1)-m(T-1)\big{[}p(T-1)+(c-r)v^{T}\big{]}\nonumber\\
-                            =&v^{T}\Big{\{}(c-r)\big{[}Tp(T-1)-m(T-1)\big{]}+(1+r)p(T-1)\Big{\}}\nonumber
+                            m(T)p(T-1)-m(T-1)p(T)=&\{m(T-1)+v^{T}[T(c-r)+(1+r)]\} p(T-1)-m(T-1)[p(T-1)+(c-r)v^{T}]\nonumber\\
+                            =&v^{T}\{ (c-r)[Tp(T-1)-m(T-1)]+(1+r)p(T-1)\}\nonumber
                             \end{align}
                         \]
                         である。
-                        ここで \( n:=T-1 \) とおけば、\( p(T-1)=cA(n)+v^{n} \) 、\( m(T-1)=cB(n)+nv^{n} \) であるから
+                        ここで \( n=T-1 \) とおけば、\( p(T-1)=cA(n)+v^{n} \) 、\( m(T-1)=cB(n)+nv^{n} \) であるから
                         \[
                             Tp(T-1)-m(T-1)=c\big{[}(n+1)A(n)-A^{(1)}(n)\big{]}+v^{n}=cK(n)+v^{n}
                         \]
