@@ -6,10 +6,13 @@ window.MathJax = {
         tagSide: 'right',
         tagIndent: '0em'
     },
+    output: {
+        displayOverflow: 'linebreak'
+    },
     chtml: {
         linebreaks: {
-            automatic: true,
-            width: 'container'
+            inline: true,
+            width: '100%'
         }
     },
     options: {
