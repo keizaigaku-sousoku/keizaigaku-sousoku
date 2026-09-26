@@ -235,11 +235,11 @@
                             p(T)=p(T-1)+(c-r)v^{T} \label{p-recursion}
                         \]
                         を得る。
-                        同様に \( M(T):=\sum_{t=1}^{T}tcFv^{t}+TFv^{T} \) 、\( T \in \textbf{Z}_{\geq1} \) とおいたとき、\( M(T) \) と \( M(T-1) \) を比較すれば
+                        同様に \( M(T):=\sum_{t=1}^{T}tcFv^{t}+TFv^{T} \) 、\( T \in \textbf{Z}_{\geq1} \) とおいたとき、\( M(T) \) と \( M(T-1) \) で辺々差をとれば
                         \[
                             M(T)-M(T-1)=TcFv^{T}+TFv^{T}-(T-1)Fv^{T-1}
                         \]
-                        であり、\( v^{T-1}=(1+r)v^{T} \) を用いて整理すると
+                        であり、\( v^{T-1}=(1+r)v^{T} \) を用いて整理して
                         \[
                             m(T)=m(T-1)+v^{T}\big{[}T(c-r)+(1+r)\big{]} \label{m-recursion}
                         \]
@@ -277,7 +277,7 @@
                             rK(n)+(1+r)A(n)+v^{n}=n+1 \label{key-lemma}
                         \]
                         が成り立つ。
-                        \( K(n)&gt;0 \) であるから、左辺は \( c \) の1次式とみなせば \( c \) に関して狭義単調増加である（後述）。
+                        <!--\( K(n)&gt;0 \) であるから、左辺は \( c \) の1次式とみなせば \( c \) に関して狭義単調増加である（後述）。-->
                     </p>
                     <p>
                         （第3段）式(<a href="#p-recursion">\ref{p-recursion}</a>)、(<a href="#m-recursion">\ref{m-recursion}</a>)より
