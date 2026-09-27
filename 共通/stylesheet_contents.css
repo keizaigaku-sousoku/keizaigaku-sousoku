@@ -405,8 +405,8 @@ mjx-mtext > mjx-c {
 }
 
 mjx-container[display="true"] mjx-mtd {
-    padding-top: 0.3em !important;
-    padding-bottom: 0.3em !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
 }
 
 mjx-container a {
