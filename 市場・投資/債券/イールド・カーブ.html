@@ -243,9 +243,9 @@
                     　ローリング・イールドを考えるときイールド・カーブが不変であることを仮定したが、これはより一般の議論に拡張される。
                     言うまでもなく、イールド・カーブが不変であることは便宜的な仮定であり、現実世界では起こり得ない。
                     そこで時刻 \( t \) で変化するイールド・カーブ \( (r_{0,T^\prime}(t))_{T^\prime} \) を定め、償還価格 \( F &gt; 0 \) 、残存期間 \( T \in \textbf{Z}_{\geq2} \) の割引債に時刻 \( t=0 \) から \( t=1 \) まで投資する場合を考える。
-                    時刻 \( t=0 \) 、\( 1 \) における債券価格をそれぞれ \( P_0 \) 、\( P_1 \) とし、複利最終利回りが \( r_{0,T}(0) \) のまま不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\prime \) 、イールド・カーブが不変であった場合の時刻 \( t=1 \) の債券価格を \( \bar{P}_1 \) とおく。
-                    そして \( \textrm{RD}:=\bar{P}_1/P_1^\prime-1 \) を時刻 \( t=0 \) のイールド・カーブに対するロールダウン効果とする。
-                    また \( \textrm{CC}:=P_1/\bar{P}_1-1 \) をイールド・カーブの変化のみによる収益率と考え、これを<span class="new-word">イールド・カーブ変化効果（yield curve change effect）</span>と呼ぶ。
+                    時刻 \( t=0 \) 、\( 1 \) における債券価格をそれぞれ \( P_0 \) 、\( P_1 \) とし、複利最終利回りが \( r_{0,T}(0) \) のまま不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\prime \) 、イールド・カーブが不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\ast \) とおく。
+                    そして \( \textrm{RD}:=P_1^\ast/P_1^\prime-1 \) を時刻 \( t=0 \) のイールド・カーブに対するロールダウン効果とする。
+                    また \( \textrm{CC}:=P_1/P_1^\ast-1 \) をイールド・カーブの変化のみによる収益率と考え、これを<span class="new-word">イールド・カーブ変化効果（yield curve change effect）</span>と呼ぶ。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -278,7 +278,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            P_0=\frac{F}{[1+r_{0,T}(0)]^T},\ \ \ P_1^\prime=\frac{F}{[1+r_{0,T}(0)]^{T-1}},\ \ \ \bar{P}_1=\frac{F}{[1+r_{0,T-1}(0)]^{T-1}},\ \ \ P_1=\frac{F}{[1+r_{0,T-1}(1)]^{T-1}}
+                            P_0=\frac{F}{[1+r_{0,T}(0)]^T},\ \ \ P_1^\prime=\frac{F}{[1+r_{0,T}(0)]^{T-1}},\ \ \ P_1^\ast=\frac{F}{[1+r_{0,T-1}(0)]^{T-1}},\ \ \ P_1=\frac{F}{[1+r_{0,T-1}(1)]^{T-1}}
                         \]
                     </div>
                     <p>
@@ -287,11 +287,11 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \frac{P_1}{P_0}-1=\frac{P_1^\prime}{P_0}\cdot\frac{\bar{P}_1}{P_1^\prime}\cdot\frac{P_1}{\bar{P}_1}-1
+                            \frac{P_1}{P_0}-1=\frac{P_1^\prime}{P_0}\cdot\frac{P_1^\ast}{P_1^\prime}\cdot\frac{P_1}{P_1^\ast}-1
                         \]
                     </div>
                     <p>
-                        と分解したとき、\( P_1^\prime/P_0=1+r_{0,T}(0) \) 、\( \bar{P}_1/P_1^\prime=1+\textrm{RD} \) 、\( P_1/\bar{P}_1=1+\textrm{CC} \) である。
+                        と分解したとき、\( P_1^\prime/P_0=1+r_{0,T}(0) \) 、\( P_1^\ast/P_1^\prime=1+\textrm{RD} \) 、\( P_1/P_1^\ast=1+\textrm{CC} \) である。
                         また
                     </p>
                     <div class="math-container">
@@ -310,13 +310,13 @@
                 <p>
                     　上の命題の主張を解釈することは容易である。
                     割引債への投資で単位時間後に得た収益率は、複利最終利回り \( r_{0,T}(0) \) による寄与、ロールダウン効果 \( \textrm{RD} \) 、イールド・カーブ変化効果 \( \textrm{CC} \) の累積に分解される。
-                    また \( [1+r_{0,T}(0)](1+\textrm{RD})=\bar{P}_1/P_0 \) に注意して
+                    また \( [1+r_{0,T}(0)](1+\textrm{RD})=P_1^\ast/P_0 \) に注意して
                 </p>
                 <div class="math-container">
                     \[
                         \begin{align}
                             &r_{0,T}(0)+[1+r_{0,T}(0)]\textrm{RD}+[1+r_{0,T}(0)](1+\textrm{RD})\textrm{CC}\nonumber\\
-                            =&r_{0,T}(0)+\frac{\bar{P}_1-P_1^\prime}{P_0}+\frac{P_1-\bar{P}_1}{P_0}\label{additive}
+                            =&r_{0,T}(0)+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\label{additive}
                         \end{align}
                     \]
                 </div>
@@ -335,12 +335,12 @@
                     <p>
                         時刻 \( k \in \{1,\cdots,T\} \) に貨幣を \( C_k \geq 0 \) （\( C_T &gt; 0 \) は償還価格を含む）だけ受取れる、残存期間 \( T \in \textbf{Z}_{\geq2} \) の利付債に、時刻 \( t=0 \) から \( t=1 \) まで投資する。
                         また時刻 \( t=0 \) 、\( 1 \) における債券価格を \( P_0 \) 、\( P_1 \) とし、複利最終利回りがそれぞれ \( y_T(0) \) 、\( y_{T-1}(1) \) であるとする。
-                        さらに複利最終利回りが \( y_T(0) \) のまま不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\prime \) 、複利最終利回りが \( y_{T-1}(0) \) であった場合の時刻 \( t=1 \) の債券価格を \( \bar{P}_1 \) とおく。
+                        さらに複利最終利回りが \( y_T(0) \) のまま不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\prime \) 、複利最終利回りが \( y_{T-1}(0) \) であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\ast \) とおく。
                         このとき、単位時間における収益率は
                     </p>
                     <div class="math-container">
                         \[
-                            \frac{C_1+P_1}{P_0}-1=y_T(0)+\frac{\bar{P}_1-P_1^\prime}{P_0}+\frac{P_1-\bar{P}_1}{P_0}
+                            \frac{C_1+P_1}{P_0}-1=y_T(0)+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}
                         \]
                     </div>
                     <p>
@@ -363,8 +363,8 @@
                     <div class="math-container">
                         \[
                             \begin{align}
-                                \frac{C_1+P_1}{P_0}-1=&\frac{C_1+P_1^\prime}{P_0}-1+\frac{\bar{P}_1-P_1^\prime}{P_0}+\frac{P_1-\bar{P}_1}{P_0}\nonumber\\
-                                =&y_T(0)+\frac{\bar{P}_1-P_1^\prime}{P_0}+\frac{P_1-\bar{P}_1}{P_0}\nonumber
+                                \frac{C_1+P_1}{P_0}-1=&\frac{C_1+P_1^\prime}{P_0}-1+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\nonumber\\
+                                =&y_T(0)+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\nonumber
                             \end{align}
                         \]
                     </div>
@@ -384,17 +384,17 @@
                 </p>
                 <div class="math-container">
                     \[
-                        \frac{P_1-\bar{P}_1}{P_0}=\frac{\bar{P}_1}{P_0}\bigg{[}-D\Delta y+\frac{1}{2}C_{\textrm{v}}(\Delta y)^2+o((\Delta y)^2)\bigg{]},\ \ \ \Delta y:=y_{T-1}(1)-y_{T-1}(0)
+                        \frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\bigg{[}-D\Delta y+\frac{1}{2}C_{\textrm{v}}(\Delta y)^2+o((\Delta y)^2)\bigg{]},\ \ \ \Delta y:=y_{T-1}(1)-y_{T-1}(0)
                     \]
                 </div>
                 <p>
                     と展開される。
-                    係数 \( \bar{P}_1/P_0 \) は割引債の場合の \( [1+r_{0,T}(0)](1+\textrm{RD}) \) に相当する。
+                    係数 \( P_1^\ast/P_0 \) は割引債の場合の \( [1+r_{0,T}(0)](1+\textrm{RD}) \) に相当する。
                     これを \( 1 \) に近いものと考えれば
                 </p>
                 <div class="math-container">
                     \[
-                        y_T(0)+\frac{\bar{P}_1-P_1^\prime}{P_0}-D\Delta y+\frac{1}{2}C_{\textrm{v}}(\Delta y)^2+\textrm{CE}
+                        y_T(0)+\frac{P_1^\ast-P_1^\prime}{P_0}-D\Delta y+\frac{1}{2}C_{\textrm{v}}(\Delta y)^2+\textrm{CE}
                     \]
                 </div>
                 <p>
