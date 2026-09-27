@@ -404,6 +404,11 @@ mjx-mtext > mjx-c {
     clip-path: none !important;
 }
 
+mjx-container[display="true"] mjx-mtd {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+
 mjx-container a {
     color: inherit !important;
     text-decoration: none !important;
