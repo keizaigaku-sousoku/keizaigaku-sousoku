@@ -23,6 +23,7 @@
                 <a href="#section-hypothesis">イールド・カーブの諸仮説</a>
                 <a href="#section-rolldown">ロールダウン効果</a>
                 <a href="#section-decomposition">収益率の分解</a>
+                <a href="#section-accurate">精緻な分解</a>                
             </div>
         </div>
         <main>
@@ -415,6 +416,79 @@
                     </p>
                 </div>
             </section>
+            <section id="section-accurate">
+                <h4>精緻な分解</h4>
+                <p>
+                    　利付債の収益率の分解はより精緻に行われることがある。
+                    すなわち、各クーポンを1つの割引債とみなして利付債を割引債の集合として扱うことで、割引債に対する命題を利付債にも適用できる。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (r_{0,T^\prime}(t))_{T^\prime} \) を時刻 \( t \) のイールド・カーブとし、時刻 \( k \in \{1,\cdots,T\} \) にクーポン \( C_k &gt; 0 \) （\( C_T \) は償還価格を含む）が支払われる利付債に時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        時刻 \( t=0 \) における債券価格を \( P_0 \) とし、
+                    </p>
+                    <div class="math-container">
+                        \[
+                            w_k:=\frac{C_k/[1+r_{0,k}(0)]^k}{P_0}
+                        \]
+                    </div>
+                    <p>
+                        とおく。
+                        また \( k \geq 2 \) に対して、\( \textrm{RD}_k \) 、\( \textrm{CC}_k \) を残存期間 \( k \) の割引債のロールダウン効果、イールド・カーブ変化効果とし、\( \textrm{RD}_1=\textrm{CC}_1:=0 \) とする。
+                        このとき、\( w_k &gt; 0 \) 、\( \sum_{k=1}^Tw_k=1 \) であり、単位時間における収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \sum_{k=1}^Tw_k[1+r_{0,k}(0)](1+\textrm{RD}_k)(1+\textrm{CC}_k)-1
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        時刻 \( t=1 \) における債券価格を \( P_1 \) とおけば
+                    </p>
+                    <div class="math-container">
+                        \[
+                            P_0=\sum_{k=1}^T\frac{C_k}{[1+r_{0,k}(0)]^k},\ \ \ P_1=\sum_{k=2}^T\frac{C_k}{[1+r_{0,k-1}(1)]^{k-1}}
+                        \]
+                    </div>
+                    <p>
+                        であり、\( w_k &gt; 0 \) 、\( \sum_{k=1}^Tw_k=1 \) は明らか。
+                        時刻 \( t=1 \) に受け取るクーポン \( C_1 \) を含めて、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \frac{C_1+P_1}{P_0}-1=w_1\cdot\frac{C_1}{C_1/[1+r_{0,1}(0)]}+\sum_{k=2}^Tw_k\cdot\frac{C_k/[1+r_{0,k-1}(1)]^{k-1}}{C_k/[1+r_{0,k}(0)]^k}-1
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        右辺第1項は \( w_1[1+r_{0,1}(0)] \) であり、第2項の各項は残存期間 \( k \) の割引債の収益率に \( 1 \) を加えて \( w_k \) を掛けたものであるから、先の命題より与式を得る。
+                    </p>
+                </div>
+                <p>
+                    　利付債の収益率は、各クーポンに対応する割引債の収益率を、時刻 \( t=0 \) における重み \( w_k \) で加重平均したものである。
+                    式を展開すれば
+                </p>
+                <div class="math-container">
+                    \[
+                        \sum_{k=1}^Tw_kr_{0,k}(0)+\sum_{k=2}^Tw_k\textrm{RD}_k-\sum_{k=2}^Tw_kD(k-1)\Delta r_k+\epsilon
+                    \]
+                </div>
+                <p>
+                    ただし \( \Delta r_k:=r_{0,k-1}(1)-r_{0,k-1}(0) \) であり、右辺は順に利回りの寄与、ロールダウン効果の寄与、イールド・カーブの変化による寄与、剰余の寄与である。
+                    イールド・カーブの変化による寄与は満期ごとの \( \Delta r_k \) に分かれているので、平行移動に限らず傾きの変化やねじれも表現できる。
+                </p>
+                <p>
+                    　なお実務では、スポット・レートの代わりに利付債自身の複利最終利回りを用いて、インカム、ロールダウン効果、利回り変化の寄与などに分解し、残りを剰余にまとめることも多い。
+                    この剰余を<span class="new-word">複合効果（compound effect）</span>と呼ぶことがある。
+                    その場合の各項は上の分解と厳密には一致しないので、剰余が十分小さいかどうかに注意が必要である。
+                    必要に応じてコンベクシティの項を追加することもある。
+                </p>
         </main>
         <div id="nav-placeholder"></div>
         <script src="../../共通/load-nav.js" defer></script>
