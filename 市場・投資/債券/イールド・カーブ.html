@@ -205,13 +205,14 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        割引債を考え、\( T \in \textbf{Z}_{\geq2} \) を残存期間、\( D_\textrm{disc}^T(\bullet) \) を修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        また \( (r_{0,T^\prime})_{T^\prime} \) を時刻によらないイールド・カーブとする。
+                        \( (r_{0,T^\prime})_{T^\prime} \) を時刻によらないイールド・カーブとする。
+                        また割引債を考え、\( T \in \textbf{Z}_{\geq2} \) を残存期間、\( D_\textrm{disc}^T(\bullet) \) を修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        さらに \( \Delta r:=r_{0,T-1}-r_{0,T-1} \) とする。
                         このとき、ロールダウン効果は
                     </p>
                     <div class="math-container">
                         \[
-                            D_\textrm{disc}^{T-1}(r_{0,T-1})(r_{0,T}-r_{0,T-1})+o(r_{0,T}-r_{0,T-1})
+                            -D_\textrm{disc}^{T-1}(r_{0,T-1})\Delta r+o(\Delta r)
                         \]
                     </div>
                     <p>
@@ -228,7 +229,8 @@
                                 \frac{P_1}{P_1^\prime}-1=&\frac{1+f_{T-1,T}}{1+r_{0,T}}-1\nonumber\\
                                 =&\bigg{(}\frac{1+r_{0,T}}{1+r_{0,T-1}}\bigg{)}^{T-1}-1\nonumber\\
                                 =&\bigg{(}1+\frac{r_{0,T}-r_{0,T-1}}{1+r_{0,T-1}}\bigg{)}^{T-1}-1\nonumber\\
-                                =&\frac{T-1}{1+r_{0,T-1}}(r_{0,T}-r_{0,T-1})+o(r_{0,T}-r_{0,T-1})
+                                =&\bigg{(}1-\frac{\Delta r}{1+r_{0,T-1}}\bigg{)}^{T-1}-1\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}}\Delta r+o(\Delta r)
                             \end{align}
                         \]
                     </div>
