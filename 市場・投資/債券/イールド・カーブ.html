@@ -207,7 +207,7 @@
                     <p>
                         \( (r_{0,T^\prime})_{T^\prime} \) を時刻によらないイールド・カーブとする。
                         また割引債を考え、\( T \in \textbf{Z}_{\geq2} \) を残存期間、\( D_\textrm{disc}^T(\bullet) \) を修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( \Delta r:=r_{0,T-1}-r_{0,T-1} \) とする。
+                        さらに \( \Delta r:=r_{0,T-1}-r_{0,T} \) とする。
                         このとき、ロールダウン効果は
                     </p>
                     <div class="math-container">
@@ -254,7 +254,7 @@
                     <div class="title">命題</div>
                     <p>
                         \( (r_{0,T^\prime}(t))_{T^\prime} \) を時刻 \( t \) のイールド・カーブとする。
-                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、 \( D(T-1) \) をスポット・レート \( r_{0,T-1}(0) \) における残存期間 \( T-1 \) の修正デュレーションとする。
+                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、\( D_\textrm{disc}^T(\bullet) \) を修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
                         さらに \( \Delta r:=r_{0,T-1}(1)-r_{0,T-1}(0) \) とする。
                         このとき、単位時間における収益率は
                     </p>
@@ -268,7 +268,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \textrm{CC}=-D(T-1)\Delta r+o(\Delta r)
+                            \textrm{CC}=-D_\textrm{disc}^T(r_{0,T-1}(0))\Delta r+o(\Delta r)
                         \]
                     </div>
                     <p>
@@ -302,7 +302,7 @@
                             \begin{align}
                                 \textrm{CC}=&\bigg{[}1+\frac{\Delta r}{1+r_{0,T-1}(0)}\bigg{]}^{-(T-1)}-1\nonumber\\
                                 =&-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r+o(\Delta r)\nonumber\\
-                                =&-D(T-1)\Delta r+o(\Delta r)\nonumber
+                                =&-D_\textrm{disc}^T(r_{0,T-1}(0))\Delta r+o(\Delta r)\nonumber
                             \end{align}
                         \]
                     </div>
