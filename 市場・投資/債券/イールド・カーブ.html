@@ -253,8 +253,8 @@
                     <div class="title">命題</div>
                     <p>
                         \( (r_{0,T^\prime}(t))_{T^\prime} \) を時刻 \( t \) のイールド・カーブとする。
-                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、\( D_\textrm{disc}^T(\bullet) \) を修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( \Delta r:=r_{0,T-1}(1)-r_{0,T-1}(0) \) とする。
+                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、 \( D_\textrm{disc}^T(\bullet) \) を残存期間 \( T \) の修正デュレーションとする。
+                        さらに \( \Delta r_\textrm{RD}:=r_{0,T-1}(0)-r_{0,T}(0) \) 、 \( \Delta r_\textrm{CC}:=r_{0,T-1}(1)-r_{0,T-1}(0) \) とする。
                         このとき、単位時間における収益率は
                     </p>
                     <div class="math-container">
@@ -267,7 +267,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \textrm{CC}=-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r+o(\Delta r)
+                            \textrm{RD}=-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{RD}+o(\Delta r_\textrm{RD}),\ \ \ \textrm{CC}=-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{CC}+o(\Delta r_\textrm{CC})
                         \]
                     </div>
                     <p>
@@ -294,36 +294,62 @@
                     </div>
                     <p>
                         と分解したとき、\( P_1^\prime/P_0=1+r_{0,T}(0) \) 、\( P_1^\ast/P_1^\prime=1+\textrm{RD} \) 、\( P_1/P_1^\ast=1+\textrm{CC} \) である。
-                        また
+                        また \( \textrm{RD} \) について
                     </p>
                     <div class="math-container">
                         \[
                             \begin{align}
-                                \textrm{CC}=&\bigg{[}1+\frac{\Delta r}{1+r_{0,T-1}(0)}\bigg{]}^{-(T-1)}-1\nonumber\\
-                                =&-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r+o(\Delta r)\nonumber\\
-                                =&-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r+o(\Delta r)\nonumber
+                                \textrm{RD}=&\frac{P_1^\ast}{P_1^\prime}-1\nonumber\\
+                                =&\bigg{[}1+\frac{r_{0,T}(0)-r_{0,T-1}(0)}{1+r_{0,T-1}(0)}\bigg{]}^{T-1}-1\nonumber\\
+                                =&\bigg{[}1-\frac{\Delta r_\textrm{RD}}{1+r_{0,T-1}(0)}\bigg{]}^{T-1}-1\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r_\textrm{RD}+o(\Delta r_\textrm{RD})\nonumber\\
+                                =&-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{RD}+o(\Delta r_\textrm{RD})
                             \end{align}
                         \]
                     </div>
                     <p>
-                        であり与式を得る。
+                        であり、 \( \textrm{CC} \) について
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \textrm{CC}=&\frac{P_1}{P_1^\ast}-1\nonumber\\
+                                =&\bigg{[}1+\frac{r_{0,T-1}(1)-r_{0,T-1}(0)}{1+r_{0,T-1}(0)}\bigg{]}^{-(T-1)}-1\nonumber\\
+                                =&\bigg{[}1+\frac{\Delta r_\textrm{CC}}{1+r_{0,T-1}(0)}\bigg{]}^{-(T-1)}-1\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r_\textrm{CC}+o(\Delta r_\textrm{CC})\nonumber\\
+                                =&-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{CC}+o(\Delta r_\textrm{CC})
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        ゆえ与式を得る。
                     </p>
                 </div>
                 <p>
                     　上の命題の主張を解釈することは容易である。
                     割引債への投資で単位時間後に得た収益率は、複利最終利回り \( r_{0,T}(0) \) による寄与、ロールダウン効果 \( \textrm{RD} \) 、イールド・カーブ変化効果 \( \textrm{CC} \) の累積に分解される。
-                    また \( [1+r_{0,T}(0)](1+\textrm{RD})=P_1^\ast/P_0 \) に注意して、収益率は
+                    また分解という観点では累積よりも和を用いる方が直感的であるため、
                 </p>
                 <div class="math-container">
                     \[
                         \begin{align}
-                            &r_{0,T}(0)+[1+r_{0,T}(0)]\textrm{RD}+[1+r_{0,T}(0)](1+\textrm{RD})\textrm{CC}\nonumber\\
-                            =&r_{0,T}(0)+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\label{additive}
+                            \mathcal{RD}:=\frac{P_1^\ast-P_1^\prime}{P_0},\ \ \ \mathcal{CC}:=\frac{P_1-P_1^\ast}{P_0}
                         \end{align}
                     \]
                 </div>
                 <p>
-                    という表示も成り立つ。
+                    を定めたときの
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \frac{P_1}{P_0}-1=&\frac{P_1^\ast-P_0}{P_0}+\frac{P_1^\ast-P_1^\ast}{P_0}+\frac{P_1-P_1^\ast}{P_0}
+                            =&r_{0,T}(0)+\mathcal{RD}+\mathcal{CC}\label{additive}
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    が便利なことも多い。
                 </p>
                 <p>
                     　実務上は割引債でなく利付債へ投資することが多く、その場合の収益率も分解できると便利である。
@@ -382,11 +408,11 @@
                 </p>
                 <p>
                     　実務では各項をさらに分解することがある。
-                    例えば第3項は修正デュレーション \( D^{T-1}(y_{T-1}(0)) \) とコンベクシティ \( C_{\textrm{v}}^{T-1}(y_{T-1}(0)) \) によって
+                    例えば第3項は、時刻 \( t=1 \) における当債券の、利回り \( y_{T-1}(0) \) での修正デュレーション \( D \) とコンベクシティ \( C_{\textrm{v}} \) によって
                 </p>
                 <div class="math-container">
                     \[
-                        \frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\bigg{[}-D^{T-1}(y_{T-1}(0))\Delta y+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y)^2+o((\Delta y)^2)\bigg{]},\ \ \ \Delta y:=y_{T-1}(1)-y_{T-1}(0)
+                        \frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\bigg{[}-D\Delta y+\frac{1}{2}C_{\textrm{v}}(\Delta y)^2+o((\Delta y)^2)\bigg{]},\ \ \ \Delta y:=y_{T-1}(1)-y_{T-1}(0)
                     \]
                 </div>
                 <p>
@@ -396,7 +422,7 @@
                 </p>
                 <div class="math-container">
                     \[
-                        y_T(0)+\frac{P_1^\ast-P_1^\prime}{P_0}-D^{T-1}(y_{T-1}(0))\Delta y+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y)^2+\textrm{CE}
+                        y_T(0)+\frac{P_1^\ast-P_1^\prime}{P_0}-D\Delta y+\frac{1}{2}C_{\textrm{v}}(\Delta y)^2+\textrm{CE}
                     \]
                 </div>
                 <p>
