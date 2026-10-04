@@ -261,9 +261,9 @@
                     <div class="title">命題</div>
                     <p>
                         \( (r_{0,T^\prime}(t))_{T^\prime} \) を時刻 \( t \) のイールド・カーブとする。
-                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、 \( D_\textrm{disc}^T(\bullet) \) を残存期間 \( T \) の修正デュレーションとする。
+                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、 \( D_\textrm{disc}^T(\bullet) \) を残存期間 \( T \) の修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
                         さらに \( \Delta r_\textrm{RD}:=r_{0,T-1}(0)-r_{0,T}(0) \) 、 \( \Delta r_\textrm{CC}:=r_{0,T-1}(1)-r_{0,T-1}(0) \) とする。
-                        このとき、単位時間における収益率は
+                        このとき、収益率は
                     </p>
                     <div class="math-container">
                         \[
@@ -334,9 +334,8 @@
                     </p>
                 </div>
                 <p>
-                    　上の命題の主張は明快である。
-                    割引債への投資で単位時間後に得た収益率は、複利最終利回り \( r_{0,T}(0) \) による寄与、ロールダウン効果 \( \textrm{RD} \) 、イールド・カーブ変化効果 \( \textrm{CC} \) の累積に分解される。
-                    ただし分解という観点では累積よりも和を用いる方が直感的であるため
+                    　上の命題には類似の別表現がある。
+                    すなわち、分解という観点では累積よりも和を用いる方が直感的であるため
                 </p>
                 <div class="math-container">
                     \[
@@ -357,21 +356,44 @@
                     \]
                 </div>
                 <p>
-                    を定めて<span class="new-word">加法的イールド・カーブ変化効果（additive yield curve change effect）</span>と呼び
+                    を定めて<span class="new-word">加法的イールド・カーブ変化効果（additive yield curve change effect）</span>と呼んだ上で、以下のように分解することがある。
                 </p>
-                <div class="math-container">
-                    \[
-                        \begin{align}
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        割引債を考え、\( r_{0,T}(0) \) を複利最終利回り、\( \mathcal{RD} \) を加法的ロールダウン効果、\( \mathcal{CC} \) を加法的イールド・カーブ変化効果とし、、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        このとき、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{P_1}{P_0}-1=r_{0,T}(0)+\mathcal{RD}+\mathcal{CC}\label{additive}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        先の記号をそのまま用いれば、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
                             \frac{P_1}{P_0}-1=&\frac{P_1^\prime-P_0}{P_0}+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\nonumber\\
-                            =&r_{0,T}(0)+\mathcal{RD}+\mathcal{CC}\label{additive}
-                        \end{align}
-                    \]
+                            =&r_{0,T}(0)+\mathcal{RD}+\mathcal{CC}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
                 </div>
                 <p>
-                    と計算することが便利な場合もある。
-                    ここで \( \mathcal{RD} \) 、\( \mathcal{CC} \) は定義式の形からして、いずれも本来の意味では収益率の定義を満たさない。
+                    　収益率を累積でなく和で分解することに必然性はないがともかく便利である。
+                    言うまでもなく \( \mathcal{RD} \) 、\( \mathcal{CC} \) は定義式の形からして、いずれも本来の意味では収益率の定義を満たさない。
                     また修正デュレーションを用いての展開も行われないため、解析的な広がりはない。
-                    しかし数値的な計算が容易であり、実務上重宝されることが多い。
+                    しかし数値的な計算は容易であり、収益率の構成要素という意味において、実務上重宝されることが多い。
                 </p>
                 <p>
                     　利付債の収益率も分解できると便利である。
