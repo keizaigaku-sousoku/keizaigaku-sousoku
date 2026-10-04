@@ -336,17 +336,28 @@
                 <p>
                     　上の命題の主張は明快である。
                     割引債への投資で単位時間後に得た収益率は、複利最終利回り \( r_{0,T}(0) \) による寄与、ロールダウン効果 \( \textrm{RD} \) 、イールド・カーブ変化効果 \( \textrm{CC} \) の累積に分解される。
-                    ただし分解という観点では累積よりも和を用いる方が直感的であるため、
+                    ただし分解という観点では累積よりも和を用いる方が直感的であるため
                 </p>
                 <div class="math-container">
                     \[
                         \begin{align}
-                            \mathcal{RD}:=\frac{P_1^\ast-P_1^\prime}{P_0},\ \ \ \mathcal{CC}:=\frac{P_1-P_1^\ast}{P_0}
+                            \mathcal{RD}:=\frac{P_1^\ast-P_1^\prime}{P_0}
                         \end{align}
                     \]
                 </div>
                 <p>
-                    を定めたときの
+                    を定めて<span class="new-word">加法的ロールダウン効果（additive rolldown effect）</span>と呼び
+                </p>
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \mathcal{CC}:=\frac{P_1-P_1^\ast}{P_0}
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    を定めて<span class="new-word">加法的イールド・カーブ変化効果（additive yield curve change effect）</span>と呼び
                 </p>
                 <div class="math-container">
                     \[
@@ -357,7 +368,7 @@
                     \]
                 </div>
                 <p>
-                    が便利なこともある。
+                    と計算することが便利な場合もある。
                     ここで \( \mathcal{RD} \) 、\( \mathcal{CC} \) は定義式の形からして、いずれも本来の意味では収益率の定義を満たさない。
                     また修正デュレーションを用いての展開も行われないため、解析的な広がりはない。
                     しかし数値的な計算が容易であり、実務上重宝されることが多い。
