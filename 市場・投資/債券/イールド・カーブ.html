@@ -464,33 +464,36 @@
                 </p>
                 -->
                 <p>
-                    　形式的には、和による分解で修正デュレーションやコンベクシティを用いた漸近展開を実行できる。
-                    すなわち、加法的ロールダウン効果は \( \Delta y_\mathcal{RD}:=y_{T-1}(0)-y_T(0) \) とおけば
+                    　形式的には、和による分解で修正デュレーションによる漸近展開を実行できる。
+                    すなわち、\( D^T(\bullet) \) を利付債の残存期間 \( T \) の修正デュレーションとし、\( \Delta y_\mathcal{RD}:=y_{T-1}(0)-y_T(0) \) とおけば、加法的ロールダウン効果は
                 </p>
                 <div class="math-container">
                     \[
-                        \frac{P_1^\ast-P_1^\prime}{P_0}=\frac{P_1^\prime}{P_0}\bigg{[}-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{RD}+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{RD})^2\bigg{]}+o((\Delta y_\mathcal{RD})^2)
+                        \frac{P_1^\ast-P_1^\prime}{P_0}=\frac{P_1^\prime}{P_0}\cdot [-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{RD}]+o(\Delta y_\mathcal{RD})
                     \]
                 </div>
                 <p>
-                    であり、加法的イールド・カーブ変化効果は \( \Delta y_\mathcal{CC}:=y_{T-1}(1)-y_{T-1}(0) \) とおけば
+                    であり、\( \Delta y_\mathcal{CC}:=y_{T-1}(1)-y_{T-1}(0) \) とおけば、加法的イールド・カーブ変化効果は
                 </p>
                 <div class="math-container">
                     \[
-                        \frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\bigg{[}-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{CC}+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{CC})^2\bigg{]}+o((\Delta y_\mathcal{CC})^2)
+                        \frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\cdot [-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{CC}]+o(\Delta y_\mathcal{CC})
                     \]
                 </div>
                 <p>
                     である。
+                    ここで \( \Delta y:=\Delta y_\mathcal{RD}+\Delta y_\mathcal{CC}=y_{T-1}(1)-y_{T-1}(0)+y_{T-1}(0)-y_T(0)=y_{T-1}(1)-y_T(0) \) とおける。
                     そこで係数 \( P_1^\prime/P_0 \) 、\( P_1^\ast/P_0 \) を \( 1 \) に置換したとき、ある \( \mathcal{CE} \in \textbf{R} \) が存在して、収益率は
                 </p>
                 <div class="math-container">
                     \[
-                        y_T(0)-D^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{RD}+\Delta y_\mathcal{CC})+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{RD}+\Delta y_\mathcal{CC})^2
+                        y_T(0)-D^{T-1}(y_{T-1}(0))\Delta y+\mathcal{CE}
                     \]
                 </div>
                 <p>
                     と表される。
+                    必要があればコンベクシティを使ってさらに漸近展開を続けられるが、その項は \( \mathcal{CE} \) より十分大きいときに限り意味を持つ。
+                    一般に \( \textrm{CE} \) を<span class="new-word">複合効果（compound effect）</span>と呼ぶことがある。
                 </p>
                 <!--
                 <p>
