@@ -431,12 +431,12 @@
                 </div>
                 <div class="proof">
                     <p>
-                        時刻 \( s = 1,...,T \) に貨幣を \( C_s \geq 0 \) （\( C_T &gt; 0 \) は償還価格を含む）だけ受取れるとする。
+                        時刻 \( t = 1,...,T \) に貨幣を \( C_t \geq 0 \) （\( C_T &gt; 0 \) は償還価格を含む）だけ受取れるとする。
                         複利最終利回りの定義より
                     </p>
                     <div class="math-container">
                         \[
-                            P_0=\sum_{k=1}^T\frac{C_k}{[1+y_T(0)]^k},\ \ \ P_1^\prime=\sum_{k=2}^T\frac{C_k}{[1+y_T(0)]^{k-1}}
+                            P_0=\sum_{t=1}^T\frac{C_t}{[1+y_T(0)]^t},\ \ \ P_1^\prime=\sum_{t=2}^T\frac{C_t}{[1+y_T(0)]^{t-1}}
                         \]
                     </div>
                     <p>
@@ -462,6 +462,36 @@
                     ただし利付債の第2項はロールダウン効果に係数を掛けた形で定義されていないので、割引債の \( \textrm{RD} \) とは \( 1+r_{0,T}(0) \) 倍だけ異なる点に注意が必要である。
                 </p>
                 <p>
+                    　形式的には、和による分解で修正デュレーションやコンベクシティを用いた漸近展開を実行できる。
+                    すなわち、加法的ロールダウン効果は \( \Delta y_\mathcal{RD}:=y_{T-1}(0)-y_T(0) \) とおけば
+                </p>
+                <div class="math-container">
+                    \[
+                        \frac{P_1^\ast-P_1^\prime}{P_0}=\frac{P_1^\prime}{P_0}\bigg{[}-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{RD}+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{RD})^2\bigg{]}+o((\Delta y_\mathcal{RD})^2)
+                    \]
+                </div>
+                <p>
+                    であり、加法的イールド・カーブ変化効果は \( \Delta y_\mathcal{CC}:=y_{T-1}(1)-y_{T-1}(0) \) とおけば
+                </p>
+                <div class="math-container">
+                    \[
+                        \frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\bigg{[}-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{CC}+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{CC})^2\bigg{]}+o((\Delta y_\mathcal{CC})^2)
+                    \]
+                </div>
+                <p>
+                    である。
+                    そこで係数 \( P_1^\prime/P_0 \) 、\( P_1^\ast/P_0 \) を \( 1 \) に置換したとき、ある \( \mathcal{CE} \in \textbf{R} \) が存在して、収益率は
+                </p>
+                <div class="math-container">
+                    \[
+                        y_T(0)-D^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{RD}+\Delta y_\mathcal{CC})+\frac{1}{2}C_{\textrm{v}}^{T-1}(y_{T-1}(0))(\Delta y_\mathcal{RD}+\Delta y_\mathcal{CC})^2
+                    \]
+                </div>
+                <p>
+                    と表される。
+                </p>
+                <!--
+                <p>
                     　実務では各項をさらに分解することがある。
                     例えば第3項は、時刻 \( t=1 \) における当債券の、利回り \( y_{T-1}(0) \) での修正デュレーション \( D \) とコンベクシティ \( C_{\textrm{v}} \) によって
                 </p>
@@ -486,6 +516,7 @@
                     程度問題ではあるが、複合効果（の絶対値）が他の寄与に比べて小さいほど分解は精度が良いと言える。
                     なお \( (y_{T^\prime}(t))_{T^\prime} \) はクーポンの違いなどにより一意に定まるとは限らず、どの列を用いるかによってロールダウン効果の値も変わる点に注意が必要である。
                 </p>
+                -->
                 <div class="comment-box">
                     <p>
                         <span class="comment-box-title">ロールダウン効果の実在性</span>
