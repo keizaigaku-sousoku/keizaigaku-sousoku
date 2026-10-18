@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>債券の収益率</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../../共通/stylesheet_contents.css">
+        <link rel="stylesheet" href="../../共通/stylesheet_footer.css">
+        <script src="../../共通/mathjax-config.js"></script>
+    </head>
+    <body>
+        <header>
+            <h2>債券の収益率</h2>
+        </header>
+        <div class="subtitle">
+            専門家の飯の種
+        </div>
+        <div class="toc-container">
+            <div class="part">
+                <h3 class="part-title">目次</h3>
+                <a href="#section-rolldown">ロールダウン効果</a>
+                <a href="#section-decomposition">収益率の分解</a>
+                <a href="#section-accurate">精緻な分解</a>
+            </div>
+        </div>
+        <main>
+            <section id="section-rolldown">
+                <h4>ロールダウン効果</h4>
+                <p>
+                    　イールド・カーブは各時刻で定まるが、便宜的に時刻に関して不変であると仮定することは自由である。
+                    イールド・カーブを \( (r_{0,T^\prime})_{T^\prime} \) で時刻によらないとし、償還価格 \( F &gt; 0 \) 、残存期間 \( T \in \textbf{Z}_{\geq 2} \) 、債券価格 \( P_0 &gt; 0 \) の割引債へ時刻 \( t=0 \) から \( t=1 \) まで投資する場合を考える。
+                    市場が無裁定であると仮定すれば [<a href="../市場/裁定の基礎.html#section-one-price" style="text-decoration: none"><span class="new-word">裁定の基礎/一物一価の法則</span></a>] 、時刻 \( t=0 \) において割引債の複利最終利回りは \( r_{0,T} \) ゆえ \( P_0=F/(1+r_{0,T})^T \) が成り立つ。
+                    時刻が \( t=1 \) になると、割引債の債券価格は複利最終利回りがイールド・カーブに沿うように変化する。
+                    つまり単位時間が経過したときの債券価格を \( P_1 &gt; 0 \) とおけば \( P_1=F/(1+r_{0,T-1})^{T-1} \) が成り立つ。
+                    この時点での収益率は
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \frac{P_1}{P_0}-1=&\frac{(1+r_{0,T})^T}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
+                            =&\frac{(1+r_{0,T-1})^{T-1}(1+f_{T-1,T})}{(1+r_{0,T-1})^{T-1}}-1\nonumber\\
+                            =&f_{T-1,T}\nonumber
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    のようにフォワード・レートのみによって表される。
+                    この収益率を<span class="new-word">ローリング・イールド（rolling yield）</span>と呼ぶ。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        割引債を考え、\( T \in \textbf{Z}_{\geq2} \) を残存期間、\( r_{0,T} &gt; -1 \) をスポット・レート、\( f_{T-1,T} \) をフォワード・レートとする。
+                        このとき、
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \frac{1+f_{T-1,T}}{1+r_{0,T}}=\bigg{(}\frac{1+r_{0,T}}{1+r_{0,T-1}}\bigg{)}^{T-1}
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                        とくに以下が従う。<br>
+                        (i) 順イールドつまり \( r_{0,T-1} &lt; r_{0,T} \) ならば \( r_{0,T} &lt; f_{T-1,T} \) 。<br>
+                        (ii) 逆イールドつまり \( r_{0,T-1} &gt; r_{0,T} \) ならば \( r_{0,T} &gt; f_{T-1,T} \) 。<br>
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        フォワード・レートの定義から \( (1+r_{0,T})^T=(1+r_{0,T-1})^{T-1}(1+f_{T-1,T}) \) であり、両辺を \( (1+r_{0,T-1})^{T-1}(1+r_{0,T}) &gt; 0 \) で割れば与式を得る。
+                        (i)について、\( r_{0,T-1} &lt; r_{0,T} \) ならば \( (1+r_{0,T})/(1+r_{0,T-1}) &gt; 1 \) であり、\( T-1 \geq 1 \) より右辺は \( 1 \) より大きい。
+                        したがって \( 1+f_{T-1,T} &gt; 1+r_{0,T} \) つまり \( r_{0,T} &lt; f_{T-1,T} \) である。
+                        (ii)についても不等号を逆にすれば同様である。
+                    </p>
+                </div>
+                <p>
+                    　ローリング・イールドは解釈が重要である。
+                    もし（仮定に反して裁定が十分でなく）単位時間後も割引債の複利最終利回りが \( r_{0,T} \) のまま不変であったとすれば、債券価格は \( P_1^\prime:=F/(1+r_{0,T})^{T-1} \) であり、収益率は \( P_1^\prime/P_0-1=r_{0,T} \) である。
+                    そこでローリング・イールドを
+                </p>
+                <div class="math-container">
+                    \[
+                        f_{T-1,T}=\frac{P_1^\prime}{P_0}\cdot\frac{P_1}{P_1^\prime}-1
+                    \]
+                </div>
+                <p>
+                    と見たとき、ローリング・イールド \( f_{T-1,T} \) は複利最終利回りが不変であった場合の収益率 \( P_1^\prime/P_0-1 \) と複利最終利回りが不変であった場合の債券価格から実際の債券価格への変化による収益率 \( P_1/P_1^\prime-1 \) の累積に分解される [<a href="../市場/投資家の分析・収益率.html#section-return" style="text-decoration: none"><span class="new-word">投資家の分析・収益率/収益率の定義</span></a>] 。
+                    後者の収益率を<span class="new-word">ロールダウン効果（roll-down effect）</span>と呼ぶ。
+                    なお定義からローリング・イールドとロールダウン効果は別の概念であるが、実務上混同されることが珍しくない。
+                    また流儀によってはローリング・イールドを "ロールダウン・イールド" と呼ぶこともある。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (r_{0,T^\prime})_{T^\prime} \) を時刻によらないイールド・カーブとする。
+                        また割引債を考え、\( T \in \textbf{Z}_{\geq2} \) を残存期間、\( D_\textrm{disc}^T(\bullet) \) を修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        さらに \( \Delta r:=r_{0,T-1}-r_{0,T} \) とする。
+                        このとき、ロールダウン効果は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            -D_\textrm{disc}^{T-1}(r_{0,T-1})\Delta r+o(\Delta r)
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        先の記号をそのまま用いれば、ロールダウン効果は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{P_1}{P_1^\prime}-1=&\bigg{(}\frac{1+r_{0,T}}{1+r_{0,T-1}}\bigg{)}^{T-1}-1\nonumber\\
+                                =&\bigg{(}1+\frac{r_{0,T}-r_{0,T-1}}{1+r_{0,T-1}}\bigg{)}^{T-1}-1\nonumber\\
+                                =&\bigg{(}1-\frac{\Delta r}{1+r_{0,T-1}}\bigg{)}^{T-1}-1\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}}\Delta r+o(\Delta r)
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        割引債の修正デュレーションは \( D_\textrm{disc}^{T-1}(r_{0,T-1})=(T-1)/(1+r_{0,T-1}) \) であるから与式を得る。
+                    </p>
+                </div>
+            </section>
+            <section id="section-decomposition">
+                <h4>収益率の分解</h4>
+                <p>
+                    　ローリング・イールドを考えるときイールド・カーブが不変であることを仮定したが、これはより一般の議論に拡張される。
+                    言うまでもなく、イールド・カーブが不変であることは便宜的な仮定であり、現実世界では起こり得ない。
+                    そこで時刻 \( t \) で変化するイールド・カーブ \( (r_{0,T^\prime}(t))_{T^\prime} \) を定め、償還価格 \( F &gt; 0 \) 、残存期間 \( T \in \textbf{Z}_{\geq2} \) の割引債に時刻 \( t=0 \) から \( t=1 \) まで投資する場合を考える。
+                    時刻 \( t=0 \) 、\( 1 \) における債券価格をそれぞれ \( P_0 \) 、\( P_1 \) とし、複利最終利回りが \( r_{0,T}(0) \) のまま不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\prime \) 、イールド・カーブが不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\ast \) とおく。
+                    そして
+                    \[
+                        \textrm{RD}:=\frac{P_1^\ast}{P_1^\prime}-1
+                    \]
+                    を時刻 \( t=0 \) のイールド・カーブに対するロールダウン効果とする。
+                    また
+                    \[
+                        \textrm{CC}:=\frac{P_1}{P_1^\ast}-1
+                    \]
+                    をイールド・カーブの変化のみによる収益率と考え、これを<span class="new-word">イールド・カーブ変化効果（yield curve change effect）</span>と呼ぶ。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (r_{0,T^\prime}(t))_{T^\prime} \) を時刻 \( t \) のイールド・カーブとする。
+                        また割引債を考え \( \textrm{RD} \) をロールダウン効果、 \( \textrm{CC} \) をイールド・カーブ変化効果、 \( D_\textrm{disc}^T(\bullet) \) を残存期間 \( T \) の修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        さらに \( \Delta r_\textrm{RD}:=r_{0,T-1}(0)-r_{0,T}(0) \) 、 \( \Delta r_\textrm{CC}:=r_{0,T-1}(1)-r_{0,T-1}(0) \) とする。
+                        このとき、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            [1+r_{0,T}(0)](1+\textrm{RD})(1+\textrm{CC})-1
+                        \]
+                    </div>
+                    <p>
+                        ただし
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \textrm{RD}=-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{RD}+o(\Delta r_\textrm{RD}),\ \ \ \textrm{CC}=-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{CC}+o(\Delta r_\textrm{CC})
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        各債券価格は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            P_0=\frac{F}{[1+r_{0,T}(0)]^T},\ \ \ P_1^\prime=\frac{F}{[1+r_{0,T}(0)]^{T-1}},\ \ \ P_1^\ast=\frac{F}{[1+r_{0,T-1}(0)]^{T-1}},\ \ \ P_1=\frac{F}{[1+r_{0,T-1}(1)]^{T-1}}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        よって収益率を
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \frac{P_1}{P_0}-1=\frac{P_1^\prime}{P_0}\cdot\frac{P_1^\ast}{P_1^\prime}\cdot\frac{P_1}{P_1^\ast}-1
+                        \]
+                    </div>
+                    <p>
+                        と分解したとき、\( P_1^\prime/P_0=1+r_{0,T}(0) \) 、\( P_1^\ast/P_1^\prime=1+\textrm{RD} \) 、\( P_1/P_1^\ast=1+\textrm{CC} \) である。
+                        また \( \textrm{RD} \) について
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \textrm{RD}=&\frac{P_1^\ast}{P_1^\prime}-1\nonumber\\
+                                =&\bigg{[}1+\frac{r_{0,T}(0)-r_{0,T-1}(0)}{1+r_{0,T-1}(0)}\bigg{]}^{T-1}-1\nonumber\\
+                                =&\bigg{[}1-\frac{\Delta r_\textrm{RD}}{1+r_{0,T-1}(0)}\bigg{]}^{T-1}-1\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r_\textrm{RD}+o(\Delta r_\textrm{RD})\nonumber\\
+                                =&-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{RD}+o(\Delta r_\textrm{RD})
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        であり、 \( \textrm{CC} \) について
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \textrm{CC}=&\frac{P_1}{P_1^\ast}-1\nonumber\\
+                                =&\bigg{[}1+\frac{r_{0,T-1}(1)-r_{0,T-1}(0)}{1+r_{0,T-1}(0)}\bigg{]}^{-(T-1)}-1\nonumber\\
+                                =&\bigg{[}1+\frac{\Delta r_\textrm{CC}}{1+r_{0,T-1}(0)}\bigg{]}^{-(T-1)}-1\nonumber\\
+                                =&-\frac{T-1}{1+r_{0,T-1}(0)}\Delta r_\textrm{CC}+o(\Delta r_\textrm{CC})\nonumber\\
+                                =&-D_\textrm{disc}^{T-1}(r_{0,T-1}(0))\Delta r_\textrm{CC}+o(\Delta r_\textrm{CC})
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        ゆえ与式を得る。
+                    </p>
+                </div>
+                <p>
+                    　上の命題には類似の別表現がある。
+                    すなわち、分解という観点では累積よりも和を用いる方が直感的であるため
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \mathcal{RD}:=\frac{P_1^\ast-P_1^\prime}{P_0}
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    を定めて<span class="new-word">加法的ロールダウン効果（additive roll-down effect）</span>と呼び
+                </p>
+                </p>
+                <div class="math-container">
+                    \[
+                        \begin{align}
+                            \mathcal{CC}:=\frac{P_1-P_1^\ast}{P_0}
+                        \end{align}
+                    \]
+                </div>
+                <p>
+                    を定めて<span class="new-word">加法的イールド・カーブ変化効果（additive yield curve change effect）</span>と呼んだ上で、以下のように計算することがある。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        割引債を考え \( r_{0,T}(0) \) を複利最終利回り、\( \mathcal{RD} \) を加法的ロールダウン効果、\( \mathcal{CC} \) を加法的イールド・カーブ変化効果とし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        このとき、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                r_{0,T}(0)+\mathcal{RD}+\mathcal{CC}\label{additive}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        先の記号をそのまま用いれば、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{P_1}{P_0}-1=&\frac{P_1^\prime-P_0}{P_0}+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\nonumber\\
+                                =&r_{0,T}(0)+\mathcal{RD}+\mathcal{CC}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <p>
+                    　収益率を累積でなく和で分解することに必然性はないが、ともかく便利である。
+                    言うまでもなく \( \mathcal{RD} \) 、\( \mathcal{CC} \) は定義式の形からして、いずれも本来の意味では収益率の定義を満たさない。
+                    しかし数値的な計算は容易であり、収益率の構成要素という意味において、実務上重宝されることが多い。
+                </p>
+                <p>
+                    　割引債と同様に、利付債の収益率も分解できると便利である。
+                    素朴には、スポット・レートを利付債の複利最終利回りへ代えて分解すれば良い。
+                    ただし利付債では時刻 \( t=1 \) にクーポンを受け取るため、累積による分解は煩雑になる。
+                    そこで式(<a href="#additive">\ref{additive}</a>)のように和による分解を考えることが一般的である。
+                    時刻 \( t=0 \) で債券価格が \( P_0 \) 、複利最終利回りが \( y_T(0) \) であるとして、複利最終利回りが \( y_T(0) \) のまま不変であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\prime \) 、複利最終利回りが \( y_{T-1}(0) \) であった場合の時刻 \( t=1 \) の債券価格を \( P_1^\ast \) とおく。
+                    やはり加法的ロールダウン効果は \( \mathcal{RD}=(P_1^\ast-P_1^\prime)/P_0 \) 、加法的イールド・カーブ変化効果は \( \mathcal{CC}=(P_1-P_1^\ast)/P_0 \) である。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        利付債を考え \( y_T(0) \) を複利最終利回り、\( \mathcal{RD} \) を加法的ロールダウン効果、\( \mathcal{CC} \) を加法的イールド・カーブ変化効果とし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        このとき、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            y_T(0)+\mathcal{RD}+\mathcal{CC}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        時刻 \( t = 1,...,T \) に貨幣を \( C_t \geq 0 \) （\( C_T &gt; 0 \) は償還価格を含む）だけ受取れるとする。
+                        複利最終利回りの定義より
+                    </p>
+                    <div class="math-container">
+                        \[
+                            P_0=\sum_{t=1}^T\frac{C_t}{[1+y_T(0)]^t},\ \ \ P_1^\prime=\sum_{t=2}^T\frac{C_t}{[1+y_T(0)]^{t-1}}
+                        \]
+                    </div>
+                    <p>
+                        が成り立つから \( C_1+P_1^\prime=[1+y_T(0)]P_0 \) つまり \( (C_1+P_1^\prime)/P_0-1=y_T(0) \) である。
+                        よって
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{C_1+P_1}{P_0}-1=&\frac{C_1+P_1^\prime}{P_0}-1+\frac{P_1^\ast-P_1^\prime}{P_0}+\frac{P_1-P_1^\ast}{P_0}\nonumber\\
+                                =&y_T(0)+\mathcal{RD}+\mathcal{CC}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <p>
+                    　形式的には、和による分解で修正デュレーションによる漸近展開を実行できる。
+                    すなわち、\( D^T(\bullet) \) を利付債の残存期間 \( T \) の修正デュレーションとし、\( \Delta y_\mathcal{RD}:=y_{T-1}(0)-y_T(0) \) とおけば、加法的ロールダウン効果は
+                </p>
+                <div class="math-container">
+                    \[
+                        \mathcal{RD}=\frac{P_1^\ast-P_1^\prime}{P_0}=\frac{P_1^\prime}{P_0}\cdot [-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{RD}]+o(\Delta y_\mathcal{RD})
+                    \]
+                </div>
+                <p>
+                    であり、\( \Delta y_\mathcal{CC}:=y_{T-1}(1)-y_{T-1}(0) \) とおけば、加法的イールド・カーブ変化効果は
+                </p>
+                <div class="math-container">
+                    \[
+                        \mathcal{CC}=\frac{P_1-P_1^\ast}{P_0}=\frac{P_1^\ast}{P_0}\cdot [-D^{T-1}(y_{T-1}(0))\Delta y_\mathcal{CC}]+o(\Delta y_\mathcal{CC})
+                    \]
+                </div>
+                <p>
+                    である。
+                    ここで
+                </p>
+                <div class="math-container">
+                    \[
+                        \Delta y:=\Delta y_\mathcal{RD}+\Delta y_\mathcal{CC}=y_{T-1}(1)-y_{T-1}(0)+y_{T-1}(0)-y_T(0)=y_{T-1}(1)-y_T(0)
+                    \]
+                </div>
+                <p>
+                    とおける。
+                    そこで係数 \( P_1^\prime/P_0 \) 、\( P_1^\ast/P_0 \) を \( 1 \) に置換したとき、ある \( \mathcal{CE} \in \textbf{R} \) で置換の補正を行えば、収益率は
+                </p>
+                <div class="math-container">
+                    \[
+                        y_T(0)-D^{T-1}(y_{T-1}(0))\Delta y+\mathcal{CE}
+                    \]
+                </div>
+                <p>
+                    と表される。
+                    必要があればコンベクシティを使ってさらに漸近展開を続けられるが、その項は \( \mathcal{CE} \) より十分大きいときに限り意味を持つ。
+                    一般に \( \mathcal{CE} \) を<span class="new-word">複合効果（compound effect）</span>と呼ぶことがある。
+                </p>
+                <div class="comment-box">
+                    <p>
+                        <span class="comment-box-title">ロールダウン効果の実在性</span>
+                    </p>
+                    <p>
+                        債券といえば、クーポンやデュレーションが議論の対象になることが多い。
+                        クーポンは債券に明記され、デュレーションは定義式から計算されるため、これらの "存在" を疑う者はいない。
+                        しかしロールダウン効果は "イールド・カーブが不変" という強い仮定のもとで導入されるので、"所詮は教科書的な概念であり、実務においては参考程度" と認識する者もいる。
+                        実際はイールド・カーブが不変でなくても収益率への寄与の1つになるので、ロールダウン効果も確かに "存在" し、実務においても重要な議論の対象である。
+                    </p>
+                </div>
+            </section>
+            <section id="section-accurate">
+                <h4>精緻な分解</h4>
+                <p>
+                    　利付債の収益率の分解はより精緻に行われることがある。
+                    一般に利付債はクーポンが統一されておらず、割引債と比べたとき複利最終利回りは残存期間に関して不連続の度合いが大きく、上記のようなスポット・レートを複利最終利回りに代える素朴な方法は必ずしも機能しない。
+                    そこで実務において精緻さが重視される場合は、各クーポンを1つの割引債とみなして利付債を割引債の集合として扱うことで、割引債に対する命題を利付債に適用することが多い。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        \( (r_{0,T^\prime}(t))_{T^\prime} \) を時刻 \( t \) のイールド・カーブとし、時刻 \( t = 1,...,T \) にクーポン \( C_t &gt; 0 \) （\( C_T &gt; 0 \) は償還価格を含む）が支払われる利付債へ時刻 \( t=0 \) から \( t=1 \) まで投資する。
+                        また時刻 \( t=0 \) における債券価格を \( P_0 \) とし、
+                    </p>
+                    <div class="math-container">
+                        \[
+                            w_t:=\frac{C_t}{P_0[1+r_{0,t}(0)]^t}
+                        \]
+                    </div>
+                    <p>
+                        とおく。
+                        さらに \( t = 2,...,T \) に対して \( \textrm{RD}_t \) 、\( \textrm{CC}_t \) を残存期間 \( t \) の割引債のロールダウン効果、イールド・カーブ変化効果とし、\( \textrm{RD}_1=\textrm{CC}_1:=0 \) とする。
+                        このとき、\( w_t &gt; 0 \) 、\( \sum_{t=1}^Tw_t=1 \) であり、単位時間における収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \sum_{t=1}^Tw_t[1+r_{0,t}(0)](1+\textrm{RD}_t)(1+\textrm{CC}_t)-1
+                        \]
+                    </div>
+                    <p>
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        時刻 \( t=1 \) における債券価格を \( P_1 \) とおくと
+                    </p>
+                    <div class="math-container">
+                        \[
+                            P_0=\sum_{t=1}^T\frac{C_t}{[1+r_{0,t}(0)]^t},\ \ \ P_1=\sum_{t=2}^T\frac{C_t}{[1+r_{0,t-1}(1)]^{t-1}}
+                        \]
+                    </div>
+                    <p>
+                        である。
+                        \( C_t &gt; 0 \) 、\( 1+r_{0,t}(0) &gt; 0 \) 、\( P_0 &gt; 0 \) ゆえ \( w_t &gt; 0 \) であり、\( P_0 \) の表示から
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \sum_{t=1}^Tw_t=\frac{1}{P_0}\sum_{t=1}^T\frac{C_t}{[1+r_{0,t}(0)]^t}=1
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                        時刻 \( t=1 \) に受け取るクーポン \( C_1 \) を含めて、収益率は
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                \frac{C_1+P_1}{P_0}-1=&\frac{C_1}{P_0}+\sum_{t=2}^T\frac{C_t}{P_0[1+r_{0,t-1}(1)]^{t-1}}-1\nonumber\\
+                                =&\frac{C_1}{P_0[1+r_{0,1}(0)]}\cdot[1+r_{0,1}(0)]+\sum_{t=2}^T\frac{C_t}{P_0[1+r_{0,t}(0)]^t}\cdot\frac{[1+r_{0,t}(0)]^t}{[1+r_{0,t-1}(1)]^{t-1}}-1\nonumber\\
+                                =&w_1[1+r_{0,1}(0)]+\sum_{t=2}^Tw_t\cdot\frac{[1+r_{0,t}(0)]^t}{[1+r_{0,t-1}(1)]^{t-1}}-1\nonumber
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        と表せる。
+                        \( t = 2,...,T \) について償還価格 \( C_t \) 、残存期間 \( t \) の割引債を考えれば、時刻 \( t=0 \) 、\( 1 \) における債券価格はそれぞれ \( C_t/[1+r_{0,t}(0)]^t \) 、\( C_t/[1+r_{0,t-1}(1)]^{t-1} \) である。
+                        したがって
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \frac{[1+r_{0,t}(0)]^t}{[1+r_{0,t-1}(1)]^{t-1}}=\frac{C_t/[1+r_{0,t-1}(1)]^{t-1}}{C_t/[1+r_{0,t}(0)]^t}
+                        \]
+                    </div>
+                    <p>
+                        はこの割引債の収益率に \( 1 \) を加えたものであり、先の命題より
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \frac{[1+r_{0,t}(0)]^t}{[1+r_{0,t-1}(1)]^{t-1}}=[1+r_{0,t}(0)](1+\textrm{RD}_t)(1+\textrm{CC}_t)
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                        \( \textrm{RD}_1=\textrm{CC}_1=0 \) より \( 1+r_{0,1}(0)=[1+r_{0,1}(0)](1+\textrm{RD}_1)(1+\textrm{CC}_1) \) であるから、\( t=1 \) の項も同じ形にまとめられ、与式を得る。
+                    </p>
+                </div>
+                <p>
+                    　利付債の収益率は各クーポンに対応する割引債の収益率を時刻 \( t=0 \) における重み \( w_t \) で加重平均したものである。
+                    各 \( [1+r_{0,t}(0)](1+\textrm{RD}_t)(1+\textrm{CC}_t) \) は \( t \) ごと計算されるため、イールド・カーブが \( t \) ごと独立に変化する一般の場合でも計算は問題なく実行される。
+                </p>
+            </section>
+        </main>
+        <div id="nav-placeholder"></div>
+        <script src="../../共通/load-nav.js" defer></script>
+        <div id="footer-placeholder"></div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function() {
+                $('#footer-placeholder').load('../../共通/footer.html');
+            });
+        </script>
+    </body>
+</html>
