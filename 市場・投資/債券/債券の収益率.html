@@ -474,6 +474,15 @@
                 <p>
                     　利付債の収益率は各クーポンに対応する割引債の収益率を時刻 \( t=0 \) における重み \( w_t \) で加重平均したものである。
                     各 \( [1+r_{0,t}(0)](1+\textrm{RD}_t)(1+\textrm{CC}_t) \) は \( t \) ごと計算されるため、イールド・カーブが \( t \) ごと独立に変化する一般の場合でも計算は問題なく実行される。
+                    なお累積の線形結合は直感的でないため、積を展開してある \( \textrm{CE} \in \textbf{R} \) を用いて
+                </p>
+                <div class="math-container">
+                    \[
+                        \sum_{t=1}^Tw_t r_{0,t}(0)+\sum_{t=1}^Tw_t \textrm{RD}_t+\sum_{t=1}^Tw_t \textrm{CC}_t+\textrm{CE}
+                    \]
+                </div>
+                <p>
+                    と表すと便利である。
                 </p>
             </section>
         </main>
