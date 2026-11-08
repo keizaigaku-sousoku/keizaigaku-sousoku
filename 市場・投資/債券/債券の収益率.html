@@ -573,35 +573,34 @@
                 </div>
                 <div class="proof">
                     <p>
-                        ある \( \epsilon:\textbf{R}\rightarrow\textbf{R} \) 、任意の \( x &gt; -1 \) に対して
+                        直接の計算により
                     </p>
                     <div class="math-container">
                         \[
-                            \bigg{[}\frac{1+f_{1,T}(0)}{1+x}\bigg{]}^{T-1}=\bigg{[}1+\frac{x-f_{1,T}(0)}{1+f_{1,T}(0)}\bigg{]}^{-(T-1)}=1-\frac{T-1}{1+f_{1,T}(0)}[x-f_{1,T}(0)]+\epsilon(x-f_{1,T}(0))
+                            \bigg{[}\frac{1+f_{1,T}(0)}{1+R_{1,T}}\bigg{]}^{T-1}=\bigg{[}1+\frac{R_{1,T}-f_{1,T}(0)}{1+f_{1,T}(0)}\bigg{]}^{-(T-1)}=1-\frac{T-1}{1+f_{1,T}(0)}[R_{1,T}-f_{1,T}(0)]+o(R_{1,T}-f_{1,T}(0))
                         \]
                     </div>
                     <p>
-                        とおけば、\( \epsilon(y)=o(y) \) かつ \( \epsilon(0)=0 \) であり、\( D_\textrm{disc}^{T-1}(f_{1,T}(0))=(T-1)/(1+f_{1,T}(0)) \) である。
-                        先の命題に \( x=R_{1,T} \) を代入すれば
+                        であり、\( D_\textrm{disc}^{T-1}(f_{1,T}(0))=(T-1)/(1+f_{1,T}(0)) \) ゆえ
                     </p>
                     <div class="math-container">
                         \[
-                            R_\textrm{inv}-r_{0,1}(0)=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+\epsilon(R_{1,T}-f_{1,T}(0))\big{\}}
+                            \bigg{[}\frac{1+f_{1,T}(0)}{1+R_{1,T}}\bigg{]}^{T-1}=1+D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+o(R_{1,T}-f_{1,T}(0))
                         \]
                     </div>
                     <p>
-                        であり、右辺は有界ゆえ期待値をとれる。
-                        \( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) であり、\( |R_{1,T}-f_{1,T}(0)| \leq \delta \) ゆえ
+                        が成り立つ。
+                        左辺の先の命題で書換えて整理すれば
                     </p>
                     <div class="math-container">
                         \[
-                            |E[\epsilon(R_{1,T}-f_{1,T}(0))]| \leq E[|\epsilon(R_{1,T}-f_{1,T}(0))|] \leq \delta\sup_{0 &lt; |y| \leq \delta}\bigg{|}\frac{\epsilon(y)}{y}\bigg{|}
+                            R_\textrm{inv}-r_{0,1}(0)=[1+r_{0,1}(0)]D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+o(R_{1,T}-f_{1,T}(0))
                         \]
                     </div>
                     <p>
-                        である。
-                        \( \epsilon(y)=o(y) \) より右辺の上限は \( \delta \rightarrow 0 \) で \( 0 \) に収束するから、\( E[\epsilon(R_{1,T}-f_{1,T}(0))]=o(\delta) \) であり、第1式を得る。
-                        第2式は最初の命題に \( x=r_{0,T-1}(0) \) を代入し、\( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を用いればよい。
+                        となる。
+                        両辺で期待値を取ることにより第1式を得る。
+                        第2式は \( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を用いればよい。
                     </p>
                 </div>
                 <p>
