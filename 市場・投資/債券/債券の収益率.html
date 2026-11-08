@@ -649,7 +649,7 @@
                     </p>
                 </div>
                 <p>
-                    　上の命題は期待超過収益率が正であることのみを主張するが、一定期間の無裁定を仮定することで以下のような定量化が可能になる [<a href="../市場/リスク中立確率.html#section-fundamental-theorem-pricing" style="text-decoration: none"><span class="new-word">リスク中立確率/資産価格付けの基本定理</span></a>] 。
+                    　上の命題は期待超過収益率が正であることのみを主張するが、一期間の無裁定や市場の完備性を仮定することで以下のような定量化が可能になる [<a href="../市場/リスク中立確率.html#section-fundamental-theorem-pricing" style="text-decoration: none"><span class="new-word">リスク中立確率/資産価格付けの基本定理</span></a>] 。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -661,7 +661,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\textrm{Cov}^P\bigg{(}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{)}
+                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}
                         \]
                     </div>
                     <p>
@@ -670,7 +670,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\frac{\textrm{Cov}^P(U^\prime(W_1),R_\textrm{inv})}{E^P[U^\prime(W_1)]}
+                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\frac{\textrm{Cov}^P[U^\prime(W_1),R_\textrm{inv}]}{E^P[U^\prime(W_1)]}
                         \]
                     </div>
                     <p>
@@ -684,7 +684,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            r_{0,1}(0)=E^Q[R_\textrm{inv}]=E^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P}\cdot R_\textrm{inv}\bigg{]}=E^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P}\bigg{]}E^P[R_\textrm{inv}]+\textrm{Cov}^P\bigg{(}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{)}=E^P[R_\textrm{inv}]+\textrm{Cov}^P\bigg{(}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{)}
+                            r_{0,1}(0)=E^Q[R_\textrm{inv}]=E^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P}\cdot R_\textrm{inv}\bigg{]}=E^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P}\bigg{]}E^P[R_\textrm{inv}]+\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}=E^P[R_\textrm{inv}]+\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}
                         \]
                     </div>
                     <p>
