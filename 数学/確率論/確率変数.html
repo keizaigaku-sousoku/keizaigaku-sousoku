@@ -242,10 +242,10 @@
                 </div>
                 <div class="proof">
                     <p>
-                        まず、任意の標本点で \( Z \geq 0 \) なる確率変数 \( Z \) に対して、\( P[Z &gt; 0] &gt; 0 \) ならば \( EZ &gt; 0 \) であることを示す。
-                        期待値の性質より \( EZ \geq 0 \) であるから、\( EZ=0 \) と仮定して \( P[Z &gt; 0]=0 \) を導けば良い。
+                        まず任意の \( \omega \in \Omega \) で \( Z(\omega) \geq 0 \) なる確率変数 \( Z \) に対して、\( P[Z &gt; 0] &gt; 0 \) ならば \( EZ &gt; 0 \) であることを示す。
+                        期待値の性質より \( EZ \geq 0 \) であるから、対偶の利用により \( EZ=0 \) を仮定して \( P[Z &gt; 0]=0 \) を導けば良い。
                         Chebysev不等式で \( f(x)=x \) とすれば、任意の \( \epsilon &gt; 0 \) に対して \( P[Z &gt; \epsilon] \leq EZ/\epsilon=0 \) である。
-                        ここで \( \{\omega\in\Omega:Z(\omega) &gt; 0\}=\bigcup_{k=1}^\infty\{\omega\in\Omega:Z(\omega) &gt; 1/k\} \) であるから、確率測度の可算加法性より
+                        ここで \( \{\omega\in\Omega:Z(\omega) &gt; 0\}=\bigcup_{k=1}^\infty\{\omega\in\Omega:Z(\omega) &gt; 1/k\} \) であるから、確率測度の性質より
                         \[
                             P[Z &gt; 0] \leq \sum_{k=1}^\infty P[Z &gt; 1/k]=0
                         \]
@@ -253,7 +253,7 @@
                     </p>
                     <p>
                         次に \( EX \in I \) を示す。
-                        \( I \) の下端 \( \alpha \) が有限であるとき、\( X-\alpha \) は任意の標本点で正であり \( P[X-\alpha &gt; 0]=1 \) であるから、前段より \( E[X-\alpha]=EX-\alpha &gt; 0 \) である。
+                        \( I \) の下端 \( \alpha \) が有限であるとき、\( X-\alpha \) は任意の標本点で正であり \( P[X-\alpha &gt; 0]=1 \) であるから、上の結果より \( E[X-\alpha]=EX-\alpha &gt; 0 \) である。
                         上端についても同様であり、\( EX \in I \) を得る。
                     </p>
                     <p>
@@ -263,15 +263,15 @@
                         \]
                         が成り立つ。
                         ここで等号は \( x=x_\ast \) のときに限り成り立つ。
-                        実際、ある \( x_1 \neq x_\ast \) で等号が成り立つとすれば、\( x_m:=(x_\ast+x_1)/2 \in I \) に対して、狭義下に凸であることから
+                        実際ある \( x_1 \neq x_\ast \) で等号が成り立つとすれば、\( \bar{x}:=(x_\ast+x_1)/2 \in I \) に対して
                         \[
-                            f(x_m) &lt; \frac{f(x_\ast)+f(x_1)}{2}=f(x_\ast)+c(x_m-x_\ast)
+                            f(\bar{x}) &lt; \frac{f(x_\ast)+f(x_1)}{2}=f(x_\ast)+c(\bar{x}-x_\ast)
                         \]
                         となり、上の不等式に矛盾する。
                     </p>
                     <p>
                         そこで確率変数 \( Y:=f(X)-f(x_\ast)-c(X-x_\ast) \) を考えれば、任意の標本点で \( Y \geq 0 \) であり、\( Y(\omega) &gt; 0 \) と \( X(\omega) \neq x_\ast \) は同値である。
-                        仮定より \( P[Y &gt; 0]=P[X \neq x_\ast]=1-P[X=x_\ast] &gt; 0 \) であるから、前段より \( EY &gt; 0 \) である。
+                        仮定より \( P[Y &gt; 0]=P[X \neq x_\ast]=1-P[X=x_\ast] &gt; 0 \) であるから、上の結果より \( EY &gt; 0 \) である。
                         期待値の性質より \( EY=E[f(X)]-f(EX)-c(EX-EX)=E[f(X)]-f(EX) \) であり、題意が示される。
                         狭義上に凸な場合は \( -f \) に適用すれば良い。
                     </p>
