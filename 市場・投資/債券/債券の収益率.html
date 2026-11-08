@@ -645,9 +645,10 @@
                     <p>
                         ゆえ \( \phi \) は狭義下に凸である。
                         \( R_{1,T} \) は定数でないから、（等号が成り立たないバージョンの）Jensenの不等式より \( E[\phi(R_{1,T})] &gt; \phi(E[R_{1,T}])=\phi(f_{1,T}(0))=1 \) である [<a href="../../数学/確率論/確率変数.html#section-expectation" style="text-decoration: none"><span class="new-word">確率変数/期待値</span></a>] 。
-                        最初の命題より \( 1+R_\textrm{inv}=[1+r_{0,1}(0)]\phi(R_{1,T}) \) であるから、\( 1+E[R_\textrm{inv}] &gt; 1+r_{0,1}(0) \) を得る。
+                        最初の命題より \( 1+R_\textrm{inv}=[1+r_{0,1}(0)]\phi(R_{1,T}) \) であるから、\( 1+E[R_\textrm{inv}] = [1+r_{0,1}(0)]E[\phi(R_{1,T})] &gt; 1+r_{0,1}(0) \) を得る。
                     </p>
                 </div>
+                <!--
                 <p>
                     　純粋期待仮説は複利最終利回りの期待値に関する仮定であって、収益率の期待値に関する仮定ではない。
                     債券価格は複利最終利回りに関して狭義下に凸であるから [<a href="デュレーション・コンベクシティ.html#section-duration-convexity" style="text-decoration: none"><span class="new-word">デュレーション・コンベクシティ/修正デュレーション・コンベクシティ</span></a>] 、複利最終利回りで見て "プレミアムがない" ことは、収益率で見て "プレミアムがない" ことを意味しない。
@@ -660,12 +661,17 @@
                     さらに "リスク" に限っても、対価が支払われるのは債券価格の変動の大きさそのものではない。
                     これはリスク中立確率を用いると明確になる [<a href="../市場/リスク中立確率.html#section-fundamental-theorem-pricing" style="text-decoration: none"><span class="new-word">リスク中立確率/資産価格付けの基本定理</span></a>] 。
                 </p>
+                -->
+                <p>
+                    
+                    [<a href="../市場/リスク中立確率.html#section-fundamental-theorem-pricing" style="text-decoration: none"><span class="new-word">リスク中立確率/資産価格付けの基本定理</span></a>] 。
+                </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
                         \( (r_{0,T^\prime}(0))_{T^\prime} \) を時刻 \( t=0 \) のイールド・カーブとする。
                         また割引債を考え \( T \in \textbf{Z}_{\geq2} \) を残存期間とし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数とし、残存期間 \( 1 \) の割引債を安全資産とし [<a href="../市場/安全資産.html#section-safe-asset" style="text-decoration: none"><span class="new-word">安全資産/安全資産</span></a>] 、市場が一期間の無裁定であるとして、所与の確率測度を \( P \) 、リスク中立確率を \( Q \) とする。
+                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数とし、残存期間 \( 1 \) の割引債を安全資産とし、市場が一期間の無裁定であるとして、所与の確率測度を \( P \) 、リスク中立確率を \( Q \) とする。
                         このとき、
                     </p>
                     <div class="math-container">
