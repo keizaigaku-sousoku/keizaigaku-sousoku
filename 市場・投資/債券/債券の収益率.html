@@ -489,8 +489,8 @@
                 <h4>リスク・プレミアムとの関係</h4>
                 <p>
                     　ロールダウン効果に確率的な視点を取入れることで、議論は更なる広がりを見せる。
-                    言うまでもなく、現在において将来の複利最終利回りは未知であるからこれを確率変数として扱うことは自然である。
-                    そこでまず以下を考える。
+                    言うまでもなく、現在において将来の複利最終利回りは未知であるから、これを確率変数として扱うことは自然である。
+                    そこで出発点としてまず以下を考える。
                     <!--期待超過収益率は、純粋期待仮説からの乖離として導入したリスク・プレミアムと密接に関係する [<a href="イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
                     まず収益率そのものをフォワード・レートによって表しておく。-->
                 </p>
@@ -539,9 +539,8 @@
                     　上の命題はフォワード・レートの定義からほぼ自明であるが、解釈は重要な意味を持つ。
                     すなわち、収益率 \( R_\textrm{inv} \) が残存期間 \( 1 \) の割引債の収益率 \( r_{0,1}(0) \) を上回るか否かは、現在のフォワード・レート \( f_{1,T}(0) \) と将来実現する複利最終利回り \( R_{1,T} \) の大小のみで確率的に決まる。
                     またローリング・イールドは、未知である将来の複利最終利回りを現在の複利最終利回りで代用したときの値に他ならない。
-                    ここで収益率の期待値から同期間において（ほとんど）確実に得られる収益率を控除した値を<span class="new-word">期待超過収益率（expected excess return）</span>と呼ぶ。
-                    すると上の命題は、期待収益率を現在のフォワード・レート \( f_{1,T}(0) \) と将来実現する複利最終利回り \( R_{1,T} \) で計算できることを意味する。
-                    将来の複利最終利回りの変動が十分小さいとき、修正デュレーションを用いて期待超過収益率とローリング・イールドをリスク・プレミアムと結び付けられる [<a href="../債券/イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
+                    一般に収益率の期待値から同期間において（ほとんど）確実に得られる収益率を控除した値を<span class="new-word">期待超過収益率（expected excess return）</span>と呼ぶ。
+                    期待超過収益率とローリング・イールドは以下によってリスク・プレミアムと関係付けられる [<a href="../債券/イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
@@ -574,35 +573,35 @@
                 </div>
                 <div class="proof">
                     <p>
-                        \( x &gt; -1 \) に対して
+                        ある \( \epsilon:\textbf{R}\rightarrow\textbf{R} \) 、任意の \( x &gt; -1 \) に対して
                     </p>
                     <div class="math-container">
                         \[
-                            \bigg{[}\frac{1+f_{1,T}(0)}{1+x}\bigg{]}^{T-1}=\bigg{[}1+\frac{x-f_{1,T}(0)}{1+f_{1,T}(0)}\bigg{]}^{-(T-1)}=1-\frac{T-1}{1+f_{1,T}(0)}[x-f_{1,T}(0)]+\varepsilon(x-f_{1,T}(0))
+                            \bigg{[}\frac{1+f_{1,T}(0)}{1+x}\bigg{]}^{T-1}=\bigg{[}1+\frac{x-f_{1,T}(0)}{1+f_{1,T}(0)}\bigg{]}^{-(T-1)}=1-\frac{T-1}{1+f_{1,T}(0)}[x-f_{1,T}(0)]+\epsilon(x-f_{1,T}(0))
                         \]
                     </div>
                     <p>
-                        とおけば、\( \varepsilon(y)=o(y) \) かつ \( \varepsilon(0)=0 \) であり、\( D_\textrm{disc}^{T-1}(f_{1,T}(0))=(T-1)/(1+f_{1,T}(0)) \) である。
-                        最初の命題に \( x=R_{1,T} \) を代入すれば
+                        とおけば、\( \epsilon(y)=o(y) \) かつ \( \epsilon(0)=0 \) であり、\( D_\textrm{disc}^{T-1}(f_{1,T}(0))=(T-1)/(1+f_{1,T}(0)) \) である。
+                        先の命題に \( x=R_{1,T} \) を代入すれば
                     </p>
                     <div class="math-container">
                         \[
-                            R_\textrm{inv}-r_{0,1}(0)=[1+r_{0,1}(0)]\{D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+\varepsilon(R_{1,T}-f_{1,T}(0))\}
+                            R_\textrm{inv}-r_{0,1}(0)=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+\epsilon(R_{1,T}-f_{1,T}(0))\big{\}}
                         \]
                     </div>
                     <p>
                         であり、右辺は有界ゆえ期待値をとれる。
-                        \( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) であり、\( |R_{1,T}-f_{1,T}(0)| \leq \delta \) より
+                        \( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) であり、\( |R_{1,T}-f_{1,T}(0)| \leq \delta \) ゆえ
                     </p>
                     <div class="math-container">
                         \[
-                            |E[\varepsilon(R_{1,T}-f_{1,T}(0))]| \leq E[|\varepsilon(R_{1,T}-f_{1,T}(0))|] \leq \delta\sup_{0 &lt; |y| \leq \delta}\bigg{|}\frac{\varepsilon(y)}{y}\bigg{|}
+                            |E[\epsilon(R_{1,T}-f_{1,T}(0))]| \leq E[|\epsilon(R_{1,T}-f_{1,T}(0))|] \leq \delta\sup_{0 &lt; |y| \leq \delta}\bigg{|}\frac{\epsilon(y)}{y}\bigg{|}
                         \]
                     </div>
                     <p>
                         である。
-                        \( \varepsilon(y)=o(y) \) より右辺の上限は \( \delta \rightarrow 0 \) で \( 0 \) に収束するから、\( E[\varepsilon(R_{1,T}-f_{1,T}(0))]=o(\delta) \) であり、前半を得る。
-                        後半は最初の命題に \( x=r_{0,T-1}(0) \) を代入し、\( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を用いればよい。
+                        \( \epsilon(y)=o(y) \) より右辺の上限は \( \delta \rightarrow 0 \) で \( 0 \) に収束するから、\( E[\epsilon(R_{1,T}-f_{1,T}(0))]=o(\delta) \) であり、第1式を得る。
+                        第2式は最初の命題に \( x=r_{0,T-1}(0) \) を代入し、\( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を用いればよい。
                     </p>
                 </div>
                 <p>
