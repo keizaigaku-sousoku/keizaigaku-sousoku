@@ -242,23 +242,23 @@
                 </div>
                 <div class="proof">
                     <p>
-                        （第1段）任意の \( \omega \in \Omega \) で \( Z(\omega) \geq 0 \) なる確率変数 \( Z \) に対して、\( P[Z &gt; 0] &gt; 0 \) ならば \( EZ &gt; 0 \) であることを示す。
-                        期待値の性質より \( EZ \geq 0 \) であるから、対偶の利用により \( EZ=0 \) を仮定して \( P[Z &gt; 0]=0 \) を導けば良い。
-                        Chebysev不等式で \( f(x)=x \) とすれば、任意の \( \epsilon &gt; 0 \) に対して \( P[Z &gt; \epsilon] \leq EZ/\epsilon=0 \) である。
-                        ここで \( \{\omega\in\Omega:Z(\omega) &gt; 0\}=\bigcup_{k=1}^\infty\{\omega\in\Omega:Z(\omega) &gt; 1/k\} \) であるから、確率測度の性質より \( P[Z &gt; 0] \leq \sum_{k=1}^\infty P[Z &gt; 1/k]=0 \) である。
+                        （第1段）任意の \( \omega \in \Omega \) で \( Y(\omega) \geq 0 \) なる確率変数 \( Y \) に対して、\( P[Y &gt; 0] &gt; 0 \) ならば \( EY &gt; 0 \) であることを示す。
+                        期待値の性質より \( EY \geq 0 \) であるから、対偶の利用により \( EY=0 \) を仮定して \( P[Y &gt; 0]=0 \) を導けば良い。
+                        Chebysev不等式で広義単調増加関数を恒等写像とすれば、任意の \( \epsilon &gt; 0 \) に対して \( P[Y &gt; \epsilon] \leq EY/\epsilon=0 \) である。
+                        ここで \( \{\omega\in\Omega:Y(\omega) &gt; 0\}=\bigcup_{k=1}^\infty\{\omega\in\Omega:Y(\omega) &gt; 1/k\} \) であるから、確率測度の性質より \( P[Y &gt; 0] \leq \sum_{k=1}^\infty P[Y &gt; 1/k]=0 \) である。
                     </p>
                     <p>
-                        （第2段）\( EX \in I \) を示す。
+                        （第2段）\( f(EX) \) が定まることを保証するために \( EX \in I \) を示す。
                         \( I \) の下端 \( \alpha \) が有限であるとき、\( X-\alpha \) は任意の標本点で正であり \( P[X-\alpha &gt; 0]=1 \) であるから、第1段より \( E[X-\alpha]=EX-\alpha &gt; 0 \) である。
                         上端についても同様であり、\( EX \in I \) を得る。
                     </p>
                     <p>
-                        （第３段）\( f \) は開区間上で下に凸であるから、\( x_\ast:=EX \) に対して、ある \( c \in \textbf{R} \) が存在して、任意の \( x \in I \) に対して、\( f(x)\geq f(x_\ast)+c(x-x_\ast) \) が成り立つ。
+                        （第3段）\( f \) は開区間上で下に凸であるから、\( x_\ast:=EX \) に対して、ある \( c \in \textbf{R} \) が存在して、任意の \( x \in I \) に対して、\( f(x)\geq f(x_\ast)+c(x-x_\ast) \) が成り立つ。
                         ただし等号は \( x=x_\ast \) のときに限り成り立つ。
                         実際ある \( x^\prime \neq x_\ast \) で等号が成り立つとすれば、\( \bar{x}:=(x_\ast+x^\prime)/2 \in I \) に対して、\( f(\bar{x}) &lt; [f(x_\ast)+f(x^\prime)]/2=f(x_\ast)+c(\bar{x}-x_\ast) \) となり上の不等式に矛盾する。
-                        ここで確率変数 \( Y:=f(X)-f(x_\ast)-c(X-x_\ast) \) を考えれば、任意の \( \omega \in \Omega \) で \( Y(\omega) \geq 0 \) であり、とくに \( Y(\omega) &gt; 0 \) と \( X(\omega) \neq x_\ast \) は同値である。
-                        しかも仮定より \( P[Y &gt; 0]=P[X \neq x_\ast]=1-P[X=x_\ast] &gt; 0 \) であるから、第1段より \( EY &gt; 0 \) である。
-                        期待値の性質より \( EY=E[f(X)]-f(EX)-c(EX-EX)=E[f(X)]-f(EX) \) であり、題意が示される。
+                        ここで確率変数 \( Z:=f(X)-f(x_\ast)-c(X-x_\ast) \) を考えれば、任意の \( \omega \in \Omega \) で \( Z(\omega) \geq 0 \) であり、とくに \( Z(\omega) &gt; 0 \) と \( X(\omega) \neq x_\ast \) は同値である。
+                        しかも仮定より \( P[Z &gt; 0]=P[X \neq x_\ast]=1-P[X=x_\ast] &gt; 0 \) であるから、第1段より \( EZ &gt; 0 \) である。
+                        期待値の性質より \( EZ=E[f(X)]-f(EX)-c(EX-EX)=E[f(X)]-f(EX) \) であり、題意が示される。
                         狭義上に凸な場合は \( -f \) に適用すれば良い。
                     </p>
                 </div>
