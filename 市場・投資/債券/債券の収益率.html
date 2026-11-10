@@ -599,7 +599,10 @@
                 </div>
                 <p>
                     　上の命題により \( R_\textrm{inv}-r_{0,1}(0) \) は、フォワード・レートと将来の複利最終利回りの差に修正デュレーションを乗じた1次の部分と、凸性に由来する非負の剰余項の和に分解される。
-                    続いてこの量の期待値を考える。
+                    式自体は複雑であるものの、解析としては直線的な計算に過ぎない。
+                </p>
+                <p>
+                    　続いて \( R_\textrm{inv}-r_{0,1}(0) \) の期待値を考える。
                     一般に収益率の期待値から同期間において（ほとんど）確実に得られる収益率を控除した値を<span class="new-word">期待超過収益率（expected excess return）</span>と呼ぶ。
                     期待超過収益率とローリング・イールドは以下によってリスク・プレミアムと関係付けられる [<a href="../債券/イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
                 </p>
@@ -634,7 +637,7 @@
                         上の命題の証明より \( K_{1,T}=\phi(R_{1,T})-1+D_\textrm{disc}^{T-1}(f_{1,T}(0))[R_{1,T}-f_{1,T}(0)] \) であり、最初の命題より \( \phi(R_{1,T})=(1+R_\textrm{inv})/[1+r_{0,1}(0)] \) であるから、\( E[K_{1,T}] \) は存在する。
                         上の命題の第1式の両辺で期待値をとり、\( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) を用いて第1式を得る。
                         第2式は、上の命題の第2式に \( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を代入すればよい。<br>
-                        (i) \( \delta &lt; 1+f_{1,T}(0) \) としてよい。
+                        (i)について、\( \delta &lt; 1+f_{1,T}(0) \) としてよい。
                         \( |R_{1,T}-f_{1,T}(0)| \leq \delta \) のとき
                     </p>
                     <div class="math-container">
@@ -645,7 +648,7 @@
                     <p>
                         がほとんど確実に成り立ち、\( \phi^{\prime\prime} \) は連続であるから右辺の上限は \( \delta \rightarrow 0 \) で \( \phi^{\prime\prime}(f_{1,T}(0)) \) に収束する。
                         よって \( E[K_{1,T}]=o(\delta) \) である。<br>
-                        (ii) \( R_{1,T} \) がほとんど確実に定数でなければ \( R_{1,T} \neq f_{1,T}(0) \) となる確率は正であり、その事象の上で \( K_{1,T} &gt; 0 \) である。
+                        (ii)について、\( R_{1,T} \) がほとんど確実に定数でなければ \( R_{1,T} \neq f_{1,T}(0) \) となる確率は正であり、その事象の上で \( K_{1,T} &gt; 0 \) である。
                         \( K_{1,T} \geq 0 \) と合わせて \( E[K_{1,T}] &gt; 0 \) を得る。
                         純粋期待仮説のもとでは \( \textrm{RP}_{1,T}=0 \) であるから、第1式より \( E[R_\textrm{inv}]-r_{0,1}(0)=[1+r_{0,1}(0)]E[K_{1,T}] &gt; 0 \) である。
                         これは狭義Jensenの不等式 \( E[\phi(R_{1,T})] &gt; \phi(E[R_{1,T}])=1 \) に他ならない [<a href="../../数学/確率論/確率変数.html#section-expectation" style="text-decoration: none"><span class="new-word">確率変数/期待値</span></a>] 。
@@ -677,7 +680,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \textrm{RP}_{1,T}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}\label{rp-decomposition}
+                            \textrm{RP}_{1,T}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
                         \]
                     </div>
                     <p>
@@ -710,22 +713,22 @@
                     </p>
                 </div>
                 <p>
-                    　第2式(<a href="#rp-decomposition">\ref{rp-decomposition}</a>)によれば、リスク・プレミアム \( \textrm{RP}_{1,T} \) は2つの部分の和である。
+                    　上の命題の第2式によれば、リスク・プレミアム \( \textrm{RP}_{1,T} \) は2つの部分の和である。
                     第1項 \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[R_{1,T}]-E^P[R_{1,T}] \) は、将来の複利最終利回りの期待値が所与の確率測度とリスク中立確率で食い違う分であり、\( P=Q \) ならば \( 0 \) になる。
                     すなわち、リスクを負担することへの対価を複利最終利回りの単位で測った部分である。
                     債券の保有者が損失を被る複利最終利回りの高い状態で \( \textrm{d}Q/\textrm{d}P \) が大きい、つまりその状態が重く評価されるとき、この項は正になる。
                     第2項 \( -E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) は価格関数 \( \phi \) の凸性に由来する補正であり、\( P=Q \) であっても残り、常に \( 0 \) 以下である。
                 </p>
                 <p>
-                    　したがってリスク・プレミアム \( \textrm{RP}_{1,T} \) は、リスクへの対価そのものではなく、それから凸性の補正を控除した量である。
-                    この名称は、凸性を剰余項として無視する1次の意味においてのみ正確である。
+                    　リスク・プレミアム \( \textrm{RP}_{1,T} \) は、リスクへの対価そのものではなく、それから凸性の補正を控除した量である。
+                    したがってこの名称は、凸性を剰余項として無視する1次の意味においてのみ正確である。
                     とくに \( \textrm{RP}_{1,T}=0 \) はリスクへの対価が \( 0 \) であることを意味しない。
                     実際、純粋期待仮説 \( \textrm{RP}_{1,T}=0 \) のもとでは \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) &gt; 0 \) であり、リスクへの対価は正である。
                     前の命題の(ii)で期待超過収益率が正になったのは、このことの言換えである。
                     逆にリスクへの対価が \( 0 \) 、つまり \( P=Q \) であれば \( \textrm{RP}_{1,T}=-E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) &lt; 0 \) であり、フォワード・レートは将来の複利最終利回りの期待値を凸性の分だけ下回る。
                 </p>
                 <p>
-                    　さらに市場の完備性と投資家の最適化を仮定すれば、測度の変換を限界効用によって表すことができる [<a href="../市場/リスク中立確率.html#section-measure-change" style="text-decoration: none"><span class="new-word">リスク中立確率/測度変換による解釈</span></a>] 。
+                    　さらに市場の完備性と投資家の最適化を仮定すれば、測度の変換を限界効用によって表せる [<a href="../市場/リスク中立確率.html#section-measure-change" style="text-decoration: none"><span class="new-word">リスク中立確率/測度変換による解釈</span></a>] 。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
