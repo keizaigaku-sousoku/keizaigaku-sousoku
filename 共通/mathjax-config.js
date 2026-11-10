@@ -7,8 +7,9 @@ window.MathJax = {
         tagIndent: '0em'
     },
     output: {
-        displayOverflow: 'linebreak',
-        font: 'mathjax-asana'
+        displayOverflow: 'scroll',
+        font: 'mathjax-asana',
+        linebreaks: { inline: true, width: '100%' }
     },
     chtml: {
         linebreaks: {
