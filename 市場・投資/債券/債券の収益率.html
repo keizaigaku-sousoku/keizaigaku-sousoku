@@ -490,21 +490,20 @@
                 <p>
                     　ロールダウン効果に確率的な視点を取入れることで、議論は更なる広がりを見せる。
                     言うまでもなく、現在において将来の複利最終利回りは未知であるから、これを確率変数として扱うことは自然である。
-                    そこで出発点としてまず以下を考える。
-                    <!--期待超過収益率は、純粋期待仮説からの乖離として導入したリスク・プレミアムと密接に関係する [<a href="イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
-                    まず収益率そのものをフォワード・レートによって表しておく。-->
+                    以下では仮定の少ない主張から順に示し、各命題は直前の命題の設定に仮定を加えて述べる。
+                    出発点として、まず確率に関する仮定をおかずに、収益率をフォワード・レートによって表しておく。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
                         \( (r_{0,T^\prime}(0))_{T^\prime} \) を時刻 \( t=0 \) のイールド・カーブ、\( f_{T^\prime,S^\prime}(0) \) 、\( T^\prime &lt; S^\prime \) を時刻 \( t=0 \) のフォワード・レートとする。
                         また割引債を考え \( T \in \textbf{Z}_{\geq2} \) を残存期間とし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数、\( R_{1,T} &gt; -1 \) を時刻 \( t=1 \) における残存期間 \( T-1 \) の割引債の複利最終利回りの確率変数とする。
+                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数、\( R_{1,T} &gt; -1 \) を時刻 \( t=1 \) における残存期間 \( T-1 \) の割引債の複利最終利回りの確率変数とし、\( \phi(x):=\{[1+f_{1,T}(0)]/(1+x)\}^{T-1} \) 、\( x &gt; -1 \) とおく。
                         このとき、
                     </p>
                     <div class="math-container">
                         \[
-                            1+R_\textrm{inv}=[1+r_{0,1}(0)]\bigg{[}\frac{1+f_{1,T}(0)}{1+R_{1,T}}\bigg{]}^{T-1}
+                            1+R_\textrm{inv}=[1+r_{0,1}(0)]\phi(R_{1,T})=[1+r_{0,1}(0)]\bigg{[}\frac{1+f_{1,T}(0)}{1+R_{1,T}}\bigg{]}^{T-1}
                         \]
                     </div>
                     <p>
@@ -513,7 +512,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            1+f_{T-1,T}(0)=[1+r_{0,1}(0)]\bigg{[}\frac{1+f_{1,T}(0)}{1+r_{0,T-1}(0)}\bigg{]}^{T-1}
+                            1+f_{T-1,T}(0)=[1+r_{0,1}(0)]\phi(r_{0,T-1}(0))=[1+r_{0,1}(0)]\bigg{[}\frac{1+f_{1,T}(0)}{1+r_{0,T-1}(0)}\bigg{]}^{T-1}
                         \]
                     </div>
                     <p>
@@ -539,36 +538,34 @@
                     　上の命題はフォワード・レートの定義からほぼ自明であるが、解釈は重要な意味を持つ。
                     すなわち、収益率 \( R_\textrm{inv} \) が残存期間 \( 1 \) の割引債の収益率 \( r_{0,1}(0) \) を上回るか否かは、現在のフォワード・レート \( f_{1,T}(0) \) と将来実現する複利最終利回り \( R_{1,T} \) の大小のみで確率的に決まる。
                     またローリング・イールドは、未知である将来の複利最終利回りを現在の複利最終利回りで代用したときの値に他ならない。
-                    一般に収益率の期待値から同期間において（ほとんど）確実に得られる収益率を控除した値を<span class="new-word">期待超過収益率（expected excess return）</span>と呼ぶ。
-                    期待超過収益率とローリング・イールドは以下によってリスク・プレミアムと関係付けられる [<a href="../債券/イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
+                    この大小関係を定量的に扱うため、\( \phi \) を \( f_{1,T}(0) \) の周りで展開する。
+                    1次の項は修正デュレーションで与えられ、剰余項は価格関数 \( \phi \) の凸性に由来する。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (r_{0,T^\prime}(0))_{T^\prime} \) を時刻 \( t=0 \) のイールド・カーブ、\( f_{T^\prime,S^\prime}(0) \) 、\( T^\prime &lt; S^\prime \) を時刻 \( t=0 \) のフォワード・レートとする。
-                        また割引債を考え \( T \in \textbf{Z}_{\geq2} \) を残存期間、\( D_\textrm{disc}^{T-1}(\bullet) \) を残存期間 \( T-1 \) の修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数、\( R_{1,T} &gt; -1 \) を時刻 \( t=1 \) における残存期間 \( T-1 \) の割引債の複利最終利回りの確率変数とし、\( \textrm{RP}_{1,T}=f_{1,T}(0)-E[R_{1,T}] \) をリスク・プレミアムとする。
-                        ただしある \( \delta &gt; 0 \) が存在して、\( |R_{1,T}-f_{1,T}(0)| \leq \delta \) がほとんど確実に成り立つとする。
-                        このとき、\( \delta \rightarrow 0 \) において
+                        上の命題の設定に加え、\( D_\textrm{disc}^{T-1}(\bullet) \) を残存期間 \( T-1 \) の修正デュレーションとして \( D:=D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) とし、
                     </p>
                     <div class="math-container">
                         \[
-                            E[R_\textrm{inv}]-r_{0,1}(0)=[1+r_{0,1}(0)]D_\textrm{disc}^{T-1}(f_{1,T}(0))\textrm{RP}_{1,T}+o(\delta)
+                            K_{1,T}:=\int_{f_{1,T}(0)}^{R_{1,T}}\phi^{\prime\prime}(s)(R_{1,T}-s)\,\textrm{d}s,\ \ \ k_{1,T}:=\int_{f_{1,T}(0)}^{r_{0,T-1}(0)}\phi^{\prime\prime}(s)[r_{0,T-1}(0)-s]\,\textrm{d}s
                         \]
                     </div>
                     <p>
-                        が成り立つ。
-                        またローリング・イールドについて
+                        とおく。
+                        このとき、
                     </p>
                     <div class="math-container">
                         \[
                             \begin{align}
-                                f_{T-1,T}(0)-r_{0,1}(0)=[1+r_{0,1}(0)]D_\textrm{disc}^{T-1}(f_{1,T}(0))\{\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0)\}+o(f_{1,T}(0)-r_{0,T-1}(0))\label{rolling-rp}
+                                R_\textrm{inv}-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D[f_{1,T}(0)-R_{1,T}]+K_{1,T}\big{\}}\\
+                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D[f_{1,T}(0)-r_{0,T-1}(0)]+k_{1,T}\big{\}}
                             \end{align}
                         \]
                     </div>
                     <p>
                         が成り立つ。
+                        また \( K_{1,T} \geq 0 \) かつ \( k_{1,T} \geq 0 \) であり、\( K_{1,T}=0 \) となるのは \( R_{1,T}=f_{1,T}(0) \) のときに限る。
                     </p>
                 </div>
                 <div class="proof">
@@ -577,100 +574,97 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \bigg{[}\frac{1+f_{1,T}(0)}{1+R_{1,T}}\bigg{]}^{T-1}=\bigg{[}1+\frac{R_{1,T}-f_{1,T}(0)}{1+f_{1,T}(0)}\bigg{]}^{-(T-1)}=1-\frac{T-1}{1+f_{1,T}(0)}[R_{1,T}-f_{1,T}(0)]+o(R_{1,T}-f_{1,T}(0))
+                            \phi^\prime(x)=-\frac{(T-1)[1+f_{1,T}(0)]^{T-1}}{(1+x)^T},\ \ \ \phi^{\prime\prime}(x)=\frac{T(T-1)[1+f_{1,T}(0)]^{T-1}}{(1+x)^{T+1}} &gt; 0
                         \]
                     </div>
                     <p>
-                        であり、\( D_\textrm{disc}^{T-1}(f_{1,T}(0))=(T-1)/[1+f_{1,T}(0)] \) ゆえ
+                        であり、\( D=(T-1)/[1+f_{1,T}(0)] \) ゆえ \( \phi(f_{1,T}(0))=1 \) 、\( \phi^\prime(f_{1,T}(0))=-D \) である。
+                        よって積分型の剰余項をもつTaylorの定理より、任意の \( x &gt; -1 \) に対して
                     </p>
                     <div class="math-container">
                         \[
-                            \bigg{[}\frac{1+f_{1,T}(0)}{1+R_{1,T}}\bigg{]}^{T-1}=1+D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+o(R_{1,T}-f_{1,T}(0))
+                            \phi(x)=1-D[x-f_{1,T}(0)]+\int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\,\textrm{d}s
                         \]
                     </div>
                     <p>
                         が成り立つ。
-                        左辺を最初の命題で書換えて整理すれば
+                        \( x=R_{1,T} \) 、\( x=r_{0,T-1}(0) \) を代入し、上の命題の2つの表示を用いれば2つの式を得る。
+                        また \( x &lt; f_{1,T}(0) \) のときは \( \int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\,\textrm{d}s=\int_{x}^{f_{1,T}(0)}\phi^{\prime\prime}(s)(s-x)\,\textrm{d}s \) であるから、\( \phi^{\prime\prime} &gt; 0 \) より剰余項は常に非負であり、\( 0 \) となるのは \( x=f_{1,T}(0) \) のときに限る。
+                    </p>
+                </div>
+                <p>
+                    　上の命題により、収益率の超過分は、フォワード・レートと将来の複利最終利回りの差に修正デュレーションを乗じた1次の部分と、凸性に由来する非負の剰余項の和に分解される。
+                    ここで期待値を考える。
+                    一般に収益率の期待値から同期間において（ほとんど）確実に得られる収益率を控除した値を<span class="new-word">期待超過収益率（expected excess return）</span>と呼ぶ。
+                    期待超過収益率とローリング・イールドは以下によってリスク・プレミアムと関係付けられる [<a href="../債券/イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        上の命題の設定に加え、\( E[R_\textrm{inv}] \) と \( E[R_{1,T}] \) が存在するとし、\( \textrm{RP}_{1,T}=f_{1,T}(0)-E[R_{1,T}] \) をリスク・プレミアムとする。
+                        このとき、\( E[K_{1,T}] \) が存在して
                     </p>
                     <div class="math-container">
                         \[
-                            R_\textrm{inv}-r_{0,1}(0)=[1+r_{0,1}(0)]D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+o(R_{1,T}-f_{1,T}(0))
+                            \begin{align}
+                                E[R_\textrm{inv}]-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D\,\textrm{RP}_{1,T}+E[K_{1,T}]\big{\}}\\
+                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D\{\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0)\}+k_{1,T}\big{\}}\label{rolling-rp}
+                            \end{align}
                         \]
                     </div>
                     <p>
-                        となる。
-                        ここで \( |R_{1,T}-f_{1,T}(0)| \leq \delta \) がほとんど確実に成り立つので、剰余項はほとんど確実に（一様に） \( o(\delta) \) で評価される。
-                        よって両辺で期待値をとり、\( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) を用いて第1式を得る。
-                        第2式は、上の展開を \( R_{1,T} \) の代わりに \( r_{0,T-1}(0) \) で行い、先の命題のローリング・イールドの表示と \( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を用いれば良い。
+                        が成り立つ。
+                        さらに次が成り立つ。<br>
+                    </p>
+                    <div class="math-container">
+                        (i) ある \( \delta &gt; 0 \) が存在して \( |R_{1,T}-f_{1,T}(0)| \leq \delta \) がほとんど確実に成り立つならば、\( \delta \rightarrow 0 \) において \( E[K_{1,T}]=o(\delta) \) 。<br>
+                        (ii) \( R_{1,T} \) がほとんど確実に定数でなければ \( E[K_{1,T}] &gt; 0 \) 。とくに純粋期待仮説 \( f_{1,T}(0)=E[R_{1,T}] \) が成り立つならば \( E[R_\textrm{inv}]-r_{0,1}(0) &gt; 0 \) 。<br>
+                    </div>
+                </div>
+                <div class="proof">
+                    <p>
+                        上の命題の証明より \( K_{1,T}=\phi(R_{1,T})-1+D[R_{1,T}-f_{1,T}(0)] \) であり、最初の命題より \( \phi(R_{1,T})=(1+R_\textrm{inv})/[1+r_{0,1}(0)] \) であるから、\( E[K_{1,T}] \) は存在する。
+                        上の命題の第1式の両辺で期待値をとり、\( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) を用いて第1式を得る。
+                        第2式は、上の命題の第2式に \( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を代入すればよい。<br>
+                        (i) \( \delta &lt; 1+f_{1,T}(0) \) としてよい。
+                        \( |R_{1,T}-f_{1,T}(0)| \leq \delta \) のとき
+                    </p>
+                    <div class="math-container">
+                        \[
+                            0 \leq K_{1,T} \leq \sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\bigg{|}\int_{f_{1,T}(0)}^{R_{1,T}}(R_{1,T}-s)\,\textrm{d}s\bigg{|} \leq \frac{1}{2}\sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\delta^2
+                        \]
+                    </div>
+                    <p>
+                        がほとんど確実に成り立ち、\( \phi^{\prime\prime} \) は連続であるから右辺の上限は \( \delta \rightarrow 0 \) で \( \phi^{\prime\prime}(f_{1,T}(0)) \) に収束する。
+                        よって \( E[K_{1,T}]=o(\delta) \) である。<br>
+                        (ii) \( R_{1,T} \) がほとんど確実に定数でなければ \( R_{1,T} \neq f_{1,T}(0) \) となる確率は正であり、その事象の上で \( K_{1,T} &gt; 0 \) である。
+                        \( K_{1,T} \geq 0 \) と合わせて \( E[K_{1,T}] &gt; 0 \) を得る。
+                        純粋期待仮説のもとでは \( \textrm{RP}_{1,T}=0 \) であるから、第1式より \( E[R_\textrm{inv}]-r_{0,1}(0)=[1+r_{0,1}(0)]E[K_{1,T}] &gt; 0 \) である。
+                        これは狭義に凸な \( \phi \) に対するJensenの不等式 \( E[\phi(R_{1,T})] &gt; \phi(E[R_{1,T}])=1 \) に他ならない [<a href="../../数学/確率論/確率変数.html#section-expectation" style="text-decoration: none"><span class="new-word">確率変数/期待値</span></a>] 。
                     </p>
                 </div>
                 <p>
                     　期待超過収益率とローリング・イールドはリスク・プレミアムと非対称な関係を持つ。
-                    上の命題において \( |\textrm{RP}_{1,T}| \leq \delta \) であるから、期待超過収益率 \( E[R_\textrm{inv}]-r_{0,1}(0) \) の主要項はリスク・プレミアム \( \textrm{RP}_{1,T} \) で定まる。
+                    上の命題の(i)の仮定のもとでは \( |\textrm{RP}_{1,T}| \leq \delta \) かつ \( E[K_{1,T}]=o(\delta) \) であるから、期待超過収益率 \( E[R_\textrm{inv}]-r_{0,1}(0) \) の主要項はリスク・プレミアム \( \textrm{RP}_{1,T} \) で定まる。
                     一方でローリング・イールドの短期の収益率に対する超過分 \( f_{T-1,T}(0)-r_{0,1}(0) \) の主要項は、リスク・プレミアムに由来する部分と、将来の複利最終利回りの変化の期待値 \( E[R_{1,T}]-r_{0,T-1}(0) \) に由来する部分の和である。
-                    <!--後者は予想どおりに実現すればイールド・カーブ変化効果によって相殺されるので、期待超過収益率には残らない。-->
-                    もしイールド・カーブが不変であると仮定すれば \( E[R_{1,T}]=r_{0,T-1}(0) \) ゆえ超過分はすべてリスク・プレミアムに由来し、純粋期待仮説を仮定すれば \( \textrm{RP}_{1,T}=0 \) ゆえ超過分はすべて将来の複利最終利回りの変化の期待値に由来する。
-                    <!--一般に残存期間の長い債券を保有することで期待される超過収益の源泉と解釈するとき、リスク・プレミアムを<span class="new-word">ターム・プレミアム（term premium）</span>と呼ぶ。-->
+                    もしイールド・カーブが不変であると仮定すれば \( E[R_{1,T}]=r_{0,T-1}(0) \) ゆえ主要項はすべてリスク・プレミアムに由来し、純粋期待仮説を仮定すれば \( \textrm{RP}_{1,T}=0 \) ゆえ主要項はすべて将来の複利最終利回りの変化の期待値に由来する。
                 </p>
                 <p>
-                    　上の命題において期待超過収益率の剰余項 \( o(\delta) \) は一般に \( 0 \) でなく、純粋期待仮説が成り立っていても、期待超過収益率は \( 0 \) になるとは限らない。
-                    実際、将来の複利最終利回りがほとんど確実に定数でない限り正になることが以下で確かめられる。
+                    　ただし上の命題の(ii)のとおり、純粋期待仮説が成り立っていても期待超過収益率は \( 0 \) にならず、凸性の分だけ正になる。
+                    この正の値がリスクへの対価であるか否かは確率に関する仮定だけでは定まらないが、一期間の無裁定を仮定することで以下のような定量化が可能になる [<a href="../市場/リスク中立確率.html#section-fundamental-theorem-pricing" style="text-decoration: none"><span class="new-word">リスク中立確率/資産価格付けの基本定理</span></a>] 。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        \( (r_{0,T^\prime}(0))_{T^\prime} \) を時刻 \( t=0 \) のイールド・カーブ、\( f_{T^\prime,S^\prime}(0) \) 、\( T^\prime &lt; S^\prime \) を時刻 \( t=0 \) のフォワード・レートとする。
-                        また割引債を考え \( T \in \textbf{Z}_{\geq2} \) を残存期間とし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数、\( R_{1,T} &gt; -1 \) を時刻 \( t=1 \) における残存期間 \( T-1 \) の割引債の複利最終利回りの確率変数とし、\( R_{1,T} \) はほとんど確実に定数ではなく、\( E[R_\textrm{inv}] \) が存在するとする。
-                        このとき、純粋期待仮説 \( f_{1,T}(0)=E[R_{1,T}] \) が成り立つならば
-                    </p>
-                    <div class="math-container">
-                        \[
-                            E[R_\textrm{inv}] - r_{0,1}(0) &gt; 0
-                        \]
-                    </div>
-                    <p>
-                        である。
-                    </p>
-                </div>
-                <div class="proof">
-                    <p>
-                        \( \phi(x):=\{[1+f_{1,T}(0)]/(1+x)\}^{T-1} \) 、\( x &gt; -1 \) とおけば
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \phi^{\prime\prime}(x)=\frac{T(T-1)[1+f_{1,T}(0)]^{T-1}}{(1+x)^{T+1}} &gt; 0
-                        \]
-                    </div>
-                    <p>
-                        ゆえ \( \phi \) は狭義下に凸である。
-                        \( R_{1,T} \) はほとんど確実に定数ではないから、狭義Jensenの不等式より \( E[\phi(R_{1,T})] &gt; \phi(E[R_{1,T}])=\phi(f_{1,T}(0))=1 \) である [<a href="../../数学/確率論/確率変数.html#section-expectation" style="text-decoration: none"><span class="new-word">確率変数/期待値</span></a>] 。
-                        最初の命題より \( 1+R_\textrm{inv}=[1+r_{0,1}(0)]\phi(R_{1,T}) \) であるから、\( 1+E[R_\textrm{inv}] = [1+r_{0,1}(0)]E[\phi(R_{1,T})] &gt; 1+r_{0,1}(0) \) つまり与式を得る。
-                    </p>
-                </div>
-                <p>
-                    　上の命題は期待超過収益率が正であることのみを主張するが、一期間の無裁定や市場の完備性を仮定することで以下のような定量化が可能になる [<a href="../市場/リスク中立確率.html#section-fundamental-theorem-pricing" style="text-decoration: none"><span class="new-word">リスク中立確率/資産価格付けの基本定理</span></a>] 。
-                </p>
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        \( (r_{0,T^\prime}(0))_{T^\prime} \) を時刻 \( t=0 \) のイールド・カーブとする。
-                        また割引債を考え \( T \in \textbf{Z}_{\geq2} \) を残存期間とし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数とし、残存期間 \( 1 \) の割引債を安全資産とし、市場が一期間の無裁定であるとして、所与の確率測度を \( P \) 、リスク中立確率を \( Q \) とする。
+                        上の命題の設定に加え、残存期間 \( 1 \) の割引債を安全資産とし、市場が一期間の無裁定であるとして、上の命題で期待値をとる確率測度を \( P \) 、リスク中立確率を \( Q \) とし、\( E^Q[R_{1,T}] \) が存在するとする。
                         このとき、
                     </p>
                     <div class="math-container">
                         \[
-                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}
-                        \]
-                    </div>
-                    <p>
-                        が成り立つ。
-                        とくに市場が完備であり、滑らかな効用関数 \( U \) をもつ投資家が時刻 \( t=1 \) の貨幣を表す確率変数 \( W_1 \) に対して \( E^P[U(W_1)] \) を最大化しているとき、
-                    </p>
-                    <div class="math-container">
-                        \[
-                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\frac{\textrm{Cov}^P[U^\prime(W_1),R_\textrm{inv}]}{E^P[U^\prime(W_1)]}
+                            \begin{align}
+                                E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=-\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}\\
+                                \textrm{RP}_{1,T}&amp;=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D}\label{rp-decomposition}
+                            \end{align}
                         \]
                     </div>
                     <p>
@@ -689,97 +683,60 @@
                     </div>
                     <p>
                         つまり第1式を得る。
-                        また後半の仮定のもとでは \( \textrm{d}Q/\textrm{d}P=U^\prime(W_1)/E^P[U^\prime(W_1)] \) が成り立つので [<a href="../市場/リスク中立確率.html#section-measure-change" style="text-decoration: none"><span class="new-word">リスク中立確率/測度変換による解釈</span></a>] 、これを上の式に代入すれば第2式を得る。
-                    </p>
-                </div>
-                <p>
-                    　最初の近似の命題における剰余項 \( o(\delta) \) を積分型の剰余項として正確に書き、上の命題のリスク中立確率による価格付けと組合わせると、リスク・プレミアム \( \textrm{RP}_{1,T} \) そのものを共分散によって表すことができる。
-                </p>
-                <div class="theorem-tile">
-                    <div class="title">命題</div>
-                    <p>
-                        \( (r_{0,T^\prime}(0))_{T^\prime} \) を時刻 \( t=0 \) のイールド・カーブ、\( f_{T^\prime,S^\prime}(0) \) 、\( T^\prime &lt; S^\prime \) を時刻 \( t=0 \) のフォワード・レートとする。
-                        また割引債を考え \( T \in \textbf{Z}_{\geq2} \) を残存期間、\( D_\textrm{disc}^{T-1}(\bullet) \) を残存期間 \( T-1 \) の修正デュレーションとし、これに時刻 \( t=0 \) から \( t=1 \) まで投資する。
-                        さらに \( R_\textrm{inv} &gt; -1 \) をその投資における収益率の確率変数、\( R_{1,T} &gt; -1 \) を時刻 \( t=1 \) における残存期間 \( T-1 \) の割引債の複利最終利回りの確率変数とし、残存期間 \( 1 \) の割引債を安全資産とし、市場が一期間の無裁定であるとして、所与の確率測度を \( P \) 、リスク中立確率を \( Q \) とする。
-                        ただし \( E^P[R_\textrm{inv}] \) 、\( E^P[R_{1,T}] \) 、\( E^Q[R_{1,T}] \) が存在するとし、\( \textrm{RP}_{1,T}=f_{1,T}(0)-E^P[R_{1,T}] \) をリスク・プレミアムとする。
-                        また \( \phi(x):=\{[1+f_{1,T}(0)]/(1+x)\}^{T-1} \) 、\( x &gt; -1 \) として
+                        同様に \( E^Q[R_{1,T}]-E^P[R_{1,T}]=\textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}] \) である。
+                        一方で2番目の命題の第1式の両辺で \( Q \) による期待値をとれば、\( E^Q[R_\textrm{inv}]=r_{0,1}(0) \) より \( 0=D\{f_{1,T}(0)-E^Q[R_{1,T}]\}+E^Q[K_{1,T}] \) である。
+                        よって
                     </p>
                     <div class="math-container">
                         \[
-                            K_{1,T}:=\int_{f_{1,T}(0)}^{R_{1,T}}\phi^{\prime\prime}(s)(R_{1,T}-s)\,\textrm{d}s
-                        \]
-                    </div>
-                    <p>
-                        とおく。
-                        このとき、\( K_{1,T} \geq 0 \) がほとんど確実に成り立ち、
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \begin{align}
-                                E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\textrm{RP}_{1,T}+E^P[K_{1,T}]\big{\}}\\
-                                \textrm{RP}_{1,T}&amp;=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}\label{rp-decomposition}
-                            \end{align}
-                        \]
-                    </div>
-                    <p>
-                        が成り立つ。
-                        さらに \( R_{1,T} \) がほとんど確実に定数でなければ \( E^Q[K_{1,T}] &gt; 0 \) である。
-                    </p>
-                </div>
-                <div class="proof">
-                    <p>
-                        \( \phi(f_{1,T}(0))=1 \) 、\( \phi^\prime(f_{1,T}(0))=-(T-1)/[1+f_{1,T}(0)]=-D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) であるから、積分型の剰余項をもつTaylorの定理より
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \phi(R_{1,T})=1-D_\textrm{disc}^{T-1}(f_{1,T}(0))[R_{1,T}-f_{1,T}(0)]+K_{1,T}
-                        \]
-                    </div>
-                    <p>
-                        がほとんど確実に成り立つ。
-                        \( \phi^{\prime\prime} &gt; 0 \) であり、\( R_{1,T} &lt; f_{1,T}(0) \) のときも \( K_{1,T}=\int_{R_{1,T}}^{f_{1,T}(0)}\phi^{\prime\prime}(s)(s-R_{1,T})\,\textrm{d}s \) であるから、\( K_{1,T} \geq 0 \) であり、等号は \( R_{1,T}=f_{1,T}(0) \) のときに限る。
-                        最初の命題より \( 1+R_\textrm{inv}=[1+r_{0,1}(0)]\phi(R_{1,T}) \) であるから、上の式の両辺で \( P \) による期待値をとれば第1式を得る。
-                        次に資産価格付けの基本定理より \( E^Q[R_\textrm{inv}]=r_{0,1}(0) \) つまり \( E^Q[\phi(R_{1,T})]=1 \) であるから、上の式の両辺で \( Q \) による期待値をとれば
-                    </p>
-                    <div class="math-container">
-                        \[
-                            E^Q[R_{1,T}]-f_{1,T}(0)=\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
-                        \]
-                    </div>
-                    <p>
-                        を得る。
-                        一方で前の命題の証明と同様に \( E^Q[R_{1,T}]-E^P[R_{1,T}]=E^P[(\textrm{d}Q/\textrm{d}P)R_{1,T}]-E^P[\textrm{d}Q/\textrm{d}P]E^P[R_{1,T}]=\textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}] \) であるから、
-                    </p>
-                    <div class="math-container">
-                        \[
-                            \textrm{RP}_{1,T}=\{E^Q[R_{1,T}]-E^P[R_{1,T}]\}-\{E^Q[R_{1,T}]-f_{1,T}(0)\}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
+                            \textrm{RP}_{1,T}=\{E^Q[R_{1,T}]-E^P[R_{1,T}]\}-\{E^Q[R_{1,T}]-f_{1,T}(0)\}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D}
                         \]
                     </div>
                     <p>
                         つまり第2式を得る。
-                        最後に \( R_{1,T} \) がほとんど確実に定数でなければ、\( P \) のもとで \( R_{1,T} \neq f_{1,T}(0) \) となる確率は正であり、\( Q \) は \( P \) と同値であるから \( Q \) のもとでも正である。
-                        よって \( K_{1,T} \geq 0 \) と合わせて \( E^Q[K_{1,T}] &gt; 0 \) を得る。
                     </p>
                 </div>
-                <p>
-                    　上の命題の第1式は、最初の近似の命題の剰余項 \( o(\delta) \) を正確に書いたものである。
-                    実際、\( |R_{1,T}-f_{1,T}(0)| \leq \delta \) がほとんど確実に成り立つならば、\( 0 \leq K_{1,T} \leq \frac{1}{2}\sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\delta^2 \) であるから \( E^P[K_{1,T}]=o(\delta) \) となる。
-                </p>
                 <p>
                     　第2式(<a href="#rp-decomposition">\ref{rp-decomposition}</a>)によれば、リスク・プレミアム \( \textrm{RP}_{1,T} \) は2つの部分の和である。
                     第1項 \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[R_{1,T}]-E^P[R_{1,T}] \) は、将来の複利最終利回りの期待値が所与の確率測度とリスク中立確率で食い違う分であり、\( P=Q \) ならば \( 0 \) になる。
                     すなわち、リスクを負担することへの対価を複利最終利回りの単位で測った部分である。
                     債券の保有者が損失を被る複利最終利回りの高い状態で \( \textrm{d}Q/\textrm{d}P \) が大きい、つまりその状態が重く評価されるとき、この項は正になる。
-                    第2項 \( -E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) は価格関数 \( \phi \) の凸性に由来する補正であり、\( P=Q \) であっても残り、常に \( 0 \) 以下である。
+                    第2項 \( -E^Q[K_{1,T}]/D \) は価格関数 \( \phi \) の凸性に由来する補正であり、\( P=Q \) であっても残り、常に \( 0 \) 以下である。
                 </p>
                 <p>
                     　したがってリスク・プレミアム \( \textrm{RP}_{1,T} \) は、リスクへの対価そのものではなく、それから凸性の補正を控除した量である。
                     この名称は、凸性を剰余項として無視する1次の意味においてのみ正確である。
                     とくに \( \textrm{RP}_{1,T}=0 \) はリスクへの対価が \( 0 \) であることを意味しない。
-                    実際、純粋期待仮説 \( \textrm{RP}_{1,T}=0 \) のもとでは \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) &gt; 0 \) であり、リスクへの対価は正である。
-                    純粋期待仮説のもとで期待超過収益率が正になるという先の命題は、このことの言換えである。
-                    逆にリスクへの対価が \( 0 \) 、つまり \( P=Q \) であれば \( \textrm{RP}_{1,T}=-E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) &lt; 0 \) であり、フォワード・レートは将来の複利最終利回りの期待値を凸性の分だけ下回る。
+                    実際、純粋期待仮説 \( \textrm{RP}_{1,T}=0 \) のもとでは \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[K_{1,T}]/D &gt; 0 \) であり、リスクへの対価は正である。
+                    前の命題の(ii)で期待超過収益率が正になったのは、このことの言換えである。
+                    逆にリスクへの対価が \( 0 \) 、つまり \( P=Q \) であれば \( \textrm{RP}_{1,T}=-E^Q[K_{1,T}]/D &lt; 0 \) であり、フォワード・レートは将来の複利最終利回りの期待値を凸性の分だけ下回る。
                 </p>
+                <p>
+                    　さらに市場の完備性と投資家の最適化を仮定すれば、測度の変換を限界効用によって表すことができる [<a href="../市場/リスク中立確率.html#section-measure-change" style="text-decoration: none"><span class="new-word">リスク中立確率/測度変換による解釈</span></a>] 。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        上の命題の設定に加え、市場が完備であり、滑らかな効用関数 \( U \) をもつ投資家が時刻 \( t=1 \) の貨幣を表す確率変数 \( W_1 \) に対して \( E^P[U(W_1)] \) を最大化しているとする。
+                        このとき、
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \begin{align}
+                                E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=-\frac{\textrm{Cov}^P[U^\prime(W_1),R_\textrm{inv}]}{E^P[U^\prime(W_1)]}\\
+                                \textrm{RP}_{1,T}&amp;=\frac{\textrm{Cov}^P[U^\prime(W_1),R_{1,T}]}{E^P[U^\prime(W_1)]}-\frac{E^Q[K_{1,T}]}{D}
+                            \end{align}
+                        \]
+                    </div>
+                    <p>
+                        が成り立つ。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        仮定のもとでは \( \textrm{d}Q/\textrm{d}P=U^\prime(W_1)/E^P[U^\prime(W_1)] \) が成り立つので [<a href="../市場/リスク中立確率.html#section-measure-change" style="text-decoration: none"><span class="new-word">リスク中立確率/測度変換による解釈</span></a>] 、これを上の命題の2つの式に代入すればよい。
+                    </p>
+                </div>
                 <!--
                 <p>
                     　また2つの式を合わせれば
