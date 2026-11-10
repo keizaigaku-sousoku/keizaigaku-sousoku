@@ -565,7 +565,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-r_{0,T-1}(0)]+k_{1,T}\big{\}}
+                            f_{T-1,T}(0)-r_{0,1}(0)=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-r_{0,T-1}(0)]+k_{1,T}\big{\}}
                         \]
                     </div>
                     <p>
@@ -584,17 +584,17 @@
                     </div>
                     <p>
                         である。
-                        そこで \( \phi(f_{1,T}(0))=1 \) 、\( \phi^\prime(f_{1,T}(0))=-D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) が成り立つ。
+                        修正デュレーションの定義より \( D_\textrm{disc}^{T-1}(x)=(T-1)/(1+x) \) であるから [<a href="デュレーション・コンベクシティ.html#section-duration-convexity" style="text-decoration: none"><span class="new-word">デュレーション・コンベクシティ/修正デュレーション・コンベクシティ</span></a>] 、\( \phi(f_{1,T}(0))=1 \) 、\( \phi^\prime(f_{1,T}(0))=-D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) が成り立つ。
                         積分型の剰余項をもつTaylorの定理より、任意の \( x &gt; -1 \) に対して
                     </p>
                     <div class="math-container">
                         \[
-                            \phi(x)=1-D_\textrm{disc}^{T-1}(f_{1,T}(0))[x-f_{1,T}(0)]+\int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\,\textrm{d}s
+                            \phi(x)=1-D_\textrm{disc}^{T-1}(f_{1,T}(0))[x-f_{1,T}(0)]+\int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\ \textrm{d}s
                         \]
                     </div>
                     <p>
                         であるから、\( x=R_{1,T} \) 、\( x=r_{0,T-1}(0) \) を代入し、上の命題の2つの表示を用いれば2つの式を得る。
-                        また \( x &lt; f_{1,T}(0) \) のときは \( \int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\,\textrm{d}s=\int_{x}^{f_{1,T}(0)}\phi^{\prime\prime}(s)(s-x)\,\textrm{d}s \) であるから、\( \phi^{\prime\prime} &gt; 0 \) より剰余項は常に非負であり、\( 0 \) となるのは \( x=f_{1,T}(0) \) のときに限る。
+                        また \( x &lt; f_{1,T}(0) \) のときは \( \int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\ \textrm{d}s=\int_{x}^{f_{1,T}(0)}\phi^{\prime\prime}(s)(s-x)\ \textrm{d}s \) であるから、\( \phi^{\prime\prime} &gt; 0 \) より剰余項は常に非負であり、\( 0 \) となるのは \( x=f_{1,T}(0) \) のときに限る。
                     </p>
                 </div>
                 <p>
@@ -611,10 +611,15 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \begin{align}
-                                E[R_\textrm{inv}]-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\,\textrm{RP}_{1,T}+E[K_{1,T}]\big{\}}\\
-                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\{\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0)\}+k_{1,T}\big{\}}\label{rolling-rp}
-                            \end{align}
+                            E[R_\textrm{inv}]-r_{0,1}(0)=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\,\textrm{RP}_{1,T}+E[K_{1,T}]\big{\}}
+                        \]
+                    </div>
+                    <p>
+                        また
+                    </p>
+                    <div class="math-container">
+                        \[
+                            f_{T-1,T}(0)-r_{0,1}(0)=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\{\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0)\}+k_{1,T}\big{\}}\label{rolling-rp}
                         \]
                     </div>
                     <p>
@@ -634,7 +639,7 @@
                     </p>
                     <div class="math-container">
                         \[
-                            0 \leq K_{1,T} \leq \sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\bigg{|}\int_{f_{1,T}(0)}^{R_{1,T}}(R_{1,T}-s)\,\textrm{d}s\bigg{|} \leq \frac{1}{2}\sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\delta^2
+                            0 \leq K_{1,T} \leq \sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\bigg{|}\int_{f_{1,T}(0)}^{R_{1,T}}(R_{1,T}-s)\ \textrm{d}s\bigg{|} \leq \frac{1}{2}\sup_{|s-f_{1,T}(0)| \leq \delta}\phi^{\prime\prime}(s)\cdot\delta^2
                         \]
                     </div>
                     <p>
@@ -664,12 +669,15 @@
                     </p>
                     <div class="math-container">
                         \[
-                            E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=-\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}
+                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}
                         \]
                     </div>
+                    <p>
+                        また
+                    </p>
                     <div class="math-container">
                         \[
-                            \textrm{RP}_{1,T}&amp;=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}\label{rp-decomposition}
+                            \textrm{RP}_{1,T}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}\label{rp-decomposition}
                         \]
                     </div>
                     <p>
@@ -727,10 +735,15 @@
                     </p>
                     <div class="math-container">
                         \[
-                            \begin{align}
-                                E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=-\frac{\textrm{Cov}^P[U^\prime(W_1),R_\textrm{inv}]}{E^P[U^\prime(W_1)]}\\
-                                \textrm{RP}_{1,T}&amp;=\frac{\textrm{Cov}^P[U^\prime(W_1),R_{1,T}]}{E^P[U^\prime(W_1)]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
-                            \end{align}
+                            E^P[R_\textrm{inv}]-r_{0,1}(0)=-\frac{\textrm{Cov}^P[U^\prime(W_1),R_\textrm{inv}]}{E^P[U^\prime(W_1)]}
+                        \]
+                    </div>
+                    <p>
+                        また
+                    </p>
+                    <div class="math-container">
+                        \[
+                            \textrm{RP}_{1,T}=\frac{\textrm{Cov}^P[U^\prime(W_1),R_{1,T}]}{E^P[U^\prime(W_1)]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
                         \]
                     </div>
                     <p>
