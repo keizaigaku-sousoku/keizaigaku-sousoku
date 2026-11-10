@@ -544,7 +544,8 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        上の命題の設定に加え、\( D_\textrm{disc}^{T-1}(\bullet) \) を残存期間 \( T-1 \) の修正デュレーションとして \( D:=D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) とし、
+                        上の命題の設定に加え、時刻 \( t=1 \) における残存期間 \( T-1 \) の割引債の債券価格を複利最終利回り \( x \) の関数とみなし、その修正デュレーションを \( D_\textrm{disc}^{T-1}(x) \) 、\( x &gt; -1 \) とする。
+                        また
                     </p>
                     <div class="math-container">
                         \[
@@ -558,8 +559,8 @@
                     <div class="math-container">
                         \[
                             \begin{align}
-                                R_\textrm{inv}-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D[f_{1,T}(0)-R_{1,T}]+K_{1,T}\big{\}}\\
-                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D[f_{1,T}(0)-r_{0,T-1}(0)]+k_{1,T}\big{\}}
+                                R_\textrm{inv}-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-R_{1,T}]+K_{1,T}\big{\}}\\
+                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))[f_{1,T}(0)-r_{0,T-1}(0)]+k_{1,T}\big{\}}
                             \end{align}
                         \]
                     </div>
@@ -578,12 +579,22 @@
                         \]
                     </div>
                     <p>
-                        であり、\( D=(T-1)/[1+f_{1,T}(0)] \) ゆえ \( \phi(f_{1,T}(0))=1 \) 、\( \phi^\prime(f_{1,T}(0))=-D \) である。
+                        である。
+                        一方で償還価格を \( F \) とすれば、残存期間 \( T-1 \) の割引債の債券価格は \( F/(1+x)^{T-1} \) であり、クーポンが \( 0 \) であるから修正デュレーションの定義より
+                    </p>
+                    <div class="math-container">
+                        \[
+                            D_\textrm{disc}^{T-1}(x)=\frac{(T-1)F/(1+x)^{T-1}}{F/(1+x)^{T-1}}\cdot\frac{1}{1+x}=\frac{T-1}{1+x}
+                        \]
+                    </div>
+                    <p>
+                        である [<a href="デュレーション・コンベクシティ.html#section-duration-convexity" style="text-decoration: none"><span class="new-word">デュレーション・コンベクシティ/修正デュレーション・コンベクシティ</span></a>] 。
+                        よって \( \phi(f_{1,T}(0))=1 \) 、\( \phi^\prime(f_{1,T}(0))=-D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) である。
                         よって積分型の剰余項をもつTaylorの定理より、任意の \( x &gt; -1 \) に対して
                     </p>
                     <div class="math-container">
                         \[
-                            \phi(x)=1-D[x-f_{1,T}(0)]+\int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\,\textrm{d}s
+                            \phi(x)=1-D_\textrm{disc}^{T-1}(f_{1,T}(0))[x-f_{1,T}(0)]+\int_{f_{1,T}(0)}^{x}\phi^{\prime\prime}(s)(x-s)\,\textrm{d}s
                         \]
                     </div>
                     <p>
@@ -607,8 +618,8 @@
                     <div class="math-container">
                         \[
                             \begin{align}
-                                E[R_\textrm{inv}]-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D\,\textrm{RP}_{1,T}+E[K_{1,T}]\big{\}}\\
-                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D\{\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0)\}+k_{1,T}\big{\}}\label{rolling-rp}
+                                E[R_\textrm{inv}]-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\,\textrm{RP}_{1,T}+E[K_{1,T}]\big{\}}\\
+                                f_{T-1,T}(0)-r_{0,1}(0)&amp;=[1+r_{0,1}(0)]\big{\{}D_\textrm{disc}^{T-1}(f_{1,T}(0))\{\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0)\}+k_{1,T}\big{\}}\label{rolling-rp}
                             \end{align}
                         \]
                     </div>
@@ -623,7 +634,7 @@
                 </div>
                 <div class="proof">
                     <p>
-                        上の命題の証明より \( K_{1,T}=\phi(R_{1,T})-1+D[R_{1,T}-f_{1,T}(0)] \) であり、最初の命題より \( \phi(R_{1,T})=(1+R_\textrm{inv})/[1+r_{0,1}(0)] \) であるから、\( E[K_{1,T}] \) は存在する。
+                        上の命題の証明より \( K_{1,T}=\phi(R_{1,T})-1+D_\textrm{disc}^{T-1}(f_{1,T}(0))[R_{1,T}-f_{1,T}(0)] \) であり、最初の命題より \( \phi(R_{1,T})=(1+R_\textrm{inv})/[1+r_{0,1}(0)] \) であるから、\( E[K_{1,T}] \) は存在する。
                         上の命題の第1式の両辺で期待値をとり、\( E[f_{1,T}(0)-R_{1,T}]=\textrm{RP}_{1,T} \) を用いて第1式を得る。
                         第2式は、上の命題の第2式に \( f_{1,T}(0)-r_{0,T-1}(0)=\textrm{RP}_{1,T}+E[R_{1,T}]-r_{0,T-1}(0) \) を代入すればよい。<br>
                         (i) \( \delta &lt; 1+f_{1,T}(0) \) としてよい。
@@ -663,7 +674,7 @@
                         \[
                             \begin{align}
                                 E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=-\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_\textrm{inv}\bigg{]}\\
-                                \textrm{RP}_{1,T}&amp;=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D}\label{rp-decomposition}
+                                \textrm{RP}_{1,T}&amp;=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}\label{rp-decomposition}
                             \end{align}
                         \]
                     </div>
@@ -684,12 +695,12 @@
                     <p>
                         つまり第1式を得る。
                         同様に \( E^Q[R_{1,T}]-E^P[R_{1,T}]=\textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}] \) である。
-                        一方で2番目の命題の第1式の両辺で \( Q \) による期待値をとれば、\( E^Q[R_\textrm{inv}]=r_{0,1}(0) \) より \( 0=D\{f_{1,T}(0)-E^Q[R_{1,T}]\}+E^Q[K_{1,T}] \) である。
+                        一方で2番目の命題の第1式の両辺で \( Q \) による期待値をとれば、\( E^Q[R_\textrm{inv}]=r_{0,1}(0) \) より \( 0=D_\textrm{disc}^{T-1}(f_{1,T}(0))\{f_{1,T}(0)-E^Q[R_{1,T}]\}+E^Q[K_{1,T}] \) である。
                         よって
                     </p>
                     <div class="math-container">
                         \[
-                            \textrm{RP}_{1,T}=\{E^Q[R_{1,T}]-E^P[R_{1,T}]\}-\{E^Q[R_{1,T}]-f_{1,T}(0)\}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D}
+                            \textrm{RP}_{1,T}=\{E^Q[R_{1,T}]-E^P[R_{1,T}]\}-\{E^Q[R_{1,T}]-f_{1,T}(0)\}=\textrm{Cov}^P\bigg{[}\frac{\textrm{d}Q}{\textrm{d}P},R_{1,T}\bigg{]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
                         \]
                     </div>
                     <p>
@@ -701,15 +712,15 @@
                     第1項 \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[R_{1,T}]-E^P[R_{1,T}] \) は、将来の複利最終利回りの期待値が所与の確率測度とリスク中立確率で食い違う分であり、\( P=Q \) ならば \( 0 \) になる。
                     すなわち、リスクを負担することへの対価を複利最終利回りの単位で測った部分である。
                     債券の保有者が損失を被る複利最終利回りの高い状態で \( \textrm{d}Q/\textrm{d}P \) が大きい、つまりその状態が重く評価されるとき、この項は正になる。
-                    第2項 \( -E^Q[K_{1,T}]/D \) は価格関数 \( \phi \) の凸性に由来する補正であり、\( P=Q \) であっても残り、常に \( 0 \) 以下である。
+                    第2項 \( -E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) \) は価格関数 \( \phi \) の凸性に由来する補正であり、\( P=Q \) であっても残り、常に \( 0 \) 以下である。
                 </p>
                 <p>
                     　したがってリスク・プレミアム \( \textrm{RP}_{1,T} \) は、リスクへの対価そのものではなく、それから凸性の補正を控除した量である。
                     この名称は、凸性を剰余項として無視する1次の意味においてのみ正確である。
                     とくに \( \textrm{RP}_{1,T}=0 \) はリスクへの対価が \( 0 \) であることを意味しない。
-                    実際、純粋期待仮説 \( \textrm{RP}_{1,T}=0 \) のもとでは \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[K_{1,T}]/D &gt; 0 \) であり、リスクへの対価は正である。
+                    実際、純粋期待仮説 \( \textrm{RP}_{1,T}=0 \) のもとでは \( \textrm{Cov}^P[\textrm{d}Q/\textrm{d}P,R_{1,T}]=E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) &gt; 0 \) であり、リスクへの対価は正である。
                     前の命題の(ii)で期待超過収益率が正になったのは、このことの言換えである。
-                    逆にリスクへの対価が \( 0 \) 、つまり \( P=Q \) であれば \( \textrm{RP}_{1,T}=-E^Q[K_{1,T}]/D &lt; 0 \) であり、フォワード・レートは将来の複利最終利回りの期待値を凸性の分だけ下回る。
+                    逆にリスクへの対価が \( 0 \) 、つまり \( P=Q \) であれば \( \textrm{RP}_{1,T}=-E^Q[K_{1,T}]/D_\textrm{disc}^{T-1}(f_{1,T}(0)) &lt; 0 \) であり、フォワード・レートは将来の複利最終利回りの期待値を凸性の分だけ下回る。
                 </p>
                 <p>
                     　さらに市場の完備性と投資家の最適化を仮定すれば、測度の変換を限界効用によって表すことができる [<a href="../市場/リスク中立確率.html#section-measure-change" style="text-decoration: none"><span class="new-word">リスク中立確率/測度変換による解釈</span></a>] 。
@@ -724,7 +735,7 @@
                         \[
                             \begin{align}
                                 E^P[R_\textrm{inv}]-r_{0,1}(0)&amp;=-\frac{\textrm{Cov}^P[U^\prime(W_1),R_\textrm{inv}]}{E^P[U^\prime(W_1)]}\\
-                                \textrm{RP}_{1,T}&amp;=\frac{\textrm{Cov}^P[U^\prime(W_1),R_{1,T}]}{E^P[U^\prime(W_1)]}-\frac{E^Q[K_{1,T}]}{D}
+                                \textrm{RP}_{1,T}&amp;=\frac{\textrm{Cov}^P[U^\prime(W_1),R_{1,T}]}{E^P[U^\prime(W_1)]}-\frac{E^Q[K_{1,T}]}{D_\textrm{disc}^{T-1}(f_{1,T}(0))}
                             \end{align}
                         \]
                     </div>
