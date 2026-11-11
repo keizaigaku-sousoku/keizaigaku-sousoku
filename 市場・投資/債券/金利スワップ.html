@@ -112,18 +112,18 @@
                     　固定利付債の債券価格は、割引債の債券価格の和で表せる。
                     残存期間 \( t \) のスポット・レートを \( r_{0,t} \) とし [<a href="イールド・カーブ.html#section-yield-curve" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの定義</span></a>] 、
                     \[
-                        D_t:=\frac{1}{(1+r_{0,t})^t} &gt; 0,\ \ \ D_0:=1 \label{discount-factor}
+                        d_t:=\frac{1}{(1+r_{0,t})^t} &gt; 0,\ \ \ d_0:=1 \label{discount-factor}
                     \]
                     を定め、これを<span class="new-word">ディスカウント・ファクター（discount factor）</span>と呼ぶ。
-                    \( D_t \) は償還価格 \( 1 \) 、残存期間 \( t \) の割引債の債券価格に他ならない。
+                    \( d_t \) は償還価格 \( 1 \) 、残存期間 \( t \) の割引債の債券価格に他ならない。
                     固定利付債の各クーポンと償還をそれぞれ同じ時刻に同じ貨幣を受け取る割引債に分解すれば、一物一価の法則により、償還価格 \( N \) 、クーポン・レート \( K \) の固定利付債の債券価格は
                     \[
-                        P_\textrm{fix}(K)=KN\sum_{t=1}^TD_t+ND_T \label{fixed-price}
+                        P_\textrm{fix}(K)=KN\sum_{t=1}^Td_t+Nd_T \label{fixed-price}
                     \]
                     である。
                     頻出の和を
                     \[
-                        A_T:=\sum_{t=1}^TD_t &gt; 0 \label{annuity}
+                        A_T:=\sum_{t=1}^Td_t &gt; 0 \label{annuity}
                     \]
                     とおき、これを<span class="new-word">アニュイティ（annuity）</span>と呼ぶ。
                     アニュイティは各時刻 \( t=1,\dots,T \) に \( 1 \) ずつ受け取る契約の価値である。
@@ -135,17 +135,17 @@
                         上の命題の設定に加え、時刻 \( t=0 \) においてスポット・レート \( r_{0,1},\dots,r_{0,T} \) が与えられているとする。
                         このとき、時刻 \( t=0 \) において想定元本 \( N \) 、固定レート \( K \) 、テナー \( T \) の金利スワップの価値は、ペイヤーにとって
                         \[
-                            V_\textrm{pay}=N(1-D_T-KA_T) \label{payer-value}
+                            V_\textrm{pay}=N(1-d_T-KA_T) \label{payer-value}
                         \]
                         であり、レシーバーにとって \( V_\textrm{rec}=-V_\textrm{pay} \) である。
-                        さらに変動レグの価値は \( N(1-D_T) \) である。
+                        さらに変動レグの価値は \( N(1-d_T) \) である。
                     </p>
                 </div>
                 <div class="proof">
                     <p>
-                        上の命題より変動利付債の債券価格は \( N \) であり、式(<a href="#fixed-price">\ref{fixed-price}</a>)と一物一価の法則より \( V_\textrm{pay}=N-P_\textrm{fix}(K)=N(1-D_T-KA_T) \) を得る。
+                        上の命題より変動利付債の債券価格は \( N \) であり、式(<a href="#fixed-price">\ref{fixed-price}</a>)と一物一価の法則より \( V_\textrm{pay}=N-P_\textrm{fix}(K)=N(1-d_T-KA_T) \) を得る。
                         レシーバーの受け渡しはペイヤーの受け渡しの符号を反転したものであるから、\( V_\textrm{rec}=-V_\textrm{pay} \) である。
-                        また変動レグの受け渡しは変動利付債から償還を除いたものであり、償還の価値は \( ND_T \) であるから、変動レグの価値は \( N-ND_T \) である。
+                        また変動レグの受け渡しは変動利付債から償還を除いたものであり、償還の価値は \( Nd_T \) であるから、変動レグの価値は \( N-Nd_T \) である。
                     </p>
                 </div>
             </section>
@@ -156,7 +156,7 @@
                     価値が \( 0 \) でなければ、価値が正である側は契約にあたって相手に貨幣を渡さなければ釣り合わないからである。
                     式(<a href="#payer-value">\ref{payer-value}</a>)において \( V_\textrm{pay}=0 \) を満たす固定レート
                     \[
-                        S_T:=\frac{1-D_T}{A_T} \label{swap-rate}
+                        S_T:=\frac{1-d_T}{A_T} \label{swap-rate}
                     \]
                     を<span class="new-word">スワップ・レート（swap rate）</span>と呼ぶ。
                     またテナーごとのスワップ・レートの列 \( (S_T)_T \) を<span class="new-word">スワップ・カーブ（swap curve）</span>と呼ぶ。
@@ -168,7 +168,7 @@
                         このとき、スワップ・レート \( S_T \) は、これらのスポット・レートに整合する債券価格をもつ残存期間 \( T \) の固定利付債のパー・イールドに等しい。
                         さらに \( f_{0,1}:=r_{0,1} \) および \( t \geq 2 \) に対してフォワード・レートを \( f_{t-1,t} \) とすれば
                         \[
-                            S_T=\sum_{t=1}^Tw_tf_{t-1,t},\ \ \ w_t:=\frac{D_t}{A_T} \label{swap-forward}
+                            S_T=\sum_{t=1}^Tw_tf_{t-1,t},\ \ \ w_t:=\frac{d_t}{A_T} \label{swap-forward}
                         \]
                         が成り立つ。
                     </p>
@@ -177,22 +177,22 @@
                     <p>
                         式(<a href="#fixed-price">\ref{fixed-price}</a>)より、クーポン・レート \( c \) の固定利付債がパー債であることは
                         \[
-                            cNA_T+ND_T=N \Longleftrightarrow c=\frac{1-D_T}{A_T}=S_T
+                            cNA_T+Nd_T=N \Longleftrightarrow c=\frac{1-d_T}{A_T}=S_T
                         \]
                         に同値である。
                         パー債ではクーポン・レートと複利最終利回りが一致するので [<a href="債券の基礎.html#section-par" style="text-decoration: none"><span class="new-word">債券の基礎/パー債</span></a>] 、当パー・イールドは \( S_T \) に等しい。
-                        次にフォワード・レートの定義より \( (1+r_{0,t})^t=(1+r_{0,t-1})^{t-1}(1+f_{t-1,t}) \) であるから [<a href="イールド・カーブ.html#section-yield-curve" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの定義</span></a>] 、\( D_{t-1}=(1+f_{t-1,t})D_t \) つまり
+                        次にフォワード・レートの定義より \( (1+r_{0,t})^t=(1+r_{0,t-1})^{t-1}(1+f_{t-1,t}) \) であるから [<a href="イールド・カーブ.html#section-yield-curve" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの定義</span></a>] 、\( d_{t-1}=(1+f_{t-1,t})d_t \) つまり
                         \[
-                            f_{t-1,t}D_t=D_{t-1}-D_t
+                            f_{t-1,t}d_t=d_{t-1}-d_t
                         \]
                         が \( t=1,\dots,T \) で成り立つ。
-                        \( t=1,\dots,T \) について足し合わせれば \( \sum_{t=1}^Tf_{t-1,t}D_t=D_0-D_T=1-D_T \) であり、両辺を \( A_T \) で割れば第2の主張を得る。
+                        \( t=1,\dots,T \) について足し合わせれば \( \sum_{t=1}^Tf_{t-1,t}d_t=d_0-d_T=1-d_T \) であり、両辺を \( A_T \) で割れば第2の主張を得る。
                     </p>
                 </div>
                 <p>
                     　スワップ・レートは、ディスカウント・ファクターを重みとしたフォワード・レートの加重平均である。
                     重み \( w_t \) は正で和が \( 1 \) であるから、スワップ・レートはつねにフォワード・レート \( f_{0,1},\dots,f_{T-1,T} \) の最小値と最大値の間にある。
-                    また上の証明は、変動レグの価値 \( N(1-D_T) \) が \( N\sum_{t=1}^Tf_{t-1,t}D_t \) に等しいことも示している。
+                    また上の証明は、変動レグの価値 \( N(1-d_T) \) が \( N\sum_{t=1}^Tf_{t-1,t}d_t \) に等しいことも示している。
                     つまり変動レグの価値は、確率的な参照金利 \( R_{t-1,t} \) をフォワード・レート \( f_{t-1,t} \) で置換えて割り引いた値に一致する。
                 </p>
                 <p>
@@ -233,11 +233,11 @@
                         スワップ・レート \( S_1,\dots,S_T \) が与えられ、\( A_0:=0 \) とおく。
                         このとき、\( t=1,\dots,T \) に対して
                         \[
-                            D_t=\frac{1-S_tA_{t-1}}{1+S_t} \label{bootstrap}
+                            d_t=\frac{1-S_tA_{t-1}}{1+S_t} \label{bootstrap}
                         \]
                         また
                         \[
-                            A_t=A_{t-1}+D_t
+                            A_t=A_{t-1}+d_t
                         \]
                         が成り立つ。
                     </p>
@@ -245,8 +245,8 @@
                 <div class="proof">
                     <p>
                         第2式はアニュイティの定義より明らかである。
-                        式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( S_tA_t=1-D_t \) であり、第2式を代入すれば \( S_tA_{t-1}+S_tD_t=1-D_t \) である。
-                        これを \( D_t \) について解けば第1式を得る。
+                        式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( S_tA_t=1-d_t \) であり、第2式を代入すれば \( S_tA_{t-1}+S_td_t=1-d_t \) である。
+                        これを \( d_t \) について解けば第1式を得る。
                     </p>
                 </div>
                 <p>
@@ -265,7 +265,7 @@
                         このとき、ディスカウント・ファクター、フォワード・レート、アニュイティ、スワップ・レートは以下になる。
                         \[
                             \begin{array}{c|cccc}
-                                t &amp; D_t &amp; f_{t-1,t} &amp; A_t &amp; S_t\\ \hline
+                                t &amp; d_t &amp; f_{t-1,t} &amp; A_t &amp; S_t\\ \hline
                                 1 &amp; 0.99404 &amp; 0.600\% &amp; 0.99404 &amp; 0.600\%\\
                                 2 &amp; 0.98419 &amp; 1.000\% &amp; 1.97823 &amp; 0.799\%\\
                                 3 &amp; 0.97059 &amp; 1.401\% &amp; 2.94882 &amp; 0.997\%\\
@@ -299,8 +299,8 @@
                 </div>
                 <div class="proof">
                     <p>
-                        当時刻のディスカウント・ファクターを \( D_1^\prime,\dots,D_n^\prime \) とおく。
-                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( V_\textrm{pay}=N(1-D_n^\prime-KA^\prime) \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-D_n^\prime=S^\prime A^\prime \) であるから、\( V_\textrm{pay}=N(S^\prime A^\prime-KA^\prime) \) を得る。
+                        当時刻のディスカウント・ファクターを \( d_1^\prime,\dots,d_n^\prime \) とおく。
+                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( V_\textrm{pay}=N(1-d_n^\prime-KA^\prime) \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_n^\prime=S^\prime A^\prime \) であるから、\( V_\textrm{pay}=N(S^\prime A^\prime-KA^\prime) \) を得る。
                     </p>
                 </div>
                 <p>
@@ -396,7 +396,7 @@
                         上の命題の設定に加え、\( K=S_T \) とし、\( t=2,\dots,T \) に対して時刻 \( t=0 \) から \( t=1 \) まで満期 \( t \) の割引債に投資したときの収益率を \( R^{(t)} \) 、\( R^{(1)}:=r_{0,1} \) とする。
                         また
                         \[
-                            \pi_t:=KD_t \ \ (t=1,\dots,T-1),\ \ \ \pi_T:=(1+K)D_T
+                            \pi_t:=Kd_t \ \ (t=1,\dots,T-1),\ \ \ \pi_T:=(1+K)d_T
                         \]
                         とおく。
                         このとき、\( \sum_{t=1}^T\pi_t=1 \) であり、
@@ -408,11 +408,11 @@
                 </div>
                 <div class="proof">
                     <p>
-                        \( K=S_T \) より \( \sum_{t=1}^T\pi_t=KA_T+D_T=1 \) である。
-                        時刻 \( t=1 \) における満期 \( t \geq 2 \) の割引債の債券価格は \( 1/(1+R_{1,t})^{t-1}=(1+R^{(t)})D_t \) であるから、\( A_{1,T}=\sum_{t=2}^T(1+R^{(t)})D_t \) かつ \( 1/(1+R_{1,T})^{T-1}=(1+R^{(T)})D_T \) である。
-                        式(<a href="#swap-rate">\ref{swap-rate}</a>)を時刻 \( t=1 \) に適用すれば \( S_{1,T}A_{1,T}=1-(1+R^{(T)})D_T \) であるから、式(<a href="#receiver-gain">\ref{receiver-gain}</a>)より
+                        \( K=S_T \) より \( \sum_{t=1}^T\pi_t=KA_T+d_T=1 \) である。
+                        時刻 \( t=1 \) における満期 \( t \geq 2 \) の割引債の債券価格は \( 1/(1+R_{1,t})^{t-1}=(1+R^{(t)})d_t \) であるから、\( A_{1,T}=\sum_{t=2}^T(1+R^{(t)})d_t \) かつ \( 1/(1+R_{1,T})^{T-1}=(1+R^{(T)})d_T \) である。
+                        式(<a href="#swap-rate">\ref{swap-rate}</a>)を時刻 \( t=1 \) に適用すれば \( S_{1,T}A_{1,T}=1-(1+R^{(T)})d_T \) であるから、式(<a href="#receiver-gain">\ref{receiver-gain}</a>)より
                         \[
-                            \frac{G_1}{N}=K+KA_{1,T}+(1+R^{(T)})D_T-(1+r_{0,1})=\sum_{t=1}^T\pi_t(1+R^{(t)})-(1+r_{0,1})
+                            \frac{G_1}{N}=K+KA_{1,T}+(1+R^{(T)})d_T-(1+r_{0,1})=\sum_{t=1}^T\pi_t(1+R^{(t)})-(1+r_{0,1})
                         \]
                         である。
                         \( \sum_{t=1}^T\pi_t=1 \) と \( R^{(1)}=r_{0,1} \) を用いれば与式を得る。
