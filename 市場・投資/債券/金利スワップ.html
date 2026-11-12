@@ -73,8 +73,8 @@
                 <h4>債券による複製</h4>
                 <p>
                     　金利スワップは契約であるから、その価格を議論できる [<a href="../市場/契約.html#section-contract" style="text-decoration: none"><span class="new-word">契約/約束・契約</span></a>] 。
-                    ある時刻にペイヤーの立場を得る市場参加者が相手に渡す貨幣（負であれば受取る貨幣）を \( V_\textrm{pay} \) とおく。
-                    同様にレシーバーの立場を得る市場参加者が相手に渡す貨幣（負であれば受取る貨幣）を \( V_\textrm{rec} \) とおく
+                    ある時刻にペイヤーの立場を得る市場参加者が相手に渡す貨幣（負であれば受取る貨幣）を \( P_\textrm{pay} \) とおく。
+                    同様にレシーバーの立場を得る市場参加者が相手に渡す貨幣（負であれば受取る貨幣）を \( P_\textrm{rec} \) とおく。
                     債券価格と同じく、これらの価格は取引の結果として定まる。
                 </p>
                 <p>
@@ -143,16 +143,16 @@
                         上の命題の設定に加え、時刻 \( t=0 \) において満期 \( t=1,\dots,T \) の割引債が債券価格 \( d_1,\dots,d_T \) で取引されているとする。
                         このとき、時刻 \( t=0 \) において想定元本 \( N \) 、固定レート \( K \) 、テナー \( T \) の金利スワップのペイヤーの立場の価格は
                         \[
-                            V_\textrm{pay}=N(1-d_T-KA_T) \label{payer-value}
+                            P_\textrm{pay}=N(1-d_T-KA_T) \label{payer-value}
                         \]
-                        であり、レシーバーの立場の価格は \( V_\textrm{rec}=-V_\textrm{pay} \) である。
+                        であり、レシーバーの立場の価格は \( P_\textrm{rec}=-P_\textrm{pay} \) である。
                         さらに変動レグのみを受取る契約の価格は \( N(1-d_T) \) である。
                     </p>
                 </div>
                 <div class="proof">
                     <p>
-                        上の命題より変動利付債の債券価格は \( N \) であり、式(<a href="#fixed-price">\ref{fixed-price}</a>)と一物一価の法則より \( V_\textrm{pay}=N-P_\textrm{fix}(K)=N(1-d_T-KA_T) \) を得る。
-                        レシーバーの受渡しはペイヤーの受渡しの符号を反転したものであるから、\( V_\textrm{rec}=-V_\textrm{pay} \) である。
+                        上の命題より変動利付債の債券価格は \( N \) であり、式(<a href="#fixed-price">\ref{fixed-price}</a>)と一物一価の法則より \( P_\textrm{pay}=N-P_\textrm{fix}(K)=N(1-d_T-KA_T) \) を得る。
+                        レシーバーの受渡しはペイヤーの受渡しの符号を反転したものであるから、\( P_\textrm{rec}=-P_\textrm{pay} \) である。
                         また変動レグの受渡しは変動利付債から償還を除いたものであり、償還は債券価格 \( Nd_T \) の割引債で複製できるので、変動レグのみを受取る契約の価格は \( N-Nd_T \) である。
                     </p>
                 </div>
@@ -302,7 +302,7 @@
                         またその時刻において、残存期間 \( n \) の金利スワップがスワップ・レート \( S^\prime \) で取引され、満期までの割引債の債券価格の和が \( A^\prime \) であり、一物一価の法則が成り立つとする。
                         このとき、当金利スワップのペイヤーの立場の価格は
                         \[
-                            V_\textrm{pay}=N(S^\prime-K)A^\prime \label{mtm}
+                            P_\textrm{pay}=N(S^\prime-K)A^\prime \label{mtm}
                         \]
                         である。
                     </p>
@@ -310,7 +310,7 @@
                 <div class="proof">
                     <p>
                         当時刻における満期までの割引債の債券価格を \( d_1^\prime,\dots,d_n^\prime \) とおく。
-                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( V_\textrm{pay}=N(1-d_n^\prime-KA^\prime) \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_n^\prime=S^\prime A^\prime \) であるから、\( V_\textrm{pay}=N(S^\prime A^\prime-KA^\prime) \) を得る。
+                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( P_\textrm{pay}=N(1-d_n^\prime-KA^\prime) \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_n^\prime=S^\prime A^\prime \) であるから、\( P_\textrm{pay}=N(S^\prime A^\prime-KA^\prime) \) を得る。
                     </p>
                 </div>
                 <p>
@@ -323,7 +323,7 @@
                     　価格のスワップ・レートに対する感応度は、契約直後においてアニュイティで定まる。
                     スワップ・レートが \( S^\prime \) から \( S^\prime+\Delta S \) に変化し、それに伴いアニュイティが \( A^\prime \) から \( A^\prime+\Delta A \) に変化したとすれば、式(<a href="#mtm">\ref{mtm}</a>)より価格の変化は
                     \[
-                        \Delta V_\textrm{pay}=NA^\prime\Delta S+N(S^\prime-K+\Delta S)\Delta A
+                        \Delta P_\textrm{pay}=NA^\prime\Delta S+N(S^\prime-K+\Delta S)\Delta A
                     \]
                     である。
                     とくに契約直後 \( S^\prime=K \) であれば、\( \Delta S \rightarrow 0 \) で \( \Delta A \rightarrow 0 \) となる限り第2項は \( o(\Delta S) \) であり、価格の変化の1次の項は \( NA^\prime\Delta S \) である。
