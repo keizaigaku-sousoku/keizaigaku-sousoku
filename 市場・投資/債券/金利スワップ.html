@@ -421,26 +421,21 @@
                     <p>
                         上の命題の設定に加え、
                         \[
-                            \Delta S_\textrm{RD}:=S_{T-1}(0)-S_T(0),\ \ \ \Delta S_\textrm{CC}:=S_{T-1}(1)-S_{T-1}(0)
+                            \Delta S_\textrm{RD}:=S_{T-1}(0)-S_T(0),\ \ \ \Delta S_\textrm{CC}:=S_{T-1}(1)-S_{T-1}(0),\ \ \ \textrm{CE}:=-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})[A_{T-1}(1)-A_{T-1}(0)]
                         \]
                         とする。
                         このとき、
                         \[
-                            G_1=N\big{\{}[S_T(0)-r_{0,1}(0)]-A_{T-1}(0)\Delta S_\textrm{RD}-A_{T-1}(0)\Delta S_\textrm{CC}+\textrm{CE}\big{\}} \label{receiver-decomposition}
+                            \frac{G_1}{N}=S_T(0)-r_{0,1}(0)-A_{T-1}(0)\Delta S_\textrm{RD}-A_{T-1}(0)\Delta S_\textrm{CC}+\textrm{CE} \label{receiver-decomposition}
                         \]
                         が成り立つ。
-                        ただし
-                        \[
-                            \textrm{CE}:=-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})[A_{T-1}(1)-A_{T-1}(0)]
-                        \]
-                        である。
                     </p>
                 </div>
                 <div class="proof">
                     <p>
                         \( \Delta S_\textrm{RD}+\Delta S_\textrm{CC}=S_{T-1}(1)-S_T(0) \) であるから、上の命題の第2式より
                         \[
-                            \frac{G_1}{N}=[S_T(0)-r_{0,1}(0)]-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})A_{T-1}(1)
+                            \frac{G_1}{N}=S_T(0)-r_{0,1}(0)-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})A_{T-1}(1)
                         \]
                         である。
                         \( A_{T-1}(1)=A_{T-1}(0)+[A_{T-1}(1)-A_{T-1}(0)] \) を代入すれば与式を得る。
