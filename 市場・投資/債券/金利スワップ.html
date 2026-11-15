@@ -343,14 +343,14 @@
                         \Delta P_\textrm{pay}(t)=NA_{T-t}(t)\Delta S+o(\Delta S)
                     \]
                     である。
-                    実務ではスワップ・レートが \( 0.01\% \) 変化したときの1次の項
+                    実務ではスワップ・レートが \( 1\textrm{bp}:=0.01\% \) 変化したときの1次の項
                     \[
-                        \textrm{PV01}:=0.0001\cdot NA_{T-t}(t) \label{pv01}
+                        \textrm{PV01}:=1\textrm{bp}\cdot NA_{T-t}(t) \label{pv01}
                     \]
                     を<span class="new-word">PV01（present value of a basis point）</span>と呼ぶ。
                     すると
                     \[
-                        \Delta P_\textrm{pay}(t)=\textrm{PV01}\cdot\frac{\Delta S}{0.0001}+o(\Delta S)
+                        \Delta P_\textrm{pay}(t)=\textrm{PV01}\cdot\frac{\Delta S}{1\textrm{bp}}+o(\Delta S)
                     \]
                     であり、扱いやすいスケールで簡便に価格変化を計算するときに重宝される。
                 </p>
