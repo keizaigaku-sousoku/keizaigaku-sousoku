@@ -304,24 +304,23 @@
                     　金利スワップの価格は契約時に \( 0 \) であるが、時間が経てば一般には \( 0 \) でなくなる。
                     契約時の固定レート \( K \) は不変である一方、同じ残存期間の金利スワップのスワップ・レートは取引によって時々刻々と変化するからである。
                     契約済みの金利スワップの価格は、その時点で取引されるスワップ・レートとの差によって表される。
-                    時刻 \( t \) においても同様に、残存期間 \( n \) のディスカウント・ファクター、アニュイティ、スワップ・レートを \( d_n(t) \) 、\( A_n(t) \) 、\( S_n(t) \) とし、金利スワップの価格を \( P_\textrm{pay}(t) \) 、\( P_\textrm{rec}(t) \) とおく。
+                    時刻 \( t \) においても同様に、残存期間 \( 1,2,\dots \) のディスカウント・ファクターを \( d_1(t),d_2(t),\dots \) 、テナー \( T-t \) のアニュイティとスワップ・レートを \( A_{T-t}(t) \) 、\( S_{T-t}(t) \) とし、金利スワップの価格を \( P_\textrm{pay}(t) \) 、\( P_\textrm{rec}(t) \) とおく。
                 </p>
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        想定元本 \( N \) 、固定レート \( K \) の金利スワップを考える。
-                        ある変動レグの受渡直後の時刻 \( t \) （契約時 \( t=0 \) を含む）において残りの受渡が \( n \in \textbf{Z}_{\geq1} \) 回であるとする。
-                        またその時刻において、残存期間 \( n \) の金利スワップがスワップ・レート \( S_n(t) \) で取引され、満期までの割引債の債券価格の和が \( A_n(t) \) であり、一物一価の法則が成り立つとする。
+                        想定元本 \( N \) 、固定レート \( K \) 、テナー \( T \) の金利スワップを時刻 \( t=0 \) に契約したとし、変動レグの受渡直後の時刻 \( t \in \{0,\dots,T-1\} \) を考える。
+                        その時刻において、テナー \( T-t \) の金利スワップがスワップ・レート \( S_{T-t}(t) \) で取引され、満期までの割引債の債券価格の和が \( A_{T-t}(t) \) であり、一物一価の法則が成り立つとする。
                         このとき、当金利スワップについて
                         \[
-                            P_\textrm{pay}(t)=N[S_n(t)-K]A_n(t) \label{mtm}
+                            P_\textrm{pay}(t)=N[S_{T-t}(t)-K]A_{T-t}(t) \label{mtm}
                         \]
                         である。
                     </p>
                 </div>
                 <div class="proof">
                     <p>
-                                                当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( P_\textrm{pay}(t)=N[1-d_n(t)-KA_n(t)] \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_n(t)=S_n(t)A_n(t) \) であるから、\( P_\textrm{pay}(t)=N[S_n(t)A_n(t)-KA_n(t)] \) を得る。
+                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( P_\textrm{pay}(t)=N[1-d_{T-t}(t)-KA_{T-t}(t)] \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_{T-t}(t)=S_{T-t}(t)A_{T-t}(t) \) であるから、\( P_\textrm{pay}(t)=N[S_{T-t}(t)A_{T-t}(t)-KA_{T-t}(t)] \) を得る。
                     </p>
                 </div>
                 <p>
@@ -332,15 +331,15 @@
                 </p>
                 <p>
                     　価格のスワップ・レートに対する感応度は、契約直後においてアニュイティで定まる。
-                    スワップ・レートが \( S_n(t) \) から \( S_n(t)+\Delta S \) に変化し、それに伴いアニュイティが \( A_n(t) \) から \( A_n(t)+\Delta A \) に変化したとすれば、式(<a href="#mtm">\ref{mtm}</a>)より価格の変化は
+                    スワップ・レートが \( S_{T-t}(t) \) から \( S_{T-t}(t)+\Delta S \) に変化し、それに伴いアニュイティが \( A_{T-t}(t) \) から \( A_{T-t}(t)+\Delta A \) に変化したとすれば、式(<a href="#mtm">\ref{mtm}</a>)より価格の変化は
                     \[
-                        \Delta P_\textrm{pay}(t)=NA_n(t)\Delta S+N[S_n(t)-K+\Delta S]\Delta A
+                        \Delta P_\textrm{pay}(t)=NA_{T-t}(t)\Delta S+N[S_{T-t}(t)-K+\Delta S]\Delta A
                     \]
                     である。
-                    とくに契約直後 \( S_n(t)=K \) であれば、\( \Delta S \rightarrow 0 \) で \( \Delta A \rightarrow 0 \) となる限り第2項は \( o(\Delta S) \) であり、価格の変化の1次の項は \( NA_n(t)\Delta S \) である。
+                    とくに契約直後 \( S_{T-t}(t)=K \) であれば、\( \Delta S \rightarrow 0 \) で \( \Delta A \rightarrow 0 \) となる限り第2項は \( o(\Delta S) \) であり、価格の変化の1次の項は \( NA_{T-t}(t)\Delta S \) である。
                     そこでスワップ・レートが \( 0.01\% \) 変化したときの1次の項
                     \[
-                        \textrm{PV01}:=NA_n(t)\times0.0001 \label{pv01}
+                        \textrm{PV01}:=NA_{T-t}(t)\times0.0001 \label{pv01}
                     \]
                     を<span class="new-word">PV01（present value of a basis point）</span>と呼ぶ。
                     （実務では \( 0.01\% \) を \( 1 \) <span class="new-word">bp（basis point）</span>と呼ぶ。）
