@@ -328,7 +328,7 @@
                     　式(<a href="#mtm">\ref{mtm}</a>)によれば、契約済みの金利スワップの価格は、固定レートとその時点のスワップ・レートの差にアニュイティを乗じた値である。
                     このように、取引されている契約の価格を用いて保有する契約の価格を表すことを<span class="new-word">時価評価（mark to market）</span>と呼ぶ。
                     スワップ・レートが上昇すれば \( P_\textrm{pay}(t) \) が上がり、下落すれば \( P_\textrm{rec}(t) \) が上がる。
-                    つまりペイヤーは複利最終利回りの上昇に、レシーバーは下落に賭けた立場である。
+                    <!--つまりペイヤーは複利最終利回りの上昇に、レシーバーは下落に賭けた立場である。-->
                 </p>
                 <p>
                     　価格のスワップ・レートに対する感応度は、契約直後においてアニュイティで定まる。
@@ -337,13 +337,21 @@
                         \Delta P_\textrm{pay}(t)=NA_{T-t}(t)\Delta S+N[S_{T-t}(t)-S_T(0)+\Delta S]\Delta A
                     \]
                     である。
-                    とくに契約直後 \( t=0 \) では \( S_{T-t}(t)=S_T(0) \) であるから、\( \Delta S \rightarrow 0 \) で \( \Delta A \rightarrow 0 \) となる限り第2項は \( o(\Delta S) \) であり、価格の変化の1次の項は \( NA_{T-t}(t)\Delta S \) である。
-                    そこでスワップ・レートが \( 0.01\% \) 変化したときの1次の項
+                    とくに契約直後 \( t=0 \) では \( S_{T-t}(t)=S_T(0) \) であるから、\( \Delta S \rightarrow 0 \) で \( \Delta A \rightarrow 0 \) となる限り右辺第2項は \( o(\Delta S) \) であり
+                    \[
+                        \Delta P_\textrm{pay}(t)=NA_{T-t}(t)\Delta S+o(\Delta S)
+                    \]
+                    である。
+                    スワップ・レートが \( 0.01\% \) 変化したときの1次の項
                     \[
                         \textrm{PV01}:=NA_{T-t}(t)\times0.0001 \label{pv01}
                     \]
                     を<span class="new-word">PV01（present value of a basis point）</span>と呼ぶ。
-                    （実務では \( 0.01\% \) を \( 1 \) <span class="new-word">bp（basis point）</span>と呼ぶ。）
+                    つまり
+                    \[
+                        \Delta P_\textrm{pay}(t)=\textrm{PV01}\cdot\frac{\Delta S}{0.0001}+o(\Delta S)
+                    \]
+                    である。
                 </p>
                 <p>
                     　金利スワップの感応度は、固定利付債の感応度に一致する。
@@ -352,6 +360,7 @@
                     金利スワップは、貨幣をほとんど受渡さずに固定利付債と同程度の感応度を得られる（あるいは打ち消せる）契約である。
                     実務において、固定利付債の保有者がペイヤーの金利スワップを契約して感応度を相殺することは頻繁に行われる。
                 </p>
+                <!--
                 <div class="comment-box">
                     <p>
                         <span class="comment-box-title">数値例（続き）</span>
@@ -364,6 +373,7 @@
                         価格 \( 0 \) で契約した金利スワップが、契約直後に約 \( 48 \) 万の価格で取引されうる立場に変わる。
                     </p>
                 </div>
+                -->
             </section>
             <section id="section-return">
                 <h4>金利スワップの収益</h4>
