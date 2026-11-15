@@ -344,7 +344,7 @@
                     である。
                     スワップ・レートが \( 0.01\% \) 変化したときの1次の項
                     \[
-                        \textrm{PV01}:=NA_{T-t}(t)\times0.0001 \label{pv01}
+                        \textrm{PV01}:=0.0001\cdot NA_{T-t}(t) \label{pv01}
                     \]
                     を<span class="new-word">PV01（present value of a basis point）</span>と呼ぶ。
                     つまり
@@ -392,12 +392,12 @@
                         \]
                         であり、レシーバーの収益は
                         \[
-                            G_1=N\{[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(1)]A_{T-1}(1)\} \label{receiver-gain}
+                            G_1:=N\big{\{}[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(1)]A_{T-1}(1)\big{\}} \label{receiver-gain}
                         \]
                         である。
                         とくにイールド・カーブが不変、つまり \( R_{1,t}=r_{0,t-1}(0) \) 、\( t=2,\dots,T \) であるならば
                         \[
-                            G_1=N\{[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(0)]A_{T-1}(0)\} \label{receiver-rolling}
+                            G_1=N\big{\{}[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(0)]A_{T-1}(0)\big{\}} \label{receiver-rolling}
                         \]
                         である。
                     </p>
