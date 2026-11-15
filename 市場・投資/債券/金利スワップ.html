@@ -403,9 +403,46 @@
                 <p>
                     　レシーバーの収益は、時刻 \( t=0 \) で確定する部分と、スワップ・レートの変化による部分の和である。
                     第1項 \( N[S_T(0)-r_{0,1}(0)] \) は固定レグの受取りと変動レグの受渡の差であり、これを<span class="new-word">キャリー（carry）</span>と呼ぶ。
-                    第2項はイールド・カーブが不変であれば \( N[S_T(0)-S_{T-1}(0)]A_{T-1}(0) \) であり、これは債券のロールダウン効果に対応する [<a href="債券の収益率.html#section-rolldown" style="text-decoration: none"><span class="new-word">債券の収益率/ロールダウン効果</span></a>] 。
-                    順イールドのもとで \( S_T(0) &gt; S_{T-1}(0) \) であれば、両項はともに正である。
-                    ただし式(<a href="#receiver-rolling">\ref{receiver-rolling}</a>)はイールド・カーブが不変であると仮定したときの値に過ぎず、期待値ではない。
+                    第2項は契約済みの金利スワップの価格の変化であり、債券の収益率と同様にロールダウン効果とイールド・カーブ変化効果に分解できる [<a href="債券の収益率.html#section-decomposition" style="text-decoration: none"><span class="new-word">債券の収益率/収益率の分解</span></a>] 。
+                </p>
+                <div class="theorem-tile">
+                    <div class="title">命題</div>
+                    <p>
+                        上の命題の設定に加え、
+                        \[
+                            \Delta S_\textrm{RD}:=S_{T-1}(0)-S_T(0),\ \ \ \Delta S_\textrm{CC}:=S_{T-1}(1)-S_{T-1}(0)
+                        \]
+                        とする。
+                        このとき、
+                        \[
+                            G_1=N\big{\{}[S_T(0)-r_{0,1}(0)]-A_{T-1}(0)\Delta S_\textrm{RD}-A_{T-1}(0)\Delta S_\textrm{CC}+\textrm{CE}\big{\}} \label{receiver-decomposition}
+                        \]
+                        が成り立つ。
+                        ただし
+                        \[
+                            \textrm{CE}:=-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})[A_{T-1}(1)-A_{T-1}(0)]
+                        \]
+                        である。
+                    </p>
+                </div>
+                <div class="proof">
+                    <p>
+                        \( \Delta S_\textrm{RD}+\Delta S_\textrm{CC}=S_{T-1}(1)-S_T(0) \) であるから、上の命題の第2式より
+                        \[
+                            \frac{G_1}{N}=[S_T(0)-r_{0,1}(0)]-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})A_{T-1}(1)
+                        \]
+                        である。
+                        \( A_{T-1}(1)=A_{T-1}(0)+[A_{T-1}(1)-A_{T-1}(0)] \) を代入すれば与式を得る。
+                    </p>
+                </div>
+                <p>
+                    　式(<a href="#receiver-decomposition">\ref{receiver-decomposition}</a>)の各項は、債券の収益率の分解と対応する。
+                    第2項 \( -NA_{T-1}(0)\Delta S_\textrm{RD} \) はスワップ・カーブの傾きにアニュイティを乗じた値であり、ロールダウン効果に対応する。
+                    順イールドのもとで \( \Delta S_\textrm{RD} &lt; 0 \) であれば、キャリーとともに正である。
+                    第3項 \( -NA_{T-1}(0)\Delta S_\textrm{CC} \) はスワップ・カーブの変化によるものであり、イールド・カーブ変化効果に対応する。
+                    第4項 \( N\textrm{CE} \) はスワップ・レートの変化とアニュイティの変化の積であり、\( \Delta S_\textrm{RD}+\Delta S_\textrm{CC} \rightarrow 0 \) で \( A_{T-1}(1) \rightarrow A_{T-1}(0) \) となる限り \( o(\Delta S_\textrm{RD}+\Delta S_\textrm{CC}) \) であるから、複合効果に対応する。
+                    債券では各効果が修正デュレーションによる1次の項と剰余で表されたが、金利スワップの価格は式(<a href="#mtm">\ref{mtm}</a>)のとおりスワップ・レートについて線形であるから、分解は近似なしに成り立ち、修正デュレーションの代わりにアニュイティが現れる。
+                    なおイールド・カーブが不変であれば \( \Delta S_\textrm{CC}=0 \) 、\( \textrm{CE}=0 \) であり、式(<a href="#receiver-rolling">\ref{receiver-rolling}</a>)に一致するが、これはイールド・カーブが不変であると仮定したときの値に過ぎず、期待値ではない。
                 </p>
                 <p>
                     　価格 \( 0 \) で契約したレシーバーの立場は、パー債を残存期間 \( 1 \) の借入れで買うことに等しい。
