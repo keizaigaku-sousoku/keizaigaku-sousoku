@@ -391,14 +391,14 @@
                         \[
                             A_{T-1}(1)=\sum_{t=2}^T\frac{1}{(1+R_{1,t})^{t-1}},\ \ \ S_{T-1}(1)=\frac{1}{A_{T-1}(1)}\bigg{[}1-\frac{1}{(1+R_{1,T})^{T-1}}\bigg{]}
                         \]
-                        であり、レシーバーの収益は
+                        であり、レシーバーの損益は
                         \[
-                            G_1:=N\big{\{}[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(1)]A_{T-1}(1)\big{\}} \label{receiver-gain}
+                            \textrm{PnL}(1):=N\big{\{}[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(1)]A_{T-1}(1)\big{\}} \label{receiver-gain}
                         \]
                         である。
                         とくにイールド・カーブが不変、つまり \( R_{1,t}=r_{0,t-1}(0) \) 、\( t=2,\dots,T \) であるならば
                         \[
-                            G_1=N\big{\{}[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(0)]A_{T-1}(0)\big{\}} \label{receiver-rolling}
+                            \textrm{PnL}(1)=N\big{\{}[S_T(0)-r_{0,1}(0)]+[S_T(0)-S_{T-1}(0)]A_{T-1}(0)\big{\}} \label{receiver-rolling}
                         \]
                         である。
                     </p>
@@ -426,7 +426,7 @@
                         とする。
                         このとき、
                         \[
-                            \frac{G_1}{N}=S_T(0)-r_{0,1}(0)-A_{T-1}(0)\Delta S_\textrm{RD}-A_{T-1}(0)\Delta S_\textrm{CC}+\textrm{CE} \label{receiver-decomposition}
+                            \frac{\textrm{PnL}(1)}{N}=S_T(0)-r_{0,1}(0)-A_{T-1}(0)\Delta S_\textrm{RD}-A_{T-1}(0)\Delta S_\textrm{CC}+\textrm{CE} \label{receiver-decomposition}
                         \]
                         が成り立つ。
                     </p>
@@ -435,7 +435,7 @@
                     <p>
                         \( \Delta S_\textrm{RD}+\Delta S_\textrm{CC}=S_{T-1}(1)-S_T(0) \) であるから、上の命題の第2式より
                         \[
-                            \frac{G_1}{N}=S_T(0)-r_{0,1}(0)-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})A_{T-1}(1)
+                            \frac{\textrm{PnL}(1)}{N}=S_T(0)-r_{0,1}(0)-(\Delta S_\textrm{RD}+\Delta S_\textrm{CC})A_{T-1}(1)
                         \]
                         である。
                         \( A_{T-1}(1)=A_{T-1}(0)+[A_{T-1}(1)-A_{T-1}(0)] \) を代入すれば与式を得る。
@@ -466,7 +466,7 @@
                         とおく。
                         このとき、\( \sum_{t=1}^T\pi_t=1 \) であり、
                         \[
-                            G_1=N\sum_{t=2}^T\pi_t(R^{(t)}-r_{0,1}(0)) \label{receiver-zero}
+                            \textrm{PnL}(1)=N\sum_{t=2}^T\pi_t(R^{(t)}-r_{0,1}(0)) \label{receiver-zero}
                         \]
                         が成り立つ。
                     </p>
@@ -477,7 +477,7 @@
                         時刻 \( t=1 \) における満期 \( t \geq 2 \) の割引債の債券価格は \( 1/(1+R_{1,t})^{t-1}=[1+R^{(t)}]d_t(0) \) であるから、\( A_{T-1}(1)=\sum_{t=2}^T[1+R^{(t)}]d_t(0) \) かつ \( 1/(1+R_{1,T})^{T-1}=(1+R^{(T)})d_T(0) \) である。
                         式(<a href="#swap-rate">\ref{swap-rate}</a>)を時刻 \( t=1 \) に適用すれば \( S_{T-1}(1)A_{T-1}(1)=1-(1+R^{(T)})d_T(0) \) であるから、式(<a href="#receiver-gain">\ref{receiver-gain}</a>)より
                         \[
-                            \frac{G_1}{N}=S_T(0)+S_T(0)A_{T-1}(1)+(1+R^{(T)})d_T(0)-[1+r_{0,1}(0)]=\sum_{t=1}^T\pi_t[1+R^{(t)}]-[1+r_{0,1}(0)]
+                            \frac{	extrm{PnL}(1)}{N}=S_T(0)+S_T(0)A_{T-1}(1)+(1+R^{(T)})d_T(0)-[1+r_{0,1}(0)]=\sum_{t=1}^T\pi_t[1+R^{(t)}]-[1+r_{0,1}(0)]
                         \]
                         である。
                         \( \sum_{t=1}^T\pi_t=1 \) と \( R^{(1)}=r_{0,1}(0) \) を用いれば与式を得る。
