@@ -309,18 +309,19 @@
                 <div class="theorem-tile">
                     <div class="title">命題</div>
                     <p>
-                        想定元本 \( N \) 、固定レート \( K \) 、テナー \( T \) の金利スワップを時刻 \( t=0 \) に契約したとし、変動レグの受渡直後の時刻 \( t \in \{0,\dots,T-1\} \) を考える。
+                        想定元本 \( N \) 、固定レート \( S_T(0) \) 、テナー \( T \) の金利スワップを時刻 \( t=0 \) に契約したとし、変動レグの受渡直後の時刻 \( t \in \{0,\dots,T-1\} \) を考える。
                         その時刻において、テナー \( T-t \) の金利スワップがスワップ・レート \( S_{T-t}(t) \) で取引され、満期までの割引債の債券価格の和が \( A_{T-t}(t) \) であり、一物一価の法則が成り立つとする。
                         このとき、当金利スワップについて
                         \[
-                            P_\textrm{pay}(t)=N[S_{T-t}(t)-K]A_{T-t}(t) \label{mtm}
+                            P_\textrm{pay}(t)=N[S_{T-t}(t)-S_T(0)]A_{T-t}(t) \label{mtm}
                         \]
                         である。
                     </p>
                 </div>
                 <div class="proof">
                     <p>
-                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( P_\textrm{pay}(t)=N[1-d_{T-t}(t)-KA_{T-t}(t)] \) であり、式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_{T-t}(t)=S_{T-t}(t)A_{T-t}(t) \) であるから、\( P_\textrm{pay}(t)=N[S_{T-t}(t)A_{T-t}(t)-KA_{T-t}(t)] \) を得る。
+                        当時刻を新たに \( t=0 \) とみなせば、式(<a href="#payer-value">\ref{payer-value}</a>)より \( P_\textrm{pay}(t)=N[1-d_{T-t}(t)-S_T(0)A_{T-t}(t)] \) である。
+                        式(<a href="#swap-rate">\ref{swap-rate}</a>)より \( 1-d_{T-t}(t)=S_{T-t}(t)A_{T-t}(t) \) であるから、\( P_\textrm{pay}(t)=N[S_{T-t}(t)A_{T-t}(t)-KA_{T-t}(t)]=N[S_{T-t}(t)-K]A_{T-t}(t) \) を得る。
                     </p>
                 </div>
                 <p>
