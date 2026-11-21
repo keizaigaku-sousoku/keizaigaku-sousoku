@@ -32,18 +32,19 @@
             <section id="section-irs">
                 <h4>金利スワップとは何か</h4>
                 <p>
-                    　債券の保有者は、クーポンが固定であるか変動であるかによって異なる不確実性を受入れている [<a href="債券の基礎.html#section-bond" style="text-decoration: none"><span class="new-word">債券の基礎/債券とは何か</span></a>] 。
-                    固定利付債の保有者は将来受取る貨幣が確定しているが、市場の複利最終利回りが上昇すれば債券価格の下落を受入れなければならない。
-                    一方で変動利付債の保有者は債券価格の変化が小さいが、将来受取るクーポンが確定していない。
+                    　債券の保有者は、クーポンが固定であるか変動であるかによって異なる不確実性に直面する [<a href="債券の基礎.html#section-bond" style="text-decoration: none"><span class="new-word">債券の基礎/債券とは何か</span></a>] 。
+                    固定利付債の保有者は将来受取るクーポンが確定しているが、市場の複利最終利回りが上昇すれば債券価格の下落を受入れなければならない。
+                    一方で変動利付債の保有者は市場の複利最終利回りの上昇による損失が限定的であるが、将来受取るクーポンが確定していない。
                     ここで例えば、固定利付債を保有する市場参加者は、クーポンを変動に変えて債券価格の下落を回避したいと考える可能性がある。
                     また変動利付債で貨幣を調達した市場参加者は、将来クーポンの支払いが膨らむ危機を回避したいと考える可能性がある。
                     もし両者がクーポンに相当する貨幣を将来の一定期間交換する契約を結べば、彼らは債券自体を交換することなしに、互いの不確実性を交換できる [<a href="../市場/契約.html#section-contract" style="text-decoration: none"><span class="new-word">契約/約束・契約</span></a>] 。
+                    この交換は本質的に何かを "生み出した" とは言えないが、ともかく両者に交換の利点があることまでは否定されない。
                 </p>
                 <p>
                     　上記の契約を一般化したものは、実務において債券と並ぶ重要な契約である。
                     以下では便宜的に、貨幣の受渡を単位時間に1回だけ、時刻 \( t=1,\dots,T \) 、\( T \in \textbf{Z}_{\geq1} \) に行うとするが、これを単位時間あたり複数回に一般化することは容易である。
                     また時刻 \( t-1 \) において定まる残存期間 \( 1 \) の割引債の複利最終利回りを \( R_{t-1,t} \) とおく [<a href="イールド・カーブ.html#section-hypothesis" style="text-decoration: none"><span class="new-word">イールド・カーブ/イールド・カーブの諸仮説</span></a>] 。
-                    \( R_{0,1}=r_{0,1}(0) \) は現在 \( t=0 \) で確定しているが、\( t \geq 2 \) に対して \( R_{t-1,t} \) は現在から見て確率的である。
+                    \( R_{0,1}=r_{0,1} \) は現在 \( t=0 \) で確定しているが、\( t \geq 2 \) に対して \( R_{t-1,t} \) は現在から見て確率的である。
                     このとき、\( N &gt; 0 \) 、\( K \in \textbf{R} \) を定めて、各時刻 \( t \) において市場参加者1が市場参加者2に \( KN \) を渡し、市場参加者2が市場参加者1に \( R_{t-1,t}N \) を渡す契約を<span class="new-word">金利スワップ（interest rate swap, IRS）</span>と呼ぶ。
                     \( N \) を<span class="new-word">想定元本（notional principal, notional）</span>、\( K \) を<span class="new-word">固定レート（fixed rate）</span>、\( T \) を<span class="new-word">テナー（tenor）</span>と呼ぶ。
                     また受渡の列 \( (KN)_{t=1}^T \) を<span class="new-word">固定レグ（fixed leg）</span>、受渡の列 \( (R_{t-1,t}N)_{t=1}^T \) を<span class="new-word">変動レグ（floating leg）</span>と呼び、変動レグの基準となる複利最終利回り \( R_{t-1,t} \) を<span class="new-word">参照金利（reference rate）</span>と呼ぶ。
@@ -55,19 +56,6 @@
                     また実務上は各時刻で両レグを相殺し、ペイヤーが差額 \( (R_{t-1,t}-K)N \) のみを受取る（負であれば渡す）ことが一般的である。
                     なお現実世界の金利スワップでは、固定レグと変動レグで受渡の頻度や日数の数え方が異なることが多く、記述は極めて煩雑になる。
                 </p>
-                <!--
-                <div class="comment-box">
-                    <p>
-                        <span class="comment-box-title">"スワップ" という名前</span>
-                    </p>
-                    <p>
-                        "swap" は "交換" の意であり、金利スワップでは固定レグと変動レグが交換される。
-                        スワップと呼ばれる契約は為替スワップ [<a href="インターバンク市場.html#section-fx" style="text-decoration: none"><span class="new-word">インターバンク市場/外国為替市場</span></a>] やCDS [<a href="CDS.html#section-cds" style="text-decoration: none"><span class="new-word">CDS/CDSとは何か</span></a>] 等いくつもあるが、何と何を交換するかはそれぞれでまったく異なる。
-                        為替スワップでは貨幣そのものが交換されるのに対し、金利スワップでは想定元本は交換されない。
-                        名前が似ているからといって、契約の内容を類推すべきではない。
-                    </p>
-                </div>
-                -->
             </section>
             <section id="section-replication">
                 <h4>債券による複製</h4>
